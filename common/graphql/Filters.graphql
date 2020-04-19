@@ -1,0 +1,16 @@
+input FulltextFilter {
+    query: String
+    pagination: Pagination
+}
+
+input FulltextFilterForUser {
+    query: String
+    idUser: Int!
+    pagination: Pagination
+}
+
+input MediaFilter {
+    query: String
+    pagination: Pagination
+    source: MediaType
+}

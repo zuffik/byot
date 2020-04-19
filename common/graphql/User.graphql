@@ -1,0 +1,56 @@
+enum Role {
+    USER
+    ADMIN
+}
+
+directive @auth on OBJECT | FIELD_DEFINITION | INPUT_FIELD_DEFINITION
+directive @restrictedForRole(role: Role) on OBJECT | FIELD_DEFINITION | INPUT_FIELD_DEFINITION
+directive @restrictedForOwnerOrRole(role: Role) on OBJECT | FIELD_DEFINITION | INPUT_FIELD_DEFINITION
+
+type User implements Entity {
+    id: ID!
+    createdAt: DateTime!
+    updatedAt: DateTime
+
+    role: Role!
+    lastLogin: DateTime
+
+    firstName: String
+    lastName: String
+    fullName: String
+    userName: String!
+    email: String!
+}
+
+type Auth {
+    token: String!
+    user: User
+}
+
+input UserRegister {
+    role: Role
+    firstName: String
+    lastName: String
+    email: String!
+    password: String!
+    userName: String!
+}
+
+input UserLogin {
+    userNameOrEmail: String!
+    password: String!
+}
+
+input UserUpdateInput {
+    role: Role @restrictedForOwnerOrRole(role: ADMIN)
+    firstName: String
+    lastName: String
+    email: String
+    password: String
+    userName: String
+}
+
+type UserList implements List {
+    meta: ListMeta!
+    entries: [User!]!
+}

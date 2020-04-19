@@ -1,0 +1,13 @@
+scalar ID
+
+type DateTime {
+    timestamp: Int!
+    utc: String!
+    humanReadable: String!
+}
+
+interface Entity {
+    id: ID!
+    createdAt: DateTime!
+    updatedAt: DateTime
+}

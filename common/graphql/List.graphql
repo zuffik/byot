@@ -1,0 +1,13 @@
+type ListMeta {
+    totalCount: Int!
+}
+
+interface List {
+    meta: ListMeta!
+    entries: [Entity!]!
+}
+
+input Pagination {
+    limit: Int
+    offset: Int
+}

@@ -28,11 +28,7 @@ type Mutation {
     removeTrainingSet(id: ID!): Training! @restrictedForOwnerOrRole(role: ADMIN)
 }
 
-type Subscription {
-}
-
 schema {
     query: Query
     mutation: Mutation
-    subscription: Subscription
 }

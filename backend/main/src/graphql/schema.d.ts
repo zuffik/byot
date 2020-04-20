@@ -1,1 +1,0 @@
-../../../../common/graphql.d.ts

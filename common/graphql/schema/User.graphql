@@ -54,3 +54,15 @@ type UserList implements List {
     meta: ListMeta!
     entries: [User!]!
 }
+
+interface UserQuery {
+    allUsers(filter: FulltextFilter): UserList! @restrictedForRole(role: ADMIN)
+    user(id: ID!): User! @restrictedForOwnerOrRole(role: ADMIN)
+}
+
+interface UserMutation {
+    userRegister(user: UserRegister!): Auth!
+    userLogin(user: UserLogin!): Auth!
+    userUpdateMyself(user: UserUpdateInput!): Auth! @auth
+    userUpdate(id: ID!, user: UserUpdateInput!): User! @restrictedForOwnerOrRole(role: ADMIN)
+}

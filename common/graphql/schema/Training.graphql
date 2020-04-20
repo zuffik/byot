@@ -1,0 +1,69 @@
+type Training implements Entity {
+    id: ID!
+    createdAt: DateTime!
+    updatedAt: DateTime
+
+    label: String!
+    media(filter: FulltextFilter): MediaList!
+    trainingSet: TrainingSet!
+    owner: User!
+}
+
+input TrainingUpdateInput {
+    label: String!
+    media: [SourceInput!]!
+}
+
+type TrainingSet implements Entity {
+    id: ID!
+    createdAt: DateTime!
+    updatedAt: DateTime
+
+    label: String!
+    trainings(pagination: FulltextFilter): TrainingList!
+    owner: User!
+}
+
+input TrainingSetInput {
+    label: String!
+}
+
+type TrainingSetList implements List {
+    meta: ListMeta!
+    entries: [TrainingSet!]!
+}
+
+type TrainingList implements List {
+    meta: ListMeta!
+    entries: [Training!]!
+}
+
+
+input TrainingDraftInput {
+    label: String
+    idTrainingSet: ID
+    media: [SourceInput!]
+}
+
+type TrainingDraft {
+    label: String
+    idTrainingSet: ID
+    media: [Media!]
+}
+
+interface TrainingQuery {
+    allTrainings(filter: FulltextFilterForUser): TrainingList! @restrictedForRole(role: ADMIN)
+    allTrainingSets(filter: FulltextFilterForUser): TrainingSetList! @restrictedForRole(role: ADMIN)
+    trainingSets(pagination: Pagination): TrainingSetList! @auth
+    trainingSet(id: ID!): TrainingSet! @restrictedForOwnerOrRole(role: ADMIN)
+    training(id: ID!): TrainingSet! @restrictedForOwnerOrRole(role: ADMIN)
+    trainingDraft: Training @auth
+}
+
+interface TrainingMutation {
+    trainingDraftUpdateOrCreate(draft: TrainingDraftInput!): TrainingDraft! @auth
+    saveTrainingDraft(draft: TrainingDraftInput!): Training! @auth
+    updateTraining(training: TrainingUpdateInput!): Training! @restrictedForOwnerOrRole(role: ADMIN)
+    removeTraining(id: ID!): Training! @restrictedForOwnerOrRole(role: ADMIN)
+    removeTrainingSet(id: ID!): Training! @restrictedForOwnerOrRole(role: ADMIN)
+}

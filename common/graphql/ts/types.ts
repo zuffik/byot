@@ -105,12 +105,30 @@ export interface Source {
 
 export interface DateTime {
     timestamp: number;
-    utc: string;
+    iso: string;
     humanReadable: string;
 }
 
 export interface ListMeta {
     totalCount: number;
+}
+
+export interface URLSource extends Source {
+    url: string;
+    sourceType: SourceType;
+    mediaType: MediaType;
+}
+
+export interface Media {
+    id?: string;
+    createdAt?: DateTime;
+    updatedAt?: DateTime;
+    source: Source;
+}
+
+export interface MediaList {
+    meta: ListMeta;
+    entries: Media[];
 }
 
 export interface IQuery {
@@ -122,7 +140,7 @@ export interface IQuery {
     trainingSets(pagination?: Pagination): TrainingSetList | Promise<TrainingSetList>;
     trainingSet(id: string): TrainingSet | Promise<TrainingSet>;
     training(id: string): TrainingSet | Promise<TrainingSet>;
-    video(id: string): Media | Promise<Media>;
+    media(id: string): Media | Promise<Media>;
     trainingDraft(): Training | Promise<Training>;
     findMedia(filter?: MediaFilter): MediaList | Promise<MediaList>;
 }
@@ -138,19 +156,6 @@ export interface IMutation {
     removeMedia(id: string): Training | Promise<Training>;
     removeTraining(id: string): Training | Promise<Training>;
     removeTrainingSet(id: string): Training | Promise<Training>;
-}
-
-export interface URLSource extends Source {
-    url: string;
-    sourceType: SourceType;
-    mediaType: MediaType;
-}
-
-export interface Media {
-    id?: string;
-    createdAt?: DateTime;
-    updatedAt?: DateTime;
-    source: Source;
 }
 
 export interface Training extends Entity {
@@ -180,11 +185,6 @@ export interface TrainingSetList extends List {
 export interface TrainingList extends List {
     meta: ListMeta;
     entries: Training[];
-}
-
-export interface MediaList {
-    meta: ListMeta;
-    entries: Media[];
 }
 
 export interface TrainingDraft {

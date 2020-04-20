@@ -8,7 +8,7 @@ type Query {
     trainingSets(pagination: Pagination): TrainingSetList! @auth
     trainingSet(id: ID!): TrainingSet! @restrictedForOwnerOrRole(role: ADMIN)
     training(id: ID!): TrainingSet! @restrictedForOwnerOrRole(role: ADMIN)
-    video(id: ID!): Media! @restrictedForOwnerOrRole(role: ADMIN)
+    media(id: ID!): Media! @restrictedForOwnerOrRole(role: ADMIN)
 
     trainingDraft: Training @auth
     findMedia(filter: MediaFilter): MediaList! @auth
@@ -28,6 +28,7 @@ type Mutation {
     removeTrainingSet(id: ID!): Training! @restrictedForOwnerOrRole(role: ADMIN)
 }
 
+# WARN! there is no way to make TS interface with methods so these methods need to be tested
 schema {
     query: Query
     mutation: Mutation

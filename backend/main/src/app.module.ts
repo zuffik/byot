@@ -1,18 +1,20 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { validationSchema } from './config/validation.schema';
 import { databaseConfig } from './config/database.config';
 import { appConfig } from './config/app.config';
 import { nodeConfig } from './config/node.config';
 import { GraphQLModule } from '@nestjs/graphql';
+import { UserModule } from './user/user.module';
+import { AuthModule } from './auth/auth.module';
+import { SeedModule } from './seed/seed.module';
 import * as path from 'path';
+import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Module({
   imports: [
     ConfigModule.forRoot({
-      envFilePath: ['.env', `.env.${process.env.NODE_ENV}`],
+      envFilePath: ['.env', `.env.${process.env.NODE_ENV}`, '.env.local', `.env.local.${process.env.NODE_ENV}`],
       isGlobal: true,
       validationSchema,
       load: [databaseConfig, appConfig, nodeConfig],
@@ -22,15 +24,31 @@ import * as path from 'path';
       useFactory: (cfg: ConfigService) => ({
         debug: cfg.get('node.env') === 'development',
         playground: cfg.get('node.env') === 'development',
-        typePaths: [path.join(process.cwd(), 'src/graphql/schema/*.graphql')],
+        typePaths: ['./**/graphql/schema/*.graphql'],
         definitions: {
-          path: path.join(process.cwd(), '../../common/graphql.d.ts'),
+          path: path.join(process.cwd(), '../../common/graphql/ts/types.ts'),
         },
       }),
     }),
+    TypeOrmModule.forRootAsync({
+      inject: [ConfigService],
+      useFactory: (cfg: ConfigService) => ({
+        type: cfg.get<'mysql'>('db.scheme'),
+        host: cfg.get<string>('db.host'),
+        port: cfg.get<number>('db.port'),
+        username: cfg.get<string>('db.user'),
+        password: cfg.get<string>('db.pass'),
+        database: cfg.get<string>('db.name'),
+        entities: process.env.NODE_ENV !== 'test' ? ['./**/*.entity.js'] : ['./**/*.entity.ts'],
+        synchronize: true,
+      }),
+    }),
+    UserModule,
+    AuthModule,
+    SeedModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {
 }

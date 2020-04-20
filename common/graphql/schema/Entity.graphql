@@ -2,7 +2,7 @@ scalar ID
 
 type DateTime {
     timestamp: Int!
-    utc: String!
+    iso: String!
     humanReadable: String!
 }
 

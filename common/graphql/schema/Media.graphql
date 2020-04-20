@@ -1,0 +1,49 @@
+enum SourceType {
+    YOUTUBE
+    INSTAGRAM
+}
+
+enum MediaType {
+    AUDIO
+    VIDEO
+    IMAGE
+}
+
+interface Source {
+    sourceType: SourceType!
+    mediaType: MediaType!
+}
+
+type URLSource implements Source {
+    url: String!
+    sourceType: SourceType!
+    mediaType: MediaType!
+}
+
+input SourceInput {
+    sourceType: SourceType!
+    mediaType: MediaType!
+}
+
+type Media {
+    id: ID
+    createdAt: DateTime
+    updatedAt: DateTime
+    source: Source!
+}
+
+
+type MediaList {
+    meta: ListMeta!
+    entries: [Media!]!
+}
+
+interface MediaQuery {
+    allMedia(filter: FulltextFilterForUser): MediaList!
+    media(id: ID!): Media!
+    findMedia(filter: MediaFilter): MediaList!
+}
+
+interface MediaMutation {
+    removeMedia(id: ID!): Training!
+}

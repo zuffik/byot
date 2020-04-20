@@ -1,0 +1,31 @@
+image: node:12
+
+cache:
+  paths:
+    - node_modules
+
+before_script:
+  - yarn install
+
+stages:
+  - build
+  - test
+  # - deploy
+
+Build:
+  stage: build
+  script:
+    - yarn build
+  artifacts:
+    paths:
+      - dist
+
+e2e test:
+  stage: test
+  script:
+    - yarn test:e2e
+
+Unit test:
+  stage: test
+  script:
+    - yarn test

@@ -1,0 +1,31 @@
+stages:
+  - spawn
+
+Main backend:
+  stage: spawn
+  trigger:
+    include: backend/main/.gitlab-ci.yml
+  only:
+    changes:
+      - backend/main/**/*
+      - common/**/*
+
+Web frontend:
+  stage: spawn
+  trigger:
+    include: frontend/web/.gitlab-ci.yml
+  only:
+    changes:
+      - frontend/web/**/*
+      - frontend/common/**/*
+      - common/**/*
+
+Native mobile frontend:
+  stage: spawn
+  trigger:
+    include: frontend/native-mobile/.gitlab-ci.yml
+  only:
+    changes:
+      - frontend/native-mobile/**/*
+      - frontend/common/**/*
+      - common/**/*

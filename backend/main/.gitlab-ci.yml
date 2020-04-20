@@ -5,6 +5,7 @@ cache:
     - node_modules
 
 before_script:
+  - cd backend/main
   - yarn install
 
 stages:

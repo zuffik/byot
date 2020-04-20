@@ -19,7 +19,7 @@ Build:
     - yarn build
   artifacts:
     paths:
-      - dist
+      - backend/main/dist
 
 e2e test:
   stage: test

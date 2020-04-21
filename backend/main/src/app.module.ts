@@ -14,7 +14,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 @Module({
   imports: [
     ConfigModule.forRoot({
-      envFilePath: ['.env', `.env.${process.env.NODE_ENV}`, '.env.local', `.env.local.${process.env.NODE_ENV}`],
+      envFilePath: ['.env', `.env.${process.env.NODE_ENV}`, '.env.local', `.env.local.${process.env.NODE_ENV}`].reverse(),
       isGlobal: true,
       validationSchema,
       load: [databaseConfig, appConfig, nodeConfig],

@@ -37,13 +37,7 @@ describe('User integration', () => {
     expect(data).toHaveProperty('userRegister');
     expect(data.userRegister).toHaveProperty('token');
     expect(data.userRegister).toHaveProperty('user');
-    expect(data.userRegister.user).toHaveProperty('id');
-    expect(data.userRegister.user).toHaveProperty('role');
-    expect(data.userRegister.user).toHaveProperty('firstName');
-    expect(data.userRegister.user).toHaveProperty('lastName');
-    expect(data.userRegister.user).toHaveProperty('fullName');
-    expect(data.userRegister.user).toHaveProperty('userName');
-    expect(data.userRegister.user).toHaveProperty('email');
+    testUser(data.userRegister.user);
   });
 
   it('should fetch all users', async () => {

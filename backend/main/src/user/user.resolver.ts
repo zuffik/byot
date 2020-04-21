@@ -1,4 +1,4 @@
-import { Args, Query, Resolver } from '@nestjs/graphql';
+import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
 import {
   Auth,
   FulltextFilter,
@@ -20,7 +20,7 @@ export class UserResolver implements Partial<IMutation & IQuery> {
   ) {
   }
 
-  @Query()
+  @Query('allUsers')
   public async allUsers(@Args('filter') filter?: FulltextFilter): Promise<UserList> {
     const [entries, totalCount] = await this.userService.findAndCount(filter);
     return {
@@ -39,8 +39,12 @@ export class UserResolver implements Partial<IMutation & IQuery> {
     return null as any;
   }
 
-  public async userRegister(user: UserRegister): Promise<Auth> {
-    return null as any;
+  @Mutation('userRegister')
+  public async userRegister(@Args('user') user: UserRegister): Promise<Auth> {
+    return {
+      user: await this.userService.userCreate(user),
+      token: '',
+    };
   }
 
   public async userUpdate(id: string, user: UserUpdateInput): Promise<IUser> {

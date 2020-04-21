@@ -4,10 +4,12 @@ import * as request from 'supertest';
 import { AppModule } from '../src/app.module';
 import { testList } from '../src/test/list.tester';
 import { testUser } from '../src/test/user.tester';
-import { UserList } from '../src/graphql/ts/types';
-import { graphQLInteraction } from '../../../common/graphql/ts/interaction';
+import { Auth as IAuth, User as IUser, UserList } from '../src/graphql/ts/types';
+import { graphQLInteraction, Interaction } from '../src/graphql/ts/interaction';
+import { makeGraphQLRequest } from './graphql.helper';
+import { GeneratorGraphqlService } from '../src/seed/generator-graphql/generator-graphql.service';
 
-describe('UserResolver (e2e)', () => {
+describe('User integration', () => {
   let app: INestApplication;
 
   beforeEach(async () => {
@@ -19,14 +21,38 @@ describe('UserResolver (e2e)', () => {
     await app.init();
   });
 
+  it('should contain valid structure', () => {
+    expect(graphQLInteraction).toBeDefined();
+    expect(graphQLInteraction).toHaveProperty('allUsers');
+    expect(graphQLInteraction).toHaveProperty('userRegister');
+  });
+
+  it('should register user', async () => {
+    const generator = app.get<GeneratorGraphqlService>(GeneratorGraphqlService);
+    expect(generator).toBeDefined();
+    const userToRegister = generator.userRegister();
+    const query: Interaction = graphQLInteraction.userRegister(userToRegister);
+    const response = await makeGraphQLRequest<{userRegister: IAuth}>(app, query);
+    const {data} = response.body;
+    expect(data).toHaveProperty('userRegister');
+    expect(data.userRegister).toHaveProperty('token');
+    expect(data.userRegister).toHaveProperty('user');
+    expect(data.userRegister.user).toHaveProperty('id');
+    expect(data.userRegister.user).toHaveProperty('role');
+    expect(data.userRegister.user).toHaveProperty('firstName');
+    expect(data.userRegister.user).toHaveProperty('lastName');
+    expect(data.userRegister.user).toHaveProperty('fullName');
+    expect(data.userRegister.user).toHaveProperty('userName');
+    expect(data.userRegister.user).toHaveProperty('email');
+  });
+
   it('should fetch all users', async () => {
-    const query = graphQLInteraction;
-    const res = await request(app.getHttpServer())
-      .post('/graphql')
-      .send({ query });
-    const { data }: { data: { allUsers: UserList } } = res.body;
+    const query: Interaction = graphQLInteraction.allUsers();
+    const response = await makeGraphQLRequest<{allUsers: UserList}>(app, query);
+    const {data} = response.body;
     testList(data.allUsers);
     data.allUsers.entries.forEach(testUser);
   });
+
   afterEach(() => app.close());
 });

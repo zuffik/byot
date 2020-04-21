@@ -104,7 +104,6 @@ export interface Source {
 }
 
 export interface DateTime {
-    timestamp: number;
     iso: string;
     humanReadable: string;
 }

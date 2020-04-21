@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { User } from './user.entity';
-import { FulltextFilter } from '../graphql/ts/types';
+import { FulltextFilter, UserRegister } from '../graphql/ts/types';
 import { InjectRepository } from '@nestjs/typeorm';
-import { FindManyOptions, Like, Repository } from 'typeorm';
+import { DeepPartial, FindManyOptions, Like, Repository } from 'typeorm';
 
 @Injectable()
 export class UserService {
@@ -27,5 +27,11 @@ export class UserService {
       query.skip = filter.pagination.offset;
     }
     return this.userRepository.findAndCount(query);
+  }
+
+  public async userCreate(user: UserRegister): Promise<User> {
+    const entity = await this.userRepository.create(user as DeepPartial<User>);
+    await this.userRepository.save(entity);
+    return entity;
   }
 }

@@ -1,7 +1,6 @@
 scalar ID
 
 type DateTime {
-    timestamp: Int!
     iso: String!
     humanReadable: String!
 }

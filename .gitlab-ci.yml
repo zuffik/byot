@@ -20,12 +20,13 @@ Web frontend:
       - frontend/common/**/*
       - common/**/*
 
-Native mobile frontend:
-  stage: spawn
-  trigger:
-    include: frontend/native-mobile/.gitlab-ci.yml
-  only:
-    changes:
-      - frontend/native-mobile/**/*
-      - frontend/common/**/*
-      - common/**/*
+# This will probably go through AppCenter
+# Native mobile frontend:
+#   stage: spawn
+#   trigger:
+#     include: frontend/native-mobile/.gitlab-ci.yml
+#   only:
+#     changes:
+#       - frontend/native-mobile/**/*
+#       - frontend/common/**/*
+#       - common/**/*

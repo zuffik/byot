@@ -1,16 +1,15 @@
 import * as moment from 'moment';
 import { DateTime } from '../graphql/ts/types';
 
-export const timestampToDateTime = (value: number | moment.Moment): DateTime => {
-  const date = moment(value);
+export const timestampToDateTime = (value?: string | moment.Moment): DateTime => {
+  const date = moment(value || 0);
   return {
-    timestamp: +date,
     humanReadable: date.format(),
     iso: date.toISOString(),
   };
 };
 
 export const timestampToDateTimeORMTransformer = {
-  to: (value: DateTime): number => value.timestamp,
-  from: (value: number): DateTime => timestampToDateTime(value),
+  to: (value: DateTime): string | null => value?.iso || moment().toISOString(),
+  from: (value: string): DateTime => timestampToDateTime(value),
 };

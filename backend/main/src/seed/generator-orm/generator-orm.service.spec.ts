@@ -24,5 +24,6 @@ describe('GeneratorOrmService', () => {
   it('should generate valid user', () => {
     const user = service.user();
     testUser(user);
+    expect(user).toHaveProperty('password');
   });
 });

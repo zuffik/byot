@@ -19,6 +19,9 @@ export class User implements IUser {
   @Column('varchar', { nullable: true })
   public lastName: string;
 
+  @Column('varchar')
+  public password: string;
+
   @Column('enum', { enum: Role })
   public role: Role;
 

@@ -5,6 +5,8 @@ import { User } from './user.entity';
 import { Repository } from 'typeorm';
 import { SeedModule } from '../seed/seed.module';
 import { GeneratorGraphqlService } from '../seed/generator-graphql/generator-graphql.service';
+import * as _ from 'lodash';
+import { mockRepository, proxyMock } from '../test/proxy.mock';
 
 describe('UserService', () => {
   let service: UserService;
@@ -18,11 +20,7 @@ describe('UserService', () => {
         UserService,
         {
           provide: getRepositoryToken(User),
-          useValue: {
-            findAndCount: jest.fn(async () => [[], 0]),
-            save: jest.fn(() => void (0)),
-            create: jest.fn((entity) => entity),
-          },
+          useValue: mockRepository(),
         },
       ],
     }).compile();
@@ -63,7 +61,7 @@ describe('UserService', () => {
     const limit = 10;
     const offset = 20;
     const spy = jest.spyOn(repository, 'findAndCount');
-    await service.findAndCount({ query, pagination: {limit, offset} });
+    await service.findAndCount({ query, pagination: { limit, offset } });
     expect(spy).toHaveBeenCalledWith({
       where: expect.arrayContaining([
         expect.objectContaining({ userName: expect.anything() }),
@@ -80,7 +78,7 @@ describe('UserService', () => {
     const limit = 10;
     const offset = 20;
     const spy = jest.spyOn(repository, 'findAndCount');
-    await service.findAndCount({ pagination: {limit, offset} });
+    await service.findAndCount({ pagination: { limit, offset } });
     expect(spy).toHaveBeenCalledWith({
       skip: offset,
       take: limit,
@@ -89,10 +87,20 @@ describe('UserService', () => {
 
   it('should register user', async () => {
     const userToBeRegistered = generator.userRegister();
-    const spyCreate = jest.spyOn(repository, 'save');
     const spySave = jest.spyOn(repository, 'save');
-    await service.userCreate(userToBeRegistered);
-    expect(spyCreate).toBeCalledWith(userToBeRegistered);
+    await service.create(userToBeRegistered);
     expect(spySave).toBeCalled();
+  });
+
+  it('should find user by username or email', async () => {
+    const usernameOrEmail = 'user';
+    const spy = jest.spyOn(repository, 'findOne');
+    await service.findByUsernameOrEmail(usernameOrEmail);
+    expect(spy).toBeCalledWith(expect.objectContaining({
+      where: expect.arrayContaining([
+        expect.objectContaining({ email: usernameOrEmail }),
+        expect.objectContaining({ userName: usernameOrEmail }),
+      ]),
+    }));
   });
 });

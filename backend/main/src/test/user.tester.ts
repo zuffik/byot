@@ -2,17 +2,6 @@ import { User as IUser, UserRegister } from '../graphql/ts/types';
 import { testDateTime } from './datetime.tester';
 import { User } from '../user/user.entity';
 
-expect.extend({
-  toBeStringOrNull: received => ({
-    message: () => `received value must be string or null (${typeof received} given)`,
-    pass: received === null || typeof received === 'string',
-  }),
-  toBeOptionalString: received => ({
-    message: () => `received value must be string or undefined (${typeof received} given)`,
-    pass: !received || typeof received === 'string',
-  }),
-});
-
 export function testUser(user: User | IUser | any) {
   expect(user).toEqual(expect.objectContaining({
     id: expect.any(String),

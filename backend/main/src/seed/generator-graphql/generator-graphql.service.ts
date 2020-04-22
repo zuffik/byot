@@ -9,7 +9,6 @@ export class GeneratorGraphqlService {
     const date = moment(chance.integer({min: 0, max: +moment()}));
     return {
       iso: date.toISOString(),
-      timestamp: +date,
       humanReadable: date.format(),
     };
   }

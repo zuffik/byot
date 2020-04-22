@@ -7,7 +7,7 @@ import { DeepPartial, FindManyOptions, Like, Repository } from 'typeorm';
 @Injectable()
 export class UserService {
   constructor(
-    @InjectRepository(User) private userRepository: Repository<User>,
+    @InjectRepository(User) private readonly userRepository: Repository<User>,
   ) {
   }
 
@@ -16,10 +16,10 @@ export class UserService {
     if (filter?.query) {
       const like = `%${filter.query}%`;
       query.where = [
-        {userName: Like(like)},
-        {email: Like(like)},
-        {firstName: Like(like)},
-        {lastName: Like(like)},
+        { userName: Like(like) },
+        { email: Like(like) },
+        { firstName: Like(like) },
+        { lastName: Like(like) },
       ];
     }
     if (filter?.pagination) {
@@ -29,9 +29,18 @@ export class UserService {
     return this.userRepository.findAndCount(query);
   }
 
-  public async userCreate(user: UserRegister): Promise<User> {
+  public async create(user: UserRegister): Promise<User> {
     const entity = await this.userRepository.create(user as DeepPartial<User>);
     await this.userRepository.save(entity);
     return entity;
+  }
+
+  public async findByUsernameOrEmail(usernameOrEmail: string): Promise<User | undefined> {
+    return await this.userRepository.findOne({
+      where: [
+        { userName: usernameOrEmail },
+        { email: usernameOrEmail },
+      ],
+    });
   }
 }

@@ -21,6 +21,7 @@ export class GeneratorOrmService {
     user.createdAt = gql.createdAt;
     user.updatedAt = gql.updatedAt;
     user.lastLogin = gql.lastLogin;
+    user.password = '';
     return user;
   }
 }

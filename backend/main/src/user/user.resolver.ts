@@ -12,7 +12,10 @@ import {
 } from '../graphql/ts/types';
 import { User } from './user.entity';
 import { UserService } from './user.service';
+import { UseGuards } from '@nestjs/common';
+import { JwtGuard } from '../auth/jwt/jwt.guard';
 
+@UseGuards(JwtGuard)
 @Resolver('User')
 export class UserResolver implements Partial<IMutation & IQuery> {
   constructor(
@@ -37,14 +40,6 @@ export class UserResolver implements Partial<IMutation & IQuery> {
 
   public async userLogin(user: UserLogin): Promise<Auth> {
     return null as any;
-  }
-
-  @Mutation('userRegister')
-  public async userRegister(@Args('user') user: UserRegister): Promise<Auth> {
-    return {
-      user: await this.userService.userCreate(user),
-      token: '',
-    };
   }
 
   public async userUpdate(id: string, user: UserUpdateInput): Promise<IUser> {

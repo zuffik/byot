@@ -15,7 +15,7 @@ import { MigrationsModule } from './migrations/migrations.module';
 @Module({
   imports: [
     ConfigModule.forRoot({
-      envFilePath: ['.env', `.env.${process.env.NODE_ENV}`, '.env.local', `.env.local.${process.env.NODE_ENV}`].reverse(),
+      envFilePath: ['.env', `.env.${process.env.NODE_ENV}`, '.env.local', `.env.${process.env.NODE_ENV}.local`].map(r => `${process.cwd()}/${r}`).reverse(),
       isGlobal: true,
       validationSchema,
       load: [databaseConfig, appConfig, nodeConfig],

@@ -3,10 +3,6 @@ enum Role {
     ADMIN
 }
 
-directive @auth on OBJECT | FIELD_DEFINITION | INPUT_FIELD_DEFINITION
-directive @restrictedForRole(role: Role) on OBJECT | FIELD_DEFINITION | INPUT_FIELD_DEFINITION
-directive @restrictedForOwnerOrRole(role: Role) on OBJECT | FIELD_DEFINITION | INPUT_FIELD_DEFINITION
-
 type User implements Entity {
     id: ID!
     createdAt: DateTime!
@@ -42,7 +38,7 @@ input UserLogin {
 }
 
 input UserUpdateInput {
-    role: Role @restrictedForOwnerOrRole(role: ADMIN)
+    role: Role
     firstName: String
     lastName: String
     email: String
@@ -56,13 +52,13 @@ type UserList implements List {
 }
 
 interface UserQuery {
-    allUsers(filter: FulltextFilter): UserList! @restrictedForRole(role: ADMIN)
-    user(id: ID!): User! @restrictedForOwnerOrRole(role: ADMIN)
+    allUsers(filter: FulltextFilter): UserList!
+    user(id: ID!): User!
 }
 
 interface UserMutation {
     userRegister(user: UserRegister!): Auth!
     userLogin(user: UserLogin!): Auth!
-    userUpdateMyself(user: UserUpdateInput!): Auth! @auth
-    userUpdate(id: ID!, user: UserUpdateInput!): User! @restrictedForOwnerOrRole(role: ADMIN)
+    userUpdateMyself(user: UserUpdateInput!): Auth!
+    userUpdate(id: ID!, user: UserUpdateInput!): User!
 }

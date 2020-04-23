@@ -10,6 +10,7 @@ import { AuthModule } from './auth/auth.module';
 import { SeedModule } from './seed/seed.module';
 import * as path from 'path';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { MigrationsModule } from './migrations/migrations.module';
 
 @Module({
   imports: [
@@ -25,7 +26,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
         debug: cfg.get('node.env') === 'development',
         playground: cfg.get('node.env') === 'development',
         typePaths: ['./**/graphql/schema/*.graphql'],
-        definitions: {
+        context: ({ req }) => ({ req }),
+        definitions: ['test', 'development'].includes(cfg.get('node.env')) && {
           path: path.join(process.cwd(), '../../common/graphql/ts/types.ts'),
         },
       }),
@@ -41,11 +43,13 @@ import { TypeOrmModule } from '@nestjs/typeorm';
         database: cfg.get<string>('db.name'),
         entities: process.env.NODE_ENV !== 'test' ? ['./**/*.entity.js'] : ['./**/*.entity.ts'],
         synchronize: true,
+        keepConnectionAlive: true,
       }),
     }),
     UserModule,
     AuthModule,
     SeedModule,
+    MigrationsModule,
   ],
   controllers: [],
   providers: [],

@@ -1,15 +1,16 @@
-import { UserRegister } from './types';
+import { Auth, UserList, UserRegister } from './types';
 
-export interface Interaction {
+export interface Interaction<T> {
   query: string;
   variables?: { [K: string]: any };
+  result?: T;
 }
 
 // this is just for IDE
 const gql = (s) => s[0];
 
 export const graphQLInteraction = {
-  allUsers: (): Interaction => ({
+  allUsers: (): Interaction<{ allUsers: UserList }> => ({
     query: gql`
         query {
             allUsers {
@@ -32,7 +33,7 @@ export const graphQLInteraction = {
         }
     `,
   }),
-  userRegister: (user: UserRegister): Interaction => ({
+  userRegister: (user: UserRegister): Interaction<{ userRegister: Auth }> => ({
     query: gql`
         mutation userRegister($user: UserRegister!) {
             userRegister(user: $user) {
@@ -51,7 +52,7 @@ export const graphQLInteraction = {
     `,
     variables: { user },
   }),
-  userLogin: (userNameOrEmail: string, password: string): Interaction => ({
+  userLogin: (userNameOrEmail: string, password: string): Interaction<{ userLogin: Auth }> => ({
     query: gql`
         mutation userLogin($userNameOrEmail: String!, $password: String!) {
             userLogin(user: {userNameOrEmail: $userNameOrEmail, password: $password}) {

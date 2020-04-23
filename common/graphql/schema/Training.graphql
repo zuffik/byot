@@ -52,18 +52,18 @@ type TrainingDraft {
 }
 
 interface TrainingQuery {
-    allTrainings(filter: FulltextFilterForUser): TrainingList! @restrictedForRole(role: ADMIN)
-    allTrainingSets(filter: FulltextFilterForUser): TrainingSetList! @restrictedForRole(role: ADMIN)
-    trainingSets(pagination: Pagination): TrainingSetList! @auth
-    trainingSet(id: ID!): TrainingSet! @restrictedForOwnerOrRole(role: ADMIN)
-    training(id: ID!): TrainingSet! @restrictedForOwnerOrRole(role: ADMIN)
-    trainingDraft: Training @auth
+    allTrainings(filter: FulltextFilterForUser): TrainingList!
+    allTrainingSets(filter: FulltextFilterForUser): TrainingSetList!
+    trainingSets(pagination: Pagination): TrainingSetList!
+    trainingSet(id: ID!): TrainingSet!
+    training(id: ID!): TrainingSet!
+    trainingDraft: Training
 }
 
 interface TrainingMutation {
-    trainingDraftUpdateOrCreate(draft: TrainingDraftInput!): TrainingDraft! @auth
-    saveTrainingDraft(draft: TrainingDraftInput!): Training! @auth
-    updateTraining(training: TrainingUpdateInput!): Training! @restrictedForOwnerOrRole(role: ADMIN)
-    removeTraining(id: ID!): Training! @restrictedForOwnerOrRole(role: ADMIN)
-    removeTrainingSet(id: ID!): Training! @restrictedForOwnerOrRole(role: ADMIN)
+    trainingDraftUpdateOrCreate(draft: TrainingDraftInput!): TrainingDraft!
+    saveTrainingDraft(draft: TrainingDraftInput!): Training!
+    updateTraining(training: TrainingUpdateInput!): Training!
+    removeTraining(id: ID!): Training!
+    removeTrainingSet(id: ID!): Training!
 }

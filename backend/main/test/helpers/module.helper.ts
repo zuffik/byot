@@ -8,7 +8,7 @@ export interface Dependencies {
   queryRunner: QueryRunner;
 }
 
-export const createApp = async (): Promise<Dependencies>  => {
+export const createApp = async (): Promise<Dependencies> => {
   let app: INestApplication;
   let queryRunner: QueryRunner;
   const moduleFixture: TestingModule = await Test.createTestingModule({

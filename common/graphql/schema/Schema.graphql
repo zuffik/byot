@@ -1,31 +1,31 @@
 type Query {
-    allUsers(filter: FulltextFilter): UserList! @restrictedForRole(role: ADMIN)
-    allMedia(filter: FulltextFilterForUser): MediaList! @restrictedForRole(role: ADMIN)
-    allTrainings(filter: FulltextFilterForUser): TrainingList! @restrictedForRole(role: ADMIN)
-    allTrainingSets(filter: FulltextFilterForUser): TrainingSetList! @restrictedForRole(role: ADMIN)
+    allUsers(filter: FulltextFilter): UserList!
+    allMedia(filter: FulltextFilterForUser): MediaList!
+    allTrainings(filter: FulltextFilterForUser): TrainingList!
+    allTrainingSets(filter: FulltextFilterForUser): TrainingSetList!
 
-    user(id: ID!): User! @restrictedForOwnerOrRole(role: ADMIN)
-    trainingSets(pagination: Pagination): TrainingSetList! @auth
-    trainingSet(id: ID!): TrainingSet! @restrictedForOwnerOrRole(role: ADMIN)
-    training(id: ID!): TrainingSet! @restrictedForOwnerOrRole(role: ADMIN)
-    media(id: ID!): Media! @restrictedForOwnerOrRole(role: ADMIN)
+    user(id: ID!): User!
+    trainingSets(pagination: Pagination): TrainingSetList!
+    trainingSet(id: ID!): TrainingSet!
+    training(id: ID!): TrainingSet!
+    media(id: ID!): Media!
 
-    trainingDraft: Training @auth
-    findMedia(filter: MediaFilter): MediaList! @auth
+    trainingDraft: Training
+    findMedia(filter: MediaFilter): MediaList!
 }
 
 type Mutation {
     userRegister(user: UserRegister!): Auth!
     userLogin(user: UserLogin!): Auth!
-    userUpdateMyself(user: UserUpdateInput!): Auth! @auth
-    userUpdate(id: ID!, user: UserUpdateInput!): User! @restrictedForOwnerOrRole(role: ADMIN)
+    userUpdateMyself(user: UserUpdateInput!): Auth!
+    userUpdate(id: ID!, user: UserUpdateInput!): User!
 
-    trainingDraftUpdateOrCreate(draft: TrainingDraftInput!): TrainingDraft! @auth
-    saveTrainingDraft(draft: TrainingDraftInput!): Training! @auth
-    updateTraining(training: TrainingUpdateInput!): Training! @restrictedForOwnerOrRole(role: ADMIN)
-    removeMedia(id: ID!): Training! @restrictedForOwnerOrRole(role: ADMIN)
-    removeTraining(id: ID!): Training! @restrictedForOwnerOrRole(role: ADMIN)
-    removeTrainingSet(id: ID!): Training! @restrictedForOwnerOrRole(role: ADMIN)
+    trainingDraftUpdateOrCreate(draft: TrainingDraftInput!): TrainingDraft!
+    saveTrainingDraft(draft: TrainingDraftInput!): Training!
+    updateTraining(training: TrainingUpdateInput!): Training!
+    removeMedia(id: ID!): Training!
+    removeTraining(id: ID!): Training!
+    removeTrainingSet(id: ID!): Training!
 }
 
 # WARN! there is no way to make TS interface with methods so these methods need to be tested

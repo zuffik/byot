@@ -1,21 +1,9 @@
-import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
-import {
-  Auth,
-  FulltextFilter,
-  IMutation,
-  IQuery,
-  User as IUser,
-  UserList,
-  UserLogin,
-  UserRegister,
-  UserUpdateInput,
-} from '../graphql/ts/types';
+import { Args, Query, Resolver } from '@nestjs/graphql';
+import { Auth, FulltextFilter, IMutation, IQuery, Role, User as IUser, UserList, UserLogin, UserUpdateInput } from '../graphql/ts/types';
 import { User } from './user.entity';
 import { UserService } from './user.service';
-import { UseGuards } from '@nestjs/common';
-import { JwtGuard } from '../auth/jwt/jwt.guard';
+import { AuthRoles } from '../auth/decorators/auth-roles.decorator';
 
-@UseGuards(JwtGuard)
 @Resolver('User')
 export class UserResolver implements Partial<IMutation & IQuery> {
   constructor(
@@ -24,6 +12,7 @@ export class UserResolver implements Partial<IMutation & IQuery> {
   }
 
   @Query('allUsers')
+  @AuthRoles(Role.ADMIN)
   public async allUsers(@Args('filter') filter?: FulltextFilter): Promise<UserList> {
     const [entries, totalCount] = await this.userService.findAndCount(filter);
     return {

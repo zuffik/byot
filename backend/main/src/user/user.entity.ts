@@ -1,9 +1,9 @@
 import { DateTime, Role, User as IUser } from '../graphql/ts/types';
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
+import { BaseEntity, Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
 import { timestampToDateTimeORMTransformer } from '../helpers/TimestampToDateTime';
 
 @Entity()
-export class User implements IUser {
+export class User extends BaseEntity implements IUser {
   @PrimaryGeneratedColumn('uuid')
   public id: string;
 

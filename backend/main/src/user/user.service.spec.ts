@@ -5,8 +5,7 @@ import { User } from './user.entity';
 import { Repository } from 'typeorm';
 import { SeedModule } from '../seed/seed.module';
 import { GeneratorGraphqlService } from '../seed/generator-graphql/generator-graphql.service';
-import * as _ from 'lodash';
-import { mockRepository, proxyMock } from '../test/proxy.mock';
+import { mockRepository } from '../test/proxy.mock';
 
 describe('UserService', () => {
   let service: UserService;

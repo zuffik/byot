@@ -6,4 +6,5 @@ import { GeneratorGraphqlService } from './generator-graphql/generator-graphql.s
   providers: [GeneratorGraphqlService, GeneratorOrmService],
   exports: [GeneratorGraphqlService, GeneratorOrmService],
 })
-export class SeedModule {}
+export class SeedModule {
+}

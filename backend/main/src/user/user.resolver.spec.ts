@@ -5,6 +5,9 @@ import { testList } from '../test/list.tester';
 import { SeedModule } from '../seed/seed.module';
 import { GeneratorGraphqlService } from '../seed/generator-graphql/generator-graphql.service';
 import { mockRepository } from '../test/proxy.mock';
+import { JwtUser } from '../auth/decorators/jwt-user.decorator';
+import { Role } from '../graphql/ts/types';
+import { ForbiddenException } from '@nestjs/common';
 
 describe('UserResolver', () => {
   let resolver: UserResolver;
@@ -32,6 +35,7 @@ describe('UserResolver', () => {
     const properties = [
       'allUsers',
       'user',
+      'me',
       'userUpdateMyself',
       'userUpdate',
     ];
@@ -71,4 +75,36 @@ describe('UserResolver', () => {
     expect(spy).toBeCalledWith({ pagination });
     testList(result);
   });
+
+  it('should find user by id', async () => {
+    const id = 'id';
+    const spy = jest.spyOn(userService, 'findById');
+    await resolver.user(id, {
+      id,
+      email: 'any',
+      role: Role.USER,
+    });
+    expect(spy).toBeCalledWith(id);
+  });
+
+  it('should fail fetch due to invalid id', async () => {
+    const id = 'id';
+    await expect(resolver.user(id, {
+      id: 'invalid-id',
+      email: 'any',
+      role: Role.USER,
+    })).rejects.toBeInstanceOf(ForbiddenException);
+  });
+
+  it('should find myself', async () => {
+    const id = 'id';
+    const spy = jest.spyOn(userService, 'findById');
+    await resolver.me({
+      id,
+      email: 'any',
+      role: Role.USER,
+    });
+    expect(spy).toBeCalledWith(id);
+  });
 });
+

@@ -136,6 +136,7 @@ export interface IQuery {
     allTrainings(filter?: FulltextFilterForUser): TrainingList | Promise<TrainingList>;
     allTrainingSets(filter?: FulltextFilterForUser): TrainingSetList | Promise<TrainingSetList>;
     user(id: string): User | Promise<User>;
+    me(): User | Promise<User>;
     trainingSets(pagination?: Pagination): TrainingSetList | Promise<TrainingSetList>;
     trainingSet(id: string): TrainingSet | Promise<TrainingSet>;
     training(id: string): TrainingSet | Promise<TrainingSet>;

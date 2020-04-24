@@ -1,4 +1,4 @@
-import { Auth, UserList, UserRegister } from './types';
+import { Auth, User, UserList, UserRegister } from './types';
 
 export interface Interaction<T> {
   query: string;
@@ -70,5 +70,37 @@ export const graphQLInteraction = {
         }
     `,
     variables: { userNameOrEmail, password },
+  }),
+  user: (id: string): Interaction<{ user: User }> => ({
+    query: gql`
+        query user($id: ID!) {
+            user(id: $id) {
+                id
+                role
+                firstName
+                lastName
+                fullName
+                userName
+                email
+            }
+        }
+    `,
+    variables: { id },
+  }),
+  me: (): Interaction<{ me: User }> => ({
+    query: gql`
+        query me {
+            me {
+                id
+                role
+                firstName
+                lastName
+                fullName
+                userName
+                email
+            }
+        }
+    `,
+    variables: { },
   }),
 };

@@ -7,8 +7,8 @@ type Query {
     # todo
     allTrainingSets(filter: FulltextFilterForUser): TrainingSetList!
 
-    # todo
     user(id: ID!): User!
+    me: User!
     # todo
     trainingSets(pagination: Pagination): TrainingSetList!
     # todo

@@ -75,7 +75,7 @@ describe('Auth integration', () => {
 
   it('should call role protected method and pass', async () => {
     await Promise.all(_.times(10, () => userService.create(gqlGenerator.userRegister())));
-    const response = await makeGraphQLRequest(app, graphQLInteraction.allUsers(), Role.ADMIN);
+    const response = await makeGraphQLRequest(app, graphQLInteraction.allUsers(), {userRole: Role.ADMIN});
     const { data } = response.body;
     testList(data.allUsers);
     data.allUsers.entries.forEach(testUser);
@@ -89,8 +89,13 @@ describe('Auth integration', () => {
 
   it('should call role protected method and fail', async () => {
     await Promise.all(_.times(10, () => userService.create(gqlGenerator.userRegister())));
-    const response = await makeGraphQLRequest(app, graphQLInteraction.allUsers(), Role.USER);
+    const response = await makeGraphQLRequest(app, graphQLInteraction.allUsers(), {userRole: Role.USER});
     expect(response.body.errors).toEqual(expect.any(Array));
+  });
+
+  it('should inject current user', async () => {
+    const response = await makeGraphQLRequest(app, graphQLInteraction.me(), {userRole: Role.ADMIN});
+    expect(response.body.errors).toBeUndefined();
   });
 
   afterEach(() => destroyApp({ app, queryRunner }));

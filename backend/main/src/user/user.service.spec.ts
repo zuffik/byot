@@ -102,4 +102,15 @@ describe('UserService', () => {
       ]),
     }));
   });
+
+  it('should get user by ID', async () => {
+    const id = 'id';
+    const spy = jest.spyOn(repository, 'findOne');
+    await service.findById(id);
+    expect(spy).toBeCalledWith({
+      where: {
+        id,
+      },
+    });
+  });
 });

@@ -1,9 +1,14 @@
-import { GqlExecutionContext } from '@nestjs/graphql';
-import { createParamDecorator, ExecutionContext } from '@nestjs/common';
+import { createParamDecorator } from '@nestjs/common';
+import { Role } from '../../graphql/ts/types';
+
+export interface JwtUserType {
+  id: string;
+  email: string;
+  role: Role;
+}
 
 export const JwtUser = createParamDecorator(
-  (data: unknown, context: ExecutionContext) => {
-    const ctx = GqlExecutionContext.create(context);
-    return ctx.getContext().req.user;
+  (data, [root, args, ctx, info]) => {
+    return ctx.req.user;
   },
 );

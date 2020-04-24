@@ -11,8 +11,14 @@ export interface IResponse<T> extends Omit<Request, 'body'> {
   };
 }
 
-export const makeGraphQLRequest = async <T>(app: INestApplication, interaction: Interaction<T>, userRole?: Role): Promise<IResponse<T>> => {
-  const headers = userRole ? { Authorization: `Bearer ${await registerTestUser(app, userRole)}` } : {};
+export const makeGraphQLRequest = async <T>(app: INestApplication, interaction: Interaction<T>, {
+  userRole,
+  token
+}: {
+  userRole?: Role,
+  token?: string,
+} = {}): Promise<IResponse<T>> => {
+  const headers = userRole || token ? { Authorization: `Bearer ${token || await registerTestUser(app, userRole)}` } : {};
   return (
     await request(app.getHttpServer())
       .post('/graphql')

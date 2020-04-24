@@ -1,32 +1,54 @@
 type Query {
     allUsers(filter: FulltextFilter): UserList!
+    # todo
     allMedia(filter: FulltextFilterForUser): MediaList!
+    # todo
     allTrainings(filter: FulltextFilterForUser): TrainingList!
+    # todo
     allTrainingSets(filter: FulltextFilterForUser): TrainingSetList!
 
+    # todo
     user(id: ID!): User!
+    # todo
     trainingSets(pagination: Pagination): TrainingSetList!
+    # todo
     trainingSet(id: ID!): TrainingSet!
+    # todo
     training(id: ID!): TrainingSet!
+    # todo
     media(id: ID!): Media!
 
+    # todo
     trainingDraft: Training
+    # todo
     findMedia(filter: MediaFilter): MediaList!
 }
 
 type Mutation {
     userRegister(user: UserRegister!): Auth!
     userLogin(user: UserLogin!): Auth!
+    # todo
     userUpdateMyself(user: UserUpdateInput!): Auth!
+    # todo
     userUpdate(id: ID!, user: UserUpdateInput!): User!
 
+    # todo
     trainingDraftUpdateOrCreate(draft: TrainingDraftInput!): TrainingDraft!
+    # todo
     saveTrainingDraft(draft: TrainingDraftInput!): Training!
+    # todo
     updateTraining(training: TrainingUpdateInput!): Training!
+    # todo
     removeMedia(id: ID!): Training!
+    # todo
     removeTraining(id: ID!): Training!
+    # todo
     removeTrainingSet(id: ID!): Training!
 }
+
+# New features:
+# invitations
+# statistics
 
 # WARN! there is no way to make TS interface with methods so these methods need to be tested
 schema {

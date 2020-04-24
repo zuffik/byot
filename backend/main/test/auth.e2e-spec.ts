@@ -24,6 +24,9 @@ describe('Auth integration', () => {
   });
 
   it('should contain valid structure', () => {
+    expect(gqlGenerator).toBeDefined();
+    expect(userService).toBeDefined();
+    expect(queryRunner).toBeDefined();
     expect(graphQLInteraction).toBeDefined();
     expect(graphQLInteraction).toHaveProperty('userRegister');
   });

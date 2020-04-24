@@ -27,6 +27,7 @@ describe('User integration', () => {
   it('should contain valid structure', async () => {
     expect(gqlGenerator).toBeDefined();
     expect(userService).toBeDefined();
+    expect(queryRunner).toBeDefined();
     expect(graphQLInteraction).toBeDefined();
     expect(graphQLInteraction).toHaveProperty('allUsers');
   });

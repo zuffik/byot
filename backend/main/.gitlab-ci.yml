@@ -21,12 +21,15 @@ Build:
     paths:
       - backend/main/dist
 
-e2e test:
+Test e2e:
   stage: test
+  dependencies:
+    - Build
   script:
+    - ./node_modules/.bin/ts-node src/migrate.ts
     - yarn test:e2e
 
-Unit test:
+Test unit:
   stage: test
   script:
     - yarn test

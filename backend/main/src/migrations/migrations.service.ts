@@ -5,11 +5,15 @@ import * as _ from 'lodash';
 import * as bcrypt from 'bcrypt';
 import { chance } from '../seed/chance';
 import { Role } from '../graphql/ts/types';
+import { InjectRepository } from '@nestjs/typeorm';
+import { User } from '../user/user.entity';
+import { Repository } from 'typeorm';
 
 @Injectable()
 export class MigrationsService implements OnModuleInit {
   constructor(
     @Inject(UserService) private readonly userService: UserService,
+    @InjectRepository(User) private readonly userRepository: Repository<User>,
     @Inject(ConfigService) private readonly cfgService: ConfigService,
   ) {
   }
@@ -19,7 +23,7 @@ export class MigrationsService implements OnModuleInit {
     if (!superAdmin) {
       superAdmin = await this.userService.findByUsernameOrEmail(this.cfgService.get<string>('app.superAdmin.email'));
       if (!superAdmin) {
-        await this.userService.create({
+        await this.userRepository.create({
           firstName: 'Super',
           lastName: 'Admin',
           role: Role.ADMIN,
@@ -41,7 +45,6 @@ export class MigrationsService implements OnModuleInit {
         lastName: chance.last(),
         userName: demoUserPrefix + i,
         email: demoUserPrefix + i + '@example.com',
-        role: Role.USER,
         password: bcrypt.hashSync(demoUserPass, 10),
       })));
     }

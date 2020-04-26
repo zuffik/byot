@@ -15,7 +15,7 @@
   },
   "lint-staged": {
     "backend/main/**/*.ts": [
-      "./backend/main/node_modules/.bin/prettier --write"
+      "./backend/main/node_modules/.bin/prettier --config ./backend/main/.prettierrc --write"
     ]
   }
 }

@@ -14,10 +14,8 @@
     }
   },
   "lint-staged": {
-    "backend/main/**/*.{ts}": [
-      "cd backend/main",
-      "./node_modules/.bin/prettier --write",
-      "git add"
+    "backend/main/**/*.ts": [
+      "./backend/main/node_modules/.bin/prettier --write"
     ]
   }
 }

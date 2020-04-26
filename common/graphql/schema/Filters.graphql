@@ -13,4 +13,5 @@ input MediaFilter {
     query: String
     pagination: Pagination
     source: MediaType
+    owner: ID
 }

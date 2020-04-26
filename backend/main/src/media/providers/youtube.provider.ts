@@ -20,6 +20,8 @@ export class YoutubeProvider implements MediaProvider {
   private readonly urlRegexIdIndex: number = 4;
   private readonly urlRegex: RegExp = /(https?:\/\/)?(www\.)?(youtu\.be\/|youtube.com\/watch\?v=)([A-Za-z0-9\-_]+)($|&|#)/;
 
+  public readonly type: SourceType = SourceType.YOUTUBE;
+
   constructor(@Inject(ConfigService) private readonly cfg: ConfigService) {
     const service = google.youtube('v3');
     this.searchResource = service.search;

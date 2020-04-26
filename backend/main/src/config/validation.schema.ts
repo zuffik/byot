@@ -5,6 +5,8 @@ export const validationSchema = Joi.object({
     .valid('development', 'production', 'test')
     .default('development'),
 
+  CREDENTIALS_API_KEY_GOOGLE_YOUTUBE: Joi.string().required(),
+
   APP_PORT: Joi.number().default(3000),
   APP_SECRET: Joi.string().required(),
   APP_SUPER_ADMIN_USERNAME: Joi.string().required(),

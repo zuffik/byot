@@ -1,4 +1,6 @@
 import * as _ from 'lodash';
+import { MediaProvider } from '../media/providers/media.provider';
+import { Media } from '../graphql/ts/types';
 
 export const proxyMock = (initialObject: object = {}) =>
   new Proxy(
@@ -36,5 +38,14 @@ export const mockRepository = (initialObject: object = {}) =>
   proxyMock({
     findAndCount: jest.fn(async () => [[], 0]),
     create: jest.fn((entity) => _.clone(entity)),
+    ...initialObject,
+  });
+
+export const mockMediaProvider = (initialObject: object = {}) =>
+  proxyMock({
+    ...({
+      findAll: jest.fn(async () => [[], 0] as [Media[], number]),
+      parseFromUrl: jest.fn(async () => undefined),
+    } as Partial<MediaProvider>),
     ...initialObject,
   });

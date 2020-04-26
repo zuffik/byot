@@ -11,6 +11,8 @@ import { SeedModule } from './seed/seed.module';
 import * as path from 'path';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { MigrationsModule } from './migrations/migrations.module';
+import { MediaModule } from './media/media.module';
+import { apisConfig } from './config/apis.config';
 
 @Module({
   imports: [
@@ -25,7 +27,7 @@ import { MigrationsModule } from './migrations/migrations.module';
         .reverse(),
       isGlobal: true,
       validationSchema,
-      load: [databaseConfig, appConfig, nodeConfig],
+      load: [databaseConfig, appConfig, nodeConfig, apisConfig],
     }),
     GraphQLModule.forRootAsync({
       inject: [ConfigService],
@@ -61,6 +63,7 @@ import { MigrationsModule } from './migrations/migrations.module';
     AuthModule,
     SeedModule,
     MigrationsModule,
+    MediaModule,
   ],
   controllers: [],
   providers: [],

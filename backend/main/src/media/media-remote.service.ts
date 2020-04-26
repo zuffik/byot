@@ -35,9 +35,13 @@ export class MediaRemoteService {
   }
 
   async parseFromUrl(url: string): Promise<Media | undefined> {
-    const resources = await Promise.all(
-      _.values(this.providers).map((provider) => provider.parseFromUrl(url)),
+    const promises = _.values(this.providers).map((provider) =>
+      provider.parseFromUrl(url),
     );
+    if (promises.length === 0) {
+      return undefined;
+    }
+    const resources = await Promise.all(promises);
     return _.find(resources);
   }
 }

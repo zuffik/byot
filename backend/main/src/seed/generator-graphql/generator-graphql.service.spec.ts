@@ -6,6 +6,7 @@ import {
   testUserUpdate,
 } from '../../test/user.tester';
 import { GeneratorGraphqlService } from './generator-graphql.service';
+import { testMedia } from '../../test/media.tester';
 
 describe('GeneratorGraphqlService', () => {
   let service: GeneratorGraphqlService;
@@ -46,5 +47,10 @@ describe('GeneratorGraphqlService', () => {
     const userUpdate = service.userUpdate();
     expect(userUpdate.passwordRepeat).toEqual(userUpdate.password);
     testUserUpdate(userUpdate);
+  });
+
+  it('should generate media with any source', () => {
+    const media = service.media();
+    testMedia(media);
   });
 });

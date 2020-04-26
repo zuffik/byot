@@ -3,7 +3,10 @@ import * as moment from 'moment';
 import { chance } from '../chance';
 import {
   DateTime,
+  Media,
+  MediaType,
   Role,
+  SourceType,
   User as IUser,
   UserRegister,
   UserUpdateInput,
@@ -63,6 +66,23 @@ export class GeneratorGraphqlService {
       userName: chance.bool({ likelihood: 20 }) && chance.twitter(),
       password: pass,
       passwordRepeat: passRep,
+    };
+  }
+
+  public media(): Media {
+    return {
+      id: chance.guid(),
+      source: {
+        sourceType: SourceType.YOUTUBE,
+        mediaType: chance.pickone([
+          MediaType.VIDEO,
+          MediaType.AUDIO,
+          MediaType.IMAGE,
+        ]),
+        thumbnail: 'https://picsum.photos/200',
+      },
+      updatedAt: this.dateTime(),
+      createdAt: this.dateTime(),
     };
   }
 }

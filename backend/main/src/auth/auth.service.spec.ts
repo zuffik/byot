@@ -19,15 +19,13 @@ describe('AuthService', () => {
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      imports: [
-        SeedModule,
-      ],
+      imports: [SeedModule],
       providers: [
         AuthService,
         {
           provide: UserService,
           useValue: proxyMock({
-            create: jest.fn(async user => _.clone(user)),
+            create: jest.fn(async (user) => _.clone(user)),
           }),
         },
         {
@@ -58,9 +56,11 @@ describe('AuthService', () => {
     const userRegister = gqlGenerator.userRegister();
     const spy = jest.spyOn(userService, 'create');
     const user = await authService.createUser(userRegister);
-    expect(spy).toBeCalledWith(expect.objectContaining({
-      ..._.omit(userRegister, 'password'),
-    }));
+    expect(spy).toBeCalledWith(
+      expect.objectContaining({
+        ..._.omit(userRegister, 'password'),
+      }),
+    );
     expect(user.user.password).not.toEqual(userRegister.password);
   });
 
@@ -79,7 +79,8 @@ describe('AuthService', () => {
   it('should login with valid credentials', async () => {
     const userNameOrEmail = 'user';
     const password = 'pass';
-    const spyFind = jest.spyOn(userService, 'findByUsernameOrEmail')
+    const spyFind = jest
+      .spyOn(userService, 'findByUsernameOrEmail')
       .mockImplementation(async () => {
         const user = ormGenerator.user();
         user.userName = userNameOrEmail;
@@ -102,23 +103,29 @@ describe('AuthService', () => {
   it('should fail login with invalid username or email', async () => {
     const userNameOrEmail = 'user';
     const password = 'pass';
-    const spyFind = jest.spyOn(userService, 'findByUsernameOrEmail')
+    const spyFind = jest
+      .spyOn(userService, 'findByUsernameOrEmail')
       .mockImplementation(async () => undefined);
-    await expect(authService.login(userNameOrEmail, password)).rejects.toBeInstanceOf(UnauthorizedException);
+    await expect(
+      authService.login(userNameOrEmail, password),
+    ).rejects.toBeInstanceOf(UnauthorizedException);
     expect(spyFind).toBeCalledWith(userNameOrEmail);
   });
 
   it('should fail login with invalid password', async () => {
     const userNameOrEmail = 'user';
     const password = 'pass';
-    const spyFind = jest.spyOn(userService, 'findByUsernameOrEmail')
+    const spyFind = jest
+      .spyOn(userService, 'findByUsernameOrEmail')
       .mockImplementation(async () => {
         const user = ormGenerator.user();
         user.userName = userNameOrEmail;
         user.email = userNameOrEmail;
         return user;
       });
-    await expect(authService.login(userNameOrEmail, password)).rejects.toBeInstanceOf(UnauthorizedException);
+    await expect(
+      authService.login(userNameOrEmail, password),
+    ).rejects.toBeInstanceOf(UnauthorizedException);
     expect(spyFind).toBeCalledWith(userNameOrEmail);
   });
 

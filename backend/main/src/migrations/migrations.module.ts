@@ -7,7 +7,12 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from '../user/user.entity';
 
 @Module({
-  imports: [ConfigModule, UserModule, SeedModule, TypeOrmModule.forFeature([User])],
+  imports: [
+    ConfigModule,
+    UserModule,
+    SeedModule,
+    TypeOrmModule.forFeature([User]),
+  ],
   providers: [MigrationsService],
 })
 export class MigrationsModule {}

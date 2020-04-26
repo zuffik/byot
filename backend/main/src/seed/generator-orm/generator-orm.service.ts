@@ -5,9 +5,9 @@ import { GeneratorGraphqlService } from '../generator-graphql/generator-graphql.
 @Injectable()
 export class GeneratorOrmService {
   constructor(
-    @Inject(GeneratorGraphqlService) private gqlGenerator: GeneratorGraphqlService,
-  ) {
-  }
+    @Inject(GeneratorGraphqlService)
+    private gqlGenerator: GeneratorGraphqlService,
+  ) {}
 
   public user(): User {
     const gql = this.gqlGenerator.user();

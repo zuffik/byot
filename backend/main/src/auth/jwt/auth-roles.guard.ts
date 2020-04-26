@@ -15,7 +15,10 @@ export class AuthRolesGuard extends AuthGuard {
     if (!isAuth) {
       return false;
     }
-    const roles = this.reflector.get<string[]>(AuthRolesMetaDataKey, context.getHandler());
+    const roles = this.reflector.get<string[]>(
+      AuthRolesMetaDataKey,
+      context.getHandler(),
+    );
     if (!roles) {
       return true;
     }

@@ -42,22 +42,28 @@ describe('AuthResolver', () => {
 
   it('should register and authenticate user', async () => {
     const userRegister = gqlGenerator.userRegister();
-    const spyAuth = jest.spyOn(authService, 'createUser').mockImplementation(async () => ({
-      user: ormGenerator.user(),
-      token: '',
-    }));
+    const spyAuth = jest
+      .spyOn(authService, 'createUser')
+      .mockImplementation(async () => ({
+        user: ormGenerator.user(),
+        token: '',
+      }));
     const auth = await resolver.userRegister(userRegister);
     expect(spyAuth).toBeCalledWith(userRegister);
-    expect(auth).toEqual(expect.objectContaining({
-      token: expect.any(String),
-      user: expect.any(Object),
-    }));
+    expect(auth).toEqual(
+      expect.objectContaining({
+        token: expect.any(String),
+        user: expect.any(Object),
+      }),
+    );
   });
 
   it('should update myself', async () => {
     const id = 'id';
     const userUpdateInput = gqlGenerator.userUpdate();
-    const spy = jest.spyOn(authService, 'updateUser').mockImplementation(async () => new User());
+    const spy = jest
+      .spyOn(authService, 'updateUser')
+      .mockImplementation(async () => new User());
     await resolver.userUpdateMyself(userUpdateInput, {
       id,
       email: 'any',
@@ -69,13 +75,17 @@ describe('AuthResolver', () => {
   it('should fail update myself due to non-matching password', async () => {
     const id = 'id';
     const userUpdateInput = gqlGenerator.userUpdate(false);
-    jest.spyOn(authService, 'updateUser').mockImplementation(async () => new User());
+    jest
+      .spyOn(authService, 'updateUser')
+      .mockImplementation(async () => new User());
     userUpdateInput.password = 'pwd';
     userUpdateInput.passwordRepeat = '';
-    await expect(resolver.userUpdateMyself(userUpdateInput, {
-      id,
-      email: 'any',
-      role: Role.USER,
-    })).rejects.toBeInstanceOf(BadRequestException);
+    await expect(
+      resolver.userUpdateMyself(userUpdateInput, {
+        id,
+        email: 'any',
+        role: Role.USER,
+      }),
+    ).rejects.toBeInstanceOf(BadRequestException);
   });
 });

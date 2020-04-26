@@ -1,6 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { User } from './user.entity';
-import { FulltextFilter, UserRegister, UserUpdateInput } from '../graphql/ts/types';
+import {
+  FulltextFilter,
+  UserRegister,
+  UserUpdateInput,
+} from '../graphql/ts/types';
 import { InjectRepository } from '@nestjs/typeorm';
 import { DeepPartial, FindManyOptions, Like, Repository } from 'typeorm';
 import * as _ from 'lodash';
@@ -9,10 +13,11 @@ import * as _ from 'lodash';
 export class UserService {
   constructor(
     @InjectRepository(User) private readonly userRepository: Repository<User>,
-  ) {
-  }
+  ) {}
 
-  public async findAndCount(filter?: FulltextFilter): Promise<[User[], number]> {
+  public async findAndCount(
+    filter?: FulltextFilter,
+  ): Promise<[User[], number]> {
     const query: FindManyOptions<User> = {};
     if (filter?.query) {
       const like = `%${filter.query}%`;
@@ -36,12 +41,11 @@ export class UserService {
     return entity;
   }
 
-  public async findByUsernameOrEmail(usernameOrEmail: string): Promise<User | undefined> {
+  public async findByUsernameOrEmail(
+    usernameOrEmail: string,
+  ): Promise<User | undefined> {
     return await this.userRepository.findOne({
-      where: [
-        { userName: usernameOrEmail },
-        { email: usernameOrEmail },
-      ],
+      where: [{ userName: usernameOrEmail }, { email: usernameOrEmail }],
     });
   }
 
@@ -51,7 +55,10 @@ export class UserService {
     });
   }
 
-  public async update(id: string, user: UserUpdateInput): Promise<User | undefined> {
+  public async update(
+    id: string,
+    user: UserUpdateInput,
+  ): Promise<User | undefined> {
     const result = await this.userRepository.update({ id }, user);
     if (result.affected === 0) {
       return undefined;

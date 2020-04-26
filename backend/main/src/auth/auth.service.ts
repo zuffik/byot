@@ -11,8 +11,7 @@ export class AuthService {
   constructor(
     @Inject(UserService) private readonly userService: UserService,
     @Inject(JwtService) private readonly jwtService: JwtService,
-  ) {
-  }
+  ) {}
 
   public async createUser(userRegister: UserRegister): Promise<Auth> {
     const user = {

@@ -1,6 +1,10 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { testDateTime } from '../../test/datetime.tester';
-import { testUser, testUserRegister, testUserUpdate } from '../../test/user.tester';
+import {
+  testUser,
+  testUserRegister,
+  testUserUpdate,
+} from '../../test/user.tester';
 import { GeneratorGraphqlService } from './generator-graphql.service';
 
 describe('GeneratorGraphqlService', () => {

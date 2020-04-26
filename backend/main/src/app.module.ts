@@ -15,7 +15,14 @@ import { MigrationsModule } from './migrations/migrations.module';
 @Module({
   imports: [
     ConfigModule.forRoot({
-      envFilePath: ['.env', `.env.${process.env.NODE_ENV}`, '.env.local', `.env.${process.env.NODE_ENV}.local`].map(r => `${process.cwd()}/${r}`).reverse(),
+      envFilePath: [
+        '.env',
+        `.env.${process.env.NODE_ENV}`,
+        '.env.local',
+        `.env.${process.env.NODE_ENV}.local`,
+      ]
+        .map((r) => `${process.cwd()}/${r}`)
+        .reverse(),
       isGlobal: true,
       validationSchema,
       load: [databaseConfig, appConfig, nodeConfig],
@@ -41,10 +48,13 @@ import { MigrationsModule } from './migrations/migrations.module';
         username: cfg.get<string>('db.user'),
         password: cfg.get<string>('db.pass'),
         database: cfg.get<string>('db.name'),
-        entities: process.env.NODE_ENV !== 'test' ? ['./**/*.entity.js'] : ['./**/*.entity.ts'],
+        entities:
+          process.env.NODE_ENV !== 'test'
+            ? ['./**/*.entity.js']
+            : ['./**/*.entity.ts'],
         synchronize: true,
         keepConnectionAlive: true,
-        extra: {connectionLimit: 1000},
+        extra: { connectionLimit: 1000 },
       }),
     }),
     UserModule,
@@ -55,5 +65,4 @@ import { MigrationsModule } from './migrations/migrations.module';
   controllers: [],
   providers: [],
 })
-export class AppModule {
-}
+export class AppModule {}

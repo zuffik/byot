@@ -9,5 +9,4 @@ declare namespace jest {
     toBeStringOrNull: () => void;
     toBeOptionalString: () => void;
   }
-
 }

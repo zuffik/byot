@@ -100,12 +100,14 @@ describe('UserService', () => {
     const usernameOrEmail = 'user';
     const spy = jest.spyOn(repository, 'findOne');
     await service.findByUsernameOrEmail(usernameOrEmail);
-    expect(spy).toBeCalledWith(expect.objectContaining({
-      where: expect.arrayContaining([
-        expect.objectContaining({ email: usernameOrEmail }),
-        expect.objectContaining({ userName: usernameOrEmail }),
-      ]),
-    }));
+    expect(spy).toBeCalledWith(
+      expect.objectContaining({
+        where: expect.arrayContaining([
+          expect.objectContaining({ email: usernameOrEmail }),
+          expect.objectContaining({ userName: usernameOrEmail }),
+        ]),
+      }),
+    );
   });
 
   it('should get user by ID', async () => {
@@ -122,16 +124,21 @@ describe('UserService', () => {
   it('should update user', async () => {
     const id = 'id';
     const userUpdateInput = _.omit(gqlGenerator.userUpdate(), 'passwordRepeat');
-    const spySave = jest.spyOn(repository, 'update').mockImplementation(async (): Promise<UpdateResult> => ({
-      affected: 1,
-      generatedMaps: [],
-      raw: undefined,
-    }));
+    const spySave = jest.spyOn(repository, 'update').mockImplementation(
+      async (): Promise<UpdateResult> => ({
+        affected: 1,
+        generatedMaps: [],
+        raw: undefined,
+      }),
+    );
     const spyFind = jest.spyOn(repository, 'findOne');
     await service.update(id, userUpdateInput);
-    expect(spySave).toBeCalledWith({
-      id,
-    }, expect.objectContaining(userUpdateInput));
+    expect(spySave).toBeCalledWith(
+      {
+        id,
+      },
+      expect.objectContaining(userUpdateInput),
+    );
     expect(spyFind).toBeCalledWith({
       where: {
         id,
@@ -142,16 +149,21 @@ describe('UserService', () => {
   it('should fail update user', async () => {
     const id = 'id';
     const userUpdateInput = _.omit(gqlGenerator.userUpdate(), 'passwordRepeat');
-    const spySave = jest.spyOn(repository, 'update').mockImplementation(async (): Promise<UpdateResult> => ({
-      affected: 0,
-      generatedMaps: [],
-      raw: undefined,
-    }));
+    const spySave = jest.spyOn(repository, 'update').mockImplementation(
+      async (): Promise<UpdateResult> => ({
+        affected: 0,
+        generatedMaps: [],
+        raw: undefined,
+      }),
+    );
     const spyFind = jest.spyOn(repository, 'findOne');
     const updateResult = await service.update(id, userUpdateInput);
-    expect(spySave).toBeCalledWith({
-      id,
-    }, expect.objectContaining(userUpdateInput));
+    expect(spySave).toBeCalledWith(
+      {
+        id,
+      },
+      expect.objectContaining(userUpdateInput),
+    );
     expect(spyFind).not.toBeCalled();
     expect(updateResult).toBeUndefined();
   });

@@ -1,7 +1,9 @@
 import * as moment from 'moment';
 import { DateTime } from '../graphql/ts/types';
 
-export const timestampToDateTime = (value?: string | moment.Moment): DateTime => {
+export const timestampToDateTime = (
+  value?: string | moment.Moment,
+): DateTime => {
   const date = moment(value || 0);
   return {
     humanReadable: date.format(),

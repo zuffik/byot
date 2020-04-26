@@ -82,16 +82,20 @@ describe('UserResolver', () => {
 
   it('should fail fetch due to invalid id', async () => {
     const id = 'id';
-    await expect(resolver.user(id, {
-      id: 'invalid-id',
-      email: 'any',
-      role: Role.USER,
-    })).rejects.toBeInstanceOf(NotFoundException);
+    await expect(
+      resolver.user(id, {
+        id: 'invalid-id',
+        email: 'any',
+        role: Role.USER,
+      }),
+    ).rejects.toBeInstanceOf(NotFoundException);
   });
 
   it('should find myself', async () => {
     const id = 'id';
-    const spy = jest.spyOn(userService, 'findById').mockImplementation(async () => new User());
+    const spy = jest
+      .spyOn(userService, 'findById')
+      .mockImplementation(async () => new User());
     await resolver.me({
       id,
       email: 'any',
@@ -103,34 +107,43 @@ describe('UserResolver', () => {
   it('should update user', async () => {
     const id = 'id';
     const userUpdateInput = generator.userUpdate();
-    const spy = jest.spyOn(userService, 'update').mockImplementation(async () => new User());
+    const spy = jest
+      .spyOn(userService, 'update')
+      .mockImplementation(async () => new User());
     await resolver.userUpdate(id, userUpdateInput, {
       id,
       email: 'any',
       role: Role.USER,
     });
-    expect(spy).toBeCalledWith(id, _.omit(userUpdateInput, ['password', 'passwordRepeat']));
+    expect(spy).toBeCalledWith(
+      id,
+      _.omit(userUpdateInput, ['password', 'passwordRepeat']),
+    );
   });
 
   it('should fail update user due to non-existing user', async () => {
     const id = 'id';
     const userUpdateInput = generator.userUpdate();
     jest.spyOn(userService, 'update').mockImplementation(async () => undefined);
-    await expect(resolver.userUpdate(id, userUpdateInput, {
-      id,
-      email: 'any',
-      role: Role.USER,
-    })).rejects.toBeInstanceOf(NotFoundException);
+    await expect(
+      resolver.userUpdate(id, userUpdateInput, {
+        id,
+        email: 'any',
+        role: Role.USER,
+      }),
+    ).rejects.toBeInstanceOf(NotFoundException);
   });
 
   it('should fail update user due to insufficient permissions', async () => {
     const id = 'id';
     const userUpdateInput = generator.userUpdate();
     jest.spyOn(userService, 'update').mockImplementation(async () => undefined);
-    await expect(resolver.userUpdate(id, userUpdateInput, {
-      id: 'any-other-id',
-      email: 'any',
-      role: Role.USER,
-    })).rejects.toBeInstanceOf(ForbiddenException);
+    await expect(
+      resolver.userUpdate(id, userUpdateInput, {
+        id: 'any-other-id',
+        email: 'any',
+        role: Role.USER,
+      }),
+    ).rejects.toBeInstanceOf(ForbiddenException);
   });
 });

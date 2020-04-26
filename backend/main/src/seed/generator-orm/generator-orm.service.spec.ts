@@ -8,10 +8,7 @@ describe('GeneratorOrmService', () => {
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      providers: [
-        GeneratorOrmService,
-        GeneratorGraphqlService,
-      ],
+      providers: [GeneratorOrmService, GeneratorGraphqlService],
     }).compile();
 
     service = module.get<GeneratorOrmService>(GeneratorOrmService);

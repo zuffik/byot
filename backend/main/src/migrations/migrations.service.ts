@@ -15,13 +15,16 @@ export class MigrationsService implements OnModuleInit {
     @Inject(UserService) private readonly userService: UserService,
     @InjectRepository(User) private readonly userRepository: Repository<User>,
     @Inject(ConfigService) private readonly cfgService: ConfigService,
-  ) {
-  }
+  ) {}
 
   async onModuleInit() {
-    let superAdmin = await this.userService.findByUsernameOrEmail(this.cfgService.get<string>('app.superAdmin.userName'));
+    let superAdmin = await this.userService.findByUsernameOrEmail(
+      this.cfgService.get<string>('app.superAdmin.userName'),
+    );
     if (!superAdmin) {
-      superAdmin = await this.userService.findByUsernameOrEmail(this.cfgService.get<string>('app.superAdmin.email'));
+      superAdmin = await this.userService.findByUsernameOrEmail(
+        this.cfgService.get<string>('app.superAdmin.email'),
+      );
       if (!superAdmin) {
         await this.userRepository.create({
           firstName: 'Super',
@@ -29,7 +32,10 @@ export class MigrationsService implements OnModuleInit {
           role: Role.ADMIN,
           email: this.cfgService.get<string>('app.superAdmin.email'),
           userName: this.cfgService.get<string>('app.superAdmin.userName'),
-          password: bcrypt.hashSync(this.cfgService.get<string>('app.superAdmin.password'), 10),
+          password: bcrypt.hashSync(
+            this.cfgService.get<string>('app.superAdmin.password'),
+            10,
+          ),
         });
       }
     }
@@ -38,15 +44,21 @@ export class MigrationsService implements OnModuleInit {
     const demoUserPass = 'D3m0P4$$';
     const demoUserCount = 10;
 
-    const demoUser = await this.userService.findByUsernameOrEmail(demoUserPrefix + '0');
+    const demoUser = await this.userService.findByUsernameOrEmail(
+      demoUserPrefix + '0',
+    );
     if (!demoUser) {
-      await Promise.all(_.times(demoUserCount, i => this.userService.create({
-        firstName: chance.first(),
-        lastName: chance.last(),
-        userName: demoUserPrefix + i,
-        email: demoUserPrefix + i + '@example.com',
-        password: bcrypt.hashSync(demoUserPass, 10),
-      })));
+      await Promise.all(
+        _.times(demoUserCount, (i) =>
+          this.userService.create({
+            firstName: chance.first(),
+            lastName: chance.last(),
+            userName: demoUserPrefix + i,
+            email: demoUserPrefix + i + '@example.com',
+            password: bcrypt.hashSync(demoUserPass, 10),
+          }),
+        ),
+      );
     }
   }
 }

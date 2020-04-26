@@ -1,5 +1,12 @@
 import { DateTime, Role, User as IUser } from '../graphql/ts/types';
-import { BaseEntity, Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
+import {
+  BaseEntity,
+  Column,
+  CreateDateColumn,
+  Entity,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 import { timestampToDateTimeORMTransformer } from '../helpers/TimestampToDateTime';
 
 @Entity()

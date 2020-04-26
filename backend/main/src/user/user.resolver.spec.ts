@@ -7,7 +7,9 @@ import { GeneratorGraphqlService } from '../seed/generator-graphql/generator-gra
 import { mockRepository } from '../test/proxy.mock';
 import { JwtUser } from '../auth/decorators/jwt-user.decorator';
 import { Role } from '../graphql/ts/types';
-import { ForbiddenException } from '@nestjs/common';
+import { BadRequestException, ForbiddenException, NotFoundException } from '@nestjs/common';
+import { User } from './user.entity';
+import * as _ from 'lodash';
 
 describe('UserResolver', () => {
   let resolver: UserResolver;
@@ -30,18 +32,10 @@ describe('UserResolver', () => {
     generator = module.get<GeneratorGraphqlService>(GeneratorGraphqlService);
   });
 
-  it('should be defined with methods', () => {
+  it('should be defined', () => {
     expect(resolver).toBeDefined();
-    const properties = [
-      'allUsers',
-      'user',
-      'me',
-      'userUpdateMyself',
-      'userUpdate',
-    ];
-    for (const prop of properties) {
-      expect(resolver).toHaveProperty([prop]);
-    }
+    expect(userService).toBeDefined();
+    expect(generator).toBeDefined();
   });
 
   it('should fetch all users', async () => {
@@ -93,12 +87,12 @@ describe('UserResolver', () => {
       id: 'invalid-id',
       email: 'any',
       role: Role.USER,
-    })).rejects.toBeInstanceOf(ForbiddenException);
+    })).rejects.toBeInstanceOf(NotFoundException);
   });
 
   it('should find myself', async () => {
     const id = 'id';
-    const spy = jest.spyOn(userService, 'findById');
+    const spy = jest.spyOn(userService, 'findById').mockImplementation(async () => new User());
     await resolver.me({
       id,
       email: 'any',
@@ -106,5 +100,19 @@ describe('UserResolver', () => {
     });
     expect(spy).toBeCalledWith(id);
   });
-});
 
+  it('should update user', async () => {
+    const id = 'id';
+    const userUpdateInput = generator.userUpdate();
+    const spy = jest.spyOn(userService, 'update').mockImplementation(async () => new User());
+    await resolver.userUpdate(id, userUpdateInput);
+    expect(spy).toBeCalledWith(id, _.omit(userUpdateInput, ['password', 'passwordRepeat']));
+  });
+
+  it('should fail update user due to non-existing user', async () => {
+    const id = 'id';
+    const userUpdateInput = generator.userUpdate();
+    jest.spyOn(userService, 'update').mockImplementation(async () => undefined);
+    await expect(resolver.userUpdate(id, userUpdateInput)).rejects.toBeInstanceOf(NotFoundException);
+  });
+});

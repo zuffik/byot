@@ -2,14 +2,17 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { UserService } from './user.service';
 import { getRepositoryToken } from '@nestjs/typeorm';
 import { User } from './user.entity';
-import { Repository } from 'typeorm';
+import { Repository, UpdateResult } from 'typeorm';
 import { SeedModule } from '../seed/seed.module';
 import { GeneratorGraphqlService } from '../seed/generator-graphql/generator-graphql.service';
 import { mockRepository } from '../test/proxy.mock';
+import * as _ from 'lodash';
+import { GeneratorOrmService } from '../seed/generator-orm/generator-orm.service';
 
 describe('UserService', () => {
   let service: UserService;
-  let generator: GeneratorGraphqlService;
+  let gqlGenerator: GeneratorGraphqlService;
+  let ormGenerator: GeneratorOrmService;
   let repository: Repository<User>;
 
   beforeEach(async () => {
@@ -26,13 +29,15 @@ describe('UserService', () => {
 
     service = module.get<UserService>(UserService);
     repository = module.get<Repository<User>>('UserRepository');
-    generator = module.get<GeneratorGraphqlService>(GeneratorGraphqlService);
+    gqlGenerator = module.get<GeneratorGraphqlService>(GeneratorGraphqlService);
+    ormGenerator = module.get<GeneratorOrmService>(GeneratorOrmService);
   });
 
   it('should be defined', () => {
     expect(service).toBeDefined();
     expect(repository).toBeDefined();
-    expect(generator).toBeDefined();
+    expect(gqlGenerator).toBeDefined();
+    expect(ormGenerator).toBeDefined();
   });
 
   it('should fetch all users', async () => {
@@ -85,7 +90,7 @@ describe('UserService', () => {
   });
 
   it('should register user', async () => {
-    const userToBeRegistered = generator.userRegister();
+    const userToBeRegistered = gqlGenerator.userRegister();
     const spySave = jest.spyOn(repository, 'save');
     await service.create(userToBeRegistered);
     expect(spySave).toBeCalled();
@@ -112,5 +117,42 @@ describe('UserService', () => {
         id,
       },
     });
+  });
+
+  it('should update user', async () => {
+    const id = 'id';
+    const userUpdateInput = _.omit(gqlGenerator.userUpdate(), 'passwordRepeat');
+    const spySave = jest.spyOn(repository, 'update').mockImplementation(async (): Promise<UpdateResult> => ({
+      affected: 1,
+      generatedMaps: [],
+      raw: undefined,
+    }));
+    const spyFind = jest.spyOn(repository, 'findOne');
+    await service.update(id, userUpdateInput);
+    expect(spySave).toBeCalledWith({
+      id,
+    }, expect.objectContaining(userUpdateInput));
+    expect(spyFind).toBeCalledWith({
+      where: {
+        id,
+      },
+    });
+  });
+
+  it('should fail update user', async () => {
+    const id = 'id';
+    const userUpdateInput = _.omit(gqlGenerator.userUpdate(), 'passwordRepeat');
+    const spySave = jest.spyOn(repository, 'update').mockImplementation(async (): Promise<UpdateResult> => ({
+      affected: 0,
+      generatedMaps: [],
+      raw: undefined,
+    }));
+    const spyFind = jest.spyOn(repository, 'findOne');
+    const updateResult = await service.update(id, userUpdateInput);
+    expect(spySave).toBeCalledWith({
+      id,
+    }, expect.objectContaining(userUpdateInput));
+    expect(spyFind).not.toBeCalled();
+    expect(updateResult).toBeUndefined();
   });
 });

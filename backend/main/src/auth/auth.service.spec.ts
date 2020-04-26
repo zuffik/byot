@@ -8,7 +8,7 @@ import * as _ from 'lodash';
 import { JwtService } from '@nestjs/jwt';
 import { GeneratorOrmService } from '../seed/generator-orm/generator-orm.service';
 import * as bcrypt from 'bcrypt';
-import { UnauthorizedException } from '@nestjs/common';
+import { BadRequestException, UnauthorizedException } from '@nestjs/common';
 
 describe('AuthService', () => {
   let authService: AuthService;
@@ -48,6 +48,10 @@ describe('AuthService', () => {
 
   it('should be defined', () => {
     expect(authService).toBeDefined();
+    expect(userService).toBeDefined();
+    expect(jwtService).toBeDefined();
+    expect(gqlGenerator).toBeDefined();
+    expect(ormGenerator).toBeDefined();
   });
 
   it('should create user with hashed password', async () => {
@@ -95,7 +99,7 @@ describe('AuthService', () => {
     expect(spyFind).toBeCalledWith(userNameOrEmail);
   });
 
-  it('should login with invalid username or email', async () => {
+  it('should fail login with invalid username or email', async () => {
     const userNameOrEmail = 'user';
     const password = 'pass';
     const spyFind = jest.spyOn(userService, 'findByUsernameOrEmail')
@@ -104,7 +108,7 @@ describe('AuthService', () => {
     expect(spyFind).toBeCalledWith(userNameOrEmail);
   });
 
-  it('should login with invalid password', async () => {
+  it('should fail login with invalid password', async () => {
     const userNameOrEmail = 'user';
     const password = 'pass';
     const spyFind = jest.spyOn(userService, 'findByUsernameOrEmail')
@@ -116,5 +120,13 @@ describe('AuthService', () => {
       });
     await expect(authService.login(userNameOrEmail, password)).rejects.toBeInstanceOf(UnauthorizedException);
     expect(spyFind).toBeCalledWith(userNameOrEmail);
+  });
+
+  it('should update current user', async () => {
+    const id = 'id';
+    const userUpdateInput = gqlGenerator.userUpdate(true);
+    const spy = jest.spyOn(userService, 'update');
+    await authService.updateUser(id, userUpdateInput);
+    expect(spy).toBeCalledWith(id, userUpdateInput);
   });
 });

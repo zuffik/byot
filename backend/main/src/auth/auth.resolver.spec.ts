@@ -5,6 +5,9 @@ import { proxyMock } from '../test/proxy.mock';
 import { SeedModule } from '../seed/seed.module';
 import { GeneratorOrmService } from '../seed/generator-orm/generator-orm.service';
 import { GeneratorGraphqlService } from '../seed/generator-graphql/generator-graphql.service';
+import { User } from '../user/user.entity';
+import { BadRequestException } from '@nestjs/common';
+import { Role } from '../graphql/ts/types';
 
 describe('AuthResolver', () => {
   let resolver: AuthResolver;
@@ -32,6 +35,9 @@ describe('AuthResolver', () => {
 
   it('should be defined', () => {
     expect(resolver).toBeDefined();
+    expect(authService).toBeDefined();
+    expect(ormGenerator).toBeDefined();
+    expect(gqlGenerator).toBeDefined();
   });
 
   it('should register and authenticate user', async () => {
@@ -46,5 +52,30 @@ describe('AuthResolver', () => {
       token: expect.any(String),
       user: expect.any(Object),
     }));
+  });
+
+  it('should update myself', async () => {
+    const id = 'id';
+    const userUpdateInput = gqlGenerator.userUpdate();
+    const spy = jest.spyOn(authService, 'updateUser').mockImplementation(async () => new User());
+    await resolver.userUpdateMyself(userUpdateInput, {
+      id,
+      email: 'any',
+      role: Role.USER,
+    });
+    expect(spy).toBeCalledWith(id, userUpdateInput);
+  });
+
+  it('should fail update myself due to non-matching password', async () => {
+    const id = 'id';
+    const userUpdateInput = gqlGenerator.userUpdate(false);
+    jest.spyOn(authService, 'updateUser').mockImplementation(async () => new User());
+    userUpdateInput.password = 'pwd';
+    userUpdateInput.passwordRepeat = '';
+    await expect(resolver.userUpdateMyself(userUpdateInput, {
+      id,
+      email: 'any',
+      role: Role.USER,
+    })).rejects.toBeInstanceOf(BadRequestException);
   });
 });

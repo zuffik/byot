@@ -1,8 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { User } from './user.entity';
-import { FulltextFilter, UserRegister } from '../graphql/ts/types';
+import { FulltextFilter, UserRegister, UserUpdateInput } from '../graphql/ts/types';
 import { InjectRepository } from '@nestjs/typeorm';
 import { DeepPartial, FindManyOptions, Like, Repository } from 'typeorm';
+import * as _ from 'lodash';
 
 @Injectable()
 export class UserService {
@@ -48,5 +49,13 @@ export class UserService {
     return await this.userRepository.findOne({
       where: { id },
     });
+  }
+
+  public async update(id: string, user: UserUpdateInput): Promise<User | undefined> {
+    const result = await this.userRepository.update({ id }, user);
+    if (result.affected === 0) {
+      return undefined;
+    }
+    return this.findById(id);
   }
 }

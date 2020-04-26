@@ -43,6 +43,7 @@ input UserUpdateInput {
     lastName: String
     email: String
     password: String
+    passwordRepeat: String
     userName: String
 }
 
@@ -59,6 +60,6 @@ interface UserQuery {
 interface UserMutation {
     userRegister(user: UserRegister!): Auth!
     userLogin(user: UserLogin!): Auth!
-    userUpdateMyself(user: UserUpdateInput!): Auth!
+    userUpdateMyself(user: UserUpdateInput!): User!
     userUpdate(id: ID!, user: UserUpdateInput!): User!
 }

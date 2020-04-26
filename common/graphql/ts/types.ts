@@ -84,6 +84,7 @@ export interface UserUpdateInput {
     lastName?: string;
     email?: string;
     password?: string;
+    passwordRepeat?: string;
     userName?: string;
 }
 
@@ -148,7 +149,7 @@ export interface IQuery {
 export interface IMutation {
     userRegister(user: UserRegister): Auth | Promise<Auth>;
     userLogin(user: UserLogin): Auth | Promise<Auth>;
-    userUpdateMyself(user: UserUpdateInput): Auth | Promise<Auth>;
+    userUpdateMyself(user: UserUpdateInput): User | Promise<User>;
     userUpdate(id: string, user: UserUpdateInput): User | Promise<User>;
     trainingDraftUpdateOrCreate(draft: TrainingDraftInput): TrainingDraft | Promise<TrainingDraft>;
     saveTrainingDraft(draft: TrainingDraftInput): Training | Promise<Training>;

@@ -1,4 +1,4 @@
-import { User as IUser, UserRegister } from '../graphql/ts/types';
+import { User as IUser, UserRegister, UserUpdateInput } from '../graphql/ts/types';
 import { testDateTime } from './datetime.tester';
 import { User } from '../user/user.entity';
 
@@ -26,4 +26,15 @@ export function testUserRegister(userRegister: UserRegister | any) {
   }));
   expect(userRegister.firstName).toBeOptionalString();
   expect(userRegister.lastName).toBeOptionalString();
+}
+
+export function testUserUpdate(userUpdate: UserUpdateInput | any) {
+  expect(userUpdate.role).toBeOptionalString();
+  expect(userUpdate.firstName).toBeOptionalString();
+  expect(userUpdate.lastName).toBeOptionalString();
+  expect(userUpdate.email).toBeOptionalString();
+  if (userUpdate.email) {
+    expect(userUpdate.email).toContain('@');
+  }
+  expect(userUpdate.password).toBeOptionalString();
 }

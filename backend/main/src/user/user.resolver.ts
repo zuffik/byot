@@ -1,17 +1,19 @@
-import { Args, Query, Resolver } from '@nestjs/graphql';
-import { Auth, FulltextFilter, IMutation, IQuery, Role, User as IUser, UserList, UserUpdateInput } from '../graphql/ts/types';
+import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
+import { FulltextFilter, IMutation, IQuery, Role, User as IUser, UserList, UserUpdateInput } from '../graphql/ts/types';
 import { User } from './user.entity';
 import { UserService } from './user.service';
 import { AuthRoles } from '../auth/decorators/auth-roles.decorator';
 import { JwtUser, JwtUserType } from '../auth/decorators/jwt-user.decorator';
-import { ForbiddenException, UseGuards } from '@nestjs/common';
+import { NotFoundException, UseGuards } from '@nestjs/common';
 import { AuthGuard } from '../auth/jwt/auth.guard';
+import { BaseResolver } from '../helpers/BaseResolver';
 
 @Resolver('User')
-export class UserResolver implements Partial<IMutation & IQuery> {
+export class UserResolver extends BaseResolver implements Partial<IMutation & IQuery> {
   constructor(
     private userService: UserService,
   ) {
+    super();
   }
 
   @Query('allUsers')
@@ -30,7 +32,7 @@ export class UserResolver implements Partial<IMutation & IQuery> {
   @UseGuards(AuthGuard)
   public async user(@Args('id') id: string, @JwtUser() user?: JwtUserType): Promise<IUser> {
     if (id !== user.id && user.role !== Role.ADMIN) {
-      throw new ForbiddenException();
+      throw new NotFoundException();
     }
     return this.userService.findById(id);
   }
@@ -38,15 +40,14 @@ export class UserResolver implements Partial<IMutation & IQuery> {
   @Query('me')
   @UseGuards(AuthGuard)
   public async me(@JwtUser() user?: JwtUserType): Promise<IUser> {
-    return this.userService.findById(user.id);
+    return this.returnOrBail(await this.userService.findById(user.id));
   }
 
-  public async userUpdate(id: string, user: UserUpdateInput): Promise<IUser> {
-    return null as any;
+  @Mutation('userUpdate')
+  @UseGuards(AuthGuard)
+  public async userUpdate(@Args('id') id: string, @Args('user') user: UserUpdateInput): Promise<IUser> {
+    delete user.password;
+    delete user.passwordRepeat;
+    return this.returnOrBail(await this.userService.update(id, user));
   }
-
-  public async userUpdateMyself(user: UserUpdateInput): Promise<Auth> {
-    return null as any;
-  }
-
 }

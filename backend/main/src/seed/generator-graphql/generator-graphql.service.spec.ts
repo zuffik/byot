@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { testDateTime } from '../../test/datetime.tester';
-import { testUser, testUserRegister } from '../../test/user.tester';
+import { testUser, testUserRegister, testUserUpdate } from '../../test/user.tester';
 import { GeneratorGraphqlService } from './generator-graphql.service';
 
 describe('GeneratorGraphqlService', () => {
@@ -31,5 +31,16 @@ describe('GeneratorGraphqlService', () => {
   it('should generate valid UserRegister', () => {
     const userRegister = service.userRegister();
     testUserRegister(userRegister);
+  });
+
+  it('should generate valid UserUpdate', () => {
+    const userUpdate = service.userUpdate(false);
+    testUserUpdate(userUpdate);
+  });
+
+  it('should generate valid UserUpdate with matching passwords', () => {
+    const userUpdate = service.userUpdate();
+    expect(userUpdate.passwordRepeat).toEqual(userUpdate.password);
+    testUserUpdate(userUpdate);
   });
 });

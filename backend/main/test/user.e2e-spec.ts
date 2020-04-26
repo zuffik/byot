@@ -84,5 +84,17 @@ describe('User integration', () => {
     expect(response.body.errors).toEqual(expect.any(Array));
   });
 
+  it('should update user not validated fields by its id', async () => {
+    const auth = await authService.createUser(gqlGenerator.userRegister());
+    const user = {
+      firstName: 'First',
+      lastName: 'Last',
+    };
+    const updateResponse = await makeGraphQLRequest(app, graphQLInteraction.userUpdate(auth.user.id, user), {token: auth.token});
+    expect(updateResponse.body.data.userUpdate).toEqual(expect.objectContaining(_.pick(user, _.keys(updateResponse.body.data.userUpdate))));
+    const fetchResponse = await makeGraphQLRequest(app, graphQLInteraction.user(auth.user.id), {token: auth.token});
+    expect(fetchResponse.body.data.user).toEqual(expect.objectContaining(_.pick(user, _.keys(fetchResponse.body.data.user))));
+  });
+
   afterEach(() => destroyApp({ app, queryRunner }));
 });

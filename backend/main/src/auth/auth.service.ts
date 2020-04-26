@@ -1,6 +1,6 @@
 import { Inject, Injectable, UnauthorizedException } from '@nestjs/common';
 import { UserService } from '../user/user.service';
-import { UserRegister } from '../graphql/ts/types';
+import { UserRegister, UserUpdateInput } from '../graphql/ts/types';
 import * as bcrypt from 'bcrypt';
 import { User } from '../user/user.entity';
 import { JwtService } from '@nestjs/jwt';
@@ -43,5 +43,9 @@ export class AuthService {
       user,
       token: this.createTokenForUser(user),
     };
+  }
+
+  public async updateUser(id: string, user: UserUpdateInput): Promise<User> {
+    return await this.userService.update(id, user);
   }
 }

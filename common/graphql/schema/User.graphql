@@ -24,7 +24,6 @@ type Auth {
 }
 
 input UserRegister {
-    role: Role
     firstName: String
     lastName: String
     email: String!

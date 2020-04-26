@@ -3,14 +3,13 @@ import { testList } from '../src/test/list.tester';
 import { testUser } from '../src/test/user.tester';
 import { Role } from '../src/graphql/ts/types';
 import { graphQLInteraction } from '../src/graphql/ts/interaction';
-import { QueryRunner, Repository } from 'typeorm';
+import { QueryRunner } from 'typeorm';
 import { createApp, destroyApp } from './helpers/module.helper';
 import { makeGraphQLRequest } from './helpers/http.helper';
 import { UserService } from '../src/user/user.service';
 import * as _ from 'lodash';
 import { GeneratorGraphqlService } from '../src/seed/generator-graphql/generator-graphql.service';
 import { AuthService } from '../src/auth/auth.service';
-import { User } from '../src/user/user.entity';
 
 describe('User integration', () => {
   let app: INestApplication;
@@ -91,9 +90,31 @@ describe('User integration', () => {
       lastName: 'Last',
     };
     const updateResponse = await makeGraphQLRequest(app, graphQLInteraction.userUpdate(auth.user.id, user), {token: auth.token});
+    expect(updateResponse.body.errors).toBeUndefined();
     expect(updateResponse.body.data.userUpdate).toEqual(expect.objectContaining(_.pick(user, _.keys(updateResponse.body.data.userUpdate))));
     const fetchResponse = await makeGraphQLRequest(app, graphQLInteraction.user(auth.user.id), {token: auth.token});
+    expect(fetchResponse.body.errors).toBeUndefined();
     expect(fetchResponse.body.data.user).toEqual(expect.objectContaining(_.pick(user, _.keys(fetchResponse.body.data.user))));
+  });
+
+  it('should not update user due to non-auth user', async () => {
+    const auth = await authService.createUser(gqlGenerator.userRegister());
+    const user = {
+      firstName: 'First',
+      lastName: 'Last',
+    };
+    const response = await makeGraphQLRequest(app, graphQLInteraction.userUpdate(auth.user.id, user));
+    expect(response.body.errors).toEqual(expect.any(Array));
+  });
+
+  it('should not update user due to insufficient permissions', async () => {
+    const auth = await authService.createUser(gqlGenerator.userRegister());
+    const user = {
+      firstName: 'First',
+      lastName: 'Last',
+    };
+    const response = await makeGraphQLRequest(app, graphQLInteraction.userUpdate(auth.user.id, user), {userRole: Role.USER});
+    expect(response.body.errors).toEqual(expect.any(Array));
   });
 
   afterEach(() => destroyApp({ app, queryRunner }));

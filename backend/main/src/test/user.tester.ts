@@ -19,7 +19,6 @@ export function testUser(user: User | IUser | any) {
 
 export function testUserRegister(userRegister: UserRegister | any) {
   expect(userRegister).toEqual(expect.objectContaining({
-    role: expect.stringMatching(/(USER|ADMIN)/),
     email: expect.stringContaining('@'),
     password: expect.any(String),
     userName: expect.any(String),

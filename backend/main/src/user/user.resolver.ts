@@ -4,7 +4,7 @@ import { User } from './user.entity';
 import { UserService } from './user.service';
 import { AuthRoles } from '../auth/decorators/auth-roles.decorator';
 import { JwtUser, JwtUserType } from '../auth/decorators/jwt-user.decorator';
-import { NotFoundException, UseGuards } from '@nestjs/common';
+import { ForbiddenException, NotFoundException, UseGuards } from '@nestjs/common';
 import { AuthGuard } from '../auth/jwt/auth.guard';
 import { BaseResolver } from '../helpers/BaseResolver';
 
@@ -45,7 +45,10 @@ export class UserResolver extends BaseResolver implements Partial<IMutation & IQ
 
   @Mutation('userUpdate')
   @UseGuards(AuthGuard)
-  public async userUpdate(@Args('id') id: string, @Args('user') user: UserUpdateInput): Promise<IUser> {
+  public async userUpdate(@Args('id') id: string, @Args('user') user: UserUpdateInput, @JwtUser() current?: JwtUserType): Promise<IUser> {
+    if (current.id !== id && current.role !== Role.ADMIN) {
+      throw new ForbiddenException();
+    }
     delete user.password;
     delete user.passwordRepeat;
     return this.returnOrBail(await this.userService.update(id, user));

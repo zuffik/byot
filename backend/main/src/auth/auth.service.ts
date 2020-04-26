@@ -17,13 +17,17 @@ export class AuthService {
   public async createUser(userRegister: UserRegister): Promise<Auth> {
     const user = {
       ...userRegister,
-      password: bcrypt.hashSync(userRegister.password, 10),
+      password: this.createPasswordHash(userRegister.password),
     };
     const entity = await this.userService.create(user);
     return {
       token: this.createTokenForUser(entity),
       user: entity,
     };
+  }
+
+  private createPasswordHash(password: string) {
+    return bcrypt.hashSync(password, 10);
   }
 
   public createTokenForUser(user: User): string {
@@ -46,6 +50,12 @@ export class AuthService {
   }
 
   public async updateUser(id: string, user: UserUpdateInput): Promise<User> {
-    return await this.userService.update(id, user);
+    const input = {
+      ...user,
+    };
+    if (input.password) {
+      input.password = this.createPasswordHash(input.password);
+    }
+    return await this.userService.update(id, input);
   }
 }

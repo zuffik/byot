@@ -127,6 +127,9 @@ describe('AuthService', () => {
     const userUpdateInput = gqlGenerator.userUpdate(true);
     const spy = jest.spyOn(userService, 'update');
     await authService.updateUser(id, userUpdateInput);
-    expect(spy).toBeCalledWith(id, userUpdateInput);
+    expect(spy).toBeCalledWith(id, {
+      ...userUpdateInput,
+      password: expect.any(String),
+    });
   });
 });

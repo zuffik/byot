@@ -68,6 +68,22 @@ export const graphQLInteraction = {
     `,
     variables: { user, id },
   }),
+  userUpdateMyself: (user: UserUpdateInput): Interaction<{ userUpdateMyself: User }> => ({
+    query: gql`
+        mutation userUpdateMyself($user: UserUpdateInput!) {
+            userUpdateMyself(user: $user) {
+                id
+                role
+                firstName
+                lastName
+                fullName
+                userName
+                email
+            }
+        }
+    `,
+    variables: { user },
+  }),
   userLogin: (userNameOrEmail: string, password: string): Interaction<{ userLogin: Auth }> => ({
     query: gql`
         mutation userLogin($userNameOrEmail: String!, $password: String!) {

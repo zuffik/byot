@@ -44,6 +44,7 @@ import { MigrationsModule } from './migrations/migrations.module';
         entities: process.env.NODE_ENV !== 'test' ? ['./**/*.entity.js'] : ['./**/*.entity.ts'],
         synchronize: true,
         keepConnectionAlive: true,
+        extra: {connectionLimit: 1000},
       }),
     }),
     UserModule,

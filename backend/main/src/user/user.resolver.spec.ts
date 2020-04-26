@@ -5,9 +5,8 @@ import { testList } from '../test/list.tester';
 import { SeedModule } from '../seed/seed.module';
 import { GeneratorGraphqlService } from '../seed/generator-graphql/generator-graphql.service';
 import { mockRepository } from '../test/proxy.mock';
-import { JwtUser } from '../auth/decorators/jwt-user.decorator';
 import { Role } from '../graphql/ts/types';
-import { BadRequestException, ForbiddenException, NotFoundException } from '@nestjs/common';
+import { ForbiddenException, NotFoundException } from '@nestjs/common';
 import { User } from './user.entity';
 import * as _ from 'lodash';
 
@@ -105,7 +104,11 @@ describe('UserResolver', () => {
     const id = 'id';
     const userUpdateInput = generator.userUpdate();
     const spy = jest.spyOn(userService, 'update').mockImplementation(async () => new User());
-    await resolver.userUpdate(id, userUpdateInput);
+    await resolver.userUpdate(id, userUpdateInput, {
+      id,
+      email: 'any',
+      role: Role.USER,
+    });
     expect(spy).toBeCalledWith(id, _.omit(userUpdateInput, ['password', 'passwordRepeat']));
   });
 
@@ -113,6 +116,21 @@ describe('UserResolver', () => {
     const id = 'id';
     const userUpdateInput = generator.userUpdate();
     jest.spyOn(userService, 'update').mockImplementation(async () => undefined);
-    await expect(resolver.userUpdate(id, userUpdateInput)).rejects.toBeInstanceOf(NotFoundException);
+    await expect(resolver.userUpdate(id, userUpdateInput, {
+      id,
+      email: 'any',
+      role: Role.USER,
+    })).rejects.toBeInstanceOf(NotFoundException);
+  });
+
+  it('should fail update user due to insufficient permissions', async () => {
+    const id = 'id';
+    const userUpdateInput = generator.userUpdate();
+    jest.spyOn(userService, 'update').mockImplementation(async () => undefined);
+    await expect(resolver.userUpdate(id, userUpdateInput, {
+      id: 'any-other-id',
+      email: 'any',
+      role: Role.USER,
+    })).rejects.toBeInstanceOf(ForbiddenException);
   });
 });

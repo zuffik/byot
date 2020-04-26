@@ -3,10 +3,9 @@ import { IMutation, IQuery, User as IUser, UserLogin, UserRegister, UserUpdateIn
 import { Auth } from './auth.entity';
 import { BadRequestException, Inject, UnauthorizedException, UseGuards } from '@nestjs/common';
 import { AuthService } from './auth.service';
-import { JwtUserType } from './decorators/jwt-user.decorator';
+import { JwtUser, JwtUserType } from './decorators/jwt-user.decorator';
 import { BaseResolver } from '../helpers/BaseResolver';
 import { AuthGuard } from './jwt/auth.guard';
-import { AuthUser } from './decorators/auth-user.decorator';
 
 @Resolver('Auth')
 export class AuthResolver extends BaseResolver implements Partial<IMutation & IQuery> {
@@ -32,13 +31,13 @@ export class AuthResolver extends BaseResolver implements Partial<IMutation & IQ
 
   @Mutation('userUpdateMyself')
   @UseGuards(AuthGuard)
-  public async userUpdateMyself(input: UserUpdateInput, @AuthUser() user?: JwtUserType): Promise<IUser> {
+  public async userUpdateMyself(@Args('user') input: UserUpdateInput, @JwtUser() user?: JwtUserType): Promise<IUser> {
     if (input.password && input.password !== input.passwordRepeat) {
       throw new BadRequestException('Passwords must match');
-    } else {
+    } else if (!input.password) {
       delete input.password;
-      delete input.passwordRepeat;
     }
+    delete input.passwordRepeat;
     return this.returnOrBail(await this.authService.updateUser(user.id, input));
   }
 }

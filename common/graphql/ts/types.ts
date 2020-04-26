@@ -65,7 +65,6 @@ export interface TrainingDraftInput {
 }
 
 export interface UserRegister {
-    role?: Role;
     firstName?: string;
     lastName?: string;
     email: string;

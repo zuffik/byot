@@ -22,7 +22,7 @@ export class User extends BaseEntity implements IUser {
   @Column('varchar')
   public password: string;
 
-  @Column('enum', { enum: Role })
+  @Column('enum', { enum: Role, default: Role.USER })
   public role: Role;
 
   public get fullName(): string {

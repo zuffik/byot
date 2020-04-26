@@ -37,7 +37,6 @@ export class GeneratorGraphqlService {
       firstName: generateName ? chance.first() : undefined,
       lastName: generateName ? chance.last() : undefined,
       password: chance.guid(),
-      role: chance.bool({likelihood: 10}) ? Role.ADMIN : Role.USER,
       userName: chance.twitter().substr(1),
     };
   }

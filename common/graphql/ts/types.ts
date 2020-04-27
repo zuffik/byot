@@ -98,12 +98,6 @@ export interface List {
     entries: Entity[];
 }
 
-export interface Source {
-    sourceType: SourceType;
-    mediaType: MediaType;
-    thumbnail?: string;
-}
-
 export interface DateTime {
     iso: string;
     humanReadable: string;
@@ -113,18 +107,12 @@ export interface ListMeta {
     totalCount: number;
 }
 
-export interface URLSource extends Source {
-    url: string;
+export interface Source {
     sourceType: SourceType;
     mediaType: MediaType;
     thumbnail?: string;
-}
-
-export interface MediaIdSource extends Source {
-    id: string;
-    sourceType: SourceType;
-    mediaType: MediaType;
-    thumbnail?: string;
+    id?: string;
+    url?: string;
 }
 
 export interface Media {

@@ -15,24 +15,12 @@ enum MediaType {
     IMAGE
 }
 
-interface Source {
+type Source {
     sourceType: SourceType!
     mediaType: MediaType!
     thumbnail: String
-}
-
-type URLSource implements Source {
-    url: String!
-    sourceType: SourceType!
-    mediaType: MediaType!
-    thumbnail: String
-}
-
-type MediaIdSource implements Source {
-    id: String!
-    sourceType: SourceType!
-    mediaType: MediaType!
-    thumbnail: String
+    id: ID
+    url: String
 }
 
 input SourceInput {

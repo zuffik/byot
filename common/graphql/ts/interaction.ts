@@ -1,4 +1,4 @@
-import { Auth, User, UserList, UserRegister, UserUpdateInput } from './types';
+import { Auth, MediaFilter, MediaList, User, UserList, UserRegister, UserUpdateInput } from './types';
 
 export interface Interaction<T> {
   query: string;
@@ -12,52 +12,52 @@ const gql = (s) => s[0];
 export const graphQLInteraction = {
   allUsers: (): Interaction<{ allUsers: UserList }> => ({
     query: gql`
-      query {
-        allUsers {
-          meta {
-            totalCount
-          }
-          entries {
-            id
-            email
-            createdAt {
-              iso
-              humanReadable
+        query {
+            allUsers {
+                meta {
+                    totalCount
+                }
+                entries {
+                    id
+                    email
+                    createdAt {
+                        iso
+                        humanReadable
+                    }
+                    updatedAt {
+                        iso
+                        humanReadable
+                    }
+                    lastLogin {
+                        iso
+                        humanReadable
+                    }
+                    userName
+                    firstName
+                    lastName
+                    fullName
+                    role
+                }
             }
-            updatedAt {
-              iso
-              humanReadable
-            }
-            lastLogin {
-              iso
-              humanReadable
-            }
-            userName
-            firstName
-            lastName
-            fullName
-            role
-          }
         }
-      }
     `,
   }),
   userRegister: (user: UserRegister): Interaction<{ userRegister: Auth }> => ({
     query: gql`
-      mutation userRegister($user: UserRegister!) {
-        userRegister(user: $user) {
-          token
-          user {
-            id
-            role
-            firstName
-            lastName
-            fullName
-            userName
-            email
-          }
+        mutation userRegister($user: UserRegister!) {
+            userRegister(user: $user) {
+                token
+                user {
+                    id
+                    role
+                    firstName
+                    lastName
+                    fullName
+                    userName
+                    email
+                }
+            }
         }
-      }
     `,
     variables: { user },
   }),
@@ -66,17 +66,17 @@ export const graphQLInteraction = {
     user: UserUpdateInput,
   ): Interaction<{ userUpdate: User }> => ({
     query: gql`
-      mutation userUpdate($id: ID!, $user: UserUpdateInput!) {
-        userUpdate(id: $id, user: $user) {
-          id
-          role
-          firstName
-          lastName
-          fullName
-          userName
-          email
+        mutation userUpdate($id: ID!, $user: UserUpdateInput!) {
+            userUpdate(id: $id, user: $user) {
+                id
+                role
+                firstName
+                lastName
+                fullName
+                userName
+                email
+            }
         }
-      }
     `,
     variables: { user, id },
   }),
@@ -84,17 +84,17 @@ export const graphQLInteraction = {
     user: UserUpdateInput,
   ): Interaction<{ userUpdateMyself: User }> => ({
     query: gql`
-      mutation userUpdateMyself($user: UserUpdateInput!) {
-        userUpdateMyself(user: $user) {
-          id
-          role
-          firstName
-          lastName
-          fullName
-          userName
-          email
+        mutation userUpdateMyself($user: UserUpdateInput!) {
+            userUpdateMyself(user: $user) {
+                id
+                role
+                firstName
+                lastName
+                fullName
+                userName
+                email
+            }
         }
-      }
     `,
     variables: { user },
   }),
@@ -103,55 +103,85 @@ export const graphQLInteraction = {
     password: string,
   ): Interaction<{ userLogin: Auth }> => ({
     query: gql`
-      mutation userLogin($userNameOrEmail: String!, $password: String!) {
-        userLogin(
-          user: { userNameOrEmail: $userNameOrEmail, password: $password }
-        ) {
-          token
-          user {
-            id
-            role
-            firstName
-            lastName
-            fullName
-            userName
-            email
-          }
+        mutation userLogin($userNameOrEmail: String!, $password: String!) {
+            userLogin(
+                user: { userNameOrEmail: $userNameOrEmail, password: $password }
+            ) {
+                token
+                user {
+                    id
+                    role
+                    firstName
+                    lastName
+                    fullName
+                    userName
+                    email
+                }
+            }
         }
-      }
     `,
     variables: { userNameOrEmail, password },
   }),
   user: (id: string): Interaction<{ user: User }> => ({
     query: gql`
-      query user($id: ID!) {
-        user(id: $id) {
-          id
-          role
-          firstName
-          lastName
-          fullName
-          userName
-          email
+        query user($id: ID!) {
+            user(id: $id) {
+                id
+                role
+                firstName
+                lastName
+                fullName
+                userName
+                email
+            }
         }
-      }
     `,
     variables: { id },
   }),
   me: (): Interaction<{ me: User }> => ({
     query: gql`
-      query me {
-        me {
-          id
-          role
-          firstName
-          lastName
-          fullName
-          userName
-          email
+        query me {
+            me {
+                id
+                role
+                firstName
+                lastName
+                fullName
+                userName
+                email
+            }
         }
-      }
     `,
     variables: {},
+  }),
+  findMedia: (filter: MediaFilter): Interaction<{ findMedia: MediaList }> => ({
+    query: gql`
+        query findMedia($filter: MediaFilter) {
+            findMedia(filter: $filter) {
+                meta{
+                    totalCount
+                }
+                entries{
+                    createdAt {
+                        humanReadable
+                        iso
+                    }
+                    updatedAt {
+                        humanReadable
+                        iso
+                    }
+                    id
+                    source{
+                        thumbnail
+                        mediaType
+                        sourceType
+                        url
+                        id
+                    }
+                }
+            }
+        }
+    `,
+    variables: { filter },
   }),
 };

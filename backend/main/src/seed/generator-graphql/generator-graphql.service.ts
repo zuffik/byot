@@ -6,11 +6,20 @@ import {
   Media,
   MediaType,
   Role,
+  Source,
   SourceType,
+  Training,
+  TrainingDraft,
+  TrainingDraftInput,
+  TrainingMediaInput,
+  TrainingSet,
+  TrainingSetInput,
+  TrainingUpdateInput,
   User as IUser,
   UserRegister,
   UserUpdateInput,
 } from '../../graphql/ts/types';
+import * as _ from 'lodash';
 
 @Injectable()
 export class GeneratorGraphqlService {
@@ -72,17 +81,93 @@ export class GeneratorGraphqlService {
   public media(): Media {
     return {
       id: chance.guid(),
-      source: {
-        sourceType: SourceType.YOUTUBE,
-        mediaType: chance.pickone([
-          MediaType.VIDEO,
-          MediaType.AUDIO,
-          MediaType.IMAGE,
-        ]),
-        thumbnail: 'https://picsum.photos/200',
-      },
+      source: this.source(),
       updatedAt: this.dateTime(),
       createdAt: this.dateTime(),
+    };
+  }
+
+  public source(): Source {
+    return {
+      sourceType: SourceType.YOUTUBE,
+      mediaType: chance.pickone([
+        MediaType.VIDEO,
+        MediaType.AUDIO,
+        MediaType.IMAGE,
+      ]),
+      thumbnail: 'https://picsum.photos/200',
+      id: chance.guid(),
+    };
+  }
+
+  public trainingMediaInput(): TrainingMediaInput {
+    return {
+      sourceType: SourceType.YOUTUBE,
+      id: chance.guid(),
+    };
+  }
+
+  public training(generateTrainingSet: boolean = true): Training {
+    return {
+      id: chance.guid(),
+      trainingSet: generateTrainingSet ? this.trainingSet(false) : undefined,
+      createdAt: this.dateTime(),
+      updatedAt: this.dateTime(),
+      label: chance.sentence({ words: 4 }),
+      media: {
+        meta: {
+          totalCount: 10,
+        },
+        entries: _.times(10, () => this.media()),
+      },
+      owner: this.user(),
+    };
+  }
+
+  public trainingSet(generateTrainings: boolean = true): TrainingSet {
+    return {
+      id: chance.guid(),
+      createdAt: this.dateTime(),
+      updatedAt: this.dateTime(),
+      label: chance.sentence({ words: 4 }),
+      owner: this.user(),
+      trainings: {
+        meta: {
+          totalCount: 10,
+        },
+        entries: generateTrainings
+          ? _.times(10, () => this.training(false))
+          : [],
+      },
+    };
+  }
+
+  public trainingDraft(): TrainingDraft {
+    return {
+      label: chance.sentence({ words: 4 }),
+      media: _.times(10, () => this.media()),
+      idTrainingSet: chance.guid(),
+    };
+  }
+
+  public trainingDraftInput(): TrainingDraftInput {
+    return {
+      label: chance.sentence({ words: 4 }),
+      idTrainingSet: chance.guid(),
+      media: _.times(10, () => this.trainingMediaInput()),
+    };
+  }
+
+  public trainingSetInput(): TrainingSetInput {
+    return {
+      label: chance.sentence({ words: 4 }),
+    };
+  }
+
+  public trainingUpdateInput(): TrainingUpdateInput {
+    return {
+      label: chance.sentence({ words: 4 }),
+      media: _.times(10, () => this.trainingMediaInput()),
     };
   }
 }

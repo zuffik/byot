@@ -44,14 +44,14 @@ export interface Pagination {
     offset?: number;
 }
 
-export interface SourceInput {
+export interface TrainingMediaInput {
+    id: string;
     sourceType: SourceType;
-    mediaType: MediaType;
 }
 
 export interface TrainingUpdateInput {
     label: string;
-    media: SourceInput[];
+    media: TrainingMediaInput[];
 }
 
 export interface TrainingSetInput {
@@ -61,7 +61,7 @@ export interface TrainingSetInput {
 export interface TrainingDraftInput {
     label?: string;
     idTrainingSet?: string;
-    media?: SourceInput[];
+    media?: TrainingMediaInput[];
 }
 
 export interface UserRegister {
@@ -111,7 +111,7 @@ export interface Source {
     sourceType: SourceType;
     mediaType: MediaType;
     thumbnail?: string;
-    id?: string;
+    id: string;
     url?: string;
 }
 

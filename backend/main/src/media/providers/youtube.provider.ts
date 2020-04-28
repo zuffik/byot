@@ -3,7 +3,6 @@ import { Inject, Injectable } from '@nestjs/common';
 import {
   Media,
   MediaFilter,
-  MediaIdSource,
   MediaType,
   SourceType,
 } from '../../graphql/ts/types';
@@ -47,7 +46,7 @@ export class YoutubeProvider implements MediaProvider {
           sourceType: SourceType.YOUTUBE,
           id: item.id.videoId,
           thumbnail: item.snippet.thumbnails.default.url,
-        } as MediaIdSource,
+        },
       })),
       response.data.pageInfo.totalResults,
     ];
@@ -76,7 +75,7 @@ export class YoutubeProvider implements MediaProvider {
         sourceType: SourceType.YOUTUBE,
         id: videoId,
         thumbnail: item.snippet.thumbnails.default.url,
-      } as MediaIdSource,
+      },
     };
   }
 }

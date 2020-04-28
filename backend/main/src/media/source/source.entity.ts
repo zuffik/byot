@@ -1,4 +1,8 @@
-import { MediaType, Source as ISource, SourceType } from '../graphql/ts/types';
+import {
+  MediaType,
+  Source as ISource,
+  SourceType,
+} from '../../../../../common/graphql/ts/types';
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()

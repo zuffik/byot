@@ -4,8 +4,8 @@ import { GeneratorGraphqlService } from '../generator-graphql/generator-graphql.
 import { Training } from '../../training/training/training.entity';
 import { TrainingSet } from '../../training/training-set/training-set.entity';
 import * as _ from 'lodash';
-import { Media } from '../../media/media.entity';
-import { Source } from '../../media/source.entity';
+import { Media } from '../../media/media/media.entity';
+import { Source } from '../../media/source/source.entity';
 
 @Injectable()
 export class GeneratorOrmService {

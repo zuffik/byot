@@ -11,7 +11,7 @@ import { DateTime, Training as ITraining } from '../../graphql/ts/types';
 import { User } from '../../user/user.entity';
 import { TrainingSet } from '../training-set/training-set.entity';
 import { timestampToDateTimeORMTransformer } from '../../helpers/TimestampToDateTime';
-import { Media } from '../../media/media.entity';
+import { Media } from '../../media/media/media.entity';
 import { PromiseRecord } from '../../helpers/PromiseRecord';
 
 @Entity()

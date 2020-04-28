@@ -9,9 +9,14 @@ type Training implements Entity {
     owner: User!
 }
 
+input TrainingMediaInput {
+    id: ID!
+    sourceType: SourceType!
+}
+
 input TrainingUpdateInput {
     label: String!
-    media: [SourceInput!]!
+    media: [TrainingMediaInput!]!
 }
 
 type TrainingSet implements Entity {
@@ -42,7 +47,7 @@ type TrainingList implements List {
 input TrainingDraftInput {
     label: String
     idTrainingSet: ID
-    media: [SourceInput!]
+    media: [TrainingMediaInput!]
 }
 
 type TrainingDraft {

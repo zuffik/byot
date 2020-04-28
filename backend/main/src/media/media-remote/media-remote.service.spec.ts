@@ -1,8 +1,11 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { MediaRemoteService } from './media-remote.service';
-import { YoutubeProvider } from './providers/youtube.provider';
-import { mockMediaProvider } from '../test/proxy.mock';
-import { MediaFilter, SourceType } from '../graphql/ts/types';
+import { YoutubeProvider } from '../providers/youtube.provider';
+import { mockMediaProvider } from '../../test/proxy.mock';
+import {
+  MediaFilter,
+  SourceType,
+} from '../../../../../common/graphql/ts/types';
 
 describe('MediaRemoteService', () => {
   let service: MediaRemoteService;

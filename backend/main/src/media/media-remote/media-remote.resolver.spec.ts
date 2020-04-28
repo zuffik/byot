@@ -1,11 +1,14 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { MediaRemoteService } from './media-remote.service';
-import { proxyMock } from '../test/proxy.mock';
-import { GeneratorGraphqlService } from '../seed/generator-graphql/generator-graphql.service';
-import { MediaFilter, SourceType } from '../graphql/ts/types';
+import { proxyMock } from '../../test/proxy.mock';
+import { GeneratorGraphqlService } from '../../seed/generator-graphql/generator-graphql.service';
+import {
+  MediaFilter,
+  SourceType,
+} from '../../../../../common/graphql/ts/types';
 import { BadRequestException } from '@nestjs/common';
 import { MediaRemoteResolver } from './media-remote.resolver';
-import { SeedModule } from '../seed/seed.module';
+import { SeedModule } from '../../seed/seed.module';
 
 describe('MediaRemoteResolver', () => {
   let resolver: MediaRemoteResolver;

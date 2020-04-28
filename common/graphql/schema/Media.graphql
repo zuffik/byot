@@ -19,13 +19,8 @@ type Source {
     sourceType: SourceType!
     mediaType: MediaType!
     thumbnail: String
-    id: ID
+    id: ID!
     url: String
-}
-
-input SourceInput {
-    sourceType: SourceType!
-    mediaType: MediaType!
 }
 
 type Media {
@@ -34,7 +29,6 @@ type Media {
     updatedAt: DateTime
     source: Source!
 }
-
 
 type MediaList {
     meta: ListMeta!

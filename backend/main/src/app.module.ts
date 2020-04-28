@@ -13,6 +13,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { MigrationsModule } from './migrations/migrations.module';
 import { MediaModule } from './media/media.module';
 import { apisConfig } from './config/apis.config';
+import { TrainingModule } from './training/training.module';
 
 @Module({
   imports: [
@@ -64,6 +65,7 @@ import { apisConfig } from './config/apis.config';
     SeedModule,
     MigrationsModule,
     MediaModule,
+    TrainingModule,
   ],
   controllers: [],
   providers: [],

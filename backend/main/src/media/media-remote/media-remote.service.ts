@@ -1,12 +1,8 @@
 import { Inject, Injectable } from '@nestjs/common';
-import {
-  Media,
-  MediaFilter,
-  SourceType,
-} from '../../../../../common/graphql/ts/types';
 import { YoutubeProvider } from '../providers/youtube.provider';
 import { MediaProvider } from '../providers/media.provider';
 import * as _ from 'lodash';
+import { Media, MediaFilter, SourceType } from '../../graphql/ts/types';
 
 @Injectable()
 export class MediaRemoteService {

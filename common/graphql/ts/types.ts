@@ -120,6 +120,7 @@ export interface Media {
     createdAt?: DateTime;
     updatedAt?: DateTime;
     source: Source;
+    label: string;
 }
 
 export interface MediaList {

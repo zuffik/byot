@@ -4,8 +4,8 @@ import { QueryRunner } from 'typeorm';
 import { createApp, destroyApp } from './helpers/module.helper';
 import { testList } from '../src/test/list.tester';
 import { makeGraphQLRequest } from './helpers/http.helper';
-import { Role } from '../../../common/graphql/ts/types';
 import { testMedia } from '../src/test/media.tester';
+import { Role } from '../src/graphql/ts/types';
 
 describe('Remote media integration', () => {
   let app: INestApplication;

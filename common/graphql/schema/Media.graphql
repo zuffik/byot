@@ -28,6 +28,7 @@ type Media {
     createdAt: DateTime
     updatedAt: DateTime
     source: Source!
+    label: String!
 }
 
 type MediaList {

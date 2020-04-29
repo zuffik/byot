@@ -1,15 +1,15 @@
-import { Args, Query, ResolveField, Resolver } from '@nestjs/graphql';
-import {
-  IMutation,
-  IQuery,
-  MediaFilter,
-  MediaList,
-  SourceType,
-} from '../../../../../common/graphql/ts/types';
+import { Args, Query, Resolver } from '@nestjs/graphql';
 import * as _ from 'lodash';
 import { BadRequestException, Inject, UseGuards } from '@nestjs/common';
 import { MediaRemoteService } from './media-remote.service';
 import { AuthGuard } from '../../auth/jwt/auth.guard';
+import {
+  IMutation,
+  IQuery,
+  MediaFilter,
+  SourceType,
+  MediaList,
+} from '../../graphql/ts/types';
 
 @Resolver('Media')
 export class MediaRemoteResolver implements Partial<IQuery & IMutation> {

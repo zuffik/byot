@@ -2,7 +2,7 @@ import {
   MediaType,
   Source as ISource,
   SourceType,
-} from '../../../../../common/graphql/ts/types';
+} from '../../graphql/ts/types';
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()

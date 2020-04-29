@@ -2,7 +2,7 @@ import { createApp, destroyApp } from '../helpers/module.helper';
 import { INestApplication } from '@nestjs/common';
 import { QueryRunner } from 'typeorm';
 import { YoutubeProvider } from '../../src/media/providers/youtube.provider';
-import { testMediaWithIdSource } from '../../src/test/media.tester';
+import { testMedia } from '../../src/test/media.tester';
 
 describe('YouTube provider', () => {
   let app: INestApplication;
@@ -24,7 +24,7 @@ describe('YouTube provider', () => {
     const query = 'google';
     const [items, count] = await provider.findAll({ query });
     expect(items).toEqual(expect.any(Array));
-    items.forEach(testMediaWithIdSource);
+    items.forEach(testMedia);
     expect(count).toEqual(expect.any(Number));
   });
 
@@ -32,7 +32,7 @@ describe('YouTube provider', () => {
     const url = 'https://www.youtube.com/watch?v=w3m4N0UVt0M';
     const videoId = 'w3m4N0UVt0M';
     const media = await provider.parseFromUrl(url);
-    testMediaWithIdSource(media);
+    testMedia(media);
     expect(media.id).toEqual(videoId);
   });
 
@@ -40,7 +40,7 @@ describe('YouTube provider', () => {
     const url = 'https://youtu.be/w3m4N0UVt0M';
     const videoId = 'w3m4N0UVt0M';
     const media = await provider.parseFromUrl(url);
-    testMediaWithIdSource(media);
+    testMedia(media);
     expect(media.id).toEqual(videoId);
   });
 

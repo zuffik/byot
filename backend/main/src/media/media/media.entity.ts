@@ -1,12 +1,7 @@
 import {
-  DateTime,
-  Media as IMedia,
-} from '../../../../../common/graphql/ts/types';
-import {
   CreateDateColumn,
   Entity,
   ManyToMany,
-  ManyToOne,
   OneToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
@@ -14,6 +9,7 @@ import {
 import { timestampToDateTimeORMTransformer } from '../../helpers/TimestampToDateTime';
 import { Source } from '../source/source.entity';
 import { Training } from '../../training/training/training.entity';
+import { DateTime, Media as IMedia } from '../../graphql/ts/types';
 
 @Entity()
 export class Media implements IMedia {

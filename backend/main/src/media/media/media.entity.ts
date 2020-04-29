@@ -1,4 +1,5 @@
 import {
+  Column,
   CreateDateColumn,
   Entity,
   ManyToMany,
@@ -18,6 +19,9 @@ export class Media implements IMedia {
 
   @OneToOne((type) => Source)
   public source: Source;
+
+  @Column('varchar')
+  public label: string;
 
   @ManyToMany((type) => Training, (t) => t.medias)
   public trainings: Promise<Training[]>;

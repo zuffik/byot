@@ -1,7 +1,7 @@
 type Query {
     allUsers(filter: FulltextFilter): UserList!
-    allMedia(filter: FulltextFilterForUser): MediaList!
-    allTrainings(filter: FulltextFilterForUser): TrainingList!
+    allMedia(filter: FulltextFilter): MediaList!
+    allTrainings(filter: FulltextFilter): TrainingList!
     allTrainingSets(filter: FulltextFilterForUser): TrainingSetList!
 
     user(id: ID!): User!

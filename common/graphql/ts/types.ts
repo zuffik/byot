@@ -28,7 +28,7 @@ export interface FulltextFilter {
 
 export interface FulltextFilterForUser {
     query?: string;
-    idUser?: number;
+    idUser?: string;
     pagination?: Pagination;
 }
 
@@ -130,8 +130,8 @@ export interface MediaList {
 
 export interface IQuery {
     allUsers(filter?: FulltextFilter): UserList | Promise<UserList>;
-    allMedia(filter?: FulltextFilterForUser): MediaList | Promise<MediaList>;
-    allTrainings(filter?: FulltextFilterForUser): TrainingList | Promise<TrainingList>;
+    allMedia(filter?: FulltextFilter): MediaList | Promise<MediaList>;
+    allTrainings(filter?: FulltextFilter): TrainingList | Promise<TrainingList>;
     allTrainingSets(filter?: FulltextFilterForUser): TrainingSetList | Promise<TrainingSetList>;
     user(id: string): User | Promise<User>;
     me(): User | Promise<User>;

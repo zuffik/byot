@@ -5,7 +5,7 @@ input FulltextFilter {
 
 input FulltextFilterForUser {
     query: String
-    idUser: Int
+    idUser: ID
     pagination: Pagination
 }
 

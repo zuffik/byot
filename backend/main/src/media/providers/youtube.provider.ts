@@ -27,7 +27,7 @@ export class YoutubeProvider implements MediaProvider {
     this.videosResource = service.videos;
   }
 
-  async findAll(filter: MediaFilter): Promise<[Media[], number]> {
+  public async findAll(filter: MediaFilter): Promise<[Media[], number]> {
     const response = await this.searchResource.list({
       part: 'snippet',
       q: filter.query,
@@ -53,12 +53,16 @@ export class YoutubeProvider implements MediaProvider {
     ];
   }
 
-  async parseFromUrl(url: string): Promise<Media | undefined> {
+  public async parseFromUrl(url: string): Promise<Media | undefined> {
     const match = this.urlRegex.exec(url);
     if (!match) {
       return undefined;
     }
     const videoId = match[this.urlRegexIdIndex];
+    return await this.findById(videoId);
+  }
+
+  public async findById(videoId: string): Promise<Media | undefined> {
     const response = await this.videosResource.list({
       part: 'snippet',
       auth: this.cfg.get<string>('apis.credentials.apiKey.google.youtube'),

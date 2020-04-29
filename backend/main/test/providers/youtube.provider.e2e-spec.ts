@@ -44,6 +44,13 @@ describe('YouTube provider', () => {
     expect(media.id).toEqual(videoId);
   });
 
+  it('should find video by ID', async () => {
+    const videoId = 'w3m4N0UVt0M';
+    const media = await provider.findById(videoId);
+    testMedia(media);
+    expect(media.id).toEqual(videoId);
+  });
+
   it('should fail finding video', async () => {
     const url = 'https://youtu.be/some-totally-bullshit-id';
     const media = await provider.parseFromUrl(url);

@@ -50,15 +50,3 @@ type UserList implements List {
     meta: ListMeta!
     entries: [User!]!
 }
-
-interface UserQuery {
-    allUsers(filter: FulltextFilter): UserList!
-    user(id: ID!): User!
-}
-
-interface UserMutation {
-    userRegister(user: UserRegister!): Auth!
-    userLogin(user: UserLogin!): Auth!
-    userUpdateMyself(user: UserUpdateInput!): User!
-    userUpdate(id: ID!, user: UserUpdateInput!): User!
-}

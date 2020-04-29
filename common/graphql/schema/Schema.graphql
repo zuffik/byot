@@ -1,5 +1,8 @@
 type Query {
+    # only for admin
     allUsers(filter: FulltextFilter): UserList!
+
+    # only for admin or myself
     allMedia(filter: FulltextFilter): MediaList!
     allTrainings(filter: FulltextFilter): TrainingList!
     allTrainingSets(filter: FulltextFilterForUser): TrainingSetList!
@@ -11,7 +14,6 @@ type Query {
     training(id: ID!): TrainingSet!
     media(id: ID!): Media!
 
-    trainingDraft: Training
     findMedia(filter: MediaFilter): MediaList!
 }
 
@@ -21,12 +23,11 @@ type Mutation {
     userUpdateMyself(user: UserUpdateInput!): User!
     userUpdate(id: ID!, user: UserUpdateInput!): User!
 
-    trainingDraftUpdateOrCreate(draft: TrainingDraftInput!): TrainingDraft!
-    saveTrainingDraft(draft: TrainingDraftInput!): Training!
+    createTraining(draft: TrainingDraftInput): Training!
     updateTraining(training: TrainingUpdateInput!): Training!
-    removeMedia(id: ID!): Training!
-    removeTraining(id: ID!): Training!
-    removeTrainingSet(id: ID!): Training!
+    removeMediaFromTraining(id: ID!): Media!
+    removeTrainingFromTrainingSet(id: ID!): Training!
+    removeTrainingSet(id: ID!): TrainingSet!
 }
 
 # WARN! there is no way to make TS interface with methods so these methods need to be tested

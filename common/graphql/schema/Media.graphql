@@ -35,13 +35,3 @@ type MediaList {
     meta: ListMeta!
     entries: [Media!]!
 }
-
-interface MediaQuery {
-    allMedia(filter: FulltextFilterForUser): MediaList!
-    media(id: ID!): Media!
-    findMedia(filter: MediaFilter): MediaList!
-}
-
-interface MediaMutation {
-    removeMedia(id: ID!): Training!
-}

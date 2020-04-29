@@ -4,7 +4,7 @@ type Training implements Entity {
     updatedAt: DateTime
 
     label: String!
-    media(filter: FulltextFilter): MediaList!
+    media: MediaList!
     trainingSet: TrainingSet!
     owner: User!
 }
@@ -25,7 +25,7 @@ type TrainingSet implements Entity {
     updatedAt: DateTime
 
     label: String!
-    trainings(pagination: FulltextFilter): TrainingList!
+    trainings: TrainingList!
     owner: User!
 }
 
@@ -48,27 +48,4 @@ input TrainingDraftInput {
     label: String
     idTrainingSet: ID
     media: [TrainingMediaInput!]
-}
-
-type TrainingDraft {
-    label: String
-    idTrainingSet: ID
-    media: [Media!]
-}
-
-interface TrainingQuery {
-    allTrainings(filter: FulltextFilterForUser): TrainingList!
-    allTrainingSets(filter: FulltextFilterForUser): TrainingSetList!
-    trainingSets(pagination: Pagination): TrainingSetList!
-    trainingSet(id: ID!): TrainingSet!
-    training(id: ID!): TrainingSet!
-    trainingDraft: Training
-}
-
-interface TrainingMutation {
-    trainingDraftUpdateOrCreate(draft: TrainingDraftInput!): TrainingDraft!
-    saveTrainingDraft(draft: TrainingDraftInput!): Training!
-    updateTraining(training: TrainingUpdateInput!): Training!
-    removeTraining(id: ID!): Training!
-    removeTrainingSet(id: ID!): Training!
 }

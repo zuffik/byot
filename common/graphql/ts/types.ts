@@ -139,7 +139,6 @@ export interface IQuery {
     trainingSet(id: string): TrainingSet | Promise<TrainingSet>;
     training(id: string): TrainingSet | Promise<TrainingSet>;
     media(id: string): Media | Promise<Media>;
-    trainingDraft(): Training | Promise<Training>;
     findMedia(filter?: MediaFilter): MediaList | Promise<MediaList>;
 }
 
@@ -148,12 +147,11 @@ export interface IMutation {
     userLogin(user: UserLogin): Auth | Promise<Auth>;
     userUpdateMyself(user: UserUpdateInput): User | Promise<User>;
     userUpdate(id: string, user: UserUpdateInput): User | Promise<User>;
-    trainingDraftUpdateOrCreate(draft: TrainingDraftInput): TrainingDraft | Promise<TrainingDraft>;
-    saveTrainingDraft(draft: TrainingDraftInput): Training | Promise<Training>;
+    createTraining(draft?: TrainingDraftInput): Training | Promise<Training>;
     updateTraining(training: TrainingUpdateInput): Training | Promise<Training>;
-    removeMedia(id: string): Training | Promise<Training>;
-    removeTraining(id: string): Training | Promise<Training>;
-    removeTrainingSet(id: string): Training | Promise<Training>;
+    removeMediaFromTraining(id: string): Media | Promise<Media>;
+    removeTrainingFromTrainingSet(id: string): Training | Promise<Training>;
+    removeTrainingSet(id: string): TrainingSet | Promise<TrainingSet>;
 }
 
 export interface Training extends Entity {
@@ -183,12 +181,6 @@ export interface TrainingSetList extends List {
 export interface TrainingList extends List {
     meta: ListMeta;
     entries: Training[];
-}
-
-export interface TrainingDraft {
-    label?: string;
-    idTrainingSet?: string;
-    media?: Media[];
 }
 
 export interface User extends Entity {

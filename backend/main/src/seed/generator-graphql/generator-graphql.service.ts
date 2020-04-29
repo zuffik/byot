@@ -81,6 +81,7 @@ export class GeneratorGraphqlService {
   public media(): Media {
     return {
       id: chance.guid(),
+      label: chance.sentence(),
       source: this.source(),
       updatedAt: this.dateTime(),
       createdAt: this.dateTime(),

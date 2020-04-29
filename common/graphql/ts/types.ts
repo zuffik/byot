@@ -28,7 +28,7 @@ export interface FulltextFilter {
 
 export interface FulltextFilterForUser {
     query?: string;
-    idUser: number;
+    idUser?: number;
     pagination?: Pagination;
 }
 

@@ -26,7 +26,7 @@ export class MigrationsService implements OnModuleInit {
         this.cfgService.get<string>('app.superAdmin.email'),
       );
       if (!superAdmin) {
-        await this.userRepository.create({
+        await this.userRepository.save({
           firstName: 'Super',
           lastName: 'Admin',
           role: Role.ADMIN,

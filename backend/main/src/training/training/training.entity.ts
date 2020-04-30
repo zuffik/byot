@@ -23,7 +23,7 @@ export class Training
   @Column('varchar')
   public label: string;
 
-  @ManyToMany((type) => Media, (media) => media.trainings)
+  @ManyToMany((type) => Media, (media) => media.trainings, { cascade: true })
   public medias: Promise<Media[]>;
 
   public get owner(): Promise<User> {

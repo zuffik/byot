@@ -3,17 +3,17 @@ import {
   Source as ISource,
   SourceType,
 } from '../../graphql/ts/types';
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity } from 'typeorm';
 
 @Entity()
 export class Source implements ISource {
-  @PrimaryGeneratedColumn('uuid')
+  @Column('varchar', { primary: true })
   public id: string;
 
   @Column('enum', { enum: MediaType })
   public mediaType: MediaType;
 
-  @Column('enum', { enum: SourceType })
+  @Column('enum', { enum: SourceType, primary: true })
   public sourceType: SourceType;
 
   @Column('varchar', { nullable: true })

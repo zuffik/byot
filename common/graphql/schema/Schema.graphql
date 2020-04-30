@@ -1,19 +1,16 @@
 type Query {
     # only for admin
     allUsers(filter: FulltextFilter): UserList!
-
-    # only for admin or myself
     allMedia(filter: FulltextFilter): MediaList!
     allTrainings(filter: FulltextFilter): TrainingList!
-    allTrainingSets(filter: FulltextFilterForUser): TrainingSetList!
 
+    # only for admin or myself
+    allTrainingSets(filter: FulltextFilterForUser): TrainingSetList!
     user(id: ID!): User!
     me: User!
-    trainingSets(pagination: Pagination): TrainingSetList!
     trainingSet(id: ID!): TrainingSet!
     training(id: ID!): TrainingSet!
     media(id: ID!): Media!
-
     findMedia(filter: MediaFilter): MediaList!
 }
 
@@ -23,6 +20,8 @@ type Mutation {
     userUpdateMyself(user: UserUpdateInput!): User!
     userUpdate(id: ID!, user: UserUpdateInput!): User!
 
+    createTrainingSet(trainingSet: TrainingSetInput): TrainingSet!
+    updateTrainingSet(trainingSet: TrainingSetInput): TrainingSet!
     createTraining(draft: TrainingDraftInput): Training!
     updateTraining(training: TrainingUpdateInput!): Training!
     removeMediaFromTraining(id: ID!): Media!

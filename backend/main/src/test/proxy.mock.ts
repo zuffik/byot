@@ -38,6 +38,7 @@ export const mockRepository = (initialObject: object = {}) =>
   proxyMock({
     findAndCount: jest.fn(async () => [[], 0]),
     create: jest.fn((entity) => _.clone(entity)),
+    save: jest.fn((entity) => _.clone(entity)),
     ...initialObject,
   });
 

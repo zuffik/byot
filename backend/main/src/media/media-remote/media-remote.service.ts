@@ -44,4 +44,11 @@ export class MediaRemoteService {
     const resources = await Promise.all(promises);
     return _.find(resources);
   }
+
+  async findById(
+    id: string,
+    sourceType: SourceType,
+  ): Promise<Media | undefined> {
+    return await this.providers[sourceType].findById(id);
+  }
 }

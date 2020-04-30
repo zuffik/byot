@@ -135,7 +135,6 @@ export interface IQuery {
     allTrainingSets(filter?: FulltextFilterForUser): TrainingSetList | Promise<TrainingSetList>;
     user(id: string): User | Promise<User>;
     me(): User | Promise<User>;
-    trainingSets(pagination?: Pagination): TrainingSetList | Promise<TrainingSetList>;
     trainingSet(id: string): TrainingSet | Promise<TrainingSet>;
     training(id: string): TrainingSet | Promise<TrainingSet>;
     media(id: string): Media | Promise<Media>;
@@ -147,6 +146,8 @@ export interface IMutation {
     userLogin(user: UserLogin): Auth | Promise<Auth>;
     userUpdateMyself(user: UserUpdateInput): User | Promise<User>;
     userUpdate(id: string, user: UserUpdateInput): User | Promise<User>;
+    createTrainingSet(trainingSet?: TrainingSetInput): TrainingSet | Promise<TrainingSet>;
+    updateTrainingSet(trainingSet?: TrainingSetInput): TrainingSet | Promise<TrainingSet>;
     createTraining(draft?: TrainingDraftInput): Training | Promise<Training>;
     updateTraining(training: TrainingUpdateInput): Training | Promise<Training>;
     removeMediaFromTraining(id: string): Media | Promise<Media>;

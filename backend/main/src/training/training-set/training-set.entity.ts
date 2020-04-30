@@ -25,6 +25,9 @@ export class TrainingSet
   @ManyToOne((type) => User)
   public owner: Promise<User>;
 
+  @OneToMany((type) => Training, (training) => training.trainingSet, {
+    cascade: true,
+  })
   public trainings: Promise<Training[]>;
 
   @CreateDateColumn({

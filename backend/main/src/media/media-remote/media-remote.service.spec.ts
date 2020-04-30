@@ -51,4 +51,12 @@ describe('MediaRemoteService', () => {
     await service.parseFromUrl(url);
     expect(spy).toBeCalledWith(url);
   });
+
+  it('should fetch by ID', async () => {
+    const id = 'w3m4N0UVt0M';
+    const sourceType = SourceType.YOUTUBE;
+    const spy = jest.spyOn(ytProvider, 'findById');
+    await service.findById(id, sourceType);
+    expect(spy).toBeCalledWith(id);
+  });
 });

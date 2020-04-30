@@ -16,6 +16,7 @@ import {
   testTrainingSet,
   testTrainingSetInput,
 } from '../../test/training-set.tester';
+import { testTrainingDraftInput } from '../../test/training-draft.tester';
 
 describe('GeneratorGraphqlService', () => {
   let service: GeneratorGraphqlService;
@@ -71,6 +72,11 @@ describe('GeneratorGraphqlService', () => {
   it('should generate source', () => {
     const source = service.source();
     testSource(source);
+  });
+
+  it('should generate training draft input', () => {
+    const trainingDraft = service.trainingDraftInput();
+    testTrainingDraftInput(trainingDraft);
   });
 
   it('should generate training set', () => {

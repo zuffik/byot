@@ -9,6 +9,7 @@ import {
   Source,
   SourceType,
   Training,
+  TrainingDraftInput,
   TrainingMediaInput,
   TrainingSet,
   TrainingSetInput,
@@ -138,6 +139,14 @@ export class GeneratorGraphqlService {
           ? _.times(10, () => this.training(false))
           : [],
       },
+    };
+  }
+
+  public trainingDraftInput(): TrainingDraftInput {
+    return {
+      label: chance.sentence({ words: 4 }),
+      idTrainingSet: chance.guid(),
+      media: _.times(10, () => this.trainingMediaInput()),
     };
   }
 

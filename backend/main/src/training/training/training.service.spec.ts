@@ -4,7 +4,7 @@ import { getRepositoryToken } from '@nestjs/typeorm';
 import { Training } from './training.entity';
 import { mockRepository, proxyMock } from '../../test/proxy.mock';
 import { Repository } from 'typeorm';
-import { FulltextFilter } from '../../graphql/ts/types';
+import { FulltextFilterForUser } from '../../graphql/ts/types';
 import { SeedModule } from '../../seed/seed.module';
 import { GeneratorGraphqlService } from '../../seed/generator-graphql/generator-graphql.service';
 import { GeneratorOrmService } from '../../seed/generator-orm/generator-orm.service';
@@ -61,7 +61,7 @@ describe('TrainingService', () => {
   });
 
   it('should fetch all trainings with pagination', async () => {
-    const filter: FulltextFilter = {
+    const filter: FulltextFilterForUser = {
       pagination: { offset: 0, limit: 10 },
     };
     const spy = jest.spyOn(repository, 'findAndCount');
@@ -73,7 +73,7 @@ describe('TrainingService', () => {
   });
 
   it('should fetch all trainings with fulltext search', async () => {
-    const filter: FulltextFilter = {
+    const filter: FulltextFilterForUser = {
       query: 'query',
     };
     const spy = jest.spyOn(repository, 'findAndCount');
@@ -89,9 +89,58 @@ describe('TrainingService', () => {
     });
   });
 
+  it('should fetch all trainings for user', async () => {
+    const filter: FulltextFilterForUser = {
+      idUser: 'idUser',
+    };
+    const spy = jest.spyOn(repository, 'findAndCount');
+    await service.findAndCount(filter);
+    expect(spy).toBeCalledWith({
+      relations: ['trainingSet', 'trainingSet.owner'],
+      where: {
+        trainingSet: {
+          owner: {
+            id: filter.idUser,
+          },
+        },
+      },
+    });
+  });
+
+  it('should fetch all trainings with full filter', async () => {
+    const filter: FulltextFilterForUser = {
+      idUser: 'idUser',
+      pagination: { limit: 10, offset: 0 },
+      query: 'query',
+    };
+    const spy = jest.spyOn(repository, 'findAndCount');
+    await service.findAndCount(filter);
+    expect(spy).toBeCalledWith({
+      relations: expect.arrayContaining([
+        'trainingSet',
+        'trainingSet.owner',
+        'medias',
+      ]),
+      where: {
+        label: expect.anything(),
+        medias: {
+          label: expect.anything(),
+        },
+        trainingSet: {
+          owner: {
+            id: filter.idUser,
+          },
+        },
+      },
+      skip: filter.pagination.offset,
+      take: filter.pagination.limit,
+    });
+  });
+
   it('should create training', async () => {
     const trainingInput = gqlGenerator.trainingDraftInput();
     const training = ormGenerator.training();
+    const trainingSet = ormGenerator.trainingSet();
     const spySave = jest.spyOn(repository, 'save');
     const spyMedia = jest.spyOn(mediaService, 'createOrFetch');
     training.medias = Promise.resolve(
@@ -107,11 +156,12 @@ describe('TrainingService', () => {
       ),
     );
     training.label = trainingInput.label;
-    await service.create(trainingInput);
+    await service.create(trainingInput, trainingSet);
     expect(spySave).toBeCalledWith(
       expect.objectContaining({
         ...trainingInput,
         medias: expect.any(Promise),
+        trainingSet: expect.any(Promise),
       }),
     );
     expect(spyMedia).toBeCalledTimes(trainingInput.media.length);

@@ -4,10 +4,13 @@ import { Training } from './training.entity';
 import { FindManyOptions, Like, Repository } from 'typeorm';
 import {
   FulltextFilter,
+  FulltextFilterForUser,
   TrainingDraftInput,
   TrainingUpdateInput,
 } from '../../graphql/ts/types';
 import { MediaService } from '../../media/media/media.service';
+import { TrainingSet } from '../training-set/training-set.entity';
+import * as _ from 'lodash';
 
 @Injectable()
 export class TrainingService {
@@ -18,22 +21,31 @@ export class TrainingService {
   ) {}
 
   public async findAndCount(
-    filter: FulltextFilter,
+    filter: FulltextFilterForUser,
   ): Promise<[Training[], number]> {
-    const query: FindManyOptions<Training> = {};
+    let query: FindManyOptions<Training> = {
+      relations: [],
+    };
     if (filter.query) {
-      query.relations = ['medias'];
-      const like = `%${filter.query}%`;
-      query.where = {
-        label: Like(like),
-        medias: {
-          label: Like(like),
-        },
-      };
+      query.relations.push('medias');
+      const like = Like(`%${filter.query}%`);
+      query = _.set(query, ['where', 'label'], like);
+      query = _.set(query, ['where', 'medias', 'label'], like);
+    }
+    if (filter.idUser) {
+      query.relations.push('trainingSet', 'trainingSet.owner');
+      query = _.set(
+        query,
+        ['where', 'trainingSet', 'owner', 'id'],
+        filter.idUser,
+      );
     }
     if (filter.pagination) {
       query.skip = filter.pagination.offset;
       query.take = filter.pagination.limit;
+    }
+    if (query.relations.length === 0) {
+      delete query.relations;
     }
     return await this.trainingRepository.findAndCount(query);
   }
@@ -44,11 +56,13 @@ export class TrainingService {
 
   public async create(
     draft: TrainingDraftInput,
+    trainingSet: TrainingSet,
   ): Promise<Training | undefined> {
     const training = await this.trainingRepository.create(draft);
     training.medias = Promise.all(
       draft.media.map((media) => this.mediaService.createOrFetch(media)),
     );
+    training.trainingSet = Promise.resolve(trainingSet);
     return await this.trainingRepository.save(training);
   }
 

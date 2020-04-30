@@ -9,7 +9,7 @@ type Query {
     user(id: ID!): User!
     me: User!
     trainingSet(id: ID!): TrainingSet!
-    training(id: ID!): TrainingSet!
+    training(id: ID!): Training!
     media(id: ID!): Media!
     findMedia(filter: MediaFilter): MediaList!
 }

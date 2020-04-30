@@ -136,7 +136,7 @@ export interface IQuery {
     user(id: string): User | Promise<User>;
     me(): User | Promise<User>;
     trainingSet(id: string): TrainingSet | Promise<TrainingSet>;
-    training(id: string): TrainingSet | Promise<TrainingSet>;
+    training(id: string): Training | Promise<Training>;
     media(id: string): Media | Promise<Media>;
     findMedia(filter?: MediaFilter): MediaList | Promise<MediaList>;
 }

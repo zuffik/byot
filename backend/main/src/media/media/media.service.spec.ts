@@ -80,9 +80,7 @@ describe('MediaService', () => {
     const spyCreateMedia = jest
       .spyOn(mediaRepository, 'create')
       .mockImplementation(() => media);
-    const spySaveMedia = jest
-      .spyOn(mediaRepository, 'save')
-      .mockImplementation(async () => media);
+    const spySaveMedia = jest.spyOn(mediaRepository, 'insert');
     await service.createOrFetchRemote({ sourceType, id });
     expect(spyFindLocal).toBeCalledWith({
       where: { id, sourceType },

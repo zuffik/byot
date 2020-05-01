@@ -148,7 +148,7 @@ describe('TrainingService', () => {
     const training = ormGenerator.training();
     const trainingSet = ormGenerator.trainingSet();
     const spySave = jest.spyOn(repository, 'save');
-    const spyMedia = jest.spyOn(mediaService, 'createOrFetch');
+    const spyMedia = jest.spyOn(mediaService, 'createOrFetchRemote');
     training.medias = Promise.resolve(
       expect.arrayContaining(
         trainingInput.media.map((m) =>

@@ -16,6 +16,6 @@ import { Source } from './source/source.entity';
     MediaRemoteResolver,
     MediaService,
   ],
-  exports: [MediaService],
+  exports: [MediaService, MediaRemoteService],
 })
 export class MediaModule {}

@@ -27,7 +27,6 @@ type Mutation {
     removeTrainingSet(id: ID!): TrainingSet!
 }
 
-# WARN! there is no way to make TS interface with methods so these methods need to be tested
 schema {
     query: Query
     mutation: Mutation

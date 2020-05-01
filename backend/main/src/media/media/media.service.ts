@@ -1,9 +1,13 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Media } from './media.entity';
+import {
+  Media as IMedia,
+  MediaFilter,
+  TrainingMediaInput,
+} from '../../graphql/ts/types';
 import { FindManyOptions, Like, Repository } from 'typeorm';
 import { Source } from '../source/source.entity';
-import { MediaFilter, TrainingMediaInput } from '../../graphql/ts/types';
 import { MediaRemoteService } from '../media-remote/media-remote.service';
 import * as _ from 'lodash';
 
@@ -30,14 +34,22 @@ export class MediaService {
     if (local) {
       return local;
     }
-    const remote = await this.remoteMedia.findById(media.id, media.sourceType);
-    if (!remote) {
+    return this.storeMedia(
+      await this.remoteMedia.findById(media.id, media.sourceType),
+    );
+  }
+
+  public async storeMedia(media: IMedia): Promise<Media> {
+    if (!media) {
       return undefined;
     }
-    const source = await this.sourceRepository.save(remote.source);
-    const created = this.mediaRepository.create(remote);
+    const source = await this.sourceRepository.save(
+      this.sourceRepository.create(media.source),
+    );
+    const created = this.mediaRepository.create(media);
     created.source = source;
-    return await this.mediaRepository.save(created);
+    await this.mediaRepository.insert(created);
+    return created;
   }
 
   public async findAndCount(filter?: MediaFilter): Promise<[Media[], number]> {

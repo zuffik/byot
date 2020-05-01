@@ -9,6 +9,10 @@ import { GeneratorOtherService } from './generator-other/generator-other.service
     GeneratorOrmService,
     GeneratorOtherService,
   ],
-  exports: [GeneratorGraphqlService, GeneratorOrmService],
+  exports: [
+    GeneratorGraphqlService,
+    GeneratorOrmService,
+    GeneratorOtherService,
+  ],
 })
 export class SeedModule {}

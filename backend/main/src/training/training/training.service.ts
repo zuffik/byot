@@ -60,7 +60,7 @@ export class TrainingService {
   ): Promise<Training | undefined> {
     const training = await this.trainingRepository.create(draft);
     training.medias = Promise.all(
-      draft.media.map((media) => this.mediaService.createOrFetch(media)),
+      draft.media.map((media) => this.mediaService.createOrFetchRemote(media)),
     );
     training.trainingSet = Promise.resolve(trainingSet);
     return await this.trainingRepository.save(training);
@@ -77,7 +77,9 @@ export class TrainingService {
     training.label = input.label || training.label;
     if (input.media) {
       training.medias = Promise.all(
-        input.media.map((media) => this.mediaService.createOrFetch(media)),
+        input.media.map((media) =>
+          this.mediaService.createOrFetchRemote(media),
+        ),
       );
     }
     return await this.trainingRepository.save(training);

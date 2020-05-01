@@ -25,7 +25,7 @@ export class AuthService {
     };
   }
 
-  private createPasswordHash(password: string) {
+  public createPasswordHash(password: string) {
     return bcrypt.hashSync(password, 10);
   }
 

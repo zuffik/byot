@@ -21,5 +21,6 @@ import { TrainingSetResolver } from './training-set/training-set.resolver';
     TrainingResolver,
     TrainingSetResolver,
   ],
+  exports: [TrainingService, TrainingSetService],
 })
 export class TrainingModule {}

@@ -19,7 +19,7 @@ export class TrainingSet
   @PrimaryGeneratedColumn('uuid')
   public id: string;
 
-  @Column('varchar')
+  @Column('varchar', {})
   public label: string;
 
   @ManyToOne((type) => User)

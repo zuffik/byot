@@ -39,7 +39,6 @@ export class YoutubeProvider implements MediaProvider {
     });
     return [
       response.data.items.map((item) => ({
-        id: item.id.videoId,
         createdAt: timestampToDateTime(moment(item.snippet.publishedAt)),
         label: item.snippet.title,
         source: {
@@ -73,7 +72,6 @@ export class YoutubeProvider implements MediaProvider {
     }
     const item = response.data.items[0];
     return {
-      id: videoId,
       createdAt: timestampToDateTime(moment(item.snippet.publishedAt)),
       label: item.snippet.title,
       source: {

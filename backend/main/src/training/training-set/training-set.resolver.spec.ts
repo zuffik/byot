@@ -222,4 +222,9 @@ describe('TrainingSetResolver', () => {
     expect(spyFindById).toBeCalledWith(id);
     expect(spyUpdate).not.toBeCalled();
   });
+
+  it('should resolve trainings field', async () => {
+    const trainingSet = ormGenerator.trainingSet();
+    testList(await resolver.resolveTrainings(trainingSet));
+  });
 });

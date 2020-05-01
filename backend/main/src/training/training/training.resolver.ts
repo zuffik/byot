@@ -6,9 +6,10 @@ import {
   TrainingDraftInput,
   TrainingList,
   TrainingUpdateInput,
+  MediaList,
 } from '../../graphql/ts/types';
 import { BaseResolver } from '../../helpers/BaseResolver';
-import { ForbiddenException, Inject } from '@nestjs/common';
+import { Inject } from '@nestjs/common';
 import { TrainingService } from './training.service';
 import { TrainingSetService } from '../training-set/training-set.service';
 import { JwtUserType } from '../../auth/decorators/jwt-user.decorator';
@@ -64,5 +65,10 @@ export class TrainingResolver extends BaseResolver {
     const training = this.returnOrBail(await this.trainingService.findById(id));
     await this.checkOwnership(training.owner, user);
     return await this.trainingService.update(id, input);
+  }
+
+  public async resolveMedia(training: Training): Promise<MediaList> {
+    const medias = await training.medias;
+    return this.createList<MediaList>([medias, medias.length]);
   }
 }

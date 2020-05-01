@@ -1,15 +1,17 @@
-import { Resolver } from '@nestjs/graphql';
-import { BadRequestException, Inject } from '@nestjs/common';
+import { Args, Parent, Query, ResolveField, Resolver } from '@nestjs/graphql';
+import { BadRequestException, Inject, UseGuards } from '@nestjs/common';
 import { TrainingSetService } from './training-set.service';
 import {
   FulltextFilterForUser,
   Role,
+  TrainingList,
   TrainingSetInput,
   TrainingSetList,
 } from '../../graphql/ts/types';
-import { JwtUserType } from '../../auth/decorators/jwt-user.decorator';
+import { JwtUser, JwtUserType } from '../../auth/decorators/jwt-user.decorator';
 import { BaseResolver } from '../../helpers/BaseResolver';
 import { TrainingSet } from './training-set.entity';
+import { AuthGuard } from '../../auth/jwt/auth.guard';
 
 @Resolver('TrainingSet')
 export class TrainingSetResolver extends BaseResolver {
@@ -20,9 +22,11 @@ export class TrainingSetResolver extends BaseResolver {
     super();
   }
 
+  @Query('allTrainingSets')
+  @UseGuards(AuthGuard)
   public async allTrainingSets(
-    filter?: FulltextFilterForUser,
-    user?: JwtUserType,
+    @Args('filter') filter?: FulltextFilterForUser,
+    @JwtUser() user?: JwtUserType,
   ): Promise<TrainingSetList> {
     filter = filter || {};
     if (user.role === Role.USER) {
@@ -31,6 +35,14 @@ export class TrainingSetResolver extends BaseResolver {
     return this.createList<TrainingSetList>(
       await this.trainingSetService.findAndCount(filter),
     );
+  }
+
+  @ResolveField('trainings')
+  public async resolveTrainings(
+    @Parent() trainingSet: TrainingSet,
+  ): Promise<TrainingList> {
+    const trainings = await trainingSet.trainings;
+    return this.createList<TrainingList>([trainings, trainings.length]);
   }
 
   public async trainingSet(

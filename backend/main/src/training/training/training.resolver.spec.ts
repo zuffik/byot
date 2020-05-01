@@ -292,4 +292,9 @@ describe('TrainingResolver', () => {
     expect(spyFindById).toBeCalledWith(id);
     expect(spyUpdate).not.toBeCalled();
   });
+
+  it('should resolve media field', async () => {
+    const training = ormGenerator.training();
+    testList(await resolver.resolveMedia(training));
+  });
 });

@@ -1,5 +1,5 @@
 import { ForbiddenException, NotFoundException } from '@nestjs/common';
-import { List, Role } from '../graphql/ts/types';
+import { List, Role, MediaList } from '../graphql/ts/types';
 import { JwtUserType } from '../auth/decorators/jwt-user.decorator';
 
 export abstract class BaseResolver {
@@ -10,7 +10,7 @@ export abstract class BaseResolver {
     return entity;
   }
 
-  protected createList<L extends List>([entries, totalCount]: [
+  protected createList<L extends List | MediaList>([entries, totalCount]: [
     any[],
     number,
   ]): L {

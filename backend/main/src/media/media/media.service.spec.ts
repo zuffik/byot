@@ -9,7 +9,7 @@ import { Media } from './media.entity';
 import { MediaRemoteService } from '../media-remote/media-remote.service';
 import { GeneratorOrmService } from '../../seed/generator-orm/generator-orm.service';
 import { Repository } from 'typeorm';
-import { SourceType } from '../../graphql/ts/types';
+import { MediaFilter, MediaType, SourceType } from '../../graphql/ts/types';
 
 describe('MediaService', () => {
   let service: MediaService;
@@ -83,7 +83,7 @@ describe('MediaService', () => {
     const spySaveMedia = jest
       .spyOn(mediaRepository, 'save')
       .mockImplementation(async () => media);
-    await service.createOrFetch({ sourceType, id });
+    await service.createOrFetchRemote({ sourceType, id });
     expect(spyFindLocal).toBeCalledWith({
       where: { id, sourceType },
     });
@@ -108,7 +108,7 @@ describe('MediaService', () => {
     const spySaveSource = jest.spyOn(sourceRepository, 'save');
     const spyCreateMedia = jest.spyOn(mediaRepository, 'create');
     const spySaveMedia = jest.spyOn(mediaRepository, 'save');
-    await service.createOrFetch({ sourceType, id });
+    await service.createOrFetchRemote({ sourceType, id });
     expect(spyFindLocal).toBeCalledWith({
       where: { id, sourceType },
     });
@@ -133,7 +133,9 @@ describe('MediaService', () => {
     const spySaveSource = jest.spyOn(sourceRepository, 'save');
     const spyCreateMedia = jest.spyOn(mediaRepository, 'create');
     const spySaveMedia = jest.spyOn(mediaRepository, 'save');
-    expect(await service.createOrFetch({ sourceType, id })).toBeUndefined();
+    expect(
+      await service.createOrFetchRemote({ sourceType, id }),
+    ).toBeUndefined();
     expect(spyFindLocal).toBeCalledWith({
       where: { id, sourceType },
     });
@@ -141,5 +143,116 @@ describe('MediaService', () => {
     expect(spySaveSource).not.toBeCalled();
     expect(spyCreateMedia).not.toBeCalled();
     expect(spySaveMedia).not.toBeCalled();
+  });
+
+  it('should find all local medias without filter', async () => {
+    const spyFindAll = jest.spyOn(mediaRepository, 'findAndCount');
+    await service.findAndCount();
+    expect(spyFindAll).toBeCalledWith({});
+  });
+
+  it('should find all local medias with pagination', async () => {
+    const filter: MediaFilter = {
+      pagination: {
+        limit: 10,
+        offset: 0,
+      },
+    };
+    const spyFindAll = jest.spyOn(mediaRepository, 'findAndCount');
+    await service.findAndCount(filter);
+    expect(spyFindAll).toBeCalledWith({
+      skip: filter.pagination.offset,
+      take: filter.pagination.limit,
+    });
+  });
+
+  it('should find all local medias with owner', async () => {
+    const filter: MediaFilter = {
+      owner: 'id',
+    };
+    const spyFindAll = jest.spyOn(mediaRepository, 'findAndCount');
+    await service.findAndCount(filter);
+    expect(spyFindAll).toBeCalledWith({
+      relations: [
+        'trainings',
+        'trainings.trainingSet',
+        'trainings.trainingSet.owner',
+      ],
+      where: {
+        trainings: {
+          trainingSet: {
+            owner: {
+              id: filter.owner,
+            },
+          },
+        },
+      },
+    });
+  });
+
+  it('should find all local medias with query', async () => {
+    const filter: MediaFilter = {
+      query: 'query',
+    };
+    const spyFindAll = jest.spyOn(mediaRepository, 'findAndCount');
+    await service.findAndCount(filter);
+    expect(spyFindAll).toBeCalledWith({
+      where: {
+        label: expect.anything(),
+      },
+    });
+  });
+
+  it('should find all local medias with source', async () => {
+    const filter: MediaFilter = {
+      source: MediaType.VIDEO,
+    };
+    const spyFindAll = jest.spyOn(mediaRepository, 'findAndCount');
+    await service.findAndCount(filter);
+    expect(spyFindAll).toBeCalledWith({
+      relations: ['source'],
+      where: {
+        source: {
+          mediaType: filter.source,
+        },
+      },
+    });
+  });
+
+  it('should find all local medias full filter', async () => {
+    const filter: MediaFilter = {
+      source: MediaType.VIDEO,
+      query: 'query',
+      owner: 'owner',
+      pagination: {
+        limit: 10,
+        offset: 0,
+      },
+    };
+    const spyFindAll = jest.spyOn(mediaRepository, 'findAndCount');
+    await service.findAndCount(filter);
+    expect(spyFindAll).toBeCalledWith({
+      relations: expect.arrayContaining([
+        'source',
+        'trainings',
+        'trainings.trainingSet',
+        'trainings.trainingSet.owner',
+      ]),
+      where: {
+        trainings: {
+          trainingSet: {
+            owner: {
+              id: filter.owner,
+            },
+          },
+        },
+        source: {
+          mediaType: filter.source,
+        },
+        label: expect.anything(),
+      },
+      skip: filter.pagination.offset,
+      take: filter.pagination.limit,
+    });
   });
 });

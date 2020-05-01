@@ -21,18 +21,18 @@ export class TrainingService {
   ) {}
 
   public async findAndCount(
-    filter: FulltextFilterForUser,
+    filter?: FulltextFilterForUser,
   ): Promise<[Training[], number]> {
     let query: FindManyOptions<Training> = {
       relations: [],
     };
-    if (filter.query) {
+    if (filter?.query) {
       query.relations.push('medias');
       const like = Like(`%${filter.query}%`);
       query = _.set(query, ['where', 'label'], like);
       query = _.set(query, ['where', 'medias', 'label'], like);
     }
-    if (filter.idUser) {
+    if (filter?.idUser) {
       query.relations.push('trainingSet', 'trainingSet.owner');
       query = _.set(
         query,
@@ -40,7 +40,7 @@ export class TrainingService {
         filter.idUser,
       );
     }
-    if (filter.pagination) {
+    if (filter?.pagination) {
       query.skip = filter.pagination.offset;
       query.take = filter.pagination.limit;
     }

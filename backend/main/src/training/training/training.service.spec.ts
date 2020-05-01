@@ -60,6 +60,12 @@ describe('TrainingService', () => {
     });
   });
 
+  it('should fetch all trainings with no filter', async () => {
+    const spy = jest.spyOn(repository, 'findAndCount');
+    await service.findAndCount();
+    expect(spy).toBeCalledWith({});
+  });
+
   it('should fetch all trainings with pagination', async () => {
     const filter: FulltextFilterForUser = {
       pagination: { offset: 0, limit: 10 },

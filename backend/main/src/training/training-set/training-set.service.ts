@@ -21,14 +21,14 @@ export class TrainingSetService {
     filter?: FulltextFilterForUser,
   ): Promise<[TrainingSet[], number]> {
     let query: FindManyOptions<TrainingSet> = {};
-    if (filter.idUser) {
+    if (filter?.idUser) {
       query.relations = ['owner'];
       query = _.set(query, ['where', 'owner', 'id'], filter.idUser);
     }
-    if (filter.query) {
+    if (filter?.query) {
       query = _.set(query, ['where', 'label'], Like(`%${filter.query}%`));
     }
-    if (filter.pagination) {
+    if (filter?.pagination) {
       query.take = filter.pagination.limit;
       query.skip = filter.pagination.offset;
     }

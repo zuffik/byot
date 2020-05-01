@@ -1,5 +1,6 @@
-import { NotFoundException } from '@nestjs/common';
-import { List } from '../graphql/ts/types';
+import { ForbiddenException, NotFoundException } from '@nestjs/common';
+import { List, Role } from '../graphql/ts/types';
+import { JwtUserType } from '../auth/decorators/jwt-user.decorator';
 
 export abstract class BaseResolver {
   protected returnOrBail<T = any>(entity: T): T {
@@ -19,5 +20,19 @@ export abstract class BaseResolver {
         totalCount,
       },
     } as L;
+  }
+
+  protected async checkOwnership(
+    ownerId: string | Promise<{ id: string }>,
+    user: JwtUserType,
+  ) {
+    if (
+      user.role !== Role.ADMIN &&
+      (ownerId instanceof Promise
+        ? (await ownerId).id !== user.id
+        : ownerId !== user.id)
+    ) {
+      throw new ForbiddenException();
+    }
   }
 }

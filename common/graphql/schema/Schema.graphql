@@ -1,11 +1,9 @@
 type Query {
-    # only for admin
     allUsers(filter: FulltextFilter): UserList!
     allMedia(filter: FulltextFilter): MediaList!
-    allTrainings(filter: FulltextFilter): TrainingList!
 
-    # only for admin or myself
     allTrainingSets(filter: FulltextFilterForUser): TrainingSetList!
+    allTrainings(filter: FulltextFilter): TrainingList!
     user(id: ID!): User!
     me: User!
     trainingSet(id: ID!): TrainingSet!

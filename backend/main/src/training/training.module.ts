@@ -7,6 +7,7 @@ import { TrainingSet } from './training-set/training-set.entity';
 import { MediaModule } from '../media/media.module';
 import { UserModule } from '../user/user.module';
 import { TrainingResolver } from './training/training.resolver';
+import { TrainingSetResolver } from './training-set/training-set.resolver';
 
 @Module({
   imports: [
@@ -14,6 +15,11 @@ import { TrainingResolver } from './training/training.resolver';
     MediaModule,
     UserModule,
   ],
-  providers: [TrainingService, TrainingSetService, TrainingResolver],
+  providers: [
+    TrainingService,
+    TrainingSetService,
+    TrainingResolver,
+    TrainingSetResolver,
+  ],
 })
 export class TrainingModule {}

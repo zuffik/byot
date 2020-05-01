@@ -41,9 +41,7 @@ export class TrainingResolver extends BaseResolver {
 
   public async training(id: string, user: JwtUserType): Promise<Training> {
     const training = this.returnOrBail(await this.trainingService.findById(id));
-    if (user.role !== Role.ADMIN && (await training.owner).id !== user.id) {
-      throw new ForbiddenException();
-    }
+    await this.checkOwnership(training.owner, user);
     return training;
   }
 
@@ -54,9 +52,7 @@ export class TrainingResolver extends BaseResolver {
     const trainingSet = this.returnOrBail(
       await this.trainingSetService.findById(input.idTrainingSet),
     );
-    if (user.role !== Role.ADMIN && (await trainingSet.owner).id !== user.id) {
-      throw new ForbiddenException();
-    }
+    await this.checkOwnership(trainingSet.owner, user);
     return await this.trainingService.create(input, trainingSet);
   }
 
@@ -66,9 +62,7 @@ export class TrainingResolver extends BaseResolver {
     user: JwtUserType,
   ): Promise<Training> {
     const training = this.returnOrBail(await this.trainingService.findById(id));
-    if (user.role !== Role.ADMIN && (await training.owner).id !== user.id) {
-      throw new ForbiddenException();
-    }
+    await this.checkOwnership(training.owner, user);
     return await this.trainingService.update(id, input);
   }
 }

@@ -14,6 +14,7 @@ import { MigrationsModule } from './migrations/migrations.module';
 import { MediaModule } from './media/media.module';
 import { apisConfig } from './config/apis.config';
 import { TrainingModule } from './training/training.module';
+import { sharedConfig } from './config/shared.config';
 
 @Module({
   imports: [
@@ -28,7 +29,7 @@ import { TrainingModule } from './training/training.module';
         .reverse(),
       isGlobal: true,
       validationSchema,
-      load: [databaseConfig, appConfig, nodeConfig, apisConfig],
+      load: [databaseConfig, appConfig, nodeConfig, apisConfig, sharedConfig],
     }),
     GraphQLModule.forRootAsync({
       inject: [ConfigService],

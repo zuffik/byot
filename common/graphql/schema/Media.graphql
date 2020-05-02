@@ -19,7 +19,8 @@ type Source {
     sourceType: SourceType!
     mediaType: MediaType!
     thumbnail: String
-    id: ID!
+    id: ID
+    mediaId: ID
     url: String
 }
 

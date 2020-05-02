@@ -1,4 +1,4 @@
-import { Resolver } from '@nestjs/graphql';
+import { Parent, ResolveField, Resolver } from '@nestjs/graphql';
 import {
   FulltextFilter,
   FulltextFilterForUser,
@@ -67,7 +67,8 @@ export class TrainingResolver extends BaseResolver {
     return await this.trainingService.update(id, input);
   }
 
-  public async resolveMedia(training: Training): Promise<MediaList> {
+  @ResolveField('media')
+  public async resolveMedia(@Parent() training: Training): Promise<MediaList> {
     const medias = await training.medias;
     return this.createList<MediaList>([medias, medias.length]);
   }

@@ -29,7 +29,7 @@ describe('GeneratorOrmService', () => {
 
   it('should generate media', () => {
     const media = service.media();
-    testMedia(media);
+    return testMedia(media);
   });
 
   it('should generate source', () => {

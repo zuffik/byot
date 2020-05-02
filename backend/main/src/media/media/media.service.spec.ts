@@ -10,6 +10,7 @@ import { MediaRemoteService } from '../media-remote/media-remote.service';
 import { GeneratorOrmService } from '../../seed/generator-orm/generator-orm.service';
 import { Repository } from 'typeorm';
 import { MediaFilter, MediaType, SourceType } from '../../graphql/ts/types';
+import * as _ from 'lodash';
 
 describe('MediaService', () => {
   let service: MediaService;
@@ -87,8 +88,8 @@ describe('MediaService', () => {
     });
     expect(spyFindRemote).toBeCalledWith(id, sourceType);
     expect(spySaveSource).toBeCalledWith(remoteMedia.source);
-    expect(spyCreateMedia).toBeCalledWith(remoteMedia);
-    media.source = source;
+    expect(spyCreateMedia).toBeCalledWith(_.omit(remoteMedia, 'source'));
+    media.source = Promise.resolve(source);
     expect(spySaveMedia).toBeCalledWith(media);
   });
 

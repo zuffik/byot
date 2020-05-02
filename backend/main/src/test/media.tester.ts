@@ -1,8 +1,10 @@
 import { Media, Source } from '../graphql/ts/types';
 import { testDateTime } from './datetime.tester';
 
-export function testMedia(media: Media | any) {
-  testSource(media.source);
+export async function testMedia(media: Media | any) {
+  testSource(
+    media.source instanceof Promise ? await media.source : media.source,
+  );
   expect(media.id).toBeOptionalString();
   if (media.createdAt) {
     testDateTime(media.createdAt);
@@ -20,6 +22,7 @@ export function testSource(source: Source | any) {
     }),
   );
   expect(source.thumbnail).toBeOptionalString();
+  expect(source.mediaId).toBeOptionalString();
   expect(source.id).toBeOptionalString();
   expect(source.url).toBeOptionalString();
 }

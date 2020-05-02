@@ -2,6 +2,7 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  JoinTable,
   ManyToMany,
   ManyToOne,
   PrimaryGeneratedColumn,
@@ -23,7 +24,8 @@ export class Training
   @Column('varchar')
   public label: string;
 
-  @ManyToMany((type) => Media, (media) => media.trainings, { cascade: true })
+  @ManyToMany((type) => Media, { cascade: true })
+  @JoinTable()
   public medias: Promise<Media[]>;
 
   public get owner(): Promise<User> {

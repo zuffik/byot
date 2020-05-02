@@ -41,16 +41,13 @@ export class GeneratorOrmService {
     return source;
   }
 
-  public media(generateTrainings: boolean = true): Media {
+  public media(): Media {
     const gql = this.gqlGenerator.media();
     const media = new Media();
     media.id = gql.id;
     media.createdAt = gql.createdAt;
     media.updatedAt = gql.updatedAt;
-    media.source = this.source();
-    media.trainings = Promise.resolve(
-      generateTrainings ? _.times(10, () => this.training()) : [],
-    );
+    media.source = Promise.resolve(this.source());
     return media;
   }
 
@@ -64,7 +61,7 @@ export class GeneratorOrmService {
     training.trainingSet = Promise.resolve(
       (!trainingSet ? this.trainingSet(false) : trainingSet) as TrainingSet,
     );
-    training.medias = Promise.resolve(_.times(10, () => this.media(false)));
+    training.medias = Promise.resolve(_.times(10, () => this.media()));
     return training;
   }
 

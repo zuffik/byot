@@ -19,9 +19,9 @@ type Mutation {
     userUpdate(id: ID!, user: UserUpdateInput!): User!
 
     createTrainingSet(trainingSet: TrainingSetInput): TrainingSet!
-    updateTrainingSet(trainingSet: TrainingSetInput): TrainingSet!
+    updateTrainingSet(id: ID!, trainingSet: TrainingSetInput): TrainingSet!
     createTraining(draft: TrainingDraftInput): Training!
-    updateTraining(training: TrainingUpdateInput!): Training!
+    updateTraining(id: ID!, training: TrainingUpdateInput!): Training!
     removeMediaFromTraining(id: ID!): Media!
     removeTrainingFromTrainingSet(id: ID!): Training!
     removeTrainingSet(id: ID!): TrainingSet!

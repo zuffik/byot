@@ -1,4 +1,16 @@
-import { Auth, MediaFilter, MediaList, User, UserList, UserRegister, UserUpdateInput } from './types';
+import {
+  Auth,
+  FulltextFilterForUser,
+  MediaFilter,
+  MediaList,
+  TrainingSet,
+  TrainingSetInput,
+  TrainingSetList,
+  User,
+  UserList,
+  UserRegister,
+  UserUpdateInput,
+} from './types';
 
 export interface Interaction<T> {
   query: string;
@@ -183,5 +195,218 @@ export const graphQLInteraction = {
         }
     `,
     variables: { filter },
+  }),
+  allTrainingSets: (filter?: FulltextFilterForUser): Interaction<{ allTrainingSets: TrainingSetList }> => ({
+    variables: { filter },
+    query: gql`
+        query allTrainingSets($filter: FulltextFilterForUser) {
+            allTrainingSets(filter: $filter) {
+                entries{
+                    id
+                    label
+                    owner{
+                        fullName
+                        userName
+                        firstName
+                        lastName
+                        email
+                        role
+                        id
+                    }
+                    createdAt{
+                        humanReadable
+                        iso
+                    }
+                    updatedAt{
+                        humanReadable
+                        iso
+                    }
+                    trainings{
+                        meta{
+                            totalCount
+                        }
+                        entries{
+                            id
+                            label
+                            media{
+                                meta{
+                                    totalCount
+                                }
+                                entries{
+                                    id
+                                    label
+                                    source{
+                                        id
+                                        mediaType
+                                        sourceType
+                                        thumbnail
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                meta{
+                    totalCount
+                }
+            }
+        }
+    `,
+  }),
+  trainingSet: (id: string): Interaction<{ trainingSet: TrainingSet }> => ({
+    variables: { id },
+    query: gql`
+        query trainigSet($id: ID!) {
+            trainingSet(id: $id) {
+                id
+                label
+                owner{
+                    fullName
+                    userName
+                    firstName
+                    lastName
+                    email
+                    role
+                    id
+                }
+                createdAt{
+                    humanReadable
+                    iso
+                }
+                updatedAt{
+                    humanReadable
+                    iso
+                }
+                trainings{
+                    meta{
+                        totalCount
+                    }
+                    entries{
+                        id
+                        label
+                        media{
+                            meta{
+                                totalCount
+                            }
+                            entries{
+                                id
+                                label
+                                source{
+                                    id
+                                    mediaType
+                                    sourceType
+                                    thumbnail
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    `,
+  }),
+  createTrainingSet: (input: TrainingSetInput): Interaction<{ createTrainingSet: TrainingSet }> => ({
+    variables: { input },
+    query: gql`
+        mutation createTrainigSet($input: TrainingSetInput) {
+            createTrainingSet(trainingSet: $input) {
+                id
+                label
+                owner{
+                    fullName
+                    userName
+                    firstName
+                    lastName
+                    email
+                    role
+                    id
+                }
+                createdAt{
+                    humanReadable
+                    iso
+                }
+                updatedAt{
+                    humanReadable
+                    iso
+                }
+                trainings{
+                    meta{
+                        totalCount
+                    }
+                    entries{
+                        id
+                        label
+                        media{
+                            meta{
+                                totalCount
+                            }
+                            entries{
+                                id
+                                label
+                                source{
+                                    id
+                                    mediaType
+                                    sourceType
+                                    thumbnail
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    `,
+  }),
+  updateTrainingSet: (id: string, input: TrainingSetInput): Interaction<{ updateTrainingSet: TrainingSet }> => ({
+    variables: { id, input },
+    query: gql`
+        mutation updateTrainingSet($id: ID!, $input: TrainingSetInput!) {
+            updateTrainingSet(trainingSet: $input, id: $id) {
+                id
+                label
+                owner{
+                    fullName
+                    userName
+                    firstName
+                    lastName
+                    email
+                    role
+                    id
+                }
+                createdAt{
+                    humanReadable
+                    iso
+                }
+                updatedAt{
+                    humanReadable
+                    iso
+                }
+                trainings{
+                    meta{
+                        totalCount
+                    }
+                    entries{
+                        id
+                        label
+                        media{
+                            meta{
+                                totalCount
+                            }
+                            entries{
+                                id
+                                label
+                                source{
+                                    id
+                                    mediaType
+                                    sourceType
+                                    thumbnail
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    `,
   }),
 };

@@ -111,7 +111,8 @@ export interface Source {
     sourceType: SourceType;
     mediaType: MediaType;
     thumbnail?: string;
-    id: string;
+    id?: string;
+    mediaId?: string;
     url?: string;
 }
 
@@ -147,9 +148,9 @@ export interface IMutation {
     userUpdateMyself(user: UserUpdateInput): User | Promise<User>;
     userUpdate(id: string, user: UserUpdateInput): User | Promise<User>;
     createTrainingSet(trainingSet?: TrainingSetInput): TrainingSet | Promise<TrainingSet>;
-    updateTrainingSet(trainingSet?: TrainingSetInput): TrainingSet | Promise<TrainingSet>;
+    updateTrainingSet(id: string, trainingSet?: TrainingSetInput): TrainingSet | Promise<TrainingSet>;
     createTraining(draft?: TrainingDraftInput): Training | Promise<Training>;
-    updateTraining(training: TrainingUpdateInput): Training | Promise<Training>;
+    updateTraining(id: string, training: TrainingUpdateInput): Training | Promise<Training>;
     removeMediaFromTraining(id: string): Media | Promise<Media>;
     removeTrainingFromTrainingSet(id: string): Training | Promise<Training>;
     removeTrainingSet(id: string): TrainingSet | Promise<TrainingSet>;

@@ -52,18 +52,10 @@ import { TrainingModule } from './training/training.module';
         password: cfg.get<string>('db.pass'),
         database: cfg.get<string>('db.name'),
         charset: 'utf8mb4_unicode_ci',
-        entities:
-          cfg.get<string>('node.env') !== 'test'
-            ? ['./**/*.entity.js']
-            : ['./**/*.entity.ts'],
+        entities: [path.join(__dirname, './**/*.entity.{ts,js}')],
         synchronize: true,
-        keepConnectionAlive: cfg.get<string>('node.env') === 'test',
         logger:
-          cfg.get<string>('node.env') === 'development' ? 'debug' : undefined,
-        extra:
-          cfg.get<string>('node.env') === 'test'
-            ? { connectionLimit: 1000 }
-            : undefined,
+          cfg.get<string>('node.env') !== 'development' ? 'debug' : undefined,
       }),
     }),
     UserModule,

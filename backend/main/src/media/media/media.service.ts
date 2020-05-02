@@ -46,8 +46,8 @@ export class MediaService {
     const source = await this.sourceRepository.save(
       this.sourceRepository.create(media.source),
     );
-    const created = this.mediaRepository.create(media);
-    created.source = source;
+    const created = this.mediaRepository.create(_.omit(media, 'source'));
+    created.source = Promise.resolve(source);
     await this.mediaRepository.insert(created);
     return created;
   }

@@ -201,29 +201,39 @@ export class MigrationsService implements OnModuleInit {
     if (_.every(trainingsFromSets, (trainings) => trainings.length > 0)) {
       return _.flatten(trainingsFromSets);
     }
-    return await Promise.all(
-      _.flatten(
-        trainingSets.map((set) =>
-          _.times(this.getNumber(this.trainings.trainingsPerSet), (i) =>
-            this.trainingService.create(
-              {
-                ...this.gqlGenerator.trainingDraftInput(),
-                label: this.trainings.trainingLabel(i, set.id),
-                idTrainingSet: set.id,
-                media: _.times(
-                  this.getNumber(this.trainings.mediasPerTraining),
-                  () => {
-                    const media = _.sample(medias);
-                    return {
-                      id: media.id,
-                      sourceType: media.source.sourceType,
-                    };
-                  },
-                ),
-              },
-              set,
+    return _.flatten(
+      await Promise.all(
+        trainingSets.map(
+          async (set) =>
+            await Promise.all(
+              _.times(
+                this.getNumber(this.trainings.trainingsPerSet),
+                async (i) =>
+                  this.trainingService.create(
+                    {
+                      ...this.gqlGenerator.trainingDraftInput(),
+                      label: this.trainings.trainingLabel(i, set.id),
+                      idTrainingSet: set.id,
+                      media: _.uniqBy(
+                        await Promise.all(
+                          _.times(
+                            this.getNumber(this.trainings.mediasPerTraining),
+                            async () => {
+                              const media = _.sample(medias);
+                              return {
+                                id: media.id,
+                                sourceType: (await media.source).sourceType,
+                              };
+                            },
+                          ),
+                        ),
+                        'id',
+                      ),
+                    },
+                    set,
+                  ),
+              ),
             ),
-          ),
         ),
       ),
     );

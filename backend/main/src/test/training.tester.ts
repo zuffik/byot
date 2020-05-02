@@ -29,9 +29,18 @@ export async function testTraining(
     testList(training.media);
     training.media.entries.forEach(testMedia);
   }
-  testUser(await training.owner);
+  if (training.owner) {
+    testUser(
+      training.owner instanceof Promise ? await training.owner : training.owner,
+    );
+  }
   if (training.trainingSet && checkTrainingSet) {
-    await testTrainingSet(await training.trainingSet, false);
+    await testTrainingSet(
+      training.trainingSet instanceof Promise
+        ? await training.trainingSet
+        : training.trainingSet,
+      false,
+    );
   }
   testDateTime(training.createdAt);
   testDateTime(training.updatedAt);

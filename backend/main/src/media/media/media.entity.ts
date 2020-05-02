@@ -2,29 +2,27 @@ import {
   Column,
   CreateDateColumn,
   Entity,
-  ManyToMany,
+  JoinColumn,
   OneToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
 import { timestampToDateTimeORMTransformer } from '../../helpers/TimestampToDateTime';
 import { Source } from '../source/source.entity';
-import { Training } from '../../training/training/training.entity';
-import { DateTime, Media as IMedia } from '../../graphql/ts/types';
+import { DateTime } from '../../graphql/ts/types';
 
 @Entity()
-export class Media implements IMedia {
+export class Media {
   @PrimaryGeneratedColumn('uuid')
   public id: string;
 
-  @OneToOne((type) => Source)
-  public source: Source;
+  // todo find out if there is possibility to have eager relation
+  @OneToOne((type) => Source, { nullable: false })
+  @JoinColumn()
+  public source: Promise<Source>;
 
   @Column('varchar')
   public label: string;
-
-  @ManyToMany((type) => Training, (t) => t.medias)
-  public trainings: Promise<Training[]>;
 
   @CreateDateColumn({
     transformer: timestampToDateTimeORMTransformer,

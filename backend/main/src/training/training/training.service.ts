@@ -59,8 +59,12 @@ export class TrainingService {
     trainingSet: TrainingSet,
   ): Promise<Training | undefined> {
     const training = await this.trainingRepository.create(draft);
-    training.medias = Promise.all(
-      draft.media.map((media) => this.mediaService.createOrFetchRemote(media)),
+    training.medias = Promise.resolve(
+      await Promise.all(
+        draft.media.map((media) =>
+          this.mediaService.createOrFetchRemote(media),
+        ),
+      ),
     );
     training.trainingSet = Promise.resolve(trainingSet);
     return await this.trainingRepository.save(training);
@@ -76,9 +80,11 @@ export class TrainingService {
     }
     training.label = input.label || training.label;
     if (input.media) {
-      training.medias = Promise.all(
-        input.media.map((media) =>
-          this.mediaService.createOrFetchRemote(media),
+      training.medias = Promise.resolve(
+        await Promise.all(
+          input.media.map((media) =>
+            this.mediaService.createOrFetchRemote(media),
+          ),
         ),
       );
     }

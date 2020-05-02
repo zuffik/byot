@@ -1,6 +1,6 @@
 import * as request from 'supertest';
 import { INestApplication } from '@nestjs/common';
-import { Role } from '../../src/graphql/ts/types';
+import { Auth, Role } from '../../src/graphql/ts/types';
 import {
   graphQLInteraction,
   Interaction,
@@ -20,8 +20,10 @@ export const makeGraphQLRequest = async <T>(
   {
     userRole,
     token,
+    demoAccount,
   }: {
     userRole?: Role;
+    demoAccount?: number;
     token?: string;
   } = {},
 ): Promise<IResponse<T>> => {
@@ -29,7 +31,8 @@ export const makeGraphQLRequest = async <T>(
     userRole || token
       ? {
           Authorization: `Bearer ${
-            token || (await registerTestUser(app, userRole))
+            token ||
+            (await loginTestUser(app, userRole, demoAccount || 1)).token
           }`,
         }
       : {};
@@ -42,16 +45,17 @@ export const makeGraphQLRequest = async <T>(
     })) as unknown) as IResponse<T>;
 };
 
-export const registerTestUser = async (
+export const loginTestUser = async (
   app: INestApplication,
   role: Role = Role.ADMIN,
-): Promise<string> => {
+  demoUser: number = 1,
+): Promise<Auth> => {
   const userNameOrEmail =
     role === Role.ADMIN
       ? app
           .get<ConfigService>(ConfigService)
           .get<string>('app.superAdmin.userName')
-      : 'demo-1';
+      : `demo-${demoUser}`;
   const password =
     role === Role.ADMIN
       ? app
@@ -62,5 +66,5 @@ export const registerTestUser = async (
     app,
     graphQLInteraction.userLogin(userNameOrEmail, password),
   );
-  return response.body.data.userLogin.token;
+  return response.body.data.userLogin;
 };

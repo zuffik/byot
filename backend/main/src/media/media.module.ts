@@ -7,6 +7,7 @@ import { MediaService } from './media/media.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Media } from './media/media.entity';
 import { Source } from './source/source.entity';
+import { MediaResolver } from './media/media.resolver';
 
 @Module({
   imports: [ConfigModule, TypeOrmModule.forFeature([Media, Source])],
@@ -15,6 +16,7 @@ import { Source } from './source/source.entity';
     YoutubeProvider,
     MediaRemoteResolver,
     MediaService,
+    MediaResolver,
   ],
   exports: [MediaService, MediaRemoteService],
 })

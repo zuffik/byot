@@ -23,7 +23,7 @@ type Mutation {
     createTraining(draft: TrainingDraftInput): Training!
     updateTraining(id: ID!, training: TrainingUpdateInput!): Training!
     removeMediaFromTraining(idTraining: ID!, idMedia: ID!): Training!
-    removeTrainingFromTrainingSet(id: ID!): TrainingSet!
+    removeTrainingFromTrainingSet(id: ID!): Training!
     removeTrainingSet(id: ID!): TrainingSet!
 }
 

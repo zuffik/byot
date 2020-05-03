@@ -248,4 +248,11 @@ describe('TrainingService', () => {
     expect(spyFind).toBeCalledWith(id);
     expect(spySave).not.toBeCalled();
   });
+
+  it('should remove training', async () => {
+    const training = ormGenerator.training();
+    const spyRemove = jest.spyOn(repository, 'remove');
+    await service.remove(training);
+    expect(spyRemove).toBeCalledWith(training);
+  });
 });

@@ -126,4 +126,17 @@ export class TrainingResolver extends BaseResolver {
       ),
     });
   }
+
+  @Mutation('removeTrainingFromTrainingSet')
+  @UseGuards(AuthGuard)
+  public async removeTrainingFromTrainingSet(
+    @Args('id') id: string,
+    @JwtUser() user: JwtUserType,
+  ): Promise<Training> {
+    const training = this.returnOrBail(await this.trainingService.findById(id));
+    const result = _.clone(training);
+    await this.checkOwnership(training.owner, user);
+    await this.trainingService.remove(training);
+    return result;
+  }
 }

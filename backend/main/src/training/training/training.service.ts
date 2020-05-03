@@ -3,7 +3,6 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Training } from './training.entity';
 import { FindManyOptions, Like, Repository } from 'typeorm';
 import {
-  FulltextFilter,
   FulltextFilterForUser,
   TrainingDraftInput,
   TrainingUpdateInput,
@@ -88,5 +87,9 @@ export class TrainingService {
       training.medias = Promise.resolve(_.uniqBy<Media>(medias, (m) => m.id));
     }
     return await this.trainingRepository.save(training);
+  }
+
+  public async remove(training: Training): Promise<Training> {
+    return await this.trainingRepository.remove(training);
   }
 }

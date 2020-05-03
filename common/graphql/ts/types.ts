@@ -153,7 +153,7 @@ export interface IMutation {
     createTraining(draft?: TrainingDraftInput): Training | Promise<Training>;
     updateTraining(id: string, training: TrainingUpdateInput): Training | Promise<Training>;
     removeMediaFromTraining(idTraining: string, idMedia: string): Training | Promise<Training>;
-    removeTrainingFromTrainingSet(id: string): TrainingSet | Promise<TrainingSet>;
+    removeTrainingFromTrainingSet(id: string): Training | Promise<Training>;
     removeTrainingSet(id: string): TrainingSet | Promise<TrainingSet>;
 }
 

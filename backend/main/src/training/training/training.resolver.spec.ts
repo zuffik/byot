@@ -428,4 +428,68 @@ describe('TrainingResolver', () => {
     expect(spyFind).toBeCalledWith(idTraining);
     expect(spyUpdate).not.toBeCalled();
   });
+
+  it('should remove training as admin', async () => {
+    const id = 'id';
+    const training = ormGenerator.training();
+    const jwtUser = otherGenerator.jwtUser();
+    jwtUser.role = Role.ADMIN;
+    const spyFind = jest
+      .spyOn(trainingService, 'findById')
+      .mockImplementation(async () => training);
+    const spyRemove = jest.spyOn(trainingService, 'remove');
+    await resolver.removeTrainingFromTrainingSet(id, jwtUser);
+    expect(spyFind).toBeCalledWith(id);
+    expect(spyRemove).toBeCalledWith(training);
+  });
+
+  it('should fail removing non-existing training as admin', async () => {
+    const id = 'id';
+    const jwtUser = otherGenerator.jwtUser();
+    jwtUser.role = Role.ADMIN;
+    const spyFind = jest
+      .spyOn(trainingService, 'findById')
+      .mockImplementation(async () => undefined);
+    const spyRemove = jest.spyOn(trainingService, 'remove');
+    await expect(
+      resolver.removeTrainingFromTrainingSet(id, jwtUser),
+    ).rejects.toBeInstanceOf(NotFoundException);
+    expect(spyFind).toBeCalledWith(id);
+    expect(spyRemove).not.toBeCalled();
+  });
+
+  it('should remove training as owner', async () => {
+    const id = 'id';
+    const training = ormGenerator.training();
+    const user = ormGenerator.user();
+    const trainingSet = ormGenerator.trainingSet();
+    const jwtUser = otherGenerator.jwtUser();
+    jwtUser.role = Role.USER;
+    user.id = jwtUser.id;
+    trainingSet.owner = Promise.resolve(user);
+    training.trainingSet = Promise.resolve(trainingSet);
+    const spyFind = jest
+      .spyOn(trainingService, 'findById')
+      .mockImplementation(async () => training);
+    const spyRemove = jest.spyOn(trainingService, 'remove');
+    await resolver.removeTrainingFromTrainingSet(id, jwtUser);
+    expect(spyFind).toBeCalledWith(id);
+    expect(spyRemove).toBeCalledWith(training);
+  });
+
+  it('should fail removing training as non-owner', async () => {
+    const id = 'id';
+    const training = ormGenerator.training();
+    const jwtUser = otherGenerator.jwtUser();
+    jwtUser.role = Role.USER;
+    const spyFind = jest
+      .spyOn(trainingService, 'findById')
+      .mockImplementation(async () => training);
+    const spyRemove = jest.spyOn(trainingService, 'remove');
+    await expect(
+      resolver.removeTrainingFromTrainingSet(id, jwtUser),
+    ).rejects.toBeInstanceOf(ForbiddenException);
+    expect(spyFind).toBeCalledWith(id);
+    expect(spyRemove).not.toBeCalled();
+  });
 });

@@ -694,4 +694,65 @@ export const graphQLInteraction = {
         }
     `,
   }),
+  removeMediaFromTraining: (idTraining: string, idMedia: string): Interaction<{removeMediaFromTraining: Training}> => ({
+      variables: {idTraining, idMedia},
+      query: gql`
+      mutation removeMediaFromTraining($idTraining: ID!, $idMedia: ID!) {
+          removeMediaFromTraining(idMedia: $idMedia, idTraining: $idTraining) {
+              id
+              label
+              createdAt{
+                  humanReadable
+                  iso
+              }
+              owner{
+                  fullName
+                  userName
+                  firstName
+                  lastName
+                  email
+                  role
+                  id
+              }
+              createdAt{
+                  humanReadable
+                  iso
+              }
+              updatedAt{
+                  humanReadable
+                  iso
+              }
+              trainingSet{
+                  id
+                  label
+                  owner{
+                      fullName
+                      userName
+                      firstName
+                      lastName
+                      email
+                      role
+                      id
+                  }
+              }
+              media{
+                  meta{
+                      totalCount
+                  }
+                  entries{
+                      id
+                      label
+                      source{
+                          id
+                          mediaType
+                          resourceId
+                          sourceType
+                          thumbnail
+                      }
+                  }
+              }
+          }
+      }
+      `,
+  }),
 };

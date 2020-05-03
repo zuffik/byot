@@ -10,12 +10,14 @@ import { testTraining } from '../src/test/training.tester';
 import { TrainingSetService } from '../src/training/training-set/training-set.service';
 import { MediaService } from '../src/media/media/media.service';
 import { testMedia } from '../src/test/media.tester';
+import { TrainingService } from '../src/training/training/training.service';
 
 describe('Training integration', () => {
   let app: INestApplication;
   let queryRunner: QueryRunner;
   let gqlGenerator: GeneratorGraphqlService;
   let trainingSetService: TrainingSetService;
+  let trainingService: TrainingService;
   let localMediaService: MediaService;
 
   beforeEach(async () => {
@@ -24,18 +26,22 @@ describe('Training integration', () => {
     queryRunner = deps.queryRunner;
     gqlGenerator = app.get<GeneratorGraphqlService>(GeneratorGraphqlService);
     trainingSetService = app.get<TrainingSetService>(TrainingSetService);
+    trainingService = app.get<TrainingService>(TrainingService);
     localMediaService = app.get<MediaService>(MediaService);
   });
 
   it('should contain valid structure', async () => {
     expect(gqlGenerator).toBeDefined();
     expect(queryRunner).toBeDefined();
+    expect(trainingSetService).toBeDefined();
+    expect(trainingService).toBeDefined();
+    expect(localMediaService).toBeDefined();
     expect(graphQLInteraction).toHaveProperty('allTrainings');
     expect(graphQLInteraction).toHaveProperty('training');
     expect(graphQLInteraction).toHaveProperty('createTraining');
     expect(graphQLInteraction).toHaveProperty('updateTraining');
-    // expect(graphQLInteraction).toHaveProperty('removeMediaFromTraining');
-    // expect(graphQLInteraction).toHaveProperty('removeTrainingFromTrainingSet');
+    expect(graphQLInteraction).toHaveProperty('removeMediaFromTraining');
+    expect(graphQLInteraction).toHaveProperty('removeTrainingFromTrainingSet');
   });
 
   it('should fetch all trainings as admin', async () => {
@@ -549,6 +555,88 @@ describe('Training integration', () => {
       app,
       graphQLInteraction.updateTraining('non-existing-id', input),
       { userRole: Role.ADMIN },
+    );
+    expect(result.body.errors).toEqual(expect.any(Array));
+  });
+
+  it('should remove media from training as admin', async () => {
+    const [[training]] = await trainingService.findAndCount({
+      pagination: { limit: 1 },
+    });
+    const medias = await training.medias;
+    const result = await makeGraphQLRequest(
+      app,
+      graphQLInteraction.removeMediaFromTraining(training.id, medias[0].id),
+      { userRole: Role.ADMIN },
+    );
+    expect(result.body.errors).toBeUndefined();
+    await testTraining(result.body.data.removeMediaFromTraining);
+    expect(result.body.data.removeMediaFromTraining.media.entries).toEqual(
+      expect.arrayContaining(medias.slice(1)),
+    );
+  });
+
+  it('should fail removing non-existing media from training as admin', async () => {
+    const [[training]] = await trainingService.findAndCount({
+      pagination: { limit: 1 },
+    });
+    const result = await makeGraphQLRequest(
+      app,
+      graphQLInteraction.removeMediaFromTraining(
+        training.id,
+        'non-existing-media-id',
+      ),
+      { userRole: Role.ADMIN },
+    );
+    expect(result.body.errors).toEqual(expect.any(Array));
+  });
+
+  it('should fail removing media from non-existing training as admin', async () => {
+    const result = await makeGraphQLRequest(
+      app,
+      graphQLInteraction.removeMediaFromTraining(
+        'non-existing-training-id',
+        'non-existing-media-id',
+      ),
+      { userRole: Role.ADMIN },
+    );
+    expect(result.body.errors).toEqual(expect.any(Array));
+  });
+
+  it('should remove media from training as user', async () => {
+    const all = await makeGraphQLRequest(
+      app,
+      graphQLInteraction.allTrainingSets({ pagination: { limit: 1 } }),
+      { userRole: Role.USER },
+    );
+    const training =
+      all.body.data.allTrainingSets.entries[0].trainings.entries[0];
+    const medias = training.media.entries;
+    const result = await makeGraphQLRequest(
+      app,
+      graphQLInteraction.removeMediaFromTraining(training.id, medias[0].id),
+      { userRole: Role.USER },
+    );
+    expect(result.body.errors).toBeUndefined();
+    await testTraining(result.body.data.removeMediaFromTraining);
+    expect(result.body.data.removeMediaFromTraining.media.entries).toEqual(
+      expect.arrayContaining(medias.slice(1)),
+    );
+  });
+
+  it('should fail removing media from training as non-owner', async () => {
+    const all = await makeGraphQLRequest(
+      app,
+      graphQLInteraction.allTrainingSets({ pagination: { limit: 1 } }),
+      { userRole: Role.USER },
+    );
+    const training =
+      all.body.data.allTrainingSets.entries[0].trainings.entries[0];
+    const medias = training.media.entries;
+    const result = await makeGraphQLRequest(
+      app,
+      graphQLInteraction.removeMediaFromTraining(training.id, medias[0].id),
+      { userRole: Role.USER, demoAccount: 4 },
     );
     expect(result.body.errors).toEqual(expect.any(Array));
   });

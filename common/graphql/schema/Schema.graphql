@@ -22,8 +22,8 @@ type Mutation {
     updateTrainingSet(id: ID!, trainingSet: TrainingSetInput): TrainingSet!
     createTraining(draft: TrainingDraftInput): Training!
     updateTraining(id: ID!, training: TrainingUpdateInput!): Training!
-    removeMediaFromTraining(id: ID!): Media!
-    removeTrainingFromTrainingSet(id: ID!): Training!
+    removeMediaFromTraining(idTraining: ID!, idMedia: ID!): Training!
+    removeTrainingFromTrainingSet(id: ID!): TrainingSet!
     removeTrainingSet(id: ID!): TrainingSet!
 }
 

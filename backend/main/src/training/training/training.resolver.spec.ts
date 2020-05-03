@@ -2,14 +2,23 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { TrainingResolver } from './training.resolver';
 import { TrainingService } from './training.service';
 import { proxyMock } from '../../test/proxy.mock';
-import { FulltextFilter, Role } from '../../graphql/ts/types';
+import {
+  FulltextFilter,
+  Role,
+  TrainingMediaInput,
+} from '../../graphql/ts/types';
 import { SeedModule } from '../../seed/seed.module';
 import { GeneratorOtherService } from '../../seed/generator-other/generator-other.service';
 import { GeneratorGraphqlService } from '../../seed/generator-graphql/generator-graphql.service';
 import { testList } from '../../test/list.tester';
-import { ForbiddenException, NotFoundException } from '@nestjs/common';
+import {
+  BadRequestException,
+  ForbiddenException,
+  NotFoundException,
+} from '@nestjs/common';
 import { GeneratorOrmService } from '../../seed/generator-orm/generator-orm.service';
 import { TrainingSetService } from '../training-set/training-set.service';
+import * as _ from 'lodash';
 
 describe('TrainingResolver', () => {
   let resolver: TrainingResolver;
@@ -296,5 +305,127 @@ describe('TrainingResolver', () => {
   it('should resolve media field', async () => {
     const training = ormGenerator.training();
     testList(await resolver.resolveMedia(training));
+  });
+
+  it('should remove media from training as admin', async () => {
+    const training = ormGenerator.training();
+    const idTraining = 'idTraining';
+    const idMedia = (await training.medias)[0].id;
+    const spyFind = jest
+      .spyOn(trainingService, 'findById')
+      .mockImplementation(async () => _.clone(training));
+    const spyUpdate = jest.spyOn(trainingService, 'update');
+    const jwtUser = otherGenerator.jwtUser();
+    jwtUser.role = Role.ADMIN;
+    await resolver.removeMediaFromTraining(idTraining, idMedia, jwtUser);
+    expect(spyFind).toBeCalledWith(idTraining);
+    training.medias = Promise.resolve(
+      (await training.medias).filter((media) => media.id !== idMedia),
+    );
+    expect(spyUpdate).toBeCalledWith(idTraining, {
+      label: training.label,
+      media: expect.arrayContaining(
+        await Promise.all(
+          (await training.medias).map(
+            async (m): Promise<TrainingMediaInput> => {
+              const source = await m.source;
+              return {
+                id: source.resourceId,
+                sourceType: source.sourceType,
+              };
+            },
+          ),
+        ),
+      ),
+    });
+  });
+
+  it('should remove media from training as owner', async () => {
+    const training = ormGenerator.training();
+    const trainingSet = ormGenerator.trainingSet();
+    const user = ormGenerator.user();
+    const jwtUser = otherGenerator.jwtUser();
+    user.id = jwtUser.id;
+    jwtUser.role = Role.USER;
+    trainingSet.owner = Promise.resolve(user);
+    training.trainingSet = Promise.resolve(trainingSet);
+    const idTraining = 'idTraining';
+    const idMedia = (await training.medias)[0].id;
+    const spyFind = jest
+      .spyOn(trainingService, 'findById')
+      .mockImplementation(async () => _.clone(training));
+    const spyUpdate = jest.spyOn(trainingService, 'update');
+    await resolver.removeMediaFromTraining(idTraining, idMedia, jwtUser);
+    expect(spyFind).toBeCalledWith(idTraining);
+    training.medias = Promise.resolve(
+      (await training.medias).filter((media) => media.id !== idMedia),
+    );
+    expect(spyUpdate).toBeCalledWith(idTraining, {
+      label: training.label,
+      media: expect.arrayContaining(
+        await Promise.all(
+          (await training.medias).map(
+            async (m): Promise<TrainingMediaInput> => {
+              const source = await m.source;
+              return {
+                id: source.resourceId,
+                sourceType: source.sourceType,
+              };
+            },
+          ),
+        ),
+      ),
+    });
+  });
+
+  it('should fail removing media from training as non-owner', async () => {
+    const training = ormGenerator.training();
+    const jwtUser = otherGenerator.jwtUser();
+    jwtUser.role = Role.USER;
+    const idTraining = 'idTraining';
+    const idMedia = (await training.medias)[0].id;
+    const spyFind = jest
+      .spyOn(trainingService, 'findById')
+      .mockImplementation(async () => _.clone(training));
+    const spyUpdate = jest.spyOn(trainingService, 'update');
+    await expect(
+      resolver.removeMediaFromTraining(idTraining, idMedia, jwtUser),
+    ).rejects.toBeInstanceOf(ForbiddenException);
+    expect(spyFind).toBeCalledWith(idTraining);
+    expect(spyUpdate).not.toBeCalled();
+  });
+
+  it('should fail removing media from non-existing training as admin', async () => {
+    const training = ormGenerator.training();
+    const idTraining = 'idTraining';
+    const idMedia = (await training.medias)[0].id;
+    const spyFind = jest
+      .spyOn(trainingService, 'findById')
+      .mockImplementation(async () => undefined);
+    const spyUpdate = jest.spyOn(trainingService, 'update');
+    const jwtUser = otherGenerator.jwtUser();
+    jwtUser.role = Role.ADMIN;
+    await expect(
+      resolver.removeMediaFromTraining(idTraining, idMedia, jwtUser),
+    ).rejects.toBeInstanceOf(NotFoundException);
+    expect(spyFind).toBeCalledWith(idTraining);
+    expect(spyUpdate).not.toBeCalled();
+  });
+
+  it('should fail removing non-existing media from training as admin', async () => {
+    const training = ormGenerator.training();
+    const idTraining = 'idTraining';
+    const idMedia = 'idMedia';
+    const spyFind = jest
+      .spyOn(trainingService, 'findById')
+      .mockImplementation(async () => training);
+    const spyUpdate = jest.spyOn(trainingService, 'update');
+    const jwtUser = otherGenerator.jwtUser();
+    jwtUser.role = Role.ADMIN;
+    await expect(
+      resolver.removeMediaFromTraining(idTraining, idMedia, jwtUser),
+    ).rejects.toBeInstanceOf(BadRequestException);
+    expect(spyFind).toBeCalledWith(idTraining);
+    expect(spyUpdate).not.toBeCalled();
   });
 });

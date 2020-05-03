@@ -1,7 +1,7 @@
 export default {
   info: {
-    name: 'BYOt',
-    description: 'BYOt - Build Your Own Training',
+    name: 'byoT',
+    description: 'byoT - Build Your Own Training',
   },
   theme: {
     colors: {

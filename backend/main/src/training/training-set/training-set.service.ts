@@ -8,6 +8,7 @@ import {
 } from '../../graphql/ts/types';
 import { UserService } from '../../user/user.service';
 import * as _ from 'lodash';
+import { TrainingService } from '../training/training.service';
 
 @Injectable()
 export class TrainingSetService {
@@ -15,6 +16,7 @@ export class TrainingSetService {
     @InjectRepository(TrainingSet)
     private readonly trainingSetRepository: Repository<TrainingSet>,
     @Inject(UserService) private readonly userService: UserService,
+    @Inject(TrainingService) private readonly trainingService: TrainingService,
   ) {}
 
   public async findAndCount(
@@ -64,5 +66,14 @@ export class TrainingSetService {
     }
     trainingSet.label = input.label;
     return await this.trainingSetRepository.save(trainingSet);
+  }
+
+  public async remove(trainingSet: TrainingSet): Promise<TrainingSet> {
+    await Promise.all(
+      (await trainingSet.trainings).map(async (t) =>
+        this.trainingService.remove(t),
+      ),
+    );
+    return await this.trainingSetRepository.remove(trainingSet);
   }
 }

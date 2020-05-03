@@ -10,10 +10,12 @@ import { GeneratorOrmService } from '../../seed/generator-orm/generator-orm.serv
 import { SeedModule } from '../../seed/seed.module';
 import { UserService } from '../../user/user.service';
 import * as _ from 'lodash';
+import { TrainingService } from '../training/training.service';
 
 describe('TrainingSetService', () => {
   let service: TrainingSetService;
   let userService: UserService;
+  let trainingService: TrainingService;
   let repository: Repository<TrainingSet>;
   let gqlGenerator: GeneratorGraphqlService;
   let ormGenerator: GeneratorOrmService;
@@ -31,11 +33,16 @@ describe('TrainingSetService', () => {
           provide: UserService,
           useValue: proxyMock(),
         },
+        {
+          provide: TrainingService,
+          useValue: proxyMock(),
+        },
       ],
     }).compile();
 
     service = module.get<TrainingSetService>(TrainingSetService);
     userService = module.get<UserService>(UserService);
+    trainingService = module.get<TrainingService>(TrainingService);
     repository = module.get<Repository<TrainingSet>>(
       getRepositoryToken(TrainingSet),
     );
@@ -48,6 +55,8 @@ describe('TrainingSetService', () => {
     expect(repository).toBeDefined();
     expect(gqlGenerator).toBeDefined();
     expect(ormGenerator).toBeDefined();
+    expect(userService).toBeDefined();
+    expect(trainingService).toBeDefined();
   });
 
   it('should fetch all training sets', async () => {
@@ -154,5 +163,16 @@ describe('TrainingSetService', () => {
     await service.update(id, trainingSetInput);
     expect(spyFind).toBeCalledWith(id);
     expect(spySave).not.toBeCalled();
+  });
+
+  it('should remove training set', async () => {
+    const trainingSet = ormGenerator.trainingSet();
+    const spyRemoveTraining = jest.spyOn(trainingService, 'remove');
+    const spyRemoveTrainingSet = jest.spyOn(repository, 'remove');
+    await service.remove(trainingSet);
+    expect(spyRemoveTrainingSet).toBeCalledWith(trainingSet);
+    expect(spyRemoveTraining).toBeCalledTimes(
+      (await trainingSet.trainings).length,
+    );
   });
 });

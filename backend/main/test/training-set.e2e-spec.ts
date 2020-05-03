@@ -198,5 +198,76 @@ describe('Training Set integration', () => {
     expect(result.body.errors).toEqual(expect.any(Array));
   });
 
+  it('should remove training set as admin', async () => {
+    const [trainingSet] = (
+      await makeGraphQLRequest(
+        app,
+        graphQLInteraction.allTrainingSets({ pagination: { limit: 1 } }),
+        { userRole: Role.ADMIN },
+      )
+    ).body.data.allTrainingSets.entries;
+    const result = await makeGraphQLRequest(
+      app,
+      graphQLInteraction.removeTrainingSet(trainingSet.id),
+      { userRole: Role.ADMIN },
+    );
+    expect(result.body.errors).toBeUndefined();
+    await testTrainingSet(result.body.data.removeTrainingSet);
+    const ts = await makeGraphQLRequest(
+      app,
+      graphQLInteraction.trainingSet(trainingSet.id),
+      { userRole: Role.ADMIN },
+    );
+    expect(ts.body.errors).toEqual(expect.any(Array));
+  });
+
+  it('should fail removing non-existing training set as admin', async () => {
+    const result = await makeGraphQLRequest(
+      app,
+      graphQLInteraction.removeTrainingSet('non-existing-id'),
+      { userRole: Role.ADMIN },
+    );
+    expect(result.body.errors).toEqual(expect.any(Array));
+  });
+
+  it('should remove training set as owner', async () => {
+    const [trainingSet] = (
+      await makeGraphQLRequest(
+        app,
+        graphQLInteraction.allTrainingSets({ pagination: { limit: 1 } }),
+        { userRole: Role.USER },
+      )
+    ).body.data.allTrainingSets.entries;
+    const result = await makeGraphQLRequest(
+      app,
+      graphQLInteraction.removeTrainingSet(trainingSet.id),
+      { userRole: Role.USER },
+    );
+    expect(result.body.errors).toBeUndefined();
+    await testTrainingSet(result.body.data.removeTrainingSet);
+    const ts = await makeGraphQLRequest(
+      app,
+      graphQLInteraction.trainingSet(trainingSet.id),
+      { userRole: Role.USER },
+    );
+    expect(ts.body.errors).toEqual(expect.any(Array));
+  });
+
+  it('should fail removing training set as non-owner', async () => {
+    const [trainingSet] = (
+      await makeGraphQLRequest(
+        app,
+        graphQLInteraction.allTrainingSets({ pagination: { limit: 1 } }),
+        { userRole: Role.USER, demoAccount: 3 },
+      )
+    ).body.data.allTrainingSets.entries;
+    const result = await makeGraphQLRequest(
+      app,
+      graphQLInteraction.removeTrainingSet(trainingSet.id),
+      { userRole: Role.USER },
+    );
+    expect(result.body.errors).toEqual(expect.any(Array));
+  });
+
   afterEach(() => destroyApp({ app, queryRunner }));
 });

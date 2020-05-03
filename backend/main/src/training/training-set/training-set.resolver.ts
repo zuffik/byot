@@ -19,8 +19,7 @@ import { JwtUser, JwtUserType } from '../../auth/decorators/jwt-user.decorator';
 import { BaseResolver } from '../../helpers/BaseResolver';
 import { TrainingSet } from './training-set.entity';
 import { AuthGuard } from '../../auth/jwt/auth.guard';
-import { getRepository } from 'typeorm';
-import { Media } from '../../media/media/media.entity';
+import * as _ from 'lodash';
 
 @Resolver('TrainingSet')
 export class TrainingSetResolver extends BaseResolver {
@@ -92,5 +91,20 @@ export class TrainingSetResolver extends BaseResolver {
     );
     await this.checkOwnership(trainingSet.owner, user);
     return await this.trainingSetService.update(id, input);
+  }
+
+  @Mutation('removeTrainingSet')
+  @UseGuards(AuthGuard)
+  public async removeTrainingSet(
+    @Args('id') id: string,
+    @JwtUser() user: JwtUserType,
+  ): Promise<TrainingSet> {
+    const trainingSet = this.returnOrBail(
+      await this.trainingSetService.findById(id),
+    );
+    await this.checkOwnership(trainingSet.owner, user);
+    const result = _.clone(trainingSet);
+    await this.trainingSetService.remove(trainingSet);
+    return result;
   }
 }

@@ -816,4 +816,57 @@ export const graphQLInteraction = {
       }
       `
   }),
+  removeTrainingSet: (id: string): Interaction<{ removeTrainingSet: TrainingSet }> => ({
+      variables: {id},
+      query: gql`
+      mutation removeTrainingSet($id: ID!) {
+          removeTrainingSet(id: $id) {
+              id
+              label
+              owner{
+                  fullName
+                  userName
+                  firstName
+                  lastName
+                  email
+                  role
+                  id
+              }
+              createdAt{
+                  humanReadable
+                  iso
+              }
+              updatedAt{
+                  humanReadable
+                  iso
+              }
+              trainings{
+                  meta{
+                      totalCount
+                  }
+                  entries{
+                      id
+                      label
+                      media{
+                          meta{
+                              totalCount
+                          }
+                          entries{
+                              id
+                              label
+                              source{
+                                  id
+                                  mediaType
+                                  sourceType
+                                  resourceId
+                                  thumbnail
+                              }
+                          }
+                      }
+                  }
+              }
+          }
+      }
+      `
+  }),
 };

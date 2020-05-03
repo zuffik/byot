@@ -20,7 +20,7 @@ type Source {
     mediaType: MediaType!
     thumbnail: String
     id: ID
-    mediaId: ID
+    resourceId: ID
     url: String
 }
 

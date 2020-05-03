@@ -1,15 +1,19 @@
 import {
-  Auth,
-  FulltextFilterForUser,
-  MediaFilter,
-  MediaList,
-  TrainingSet,
-  TrainingSetInput,
-  TrainingSetList,
-  User,
-  UserList,
-  UserRegister,
-  UserUpdateInput,
+    Auth,
+    FulltextFilter,
+    FulltextFilterForUser,
+    MediaFilter,
+    MediaList,
+    Training,
+    TrainingDraftInput,
+    TrainingList,
+    TrainingSet,
+    TrainingSetInput,
+    TrainingSetList, TrainingUpdateInput,
+    User,
+    UserList,
+    UserRegister,
+    UserUpdateInput,
 } from './types';
 
 export interface Interaction<T> {
@@ -187,6 +191,7 @@ export const graphQLInteraction = {
                         thumbnail
                         mediaType
                         sourceType
+                        resourceId
                         url
                         id
                     }
@@ -238,6 +243,7 @@ export const graphQLInteraction = {
                                     source{
                                         id
                                         mediaType
+                                        resourceId
                                         sourceType
                                         thumbnail
                                     }
@@ -295,6 +301,7 @@ export const graphQLInteraction = {
                                     id
                                     mediaType
                                     sourceType
+                                    resourceId
                                     thumbnail
                                 }
                             }
@@ -347,6 +354,7 @@ export const graphQLInteraction = {
                                     id
                                     mediaType
                                     sourceType
+                                    resourceId
                                     thumbnail
                                 }
                             }
@@ -399,9 +407,243 @@ export const graphQLInteraction = {
                                     id
                                     mediaType
                                     sourceType
+                                    resourceId
                                     thumbnail
                                 }
                             }
+                        }
+                    }
+                }
+            }
+        }
+    `,
+  }),
+  allTrainings: (filter?: FulltextFilter): Interaction<{ allTrainings: TrainingList }> => ({
+    variables: { filter },
+    query: gql`
+        query allTrainings($filter: FulltextFilter) {
+            allTrainings(filter: $filter) {
+                meta{
+                    totalCount
+                }
+                entries{
+                    id
+                    label
+                    createdAt{
+                        humanReadable
+                        iso
+                    }
+                    owner{
+                        fullName
+                        userName
+                        firstName
+                        lastName
+                        email
+                        role
+                        id
+                    }
+                    createdAt{
+                        humanReadable
+                        iso
+                    }
+                    updatedAt{
+                        humanReadable
+                        iso
+                    }
+                    trainingSet{
+                        id
+                        label
+                        owner{
+                            fullName
+                            userName
+                            firstName
+                            lastName
+                            email
+                            role
+                            id
+                        }
+                    }
+                }
+            }
+        }
+    `,
+  }),
+  createTraining: (training: TrainingDraftInput): Interaction<{ createTraining: Training }> => ({
+    variables: { training },
+    query: gql`
+        mutation createTraining($training: TrainingDraftInput!) {
+            createTraining(draft: $training) {
+                id
+                label
+                createdAt{
+                    humanReadable
+                    iso
+                }
+                owner{
+                    fullName
+                    userName
+                    firstName
+                    lastName
+                    email
+                    role
+                    id
+                }
+                createdAt{
+                    humanReadable
+                    iso
+                }
+                updatedAt{
+                    humanReadable
+                    iso
+                }
+                trainingSet{
+                    id
+                    label
+                    owner{
+                        fullName
+                        userName
+                        firstName
+                        lastName
+                        email
+                        role
+                        id
+                    }
+                }
+                media{
+                    meta{
+                        totalCount
+                    }
+                    entries{
+                        id
+                        label
+                        source{
+                            id
+                            mediaType
+                            sourceType
+                            thumbnail
+                            resourceId
+                        }
+                    }
+                }
+            }
+        }
+    `,
+  }),
+  updateTraining: (id: string, training: TrainingUpdateInput): Interaction<{ updateTraining: Training }> => ({
+    variables: { id, training },
+    query: gql`
+        mutation updateTraining($id: ID!, $training: TrainingUpdateInput!) {
+            updateTraining(id: $id, training: $training) {
+                id
+                label
+                createdAt{
+                    humanReadable
+                    iso
+                }
+                owner{
+                    fullName
+                    userName
+                    firstName
+                    lastName
+                    email
+                    role
+                    id
+                }
+                createdAt{
+                    humanReadable
+                    iso
+                }
+                updatedAt{
+                    humanReadable
+                    iso
+                }
+                trainingSet{
+                    id
+                    label
+                    owner{
+                        fullName
+                        userName
+                        firstName
+                        lastName
+                        email
+                        role
+                        id
+                    }
+                }
+                media{
+                    meta{
+                        totalCount
+                    }
+                    entries{
+                        id
+                        label
+                        source{
+                            id
+                            mediaType
+                            resourceId
+                            sourceType
+                            thumbnail
+                        }
+                    }
+                }
+            }
+        }
+    `,
+  }),
+  training: (id: string): Interaction<{ training: Training }> => ({
+    variables: { id },
+    query: gql`
+        query training($id: ID!) {
+            training(id: $id) {
+                id
+                label
+                createdAt{
+                    humanReadable
+                    iso
+                }
+                owner{
+                    fullName
+                    userName
+                    firstName
+                    lastName
+                    email
+                    role
+                    id
+                }
+                createdAt{
+                    humanReadable
+                    iso
+                }
+                updatedAt{
+                    humanReadable
+                    iso
+                }
+                trainingSet{
+                    id
+                    label
+                    owner{
+                        fullName
+                        userName
+                        firstName
+                        lastName
+                        email
+                        role
+                        id
+                    }
+                }
+                media{
+                    meta{
+                        totalCount
+                    }
+                    entries{
+                        id
+                        label
+                        source{
+                            id
+                            mediaType
+                            resourceId
+                            sourceType
+                            thumbnail
                         }
                     }
                 }

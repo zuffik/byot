@@ -24,7 +24,7 @@ export class Training
   @Column('varchar')
   public label: string;
 
-  @ManyToMany((type) => Media, { cascade: true })
+  @ManyToMany((type) => Media, (media) => media.trainings, { cascade: true })
   @JoinTable()
   public medias: Promise<Media[]>;
 

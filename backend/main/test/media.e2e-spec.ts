@@ -36,6 +36,34 @@ describe('Remote media integration', () => {
     testList(mediaList.body.data.findMedia, testMedia);
   });
 
+  it('should look for local medias as admin', async () => {
+    const mediaList = await makeGraphQLRequest(
+      app,
+      graphQLInteraction.findMedia({
+        local: true,
+        query: 'workout',
+        pagination: { limit: 5 },
+      }),
+      { userRole: Role.ADMIN },
+    );
+    expect(mediaList.body.errors).toBeUndefined();
+    testList(mediaList.body.data.findMedia, testMedia);
+  });
+
+  it('should look for local medias as user', async () => {
+    const mediaList = await makeGraphQLRequest(
+      app,
+      graphQLInteraction.findMedia({
+        local: true,
+        query: 'workout',
+        pagination: { limit: 5 },
+      }),
+      { userRole: Role.USER },
+    );
+    expect(mediaList.body.errors).toBeUndefined();
+    testList(mediaList.body.data.findMedia, testMedia);
+  });
+
   it('should parse url', async () => {
     const query = 'https://www.youtube.com/watch?v=QOXup8chEoY';
     const mediaList = await makeGraphQLRequest(

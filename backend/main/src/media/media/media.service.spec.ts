@@ -67,10 +67,9 @@ describe('MediaService', () => {
     const remoteMedia = gqlGenerator.media();
     const source = ormGenerator.source();
     const media = ormGenerator.media();
-    remoteMedia.id = id;
-    remoteMedia.source.id = id;
+    remoteMedia.source.resourceId = id;
     const spyFindLocal = jest
-      .spyOn(mediaRepository, 'findOne')
+      .spyOn(sourceRepository, 'findOne')
       .mockImplementation(async () => undefined);
     const spyFindRemote = jest
       .spyOn(remoteMediaSerivce, 'findById')
@@ -81,13 +80,22 @@ describe('MediaService', () => {
     const spyCreateMedia = jest
       .spyOn(mediaRepository, 'create')
       .mockImplementation(() => media);
-    const spySaveMedia = jest.spyOn(mediaRepository, 'insert');
-    await service.createOrFetchRemote({ sourceType, id });
+    const spySaveMedia = jest.spyOn(mediaRepository, 'save');
+    await service.findLocalOrCreateFromRemote({ sourceType, id });
     expect(spyFindLocal).toBeCalledWith({
-      where: { id, sourceType },
+      relations: ['media'],
+      where: {
+        resourceId: id,
+        sourceType,
+      },
     });
     expect(spyFindRemote).toBeCalledWith(id, sourceType);
-    expect(spySaveSource).toBeCalledWith(remoteMedia.source);
+    expect(spySaveSource).toBeCalledWith(
+      expect.objectContaining({
+        ...remoteMedia.source,
+        media: expect.any(Promise),
+      }),
+    );
     expect(spyCreateMedia).toBeCalledWith(_.omit(remoteMedia, 'source'));
     media.source = Promise.resolve(source);
     expect(spySaveMedia).toBeCalledWith(media);
@@ -97,19 +105,23 @@ describe('MediaService', () => {
     const id = 'w3m4N0UVt0M';
     const sourceType = SourceType.YOUTUBE;
     const remoteMedia = gqlGenerator.media();
-    const media = ormGenerator.media();
-    remoteMedia.id = id;
-    remoteMedia.source.id = id;
+    const source = ormGenerator.source();
+    source.media = Promise.resolve(ormGenerator.media());
+    remoteMedia.source.resourceId = id;
     const spyFindLocal = jest
-      .spyOn(mediaRepository, 'findOne')
-      .mockImplementation(async () => media);
+      .spyOn(sourceRepository, 'findOne')
+      .mockImplementation(async () => source);
     const spyFindRemote = jest.spyOn(remoteMediaSerivce, 'findById');
     const spySaveSource = jest.spyOn(sourceRepository, 'save');
     const spyCreateMedia = jest.spyOn(mediaRepository, 'create');
     const spySaveMedia = jest.spyOn(mediaRepository, 'save');
-    await service.createOrFetchRemote({ sourceType, id });
+    await service.findLocalOrCreateFromRemote({ sourceType, id });
     expect(spyFindLocal).toBeCalledWith({
-      where: { id, sourceType },
+      relations: ['media'],
+      where: {
+        resourceId: id,
+        sourceType,
+      },
     });
     expect(spyFindRemote).not.toBeCalled();
     expect(spySaveSource).not.toBeCalled();
@@ -121,10 +133,9 @@ describe('MediaService', () => {
     const id = 'w3m4N0UVt0M';
     const sourceType = SourceType.YOUTUBE;
     const remoteMedia = gqlGenerator.media();
-    remoteMedia.id = id;
-    remoteMedia.source.id = id;
+    remoteMedia.source.resourceId = id;
     const spyFindLocal = jest
-      .spyOn(mediaRepository, 'findOne')
+      .spyOn(sourceRepository, 'findOne')
       .mockImplementation(async () => undefined);
     const spyFindRemote = jest
       .spyOn(remoteMediaSerivce, 'findById')
@@ -133,10 +144,14 @@ describe('MediaService', () => {
     const spyCreateMedia = jest.spyOn(mediaRepository, 'create');
     const spySaveMedia = jest.spyOn(mediaRepository, 'save');
     expect(
-      await service.createOrFetchRemote({ sourceType, id }),
+      await service.findLocalOrCreateFromRemote({ sourceType, id }),
     ).toBeUndefined();
     expect(spyFindLocal).toBeCalledWith({
-      where: { id, sourceType },
+      relations: ['media'],
+      where: {
+        resourceId: id,
+        sourceType,
+      },
     });
     expect(spyFindRemote).toBeCalledWith(id, sourceType);
     expect(spySaveSource).not.toBeCalled();

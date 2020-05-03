@@ -97,7 +97,7 @@ export class GeneratorGraphqlService {
       ]),
       thumbnail: 'https://picsum.photos/200',
       id: chance.guid(),
-      mediaId: chance.guid(),
+      resourceId: chance.guid(),
       url: chance.url(),
     };
   }

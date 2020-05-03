@@ -33,7 +33,7 @@ describe('YouTube provider', () => {
     const videoId = 'w3m4N0UVt0M';
     const media = await provider.parseFromUrl(url);
     testMedia(media);
-    expect(media.source.mediaId).toEqual(videoId);
+    expect(media.source.resourceId).toEqual(videoId);
   });
 
   it('should parse short url to video', async () => {
@@ -41,14 +41,14 @@ describe('YouTube provider', () => {
     const videoId = 'w3m4N0UVt0M';
     const media = await provider.parseFromUrl(url);
     testMedia(media);
-    expect(media.source.mediaId).toEqual(videoId);
+    expect(media.source.resourceId).toEqual(videoId);
   });
 
   it('should find video by ID', async () => {
     const videoId = 'w3m4N0UVt0M';
     const media = await provider.findById(videoId);
     testMedia(media);
-    expect(media.source.mediaId).toEqual(videoId);
+    expect(media.source.resourceId).toEqual(videoId);
   });
 
   it('should fail finding video', async () => {

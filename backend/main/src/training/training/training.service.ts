@@ -11,6 +11,7 @@ import {
 import { MediaService } from '../../media/media/media.service';
 import { TrainingSet } from '../training-set/training-set.entity';
 import * as _ from 'lodash';
+import { Media } from '../../media/media/media.entity';
 
 @Injectable()
 export class TrainingService {
@@ -58,14 +59,13 @@ export class TrainingService {
     draft: TrainingDraftInput,
     trainingSet: TrainingSet,
   ): Promise<Training | undefined> {
-    const training = await this.trainingRepository.create(draft);
-    training.medias = Promise.resolve(
-      await Promise.all(
-        draft.media.map((media) =>
-          this.mediaService.createOrFetchRemote(media),
-        ),
+    const training = this.trainingRepository.create(draft);
+    const medias = await Promise.all(
+      draft.media.map((media) =>
+        this.mediaService.findLocalOrCreateFromRemote(media),
       ),
     );
+    training.medias = Promise.resolve(_.uniqBy<Media>(medias, (m) => m.id));
     training.trainingSet = Promise.resolve(trainingSet);
     return await this.trainingRepository.save(training);
   }
@@ -80,13 +80,12 @@ export class TrainingService {
     }
     training.label = input.label || training.label;
     if (input.media) {
-      training.medias = Promise.resolve(
-        await Promise.all(
-          input.media.map((media) =>
-            this.mediaService.createOrFetchRemote(media),
-          ),
+      const medias = await Promise.all(
+        input.media.map((media) =>
+          this.mediaService.findLocalOrCreateFromRemote(media),
         ),
       );
+      training.medias = Promise.resolve(_.uniqBy<Media>(medias, (m) => m.id));
     }
     return await this.trainingRepository.save(training);
   }

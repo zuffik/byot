@@ -1,7 +1,13 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { AppModule } from '../../src/app.module';
-import { Connection, EntityManager, QueryRunner } from 'typeorm';
+import {
+  Connection,
+  EntityManager,
+  getConnectionManager,
+  QueryRunner,
+} from 'typeorm';
 import { INestApplication } from '@nestjs/common';
+import { AlreadyHasActiveConnectionError } from 'typeorm/error/AlreadyHasActiveConnectionError';
 
 export interface Dependencies {
   app: INestApplication;
@@ -17,7 +23,14 @@ export const createApp = async (): Promise<Dependencies> => {
 
   app = moduleFixture.createNestApplication();
   await app.init();
-  const dbConnection = moduleFixture.get<Connection>(Connection);
+  let dbConnection;
+  try {
+    dbConnection = moduleFixture.get<Connection>(Connection);
+  } catch (e) {
+    if (e instanceof AlreadyHasActiveConnectionError) {
+      dbConnection = getConnectionManager().get('default');
+    }
+  }
   const manager = moduleFixture.get(EntityManager);
   queryRunner = dbConnection.createQueryRunner('master');
   // !!!!

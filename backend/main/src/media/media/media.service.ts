@@ -22,17 +22,20 @@ export class MediaService {
     private readonly remoteMedia: MediaRemoteService,
   ) {}
 
-  public async createOrFetchRemote(
+  public async findLocalOrCreateFromRemote(
     media: TrainingMediaInput,
   ): Promise<Media | undefined> {
-    const local = await this.mediaRepository.findOne({
+    const local = await this.sourceRepository.findOne({
+      relations: ['media'],
       where: {
-        id: media.id,
+        resourceId: media.id,
         sourceType: media.sourceType,
       },
     });
     if (local) {
-      return local;
+      const m = await local.media;
+      m.source = Promise.resolve(local);
+      return m;
     }
     return this.storeMedia(
       await this.remoteMedia.findById(media.id, media.sourceType),
@@ -43,12 +46,10 @@ export class MediaService {
     if (!media) {
       return undefined;
     }
-    const source = await this.sourceRepository.save(
-      this.sourceRepository.create(media.source),
-    );
+    const source = this.sourceRepository.create(media.source);
     const created = this.mediaRepository.create(_.omit(media, 'source'));
-    created.source = Promise.resolve(source);
-    await this.mediaRepository.insert(created);
+    source.media = Promise.resolve(await this.mediaRepository.save(created));
+    await this.sourceRepository.save(source);
     return created;
   }
 

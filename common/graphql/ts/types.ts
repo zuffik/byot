@@ -37,6 +37,7 @@ export interface MediaFilter {
     pagination?: Pagination;
     source?: MediaType;
     owner?: string;
+    local?: boolean;
 }
 
 export interface Pagination {
@@ -112,7 +113,7 @@ export interface Source {
     mediaType: MediaType;
     thumbnail?: string;
     id?: string;
-    mediaId?: string;
+    resourceId?: string;
     url?: string;
 }
 
@@ -132,8 +133,8 @@ export interface MediaList {
 export interface IQuery {
     allUsers(filter?: FulltextFilter): UserList | Promise<UserList>;
     allMedia(filter?: FulltextFilter): MediaList | Promise<MediaList>;
-    allTrainingSets(filter?: FulltextFilterForUser): TrainingSetList | Promise<TrainingSetList>;
     allTrainings(filter?: FulltextFilter): TrainingList | Promise<TrainingList>;
+    allTrainingSets(filter?: FulltextFilterForUser): TrainingSetList | Promise<TrainingSetList>;
     user(id: string): User | Promise<User>;
     me(): User | Promise<User>;
     trainingSet(id: string): TrainingSet | Promise<TrainingSet>;

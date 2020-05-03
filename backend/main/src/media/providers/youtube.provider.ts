@@ -44,7 +44,7 @@ export class YoutubeProvider implements MediaProvider {
         source: {
           mediaType: MediaType.VIDEO,
           sourceType: SourceType.YOUTUBE,
-          mediaId: item.id.videoId,
+          resourceId: item.id.videoId,
           thumbnail: item.snippet.thumbnails.default.url,
         },
       })),
@@ -77,7 +77,7 @@ export class YoutubeProvider implements MediaProvider {
       source: {
         mediaType: MediaType.VIDEO,
         sourceType: SourceType.YOUTUBE,
-        mediaId: videoId,
+        resourceId: videoId,
         thumbnail: item.snippet.thumbnails.default.url,
       },
     };

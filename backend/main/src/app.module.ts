@@ -55,8 +55,8 @@ import { sharedConfig } from './config/shared.config';
         charset: 'utf8mb4_unicode_ci',
         entities: [path.join(__dirname, './**/*.entity.{ts,js}')],
         synchronize: true,
-        logger:
-          cfg.get<string>('node.env') !== 'development' ? 'debug' : undefined,
+        logging:
+          cfg.get<string>('node.env') === 'development' ? 'all' : undefined,
       }),
     }),
     UserModule,

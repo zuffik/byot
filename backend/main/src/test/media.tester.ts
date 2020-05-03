@@ -17,12 +17,11 @@ export async function testMedia(media: Media | any) {
 export function testSource(source: Source | any) {
   expect(source).toEqual(
     expect.objectContaining({
+      resourceId: expect.any(String),
       sourceType: expect.stringMatching(/YOUTUBE/),
       mediaType: expect.stringMatching(/(AUDIO|VIDEO|IMAGE)/),
     }),
   );
   expect(source.thumbnail).toBeOptionalString();
-  expect(source.mediaId).toBeOptionalString();
-  expect(source.id).toBeOptionalString();
   expect(source.url).toBeOptionalString();
 }

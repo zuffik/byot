@@ -1,19 +1,28 @@
-import { Parent, ResolveField, Resolver } from '@nestjs/graphql';
+import {
+  Args,
+  Mutation,
+  Parent,
+  Query,
+  ResolveField,
+  Resolver,
+} from '@nestjs/graphql';
 import {
   FulltextFilter,
   FulltextFilterForUser,
+  MediaList,
   Role,
   TrainingDraftInput,
   TrainingList,
   TrainingUpdateInput,
-  MediaList,
 } from '../../graphql/ts/types';
 import { BaseResolver } from '../../helpers/BaseResolver';
-import { Inject } from '@nestjs/common';
+import { Inject, UseGuards } from '@nestjs/common';
 import { TrainingService } from './training.service';
 import { TrainingSetService } from '../training-set/training-set.service';
-import { JwtUserType } from '../../auth/decorators/jwt-user.decorator';
+import { JwtUser, JwtUserType } from '../../auth/decorators/jwt-user.decorator';
 import { Training } from './training.entity';
+import { AuthRoles } from '../../auth/decorators/auth-roles.decorator';
+import { AuthGuard } from '../../auth/jwt/auth.guard';
 
 @Resolver('Training')
 export class TrainingResolver extends BaseResolver {
@@ -25,9 +34,11 @@ export class TrainingResolver extends BaseResolver {
     super();
   }
 
+  @Query('allTrainings')
+  @AuthRoles(Role.ADMIN)
   public async allTrainings(
-    f?: FulltextFilter,
-    user?: JwtUserType,
+    @Args('filter') f?: FulltextFilter,
+    @JwtUser() user?: JwtUserType,
   ): Promise<TrainingList> {
     const filter: FulltextFilterForUser = {
       ...(f || {}),
@@ -40,15 +51,22 @@ export class TrainingResolver extends BaseResolver {
     );
   }
 
-  public async training(id: string, user: JwtUserType): Promise<Training> {
+  @Query('training')
+  @UseGuards(AuthGuard)
+  public async training(
+    @Args('id') id: string,
+    @JwtUser() user: JwtUserType,
+  ): Promise<Training> {
     const training = this.returnOrBail(await this.trainingService.findById(id));
     await this.checkOwnership(training.owner, user);
     return training;
   }
 
+  @Mutation('createTraining')
+  @UseGuards(AuthGuard)
   public async createTraining(
-    input: TrainingDraftInput,
-    user: JwtUserType,
+    @Args('draft') input: TrainingDraftInput,
+    @JwtUser() user: JwtUserType,
   ): Promise<Training> {
     const trainingSet = this.returnOrBail(
       await this.trainingSetService.findById(input.idTrainingSet),
@@ -57,10 +75,12 @@ export class TrainingResolver extends BaseResolver {
     return await this.trainingService.create(input, trainingSet);
   }
 
+  @Mutation('updateTraining')
+  @UseGuards(AuthGuard)
   public async updateTraining(
-    id: string,
-    input: TrainingUpdateInput,
-    user: JwtUserType,
+    @Args('id') id: string,
+    @Args('training') input: TrainingUpdateInput,
+    @JwtUser() user: JwtUserType,
   ): Promise<Training> {
     const training = this.returnOrBail(await this.trainingService.findById(id));
     await this.checkOwnership(training.owner, user);

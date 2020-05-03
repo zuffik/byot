@@ -33,7 +33,7 @@ export class GeneratorOrmService {
   public source(): Source {
     const gql = this.gqlGenerator.source();
     const source = new Source();
-    source.id = gql.id;
+    source.resourceId = gql.resourceId;
     source.url = gql.url;
     source.thumbnail = gql.thumbnail;
     source.mediaType = gql.mediaType;

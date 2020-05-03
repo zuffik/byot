@@ -145,23 +145,11 @@ describe('TrainingService', () => {
 
   it('should create training', async () => {
     const trainingInput = gqlGenerator.trainingDraftInput();
-    const training = ormGenerator.training();
     const trainingSet = ormGenerator.trainingSet();
     const spySave = jest.spyOn(repository, 'save');
-    const spyMedia = jest.spyOn(mediaService, 'createOrFetchRemote');
-    training.medias = Promise.resolve(
-      expect.arrayContaining(
-        trainingInput.media.map((m) =>
-          expect.objectContaining({
-            source: {
-              id: m.id,
-              sourceType: m.sourceType,
-            },
-          }),
-        ),
-      ),
-    );
-    training.label = trainingInput.label;
+    const spyMedia = jest
+      .spyOn(mediaService, 'findLocalOrCreateFromRemote')
+      .mockImplementation(async () => ormGenerator.media());
     await service.create(trainingInput, trainingSet);
     expect(spySave).toBeCalledWith(
       expect.objectContaining({
@@ -180,6 +168,9 @@ describe('TrainingService', () => {
     const spyFind = jest
       .spyOn(service, 'findById')
       .mockImplementation(async () => _.clone(training));
+    const spyMedia = jest
+      .spyOn(mediaService, 'findLocalOrCreateFromRemote')
+      .mockImplementation(async () => ormGenerator.media());
     const spySave = jest.spyOn(repository, 'save');
     training.medias = Promise.resolve(
       expect.arrayContaining(
@@ -197,6 +188,7 @@ describe('TrainingService', () => {
     await service.update(id, trainingInput);
     expect(spyFind).toBeCalledWith(id);
     expect(spySave).toBeCalledWith(training);
+    expect(spyMedia).toBeCalledTimes(trainingInput.media.length);
   });
 
   it('should update training medias', async () => {
@@ -207,6 +199,9 @@ describe('TrainingService', () => {
     const spyFind = jest
       .spyOn(service, 'findById')
       .mockImplementation(async () => _.clone(training));
+    const spyMedia = jest
+      .spyOn(mediaService, 'findLocalOrCreateFromRemote')
+      .mockImplementation(async () => ormGenerator.media());
     const spySave = jest.spyOn(repository, 'save');
     training.medias = Promise.resolve(
       expect.arrayContaining(
@@ -223,6 +218,7 @@ describe('TrainingService', () => {
     await service.update(id, trainingInput);
     expect(spyFind).toBeCalledWith(id);
     expect(spySave).toBeCalledWith(training);
+    expect(spyMedia).toBeCalledTimes(trainingInput.media.length);
   });
 
   it('should update training label', async () => {

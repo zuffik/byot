@@ -10,7 +10,6 @@ import { testTraining } from '../src/test/training.tester';
 import { TrainingSetService } from '../src/training/training-set/training-set.service';
 import { MediaService } from '../src/media/media/media.service';
 import { testMedia } from '../src/test/media.tester';
-import * as _ from 'lodash';
 
 describe('Training integration', () => {
   let app: INestApplication;

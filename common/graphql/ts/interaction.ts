@@ -1,19 +1,21 @@
 import {
-    Auth,
-    FulltextFilter,
-    FulltextFilterForUser,
-    MediaFilter,
-    MediaList,
-    Training,
-    TrainingDraftInput,
-    TrainingList,
-    TrainingSet,
-    TrainingSetInput,
-    TrainingSetList, TrainingUpdateInput,
-    User,
-    UserList,
-    UserRegister,
-    UserUpdateInput,
+  Auth,
+  FulltextFilter,
+  FulltextFilterForUser,
+  Media,
+  MediaFilter,
+  MediaList,
+  Training,
+  TrainingDraftInput,
+  TrainingList,
+  TrainingSet,
+  TrainingSetInput,
+  TrainingSetList,
+  TrainingUpdateInput,
+  User,
+  UserList,
+  UserRegister,
+  UserUpdateInput,
 } from './types';
 
 export interface Interaction<T> {
@@ -646,6 +648,47 @@ export const graphQLInteraction = {
                             thumbnail
                         }
                     }
+                }
+            }
+        }
+    `,
+  }),
+  allMedia: (filter?: FulltextFilter): Interaction<{ allMedia: MediaList }> => ({
+    variables: { filter },
+    query: gql`
+        query allMedia($filter: FulltextFilter) {
+            allMedia(filter: $filter) {
+                meta{
+                    totalCount
+                }
+                entries{
+                    id
+                    label
+                    source{
+                        id
+                        mediaType
+                        resourceId
+                        sourceType
+                        thumbnail
+                    }
+                }
+            }
+        }
+    `,
+  }),
+  media: (id: string): Interaction<{ media: Media }> => ({
+    variables: { id },
+    query: gql`
+        query media($id: ID!) {
+            media(id: $id){
+                id
+                label
+                source{
+                    id
+                    mediaType
+                    resourceId
+                    sourceType
+                    thumbnail
                 }
             }
         }

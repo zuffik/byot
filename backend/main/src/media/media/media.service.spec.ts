@@ -269,4 +269,14 @@ describe('MediaService', () => {
       take: filter.pagination.limit,
     });
   });
+
+  it('should find media by its ID', async () => {
+    const spy = jest.spyOn(mediaRepository, 'findOne');
+    const id = 'id';
+    await service.findById(id);
+    expect(spy).toBeCalledWith({
+      relations: ['source'],
+      where: { id },
+    });
+  });
 });

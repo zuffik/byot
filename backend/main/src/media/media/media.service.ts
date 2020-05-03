@@ -85,4 +85,11 @@ export class MediaService {
     }
     return await this.mediaRepository.findAndCount(query);
   }
+
+  public async findById(id: string): Promise<Media | undefined> {
+    return await this.mediaRepository.findOne({
+      relations: ['source'],
+      where: { id },
+    });
+  }
 }

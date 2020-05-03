@@ -1,7 +1,11 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { MediaResolver } from './media.resolver';
 import { BadRequestException } from '@nestjs/common';
-import { MediaFilter, SourceType } from '../../graphql/ts/types';
+import {
+  FulltextFilter,
+  MediaFilter,
+  SourceType,
+} from '../../graphql/ts/types';
 import { MediaRemoteService } from '../media-remote/media-remote.service';
 import { GeneratorGraphqlService } from '../../seed/generator-graphql/generator-graphql.service';
 import { proxyMock } from '../../test/proxy.mock';
@@ -84,5 +88,24 @@ describe('MediaResolver', () => {
       .mockImplementation(async () => [[], 0]);
     await resolver.findMedia(filter);
     expect(spy).toBeCalledWith(filter);
+  });
+
+  it('should find only local media as admin', async () => {
+    const filter: FulltextFilter = {
+      query: 'query',
+      pagination: { limit: 10, offset: 0 },
+    };
+    const spy = jest
+      .spyOn(localService, 'findAndCount')
+      .mockImplementation(async () => [[], 0]);
+    await resolver.allMedia(filter);
+    expect(spy).toBeCalledWith(filter);
+  });
+
+  it('should find only local media by id as admin', async () => {
+    const id = 'id';
+    const spy = jest.spyOn(localService, 'findById');
+    await resolver.media(id);
+    expect(spy).toBeCalledWith(id);
   });
 });

@@ -1,11 +1,8 @@
 import * as request from 'supertest';
 import { INestApplication } from '@nestjs/common';
 import { Auth, Role } from '../../src/graphql/ts/types';
-import {
-  graphQLInteraction,
-  Interaction,
-} from '../../src/graphql/ts/interaction';
 import { ConfigService } from '@nestjs/config';
+import { graphQLInteraction, Interaction } from './interaction';
 
 export interface IResponse<T> extends Omit<Request, 'body'> {
   body: {

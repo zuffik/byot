@@ -1,5 +1,5 @@
 import { INestApplication } from '@nestjs/common';
-import { graphQLInteraction } from '../src/graphql/ts/interaction';
+import { graphQLInteraction } from './helpers/interaction';
 import { QueryRunner } from 'typeorm';
 import { createApp, destroyApp } from './helpers/module.helper';
 import { testList } from '../src/test/list.tester';

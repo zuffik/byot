@@ -2,7 +2,7 @@ import { INestApplication } from '@nestjs/common';
 import { QueryRunner } from 'typeorm';
 import { GeneratorGraphqlService } from '../src/seed/generator-graphql/generator-graphql.service';
 import { createApp, destroyApp } from './helpers/module.helper';
-import { graphQLInteraction } from '../src/graphql/ts/interaction';
+import { graphQLInteraction } from './helpers/interaction';
 import { loginTestUser, makeGraphQLRequest } from './helpers/http.helper';
 import { Role } from '../src/graphql/ts/types';
 import { testList } from '../src/test/list.tester';

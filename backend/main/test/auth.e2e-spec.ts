@@ -1,7 +1,7 @@
 import { INestApplication } from '@nestjs/common';
 import { testUser } from '../src/test/user.tester';
 import { Auth as IAuth, Role, UserUpdateInput } from '../src/graphql/ts/types';
-import { graphQLInteraction } from '../src/graphql/ts/interaction';
+import { graphQLInteraction } from './helpers/interaction';
 import { GeneratorGraphqlService } from '../src/seed/generator-graphql/generator-graphql.service';
 import { QueryRunner } from 'typeorm';
 import { createApp, destroyApp } from './helpers/module.helper';

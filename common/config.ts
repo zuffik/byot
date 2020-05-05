@@ -9,4 +9,7 @@ export default {
       secondary: '#03A9F4',
     },
   },
+  contacts: {
+    email: 'info@byot.com',
+  }
 };

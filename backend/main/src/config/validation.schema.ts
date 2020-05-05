@@ -19,4 +19,9 @@ export const validationSchema = Joi.object({
   SQL_USER: Joi.string().default('root'),
   SQL_PASS: Joi.string().default(''),
   SQL_NAME: Joi.string().required(),
+
+  MAIL_SMTP_HOST: Joi.string().required(),
+  MAIL_SMTP_PORT: Joi.string().required(),
+  MAIL_SMTP_USERNAME: Joi.string().required(),
+  MAIL_SMTP_PASSWORD: Joi.string().required(),
 });

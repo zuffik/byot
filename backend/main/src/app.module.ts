@@ -15,6 +15,8 @@ import { MediaModule } from './media/media.module';
 import { apisConfig } from './config/apis.config';
 import { TrainingModule } from './training/training.module';
 import { sharedConfig } from './config/shared.config';
+import { mailConfig } from './config/mail.config';
+import { MailModule } from './mail/mail.module';
 
 @Module({
   imports: [
@@ -29,7 +31,14 @@ import { sharedConfig } from './config/shared.config';
         .reverse(),
       isGlobal: true,
       validationSchema,
-      load: [databaseConfig, appConfig, nodeConfig, apisConfig, sharedConfig],
+      load: [
+        databaseConfig,
+        appConfig,
+        nodeConfig,
+        apisConfig,
+        sharedConfig,
+        mailConfig,
+      ],
     }),
     GraphQLModule.forRootAsync({
       inject: [ConfigService],
@@ -65,6 +74,7 @@ import { sharedConfig } from './config/shared.config';
     MigrationsModule,
     MediaModule,
     TrainingModule,
+    MailModule,
   ],
   controllers: [],
   providers: [],

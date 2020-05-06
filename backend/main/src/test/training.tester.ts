@@ -30,7 +30,7 @@ export async function testTraining(
     training.media.entries.forEach(testMedia);
   }
   if (training.owner) {
-    testUser(
+    await testUser(
       training.owner instanceof Promise ? await training.owner : training.owner,
     );
   }

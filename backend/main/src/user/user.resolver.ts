@@ -1,9 +1,15 @@
-import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
+import {
+  Args,
+  Mutation,
+  Parent,
+  Query,
+  ResolveField,
+  Resolver,
+} from '@nestjs/graphql';
 import {
   FulltextFilter,
-  IMutation,
-  IQuery,
   Role,
+  TokenType,
   User as IUser,
   UserList,
   UserUpdateInput,
@@ -13,17 +19,24 @@ import { UserService } from './user.service';
 import { AuthRoles } from '../auth/decorators/auth-roles.decorator';
 import { JwtUser, JwtUserType } from '../auth/decorators/jwt-user.decorator';
 import {
+  BadRequestException,
   ForbiddenException,
+  Inject,
   NotFoundException,
   UseGuards,
 } from '@nestjs/common';
 import { AuthGuard } from '../auth/jwt/auth.guard';
 import { BaseResolver } from '../helpers/BaseResolver';
+import * as _ from 'lodash';
+import { TokenService } from './token/token.service';
+import { Token } from './token/token.entity';
 
 @Resolver('User')
-export class UserResolver extends BaseResolver
-  implements Partial<IMutation & IQuery> {
-  constructor(private userService: UserService) {
+export class UserResolver extends BaseResolver {
+  constructor(
+    @Inject(UserService) private readonly userService: UserService,
+    @Inject(TokenService) private readonly tokenService: TokenService,
+  ) {
     super();
   }
 
@@ -72,5 +85,22 @@ export class UserResolver extends BaseResolver
     delete user.password;
     delete user.passwordRepeat;
     return this.returnOrBail(await this.userService.update(id, user));
+  }
+
+  @ResolveField('emailValidated')
+  public async resolveEmailValidated(@Parent() user: User): Promise<boolean> {
+    return !_.find(
+      await user.tokens,
+      (token) => token.tokenType === TokenType.EMAIL_CONFIRMATION,
+    );
+  }
+
+  @Mutation('userConfirmEmail')
+  public async userConfirmEmail(@Args('token') token: string): Promise<Token> {
+    const t = await this.tokenService.resolve(token);
+    if (!t) {
+      throw new BadRequestException();
+    }
+    return t;
   }
 }

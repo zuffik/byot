@@ -31,7 +31,7 @@ describe('Training Set integration', () => {
     expect(graphQLInteraction).toHaveProperty('trainingSet');
     expect(graphQLInteraction).toHaveProperty('createTrainingSet');
     expect(graphQLInteraction).toHaveProperty('updateTrainingSet');
-    // expect(graphQLInteraction).toHaveProperty('removeTrainingSet');
+    expect(graphQLInteraction).toHaveProperty('removeTrainingSet');
   });
 
   it('should fetch training sets as admin', async () => {

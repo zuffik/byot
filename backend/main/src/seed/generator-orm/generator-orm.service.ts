@@ -6,6 +6,9 @@ import { TrainingSet } from '../../training/training-set/training-set.entity';
 import * as _ from 'lodash';
 import { Media } from '../../media/media/media.entity';
 import { Source } from '../../media/source/source.entity';
+import { Token } from '../../user/token/token.entity';
+import { chance } from '../chance';
+import { TokenType } from '../../graphql/ts/types';
 
 @Injectable()
 export class GeneratorOrmService {
@@ -14,7 +17,23 @@ export class GeneratorOrmService {
     private gqlGenerator: GeneratorGraphqlService,
   ) {}
 
-  public user(): User {
+  public token(generateUser: boolean = true): Token {
+    const token = new Token();
+    token.id = chance.guid();
+    token.createdAt = this.gqlGenerator.dateTime();
+    token.updatedAt = this.gqlGenerator.dateTime();
+    token.validUntil = chance.bool() && this.gqlGenerator.dateTime();
+    token.token = chance.guid();
+    token.tokenType = chance.pickone([
+      TokenType.EMAIL_CONFIRMATION,
+      TokenType.PASSWORD_RESET,
+    ]);
+    token.user = generateUser && this.user(false);
+    token.valid = chance.bool();
+    return token;
+  }
+
+  public user(generateTokens: boolean = true): User {
     const gql = this.gqlGenerator.user();
     const user = new User();
     user.id = gql.id;
@@ -27,6 +46,8 @@ export class GeneratorOrmService {
     user.updatedAt = gql.updatedAt;
     user.lastLogin = gql.lastLogin;
     user.password = '';
+    user.tokens =
+      generateTokens && Promise.resolve(_.times(10, () => this.token(false)));
     return user;
   }
 

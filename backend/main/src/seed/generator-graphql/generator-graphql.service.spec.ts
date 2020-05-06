@@ -40,7 +40,7 @@ describe('GeneratorGraphqlService', () => {
 
   it('should generate valid User', () => {
     const user = service.user();
-    testUser(user);
+    return testUser(user);
   });
 
   it('should generate valid UserRegister', () => {

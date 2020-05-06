@@ -5,6 +5,7 @@ import {
   Media,
   MediaFilter,
   MediaList,
+  Token,
   Training,
   TrainingDraftInput,
   TrainingList,
@@ -16,7 +17,7 @@ import {
   UserList,
   UserRegister,
   UserUpdateInput,
-} from '../../../../common/graphql/ts/types';
+} from '../../src/graphql/ts/types';
 
 export interface Interaction<T> {
   query: string;
@@ -73,6 +74,7 @@ export const graphQLInteraction = {
             fullName
             userName
             email
+            emailValidated
           }
         }
       }
@@ -888,6 +890,18 @@ export const graphQLInteraction = {
               }
             }
           }
+        }
+      }
+    `,
+  }),
+  userConfirmEmail: (
+    token: string,
+  ): Interaction<{ userConfirmEmail: Token }> => ({
+    variables: { token },
+    query: gql`
+      mutation userConfirmEmail($token: String!) {
+        userConfirmEmail(token: $token) {
+          id
         }
       }
     `,

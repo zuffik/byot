@@ -1,21 +1,24 @@
 import { INestApplication } from '@nestjs/common';
 import { testList } from '../src/test/list.tester';
 import { testUser } from '../src/test/user.tester';
-import { Role } from '../src/graphql/ts/types';
+import { Auth as IAuth, Role, TokenType } from '../src/graphql/ts/types';
 import { graphQLInteraction } from './helpers/interaction';
-import { QueryRunner } from 'typeorm';
+import { QueryRunner, Repository } from 'typeorm';
 import { createApp, destroyApp } from './helpers/module.helper';
 import { makeGraphQLRequest } from './helpers/http.helper';
 import { UserService } from '../src/user/user.service';
 import * as _ from 'lodash';
 import { GeneratorGraphqlService } from '../src/seed/generator-graphql/generator-graphql.service';
 import { AuthService } from '../src/auth/auth.service';
+import { Token } from '../src/user/token/token.entity';
+import { getRepositoryToken } from '@nestjs/typeorm';
 
 describe('User integration', () => {
   let app: INestApplication;
   let queryRunner: QueryRunner;
   let userService: UserService;
   let authService: AuthService;
+  let tokenRepository: Repository<Token>;
   let gqlGenerator: GeneratorGraphqlService;
 
   beforeEach(async () => {
@@ -24,18 +27,21 @@ describe('User integration', () => {
     queryRunner = deps.queryRunner;
     userService = app.get<UserService>(UserService);
     authService = app.get<AuthService>(AuthService);
+    tokenRepository = app.get<Repository<Token>>(getRepositoryToken(Token));
     gqlGenerator = app.get<GeneratorGraphqlService>(GeneratorGraphqlService);
   });
 
   it('should contain valid structure', async () => {
     expect(gqlGenerator).toBeDefined();
     expect(userService).toBeDefined();
+    expect(tokenRepository).toBeDefined();
     expect(queryRunner).toBeDefined();
     expect(authService).toBeDefined();
     expect(graphQLInteraction).toBeDefined();
     expect(graphQLInteraction).toHaveProperty('allUsers');
     expect(graphQLInteraction).toHaveProperty('user');
     expect(graphQLInteraction).toHaveProperty('me');
+    expect(graphQLInteraction).toHaveProperty('userConfirmEmail');
   });
 
   it('should fetch all users', async () => {
@@ -49,7 +55,7 @@ describe('User integration', () => {
     );
     const { data } = response.body;
     testList(data.allUsers);
-    data.allUsers.entries.forEach(testUser);
+    await Promise.all(data.allUsers.entries.map(testUser));
   });
 
   it('should fetch user by its id', async () => {
@@ -166,6 +172,43 @@ describe('User integration', () => {
       app,
       graphQLInteraction.userUpdate(auth.user.id, user),
       { userRole: Role.USER },
+    );
+    expect(response.body.errors).toEqual(expect.any(Array));
+  });
+
+  it('should confirm registration token', async () => {
+    const userToRegister = gqlGenerator.userRegister();
+    const data = await makeGraphQLRequest<{ userRegister: IAuth }>(
+      app,
+      graphQLInteraction.userRegister(userToRegister),
+    );
+    const token = await tokenRepository.findOne({
+      where: {
+        user: { id: data.body.data.userRegister.user.id },
+        valid: true,
+        tokenType: TokenType.EMAIL_CONFIRMATION,
+      },
+    });
+    expect(token).toBeDefined();
+    const response = await makeGraphQLRequest(
+      app,
+      graphQLInteraction.userConfirmEmail(token.token),
+    );
+    expect(response.body.errors).toBeUndefined();
+    const tokenAfter = await tokenRepository.findOne({
+      where: {
+        user: { id: data.body.data.userRegister.user.id },
+        valid: true,
+        tokenType: TokenType.EMAIL_CONFIRMATION,
+      },
+    });
+    expect(tokenAfter).toBeUndefined();
+  });
+
+  it('should fail confirming registration token', async () => {
+    const response = await makeGraphQLRequest(
+      app,
+      graphQLInteraction.userConfirmEmail('undefined-id'),
     );
     expect(response.body.errors).toEqual(expect.any(Array));
   });

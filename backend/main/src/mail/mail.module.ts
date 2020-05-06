@@ -23,7 +23,10 @@ import { MarkdownCompilerService } from './markdown-compiler/markdown-compiler.s
           )}>`,
           subject: cfg.get<string>('shared.info.name'),
         },
-        preview: cfg.get<string>('node.env') === 'test',
+        preview:
+          cfg.get<string>('node.env') === 'test' &&
+          cfg.get<boolean>('mail.preview') &&
+          !cfg.get<boolean>('node.ci'),
         template: {
           dir: path.join(process.cwd(), 'views', 'email', 'templates'),
           adapter: new MarkdownCompilerService(),

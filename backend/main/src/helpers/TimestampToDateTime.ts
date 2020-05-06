@@ -12,6 +12,7 @@ export const timestampToDateTime = (
 };
 
 export const timestampToDateTimeORMTransformer = {
-  to: (value: DateTime): string | null => value?.iso || moment().toISOString(),
+  to: (value: DateTime): string | null =>
+    value === null ? null : value?.iso || moment().toISOString(),
   from: (value: string): DateTime => timestampToDateTime(value),
 };

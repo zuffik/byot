@@ -7,4 +7,5 @@ export const mailConfig = registerAs('mail', () => ({
     username: process.env.MAIL_SMTP_USERNAME,
     password: process.env.MAIL_SMTP_PASSWORD,
   },
+  preview: process.env.MAIL_PREVIEW,
 }));

@@ -43,7 +43,8 @@ describe('Auth integration', () => {
     expect(data).toHaveProperty('userRegister');
     expect(data.userRegister).toHaveProperty('token');
     expect(data.userRegister).toHaveProperty('user');
-    testUser(data.userRegister.user);
+    await testUser(data.userRegister.user);
+    expect(data.userRegister.user.emailValidated).toBeFalsy();
   });
 
   it('should register and login user', async () => {
@@ -59,7 +60,8 @@ describe('Auth integration', () => {
     );
     expect(data.body.data.userLogin).toHaveProperty('token');
     expect(data.body.data.userLogin).toHaveProperty('user');
-    testUser(data.body.data.userLogin.user);
+    await testUser(data.body.data.userLogin.user);
+    expect(data.body.data.userLogin.user.emailValidated).toBeFalsy();
   });
 
   it('should fail login due to non-existing user', async () => {
@@ -92,7 +94,7 @@ describe('Auth integration', () => {
     );
     const { data } = response.body;
     testList(data.allUsers);
-    data.allUsers.entries.forEach(testUser);
+    await Promise.all(data.allUsers.entries.map(testUser));
   });
 
   it('should call auth protected method and fail', async () => {

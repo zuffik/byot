@@ -18,17 +18,30 @@ import { AuthService } from './auth.service';
 import { JwtUser, JwtUserType } from './decorators/jwt-user.decorator';
 import { BaseResolver } from '../helpers/BaseResolver';
 import { AuthGuard } from './jwt/auth.guard';
+import { MailerService } from '@nestjs-modules/mailer';
 
 @Resolver('Auth')
 export class AuthResolver extends BaseResolver
   implements Partial<IMutation & IQuery> {
-  constructor(@Inject(AuthService) private readonly authService: AuthService) {
+  constructor(
+    @Inject(AuthService) private readonly authService: AuthService,
+    @Inject(MailerService) private readonly mailerService: MailerService,
+  ) {
     super();
   }
 
   @Mutation('userRegister')
   public async userRegister(@Args('user') user: UserRegister): Promise<Auth> {
-    return await this.authService.createUser(user);
+    const result = await this.authService.createUser(user);
+    result.user.tokens = Promise.resolve([result.confirmToken]);
+    await this.mailerService.sendMail({
+      to: result.user.email,
+      template: 'user-confirm-email',
+      // todo change subjects
+      subject: 'Confirm Email',
+      context: { token: result.confirmToken.token },
+    });
+    return result;
   }
 
   @Mutation('userLogin')

@@ -1,27 +1,37 @@
 import { Inject, Injectable, UnauthorizedException } from '@nestjs/common';
 import { UserService } from '../user/user.service';
-import { UserRegister, UserUpdateInput } from '../graphql/ts/types';
+import { TokenType, UserRegister, UserUpdateInput } from '../graphql/ts/types';
 import * as bcrypt from 'bcrypt';
 import { User } from '../user/user.entity';
 import { JwtService } from '@nestjs/jwt';
 import { Auth } from './auth.entity';
+import { TokenService } from '../user/token/token.service';
+import { Token } from '../user/token/token.entity';
 
 @Injectable()
 export class AuthService {
   constructor(
     @Inject(UserService) private readonly userService: UserService,
     @Inject(JwtService) private readonly jwtService: JwtService,
+    @Inject(TokenService) private readonly tokenService: TokenService,
   ) {}
 
-  public async createUser(userRegister: UserRegister): Promise<Auth> {
+  public async createUser(
+    userRegister: UserRegister,
+  ): Promise<Auth & { confirmToken: Token }> {
     const user = {
       ...userRegister,
       password: this.createPasswordHash(userRegister.password),
     };
     const entity = await this.userService.create(user);
+    const token = await this.tokenService.create(
+      entity,
+      TokenType.EMAIL_CONFIRMATION,
+    );
     return {
       token: this.createTokenForUser(entity),
       user: entity,
+      confirmToken: token,
     };
   }
 

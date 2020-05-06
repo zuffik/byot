@@ -1,16 +1,18 @@
-import { DateTime, Role, User as IUser } from '../graphql/ts/types';
+import { DateTime, Role } from '../graphql/ts/types';
 import {
   BaseEntity,
   Column,
   CreateDateColumn,
   Entity,
+  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
 import { timestampToDateTimeORMTransformer } from '../helpers/TimestampToDateTime';
+import { Token } from './token/token.entity';
 
 @Entity()
-export class User extends BaseEntity implements IUser {
+export class User extends BaseEntity {
   @PrimaryGeneratedColumn('uuid')
   public id: string;
 
@@ -31,6 +33,9 @@ export class User extends BaseEntity implements IUser {
 
   @Column('enum', { enum: Role, default: Role.USER })
   public role: Role;
+
+  @OneToMany((type) => Token, (token) => token.user)
+  public tokens: Promise<Token[]>;
 
   public get fullName(): string {
     return `${this.firstName || ''} ${this.lastName || ''}`.trim();

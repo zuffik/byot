@@ -21,6 +21,11 @@ export enum Role {
     ADMIN = "ADMIN"
 }
 
+export enum TokenType {
+    EMAIL_CONFIRMATION = "EMAIL_CONFIRMATION",
+    PASSWORD_RESET = "PASSWORD_RESET"
+}
+
 export interface FulltextFilter {
     query?: string;
     pagination?: Pagination;
@@ -146,6 +151,7 @@ export interface IQuery {
 export interface IMutation {
     userRegister(user: UserRegister): Auth | Promise<Auth>;
     userLogin(user: UserLogin): Auth | Promise<Auth>;
+    userConfirmEmail(token: string): Token | Promise<Token>;
     userUpdateMyself(user: UserUpdateInput): User | Promise<User>;
     userUpdate(id: string, user: UserUpdateInput): User | Promise<User>;
     createTrainingSet(trainingSet?: TrainingSetInput): TrainingSet | Promise<TrainingSet>;
@@ -197,6 +203,7 @@ export interface User extends Entity {
     fullName?: string;
     userName: string;
     email: string;
+    emailValidated?: boolean;
 }
 
 export interface Auth {
@@ -207,4 +214,19 @@ export interface Auth {
 export interface UserList extends List {
     meta: ListMeta;
     entries: User[];
+}
+
+export interface Token extends Entity {
+    id: string;
+    createdAt: DateTime;
+    updatedAt?: DateTime;
+    token: string;
+    validUntil?: DateTime;
+    valid: boolean;
+    tokenType: TokenType;
+}
+
+export interface TokenList extends List {
+    meta: ListMeta;
+    entries: Token[];
 }

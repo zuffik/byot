@@ -1,17 +1,19 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { AuthResolver } from './auth.resolver';
 import { AuthService } from './auth.service';
-import { proxyMock } from '../test/proxy.mock';
+import { mockMail, proxyMock } from '../test/proxy.mock';
 import { SeedModule } from '../seed/seed.module';
 import { GeneratorOrmService } from '../seed/generator-orm/generator-orm.service';
 import { GeneratorGraphqlService } from '../seed/generator-graphql/generator-graphql.service';
 import { User } from '../user/user.entity';
 import { BadRequestException } from '@nestjs/common';
 import { Role } from '../graphql/ts/types';
+import { MailerService } from '@nestjs-modules/mailer';
 
 describe('AuthResolver', () => {
   let resolver: AuthResolver;
   let authService: AuthService;
+  let mailerService: MailerService;
   let ormGenerator: GeneratorOrmService;
   let gqlGenerator: GeneratorGraphqlService;
 
@@ -24,11 +26,16 @@ describe('AuthResolver', () => {
           provide: AuthService,
           useValue: proxyMock(),
         },
+        {
+          provide: MailerService,
+          useValue: mockMail(),
+        },
       ],
     }).compile();
 
     resolver = module.get<AuthResolver>(AuthResolver);
     authService = module.get<AuthService>(AuthService);
+    mailerService = module.get<MailerService>(MailerService);
     ormGenerator = module.get<GeneratorOrmService>(GeneratorOrmService);
     gqlGenerator = module.get<GeneratorGraphqlService>(GeneratorGraphqlService);
   });
@@ -36,26 +43,31 @@ describe('AuthResolver', () => {
   it('should be defined', () => {
     expect(resolver).toBeDefined();
     expect(authService).toBeDefined();
+    expect(mailerService).toBeDefined();
     expect(ormGenerator).toBeDefined();
     expect(gqlGenerator).toBeDefined();
   });
 
   it('should register and authenticate user', async () => {
     const userRegister = gqlGenerator.userRegister();
+    const created = {
+      user: ormGenerator.user(),
+      token: '',
+      confirmToken: ormGenerator.token(),
+    };
     const spyAuth = jest
       .spyOn(authService, 'createUser')
-      .mockImplementation(async () => ({
-        user: ormGenerator.user(),
-        token: '',
-      }));
+      .mockImplementation(async () => created);
+    const spySendMail = jest.spyOn(mailerService, 'sendMail');
     const auth = await resolver.userRegister(userRegister);
     expect(spyAuth).toBeCalledWith(userRegister);
-    expect(auth).toEqual(
-      expect.objectContaining({
-        token: expect.any(String),
-        user: expect.any(Object),
-      }),
-    );
+    expect(auth).toEqual(created);
+    expect(spySendMail).toBeCalledWith({
+      to: auth.user.email,
+      subject: expect.any(String),
+      template: 'user-confirm-email',
+      context: { token: created.confirmToken.token },
+    });
   });
 
   it('should update myself', async () => {

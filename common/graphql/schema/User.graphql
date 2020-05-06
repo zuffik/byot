@@ -16,6 +16,8 @@ type User implements Entity {
     fullName: String
     userName: String!
     email: String!
+
+    emailValidated: Boolean
 }
 
 type Auth {
@@ -49,4 +51,24 @@ input UserUpdateInput {
 type UserList implements List {
     meta: ListMeta!
     entries: [User!]!
+}
+
+enum TokenType {
+    EMAIL_CONFIRMATION
+    PASSWORD_RESET
+}
+
+type Token implements Entity {
+    id: ID!
+    createdAt: DateTime!
+    updatedAt: DateTime
+    token: String!
+    validUntil: DateTime
+    valid: Boolean!
+    tokenType: TokenType!
+}
+
+type TokenList implements List {
+    meta: ListMeta!
+    entries: [Token!]!
 }

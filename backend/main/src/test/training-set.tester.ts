@@ -19,7 +19,7 @@ export async function testTrainingSet(
       label: expect.any(String),
     }),
   );
-  testUser(await trainingSet.owner);
+  await testUser(await trainingSet.owner);
   if (checkTrainings) {
     if (trainingSet.trainings instanceof Promise) {
       await Promise.all(

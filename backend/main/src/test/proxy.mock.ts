@@ -1,6 +1,7 @@
 import * as _ from 'lodash';
 import { MediaProvider } from '../media/providers/media.provider';
 import { Media } from '../graphql/ts/types';
+import { ISendMailOptions } from '@nestjs-modules/mailer/dist/interfaces/send-mail-options.interface';
 
 export const proxyMock = (initialObject: object = {}) =>
   new Proxy(
@@ -48,5 +49,11 @@ export const mockMediaProvider = (initialObject: object = {}) =>
       findAll: jest.fn(async () => [[], 0] as [Media[], number]),
       parseFromUrl: jest.fn(async () => undefined),
     } as Partial<MediaProvider>),
+    ...initialObject,
+  });
+
+export const mockMail = (initialObject: object = {}) =>
+  proxyMock({
+    sendMail: async (options: ISendMailOptions): Promise<any> => ({}),
     ...initialObject,
   });

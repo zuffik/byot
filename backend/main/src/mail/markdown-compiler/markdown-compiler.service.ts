@@ -26,7 +26,7 @@ export class MarkdownCompilerService implements TemplateAdapter {
     const htmlFileContent = fs.readFileSync(htmlFile).toString();
     mail.data.html = Handlebars.compile(htmlFileContent)({
       body: this.converter.makeHtml(mdFileContent),
-      title: mail.data.context.title || mail.data.subject,
+      title: mail.data.context?.title || mail.data.subject,
     });
     callback(undefined);
   }

@@ -1,4 +1,5 @@
 import {
+  Token,
   User as IUser,
   UserRegister,
   UserUpdateInput,
@@ -6,7 +7,7 @@ import {
 import { testDateTime } from './datetime.tester';
 import { User } from '../user/user.entity';
 
-export function testUser(user: User | IUser | any) {
+export async function testUser(user: User | IUser | any) {
   expect(user).toEqual(
     expect.objectContaining({
       id: expect.any(String),
@@ -16,6 +17,9 @@ export function testUser(user: User | IUser | any) {
       email: expect.stringContaining('@'),
     }),
   );
+  if (user.tokens) {
+    (await user.tokens).forEach(testToken);
+  }
   expect(user.firstName).toBeStringOrNull();
   expect(user.lastName).toBeStringOrNull();
   testDateTime(user.createdAt);
@@ -44,4 +48,19 @@ export function testUserUpdate(userUpdate: UserUpdateInput | any) {
     expect(userUpdate.email).toContain('@');
   }
   expect(userUpdate.password).toBeOptionalString();
+}
+
+export function testToken(token: Token) {
+  expect(token).toEqual(
+    expect.objectContaining({
+      id: expect.any(String),
+      token: expect.any(String),
+      valid: expect.any(Boolean),
+      tokenType: expect.stringMatching(/EMAIL_CONFIRMATION|PASSWORD_RESET/),
+    }),
+  );
+
+  testDateTime(token.createdAt);
+  testDateTime(token.updatedAt);
+  testDateTime(token.validUntil);
 }

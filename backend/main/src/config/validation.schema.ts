@@ -4,6 +4,7 @@ export const validationSchema = Joi.object({
   NODE_ENV: Joi.string()
     .valid('development', 'production', 'test')
     .default('development'),
+  CI: Joi.bool().default(false),
 
   CREDENTIALS_API_KEY_GOOGLE_YOUTUBE: Joi.string().required(),
 
@@ -24,4 +25,5 @@ export const validationSchema = Joi.object({
   MAIL_SMTP_PORT: Joi.string().required(),
   MAIL_SMTP_USERNAME: Joi.string().required(),
   MAIL_SMTP_PASSWORD: Joi.string().required(),
+  MAIL_PREVIEW: Joi.bool().default(true),
 });

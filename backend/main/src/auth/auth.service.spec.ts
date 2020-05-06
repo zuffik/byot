@@ -8,12 +8,15 @@ import * as _ from 'lodash';
 import { JwtService } from '@nestjs/jwt';
 import { GeneratorOrmService } from '../seed/generator-orm/generator-orm.service';
 import * as bcrypt from 'bcrypt';
-import { BadRequestException, UnauthorizedException } from '@nestjs/common';
+import { UnauthorizedException } from '@nestjs/common';
+import { TokenService } from '../user/token/token.service';
+import { TokenType } from '../graphql/ts/types';
 
 describe('AuthService', () => {
   let authService: AuthService;
   let userService: UserService;
   let jwtService: JwtService;
+  let tokenService: TokenService;
   let gqlGenerator: GeneratorGraphqlService;
   let ormGenerator: GeneratorOrmService;
 
@@ -34,12 +37,17 @@ describe('AuthService', () => {
             sign: jest.fn(() => ''),
           }),
         },
+        {
+          provide: TokenService,
+          useValue: proxyMock(),
+        },
       ],
     }).compile();
 
     authService = module.get<AuthService>(AuthService);
     userService = module.get<UserService>(UserService);
     jwtService = module.get<JwtService>(JwtService);
+    tokenService = module.get<TokenService>(TokenService);
     gqlGenerator = module.get<GeneratorGraphqlService>(GeneratorGraphqlService);
     ormGenerator = module.get<GeneratorOrmService>(GeneratorOrmService);
   });
@@ -48,20 +56,30 @@ describe('AuthService', () => {
     expect(authService).toBeDefined();
     expect(userService).toBeDefined();
     expect(jwtService).toBeDefined();
+    expect(tokenService).toBeDefined();
     expect(gqlGenerator).toBeDefined();
     expect(ormGenerator).toBeDefined();
   });
 
   it('should create user with hashed password', async () => {
     const userRegister = gqlGenerator.userRegister();
-    const spy = jest.spyOn(userService, 'create');
+    const spyCreateUser = jest.spyOn(userService, 'create');
+    const token = ormGenerator.token();
+    const spyCreateToken = jest
+      .spyOn(tokenService, 'create')
+      .mockImplementation(async () => token);
     const user = await authService.createUser(userRegister);
-    expect(spy).toBeCalledWith(
+    expect(spyCreateUser).toBeCalledWith(
       expect.objectContaining({
         ..._.omit(userRegister, 'password'),
       }),
     );
     expect(user.user.password).not.toEqual(userRegister.password);
+    expect(user.confirmToken).toEqual(token);
+    expect(spyCreateToken).toBeCalledWith(
+      user.user,
+      TokenType.EMAIL_CONFIRMATION,
+    );
   });
 
   it('should create token for user', async () => {

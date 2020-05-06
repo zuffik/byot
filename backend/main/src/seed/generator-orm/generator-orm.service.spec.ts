@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { GeneratorOrmService } from './generator-orm.service';
-import { testUser } from '../../test/user.tester';
+import { testToken, testUser } from '../../test/user.tester';
 import { GeneratorGraphqlService } from '../generator-graphql/generator-graphql.service';
 import { testTraining } from '../../test/training.tester';
 import { testTrainingSet } from '../../test/training-set.tester';
@@ -23,8 +23,13 @@ describe('GeneratorOrmService', () => {
 
   it('should generate valid user', () => {
     const user = service.user();
-    testUser(user);
     expect(user).toHaveProperty('password');
+    return testUser(user);
+  });
+
+  it('should generate valid token', () => {
+    const token = service.token();
+    return testToken(token);
   });
 
   it('should generate media', () => {

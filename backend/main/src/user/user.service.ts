@@ -7,7 +7,6 @@ import {
 } from '../graphql/ts/types';
 import { InjectRepository } from '@nestjs/typeorm';
 import { DeepPartial, FindManyOptions, Like, Repository } from 'typeorm';
-import * as _ from 'lodash';
 
 @Injectable()
 export class UserService {
@@ -64,5 +63,12 @@ export class UserService {
       return undefined;
     }
     return this.findById(id);
+  }
+  public async checkEmailExists(email: string): Promise<boolean> {
+    return (await this.userRepository.count({ where: { email } })) > 0;
+  }
+
+  public async checkUserNameExists(userName: string): Promise<boolean> {
+    return (await this.userRepository.count({ where: { userName } })) > 0;
   }
 }

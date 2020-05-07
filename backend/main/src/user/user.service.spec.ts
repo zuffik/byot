@@ -167,4 +167,56 @@ describe('UserService', () => {
     expect(spyFind).not.toBeCalled();
     expect(updateResult).toBeUndefined();
   });
+
+  it('should check for available email', async () => {
+    const email = 'email';
+    const spy = jest
+      .spyOn(repository, 'count')
+      .mockImplementation(async () => 0);
+    expect(await service.checkEmailExists(email)).toBeFalsy();
+    expect(spy).toBeCalledWith({
+      where: {
+        email,
+      },
+    });
+  });
+
+  it('should check for non available email', async () => {
+    const email = 'email';
+    const spy = jest
+      .spyOn(repository, 'count')
+      .mockImplementation(async () => 1);
+    expect(await service.checkEmailExists(email)).toBeTruthy();
+    expect(spy).toBeCalledWith({
+      where: {
+        email,
+      },
+    });
+  });
+
+  it('should check for available userName', async () => {
+    const userName = 'userName';
+    const spy = jest
+      .spyOn(repository, 'count')
+      .mockImplementation(async () => 0);
+    expect(await service.checkUserNameExists(userName)).toBeFalsy();
+    expect(spy).toBeCalledWith({
+      where: {
+        userName,
+      },
+    });
+  });
+
+  it('should check for non available userName', async () => {
+    const userName = 'userName';
+    const spy = jest
+      .spyOn(repository, 'count')
+      .mockImplementation(async () => 1);
+    expect(await service.checkUserNameExists(userName)).toBeTruthy();
+    expect(spy).toBeCalledWith({
+      where: {
+        userName,
+      },
+    });
+  });
 });

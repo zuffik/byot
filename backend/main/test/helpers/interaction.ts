@@ -1,5 +1,7 @@
 import {
   Auth,
+  AuthNameCheck,
+  AuthNameCheckResult,
   FulltextFilter,
   FulltextFilterForUser,
   Media,
@@ -902,6 +904,18 @@ export const graphQLInteraction = {
       mutation userConfirmEmail($token: String!) {
         userConfirmEmail(token: $token) {
           id
+        }
+      }
+    `,
+  }),
+  checkUserAuthName: (
+    check: AuthNameCheck,
+  ): Interaction<{ checkUserAuthName: AuthNameCheckResult }> => ({
+    variables: { check },
+    query: gql`
+      query checkUserAuthName($check: AuthNameCheck!) {
+        checkUserAuthName(check: $check) {
+          available
         }
       }
     `,

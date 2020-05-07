@@ -5,6 +5,7 @@ type Query {
 
     allTrainingSets(filter: FulltextFilterForUser): TrainingSetList!
     user(id: ID!): User!
+    checkUserAuthName(check: AuthNameCheck!): AuthNameCheckResult!
     me: User!
     trainingSet(id: ID!): TrainingSet!
     training(id: ID!): Training!

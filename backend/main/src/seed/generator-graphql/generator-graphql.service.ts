@@ -2,6 +2,8 @@ import { Injectable } from '@nestjs/common';
 import * as moment from 'moment';
 import { chance } from '../chance';
 import {
+  AuthName,
+  AuthNameCheck,
   DateTime,
   Media,
   MediaType,
@@ -162,6 +164,14 @@ export class GeneratorGraphqlService {
     return {
       label: chance.sentence({ words: 4 }),
       media: _.times(10, () => this.trainingMediaInput()),
+    };
+  }
+
+  public authNameCheck(): AuthNameCheck {
+    const email = chance.bool();
+    return {
+      name: email ? chance.email() : chance.twitter().slice(1),
+      type: email ? AuthName.EMAIL : AuthName.USER_NAME,
     };
   }
 }

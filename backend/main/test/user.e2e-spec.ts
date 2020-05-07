@@ -1,11 +1,17 @@
 import { INestApplication } from '@nestjs/common';
 import { testList } from '../src/test/list.tester';
 import { testUser } from '../src/test/user.tester';
-import { Auth as IAuth, Role, TokenType } from '../src/graphql/ts/types';
+import {
+  Auth as IAuth,
+  AuthName,
+  AuthNameCheck,
+  Role,
+  TokenType,
+} from '../src/graphql/ts/types';
 import { graphQLInteraction } from './helpers/interaction';
 import { QueryRunner, Repository } from 'typeorm';
 import { createApp, destroyApp } from './helpers/module.helper';
-import { makeGraphQLRequest } from './helpers/http.helper';
+import { loginTestUser, makeGraphQLRequest } from './helpers/http.helper';
 import { UserService } from '../src/user/user.service';
 import * as _ from 'lodash';
 import { GeneratorGraphqlService } from '../src/seed/generator-graphql/generator-graphql.service';
@@ -42,6 +48,7 @@ describe('User integration', () => {
     expect(graphQLInteraction).toHaveProperty('user');
     expect(graphQLInteraction).toHaveProperty('me');
     expect(graphQLInteraction).toHaveProperty('userConfirmEmail');
+    expect(graphQLInteraction).toHaveProperty('checkUserAuthName');
   });
 
   it('should fetch all users', async () => {
@@ -211,6 +218,68 @@ describe('User integration', () => {
       graphQLInteraction.userConfirmEmail('undefined-id'),
     );
     expect(response.body.errors).toEqual(expect.any(Array));
+  });
+
+  it('should check for available email', async () => {
+    const input: AuthNameCheck = {
+      type: AuthName.EMAIL,
+      name: 'any-email',
+    };
+    const result = await makeGraphQLRequest(
+      app,
+      graphQLInteraction.checkUserAuthName(input),
+    );
+    expect(result.body.errors).toBeUndefined();
+    expect(result.body.data.checkUserAuthName).toEqual({
+      available: true,
+    });
+  });
+
+  it('should check for non available email', async () => {
+    const auth = await loginTestUser(app, Role.USER);
+    const input: AuthNameCheck = {
+      type: AuthName.EMAIL,
+      name: auth.user.email,
+    };
+    const result = await makeGraphQLRequest(
+      app,
+      graphQLInteraction.checkUserAuthName(input),
+    );
+    expect(result.body.errors).toBeUndefined();
+    expect(result.body.data.checkUserAuthName).toEqual({
+      available: false,
+    });
+  });
+
+  it('should check for available userName', async () => {
+    const input: AuthNameCheck = {
+      type: AuthName.USER_NAME,
+      name: 'totally-non-existing-username-slkdfjalsdjfsa',
+    };
+    const result = await makeGraphQLRequest(
+      app,
+      graphQLInteraction.checkUserAuthName(input),
+    );
+    expect(result.body.errors).toBeUndefined();
+    expect(result.body.data.checkUserAuthName).toEqual({
+      available: true,
+    });
+  });
+
+  it('should check for non available userName', async () => {
+    const auth = await loginTestUser(app, Role.USER);
+    const input: AuthNameCheck = {
+      type: AuthName.USER_NAME,
+      name: auth.user.userName,
+    };
+    const result = await makeGraphQLRequest(
+      app,
+      graphQLInteraction.checkUserAuthName(input),
+    );
+    expect(result.body.errors).toBeUndefined();
+    expect(result.body.data.checkUserAuthName).toEqual({
+      available: false,
+    });
   });
 
   afterEach(() => destroyApp({ app, queryRunner }));

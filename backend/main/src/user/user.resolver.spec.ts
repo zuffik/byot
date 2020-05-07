@@ -5,7 +5,7 @@ import { testList } from '../test/list.tester';
 import { SeedModule } from '../seed/seed.module';
 import { GeneratorGraphqlService } from '../seed/generator-graphql/generator-graphql.service';
 import { mockRepository, proxyMock } from '../test/proxy.mock';
-import { Role, TokenType } from '../graphql/ts/types';
+import { AuthName, Role, TokenType } from '../graphql/ts/types';
 import {
   BadRequestException,
   ForbiddenException,
@@ -199,5 +199,53 @@ describe('UserResolver', () => {
       BadRequestException,
     );
     expect(spyResolve).toBeCalledWith(tokenString);
+  });
+
+  it('should check for available email', async () => {
+    const spy = jest
+      .spyOn(userService, 'checkEmailExists')
+      .mockImplementation(async () => false);
+    const nameCheck = gqlGenerator.authNameCheck();
+    nameCheck.type = AuthName.EMAIL;
+    expect(await resolver.checkUserAuthName(nameCheck)).toEqual({
+      available: true,
+    });
+    expect(spy).toBeCalledWith(nameCheck.name);
+  });
+
+  it('should check for non available email', async () => {
+    const spy = jest
+      .spyOn(userService, 'checkEmailExists')
+      .mockImplementation(async () => true);
+    const nameCheck = gqlGenerator.authNameCheck();
+    nameCheck.type = AuthName.EMAIL;
+    expect(await resolver.checkUserAuthName(nameCheck)).toEqual({
+      available: false,
+    });
+    expect(spy).toBeCalledWith(nameCheck.name);
+  });
+
+  it('should check for available userName', async () => {
+    const spy = jest
+      .spyOn(userService, 'checkUserNameExists')
+      .mockImplementation(async () => false);
+    const nameCheck = gqlGenerator.authNameCheck();
+    nameCheck.type = AuthName.USER_NAME;
+    expect(await resolver.checkUserAuthName(nameCheck)).toEqual({
+      available: true,
+    });
+    expect(spy).toBeCalledWith(nameCheck.name);
+  });
+
+  it('should check for non available userName', async () => {
+    const spy = jest
+      .spyOn(userService, 'checkUserNameExists')
+      .mockImplementation(async () => true);
+    const nameCheck = gqlGenerator.authNameCheck();
+    nameCheck.type = AuthName.USER_NAME;
+    expect(await resolver.checkUserAuthName(nameCheck)).toEqual({
+      available: false,
+    });
+    expect(spy).toBeCalledWith(nameCheck.name);
   });
 });

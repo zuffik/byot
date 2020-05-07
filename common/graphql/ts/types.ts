@@ -26,6 +26,11 @@ export enum TokenType {
     PASSWORD_RESET = "PASSWORD_RESET"
 }
 
+export enum AuthName {
+    USER_NAME = "USER_NAME",
+    EMAIL = "EMAIL"
+}
+
 export interface FulltextFilter {
     query?: string;
     pagination?: Pagination;
@@ -93,6 +98,11 @@ export interface UserUpdateInput {
     userName?: string;
 }
 
+export interface AuthNameCheck {
+    name: string;
+    type: AuthName;
+}
+
 export interface Entity {
     id: string;
     createdAt: DateTime;
@@ -141,6 +151,7 @@ export interface IQuery {
     allTrainings(filter?: FulltextFilter): TrainingList | Promise<TrainingList>;
     allTrainingSets(filter?: FulltextFilterForUser): TrainingSetList | Promise<TrainingSetList>;
     user(id: string): User | Promise<User>;
+    checkUserAuthName(check: AuthNameCheck): AuthNameCheckResult | Promise<AuthNameCheckResult>;
     me(): User | Promise<User>;
     trainingSet(id: string): TrainingSet | Promise<TrainingSet>;
     training(id: string): Training | Promise<Training>;
@@ -229,4 +240,8 @@ export interface Token extends Entity {
 export interface TokenList extends List {
     meta: ListMeta;
     entries: Token[];
+}
+
+export interface AuthNameCheckResult {
+    available: boolean;
 }

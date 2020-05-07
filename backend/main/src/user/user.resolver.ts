@@ -7,6 +7,9 @@ import {
   Resolver,
 } from '@nestjs/graphql';
 import {
+  AuthName,
+  AuthNameCheck,
+  AuthNameCheckResult,
   FulltextFilter,
   Role,
   TokenType,
@@ -102,5 +105,19 @@ export class UserResolver extends BaseResolver {
       throw new BadRequestException();
     }
     return t;
+  }
+
+  @Query('checkUserAuthName')
+  public async checkUserAuthName(
+    @Args('check') check: AuthNameCheck,
+  ): Promise<AuthNameCheckResult> {
+    return {
+      available: !(await {
+        [AuthName.USER_NAME]: (authName: string) =>
+          this.userService.checkUserNameExists(authName),
+        [AuthName.EMAIL]: (authName: string) =>
+          this.userService.checkEmailExists(authName),
+      }[check.type](check.name)),
+    };
   }
 }

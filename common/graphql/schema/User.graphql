@@ -72,3 +72,17 @@ type TokenList implements List {
     meta: ListMeta!
     entries: [Token!]!
 }
+
+enum AuthName {
+    USER_NAME
+    EMAIL
+}
+
+input AuthNameCheck {
+    name: String!
+    type: AuthName!
+}
+
+type AuthNameCheckResult {
+    available: Boolean!
+}

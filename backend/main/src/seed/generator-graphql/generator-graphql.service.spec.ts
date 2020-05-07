@@ -17,6 +17,7 @@ import {
   testTrainingSetInput,
 } from '../../test/training-set.tester';
 import { testTrainingDraftInput } from '../../test/training-draft.tester';
+import { testAuthNameCheck } from '../../test/auth-name.tester';
 
 describe('GeneratorGraphqlService', () => {
   let service: GeneratorGraphqlService;
@@ -97,5 +98,10 @@ describe('GeneratorGraphqlService', () => {
   it('should generate training update input', () => {
     const trainingUpdateInput = service.trainingUpdateInput();
     testTrainingUpdateInput(trainingUpdateInput);
+  });
+
+  it('should generate auth name check input', () => {
+    const authNameCheck = service.authNameCheck();
+    testAuthNameCheck(authNameCheck);
   });
 });

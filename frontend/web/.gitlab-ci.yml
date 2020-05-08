@@ -1,5 +1,13 @@
 image: node:12
 
+variables:
+  WEB_ROOT: "frontend/web"
+
+cache:
+  paths:
+    - "$WEB_ROOT/node_modules"
+    - "$PROJECT_PATH/node_modules"
+
 stages:
   - build
   - test

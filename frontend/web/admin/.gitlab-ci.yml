@@ -2,6 +2,7 @@ include: '/frontend/web/.gitlab-ci.yml'
 
 before_script:
   - cd frontend/web/admin
+  - yarn install
 
 Build:
   extends: .build

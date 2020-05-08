@@ -19,6 +19,9 @@ before_script:
   - yarn install
 
 Build:
+  artifacts:
+    paths:
+      - "$PROJECT_PATH/build"
   stage: build
   script:
     - yarn build

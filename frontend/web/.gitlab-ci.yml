@@ -10,18 +10,20 @@ before_script:
 
 .build:
   stage: build
-  artifacts:
-    paths:
-      - build
   script:
     - yarn build
 
 .test:
+  dependencies:
+    - .build
   stage: test
   script:
     - yarn test
 
 .deploy:
+  dependencies:
+    - .build
+    - .test
   stage: deploy
   script:
     - echo "Deploying"

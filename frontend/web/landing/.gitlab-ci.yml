@@ -5,6 +5,9 @@ before_script:
   - yarn install
 
 Build:
+  artifacts:
+    paths:
+      - frontend/web/landing
   extends: .build
 
 Test:

@@ -2,6 +2,7 @@ import { Args, Mutation, Resolver } from '@nestjs/graphql';
 import {
   IMutation,
   IQuery,
+  ResetPassword,
   User as IUser,
   UserLogin,
   UserRegister,
@@ -19,6 +20,8 @@ import { JwtUser, JwtUserType } from './decorators/jwt-user.decorator';
 import { BaseResolver } from '../helpers/BaseResolver';
 import { AuthGuard } from './jwt/auth.guard';
 import { MailerService } from '@nestjs-modules/mailer';
+import { TokenService } from '../user/token/token.service';
+import { Token } from '../user/token/token.entity';
 
 @Resolver('Auth')
 export class AuthResolver extends BaseResolver
@@ -26,6 +29,7 @@ export class AuthResolver extends BaseResolver
   constructor(
     @Inject(AuthService) private readonly authService: AuthService,
     @Inject(MailerService) private readonly mailerService: MailerService,
+    @Inject(TokenService) private readonly tokenService: TokenService,
   ) {
     super();
   }
@@ -66,5 +70,21 @@ export class AuthResolver extends BaseResolver
     }
     delete input.passwordRepeat;
     return this.returnOrBail(await this.authService.updateUser(user.id, input));
+  }
+
+  @Mutation('userResetPassword')
+  public async userResetPassword(
+    @Args('input') input: ResetPassword,
+  ): Promise<Token> {
+    if (input.newPassword !== input.passwordRepeat) {
+      throw new BadRequestException();
+    }
+    const token = await this.returnOrBail(
+      await this.tokenService.resolve(input.token),
+    );
+    await this.authService.updateUser(token.user.id, {
+      password: input.newPassword,
+    });
+    return token;
   }
 }

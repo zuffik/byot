@@ -33,12 +33,15 @@ import { BaseResolver } from '../helpers/BaseResolver';
 import * as _ from 'lodash';
 import { TokenService } from './token/token.service';
 import { Token } from './token/token.entity';
+import * as moment from 'moment';
+import { MailerService } from '@nestjs-modules/mailer';
 
 @Resolver('User')
 export class UserResolver extends BaseResolver {
   constructor(
     @Inject(UserService) private readonly userService: UserService,
     @Inject(TokenService) private readonly tokenService: TokenService,
+    @Inject(MailerService) private readonly mailerService: MailerService,
   ) {
     super();
   }
@@ -119,5 +122,25 @@ export class UserResolver extends BaseResolver {
           this.userService.checkEmailExists(authName),
       }[check.type](check.name)),
     };
+  }
+
+  @Mutation('userRequestPasswordReset')
+  public async userRequestPasswordReset(
+    @Args('email') email: string,
+  ): Promise<void> {
+    const user = await this.userService.findByUsernameOrEmail(email);
+    if (user) {
+      const token = await this.tokenService.create(
+        user,
+        TokenType.PASSWORD_RESET,
+        moment().add(1, 'month'),
+      );
+      await this.mailerService.sendMail({
+        to: user.email,
+        context: { token: token.token },
+        template: 'user-request-password-reset',
+        subject: 'change pass',
+      });
+    }
   }
 }

@@ -103,6 +103,12 @@ export interface AuthNameCheck {
     type: AuthName;
 }
 
+export interface ResetPassword {
+    token: string;
+    newPassword: string;
+    passwordRepeat: string;
+}
+
 export interface Entity {
     id: string;
     createdAt: DateTime;
@@ -163,6 +169,8 @@ export interface IMutation {
     userRegister(user: UserRegister): Auth | Promise<Auth>;
     userLogin(user: UserLogin): Auth | Promise<Auth>;
     userConfirmEmail(token: string): Token | Promise<Token>;
+    userRequestPasswordReset(email: string): Void | Promise<Void>;
+    userResetPassword(input: ResetPassword): Token | Promise<Token>;
     userUpdateMyself(user: UserUpdateInput): User | Promise<User>;
     userUpdate(id: string, user: UserUpdateInput): User | Promise<User>;
     createTrainingSet(trainingSet?: TrainingSetInput): TrainingSet | Promise<TrainingSet>;
@@ -245,3 +253,5 @@ export interface TokenList extends List {
 export interface AuthNameCheckResult {
     available: boolean;
 }
+
+export type Void = any;

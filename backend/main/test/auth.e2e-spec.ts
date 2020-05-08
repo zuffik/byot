@@ -1,34 +1,48 @@
 import { INestApplication } from '@nestjs/common';
 import { testUser } from '../src/test/user.tester';
-import { Auth as IAuth, Role, UserUpdateInput } from '../src/graphql/ts/types';
+import {
+  Auth as IAuth,
+  ResetPassword,
+  Role,
+  TokenType,
+  UserUpdateInput,
+} from '../src/graphql/ts/types';
 import { graphQLInteraction } from './helpers/interaction';
 import { GeneratorGraphqlService } from '../src/seed/generator-graphql/generator-graphql.service';
-import { QueryRunner } from 'typeorm';
+import { QueryRunner, Repository } from 'typeorm';
 import { createApp, destroyApp } from './helpers/module.helper';
-import { makeGraphQLRequest } from './helpers/http.helper';
+import { loginTestUser, makeGraphQLRequest } from './helpers/http.helper';
 import * as _ from 'lodash';
 import { testList } from '../src/test/list.tester';
 import { UserService } from '../src/user/user.service';
+import * as moment from 'moment';
+import { Token } from '../src/user/token/token.entity';
+import { getRepositoryToken } from '@nestjs/typeorm';
 
 describe('Auth integration', () => {
   let app: INestApplication;
   let queryRunner: QueryRunner;
   let userService: UserService;
   let gqlGenerator: GeneratorGraphqlService;
+  let tokenRepository: Repository<Token>;
   beforeEach(async () => {
     const deps = await createApp();
     app = deps.app;
     queryRunner = deps.queryRunner;
     userService = app.get<UserService>(UserService);
     gqlGenerator = app.get<GeneratorGraphqlService>(GeneratorGraphqlService);
+    tokenRepository = app.get<Repository<Token>>(getRepositoryToken(Token));
   });
 
   it('should contain valid structure', () => {
     expect(gqlGenerator).toBeDefined();
     expect(userService).toBeDefined();
     expect(queryRunner).toBeDefined();
+    expect(tokenRepository).toBeDefined();
     expect(graphQLInteraction).toBeDefined();
     expect(graphQLInteraction).toHaveProperty('userRegister');
+    expect(graphQLInteraction).toHaveProperty('userLogin');
+    expect(graphQLInteraction).toHaveProperty('userRequestPasswordReset');
   });
 
   it('should register user', async () => {
@@ -212,6 +226,95 @@ describe('Auth integration', () => {
       graphQLInteraction.userUpdateMyself(update),
     );
     expect(updateResponse.body.errors).toEqual(expect.any(Array));
+  });
+
+  it('should reset password', async () => {
+    const auth = await loginTestUser(app, Role.USER);
+    const resultRequest = await makeGraphQLRequest(
+      app,
+      graphQLInteraction.userRequestPasswordReset(auth.user.email),
+    );
+    expect(resultRequest.body.errors).toBeUndefined();
+    const token = await tokenRepository.findOne({
+      where: {
+        user: { id: auth.user.id },
+        tokenType: TokenType.PASSWORD_RESET,
+      },
+    });
+    expect(token).toBeDefined();
+    expect(+moment(token.validUntil.iso)).toBeGreaterThan(+moment());
+    const newPass = 'newPass';
+    const input: ResetPassword = {
+      newPassword: newPass,
+      passwordRepeat: newPass,
+      token: token.token,
+    };
+    const resultReset = await makeGraphQLRequest(
+      app,
+      graphQLInteraction.userResetPassword(input),
+    );
+    expect(resultReset.body.errors).toBeUndefined();
+    const resultLogin = await makeGraphQLRequest(
+      app,
+      graphQLInteraction.userLogin(auth.user.userName, newPass),
+    );
+    expect(resultLogin.body.errors).toBeUndefined();
+    const demoPass = 'D3m0P4$$';
+    await makeGraphQLRequest(
+      app,
+      graphQLInteraction.userUpdateMyself({
+        password: demoPass,
+        passwordRepeat: demoPass,
+      }),
+      { token: auth.token },
+    );
+  });
+
+  it('should not reset password due to invalid token', async () => {
+    const newPass = 'newPass';
+    const input: ResetPassword = {
+      newPassword: newPass,
+      passwordRepeat: newPass,
+      token: 'invalid-token',
+    };
+    const resultReset = await makeGraphQLRequest(
+      app,
+      graphQLInteraction.userResetPassword(input),
+    );
+    expect(resultReset.body.errors).toEqual(expect.any(Array));
+  });
+
+  it('should not reset password due to non-matching passwords', async () => {
+    const auth = await loginTestUser(app, Role.USER);
+    const resultRequest = await makeGraphQLRequest(
+      app,
+      graphQLInteraction.userRequestPasswordReset(auth.user.email),
+    );
+    expect(resultRequest.body.errors).toBeUndefined();
+    const token = await tokenRepository.findOne({
+      where: {
+        user: { id: auth.user.id },
+        tokenType: TokenType.PASSWORD_RESET,
+      },
+    });
+    expect(token).toBeDefined();
+    expect(+moment(token.validUntil.iso)).toBeGreaterThan(+moment());
+    const newPass = 'newPass';
+    const input: ResetPassword = {
+      newPassword: newPass,
+      passwordRepeat: newPass + '-wrong-pass',
+      token: token.token,
+    };
+    const resultReset = await makeGraphQLRequest(
+      app,
+      graphQLInteraction.userResetPassword(input),
+    );
+    expect(resultReset.body.errors).toEqual(expect.any(Array));
+    const resultLogin = await makeGraphQLRequest(
+      app,
+      graphQLInteraction.userLogin(auth.user.userName, newPass),
+    );
+    expect(resultLogin.body.errors).toEqual(expect.any(Array));
   });
 
   afterEach(() => destroyApp({ app, queryRunner }));

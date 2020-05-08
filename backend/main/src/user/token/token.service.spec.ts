@@ -3,12 +3,12 @@ import { TokenService } from './token.service';
 import { getRepositoryToken } from '@nestjs/typeorm';
 import { Token } from './token.entity';
 import { mockRepository } from '../../test/proxy.mock';
-import { MoreThanOrEqual, Repository } from 'typeorm';
 import { GeneratorOrmService } from '../../seed/generator-orm/generator-orm.service';
 import { TokenType } from '../../graphql/ts/types';
 import * as moment from 'moment';
 import { SeedModule } from '../../seed/seed.module';
 import { timestampToDateTime } from '../../helpers/TimestampToDateTime';
+import { Repository } from 'typeorm';
 
 describe('TokenService', () => {
   let service: TokenService;
@@ -43,7 +43,7 @@ describe('TokenService', () => {
     const spyCreate = jest
       .spyOn(tokenRepository, 'create')
       .mockImplementation(() => token);
-    const spySave = jest.spyOn(tokenRepository, 'insert');
+    const spySave = jest.spyOn(tokenRepository, 'save');
     const user = ormGenerator.user();
     const type = TokenType.EMAIL_CONFIRMATION;
     const validUntil = moment();
@@ -73,18 +73,11 @@ describe('TokenService', () => {
       valid: false,
     });
     expect(spyFind).toBeCalledWith({
-      where: [
-        {
-          token: tokenString,
-          validUntil: MoreThanOrEqual(expect.any(moment)),
-          valid: true,
-        },
-        {
-          token: tokenString,
-          validUntil: null,
-          valid: true,
-        },
-      ],
+      relations: ['user'],
+      where: {
+        token: tokenString,
+        valid: true,
+      },
     });
     expect(spySave).toBeCalledWith({
       ...tokenOrm,
@@ -103,18 +96,11 @@ describe('TokenService', () => {
     const spySave = jest.spyOn(tokenRepository, 'save');
     expect(await service.resolve(tokenString)).toBeUndefined();
     expect(spyFind).toBeCalledWith({
-      where: [
-        {
-          token: tokenString,
-          validUntil: MoreThanOrEqual(expect.any(moment)),
-          valid: true,
-        },
-        {
-          token: tokenString,
-          validUntil: null,
-          valid: true,
-        },
-      ],
+      relations: ['user'],
+      where: {
+        token: tokenString,
+        valid: true,
+      },
     });
     expect(spySave).not.toBeCalled();
   });

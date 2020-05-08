@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Token } from './token.entity';
-import { MoreThanOrEqual, Repository } from 'typeorm';
+import { Repository } from 'typeorm';
 import { User } from '../user.entity';
 import { TokenType } from '../../graphql/ts/types';
 import * as moment from 'moment';
@@ -26,28 +26,22 @@ export class TokenService {
       token: nanoid(32),
       validUntil: validUntil ? timestampToDateTime(validUntil) : null,
     });
-    await this.tokenRepository.insert(token);
+    await this.tokenRepository.save(token);
     return token;
   }
 
   public async resolve(tokenString: string): Promise<Token | undefined> {
-    const where = {
-      token: tokenString,
-      valid: true,
-    };
     const token = await this.tokenRepository.findOne({
-      where: [
-        {
-          ...where,
-          validUntil: MoreThanOrEqual(moment()),
-        },
-        {
-          ...where,
-          validUntil: null,
-        },
-      ],
+      relations: ['user'],
+      where: {
+        token: tokenString,
+        valid: true,
+      },
     });
-    if (!token) {
+    if (
+      !token ||
+      (token.validUntil && moment(token.validUntil.iso) < moment())
+    ) {
       return undefined;
     }
     token.valid = false;

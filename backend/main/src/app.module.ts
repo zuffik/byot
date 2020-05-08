@@ -17,6 +17,7 @@ import { TrainingModule } from './training/training.module';
 import { sharedConfig } from './config/shared.config';
 import { mailConfig } from './config/mail.config';
 import { MailModule } from './mail/mail.module';
+import { Verbosity } from './helpers/Verbosity';
 
 @Module({
   imports: [
@@ -65,7 +66,9 @@ import { MailModule } from './mail/mail.module';
         entities: [path.join(__dirname, './**/*.entity.{ts,js}')],
         synchronize: true,
         logging:
-          cfg.get<string>('node.env') === 'development' ? 'all' : undefined,
+          cfg.get<number>('node.verbosity') >= Verbosity.VERBOSE
+            ? 'all'
+            : undefined,
       }),
     }),
     UserModule,

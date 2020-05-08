@@ -10,3 +10,5 @@ interface Entity {
     createdAt: DateTime!
     updatedAt: DateTime
 }
+
+scalar Void

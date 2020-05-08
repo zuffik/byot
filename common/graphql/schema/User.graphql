@@ -86,3 +86,9 @@ input AuthNameCheck {
 type AuthNameCheckResult {
     available: Boolean!
 }
+
+input ResetPassword {
+    token: String!
+    newPassword: String!
+    passwordRepeat: String!
+}

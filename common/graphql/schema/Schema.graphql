@@ -17,6 +17,8 @@ type Mutation {
     userRegister(user: UserRegister!): Auth!
     userLogin(user: UserLogin!): Auth!
     userConfirmEmail(token: String!): Token!
+    userRequestPasswordReset(email: String!): Void
+    userResetPassword(input: ResetPassword!): Token!
 
     userUpdateMyself(user: UserUpdateInput!): User!
     userUpdate(id: ID!, user: UserUpdateInput!): User!

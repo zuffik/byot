@@ -4,7 +4,7 @@ import { UserService } from './user.service';
 import { testList } from '../test/list.tester';
 import { SeedModule } from '../seed/seed.module';
 import { GeneratorGraphqlService } from '../seed/generator-graphql/generator-graphql.service';
-import { mockRepository, proxyMock } from '../test/proxy.mock';
+import { mockMail, mockRepository, proxyMock } from '../test/proxy.mock';
 import { AuthName, Role, TokenType } from '../graphql/ts/types';
 import {
   BadRequestException,
@@ -15,15 +15,18 @@ import { User } from './user.entity';
 import * as _ from 'lodash';
 import { GeneratorOrmService } from '../seed/generator-orm/generator-orm.service';
 import { TokenService } from './token/token.service';
+import * as moment from 'moment';
+import { MailerService } from '@nestjs-modules/mailer';
 
 describe('UserResolver', () => {
   let resolver: UserResolver;
   let userService: UserService;
   let tokenService: TokenService;
+  let mailerService: MailerService;
   let gqlGenerator: GeneratorGraphqlService;
   let ormGenerator: GeneratorOrmService;
 
-  beforeAll(async () => {
+  beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       imports: [SeedModule],
       providers: [
@@ -36,11 +39,16 @@ describe('UserResolver', () => {
           provide: TokenService,
           useValue: proxyMock(),
         },
+        {
+          provide: MailerService,
+          useValue: mockMail(),
+        },
       ],
     }).compile();
     resolver = module.get<UserResolver>(UserResolver);
     userService = module.get<UserService>(UserService);
     tokenService = module.get<TokenService>(TokenService);
+    mailerService = module.get<MailerService>(MailerService);
     gqlGenerator = module.get<GeneratorGraphqlService>(GeneratorGraphqlService);
     ormGenerator = module.get<GeneratorOrmService>(GeneratorOrmService);
   });
@@ -49,6 +57,7 @@ describe('UserResolver', () => {
     expect(resolver).toBeDefined();
     expect(userService).toBeDefined();
     expect(tokenService).toBeDefined();
+    expect(mailerService).toBeDefined();
     expect(gqlGenerator).toBeDefined();
     expect(ormGenerator).toBeDefined();
   });
@@ -247,5 +256,43 @@ describe('UserResolver', () => {
       available: false,
     });
     expect(spy).toBeCalledWith(nameCheck.name);
+  });
+
+  it('should request password reset for existing user', async () => {
+    const user = ormGenerator.user();
+    const token = ormGenerator.token();
+    const spyFindUser = jest
+      .spyOn(userService, 'findByUsernameOrEmail')
+      .mockImplementation(async () => user);
+    const spyCreateToken = jest
+      .spyOn(tokenService, 'create')
+      .mockImplementation(async () => token);
+    const spySendEmail = jest.spyOn(mailerService, 'sendMail');
+    await resolver.userRequestPasswordReset(user.email);
+    expect(spyFindUser).toBeCalledWith(user.email);
+    expect(spyCreateToken).toBeCalledWith(
+      user,
+      TokenType.PASSWORD_RESET,
+      expect.any(moment),
+    );
+    expect(spySendEmail).toBeCalledWith({
+      to: user.email,
+      subject: expect.any(String),
+      template: 'user-request-password-reset',
+      context: { token: token.token },
+    });
+  });
+
+  it('should request password reset for non-existing user', async () => {
+    const email = 'email';
+    const spyFindUser = jest
+      .spyOn(userService, 'findByUsernameOrEmail')
+      .mockImplementation(async () => undefined);
+    const spyCreateToken = jest.spyOn(tokenService, 'create');
+    const spySendEmail = jest.spyOn(mailerService, 'sendMail');
+    await resolver.userRequestPasswordReset(email);
+    expect(spyFindUser).toBeCalledWith(email);
+    expect(spyCreateToken).not.toBeCalled();
+    expect(spySendEmail).not.toBeCalled();
   });
 });

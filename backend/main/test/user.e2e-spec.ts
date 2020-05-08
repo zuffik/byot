@@ -18,6 +18,7 @@ import { GeneratorGraphqlService } from '../src/seed/generator-graphql/generator
 import { AuthService } from '../src/auth/auth.service';
 import { Token } from '../src/user/token/token.entity';
 import { getRepositoryToken } from '@nestjs/typeorm';
+import * as moment from 'moment';
 
 describe('User integration', () => {
   let app: INestApplication;
@@ -49,6 +50,7 @@ describe('User integration', () => {
     expect(graphQLInteraction).toHaveProperty('me');
     expect(graphQLInteraction).toHaveProperty('userConfirmEmail');
     expect(graphQLInteraction).toHaveProperty('checkUserAuthName');
+    expect(graphQLInteraction).toHaveProperty('userRequestPasswordReset');
   });
 
   it('should fetch all users', async () => {
@@ -280,6 +282,23 @@ describe('User integration', () => {
     expect(result.body.data.checkUserAuthName).toEqual({
       available: false,
     });
+  });
+
+  it('should request password reset', async () => {
+    const auth = await loginTestUser(app, Role.USER);
+    const result = await makeGraphQLRequest(
+      app,
+      graphQLInteraction.userRequestPasswordReset(auth.user.email),
+    );
+    expect(result.body.errors).toBeUndefined();
+    const token = await tokenRepository.findOne({
+      where: {
+        user: { id: auth.user.id },
+        tokenType: TokenType.PASSWORD_RESET,
+      },
+    });
+    expect(token).toBeDefined();
+    expect(+moment(token.validUntil.iso)).toBeGreaterThan(+moment());
   });
 
   afterEach(() => destroyApp({ app, queryRunner }));

@@ -579,7 +579,9 @@ describe('Training integration', () => {
       expect(result.body.errors).toBeUndefined();
       await testTraining(result.body.data.removeMediaFromTraining);
       expect(result.body.data.removeMediaFromTraining.media.entries).toEqual(
-        expect.arrayContaining(medias.slice(1)),
+        expect.arrayContaining(
+          medias.slice(1).map((o) => expect.objectContaining(o)),
+        ),
       );
     });
 

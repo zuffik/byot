@@ -1,4 +1,5 @@
 import {
+  ResetPassword,
   Token,
   User as IUser,
   UserRegister,
@@ -63,4 +64,12 @@ export function testToken(token: Token) {
   testDateTime(token.createdAt);
   testDateTime(token.updatedAt);
   testDateTime(token.validUntil);
+}
+
+export function testResetPassword(reset: ResetPassword | any) {
+  expect(reset).toEqual({
+    token: expect.any(String),
+    newPassword: expect.any(String),
+    passwordRepeat: expect.any(String),
+  });
 }

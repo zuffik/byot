@@ -7,6 +7,7 @@ import {
   Media,
   MediaFilter,
   MediaList,
+  ResetPassword,
   Token,
   Training,
   TrainingDraftInput,
@@ -248,6 +249,14 @@ export const graphQLInteraction = {
                   entries {
                     id
                     label
+                    createdAt {
+                      humanReadable
+                      iso
+                    }
+                    updatedAt {
+                      humanReadable
+                      iso
+                    }
                     source {
                       id
                       mediaType
@@ -765,6 +774,14 @@ export const graphQLInteraction = {
             entries {
               id
               label
+              createdAt {
+                humanReadable
+                iso
+              }
+              updatedAt {
+                humanReadable
+                iso
+              }
               source {
                 id
                 mediaType
@@ -916,6 +933,28 @@ export const graphQLInteraction = {
       query checkUserAuthName($check: AuthNameCheck!) {
         checkUserAuthName(check: $check) {
           available
+        }
+      }
+    `,
+  }),
+  userRequestPasswordReset: (
+    email: string,
+  ): Interaction<{ userRequestPasswordReset: null }> => ({
+    variables: { email },
+    query: gql`
+      mutation userRequestPasswordReset($email: String!) {
+        userRequestPasswordReset(email: $email)
+      }
+    `,
+  }),
+  userResetPassword: (
+    reset: ResetPassword,
+  ): Interaction<{ userResetPassword: Token }> => ({
+    variables: { reset },
+    query: gql`
+      mutation userResetPassword($reset: ResetPassword!) {
+        userResetPassword(input: $reset) {
+          id
         }
       }
     `,

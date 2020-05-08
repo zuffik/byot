@@ -1,10 +1,20 @@
 import * as Joi from '@hapi/joi';
+import { Verbosity } from '../helpers/Verbosity';
 
 export const validationSchema = Joi.object({
   NODE_ENV: Joi.string()
     .valid('development', 'production', 'test')
     .default('development'),
   CI: Joi.bool().default(false),
+  VERBOSITY: Joi.number()
+    .optional()
+    .valid(
+      Verbosity.SILENT,
+      Verbosity.ERRORS,
+      Verbosity.DEBUG,
+      Verbosity.VERBOSE,
+      Verbosity.WARNINGS,
+    ),
 
   CREDENTIALS_API_KEY_GOOGLE_YOUTUBE: Joi.string().required(),
 

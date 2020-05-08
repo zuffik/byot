@@ -1,6 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { testDateTime } from '../../test/datetime.tester';
 import {
+  testResetPassword,
   testUser,
   testUserRegister,
   testUserUpdate,
@@ -103,5 +104,10 @@ describe('GeneratorGraphqlService', () => {
   it('should generate auth name check input', () => {
     const authNameCheck = service.authNameCheck();
     testAuthNameCheck(authNameCheck);
+  });
+
+  it('should generate password reset input', () => {
+    const resetPassword = service.resetPassword();
+    testResetPassword(resetPassword);
   });
 });

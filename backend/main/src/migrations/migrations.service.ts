@@ -57,9 +57,11 @@ export class MigrationsService implements OnModuleInit {
     @Inject(MediaRemoteService)
     private readonly mediaRemoteService: MediaRemoteService,
     @Inject(MediaService) private readonly mediaService: MediaService,
+    @Inject(ConfigService) private readonly configService: ConfigService,
   ) {}
 
   async onModuleInit() {
+    if (this.configService.get<string>('node.env') === 'test') return;
     // create leaves first
     const [superAdmin, demoUsers, medias] = await Promise.all([
       this.createOrFetchSuperAdmin(),
@@ -220,9 +222,10 @@ export class MigrationsService implements OnModuleInit {
                             this.getNumber(this.trainings.mediasPerTraining),
                             async () => {
                               const media = _.sample(medias);
+                              const source = await media.source;
                               return {
-                                id: media.id,
-                                sourceType: (await media.source).sourceType,
+                                id: source.resourceId,
+                                sourceType: source.sourceType,
                               };
                             },
                           ),

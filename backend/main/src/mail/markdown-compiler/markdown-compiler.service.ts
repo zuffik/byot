@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, InternalServerErrorException } from '@nestjs/common';
 import { MailerOptions, TemplateAdapter } from '@nestjs-modules/mailer';
 import * as path from 'path';
 import * as fs from 'fs';
@@ -20,6 +20,11 @@ export class MarkdownCompilerService implements TemplateAdapter {
   ): void {
     const htmlFile = path.join(options.template.dir, '..', 'setup', 'base.hbs');
     const mdFile = path.join(options.template.dir, `${mail.data.template}.md`);
+    if (!fs.existsSync(mdFile)) {
+      throw new InternalServerErrorException(
+        `File '${mdFile}' does not exist!`,
+      );
+    }
     const mdFileContent = Handlebars.compile(
       fs.readFileSync(mdFile).toString(),
     )(mail.data.context);

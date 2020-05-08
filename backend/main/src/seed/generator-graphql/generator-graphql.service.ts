@@ -7,6 +7,7 @@ import {
   DateTime,
   Media,
   MediaType,
+  ResetPassword,
   Role,
   Source,
   SourceType,
@@ -56,7 +57,7 @@ export class GeneratorGraphqlService {
       firstName: generateName ? chance.first() : undefined,
       lastName: generateName ? chance.last() : undefined,
       password: chance.guid(),
-      userName: chance.twitter().substr(1),
+      userName: chance.twitter().substr(1) + chance.twitter().substr(1),
     };
   }
 
@@ -172,6 +173,15 @@ export class GeneratorGraphqlService {
     return {
       name: email ? chance.email() : chance.twitter().slice(1),
       type: email ? AuthName.EMAIL : AuthName.USER_NAME,
+    };
+  }
+
+  public resetPassword(): ResetPassword {
+    const password = chance.guid();
+    return {
+      newPassword: password,
+      passwordRepeat: password,
+      token: chance.guid(),
     };
   }
 }

@@ -1,4 +1,4 @@
-include: '../.gitlab-ci.yml'
+include: '/frontend/web/.gitlab-ci.yml'
 
 Build:
   extends: .build

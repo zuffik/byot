@@ -1,5 +1,8 @@
 include: '/frontend/web/.gitlab-ci.yml'
 
+before_script:
+  - cd frontend/web/app
+
 Build:
   extends: .build
 

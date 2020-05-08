@@ -22,5 +22,6 @@ before_script:
     - yarn test
 
 .deploy:
+  stage: deploy
   script:
     - echo "Deploying"

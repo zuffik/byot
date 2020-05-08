@@ -1,17 +1,18 @@
 include: '/frontend/web/.gitlab-ci.yml'
 
 variables:
-  PROJECT: "landing"
+  PROJECT_NAME: "landing"
+  PROJECT_PATH: "frontend/web/$PROJECT_NAME"
 
 before_script:
-  - cd "frontend/web/$PROJECT"
+  - cd $PROJECT_PATH
   - yarn install
 
 Build:
   artifacts:
     name: "frontend-$PROJECT"
     paths:
-      - frontend/web/landing/build
+      - "$PROJECT_PATH/build"
   extends: .build
 
 Test:

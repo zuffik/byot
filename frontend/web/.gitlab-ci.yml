@@ -14,16 +14,11 @@ before_script:
     - yarn build
 
 .test:
-  dependencies:
-    - .build
   stage: test
   script:
     - yarn test
 
 .deploy:
-  dependencies:
-    - .build
-    - .test
   stage: deploy
   script:
     - echo "Deploying"

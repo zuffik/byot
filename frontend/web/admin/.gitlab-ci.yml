@@ -11,7 +11,12 @@ Build:
   extends: .build
 
 Test:
+  dependencies:
+    - Build
   extends: .test
 
 Deploy:
+  dependencies:
+    - Build
+    - Test
   extends: .deploy

@@ -40,3 +40,4 @@ Deploy:
   stage: deploy
   script:
     - echo "Deploying $PROJECT_NAME"
+

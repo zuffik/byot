@@ -1,1 +1,10 @@
-include: ../.gitlab-ci.yml
+include: '../.gitlab-ci.yml'
+
+Build:
+  extends: .build
+
+Test:
+  extends: .test
+
+Deploy:
+  extends: .deploy

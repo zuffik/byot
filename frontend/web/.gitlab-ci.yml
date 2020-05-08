@@ -2,6 +2,7 @@ image: node:12
 
 variables:
   WEB_ROOT: "frontend/web"
+  PROJECT_PATH: "$WEB_ROOT/$PROJECT_NAME"
 
 cache:
   paths:
@@ -14,19 +15,25 @@ stages:
   - deploy
 
 before_script:
+  - cd "$PROJECT_PATH"
   - yarn install
 
-.build:
+Build:
   stage: build
   script:
     - yarn build
 
-.test:
+Test:
+  dependencies:
+    - Build
   stage: test
   script:
     - yarn test
 
-.deploy:
+Deploy:
+  dependencies:
+    - Build
+    - Test
   stage: deploy
   script:
-    - echo "Deploying"
+    - echo "Deploying $PROJECT_NAME"

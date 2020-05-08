@@ -1,27 +1,4 @@
-include: '/frontend/web/.gitlab-ci.yml'
-
 variables:
   PROJECT_NAME: "admin"
-  PROJECT_PATH: "frontend/web/$PROJECT_NAME"
 
-before_script:
-  - cd $PROJECT_PATH
-  - yarn install
-
-Build:
-  artifacts:
-    name: "frontend-$PROJECT"
-    paths:
-      - "$PROJECT_PATH/build"
-  extends: .build
-
-Test:
-  dependencies:
-    - Build
-  extends: .test
-
-Deploy:
-  dependencies:
-    - Build
-    - Test
-  extends: .deploy
+include: '/frontend/web/.gitlab-ci.yml'

@@ -18,6 +18,7 @@ Web app frontend:
     changes:
       - frontend/web/app/**/*
       - frontend/web/common/**/*
+      - frontend/.gitlab-ci.yml
       - frontend/common/**/*
       - common/**/*
 
@@ -29,6 +30,7 @@ Landing frontend:
     changes:
       - frontend/web/landing/**/*
       - frontend/web/common/**/*
+      - frontend/.gitlab-ci.yml
       - frontend/common/**/*
       - common/**/*
 
@@ -40,6 +42,7 @@ Admin frontend:
     changes:
       - frontend/web/admin/**/*
       - frontend/web/common/**/*
+      - frontend/.gitlab-ci.yml
       - frontend/common/**/*
       - common/**/*
 

@@ -13,30 +13,33 @@ Main backend:
 Web app frontend:
   stage: spawn
   trigger:
-    include: frontend/web-app/.gitlab-ci.yml
+    include: frontend/web/app/.gitlab-ci.yml
   only:
     changes:
-      - frontend/web-app/**/*
+      - frontend/web/app/**/*
+      - frontend/web/common/**/*
       - frontend/common/**/*
       - common/**/*
 
 Landing frontend:
   stage: spawn
   trigger:
-    include: frontend/web-landing/.gitlab-ci.yml
+    include: frontend/web/landing/.gitlab-ci.yml
   only:
     changes:
-      - frontend/web-landing/**/*
+      - frontend/web/landing/**/*
+      - frontend/web/common/**/*
       - frontend/common/**/*
       - common/**/*
 
 Admin frontend:
   stage: spawn
   trigger:
-    include: frontend/web-admin/.gitlab-ci.yml
+    include: frontend/web/admin/.gitlab-ci.yml
   only:
     changes:
-      - frontend/web-admin/**/*
+      - frontend/web/admin/**/*
+      - frontend/web/common/**/*
       - frontend/common/**/*
       - common/**/*
 

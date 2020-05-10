@@ -527,3 +527,7 @@ Icon
 # Directories potentially created on remote AFP share
 
 # End of https://www.gitignore.io/api/node,react,macos,phpstorm,jetbrains,reactnative
+
+**/out
+frontend/web/**/public/favicon
+backend/main/views/assets/generated

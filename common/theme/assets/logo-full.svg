@@ -1,0 +1,29 @@
+<svg width="200" height="320" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="gradient-root"
+                        x1="0%"
+                        y1="0%"
+                        x2="100%"
+                        y2="100%"
+                        gradientUnits="userSpaceOnUse"
+                        gradientTransform="rotate(45)">
+            <stop offset="0%" stop-color="#00c6ff"/>
+            <stop offset="100%" stop-color="#0072ff"/>
+        </linearGradient>
+    </defs>
+    <g stroke="url(#gradient-root)" id="root">
+        <g id="b">
+            <line x1="32" y1="32" x2="32" y2="288" stroke-linecap="round" stroke-width="64"/>
+            <path d="
+M 104,226.14
+C 104,226.14 109.86,224 112,224
+C 112,224 128,224 128,240
+C 128,240 128,256 112,256
+C 109.86,256 104,253.86 104,253.86
+" stroke-linecap="round" stroke-width="2" fill="none"/>
+        </g>
+    </g>
+    <g>
+
+    </g>
+</svg>

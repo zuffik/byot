@@ -1,11 +1,16 @@
 image: node:12
 
+variables:
+  SCRIPTS_PATH: scripts
+  PROJECT_PATH: backend/main
+
 cache:
   paths:
-    - node_modules
+    - "$PROJECT_PATH/node_modules"
+    - "$SCRIPTS_PATH/node_modules"
 
 before_script:
-  - cd backend/main
+  - cd "$PROJECT_PATH"
   - yarn install
 
 stages:
@@ -16,10 +21,17 @@ stages:
 Build:
   stage: build
   script:
+    - cd ../..
+    - cd "$SCRIPTS_PATH"
+    - yarn install
+    - yarn logo:generate
+    - cd ..
+    - mv "$SCRIPTS_PATH/out/raw/*" "$PROJECT_PATH/views/assets/generated"
+    - cd "$PROJECT_PATH"
     - yarn build
   artifacts:
     paths:
-      - backend/main/dist
+      - "$PROJECT_PATH/dist"
 
 Test e2e:
   stage: test

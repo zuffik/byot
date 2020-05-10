@@ -3,11 +3,13 @@ image: node:12
 variables:
   WEB_ROOT: "frontend/web"
   PROJECT_PATH: "$WEB_ROOT/$PROJECT_NAME"
+  SCRIPTS_PATH: scripts
 
 cache:
   paths:
     - "$WEB_ROOT/node_modules"
     - "$PROJECT_PATH/node_modules"
+    - "$SCRIPTS_PATH/node_modules"
 
 stages:
   - build
@@ -19,26 +21,34 @@ before_script:
   - yarn install
 
 Build:
+  stage: build
   artifacts:
     name: "${PROJECT}-artifacts"
     paths:
       - "$PROJECT_PATH/build"
-  stage: build
+      - "$PROJECT_PATH/views/assets/generated"
   script:
+    - cd ../../..
+    - cd "$SCRIPTS_PATH"
+    - yarn install
+    - yarn logo:favicon:generate
+    - yarn logo:favicon:inject "$PROJECT_PATH"
+    - cd ..
+    - cd "$PROJECT_PATH"
     - yarn build
 
 Test:
+  stage: test
   dependencies:
     - Build
-  stage: test
   script:
     - yarn test
 
 Deploy:
+  stage: deploy
   dependencies:
     - Build
     - Test
-  stage: deploy
   script:
     - echo "Deploying $PROJECT_NAME"
 

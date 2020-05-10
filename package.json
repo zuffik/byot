@@ -19,6 +19,12 @@
     ],
     "frontend/web/**/*.tsx": [
       "./frontend/web/node_modules/.bin/prettier --config ./frontend/web/.prettierrc --write"
+    ],
+    "scripts/**/*.ts": [
+      "./scripts/node_modules/.bin/prettier --config ./common/.prettierrc --write"
+    ],
+    "common/**/*.ts": [
+      "./scripts/node_modules/.bin/prettier --config ./common/.prettierrc --write"
     ]
   }
 }

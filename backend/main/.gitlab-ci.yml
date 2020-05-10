@@ -33,6 +33,7 @@ Build:
   artifacts:
     paths:
       - "$PROJECT_PATH/dist"
+      - "$PROJECT_PATH/views/assets/generated"
 
 Test e2e:
   stage: test

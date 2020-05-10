@@ -21,6 +21,7 @@ before_script:
   - yarn install
 
 Build:
+  image: alekzonder/puppeteer:latest
   stage: build
   artifacts:
     name: "${PROJECT}-artifacts"

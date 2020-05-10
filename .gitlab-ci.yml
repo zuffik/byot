@@ -9,6 +9,7 @@ Main backend:
     changes:
       - backend/main/**/*
       - common/**/*
+      - scripts/**/*
 
 Web app frontend:
   stage: spawn
@@ -21,6 +22,7 @@ Web app frontend:
       - frontend/.gitlab-ci.yml
       - frontend/common/**/*
       - common/**/*
+      - scripts/**/*
 
 Landing frontend:
   stage: spawn
@@ -33,6 +35,7 @@ Landing frontend:
       - frontend/.gitlab-ci.yml
       - frontend/common/**/*
       - common/**/*
+      - scripts/**/*
 
 Admin frontend:
   stage: spawn
@@ -45,6 +48,7 @@ Admin frontend:
       - frontend/.gitlab-ci.yml
       - frontend/common/**/*
       - common/**/*
+      - scripts/**/*
 
 # This will probably go through AppCenter
 # Native mobile frontend:
@@ -56,3 +60,4 @@ Admin frontend:
 #       - frontend/native-mobile/**/*
 #       - frontend/common/**/*
 #       - common/**/*
+#       - scripts/**/*

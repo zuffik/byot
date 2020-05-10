@@ -6,6 +6,7 @@
   "scripts": {
     "logo:calculate": "ts-node ./logo-calculate-paths.ts",
     "logo:generate": "ts-node ./logo-generate-svg.ts",
+    "c": "./logo-generator.sh",
     "logo:favicon:generate": "./logo-favicon-generator.sh",
     "logo:favicon:inject": "./logo-favicon-injector.sh"
   },

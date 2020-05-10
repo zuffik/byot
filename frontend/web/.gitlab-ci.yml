@@ -5,11 +5,11 @@ variables:
   PROJECT_PATH: "$WEB_ROOT/$PROJECT_NAME"
   SCRIPTS_PATH: scripts
 
-cache:
-  paths:
-    - "$WEB_ROOT/node_modules"
-    - "$PROJECT_PATH/node_modules"
-    - "$SCRIPTS_PATH/node_modules"
+#cache:
+#  paths:
+#    - "$WEB_ROOT/node_modules"
+#    - "$PROJECT_PATH/node_modules"
+#    - "$SCRIPTS_PATH/node_modules"
 
 stages:
   - build

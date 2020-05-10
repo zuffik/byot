@@ -1,6 +1,6 @@
 {
   "masterPicture": "./out/raw/byoT-favicon-without-bg.png",
-  "iconsPath": "/favicon/",
+  "iconsPath": "%PUBLIC_URL%/",
   "design": {
     "ios": {
       "pictureAspect": "backgroundAndMargin",

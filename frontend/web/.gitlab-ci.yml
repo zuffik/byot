@@ -24,7 +24,7 @@ Build:
   image: alekzonder/puppeteer:latest
   stage: build
   artifacts:
-    name: "${PROJECT}-artifacts"
+    name: "${PROJECT_NAME}-artifacts"
     paths:
       - "$PROJECT_PATH/build"
       - "$PROJECT_PATH/views/assets/generated"

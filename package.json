@@ -17,8 +17,8 @@
     "backend/main/**/*.ts": [
       "./backend/main/node_modules/.bin/prettier --config ./backend/main/.prettierrc --write"
     ],
-    "frontend/web/**/*.tsx": [
-      "./frontend/web/node_modules/.bin/prettier --config ./frontend/web/.prettierrc --write"
+    "frontend/**/*.{tsx,ts}": [
+      "./frontend/node_modules/.bin/prettier --config ./frontend/.prettierrc --write"
     ],
     "scripts/**/*.ts": [
       "./scripts/node_modules/.bin/prettier --config ./common/.prettierrc --write"

@@ -8,7 +8,7 @@ module.exports = () => {
   const frontendWeb = path.join(frontend, 'web');
   const frontendWebCommon = path.join(frontendWeb, 'common');
 
-  const fileVariants = (root) => ['', '.local', `.${process.env.NODE_ENV}`, `.${process.env.NODE_ENV}.local`].map(f => path.join(root, `.env${f}`));
+  const fileVariants = (root) => ['', '.local', `.${process.env.NODE_ENV}`, `.${process.env.NODE_ENV}.local`].map(suffix => path.join(root, `.env${suffix}`));
 
   const files = [
     ...fileVariants(frontendCommon),
@@ -16,6 +16,6 @@ module.exports = () => {
     ...fileVariants(frontendWebCommon),
   ].filter(file => fs.existsSync(file));
 
-  return files.reduce((prev, file) => ({...prev, ...config(file).parsed || {}}), {});
+  return files.reduce((prev, file) => ({...prev, ...config({path: file}).parsed || {}}), {});
 };
 

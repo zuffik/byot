@@ -1,0 +1,47 @@
+{
+  "name": "@byot-frontend/web-storybook",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@byot-frontend/web-admin": "1.0.0",
+    "@byot-frontend/web-app": "1.0.0",
+    "@byot-frontend/web-landing": "1.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "7.9.6",
+    "@babel/plugin-proposal-decorators": "7.8.3",
+    "@storybook/addon-actions": "5.3.18",
+    "@storybook/addon-knobs": "5.3.18",
+    "@storybook/addon-links": "5.3.18",
+    "@storybook/addons": "5.3.18",
+    "@storybook/preset-create-react-app": "2.1.2",
+    "@storybook/react": "5.3.18",
+    "@types/redux-mock-store": "1.0.2",
+    "babel-loader": "8.1.0",
+    "react-app-rewired": "2.1.6",
+    "react-scripts": "3.4.1",
+    "redux-mock-store": "1.5.4",
+    "storybook-addon-material-ui": "0.9.0-alpha.21"
+  },
+  "scripts": {
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "test": "loki test"
+  },
+  "loki": {
+    "configurations": {
+      "chrome.laptop": {
+        "target": "chrome.app",
+        "width": 1366,
+        "height": 768,
+        "deviceScaleFactor": 1,
+        "mobile": false
+      },
+      "chrome.iphone7": {
+        "target": "chrome.app",
+        "preset": "iPhone 7"
+      }
+    }
+  }
+}

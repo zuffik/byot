@@ -530,3 +530,5 @@ Icon
 
 **/out
 frontend/web/**/public/favicon
+.loki
+frontend/common/src/static/img/logo.svg

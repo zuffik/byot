@@ -2,8 +2,9 @@ image: node:13
 
 cache:
   paths:
-    - ./frontend/node_modules
-    - ./frontend/web/**/node_modules
+    - scripts/node_modules
+    - frontend/node_modules
+    - frontend/web/**/node_modules
 
 stages:
   - prebuild
@@ -19,6 +20,9 @@ before_script:
 Create favicon:
   image: alekzonder/puppeteer:latest
   stage: prebuild
+  cache:
+    paths:
+      - scripts/node_modules
   artifacts:
     paths:
       - scripts/out
@@ -40,6 +44,7 @@ Build project:
       - frontend/web/landing/build
   script:
     - cd ../scripts
+    - yarn install
     - yarn logo:favicon:inject frontend/web/admin
     - yarn logo:favicon:inject frontend/web/app
     - yarn logo:favicon:inject frontend/web/landing

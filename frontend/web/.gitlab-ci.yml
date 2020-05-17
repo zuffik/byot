@@ -81,16 +81,16 @@ Unit tests:
   script:
     - cd web/common
     - cd ../common
-    - [[ "`find . -name __snapshots__ -prune -print | grep -v \"node_modules\" | wc -l | grep -o "[0-9]\+"`" -gt 0 ]] && yarn test:update
+    - $([[ "`find . -name __snapshots__ -prune -print | grep -v \"node_modules\" | wc -l | grep -o "[0-9]\+"`" -gt 0 ]] && yarn test:update)
     - yarn test
     - cd ../admin
-    - [[ "`find . -name __snapshots__ -prune -print | grep -v \"node_modules\" | wc -l | grep -o "[0-9]\+"`" -gt 0 ]] && yarn test:update
+    - $([[ "`find . -name __snapshots__ -prune -print | grep -v \"node_modules\" | wc -l | grep -o "[0-9]\+"`" -gt 0 ]] && yarn test:update)
     - yarn test
     - cd ../app
-    - [[ "`find . -name __snapshots__ -prune -print | grep -v \"node_modules\" | wc -l | grep -o "[0-9]\+"`" -gt 0 ]] && yarn test:update
+    - $([[ "`find . -name __snapshots__ -prune -print | grep -v \"node_modules\" | wc -l | grep -o "[0-9]\+"`" -gt 0 ]] && yarn test:update)
     - yarn test
     - cd ../landing
-    - [[ "`find . -name __snapshots__ -prune -print | grep -v \"node_modules\" | wc -l | grep -o "[0-9]\+"`" -gt 0 ]] && yarn test:update
+    - $([[ "`find . -name __snapshots__ -prune -print | grep -v \"node_modules\" | wc -l | grep -o "[0-9]\+"`" -gt 0 ]] && yarn test:update)
     - yarn test
 
 Regression test:

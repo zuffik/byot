@@ -2,19 +2,25 @@ import * as React from 'react';
 import {action} from '@storybook/addon-actions';
 import {Input} from '@byot-frontend/web-common/src/components/elementary/form/Input';
 import {Select} from '@byot-frontend/web-common/src/components/elementary/form/Select';
-import {MenuItem} from '@material-ui/core';
+import {MenuItem, RadioGroup} from '@material-ui/core';
 import * as _ from 'lodash';
 import {Checkbox} from '@byot-frontend/web-common/src/components/elementary/form/Checkbox';
 import {colorVariants} from '../../helpers/ColorVariants';
 import {Radio} from '@byot-frontend/web-common/src/components/elementary/form/Radio';
-import {RadioGroup} from '@material-ui/core';
-import {select as selectKnob} from '@storybook/addon-knobs';
+import {select as selectKnob, text} from '@storybook/addon-knobs';
 
 export default {
   title: 'Elementary/Form',
 };
 
-export const input = () => <Input label="Label" onChange={action('onChange')} color={colorVariants()} />;
+export const input = () => (
+  <Input
+    label="Label"
+    onChange={action('onChange')}
+    color={colorVariants()}
+    errorText={text('Error text', '')}
+  />
+);
 
 export const select = () => (
   <Select label="Label" onChange={action('onChange')} color={colorVariants()}>

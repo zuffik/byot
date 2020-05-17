@@ -1,6 +1,6 @@
 import React from 'react';
 import baseTheme from '@byot-frontend/common/src/shared/theme/theme';
-import {Button as MuiButton, ButtonProps, makeStyles, Theme, useTheme} from '@material-ui/core';
+import {Button as MuiButton, ButtonProps, Fade, makeStyles, Theme, useTheme} from '@material-ui/core';
 import classNames from 'classnames';
 import {StyleRules} from '@material-ui/styles';
 import ScaleLoader from 'react-spinners/ScaleLoader';
@@ -50,10 +50,11 @@ export const Button: React.FC<Props> = (props: Props) => {
   const loaderColor = psColor
     ? theme.palette[psColor][variant !== 'outlined' ? 'contrastText' : 'main']
     : theme.palette.common.black;
+  const {loading, ...buttonProps} = props;
 
   return (
     <MuiButton
-      {...props}
+      {...buttonProps}
       color={color}
       variant={variant}
       classes={{
@@ -61,14 +62,16 @@ export const Button: React.FC<Props> = (props: Props) => {
         root: classNames(styles.root, props.classes?.root),
       }}
     >
-      <span className={styles.inner} data-testid="common-elementary-button-children">
-        {props.children}
-      </span>
-      {props.loading && (
+      <Fade in={!props.loading}>
+        <span className={styles.inner} data-testid="common-elementary-button-children">
+          {props.children}
+        </span>
+      </Fade>
+      <Fade in={props.loading}>
         <div className={styles.loader} data-testid="common-elementary-button-loader">
           <ScaleLoader loading height={theme.spacing(2)} color={loaderColor} />
         </div>
-      )}
+      </Fade>
     </MuiButton>
   );
 };

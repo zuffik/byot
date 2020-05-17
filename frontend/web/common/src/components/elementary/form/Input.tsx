@@ -21,6 +21,7 @@ export const Input: React.FC<Props> = (props: Props) => {
   const styles = useStyles(props);
   return (
     <InputBase
+      fullWidth
       component={MuiInput}
       {...props}
       classes={{

@@ -530,5 +530,8 @@ Icon
 
 **/out
 frontend/web/**/public/favicon
-.loki
 frontend/common/src/static/img/logo.svg
+
+# snapshots are taken from cache in CI
+.loki
+**/__snapshots__

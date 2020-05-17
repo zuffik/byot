@@ -20,6 +20,7 @@ export const Select: React.FC<Props> = (props: Props) => {
   const styles = useStyles(props);
   return (
     <InputBase
+      fullWidth
       component={MuiSelect}
       {...props}
       classes={{select: classNames(styles.select, props.classes?.select)}}

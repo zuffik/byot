@@ -79,7 +79,7 @@ Unit tests:
   dependencies:
     - Build project
   script:
-    - cd common
+    - cd web/common
     - cd ../common
     - yarn test
     - cd ../admin

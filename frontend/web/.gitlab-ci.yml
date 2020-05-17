@@ -44,7 +44,7 @@ Build storybook:
     paths:
       - frontend/web/storybook/build
   before_script:
-    - cd ../storybook
+    - cd frontend/web/storybook
     - yarn install
   script:
     - yarn build-storybook

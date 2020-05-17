@@ -1,17 +1,12 @@
 image: node:13
 
-variables:
-  WEB_ROOT: "frontend/web"
-  PROJECT_PATH: "$WEB_ROOT/$PROJECT_NAME"
-  SCRIPTS_PATH: scripts
-
 cache:
   paths:
-    - "$WEB_ROOT/node_modules"
-    - "$PROJECT_PATH/node_modules"
-    - "$SCRIPTS_PATH/node_modules"
+    - ./frontend/node_modules
+    - ./frontend/web/**/node_modules
 
 stages:
+  - prebuild
   - build
   - test
   - deploy
@@ -20,59 +15,71 @@ before_script:
   - yarn install
   - cd frontend
   - yarn install
-  - cd web
-  - yarn install
-  - cd ../..
-  - cd "$PROJECT_PATH"
-  - yarn install
 
-Build project:
+Create favicon:
   image: alekzonder/puppeteer:latest
-  stage: build
+  stage: prebuild
   artifacts:
-    name: "${PROJECT_NAME}-artifacts"
     paths:
-      - "$PROJECT_PATH/build"
-      - "$PROJECT_PATH/views/assets/generated"
+      - scripts/out
+  before_script:
+    - echo "before"
   script:
-    - cd ../../..
-    - cd "$SCRIPTS_PATH"
+    - cd scripts
     - yarn install
     - yarn logo:favicon:generate
-    - yarn logo:favicon:inject "$PROJECT_PATH"
-    - cd ..
-    - cd "$PROJECT_PATH"
+
+Build project:
+  stage: build
+  dependencies:
+    - Create favicon
+  artifacts:
+    paths:
+      - frontend/web/admin/build
+      - frontend/web/app/build
+      - frontend/web/landing/build
+  script:
+    - cd ../scripts
+    - yarn logo:favicon:inject frontend/web/admin
+    - yarn logo:favicon:inject frontend/web/app
+    - yarn logo:favicon:inject frontend/web/landing
+    - cd ../frontend/web/common
+    - cd ../admin
+    - yarn build
+    - cd ../app
+    - yarn build
+    - cd ../landing
     - yarn build
 
 Build storybook:
   stage: build
+  dependencies:
+    - Create favicon
   artifacts:
     paths:
-      - frontend/web/storybook/build
+      - frontend/web/storybook/storybook-static
   before_script:
     - cd frontend/web/storybook
     - yarn install
   script:
     - yarn build-storybook
 
-Unit test project:
+Unit tests:
   stage: test
   cache:
     paths:
-      - ./**/__snapshots__
+      - ./frontend/**/__snapshots__
   dependencies:
     - Build project
   script:
+    - cd common
+    - cd ../common
     - yarn test
-
-Unit test common:
-  stage: test
-  cache:
-    paths:
-      - ./**/__snapshots__
-  dependencies:
-    - Build project
-  script:
+    - cd ../admin
+    - yarn test
+    - cd ../app
+    - yarn test
+    - cd ../landing
     - yarn test
 
 Regression test:
@@ -96,9 +103,8 @@ Deploy:
   stage: deploy
   dependencies:
     - Build project
-    - Unit test project
-    - Unit test common
+    - Unit tests
     - Regression test
   script:
-    - echo "Deploying $PROJECT_NAME"
+    - echo "Deploying"
 

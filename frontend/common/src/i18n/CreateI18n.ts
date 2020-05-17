@@ -14,7 +14,7 @@ type DeepSameObject<T> = {
 type Resources<T> = {[K in Languages]: {translation: DeepSameObject<T>}};
 
 export const createI18n = <T>(
-  data: Resources<T>,
+  data: Resources<T>['translation'],
   provider: CurrentLanguageProvider = new FixedLanguageProvider('en-US')
 ): [i18next, Promise<any>] => {
   const resources: Resources<typeof en | T> = {

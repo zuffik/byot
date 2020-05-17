@@ -1,4 +1,0 @@
-variables:
-  PROJECT_NAME: "app"
-
-include: '/frontend/web/.gitlab-ci.yml'

@@ -6,9 +6,9 @@ import {createI18n} from '@byot-frontend/common/src/i18n/CreateI18n';
 
 export const [i18n] = createI18n(
   {
-    en: {},
-    sk: {},
-    cs: {},
+    'en-US': {},
+    'sk-SK': {},
+    'cs-CZ': {},
   },
   urlLanguageProvider
 );

@@ -6,9 +6,9 @@ import {urlLanguageProvider} from '@byot-frontend/common/src/i18n/providers/UrlL
 
 export const [i18n] = createI18n(
   {
-    en: {},
-    sk: {},
-    cs: {},
+    'en-US': {},
+    'sk-SK': {},
+    'cs-CZ': {},
   },
   urlLanguageProvider
 );

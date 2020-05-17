@@ -17,6 +17,8 @@ stages:
 
 before_script:
   - cd frontend
+  - yarn config set user 0
+  - yarn config set unsafe-perm true
   - yarn install
 
 Create favicon:
@@ -32,6 +34,8 @@ Create favicon:
     - echo "before"
   script:
     - cd scripts
+    - yarn config set user 0
+    - yarn config set unsafe-perm true
     - yarn install
     - yarn logo:favicon:generate
 
@@ -46,6 +50,8 @@ Build project:
       - frontend/web/landing/build
   script:
     - cd ../scripts
+    - yarn config set user 0
+    - yarn config set unsafe-perm true
     - yarn install
     - yarn logo:favicon:inject frontend/web/admin
     - yarn logo:favicon:inject frontend/web/app
@@ -67,6 +73,8 @@ Build storybook:
       - frontend/web/storybook/storybook-static
   before_script:
     - cd frontend/web/storybook
+    - yarn config set user 0
+    - yarn config set unsafe-perm true
     - yarn install
   script:
     - yarn build-storybook
@@ -102,6 +110,8 @@ Regression test:
     - Build storybook
   before_script:
     - cd frontend/web/storybook
+    - yarn config set user 0
+    - yarn config set unsafe-perm true
     - yarn install
   script:
     - yarn test:ci

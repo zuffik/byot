@@ -110,6 +110,7 @@ Regression test:
     - cd frontend/web/storybook
     - yarn install
   script:
+    - $([ ! -d .loki ] && yarn test:update)
     - yarn test:ci
 
 Deploy:

@@ -3,8 +3,11 @@ image: node:13
 cache:
   paths:
     - scripts/node_modules
+    - scripts/yarn.lock
     - frontend/node_modules
+    - frontend/yarn.lock
     - frontend/web/**/node_modules
+    - frontend/web/**/yarn.lock
 
 stages:
   - prebuild
@@ -13,7 +16,6 @@ stages:
   - deploy
 
 before_script:
-  - yarn install
   - cd frontend
   - yarn install
 

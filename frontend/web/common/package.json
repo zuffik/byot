@@ -1,15 +1,15 @@
 {
   "name": "@byot-frontend/web-common",
   "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
+  "private": true,
   "dependencies": {
     "@material-ui/core": "4.9.14",
     "@material-ui/icons": "4.9.1",
     "@material-ui/styles": "4.9.14",
     "classnames": "2.2.6",
     "react-router": "5.2.0",
-    "react-router-dom": "5.2.0"
+    "react-router-dom": "5.2.0",
+    "react-spinners": "0.8.3"
   },
   "devDependencies": {
     "@types/classnames": "2.2.10",
@@ -23,5 +23,23 @@
     "enzyme-adapter-react-16": "1.15.2",
     "enzyme-to-json": "3.4.4",
     "react-app-rewired": "2.1.6"
+  },
+  "scripts": {
+    "test": "react-app-rewired test"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

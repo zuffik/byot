@@ -9,5 +9,5 @@ export type CombineClasses<
   C2 = any
 > = Omit<T1, 'classes'> &
   Omit<T2, 'classes'> & {
-    classes?: T1['classes'] & T2['classes'];
+    classes?: Partial<T1['classes'] & T2['classes']>;
   };

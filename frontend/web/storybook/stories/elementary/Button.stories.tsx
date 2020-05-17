@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {select} from '@storybook/addon-knobs';
+import {boolean, select} from '@storybook/addon-knobs';
 import {Button} from '@byot-frontend/web-common/src/components/elementary/form/Button';
 import {colorVariants} from '../../helpers/ColorVariants';
 
@@ -18,6 +18,7 @@ export const button = () => (
       'outlined'
     )}
     color={colorVariants({Gradient: 'gradient'})}
+    loading={boolean('Loading', false)}
   >
     Text
   </Button>

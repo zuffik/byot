@@ -1,12 +1,16 @@
 import React from 'react';
 import baseTheme from '@byot-frontend/common/src/shared/theme/theme';
-import {Button as MuiButton, ButtonProps, makeStyles, Theme} from '@material-ui/core';
+import {Button as MuiButton, ButtonProps, makeStyles, Theme, useTheme} from '@material-ui/core';
 import classNames from 'classnames';
 import {StyleRules} from '@material-ui/styles';
+import ScaleLoader from 'react-spinners/ScaleLoader';
+import {WithStyles} from '../../../types/WithStyles';
+import {CombineClasses} from '../../../types/CombineClasses';
 
-interface Props extends Omit<ButtonProps, 'color'> {
+interface Props extends CombineClasses<Omit<ButtonProps, 'color'>, WithStyles<typeof styles>> {
   // todo variant: outlined gradient
-  color: ButtonProps['color'] | 'gradient';
+  color?: ButtonProps['color'] | 'gradient';
+  loading?: boolean;
 }
 
 const styles = (theme: Theme): StyleRules<Props> => ({
@@ -15,22 +19,38 @@ const styles = (theme: Theme): StyleRules<Props> => ({
       background: baseTheme.colors.gradient.css,
       color: baseTheme.colors.gradient.contrast,
     }),
-    paddingTop: theme.spacing(1 / 2),
-    paddingBottom: theme.spacing(1 / 2),
-    textTransform: 'none',
     fontWeight: 400,
+    position: 'relative',
   }),
-  outlined: {
-    paddingTop: theme.spacing(1 / 2),
-    paddingBottom: theme.spacing(1 / 2),
+  inner: (props: Props) => ({
+    ...(props.loading && {visibility: 'hidden'}),
+  }),
+  loader: {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+    left: 0,
+    top: 0,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    '& > div': {
+      height: theme.spacing(2) + 2,
+    },
   },
 });
 const useStyles = makeStyles(styles);
 
 export const Button: React.FC<Props> = (props: Props) => {
   const styles = useStyles(props);
-  const color = props.color === 'gradient' ? 'inherit' : props.color;
-  const variant = props.color === 'gradient' ? 'contained' : props.variant;
+  const theme = useTheme();
+  const color = (props.color === 'gradient' ? 'secondary' : props.color) || 'primary';
+  const variant = (props.color === 'gradient' ? 'contained' : props.variant) || 'contained';
+  const psColor = ['primary', 'secondary'].includes(color) && (color as 'primary' | 'secondary');
+  const loaderColor = psColor
+    ? theme.palette[psColor][variant !== 'outlined' ? 'contrastText' : 'main']
+    : theme.palette.common.black;
+
   return (
     <MuiButton
       {...props}
@@ -39,8 +59,16 @@ export const Button: React.FC<Props> = (props: Props) => {
       classes={{
         ...(props.classes || {}),
         root: classNames(styles.root, props.classes?.root),
-        outlined: classNames(styles.outlined, props.classes?.outlined),
       }}
-    />
+    >
+      <span className={styles.inner} data-testid="common-elementary-button-children">
+        {props.children}
+      </span>
+      {props.loading && (
+        <div className={styles.loader} data-testid="common-elementary-button-loader">
+          <ScaleLoader loading height={theme.spacing(2)} color={loaderColor} />
+        </div>
+      )}
+    </MuiButton>
   );
 };

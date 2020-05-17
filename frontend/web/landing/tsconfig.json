@@ -1,5 +1,5 @@
 {
-  "extends": "@byot-frontend/web-storybook/tsconfig.json",
+  "extends": "../tsconfig.json",
   "include": [
     "src"
   ]

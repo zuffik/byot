@@ -13,6 +13,9 @@ export type Props<T extends Classes<C>, C = any> = T & {
 };
 
 const styles = (theme: Theme) => ({
+  root: {
+    marginBottom: theme.spacing(3),
+  },
   label: {
     marginBottom: theme.spacing(1 / 2),
   },
@@ -22,7 +25,7 @@ const useStyles = makeStyles(styles);
 export const InputBase = <T extends Classes<C>, C>(props: Props<T, C>) => {
   const styles = useStyles(_.omit(props, 'classes'));
   return (
-    <>
+    <div className={styles.root}>
       {props.label && (
         <InputLabel
           {...props.InputLabelProps}
@@ -32,6 +35,6 @@ export const InputBase = <T extends Classes<C>, C>(props: Props<T, C>) => {
         </InputLabel>
       )}
       <props.component fullWidth {...props} />
-    </>
+    </div>
   );
 };

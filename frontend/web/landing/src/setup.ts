@@ -1,9 +1,16 @@
-import { createTheme } from '@byot-frontend/web-common/src/CreateTheme';
-import { storeFactory } from '@byot-frontend/common/src/redux/store/Store';
-import { LandingPageState } from './redux/LandingPageState';
+import {createTheme} from '@byot-frontend/web-common/src/setup/CreateTheme';
+import {storeFactory} from '@byot-frontend/common/src/redux/store/Store';
+import {LandingPageState} from './redux/LandingPageState';
+import {createI18n} from '@byot-frontend/common/src/i18n/CreateI18n';
+import {urlLanguageProvider} from '@byot-frontend/common/src/i18n/providers/UrlLanguageProvider';
 
-export const theme = createTheme();
-export const reduxStore = storeFactory(
-  () => new LandingPageState(),
-  'landingPage'
+export const [i18n] = createI18n(
+  {
+    en: {},
+    sk: {},
+    cs: {},
+  },
+  urlLanguageProvider
 );
+export const theme = createTheme();
+export const reduxStore = storeFactory(() => new LandingPageState(), 'landingPage');

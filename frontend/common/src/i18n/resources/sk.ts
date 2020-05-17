@@ -1,1 +1,3 @@
-export { default } from './en';
+export default {
+  'Password': 'Heslo',
+};

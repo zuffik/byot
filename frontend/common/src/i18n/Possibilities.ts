@@ -1,2 +1,2 @@
-export type Languages = 'en' | 'sk' | 'cs';
-export const languages: Languages[] = ['en', 'sk', 'cs'];
+export type Languages = 'en-US' | 'sk-SK' | 'cs-CZ';
+export const languages: Languages[] = ['en-US', 'sk-SK', 'cs-CZ'];

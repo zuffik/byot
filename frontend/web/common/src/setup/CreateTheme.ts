@@ -10,7 +10,7 @@ export const createTheme = <T extends ThemeOptions>(options?: T): Theme =>
       {},
       {
         shape: {
-          borderRadius: 16,
+          borderRadius: 20,
         },
         spacing,
         typography: {
@@ -35,6 +35,9 @@ export const createTheme = <T extends ThemeOptions>(options?: T): Theme =>
           },
         },
         palette: {
+          background: {
+            default: '#fff',
+          },
           primary: {
             main: theme.colors.primary,
           },
@@ -46,6 +49,10 @@ export const createTheme = <T extends ThemeOptions>(options?: T): Theme =>
           },
           light: {
             main: theme.colors.light,
+          },
+          common: {
+            black: theme.colors.dark,
+            white: theme.colors.light,
           },
           gradient: theme.colors.gradient,
         },

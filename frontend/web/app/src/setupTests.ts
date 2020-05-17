@@ -1,1 +1,1 @@
-import '@byot-frontend/web-common/src/SetupTests';
+import '../../common/src/setup/SetupTests';

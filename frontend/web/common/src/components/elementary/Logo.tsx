@@ -1,10 +1,11 @@
 import React from 'react';
-import {Box, BoxProps, makeStyles, Theme, WithStyles} from '@material-ui/core';
+import {Box, BoxProps, makeStyles, Theme} from '@material-ui/core';
 import logo from '@byot-frontend/common/src/static/img/logo.svg';
 import classNames from 'classnames';
+import {WithStyles} from '../../types/WithStyles';
 
 interface Props
-  extends Partial<WithStyles<typeof styles>>,
+  extends WithStyles<typeof styles>,
     Omit<React.ImgHTMLAttributes<HTMLImageElement>, 'width' | 'height' | 'src'> {
   BoxProps?: BoxProps;
   height?: number;

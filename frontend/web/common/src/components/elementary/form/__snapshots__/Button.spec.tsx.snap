@@ -1,0 +1,122 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button/> should display button with loader 1`] = `
+<WithStyles(ForwardRef(Button))
+  classes={
+    Object {
+      "root": "makeStyles-root-1 makeStyles-root-6",
+    }
+  }
+  color="primary"
+  loading={true}
+  variant="contained"
+>
+  <span
+    className="makeStyles-inner-2 makeStyles-inner-7"
+    data-testid="common-elementary-button-children"
+  >
+    Text
+  </span>
+  <div
+    className="makeStyles-loader-3"
+    data-testid="common-elementary-button-loader"
+  >
+    <Loader
+      color="#fff"
+      css=""
+      height={16}
+      loading={true}
+      margin={2}
+      radius={2}
+      width={4}
+    />
+  </div>
+</WithStyles(ForwardRef(Button))>
+`;
+
+exports[`<Button/> should display button with text 1`] = `
+<WithStyles(ForwardRef(Button))
+  classes={
+    Object {
+      "root": "makeStyles-root-1 makeStyles-root-4",
+    }
+  }
+  color="primary"
+  variant="contained"
+>
+  <span
+    className="makeStyles-inner-2 makeStyles-inner-5"
+    data-testid="common-elementary-button-children"
+  >
+    Text
+  </span>
+</WithStyles(ForwardRef(Button))>
+`;
+
+exports[`<Button/> should display primary button with contrast loader 1`] = `
+<WithStyles(ForwardRef(Button))
+  classes={
+    Object {
+      "root": "makeStyles-root-1 makeStyles-root-8",
+    }
+  }
+  color="primary"
+  loading={true}
+  variant="contained"
+>
+  <span
+    className="makeStyles-inner-2 makeStyles-inner-9"
+    data-testid="common-elementary-button-children"
+  >
+    Text
+  </span>
+  <div
+    className="makeStyles-loader-3"
+    data-testid="common-elementary-button-loader"
+  >
+    <Loader
+      color="#fff"
+      css=""
+      height={16}
+      loading={true}
+      margin={2}
+      radius={2}
+      width={4}
+    />
+  </div>
+</WithStyles(ForwardRef(Button))>
+`;
+
+exports[`<Button/> should display primary button with primary loader 1`] = `
+<WithStyles(ForwardRef(Button))
+  classes={
+    Object {
+      "root": "makeStyles-root-1 makeStyles-root-10",
+    }
+  }
+  color="primary"
+  loading={true}
+  variant="outlined"
+>
+  <span
+    className="makeStyles-inner-2 makeStyles-inner-11"
+    data-testid="common-elementary-button-children"
+  >
+    Text
+  </span>
+  <div
+    className="makeStyles-loader-3"
+    data-testid="common-elementary-button-loader"
+  >
+    <Loader
+      color="#3f51b5"
+      css=""
+      height={16}
+      loading={true}
+      margin={2}
+      radius={2}
+      width={4}
+    />
+  </div>
+</WithStyles(ForwardRef(Button))>
+`;

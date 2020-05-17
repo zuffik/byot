@@ -17,6 +17,12 @@ stages:
   - deploy
 
 before_script:
+  - yarn install
+  - cd frontend
+  - yarn install
+  - cd web
+  - yarn install
+  - cd ../..
   - cd "$PROJECT_PATH"
   - yarn install
 

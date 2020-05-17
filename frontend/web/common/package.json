@@ -27,7 +27,8 @@
     "react-app-rewired": "2.1.6"
   },
   "scripts": {
-    "test": "react-app-rewired test"
+    "test": "react-app-rewired test",
+    "test:update": "react-app-rewired test --updateSnapshots"
   },
   "jest": {
     "testEnvironment": "jest-environment-jsdom"

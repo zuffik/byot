@@ -1,15 +1,15 @@
-image: node:12
+image: node:13
 
 variables:
   WEB_ROOT: "frontend/web"
   PROJECT_PATH: "$WEB_ROOT/$PROJECT_NAME"
   SCRIPTS_PATH: scripts
 
-#cache:
-#  paths:
-#    - "$WEB_ROOT/node_modules"
-#    - "$PROJECT_PATH/node_modules"
-#    - "$SCRIPTS_PATH/node_modules"
+cache:
+  paths:
+    - "$WEB_ROOT/node_modules"
+    - "$PROJECT_PATH/node_modules"
+    - "$SCRIPTS_PATH/node_modules"
 
 stages:
   - build
@@ -38,10 +38,40 @@ Build:
     - cd "$PROJECT_PATH"
     - yarn build
 
-Test:
+Unit test project:
+  stage: test
+  cache:
+    paths:
+      - ./**/__snapshots__
+  dependencies:
+    - Build
+  script:
+    - yarn test
+
+Unit test common:
+  stage: test
+  cache:
+    paths:
+      - ./**/__snapshots__
+  dependencies:
+    - Build
+  script:
+    - yarn test
+
+Regression test:
+  cache:
+    paths:
+      - .loki
+  artifacts:
+    paths:
+      - frontend/web/storybook/.loki/**
+  image: alekzonder/puppeteer:latest
   stage: test
   dependencies:
     - Build
+  before_script:
+    - cd frontend/web/storybook
+    - yarn install
   script:
     - yarn test
 
@@ -49,7 +79,9 @@ Deploy:
   stage: deploy
   dependencies:
     - Build
-    - Test
+    - Unit test project
+    - Unit test common
+    - Regression test
   script:
     - echo "Deploying $PROJECT_NAME"
 

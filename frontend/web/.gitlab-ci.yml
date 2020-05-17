@@ -1,13 +1,13 @@
 image: node:13
 
-cache:
-  paths:
-    - scripts/node_modules
-    - scripts/yarn.lock
-    - frontend/node_modules
-    - frontend/yarn.lock
-    - frontend/web/**/node_modules
-    - frontend/web/**/yarn.lock
+# cache:
+#   paths:
+#     - scripts/node_modules
+#     - scripts/yarn.lock
+#     - frontend/node_modules
+#     - frontend/yarn.lock
+#     - frontend/web/**/node_modules
+#     - frontend/web/**/yarn.lock
 
 stages:
   - prebuild

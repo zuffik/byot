@@ -29,7 +29,7 @@ Create favicon:
       - scripts/out
   before_script:
     - apt-get update
-    - apt-get install -yq chromedriver libatk-bridge-2.0-0-udeb
+    - apt-get install -yq chromedriver libatk-bridge-2.0-0
   script:
     - cd scripts
     - yarn install
@@ -101,7 +101,7 @@ Regression test:
     - Build storybook
   before_script:
     - apt-get update
-    - apt-get install -yq chromedriver libatk-bridge-2.0-0-udeb
+    - apt-get install -yq chromedriver libatk-bridge-2.0-0
     - cd frontend/web/storybook
     - yarn install
   script:

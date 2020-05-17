@@ -20,7 +20,7 @@ before_script:
   - cd "$PROJECT_PATH"
   - yarn install
 
-Build:
+Build project:
   image: alekzonder/puppeteer:latest
   stage: build
   artifacts:
@@ -38,13 +38,24 @@ Build:
     - cd "$PROJECT_PATH"
     - yarn build
 
+Build storybook:
+  stage: build
+  artifacts:
+    paths:
+      - frontend/web/storybook/build
+  before_script:
+    - cd ../storybook
+    - yarn install
+  script:
+    - yarn build-storybook
+
 Unit test project:
   stage: test
   cache:
     paths:
       - ./**/__snapshots__
   dependencies:
-    - Build
+    - Build project
   script:
     - yarn test
 
@@ -54,7 +65,7 @@ Unit test common:
     paths:
       - ./**/__snapshots__
   dependencies:
-    - Build
+    - Build project
   script:
     - yarn test
 
@@ -68,17 +79,17 @@ Regression test:
   image: alekzonder/puppeteer:latest
   stage: test
   dependencies:
-    - Build
+    - Build storybook
   before_script:
     - cd frontend/web/storybook
     - yarn install
   script:
-    - yarn test
+    - yarn test:ci
 
 Deploy:
   stage: deploy
   dependencies:
-    - Build
+    - Build project
     - Unit test project
     - Unit test common
     - Regression test

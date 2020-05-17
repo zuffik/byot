@@ -6,7 +6,9 @@
   "dependencies": {
     "@byot-frontend/web-admin": "1.0.0",
     "@byot-frontend/web-app": "1.0.0",
-    "@byot-frontend/web-landing": "1.0.0"
+    "@byot-frontend/web-landing": "1.0.0",
+    "http-server": "0.12.3",
+    "start-server-and-test": "1.11.0"
   },
   "devDependencies": {
     "@babel/core": "7.9.6",
@@ -28,9 +30,10 @@
     "storybook-react-router": "1.0.8"
   },
   "scripts": {
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
-    "test": "loki test"
+    "storybook:serve": "http-server -p 6006 storybook-static",
+    "storybook:build": "build-storybook",
+    "test": "loki test",
+    "test:ci": "start-server-and-test storybook:serve http://localhost:6006 test"
   },
   "loki": {
     "configurations": {

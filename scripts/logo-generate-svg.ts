@@ -89,7 +89,16 @@ async function main() {
         });
       });
     }
-    await Promise.all(generated.map((file) => convertFile(`${file}.svg`, {})));
+    await Promise.all(
+      generated.map((file) =>
+        convertFile(`${file}.svg`, {
+          puppeteer: {
+            headless: true,
+            args: ['--no-sandbox'],
+          },
+        })
+      )
+    );
   }
 }
 

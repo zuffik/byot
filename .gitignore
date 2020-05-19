@@ -532,7 +532,3 @@ Icon
 frontend/web/**/public/favicon
 frontend/common/src/static/img/logo.svg
 frontend/web/storybook/storybook-static
-
-# snapshots are taken from cache in CI
-.loki
-**/__snapshots__

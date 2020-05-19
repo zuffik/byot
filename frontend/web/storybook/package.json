@@ -31,10 +31,12 @@
   },
   "scripts": {
     "storybook:serve": "http-server -p 6006 storybook-static",
+    "storybook:start": "start-storybook -p 6006",
     "storybook:build": "build-storybook",
     "test": "loki test --port 6006 --host 127.0.0.1",
-    "test:update": "loki update",
-    "test:ci": "start-server-and-test storybook:serve http://localhost:6006 test"
+    "test:update": "start-server-and-test storybook:start http://localhost:6006 \"loki update\"",
+    "test:ci": "start-server-and-test storybook:serve http://localhost:6006 test",
+    "test:watch": "start-server-and-test storybook:start http://localhost:6006 test"
   },
   "loki": {
     "configurations": {

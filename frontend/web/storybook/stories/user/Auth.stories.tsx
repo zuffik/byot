@@ -3,7 +3,7 @@ import {PlainLayout} from '@byot-frontend/web-common/src/components/auth/PlainLa
 import {LoginForm} from '@byot-frontend/web-common/src/components/auth/LoginForm';
 import {StoryFn} from '@storybook/addons';
 import {action} from '@storybook/addon-actions';
-import {LoginFormFooter} from '@byot-frontend/web-common/src/components/auth/LoginFormFooter';
+import {LoginFormFooter} from '@byot-frontend/web-app/src/components/auth/LoginFormFooter';
 import {boolean} from '@storybook/addon-knobs';
 
 export default {

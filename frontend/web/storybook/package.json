@@ -35,7 +35,7 @@
     "storybook:build": "build-storybook",
     "test": "loki test --port 6006 --host 127.0.0.1",
     "test:update": "start-server-and-test storybook:start http://localhost:6006 \"loki update\"",
-    "test:ci": "loki --requireReference --reactUri file:./storybook-static",
+    "test:ci": "loki --requireReference --reactUri file:./storybook-static --chromeFlags=\"--headless --disable-gpu --hide-scrollbars --no-sandbox\"",
     "test:watch": "start-server-and-test storybook:start http://localhost:6006 test"
   },
   "loki": {

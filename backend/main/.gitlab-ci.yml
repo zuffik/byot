@@ -7,7 +7,9 @@ variables:
 cache:
   paths:
     - "$PROJECT_PATH/node_modules"
+    - "$PROJECT_PATH/yarn.lock"
     - "$SCRIPTS_PATH/node_modules"
+    - "$SCRIPTS_PATH/yarn.lock"
 
 before_script:
   - cd "$PROJECT_PATH"

@@ -1,12 +1,15 @@
-import { CurrentLanguageProvider } from './CurrentLanguageProvider';
-import { languages, Languages } from '../Possibilities';
+import {CurrentLanguageProvider} from './CurrentLanguageProvider';
+import {languages, Languages} from '../Possibilities';
+import {BrowserLanguageProvider} from './BrowserLanguageProvider';
 
-export const urlLanguageProvider: CurrentLanguageProvider = {
-  currentLanguage(): Languages {
+export class UrlLanguageProvider implements CurrentLanguageProvider {
+  get currentLanguage(): Languages | undefined {
     return (
-      (window.location.pathname.match(
-        new RegExp(`/^\/?(${languages.join('|')})\//`)
-      )?.[1] as Languages) || 'en'
+      (window.location.pathname.match(new RegExp(`^\/?(${languages.join('|')})\/?`))?.[1] as Languages) ||
+      undefined
     );
-  },
-};
+  }
+  get fallbackProvider(): CurrentLanguageProvider {
+    return new BrowserLanguageProvider();
+  }
+}

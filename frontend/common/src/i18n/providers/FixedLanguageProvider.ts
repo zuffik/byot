@@ -1,9 +1,9 @@
-import { CurrentLanguageProvider } from './CurrentLanguageProvider';
-import { Languages } from '../Possibilities';
+import {CurrentLanguageProvider} from './CurrentLanguageProvider';
+import {Languages} from '../Possibilities';
 
 export class FixedLanguageProvider implements CurrentLanguageProvider {
   constructor(private readonly language: Languages) {}
-  currentLanguage(): Languages {
+  get currentLanguage(): Languages {
     return this.language;
   }
 }

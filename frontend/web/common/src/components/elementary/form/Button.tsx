@@ -6,6 +6,8 @@ import {StyleRules} from '@material-ui/styles';
 import ScaleLoader from 'react-spinners/ScaleLoader';
 import {WithStyles} from '../../../types/WithStyles';
 import {CombineClasses} from '../../../types/CombineClasses';
+import {ExtendButtonBase} from '@material-ui/core/ButtonBase';
+import {ButtonTypeMap} from '@material-ui/core/Button/Button';
 
 interface Props extends CombineClasses<Omit<ButtonProps, 'color'>, WithStyles<typeof styles>> {
   // todo variant: outlined gradient
@@ -41,7 +43,7 @@ const styles = (theme: Theme): StyleRules<Props> => ({
 });
 const useStyles = makeStyles(styles);
 
-export const Button: React.FC<Props> = (props: Props) => {
+export const Button: ExtendButtonBase<ButtonTypeMap> & React.FC<Props> = (props: Props) => {
   const styles = useStyles(props);
   const theme = useTheme();
   const color = (props.color === 'gradient' ? 'secondary' : props.color) || 'primary';

@@ -1,5 +1,6 @@
-import { Languages } from '../Possibilities';
+import {Languages} from '../Possibilities';
 
 export interface CurrentLanguageProvider {
-  currentLanguage(): Languages;
+  currentLanguage: Languages | undefined;
+  fallbackProvider?: CurrentLanguageProvider;
 }

@@ -7,11 +7,12 @@ import {Button} from '../elementary/form/Button';
 import {Form, Formik} from 'formik';
 import * as Yup from 'yup';
 import {TFunction} from 'i18next';
+import {UserLogin} from '@byot-frontend/common/src/shared/graphql/ts/types';
 
-type Values = {username: string; password: string};
+type Values = UserLogin;
 const loginSchema = (t: TFunction) =>
   Yup.object().shape({
-    username: Yup.string().required(t('Enter username or email')),
+    userNameOrEmail: Yup.string().required(t('Enter username or email')),
     password: Yup.string().required(t('Enter password')),
   });
 
@@ -39,7 +40,7 @@ export const LoginForm: React.FC<Props> = (props: Props) => {
         <Typography variant="h3">{t('Login')}</Typography>
       </Box>
       <Formik
-        initialValues={{username: '', password: ''}}
+        initialValues={{userNameOrEmail: '', password: ''}}
         onSubmit={values => props.onLogin(values)}
         validateOnChange
         validationSchema={loginSchema(t)}
@@ -50,10 +51,10 @@ export const LoginForm: React.FC<Props> = (props: Props) => {
               color="secondary"
               type="text"
               label={t('Username or email')}
-              value={values.username}
-              onBlur={handleBlur('username')}
-              onChange={handleChange('username')}
-              errorText={touched.username && errors.username}
+              value={values.userNameOrEmail}
+              onBlur={handleBlur('userNameOrEmail')}
+              onChange={handleChange('userNameOrEmail')}
+              errorText={touched.userNameOrEmail && errors.userNameOrEmail}
               data-testid="common-auth-login-form-username"
             />
             <Input

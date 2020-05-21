@@ -39,7 +39,10 @@
     "@types/redux-logger": "3.0.7",
     "@types/redux-saga": "0.10.5",
     "@types/yup": "0.28.3",
+    "jest": "24.9.0",
     "loki": "0.20.3",
-    "prettier": "2.0.5"
+    "mock-apollo-client": "0.4.0",
+    "prettier": "2.0.5",
+    "ts-jest": "24.9.0"
   }
 }

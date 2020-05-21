@@ -7,13 +7,27 @@ Object {
     <div>
       <div
         data-testid="test-admin-switch"
-      />
+      >
+        <div
+          data-testid="test-admin-route"
+        />
+        <div
+          data-testid="test-admin-redirect"
+        />
+      </div>
     </div>
   </body>,
   "container": <div>
     <div
       data-testid="test-admin-switch"
-    />
+    >
+      <div
+        data-testid="test-admin-route"
+      />
+      <div
+        data-testid="test-admin-redirect"
+      />
+    </div>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],

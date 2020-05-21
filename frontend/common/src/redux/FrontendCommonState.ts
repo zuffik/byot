@@ -5,6 +5,5 @@ import {Resource} from '../redux-system/data-structures/resources/Resource';
 import {EntityResource} from '../redux-system/data-structures/resources/EntityResource';
 
 export class FrontendCommonState {
-  @BindProcessActionCreator(Login)
   auth: Resource<Auth> = new EntityResource();
 }

@@ -27,8 +27,17 @@ export class Reducer<S> {
             }
             if (isType(action, bind.secondaryAction!)) {
               resource.state = ResourceState.IDLE;
+              if (action.payload.response.success) {
+                resource.data = action.payload.response.data;
+              } else {
+                resource.state = ResourceState.FAILED;
+                resource.errors = action.payload.response.errors;
+              }
             }
-            return _.set(s, bind.prop, resource);
+            return {
+              ...s,
+              [bind.prop]: resource,
+            };
           }
           return s;
         }, nextState),

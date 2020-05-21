@@ -1,8 +1,9 @@
 import {Action} from 'typescript-fsa';
+import {DataResponse} from '../data-structures/responses/DataResponse';
 
 export interface AsynchronousActionResponse<QP, RP> {
   request: QP;
-  response: RP;
+  response: DataResponse<RP>;
 }
 
 type AAR<QP, RP> = AsynchronousActionResponse<QP, RP>;

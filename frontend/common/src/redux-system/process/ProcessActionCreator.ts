@@ -21,7 +21,7 @@ export const ProcessActionCreator = <
   group = 'default',
   requestSuffix = 'Request',
   responseSuffix = 'Response',
-}: ProcessActionCreatorOptions = {}) => (Target: {new (): ProcessAction<S, QP, RP, P>}) => {
+}: ProcessActionCreatorOptions = {}) => (Target: {new (...args: any[]): ProcessAction<S, QP, RP, P>}) => {
   if (!Actions.reduxPack[group]) {
     Actions.reduxPack[group] = {};
     actionCreators[group] = actionCreatorFactory(group);

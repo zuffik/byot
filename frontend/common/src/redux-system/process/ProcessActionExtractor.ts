@@ -2,6 +2,7 @@ import {AsynchronousAction, AsynchronousActionResponse, ProcessAction} from './P
 import {Action, ActionCreator, isType} from 'typescript-fsa';
 import {Actions} from '../store/Actions';
 import * as _ from 'lodash';
+import {DataResponse} from '../data-structures/responses/DataResponse';
 
 export interface ProcessActionExtractorDispatchOptions {
   group?: string;
@@ -13,7 +14,7 @@ export interface ProcessActionExtractorResponseOptions {
 
 export class ProcessActionExtractor {
   public static dispatch<S, QP, RP>(
-    Target: {new (): ProcessAction<S, QP, RP>},
+    Target: {new (...args: any[]): ProcessAction<S, QP, RP>},
     payload?: QP,
     {group = 'default'}: ProcessActionExtractorDispatchOptions = {}
   ): Action<QP> {
@@ -29,9 +30,9 @@ export class ProcessActionExtractor {
 
   public static response<S, QP, RP>(
     action: Action<QP>,
-    payload?: RP,
+    payload?: DataResponse<RP>,
     {group = 'default'}: ProcessActionExtractorResponseOptions = {}
-  ): Action<AsynchronousActionResponse<QP, RP>> {
+  ): Action<AsynchronousActionResponse<QP, DataResponse<RP>>> {
     const pack = _.find(_.values(Actions.reduxPack[group] || {}), v => isType(action, v.entryAction));
     if (!pack || !pack.secondaryAction) {
       throw new Error(`Action ${action.type} has no response in pack`);

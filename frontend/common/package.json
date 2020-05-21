@@ -43,6 +43,6 @@
     "loki": "0.20.3",
     "mock-apollo-client": "0.4.0",
     "prettier": "2.0.5",
-    "ts-jest": "24.9.0"
+    "ts-jest": "24.3.0"
   }
 }

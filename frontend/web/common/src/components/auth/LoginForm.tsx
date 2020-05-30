@@ -67,7 +67,13 @@ export const LoginForm: React.FC<Props> = (props: Props) => {
               errorText={touched.password && errors.password}
               data-testid="common-auth-login-form-password"
             />
-            <Button type="submit" color="gradient" fullWidth loading={props.loading}>
+            <Button
+              type="submit"
+              color="gradient"
+              data-testid="common-auth-login-form-button"
+              fullWidth
+              loading={props.loading}
+            >
               {t('Login')}
             </Button>
             {props.children}

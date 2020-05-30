@@ -3,6 +3,7 @@ import { INestApplication } from '@nestjs/common';
 import { Auth, Role } from '../../src/graphql/ts/types';
 import { ConfigService } from '@nestjs/config';
 import { graphQLInteraction, Interaction } from './interaction';
+import { envVars } from './env.helper';
 
 export interface IResponse<T> extends Omit<Request, 'body'> {
   body: {
@@ -58,7 +59,7 @@ export const loginTestUser = async (
       ? app
           .get<ConfigService>(ConfigService)
           .get<string>('app.superAdmin.password')
-      : 'D3m0P4$$';
+      : envVars.APP_DEMO_USER_PASS;
   const response = await makeGraphQLRequest(
     app,
     graphQLInteraction.userLogin(userNameOrEmail, password),

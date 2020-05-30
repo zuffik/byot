@@ -8,10 +8,10 @@ module.exports = () => {
   const frontendWeb = path.join(frontend, 'web');
   const frontendWebCommon = path.join(frontendWeb, 'common');
 
-  const fileVariants = (root) => ['', '.local', `.${process.env.NODE_ENV}`, `.${process.env.NODE_ENV}.local`].map(suffix => path.join(root, `.env${suffix}`));
+  const fileVariants = (root, ...another) => ['', '.local', `.${process.env.NODE_ENV}`, `.${process.env.NODE_ENV}.local`, ...another].map(suffix => path.join(root, `.env${suffix}`));
 
   const files = [
-    ...fileVariants(frontendCommon),
+    ...fileVariants(frontendCommon, '.common'),
     ...fileVariants(frontendWeb),
     ...fileVariants(frontendWebCommon),
   ].filter(file => fs.existsSync(file));

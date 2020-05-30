@@ -18,6 +18,7 @@ import { UserService } from '../src/user/user.service';
 import * as moment from 'moment';
 import { Token } from '../src/user/token/token.entity';
 import { getRepositoryToken } from '@nestjs/typeorm';
+import { envVars } from './helpers/env.helper';
 
 describe('Auth integration', () => {
   let app: INestApplication;
@@ -216,7 +217,7 @@ describe('Auth integration', () => {
     expect(loginResponse.body.errors).toEqual(expect.any(Array));
   });
 
-  it('should update myself due to non-logged user', async () => {
+  it('should not update myself due to non-logged user', async () => {
     const update: UserUpdateInput = {
       firstName: 'first',
       lastName: 'last',
@@ -259,12 +260,11 @@ describe('Auth integration', () => {
       graphQLInteraction.userLogin(auth.user.userName, newPass),
     );
     expect(resultLogin.body.errors).toBeUndefined();
-    const demoPass = 'D3m0P4$$';
     await makeGraphQLRequest(
       app,
       graphQLInteraction.userUpdateMyself({
-        password: demoPass,
-        passwordRepeat: demoPass,
+        password: envVars.APP_DEMO_USER_PASS,
+        passwordRepeat: envVars.APP_DEMO_USER_PASS,
       }),
       { token: auth.token },
     );

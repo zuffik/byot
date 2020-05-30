@@ -13,6 +13,7 @@
     "remove": "0.1.5"
   },
   "devDependencies": {
+    "@byot-frontend/common": "1.0.0",
     "@sheerun/mutationobserver-shim": "0.3.3",
     "@testing-library/jest-dom": "5.7.0",
     "@testing-library/react": "10.0.4",

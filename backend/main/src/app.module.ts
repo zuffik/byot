@@ -23,6 +23,7 @@ import { Verbosity } from './helpers/Verbosity';
   imports: [
     ConfigModule.forRoot({
       envFilePath: [
+        '.env.common',
         '.env',
         `.env.${process.env.NODE_ENV}`,
         '.env.local',

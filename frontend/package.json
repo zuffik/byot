@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "workspaces": [
-    "web/**",
+    "web/admin",
+    "web/app",
+    "web/common",
+    "web/landing",
+    "web/storybook",
     "native",
     "common"
   ]

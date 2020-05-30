@@ -20,7 +20,7 @@ import { TrainingService } from '../training/training/training.service';
 export class MigrationsService implements OnModuleInit {
   private readonly demoUser = {
     prefix: 'demo-',
-    pass: 'D3m0P4$$',
+    pass: '',
     count: 10,
   };
 
@@ -58,7 +58,9 @@ export class MigrationsService implements OnModuleInit {
     private readonly mediaRemoteService: MediaRemoteService,
     @Inject(MediaService) private readonly mediaService: MediaService,
     @Inject(ConfigService) private readonly configService: ConfigService,
-  ) {}
+  ) {
+    this.demoUser.pass = this.cfgService.get<string>('app.demo.password');
+  }
 
   async onModuleInit() {
     if (this.configService.get<string>('node.env') === 'test') return;

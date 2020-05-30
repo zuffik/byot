@@ -1,0 +1,4 @@
+{
+  "testFiles": ["scenarios/**/*.feature", "other/**/*.spec.ts"],
+  "video": true
+}

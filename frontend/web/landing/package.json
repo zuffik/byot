@@ -9,6 +9,9 @@
     "test:update": "react-app-rewired test --updateSnapshots",
     "eject": "react-app-rewired eject"
   },
+  "dependencies": {
+    "@byot-frontend/web-common": "1.0.0"
+  },
   "eslintConfig": {
     "extends": "react-app"
   },

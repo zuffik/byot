@@ -1,7 +1,7 @@
-import { calculateB, PathB } from './B';
-import { calculateY, PathY } from './Y';
-import { calculateO, PathO } from './O';
-import { calculateT, PathT } from './T';
+import { calculateB, PathB } from './parts/B';
+import { calculateY, PathY } from './parts/Y';
+import { calculateO, PathO } from './parts/O';
+import { calculateT, PathT } from './parts/T';
 
 export interface CalculatedPaths {
   general: {

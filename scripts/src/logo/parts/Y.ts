@@ -1,4 +1,4 @@
-import { ElementResult, Line, Point } from './Defs';
+import { ElementResult, Line, Point } from '../Defs';
 
 export interface PathY {
   line: Line;

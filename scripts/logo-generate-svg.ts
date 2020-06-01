@@ -7,6 +7,7 @@ import { logoGenerate } from './src/logo/LogoGenerate';
 import { convertFile } from 'convert-svg-to-png';
 import rimraf from 'rimraf';
 
+// todo clean this up
 async function main() {
   const args = argv
     .showHelpOnFail(true)

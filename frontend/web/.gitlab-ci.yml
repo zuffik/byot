@@ -33,6 +33,7 @@ Create favicon:
   script:
     - cd scripts
     - yarn install
+    - yarn logo:generate
     - yarn logo:favicon:generate
 
 Build project:

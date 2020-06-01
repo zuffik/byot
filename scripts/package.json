@@ -4,9 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "logo:calculate": "ts-node ./logo-calculate-paths.ts",
-    "logo:generate": "ts-node ./logo-generate-svg.ts",
-    "logo:generate:basic": "./logo-generator.sh",
+    "logo:generate": "ts-node ./logo-generate-svg.ts -V both -o ./out/raw -S 56 -O 8 -p",
+    "logo:native:generate": "./logo-native-generator.sh",
+    "logo:native:inject": "./logo-native-injector.sh",
     "logo:favicon:generate": "./logo-favicon-generator.sh",
     "logo:favicon:inject": "./logo-favicon-injector.sh"
   },

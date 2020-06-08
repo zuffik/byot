@@ -1,5 +1,5 @@
-import {CurrentLanguageProvider} from './CurrentLanguageProvider';
-import {languages, Languages} from '../Possibilities';
+import {CurrentLanguageProvider} from '@byot-frontend/common/src/i18n/providers/CurrentLanguageProvider';
+import {languages, Languages} from '@byot-frontend/common/src/i18n/Possibilities';
 import {BrowserLanguageProvider} from './BrowserLanguageProvider';
 
 export class UrlLanguageProvider implements CurrentLanguageProvider {

@@ -1,7 +1,7 @@
-import {CurrentLanguageProvider} from './CurrentLanguageProvider';
-import {Languages} from '../Possibilities';
-import {FixedLanguageProvider} from './FixedLanguageProvider';
-import {defaultLanguage} from '../CreateI18n';
+import {CurrentLanguageProvider} from '@byot-frontend/common/src/i18n/providers/CurrentLanguageProvider';
+import {Languages} from '@byot-frontend/common/src/i18n/Possibilities';
+import {FixedLanguageProvider} from '@byot-frontend/common/src/i18n/providers/FixedLanguageProvider';
+import {defaultLanguage} from '@byot-frontend/common/src/i18n/CreateI18n';
 
 export class BrowserLanguageProvider implements CurrentLanguageProvider {
   get currentLanguage(): Languages | undefined {

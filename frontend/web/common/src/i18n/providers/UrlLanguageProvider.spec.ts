@@ -1,4 +1,4 @@
-import {CurrentLanguageProvider} from './CurrentLanguageProvider';
+import {CurrentLanguageProvider} from '@byot-frontend/common/src/i18n/providers/CurrentLanguageProvider';
 import {UrlLanguageProvider} from './UrlLanguageProvider';
 
 describe('UrlLanguageProvider', () => {

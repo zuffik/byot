@@ -5,5 +5,6 @@
   "printWidth": 110,
   "bracketSpacing": false,
   "arrowParens": "avoid",
-  "quoteProps": "preserve"
+  "quoteProps": "preserve",
+  "jsxBracketSameLine": true
 }

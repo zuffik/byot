@@ -532,3 +532,4 @@ Icon
 frontend/web/**/public/favicon
 frontend/common/src/static/img/logo.svg
 frontend/web/storybook/storybook-static
+frontend/native/app/ios/Pods

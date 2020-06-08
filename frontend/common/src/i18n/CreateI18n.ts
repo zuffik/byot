@@ -6,19 +6,18 @@ import sk from './resources/sk';
 import cs from './resources/cs';
 import {CurrentLanguageProvider} from './providers/CurrentLanguageProvider';
 import * as _ from 'lodash';
-import {BrowserLanguageProvider} from './providers/BrowserLanguageProvider';
-import {getCurrentLanguage} from './GetCurrentLanguage';
+import {FixedLanguageProvider} from './providers/FixedLanguageProvider';
+import {defaultLanguage, getCurrentLanguage} from './GetCurrentLanguage';
 
 type DeepSameObject<T> = {
   [K in keyof T]: T[K] extends object ? DeepSameObject<T[K]> : string;
 };
 
 type Resources<T> = {[K in Languages]: DeepSameObject<T>};
-export const defaultLanguage: Languages = 'en';
 
 export const createI18n = <T>(
   data: DeepSameObject<Resources<T>>,
-  provider: CurrentLanguageProvider = new BrowserLanguageProvider()
+  provider: CurrentLanguageProvider = new FixedLanguageProvider(defaultLanguage)
 ): [i18next, Promise<any>] => {
   const resources: Resources<typeof en | T> = {
     en: {...en, ...(data.en as object)},

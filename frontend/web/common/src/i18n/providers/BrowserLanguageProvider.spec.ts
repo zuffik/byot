@@ -1,4 +1,4 @@
-import {CurrentLanguageProvider} from './CurrentLanguageProvider';
+import {CurrentLanguageProvider} from '@byot-frontend/common/src/i18n/providers/CurrentLanguageProvider';
 import {BrowserLanguageProvider} from './BrowserLanguageProvider';
 
 describe('BrowserLanguageProvider', () => {

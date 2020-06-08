@@ -1,7 +1,7 @@
 import {createTheme} from '@byot-frontend/web-common/src/setup/CreateTheme';
 import {storeFactory} from '@byot-frontend/common/src/redux-system/store/Store';
 import {WebAdminState} from './redux/WebAdminState';
-import {UrlLanguageProvider} from '@byot-frontend/common/src/i18n/providers/UrlLanguageProvider';
+import {UrlLanguageProvider} from '@byot-frontend/web-common/src/i18n/providers/UrlLanguageProvider';
 import {createI18n} from '@byot-frontend/common/src/i18n/CreateI18n';
 
 export const languageProvider = new UrlLanguageProvider();

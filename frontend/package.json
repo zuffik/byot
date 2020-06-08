@@ -8,7 +8,8 @@
     "web/common",
     "web/landing",
     "web/storybook",
-    "native",
+    "native/app",
+    "native/storybook",
     "common"
   ]
 }

@@ -1,10 +1,11 @@
 import {Languages} from './Possibilities';
 import {CurrentLanguageProvider} from './providers/CurrentLanguageProvider';
-import {defaultLanguage as dl} from './CreateI18n';
+
+export const defaultLanguage: Languages = 'en';
 
 export const getCurrentLanguage = (
   currentProvider: CurrentLanguageProvider,
-  defaultLanguage: Languages = dl
+  defaultLanguage: Languages = defaultLanguage
 ): Languages => {
   let language: string | undefined;
   let provider: CurrentLanguageProvider | undefined = currentProvider;

@@ -81,7 +81,11 @@ async function main() {
     }
     if (args.p && generated.length > 0) {
       generated.forEach((file) => {
-        const params = [`${file}.svg`];
+        const params = [
+          `${file}.svg`,
+          '--config',
+          '{ "plugins": [{ "removeViewBox": false }, { "removeDimensions": false }] }',
+        ];
         if (args.r) {
           params.push('--pretty');
         }

@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+
+# todo not use MakeAppIcon (try to use this, generates also splash screen https://apetools.webprofusion.com)
+
 set -e
 
 rm -rf out/native

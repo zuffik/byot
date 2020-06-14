@@ -1,0 +1,20 @@
+{
+  "name": "@byot-frontend/native-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/preset-typescript": "7.10.1",
+    "@types/chai": "4.2.11",
+    "@types/webdriverio": "5.0.0",
+    "@wdio/cli": "6.1.17",
+    "@wdio/cucumber-framework": "6.1.17",
+    "@wdio/local-runner": "6.1.17",
+    "@wdio/spec-reporter": "6.1.14",
+    "chai": "4.2.0",
+    "chromedriver": "83.0.0",
+    "typescript": "3.9.5",
+    "wdio-chromedriver-service": "6.0.3",
+    "webdriverio": "6.1.17"
+  }
+}

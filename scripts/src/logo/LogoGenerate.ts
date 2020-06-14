@@ -32,10 +32,16 @@ export const logoGenerate = (
     full ? height * 1.5 : height,
     height
   );
-  const svg: Svg = (SVG(document.documentElement) as Svg).size(
-    full ? paths.general.width : paths.general.height,
-    paths.general.height
-  );
+  const width = full ? paths.general.width : paths.general.height;
+  const h = paths.general.height;
+  const svg: Svg = (SVG(document.documentElement) as Svg)
+    .viewbox({
+      x: 0,
+      y: 0,
+      width,
+      height: h,
+    })
+    .size(width, h);
 
   // gradient
   const defs = svg.defs();

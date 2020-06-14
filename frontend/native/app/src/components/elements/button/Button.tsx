@@ -46,9 +46,10 @@ const makeStyles = (props: Props, state: State) => {
 export const Button: React.FC<Props> = (props: Props) => {
   const [touched, setTouched] = React.useState<State['touched']>(false);
   const styles = makeStyles(props, {touched});
+  const testID = 'element-button';
 
   return props.color !== 'gradient' ? (
-    <Btn {...props} style={[props.style, styles.button]}>
+    <Btn {...props} style={[props.style, styles.button]} accessibilityLabel={testID} testID={testID}>
       {props.children}
     </Btn>
   ) : (
@@ -61,7 +62,11 @@ export const Button: React.FC<Props> = (props: Props) => {
         start={{x: 0, y: 0}}
         end={{x: 1, y: 1}}
         colors={[baseTheme.colors.gradient.start.color, baseTheme.colors.gradient.end.color]}>
-        <Btn {...props} style={[props.style, styles.gradientButton]}>
+        <Btn
+          {...props}
+          style={[props.style, styles.gradientButton]}
+          accessibilityLabel={testID}
+          testID={testID}>
           {props.children}
         </Btn>
       </LinearGradient>

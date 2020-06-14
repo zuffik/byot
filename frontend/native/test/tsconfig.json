@@ -5,10 +5,7 @@
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "experimentalDecorators": true
+    "forceConsistentCasingInFileNames": true
   },
-  "include": [
-    "features"
-  ]
+  "include": ["steps"]
 }

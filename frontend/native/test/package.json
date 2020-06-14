@@ -1,20 +1,35 @@
 {
   "name": "@byot-frontend/native-test",
   "version": "1.0.0",
-  "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "test": "wdio ./wdio.conf.js",
+    "test:generate-scenarios": "./generate-scenarios.js"
+  },
   "devDependencies": {
+    "@babel/core": "7.10.2",
+    "@babel/plugin-proposal-optional-chaining": "7.10.1",
+    "@babel/preset-env": "7.10.2",
     "@babel/preset-typescript": "7.10.1",
-    "@types/chai": "4.2.11",
+    "@babel/register": "7.10.1",
+    "@types/cucumber": "6.0.1",
+    "@types/dotenv": "8.2.0",
+    "@types/jest": "26.0.0",
     "@types/webdriverio": "5.0.0",
+    "@wdio/appium-service": "6.1.16",
     "@wdio/cli": "6.1.17",
     "@wdio/cucumber-framework": "6.1.17",
     "@wdio/local-runner": "6.1.17",
-    "@wdio/spec-reporter": "6.1.14",
-    "chai": "4.2.0",
-    "chromedriver": "83.0.0",
-    "typescript": "3.9.5",
-    "wdio-chromedriver-service": "6.0.3",
-    "webdriverio": "6.1.17"
+    "@wdio/sync": "6.1.14",
+    "appium": "1.17.1",
+    "appium-doctor": "1.15.3",
+    "babel-plugin-transform-require-context": "0.1.1",
+    "cucumber": "6.0.5",
+    "cucumber-generator": "1.1.9",
+    "dotenv": "8.2.0",
+    "glob": "7.1.6",
+    "jest": "26.0.1",
+    "node-require-context": "1.0.0",
+    "typescript": "3.9.5"
   }
 }

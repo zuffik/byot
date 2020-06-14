@@ -39,8 +39,11 @@ const makeStyles = (props: Props, state: State) =>
 export const LoginForm: React.FC<Props> = (props: Props) => {
   const styles = makeStyles(props, {});
   const {t} = useTranslation();
+  const testIDRoot = 'loginForm-root';
+  const testIDUsernameEmail = 'loginForm-usernameEmail-input';
+  const testIDPassword = 'loginForm-password-input';
   return (
-    <View style={styles.root}>
+    <View style={styles.root} testID={testIDRoot} accessibilityLabel={testIDRoot}>
       <View style={styles.form}>
         <Formik
           validationSchema={LoginSchema}
@@ -60,6 +63,8 @@ export const LoginForm: React.FC<Props> = (props: Props) => {
                 onChangeText={handleChange('username')}
                 keyboardType="email-address"
                 helperText={touched.username && errors.username ? t('Enter username or email') : undefined}
+                testID={testIDUsernameEmail}
+                accessibilityLabel={testIDUsernameEmail}
               />
               <TextField
                 placeholder={t('Enter password')}
@@ -70,6 +75,8 @@ export const LoginForm: React.FC<Props> = (props: Props) => {
                 onChangeText={handleChange('password')}
                 style={styles.password}
                 helperText={touched.password && errors.password ? t('Enter password') : undefined}
+                testID={testIDPassword}
+                accessibilityLabel={testIDPassword}
               />
               <Button onPress={handleSubmit} color="gradient">
                 {t('Login')}

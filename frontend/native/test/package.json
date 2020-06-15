@@ -28,7 +28,7 @@
     "cucumber-generator": "1.1.9",
     "dotenv": "8.2.0",
     "glob": "7.1.6",
-    "jest": "26.0.1",
+    "jest": "25.5.4",
     "node-require-context": "1.0.0",
     "typescript": "3.9.5"
   }

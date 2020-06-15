@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Button as Btn, ButtonProps} from '@ui-kitten/components/ui/button/button.component';
+import {Button as Btn, ButtonProps} from '@ui-kitten/components';
 import {StyleSheet, View} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {baseTheme} from '../../../setup';

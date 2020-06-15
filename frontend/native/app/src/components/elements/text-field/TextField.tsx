@@ -9,10 +9,9 @@ import {
   TextInputProps,
   View,
 } from 'react-native';
-import {Text} from '@ui-kitten/components/ui/text/text.component';
 import {hexToRgb} from '@byot-frontend/common/src/data-manipulation/Colors';
 import {baseTheme, Theme} from '../../../setup';
-import {useTheme} from '@ui-kitten/components';
+import {useTheme, Text} from '@ui-kitten/components';
 
 interface Props extends TextInputProps {
   labelAnimationDuration?: number;

@@ -8,12 +8,12 @@ import {Button} from '../../elements/button/Button';
 import {useTranslation} from '../../../i18n/UseTranslation';
 
 const LoginSchema = Yup.object().shape({
-  username: Yup.string().required(),
+  usernameOrEmail: Yup.string().required(),
   password: Yup.string().required(),
 });
 
 interface Props {
-  onSubmit: (credentials: {username: string; password: string}) => void;
+  onSubmit: (credentials: {usernameOrEmail: string; password: string}) => void;
 }
 
 interface State {}
@@ -48,21 +48,24 @@ export const LoginForm: React.FC<Props> = (props: Props) => {
         <Formik
           validationSchema={LoginSchema}
           validateOnBlur
-          initialValues={{username: '', password: ''}}
-          onSubmit={props.onSubmit}>
+          validateOnChange
+          initialValues={{usernameOrEmail: '', password: ''}}
+          onSubmit={c => props.onSubmit(c)}>
           {({handleChange, handleBlur, handleSubmit, values, touched, errors}) => (
             <>
               <Text category="h1" style={styles.heading}>
-                {t('Login')}
+                {t('Login')!}
               </Text>
               <TextField
                 placeholder={t('Username or email')}
                 withHelperText="danger"
-                value={values.username}
-                onBlur={handleBlur('username')}
-                onChangeText={handleChange('username')}
+                value={values.usernameOrEmail}
+                onBlur={handleBlur('usernameOrEmail')}
+                onChangeText={handleChange('usernameOrEmail')}
                 keyboardType="email-address"
-                helperText={touched.username && errors.username ? t('Enter username or email') : undefined}
+                helperText={
+                  touched.usernameOrEmail && errors.usernameOrEmail ? t('Enter username or email') : undefined
+                }
                 testID={testIDUsernameEmail}
                 accessibilityLabel={testIDUsernameEmail}
               />
@@ -79,7 +82,7 @@ export const LoginForm: React.FC<Props> = (props: Props) => {
                 accessibilityLabel={testIDPassword}
               />
               <Button onPress={handleSubmit} color="gradient">
-                {t('Login')}
+                {t('Login')!}
               </Button>
             </>
           )}

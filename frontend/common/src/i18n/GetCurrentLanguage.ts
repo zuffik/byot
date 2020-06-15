@@ -5,7 +5,7 @@ export const defaultLanguage: Languages = 'en';
 
 export const getCurrentLanguage = (
   currentProvider: CurrentLanguageProvider,
-  defaultLanguage: Languages = defaultLanguage
+  defaultLng: Languages = defaultLanguage
 ): Languages => {
   let language: string | undefined;
   let provider: CurrentLanguageProvider | undefined = currentProvider;
@@ -13,5 +13,5 @@ export const getCurrentLanguage = (
     language = provider.currentLanguage;
     provider = provider.fallbackProvider;
   } while (!language && provider);
-  return (language || defaultLanguage) as Languages;
+  return (language || defaultLng) as Languages;
 };

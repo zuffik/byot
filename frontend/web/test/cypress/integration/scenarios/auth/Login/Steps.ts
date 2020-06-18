@@ -1,5 +1,5 @@
 import {When, And, Then} from 'cypress-cucumber-preprocessor/steps';
-import {envString} from '../../../../../helpers/EnvString';
+import {envString} from '../../../../../shared/EnvString';
 
 // logging in
 When(/^user visits login form$/, () => {

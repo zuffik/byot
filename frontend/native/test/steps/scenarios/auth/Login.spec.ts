@@ -1,5 +1,5 @@
 import {When, Then, BeforeAll} from 'cucumber';
-import {envString} from '../../../helpers/EnvString';
+import {envString} from '../../../shared/EnvString';
 
 // logging in
 When(/^user visits login form$/, () => {

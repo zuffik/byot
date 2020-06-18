@@ -2,7 +2,6 @@ import * as React from 'react';
 import {LoginForm} from './LoginForm';
 import {fireEvent, render, wait} from '@testing-library/react-native';
 
-// todo export provider to component OOOR consider using mocks <Text/> from ui-kitten to <Text/> from react-native
 describe('<LoginForm/>', () => {
   it('should submit form with credentials', () => {
     const credentials = {

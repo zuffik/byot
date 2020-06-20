@@ -22,4 +22,6 @@ export default {
     'I allow this website to collect and store submitted data.',
   'Already have an account?': 'Already have an account?',
   'Log in': 'Log in',
+  'Request reset password': 'Request reset password',
+  'Reset password': 'Reset password',
 };

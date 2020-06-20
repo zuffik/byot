@@ -7,6 +7,7 @@ import {boolean} from '@storybook/addon-knobs';
 import {RegistrationForm} from '@byot-frontend/web-common/src/components/auth/RegistrationForm';
 import {PlainLayout} from '@byot-frontend/web-common/src/components/plain-layout/PlainLayout';
 import {RegistrationFormFooter} from '@byot-frontend/web-app/src/components/auth/RegistrationFormFooter';
+import {ForgotPasswordForm} from '@byot-frontend/web-app/src/components/auth/ForgotPasswordForm';
 
 export default {
   title: 'User/Auth',
@@ -25,4 +26,8 @@ export const registrationForm = () => (
   <RegistrationForm onRegister={action('onRegister')} loading={boolean('Loading', false)}>
     <RegistrationFormFooter />
   </RegistrationForm>
+);
+
+export const resetPassword = () => (
+  <ForgotPasswordForm onSubmit={action('onSubmit')} loading={boolean('Loading', false)} />
 );

@@ -20,4 +20,6 @@ export default {
   'I allow this website to collect and store submitted data.': 'Souhlasím se spracovaním osobních údajů.',
   'Already have an account?': 'Již máte konto?',
   'Log in': 'Přihlaste se',
+  'Request reset password': 'Požádat o změnu hesla',
+  'Reset password': 'Zabudnuté heslo',
 };

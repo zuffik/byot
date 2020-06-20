@@ -30,6 +30,7 @@ const registrationSchema = (t: TFunction, password: string) =>
 interface Props extends Partial<WithStyles<typeof styles>> {
   onRegister: (values: IUserRegister) => void;
   loading?: boolean;
+  children?: React.ReactNode;
 }
 
 const styles = (theme: Theme) => ({
@@ -133,6 +134,7 @@ export const RegistrationForm: React.FC<Props> = (props: Props) => {
             <Button type="submit" color="gradient" fullWidth loading={props.loading}>
               {t('Sign up')}
             </Button>
+            {props.children}
           </Form>
         )}
       </Formik>

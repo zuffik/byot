@@ -20,4 +20,6 @@ export default {
   'Email': 'Email',
   'I allow this website to collect and store submitted data.':
     'I allow this website to collect and store submitted data.',
+  'Already have an account?': 'Already have an account?',
+  'Log in': 'Log in',
 };

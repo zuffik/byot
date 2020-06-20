@@ -1,8 +1,7 @@
 import * as React from 'react';
-import {FormControlLabel, makeStyles, Theme, WithStyles, FormControlLabelProps} from '@material-ui/core';
+import {FormControlLabel, FormControlLabelProps, makeStyles, Theme, WithStyles} from '@material-ui/core';
 import {ClassesObject, CombineClasses} from '../../../types/CombineClasses';
 import {InputLabel} from './InputLabel';
-import * as _ from 'lodash';
 
 export type Props<T extends ClassesObject<C>, C = any> = T &
   CombineClasses<WithStyles<typeof styles>, T> & {

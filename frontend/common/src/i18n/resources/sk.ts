@@ -18,4 +18,6 @@ export default {
   'Last name': 'Priezvisko',
   'Email': 'Email',
   'I allow this website to collect and store submitted data.': 'Súhlasím so spracovaním osobných údajov.',
+  'Already have an account?': 'Už máte konto?',
+  'Log in': 'Prihláste sa',
 };

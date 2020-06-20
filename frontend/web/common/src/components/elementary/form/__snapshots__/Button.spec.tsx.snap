@@ -6,7 +6,7 @@ Object {
   "baseElement": <body>
     <div>
       <button
-        class="MuiButtonBase-root MuiButton-root makeStyles-root-48 makeStyles-root-51 MuiButton-contained MuiButton-containedPrimary"
+        class="MuiButtonBase-root MuiButton-root makeStyles-root-6 makeStyles-root-9 MuiButton-contained MuiButton-containedPrimary"
         tabindex="0"
         type="button"
       >
@@ -14,14 +14,14 @@ Object {
           class="MuiButton-label"
         >
           <span
-            class="makeStyles-inner-49 makeStyles-inner-52"
+            class="makeStyles-inner-7 makeStyles-inner-10"
             data-testid="common-elementary-button-children"
             style="opacity: 0; visibility: hidden;"
           >
             Text
           </span>
           <div
-            class="makeStyles-loader-50"
+            class="makeStyles-loader-8"
             data-testid="common-elementary-button-loader"
             style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
           >
@@ -54,7 +54,7 @@ Object {
   </body>,
   "container": <div>
     <button
-      class="MuiButtonBase-root MuiButton-root makeStyles-root-48 makeStyles-root-51 MuiButton-contained MuiButton-containedPrimary"
+      class="MuiButtonBase-root MuiButton-root makeStyles-root-6 makeStyles-root-9 MuiButton-contained MuiButton-containedPrimary"
       tabindex="0"
       type="button"
     >
@@ -62,14 +62,14 @@ Object {
         class="MuiButton-label"
       >
         <span
-          class="makeStyles-inner-49 makeStyles-inner-52"
+          class="makeStyles-inner-7 makeStyles-inner-10"
           data-testid="common-elementary-button-children"
           style="opacity: 0; visibility: hidden;"
         >
           Text
         </span>
         <div
-          class="makeStyles-loader-50"
+          class="makeStyles-loader-8"
           data-testid="common-elementary-button-loader"
           style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
         >

@@ -10,7 +10,7 @@ export interface Props extends CombineClasses<WithStyles<typeof styles>, InputLa
 
 const styles = (theme: Theme): StyleRules<Props> => ({
   label: {
-    fontWeight: 500,
+    fontWeight: 400,
     fontSize: theme.typography.pxToRem(18),
     color: baseTheme.colors.dark,
     paddingLeft: theme.spacing(1 / 2),

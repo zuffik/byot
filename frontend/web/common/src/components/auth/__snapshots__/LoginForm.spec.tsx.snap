@@ -6,10 +6,10 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="makeStyles-root-152"
+        class="makeStyles-root-14"
       >
         <div
-          class="MuiBox-root MuiBox-root-154"
+          class="MuiBox-root MuiBox-root-15"
         >
           <h3
             class="MuiTypography-root MuiTypography-h3"
@@ -22,20 +22,21 @@ Object {
           data-testid="common-auth-login-form-form"
         >
           <div
-            class="makeStyles-root-187"
+            class="makeStyles-root-18"
           >
             <label
-              class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-188 makeStyles-label-190 MuiInputLabel-animated"
+              class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-19 makeStyles-label-21 MuiInputLabel-animated"
             >
               Username or email
             </label>
             <div
-              class="MuiInputBase-root MuiInput-root makeStyles-inputRoot-185 MuiInput-underline MuiInputBase-colorSecondary MuiInput-colorSecondary MuiInputBase-fullWidth MuiInput-fullWidth"
+              class="MuiInputBase-root MuiInput-root makeStyles-inputRoot-16 MuiInput-underline MuiInputBase-colorSecondary MuiInput-colorSecondary MuiInputBase-fullWidth MuiInput-fullWidth"
               data-testid="common-auth-login-form-username"
               label="Username or email"
             >
               <input
-                class="MuiInputBase-input MuiInput-input makeStyles-input-186"
+                class="MuiInputBase-input MuiInput-input makeStyles-input-17"
+                name="userNameOrEmail"
                 type="text"
                 value="username"
               />
@@ -51,7 +52,7 @@ Object {
                   class="MuiCollapse-wrapperInner"
                 >
                   <p
-                    class="MuiFormHelperText-root makeStyles-errorText-189 Mui-error"
+                    class="MuiFormHelperText-root makeStyles-errorText-20 Mui-error"
                   >
                     <span>
                       ​
@@ -62,20 +63,21 @@ Object {
             </div>
           </div>
           <div
-            class="makeStyles-root-187"
+            class="makeStyles-root-18"
           >
             <label
-              class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-188 makeStyles-label-190 MuiInputLabel-animated"
+              class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-19 makeStyles-label-21 MuiInputLabel-animated"
             >
               Password
             </label>
             <div
-              class="MuiInputBase-root MuiInput-root makeStyles-inputRoot-185 MuiInput-underline MuiInputBase-colorSecondary MuiInput-colorSecondary MuiInputBase-fullWidth MuiInput-fullWidth"
+              class="MuiInputBase-root MuiInput-root makeStyles-inputRoot-16 MuiInput-underline MuiInputBase-colorSecondary MuiInput-colorSecondary MuiInputBase-fullWidth MuiInput-fullWidth"
               data-testid="common-auth-login-form-password"
               label="Password"
             >
               <input
-                class="MuiInputBase-input MuiInput-input makeStyles-input-186"
+                class="MuiInputBase-input MuiInput-input makeStyles-input-17"
+                name="password"
                 type="password"
                 value=""
               />
@@ -91,7 +93,7 @@ Object {
                   class="MuiCollapse-wrapperInner"
                 >
                   <p
-                    class="MuiFormHelperText-root makeStyles-errorText-189 Mui-error"
+                    class="MuiFormHelperText-root makeStyles-errorText-20 Mui-error"
                   >
                     Enter password
                   </p>
@@ -100,7 +102,8 @@ Object {
             </div>
           </div>
           <button
-            class="MuiButtonBase-root MuiButton-root makeStyles-root-256 makeStyles-root-259 MuiButton-contained MuiButton-containedSecondary MuiButton-fullWidth"
+            class="MuiButtonBase-root MuiButton-root makeStyles-root-22 makeStyles-root-25 MuiButton-contained MuiButton-containedSecondary MuiButton-fullWidth"
+            data-testid="common-auth-login-form-button"
             tabindex="0"
             type="submit"
           >
@@ -108,14 +111,14 @@ Object {
               class="MuiButton-label"
             >
               <span
-                class="makeStyles-inner-257 makeStyles-inner-260"
+                class="makeStyles-inner-23 makeStyles-inner-26"
                 data-testid="common-elementary-button-children"
                 style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
               >
                 Login
               </span>
               <div
-                class="makeStyles-loader-258"
+                class="makeStyles-loader-24"
                 data-testid="common-elementary-button-loader"
                 style="opacity: 0; visibility: hidden;"
               >
@@ -150,10 +153,10 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="makeStyles-root-152"
+      class="makeStyles-root-14"
     >
       <div
-        class="MuiBox-root MuiBox-root-154"
+        class="MuiBox-root MuiBox-root-15"
       >
         <h3
           class="MuiTypography-root MuiTypography-h3"
@@ -166,20 +169,21 @@ Object {
         data-testid="common-auth-login-form-form"
       >
         <div
-          class="makeStyles-root-187"
+          class="makeStyles-root-18"
         >
           <label
-            class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-188 makeStyles-label-190 MuiInputLabel-animated"
+            class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-19 makeStyles-label-21 MuiInputLabel-animated"
           >
             Username or email
           </label>
           <div
-            class="MuiInputBase-root MuiInput-root makeStyles-inputRoot-185 MuiInput-underline MuiInputBase-colorSecondary MuiInput-colorSecondary MuiInputBase-fullWidth MuiInput-fullWidth"
+            class="MuiInputBase-root MuiInput-root makeStyles-inputRoot-16 MuiInput-underline MuiInputBase-colorSecondary MuiInput-colorSecondary MuiInputBase-fullWidth MuiInput-fullWidth"
             data-testid="common-auth-login-form-username"
             label="Username or email"
           >
             <input
-              class="MuiInputBase-input MuiInput-input makeStyles-input-186"
+              class="MuiInputBase-input MuiInput-input makeStyles-input-17"
+              name="userNameOrEmail"
               type="text"
               value="username"
             />
@@ -195,7 +199,7 @@ Object {
                 class="MuiCollapse-wrapperInner"
               >
                 <p
-                  class="MuiFormHelperText-root makeStyles-errorText-189 Mui-error"
+                  class="MuiFormHelperText-root makeStyles-errorText-20 Mui-error"
                 >
                   <span>
                     ​
@@ -206,20 +210,21 @@ Object {
           </div>
         </div>
         <div
-          class="makeStyles-root-187"
+          class="makeStyles-root-18"
         >
           <label
-            class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-188 makeStyles-label-190 MuiInputLabel-animated"
+            class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-19 makeStyles-label-21 MuiInputLabel-animated"
           >
             Password
           </label>
           <div
-            class="MuiInputBase-root MuiInput-root makeStyles-inputRoot-185 MuiInput-underline MuiInputBase-colorSecondary MuiInput-colorSecondary MuiInputBase-fullWidth MuiInput-fullWidth"
+            class="MuiInputBase-root MuiInput-root makeStyles-inputRoot-16 MuiInput-underline MuiInputBase-colorSecondary MuiInput-colorSecondary MuiInputBase-fullWidth MuiInput-fullWidth"
             data-testid="common-auth-login-form-password"
             label="Password"
           >
             <input
-              class="MuiInputBase-input MuiInput-input makeStyles-input-186"
+              class="MuiInputBase-input MuiInput-input makeStyles-input-17"
+              name="password"
               type="password"
               value=""
             />
@@ -235,7 +240,7 @@ Object {
                 class="MuiCollapse-wrapperInner"
               >
                 <p
-                  class="MuiFormHelperText-root makeStyles-errorText-189 Mui-error"
+                  class="MuiFormHelperText-root makeStyles-errorText-20 Mui-error"
                 >
                   Enter password
                 </p>
@@ -244,7 +249,8 @@ Object {
           </div>
         </div>
         <button
-          class="MuiButtonBase-root MuiButton-root makeStyles-root-256 makeStyles-root-259 MuiButton-contained MuiButton-containedSecondary MuiButton-fullWidth"
+          class="MuiButtonBase-root MuiButton-root makeStyles-root-22 makeStyles-root-25 MuiButton-contained MuiButton-containedSecondary MuiButton-fullWidth"
+          data-testid="common-auth-login-form-button"
           tabindex="0"
           type="submit"
         >
@@ -252,14 +258,14 @@ Object {
             class="MuiButton-label"
           >
             <span
-              class="makeStyles-inner-257 makeStyles-inner-260"
+              class="makeStyles-inner-23 makeStyles-inner-26"
               data-testid="common-elementary-button-children"
               style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
             >
               Login
             </span>
             <div
-              class="makeStyles-loader-258"
+              class="makeStyles-loader-24"
               data-testid="common-elementary-button-loader"
               style="opacity: 0; visibility: hidden;"
             >
@@ -354,7 +360,7 @@ Object {
         class="makeStyles-root-1"
       >
         <div
-          class="MuiBox-root MuiBox-root-3"
+          class="MuiBox-root MuiBox-root-2"
         >
           <h3
             class="MuiTypography-root MuiTypography-h3"
@@ -367,20 +373,21 @@ Object {
           data-testid="common-auth-login-form-form"
         >
           <div
-            class="makeStyles-root-36"
+            class="makeStyles-root-5"
           >
             <label
-              class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-37 makeStyles-label-39 MuiInputLabel-animated"
+              class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-6 makeStyles-label-8 MuiInputLabel-animated"
             >
               Username or email
             </label>
             <div
-              class="MuiInputBase-root MuiInput-root makeStyles-inputRoot-34 MuiInput-underline MuiInputBase-colorSecondary MuiInput-colorSecondary MuiInputBase-fullWidth MuiInput-fullWidth"
+              class="MuiInputBase-root MuiInput-root makeStyles-inputRoot-3 MuiInput-underline MuiInputBase-colorSecondary MuiInput-colorSecondary MuiInputBase-fullWidth MuiInput-fullWidth"
               data-testid="common-auth-login-form-username"
               label="Username or email"
             >
               <input
-                class="MuiInputBase-input MuiInput-input makeStyles-input-35"
+                class="MuiInputBase-input MuiInput-input makeStyles-input-4"
+                name="userNameOrEmail"
                 type="text"
                 value="username"
               />
@@ -396,7 +403,7 @@ Object {
                   class="MuiCollapse-wrapperInner"
                 >
                   <p
-                    class="MuiFormHelperText-root makeStyles-errorText-38 Mui-error"
+                    class="MuiFormHelperText-root makeStyles-errorText-7 Mui-error"
                   >
                     <span>
                       ​
@@ -407,20 +414,21 @@ Object {
             </div>
           </div>
           <div
-            class="makeStyles-root-36"
+            class="makeStyles-root-5"
           >
             <label
-              class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-37 makeStyles-label-39 MuiInputLabel-animated"
+              class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-6 makeStyles-label-8 MuiInputLabel-animated"
             >
               Password
             </label>
             <div
-              class="MuiInputBase-root MuiInput-root makeStyles-inputRoot-34 MuiInput-underline MuiInputBase-colorSecondary MuiInput-colorSecondary MuiInputBase-fullWidth MuiInput-fullWidth"
+              class="MuiInputBase-root MuiInput-root makeStyles-inputRoot-3 MuiInput-underline MuiInputBase-colorSecondary MuiInput-colorSecondary MuiInputBase-fullWidth MuiInput-fullWidth"
               data-testid="common-auth-login-form-password"
               label="Password"
             >
               <input
-                class="MuiInputBase-input MuiInput-input makeStyles-input-35"
+                class="MuiInputBase-input MuiInput-input makeStyles-input-4"
+                name="password"
                 type="password"
                 value="password"
               />
@@ -436,7 +444,7 @@ Object {
                   class="MuiCollapse-wrapperInner"
                 >
                   <p
-                    class="MuiFormHelperText-root makeStyles-errorText-38 Mui-error"
+                    class="MuiFormHelperText-root makeStyles-errorText-7 Mui-error"
                   >
                     <span>
                       ​
@@ -447,7 +455,8 @@ Object {
             </div>
           </div>
           <button
-            class="MuiButtonBase-root MuiButton-root makeStyles-root-105 makeStyles-root-108 MuiButton-contained MuiButton-containedSecondary MuiButton-fullWidth"
+            class="MuiButtonBase-root MuiButton-root makeStyles-root-9 makeStyles-root-12 MuiButton-contained MuiButton-containedSecondary MuiButton-fullWidth"
+            data-testid="common-auth-login-form-button"
             tabindex="0"
             type="submit"
           >
@@ -455,14 +464,14 @@ Object {
               class="MuiButton-label"
             >
               <span
-                class="makeStyles-inner-106 makeStyles-inner-109"
+                class="makeStyles-inner-10 makeStyles-inner-13"
                 data-testid="common-elementary-button-children"
                 style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
               >
                 Login
               </span>
               <div
-                class="makeStyles-loader-107"
+                class="makeStyles-loader-11"
                 data-testid="common-elementary-button-loader"
                 style="opacity: 0; visibility: hidden;"
               >
@@ -500,7 +509,7 @@ Object {
       class="makeStyles-root-1"
     >
       <div
-        class="MuiBox-root MuiBox-root-3"
+        class="MuiBox-root MuiBox-root-2"
       >
         <h3
           class="MuiTypography-root MuiTypography-h3"
@@ -513,20 +522,21 @@ Object {
         data-testid="common-auth-login-form-form"
       >
         <div
-          class="makeStyles-root-36"
+          class="makeStyles-root-5"
         >
           <label
-            class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-37 makeStyles-label-39 MuiInputLabel-animated"
+            class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-6 makeStyles-label-8 MuiInputLabel-animated"
           >
             Username or email
           </label>
           <div
-            class="MuiInputBase-root MuiInput-root makeStyles-inputRoot-34 MuiInput-underline MuiInputBase-colorSecondary MuiInput-colorSecondary MuiInputBase-fullWidth MuiInput-fullWidth"
+            class="MuiInputBase-root MuiInput-root makeStyles-inputRoot-3 MuiInput-underline MuiInputBase-colorSecondary MuiInput-colorSecondary MuiInputBase-fullWidth MuiInput-fullWidth"
             data-testid="common-auth-login-form-username"
             label="Username or email"
           >
             <input
-              class="MuiInputBase-input MuiInput-input makeStyles-input-35"
+              class="MuiInputBase-input MuiInput-input makeStyles-input-4"
+              name="userNameOrEmail"
               type="text"
               value="username"
             />
@@ -542,7 +552,7 @@ Object {
                 class="MuiCollapse-wrapperInner"
               >
                 <p
-                  class="MuiFormHelperText-root makeStyles-errorText-38 Mui-error"
+                  class="MuiFormHelperText-root makeStyles-errorText-7 Mui-error"
                 >
                   <span>
                     ​
@@ -553,20 +563,21 @@ Object {
           </div>
         </div>
         <div
-          class="makeStyles-root-36"
+          class="makeStyles-root-5"
         >
           <label
-            class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-37 makeStyles-label-39 MuiInputLabel-animated"
+            class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-6 makeStyles-label-8 MuiInputLabel-animated"
           >
             Password
           </label>
           <div
-            class="MuiInputBase-root MuiInput-root makeStyles-inputRoot-34 MuiInput-underline MuiInputBase-colorSecondary MuiInput-colorSecondary MuiInputBase-fullWidth MuiInput-fullWidth"
+            class="MuiInputBase-root MuiInput-root makeStyles-inputRoot-3 MuiInput-underline MuiInputBase-colorSecondary MuiInput-colorSecondary MuiInputBase-fullWidth MuiInput-fullWidth"
             data-testid="common-auth-login-form-password"
             label="Password"
           >
             <input
-              class="MuiInputBase-input MuiInput-input makeStyles-input-35"
+              class="MuiInputBase-input MuiInput-input makeStyles-input-4"
+              name="password"
               type="password"
               value="password"
             />
@@ -582,7 +593,7 @@ Object {
                 class="MuiCollapse-wrapperInner"
               >
                 <p
-                  class="MuiFormHelperText-root makeStyles-errorText-38 Mui-error"
+                  class="MuiFormHelperText-root makeStyles-errorText-7 Mui-error"
                 >
                   <span>
                     ​
@@ -593,7 +604,8 @@ Object {
           </div>
         </div>
         <button
-          class="MuiButtonBase-root MuiButton-root makeStyles-root-105 makeStyles-root-108 MuiButton-contained MuiButton-containedSecondary MuiButton-fullWidth"
+          class="MuiButtonBase-root MuiButton-root makeStyles-root-9 makeStyles-root-12 MuiButton-contained MuiButton-containedSecondary MuiButton-fullWidth"
+          data-testid="common-auth-login-form-button"
           tabindex="0"
           type="submit"
         >
@@ -601,14 +613,14 @@ Object {
             class="MuiButton-label"
           >
             <span
-              class="makeStyles-inner-106 makeStyles-inner-109"
+              class="makeStyles-inner-10 makeStyles-inner-13"
               data-testid="common-elementary-button-children"
               style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
             >
               Login
             </span>
             <div
-              class="makeStyles-loader-107"
+              class="makeStyles-loader-11"
               data-testid="common-elementary-button-loader"
               style="opacity: 0; visibility: hidden;"
             >

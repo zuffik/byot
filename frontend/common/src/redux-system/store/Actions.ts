@@ -15,10 +15,10 @@ type ReduxBind = {
 };
 
 export class Actions {
-  public static reduxPack: {[G: string]: {[A: string]: Pack}} = {default: {}};
+  public static reduxPack: {[G: string]: {[A: string]: Pack}} = {};
   public static reduxBinds: {
     [G in keyof typeof Actions.reduxPack]: {
       [A in keyof typeof Actions.reduxPack[G]]: ReduxBind[];
     };
-  } = {default: {}};
+  } = {};
 }

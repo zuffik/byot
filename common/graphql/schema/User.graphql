@@ -30,7 +30,7 @@ input UserRegister {
     lastName: String
     email: String!
     password: String!
-    userName: String!
+    userName: String
 }
 
 input UserLogin {

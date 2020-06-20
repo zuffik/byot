@@ -1,9 +1,10 @@
 import React from 'react';
 import {ClassKeyOfStyles, ClassNameMap} from '@material-ui/styles/withStyles';
 import {InputLabel, Props as InputLabelProps} from './InputLabel';
-import {Collapse, FormHelperText, makeStyles, Theme} from '@material-ui/core';
+import {makeStyles, Theme} from '@material-ui/core';
 import classNames from 'classnames';
 import * as _ from 'lodash';
+import {FormHelperText} from './FormHelperText';
 
 type Classes<C> = {classes?: Partial<ClassNameMap<ClassKeyOfStyles<C>>>};
 export type Props<T extends Classes<C>, C = any> = T & {
@@ -33,17 +34,14 @@ export const InputBase = <T extends Classes<C>, C>(props: Props<T, C>) => {
       {props.label && (
         <InputLabel
           {...props.InputLabelProps}
-          classes={{root: classNames(styles.label, props.InputLabelProps?.classes?.root)}}
-        >
+          classes={{root: classNames(styles.label, props.InputLabelProps?.classes?.root)}}>
           {props.label}
         </InputLabel>
       )}
       <props.component {...(componentProps as any)} />
-      <Collapse in={!!props.errorText}>
-        <FormHelperText error classes={{root: styles.errorText}}>
-          {props.errorText || ' '}
-        </FormHelperText>
-      </Collapse>
+      <FormHelperText error classes={{root: styles.errorText}}>
+        {props.errorText}
+      </FormHelperText>
     </div>
   );
 };

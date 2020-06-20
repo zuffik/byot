@@ -19,7 +19,7 @@ const styles = (theme: Theme) => ({
 const useStyles = makeStyles(styles);
 
 export const CheckboxRadioBase = <T extends ClassesObject<C>, C = any>(props: Props<T, C>) => {
-  const styles = useStyles(_.omit(props, 'classes'));
+  const styles = useStyles(props);
   const {component, ...radioProps} = props;
   return (
     <FormControlLabel

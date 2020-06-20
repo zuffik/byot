@@ -4,7 +4,7 @@ export const Router = {
     URI: () => `${Router.URI()}login`,
   },
   register: {
-    URI: () => `${Router.URI()}register`,
+    URI: () => `${Router.URI()}sign-up`,
   },
   resetPassword: {
     URI: () => `${Router.URI()}reset-password`,

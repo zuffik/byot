@@ -12,7 +12,9 @@ And(/^user enters username (.*)$/, username => {
 });
 
 And(/^user enters password (.*)$/, password => {
-  cy.get('[data-testid="common-auth-login-form-password"] input').type(envString(password));
+  cy.get('[data-testid="common-auth-login-form-password"] input').type(
+    envString(password, key => Cypress.env(key))
+  );
 });
 
 And(/^user tries to login$/, () => {
@@ -26,12 +28,12 @@ Then(/^it should be (.*)$/, (state: 'successful' | 'unsuccessful') => {
   cy.get(
     '[data-testid="common-auth-login-form-form"] [data-testid="common-elementary-button-loader"]'
   ).should('not.be.visible');
-  /*// todo
+
   if (state == 'successful') {
     cy.url().should('not.contain', '/login');
-    cy.get('[data-testid="common-auth-login-form-form"]').should('not.exists');
+    cy.get('[data-testid="common-auth-login-form-form"]').should('not.exist');
   } else {
     cy.url().should('contain', '/login');
-    cy.get('[data-testid="common-elementary-snackbar"]').should('exists');
-  }*/
+    cy.get('[data-testid="common-elementary-snackbar"]').should('exist');
+  }
 });

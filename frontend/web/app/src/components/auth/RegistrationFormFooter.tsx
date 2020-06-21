@@ -3,7 +3,7 @@ import {Box, makeStyles, Theme, Typography, WithStyles} from '@material-ui/core'
 import {Button} from '@byot-frontend/web-common/src/components/elementary/form/Button';
 import {Link} from 'react-router-dom';
 import {Router} from '../../router/Router';
-import {useTranslation} from 'react-i18next';
+import {useTranslation} from '@byot-frontend/common/src/i18n/UseTranslation';
 
 interface Props extends Partial<WithStyles<typeof styles>> {}
 

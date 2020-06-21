@@ -6,10 +6,10 @@ export interface BindProcessActionCreatorOptions {
   group?: string;
 }
 
-export const BindProcessActionCreator = <S, T>(
+export const BindProcessActionCreator = <S, T, K extends keyof S>(
   Process: {new (): AsynchronousAction<S, any, T>},
   {group = 'default'}: BindProcessActionCreatorOptions = {}
-) => (state: S, prop: S[keyof S] extends Resource<T> ? keyof S : never) => {
+) => (state: S, prop: K) => {
   const pack = Actions.reduxPack[group][Process.prototype.uniqueIdentifier];
   if (!Actions.reduxBinds[group]) {
     Actions.reduxBinds[group] = {};

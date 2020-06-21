@@ -22,4 +22,8 @@ export default {
   'Log in': 'Přihlaste se',
   'Request reset password': 'Požádat o změnu hesla',
   'Reset password': 'Zabudnuté heslo',
+  'All rights reserved to': 'Všechna práva vyhrazena pro',
+  'Back': 'Zpět',
+  'Error while trying to login, please, check username or password':
+    'Nastala chyba při přihlašovaní, skontrolujte, prosím, zadané údaje',
 };

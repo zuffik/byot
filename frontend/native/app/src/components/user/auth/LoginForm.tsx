@@ -5,7 +5,7 @@ import {TextField} from '../../elements/text-field/TextField';
 import {Formik} from 'formik';
 import * as Yup from 'yup';
 import {Button} from '../../elements/button/Button';
-import {useTranslation} from '../../../i18n/UseTranslation';
+import {useTranslation} from '@byot-frontend/common/src/i18n/UseTranslation';
 
 const LoginSchema = Yup.object().shape({
   usernameOrEmail: Yup.string().required(),

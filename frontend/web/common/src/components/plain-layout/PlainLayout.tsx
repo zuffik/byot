@@ -1,6 +1,5 @@
 import * as React from 'react';
 import {makeStyles, Theme} from '@material-ui/core';
-import {StyleRules} from '@material-ui/styles';
 import {Logo} from '../elementary/Logo';
 import {WithStyles} from '../../types/WithStyles';
 import {PlainLayoutFooter} from './PlainLayoutFooter';
@@ -9,15 +8,16 @@ interface Props extends WithStyles<typeof styles> {
   children: React.ReactNode;
 }
 
-const styles = (theme: Theme): StyleRules<Props> => ({
+const styles = (theme: Theme) => ({
   root: {
     width: '100%',
     minHeight: '100vh',
     display: 'flex',
-    flexDirection: 'column',
+    flexDirection: 'column' as 'column',
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: theme.spacing(3),
+    paddingBottom: 0,
   },
   header: {
     width: '100%',

@@ -24,4 +24,8 @@ export default {
   'Log in': 'Log in',
   'Request reset password': 'Request reset password',
   'Reset password': 'Reset password',
+  'All rights reserved to': 'All rights reserved to',
+  'Back': 'Back',
+  'Error while trying to login, please, check username or password':
+    'Error while trying to login, please, check username or password',
 };

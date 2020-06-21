@@ -2,7 +2,7 @@ import * as React from 'react';
 import {Box} from '@material-ui/core';
 import {Link} from 'react-router-dom';
 import {Button} from '@byot-frontend/web-common/src/components/elementary/form/Button';
-import {useTranslation} from 'react-i18next';
+import {useTranslation} from '@byot-frontend/common/src/i18n/UseTranslation';
 import {Router} from '../../router/Router';
 
 interface Props {}

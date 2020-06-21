@@ -5,9 +5,11 @@ import {EntityResource} from '@byot-frontend/common/src/redux-system/data-struct
 import {BindProcessActionCreator} from '@byot-frontend/common/src/redux-system/process/BindProcessActionCreator';
 import {WebAuth} from './process/auth/WebAuth';
 import {frontendCommonWebStorage} from '../dom/FrontendCommonWebStorage';
+import {WebRegister} from './process/auth/WebRegister';
 
 export class WebState extends FrontendCommonState {
   @BindProcessActionCreator(WebAuth)
+  @BindProcessActionCreator(WebRegister)
   auth: Resource<Auth> = new EntityResource<Auth>();
 
   constructor() {

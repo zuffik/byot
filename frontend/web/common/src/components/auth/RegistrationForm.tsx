@@ -2,7 +2,7 @@ import * as React from 'react';
 import {Box, FormHelperText, Grid, makeStyles, Theme, WithStyles} from '@material-ui/core';
 import {PlainLayoutNarrow} from '../plain-layout/PlainLayoutNarrow';
 import {PlainLayoutTitle} from '../plain-layout/PlainLayoutTitle';
-import {useTranslation} from 'react-i18next';
+import {useTranslation} from '@byot-frontend/common/src/i18n/UseTranslation';
 import {Form, Formik} from 'formik';
 import {TFunction} from 'i18next';
 import * as Yup from 'yup';

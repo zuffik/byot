@@ -3,10 +3,11 @@ import {Form, Formik} from 'formik';
 import {Input} from '@byot-frontend/web-common/src/components/elementary/form/Input';
 import {TFunction} from 'i18next';
 import * as Yup from 'yup';
-import {useTranslation} from 'react-i18next';
 import {PlainLayoutNarrow} from '@byot-frontend/web-common/src/components/plain-layout/PlainLayoutNarrow';
 import {PlainLayoutTitle} from '@byot-frontend/web-common/src/components/plain-layout/PlainLayoutTitle';
 import {Button} from '@byot-frontend/web-common/src/components/elementary/form/Button';
+import {Box} from '@material-ui/core';
+import {useTranslation} from '@byot-frontend/common/src/i18n/UseTranslation';
 
 const loginSchema = (t: TFunction) =>
   Yup.object().shape({
@@ -16,6 +17,7 @@ const loginSchema = (t: TFunction) =>
 interface Props {
   onSubmit: (email: string) => void;
   loading?: boolean;
+  overTitle?: React.ReactNode;
 }
 
 export const ForgotPasswordForm: React.FC<Props> = (props: Props) => {
@@ -23,6 +25,7 @@ export const ForgotPasswordForm: React.FC<Props> = (props: Props) => {
   const {t} = useTranslation();
   return (
     <PlainLayoutNarrow>
+      {props.overTitle && <Box mb={2}>{props.overTitle}</Box>}
       <PlainLayoutTitle>{t('Reset password')}</PlainLayoutTitle>
       <Formik
         initialValues={initialValues}

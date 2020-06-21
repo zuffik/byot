@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {Input} from '../elementary/form/Input';
-import {useTranslation} from 'react-i18next';
+import {useTranslation} from '@byot-frontend/common/src/i18n/UseTranslation';
 import {Button} from '../elementary/form/Button';
 import {Form, Formik} from 'formik';
 import * as Yup from 'yup';

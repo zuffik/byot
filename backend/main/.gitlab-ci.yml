@@ -28,7 +28,7 @@ Build:
     - cd ../..
     - cd "$SCRIPTS_PATH"
     - yarn install
-    - yarn logo:generate:basic
+    - yarn logo:generate
     - cd ..
     - mv "$SCRIPTS_PATH"/out/raw/* "$PROJECT_PATH/views/assets/generated"
     - cd "$PROJECT_PATH"

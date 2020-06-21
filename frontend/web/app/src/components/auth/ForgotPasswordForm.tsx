@@ -1,5 +1,4 @@
 import * as React from 'react';
-import {makeStyles, Theme, WithStyles} from '@material-ui/core';
 import {Form, Formik} from 'formik';
 import {Input} from '@byot-frontend/web-common/src/components/elementary/form/Input';
 import {TFunction} from 'i18next';
@@ -14,16 +13,12 @@ const loginSchema = (t: TFunction) =>
     email: Yup.string().required(t('Enter email')).email(t('Enter valid email')),
   });
 
-interface Props extends Partial<WithStyles<typeof styles>> {
+interface Props {
   onSubmit: (email: string) => void;
   loading?: boolean;
 }
 
-const styles = (theme: Theme) => ({});
-const useStyles = makeStyles(styles);
-
 export const ForgotPasswordForm: React.FC<Props> = (props: Props) => {
-  const styles = useStyles(props);
   const initialValues = {email: ''};
   const {t} = useTranslation();
   return (

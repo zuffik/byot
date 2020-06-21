@@ -3,6 +3,7 @@ import {makeStyles, Theme} from '@material-ui/core';
 import {StyleRules} from '@material-ui/styles';
 import {Logo} from '../elementary/Logo';
 import {WithStyles} from '../../types/WithStyles';
+import {PlainLayoutFooter} from './PlainLayoutFooter';
 
 interface Props extends WithStyles<typeof styles> {
   children: React.ReactNode;
@@ -38,7 +39,7 @@ export const PlainLayout: React.FC<Props> = (props: Props) => {
         <Logo classes={{img: styles.logo}} />
       </div>
       {props.children}
-      <div />
+      <PlainLayoutFooter />
     </div>
   );
 };

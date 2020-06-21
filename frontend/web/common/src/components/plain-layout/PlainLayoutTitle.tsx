@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Box, Typography, WithStyles} from '@material-ui/core';
+import {Box, Typography} from '@material-ui/core';
 
 interface Props {
   children: React.ReactNode;

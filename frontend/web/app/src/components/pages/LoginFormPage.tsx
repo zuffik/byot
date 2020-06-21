@@ -6,7 +6,6 @@ import {ProcessActionExtractor} from '@byot-frontend/common/src/redux-system/pro
 import {UserLogin} from '@byot-frontend/common/src/shared/graphql/ts/types';
 import {WebAppState} from '../../redux/WebAppState';
 import {WebAuth} from '@byot-frontend/web-common/src/redux/process/auth/WebAuth';
-import {PlainLayout} from '@byot-frontend/web-common/src/components/plain-layout/PlainLayout';
 
 interface Props {}
 
@@ -15,10 +14,8 @@ export const LoginFormPage: React.FC<Props> = (props: Props) => {
   const onLogin = (credentials: UserLogin) => dispatch(ProcessActionExtractor.dispatch(WebAuth, credentials));
   const resource = useSelector((state: WebAppState) => state.auth);
   return (
-    <PlainLayout>
-      <LoginForm onLogin={onLogin} loading={resource.isProcessing}>
-        <LoginFormFooter />
-      </LoginForm>
-    </PlainLayout>
+    <LoginForm onLogin={onLogin} loading={resource.isProcessing}>
+      <LoginFormFooter />
+    </LoginForm>
   );
 };

@@ -4,7 +4,12 @@ import {render, RenderResult} from '@testing-library/react';
 
 jest.mock('react-router-dom', () => ({
   __esModule: true,
-  Router: (props: any) => <div data-testid="test-admin-route" />,
+  Route: (props: any) => (
+    <div data-testid="test-admin-route" data-path={props.path}>
+      {!props.exact && props.children}
+    </div>
+  ),
+  Redirect: (props: any) => <div data-testid="test-admin-redirect" />,
   Switch: (props: any) => <div data-testid="test-admin-switch">{props.children}</div>,
 }));
 
@@ -14,9 +19,13 @@ describe('BaseRouterLayout', function () {
   beforeEach(() => (component = render(<BaseRouterLayout />)));
 
   it('should contain <Switch/> and <Route/> component', () => {
-    expect(component.queryAllByTestId('test-admin-switch')).toHaveLength(1);
-    expect(component.queryAllByTestId('test-admin-route')).toHaveLength(0);
+    const adminRoutes = [];
+    adminRoutes.forEach(path => {
+      expect(
+        component.queryAllByTestId('test-admin-route').filter(e => e.dataset.path === path)
+      ).toHaveLength(1);
+    });
   });
 
-  it('should match snapshot', () => expect(component).toMatchSnapshot());
+  it('should match snapshot', () => expect(component.container).toMatchSnapshot());
 });

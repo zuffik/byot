@@ -1,12 +1,17 @@
 import * as React from 'react';
 import {BaseRouterLayout} from './BaseRouterLayout';
 import {render, RenderResult} from '@testing-library/react';
+import {Router} from '../../router/Router';
 
 jest.mock('react-router-dom', () => ({
   __esModule: true,
-  Route: (props: any) => <div data-testid="test-admin-route" />,
-  Redirect: (props: any) => <div data-testid="test-admin-redirect" />,
-  Switch: (props: any) => <div data-testid="test-admin-switch">{props.children}</div>,
+  Route: (props: any) => (
+    <div data-testid="test-app-route" data-path={props.path}>
+      {!props.exact && props.children}
+    </div>
+  ),
+  Redirect: (props: any) => <div data-testid="test-app-redirect" />,
+  Switch: (props: any) => <div data-testid="test-app-switch">{props.children}</div>,
 }));
 
 describe('BaseRouterLayout', function () {
@@ -15,10 +20,13 @@ describe('BaseRouterLayout', function () {
   beforeEach(() => (component = render(<BaseRouterLayout />)));
 
   it('should contain <Switch/> and <Route/> component', () => {
-    expect(component.queryAllByTestId('test-admin-switch')).toHaveLength(1);
-    expect(component.queryAllByTestId('test-admin-route')).toHaveLength(1);
-    expect(component.queryAllByTestId('test-admin-redirect')).toHaveLength(1);
+    const appRoutes = [Router.login.URI(), Router.register.URI(), Router.resetPassword.URI()];
+    appRoutes.forEach(path => {
+      expect(component.queryAllByTestId('test-app-route').filter(e => e.dataset.path === path)).toHaveLength(
+        1
+      );
+    });
   });
 
-  it('should match snapshot', () => expect(component).toMatchSnapshot());
+  it('should match snapshot', () => expect(component.container).toMatchSnapshot());
 });

@@ -1,84 +1,60 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BaseRouterLayout should match snapshot 1`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
-      <div
-        data-testid="test-admin-switch"
-      >
-        <div
-          data-testid="test-admin-route"
-        />
-        <div
-          data-testid="test-admin-redirect"
-        />
-      </div>
-    </div>
-  </body>,
-  "container": <div>
+<div>
+  <div
+    data-testid="test-app-switch"
+  >
     <div
-      data-testid="test-admin-switch"
+      data-path="/login,/sign-up,/reset-password"
+      data-testid="test-app-route"
     >
       <div
-        data-testid="test-admin-route"
-      />
-      <div
-        data-testid="test-admin-redirect"
-      />
+        class="makeStyles-root-9"
+      >
+        <div
+          class="makeStyles-header-10"
+        >
+          <div
+            class="MuiBox-root MuiBox-root-15 makeStyles-root-12 makeStyles-root-14"
+          >
+            <img
+              class="makeStyles-img-13 makeStyles-logo-11"
+              classes="[object Object]"
+              src="logo.svg"
+            />
+          </div>
+        </div>
+        <div
+          data-testid="test-app-switch"
+        >
+          <div
+            data-path="/login"
+            data-testid="test-app-route"
+          />
+          <div
+            data-path="/sign-up"
+            data-testid="test-app-route"
+          />
+          <div
+            data-path="/reset-password"
+            data-testid="test-app-route"
+          />
+        </div>
+        <div
+          class="MuiBox-root MuiBox-root-16"
+        >
+          <p
+            class="MuiTypography-root MuiTypography-body1"
+          >
+            All rights reserved to byoT
+          </p>
+        </div>
+      </div>
     </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+    <div
+      data-testid="test-app-redirect"
+    />
+  </div>
+</div>
 `;

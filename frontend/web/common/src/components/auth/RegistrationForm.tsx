@@ -2,7 +2,6 @@ import * as React from 'react';
 import {Box, FormHelperText, Grid, makeStyles, Theme, WithStyles} from '@material-ui/core';
 import {PlainLayoutNarrow} from '../plain-layout/PlainLayoutNarrow';
 import {PlainLayoutTitle} from '../plain-layout/PlainLayoutTitle';
-import {useTranslation} from '@byot-frontend/common/src/i18n/UseTranslation';
 import {Form, Formik} from 'formik';
 import {TFunction} from 'i18next';
 import * as Yup from 'yup';
@@ -11,6 +10,7 @@ import {Input} from '../elementary/form/Input';
 import {Button} from '../elementary/form/Button';
 import {IUserRegister} from '@byot-frontend/common/src/types/interfaces/IUserRegister';
 import {Checkbox} from '../elementary/form/Checkbox';
+import {useTranslation} from 'react-i18next';
 
 const registrationSchema = (t: TFunction, password: string) =>
   Yup.object().shape({

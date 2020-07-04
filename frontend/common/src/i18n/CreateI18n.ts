@@ -16,13 +16,13 @@ type DeepSameObject<T> = {
 type Resources<T> = {[K in Languages]: DeepSameObject<T>};
 
 export const createI18n = <T>(
-  data: DeepSameObject<Resources<T>>,
+  data?: DeepSameObject<Resources<T>>,
   provider: CurrentLanguageProvider = new FixedLanguageProvider(defaultLanguage)
 ): [i18next, Promise<any>] => {
   const resources: Resources<typeof en | T> = {
-    en: {...en, ...(data.en as object)},
-    sk: {...sk, ...(data.sk as object)},
-    cs: {...cs, ...(data.cs as object)},
+    en: {...en, ...(data?.en as object)},
+    sk: {...sk, ...(data?.sk as object)},
+    cs: {...cs, ...(data?.cs as object)},
   };
   const loader = i18n.use(initReactI18next).init({
     resources: _.mapValues(resources, translation => ({translation})),

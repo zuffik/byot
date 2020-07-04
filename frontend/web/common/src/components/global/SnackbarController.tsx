@@ -1,12 +1,10 @@
 import * as React from 'react';
-import {useSelector, useDispatch} from 'react-redux';
+import {useSelector} from 'react-redux';
 import {WebState} from '../../redux/WebState';
 import {SnackbarProvider, useSnackbar} from 'notistack';
-import {ProcessActionExtractor} from '@byot-frontend/common/src/redux-system/process/ProcessActionExtractor';
-import {WebAuth} from '../../redux/process/auth/WebAuth';
 import {makeStyles, Theme} from '@material-ui/core';
 import {WithStyles} from '../../types/WithStyles';
-import {useTranslation} from '@byot-frontend/common/src/i18n/UseTranslation';
+import {useTranslation} from 'react-i18next';
 
 interface Props extends WithStyles<typeof styles> {
   children?: React.ReactNode;

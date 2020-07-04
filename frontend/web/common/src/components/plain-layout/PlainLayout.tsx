@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {makeStyles, Theme} from '@material-ui/core';
-import {Logo} from '../elementary/Logo';
+import {Logo} from '../elementary/logo/Logo';
 import {WithStyles} from '../../types/WithStyles';
 import {PlainLayoutFooter} from './PlainLayoutFooter';
 

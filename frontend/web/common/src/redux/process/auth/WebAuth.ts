@@ -9,9 +9,6 @@ import {
 import {GraphQLResponse} from '@byot-frontend/common/src/redux-system/data-structures/responses/GraphQLResponse';
 import {Auth} from '@byot-frontend/common/src/shared/graphql/ts/types';
 import {frontendCommonWebStorage} from '../../../dom/FrontendCommonWebStorage';
-import {AsynchronousActionResponse} from '@byot-frontend/common/src/redux-system/process/ProcessActions';
-import {FrontendCommonState} from '@byot-frontend/common/src/redux/FrontendCommonState';
-import {ErrorSnackbar} from '@byot-frontend/common/src/types/app/ErrorSnackbar';
 
 export type Request = LoginRequest;
 export type Response = LoginResponse;
@@ -24,19 +21,5 @@ export class WebAuth extends Login {
       frontendCommonWebStorage.setItem('auth', result.data!);
     }
     return result;
-  }
-
-  handleResponse(
-    action: Action<AsynchronousActionResponse<Request, Response>>,
-    nextState: Readonly<FrontendCommonState>,
-    prevState: Readonly<FrontendCommonState>
-  ): Readonly<FrontendCommonState> {
-    if (!action.payload.response.success) {
-      return {
-        ...nextState,
-        snackbar: new ErrorSnackbar('Error while trying to login, please, check username or password'),
-      };
-    }
-    return nextState;
   }
 }

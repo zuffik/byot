@@ -1,7 +1,7 @@
 module.exports = {
   roots: [
     '<rootDir>/src',
-    '<rootDir>/test'
+    // todo when created add '<rootDir>/test'
   ],
   transform: {
     '^.+\\.tsx?$': 'ts-jest'

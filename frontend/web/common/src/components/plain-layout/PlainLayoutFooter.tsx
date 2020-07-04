@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {Box, makeStyles, Theme, Typography} from '@material-ui/core';
-import {useTranslation} from '@byot-frontend/common/src/i18n/UseTranslation';
 import {WithStyles} from '../../types/WithStyles';
+import {useTranslation} from 'react-i18next';
 
 interface Props extends WithStyles<typeof styles> {}
 

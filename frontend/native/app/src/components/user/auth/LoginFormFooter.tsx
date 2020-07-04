@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Button} from '../../elements/button/Button';
-import {useTranslation} from '@byot-frontend/common/src/i18n/UseTranslation';
+import {useTranslation} from 'react-i18next';
 
 interface Props {}
 

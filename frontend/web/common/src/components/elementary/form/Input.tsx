@@ -8,9 +8,11 @@ type Props = Omit<InputBaseProps<InputProps>, 'component'> & Partial<WithStyles<
 const styles = (theme: Theme) => ({
   inputRoot: {
     color: theme.palette.grey[500],
+    '&:before': {
+      borderBottomColor: theme.palette.grey[300],
+    },
   },
   input: {
-    borderBottomColor: theme.palette.grey[400],
     paddingLeft: theme.spacing(1 / 2),
     paddingRight: theme.spacing(1 / 2),
   },

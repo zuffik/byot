@@ -1,5 +1,5 @@
 const override = require('../../common/overrides/ConfigOverrides');
-const fs = require('fs');
+
 module.exports = {
   stories: ['../stories/**/*.stories.tsx'],
   addons: [

@@ -1,9 +1,9 @@
 import * as React from 'react';
 import {makeStyles, Button, Theme, Typography} from '@material-ui/core';
 import {KeyboardBackspace} from '@material-ui/icons';
-import {useTranslation} from '@byot-frontend/common/src/i18n/UseTranslation';
 import {WithStyles} from '../../../types/WithStyles';
 import {useHistory} from 'react-router';
+import {useTranslation} from 'react-i18next';
 
 interface Props extends WithStyles<typeof styles> {
   color?: 'primary' | 'secondary';
@@ -20,7 +20,7 @@ const styles = (theme: Theme) => ({
     marginRight: theme.spacing(1),
   },
   label: {
-    textTransform: 'none',
+    textTransform: 'none' as 'none',
   },
 });
 const useStyles = makeStyles(styles);

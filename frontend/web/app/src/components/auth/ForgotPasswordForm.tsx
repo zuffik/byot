@@ -7,7 +7,7 @@ import {PlainLayoutNarrow} from '@byot-frontend/web-common/src/components/plain-
 import {PlainLayoutTitle} from '@byot-frontend/web-common/src/components/plain-layout/PlainLayoutTitle';
 import {Button} from '@byot-frontend/web-common/src/components/elementary/form/Button';
 import {Box} from '@material-ui/core';
-import {useTranslation} from '@byot-frontend/common/src/i18n/UseTranslation';
+import {useTranslation} from 'react-i18next';
 
 const loginSchema = (t: TFunction) =>
   Yup.object().shape({

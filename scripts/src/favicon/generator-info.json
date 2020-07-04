@@ -1,5 +1,5 @@
 {
-  "masterPicture": "./out/raw/byoT-favicon-without-bg.png",
+  "masterPicture": "./out/raw/converted/favicon-no-bg.png",
   "iconsPath": "%PUBLIC_URL%/",
   "design": {
     "ios": {

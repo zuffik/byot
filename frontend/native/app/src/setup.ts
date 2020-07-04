@@ -4,8 +4,9 @@ import {NativeAppState} from './redux/NativeAppState';
 import {NativeAppLanguageProvider} from './i18n/providers/NativeAppLanguageProvider';
 import {dark, light} from '@eva-design/material';
 import {kittenTheme} from './theme/Custom';
+import {NativeAuth} from './redux/process/NativeAuth';
 export {default as baseTheme} from '@byot/common/theme/theme';
-
+new NativeAuth();
 export const languageProvider = new NativeAppLanguageProvider();
 export const [i18n, loader] = createI18n(
   {

@@ -12,9 +12,16 @@ export const logoGenerate = (
   strokeWidth = 64,
   offset: number = 16,
   height: number = 320,
-  full: boolean = true,
-  bg: boolean = false
-): string => {
+  {
+    full = true,
+    bg = false,
+    roundedBg = true,
+  }: {
+    full?: boolean;
+    bg?: boolean;
+    roundedBg?: boolean;
+  }
+): Svg => {
   type Variants = 'full' | 'square';
   const variants: {
     [V in Variants]: { new (width: number, height: number): Variant };
@@ -78,15 +85,16 @@ export const logoGenerate = (
     stroke: `url(#${gradient.attr('id')})`,
     id: 'root',
   });
-  if (!full) {
+  if (!full && bg) {
     // noinspection JSSuspiciousNameCombination
-    root.add(
-      svg
-        .rect(paths.general.height, paths.general.height)
-        .radius(paths.general.borderRadius)
-        .fill(bg ? theme.colors.light : 'none')
-        .stroke('none')
-    );
+    let background = svg
+      .rect(paths.general.height, paths.general.height)
+      .fill(bg ? theme.colors.light : 'none')
+      .stroke('none');
+    if (roundedBg) {
+      background = background.radius(paths.general.borderRadius);
+    }
+    root.add(background);
   }
 
   const Variant = full ? variants.full : variants.square;
@@ -94,5 +102,5 @@ export const logoGenerate = (
   variant.generate(svg, root, paths, baseAttrs, bg);
 
   svg.add(root);
-  return svg.svg();
+  return svg;
 };

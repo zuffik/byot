@@ -19,7 +19,7 @@ const langs = {
   'sk-SK': 'Slovak',
   'cs-CZ': 'Czech',
 }
-const [i18n] = createI18n(_.mapValues(langs, () => ({})), new FixedLanguageProvider('sk-SK'));
+const [i18n] = createI18n(_.mapValues(langs, () => ({})), new FixedLanguageProvider('sk'));
 
 addDecorator(withKnobs);
 addDecorator(story => <Provider store={mockStore()}>{story()}</Provider>);

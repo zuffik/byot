@@ -9,12 +9,11 @@ import {ApplicationProvider, Layout} from '@ui-kitten/components';
 import {NativeAppState} from '@byot-frontend/native-app/src/redux/NativeAppState';
 import {theme} from '@byot-frontend/native-app/src/setup';
 import mapping from '@byot-frontend/native-app/mapping';
-import RNBootSplash from 'react-native-bootsplash';
+import SplashScreen from 'react-native-splash-screen'
 
 import './rn-addons';
 
-RNBootSplash.hide({duration: 100});
-
+SplashScreen.hide();
 const mockStore = configureStore([]);
 addDecorator(withKnobs);
 addDecorator(storyFn => {

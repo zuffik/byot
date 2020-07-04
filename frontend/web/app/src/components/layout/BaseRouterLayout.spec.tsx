@@ -20,7 +20,7 @@ describe('BaseRouterLayout', function () {
   beforeEach(() => (component = render(<BaseRouterLayout />)));
 
   it('should contain <Switch/> and <Route/> component', () => {
-    const appRoutes = [Router.login.URI(), Router.register.URI(), Router.resetPassword.URI()];
+    const appRoutes = [Router.URI(), Router.login.URI(), Router.register.URI(), Router.resetPassword.URI()];
     appRoutes.forEach(path => {
       expect(component.queryAllByTestId('test-app-route').filter(e => e.dataset.path === path)).toHaveLength(
         1

@@ -55,6 +55,16 @@ export const createTheme = <T extends ThemeOptions>(options?: T): Theme =>
             white: theme.colors.light,
           },
           gradient: theme.colors.gradient,
+          grey: {
+            [100]: '#fafafa',
+          },
+        },
+        overrides: {
+          MuiPopover: {
+            paper: {
+              borderRadius: 4,
+            },
+          },
         },
       } as ThemeOptions,
       options

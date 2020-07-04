@@ -13,5 +13,10 @@ export const [i18n] = createI18n(
   },
   languageProvider
 );
-export const theme = createTheme();
+export const theme = (dark?: boolean) =>
+  createTheme({
+    palette: {
+      type: dark ? 'dark' : 'light',
+    },
+  });
 export const reduxStore = storeFactory(() => new WebAppState());

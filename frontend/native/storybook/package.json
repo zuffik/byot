@@ -6,16 +6,13 @@
   "dependencies": {
     "@byot-frontend/native-app": "1.0.0",
     "@eva-design/eva": "2.0.0",
-    "@storybook/addon-actions": "5.3.19",
-    "@storybook/addon-knobs": "5.3.19",
-    "@storybook/addon-ondevice-actions": "5.3.19",
     "@ui-kitten/components": "5.0.0",
     "react-native-svg": "12.1.0",
     "react-redux": "7.2.0",
     "redux": "4.0.5"
   },
   "devDependencies": {
-    "@babel/core": "7.10.2",
+    "@babel/core": "7.10.3",
     "@storybook/addon-actions": "5.3.19",
     "@storybook/addon-knobs": "5.3.19",
     "@storybook/addon-links": "5.3.19",

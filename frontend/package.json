@@ -2,14 +2,20 @@
   "name": "@byot/frontend",
   "version": "1.0.0",
   "private": true,
-  "workspaces": [
-    "web/admin",
-    "web/app",
-    "web/common",
-    "web/landing",
-    "web/storybook",
-    "native/app",
-    "native/storybook",
-    "common"
-  ]
+  "workspaces": {
+    "packages": [
+      "web/admin",
+      "web/app",
+      "web/common",
+      "web/landing",
+      "web/storybook",
+      "native/app",
+      "native/storybook",
+      "common"
+    ],
+    "nohoist": [
+      "**/@bam.tech/react-native-make",
+      "**/@bam.tech/react-native-make/**"
+    ]
+  }
 }

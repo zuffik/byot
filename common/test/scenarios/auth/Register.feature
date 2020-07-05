@@ -20,4 +20,4 @@ Feature: Register user
     | John      |          |                      | {env.APP_DEMO_USER_PASS} | {env.APP_DEMO_USER_PASS} | does     | unsuccessful |
     | John      |          | john.doe@example.com | {env.APP_DEMO_USER_PASS} | not matching pass        | does     | unsuccessful |
     | John      | Doe      | john.doe@example.com | abc                      | abc                      | does     | unsuccessful |
-    | John      | Doe      | john.doe@example.com | {env.APP_DEMO_USER_PASS} | {env.APP_DEMO_USER_PASS} | does not | unsuccessful   |
+    | John      | Doe      | john.doe@example.com | {env.APP_DEMO_USER_PASS} | {env.APP_DEMO_USER_PASS} | does not | unsuccessful |

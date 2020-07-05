@@ -13,6 +13,7 @@
   "devDependencies": {
     "@svgdotjs/svg.js": "3.0.16",
     "@types/chalk": "2.2.0",
+    "@types/image-size": "0.8.0",
     "@types/node": "13.13.5",
     "@types/pngjs": "3.4.2",
     "@types/rimraf": "3.0.0",
@@ -22,6 +23,7 @@
     "cli-real-favicon": "0.0.8",
     "convert-svg-to-png": "0.5.0",
     "dotize": "0.3.0",
+    "image-size": "0.8.3",
     "pngjs": "5.0.0",
     "prettier": "2.0.5",
     "rimraf": "3.0.2",

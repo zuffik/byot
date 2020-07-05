@@ -9,6 +9,7 @@ import { generateFullLogo } from '../../logo/generators/GenerateFullLogo';
 import { createSvgFile } from '../../helpers/CreateSvgFile';
 import { createDirectories } from '../../helpers/CreateDirectories';
 import chalk from 'chalk';
+import { generateMetaData } from './GenerateMetaData';
 
 async function main(args: Args) {
   const variants: ('favicon' | 'native')[] = ['favicon', 'native'];
@@ -19,6 +20,7 @@ async function main(args: Args) {
         generated: path.join(workingDirectory, 'raw', 'generated'),
         optimized: path.join(workingDirectory, 'raw', 'optimized'),
         converted: path.join(workingDirectory, 'raw', 'converted'),
+        metadata: path.join(workingDirectory, 'raw', 'metadata'),
       },
     },
     ...variants.map((wd) => ({ [wd]: path.join(workingDirectory, wd) }))
@@ -54,6 +56,9 @@ async function main(args: Args) {
   const PNGs = await Promise.all(
     svgToPng(raw, workingSubdirectories.raw.converted)
   );
+  const metas = await Promise.all(
+    generateMetaData(raw, workingSubdirectories.raw.metadata)
+  );
   console.log(chalk.green.bold('Raw:'));
   raw.forEach((f) =>
     console.log(chalk.gray('.' + f.replace(args.workingDirectory, '')))
@@ -66,6 +71,11 @@ async function main(args: Args) {
   console.log();
   console.log(chalk.green.bold('Converted:'));
   PNGs.forEach((f) =>
+    console.log(chalk.gray('.' + f.replace(args.workingDirectory, '')))
+  );
+  console.log();
+  console.log(chalk.green.bold('Meta data:'));
+  metas.forEach((f) =>
     console.log(chalk.gray('.' + f.replace(args.workingDirectory, '')))
   );
   console.log();

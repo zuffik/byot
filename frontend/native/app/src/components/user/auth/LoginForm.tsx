@@ -68,6 +68,7 @@ export const LoginForm: React.FC<Props> = (props: Props) => {
                 }
                 testID={testIDUsernameEmail}
                 accessibilityLabel={testIDUsernameEmail}
+                autoCapitalize="none"
               />
               <TextField
                 placeholder={t('Enter password')}
@@ -80,6 +81,7 @@ export const LoginForm: React.FC<Props> = (props: Props) => {
                 helperText={touched.password && errors.password ? t('Enter password') : undefined}
                 testID={testIDPassword}
                 accessibilityLabel={testIDPassword}
+                autoCapitalize="none"
               />
               <Button onPress={handleSubmit} color="gradient">
                 {t('Login')!}

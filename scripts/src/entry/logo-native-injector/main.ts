@@ -12,7 +12,34 @@ async function main(args: Args) {
     new Promise((resolve, reject) => {
       const proc = spawn(
         rnCLI,
-        ['set-icon', '--path', path.join(icons, 'native-icon.png')],
+        [
+          'set-icon',
+          '--path',
+          path.join(icons, 'native-icon-android.png'),
+          '--platform',
+          'android',
+        ],
+        {
+          cwd: rnProject,
+        }
+      );
+      proc.on('error', (e) => reject(e));
+      proc.on('exit', (code) => {
+        if (code == 0) {
+          resolve();
+        }
+      });
+    }),
+    new Promise((resolve, reject) => {
+      const proc = spawn(
+        rnCLI,
+        [
+          'set-icon',
+          '--path',
+          path.join(icons, 'native-icon-ios.png'),
+          '--platform',
+          'ios',
+        ],
         {
           cwd: rnProject,
         }

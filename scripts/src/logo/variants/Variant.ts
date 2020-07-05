@@ -12,6 +12,6 @@ export abstract class Variant {
     root: G,
     paths: CalculatedPaths,
     baseAttrs?: object,
-    withBg?: boolean
+    options?: object
   ): void;
 }

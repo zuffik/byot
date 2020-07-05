@@ -11,7 +11,10 @@ export const generateNativeLogo: GenerateVariant = (
     name: 'native-splash',
   },
   {
-    svg: logoGenerate(strokeWidth, offset, height, { full: false }),
+    svg: logoGenerate(strokeWidth, offset, height, {
+      full: false,
+      center: true,
+    }),
     name: 'native-icon',
   },
 ];

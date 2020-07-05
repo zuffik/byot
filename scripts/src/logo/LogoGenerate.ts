@@ -16,10 +16,12 @@ export const logoGenerate = (
     full = true,
     bg = false,
     roundedBg = true,
+    center = false,
   }: {
     full?: boolean;
     bg?: boolean;
     roundedBg?: boolean;
+    center?: boolean;
   }
 ): Svg => {
   type Variants = 'full' | 'square';
@@ -99,7 +101,10 @@ export const logoGenerate = (
 
   const Variant = full ? variants.full : variants.square;
   const variant = new Variant(paths.general.width, paths.general.height);
-  variant.generate(svg, root, paths, baseAttrs, bg);
+  variant.generate(svg, root, paths, baseAttrs, {
+    withBg: bg,
+    center,
+  });
 
   svg.add(root);
   return svg;

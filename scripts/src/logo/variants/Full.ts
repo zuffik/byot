@@ -12,7 +12,11 @@ export class Full extends Variant {
     root: G,
     paths: CalculatedPaths,
     baseAttrs: object = {},
-    withBg: boolean = false
+    {
+      withBg = false,
+    }: {
+      withBg?: boolean;
+    } = {}
   ): void {
     root.add(svg.line([paths.b.line.start, paths.b.line.end]).attr(baseAttrs));
     const { arc } = paths.b;

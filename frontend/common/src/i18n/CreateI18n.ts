@@ -1,5 +1,5 @@
 import {Languages} from './Possibilities';
-import {default as i18n, i18n as i18next} from 'i18next';
+import {default as i18n, i18n as i18next, InitOptions} from 'i18next';
 import {initReactI18next} from 'react-i18next';
 import en from './resources/en';
 import sk from './resources/sk';
@@ -17,7 +17,8 @@ type Resources<T> = {[K in Languages]: DeepSameObject<T>};
 
 export const createI18n = <T>(
   data?: DeepSameObject<Resources<T>>,
-  provider: CurrentLanguageProvider = new FixedLanguageProvider(defaultLanguage)
+  provider: CurrentLanguageProvider = new FixedLanguageProvider(defaultLanguage),
+  options?: Partial<InitOptions>
 ): [i18next, Promise<any>] => {
   const resources: Resources<typeof en | T> = {
     en: {...en, ...(data?.en as object)},
@@ -32,8 +33,7 @@ export const createI18n = <T>(
       escapeValue: false,
     },
     fallbackLng: 'en',
-    // todo another way
-    debug: process.env.NODE_ENV === 'development',
+    ...options,
   });
 
   return [i18n, loader];

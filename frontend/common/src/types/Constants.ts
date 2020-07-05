@@ -1,4 +1,9 @@
+import logoMetadata from '../static/meta/full-svg.json';
+
 export class Constants {
-  // todo make probably as json? and generate during logo generation
-  public static readonly LOGO_SIZE = {width: 675, height: 480};
+  public static readonly LOGO_SIZE: {
+    height: number;
+    width: number;
+    type: string;
+  } = logoMetadata;
 }

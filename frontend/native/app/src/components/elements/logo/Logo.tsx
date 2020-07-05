@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {Image, ImageProps, LayoutRectangle, StyleSheet} from 'react-native';
-import {Constants} from '../../../types/Constants';
+import {Constants} from '@byot-frontend/common/src/types/Constants';
 
 interface Props extends Omit<ImageProps, 'source'> {
   size?: number;

@@ -5,7 +5,15 @@ import {createLogger} from 'redux-logger';
 import createSagaMiddleware from 'redux-saga';
 import {rootSaga} from '../saga/AsyncSaga';
 
-export const storeFactory = <S>(createState: () => S, group: string = 'default'): Store<S, AnyAction> => {
+export const storeFactory = <S>(
+  createState: () => S,
+  group: string = 'default',
+  {
+    useLogger = false,
+  }: {
+    useLogger?: boolean;
+  } = {}
+): Store<S, AnyAction> => {
   const reducer = new Reducer<S>(group);
   const sagaMiddleware = createSagaMiddleware();
 
@@ -15,8 +23,7 @@ export const storeFactory = <S>(createState: () => S, group: string = 'default')
     collapsed: (getState, action, logEntry) => !logEntry!.error,
   });
 
-  // todo make up another way
-  if (process.env.NODE_ENV === 'development') {
+  if (useLogger) {
     middlewares.push(logger);
   }
 

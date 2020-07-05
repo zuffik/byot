@@ -4,7 +4,6 @@ import {LandingPageState} from './redux/LandingPageState';
 import {UrlLanguageProvider} from '@byot-frontend/web-common/src/i18n/providers/UrlLanguageProvider';
 import {createI18n} from '@byot-frontend/common/src/i18n/CreateI18n';
 import {WebAuth} from '@byot-frontend/web-common/src/redux/process/auth/WebAuth';
-import {useTranslationFactory} from '@byot-frontend/common/src/i18n/UseTranslation';
 
 // todo remove when some actions are in project or resolve
 new WebAuth();
@@ -15,7 +14,10 @@ export const [i18n] = createI18n(
     sk: {},
     cs: {},
   },
-  languageProvider
+  languageProvider,
+  {
+    debug: process.env.NODE_ENV === 'development',
+  }
 );
 export const theme = (dark?: boolean) =>
   createTheme({
@@ -23,5 +25,7 @@ export const theme = (dark?: boolean) =>
       type: dark ? 'dark' : 'light',
     },
   });
-export const useTranslation = useTranslationFactory(i18n);
-export const reduxStore = storeFactory(() => new LandingPageState());
+
+export const reduxStore = storeFactory(() => new LandingPageState(), 'default', {
+  useLogger: process.env.NODE_ENV === 'development',
+});

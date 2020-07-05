@@ -5,14 +5,12 @@ import glob from 'glob';
 import { spawn } from 'child_process';
 
 async function main(args: Args) {
-  const project = path.join(
-    process.cwd(),
-    '..',
-    'frontend',
-    'web',
-    args.project,
-    'public'
-  );
+  const frontend = path.join(process.cwd(), '..', 'frontend');
+  const root = path.join(frontend, 'web', args.project);
+  const common = path.join(frontend, 'common');
+  const metaPath = path.join(common, 'src', 'static', 'meta');
+  const project = path.join(root, 'public');
+  const meta = path.join(args.workingDirectory, 'raw', 'metadata');
   const faviconDir = path.join(args.workingDirectory, 'favicon');
   const bin = path.join(process.cwd(), 'node_modules', '.bin');
   const files = await new Promise<string[]>((resolve, reject) => {
@@ -43,6 +41,16 @@ async function main(args: Args) {
         reject(code);
       }
     });
+  });
+  await new Promise((resolve) => {
+    if (!fs.existsSync(metaPath)) {
+      fs.mkdirSync(metaPath, { recursive: true });
+    }
+    fs.copyFileSync(
+      path.join(meta, 'full-svg.json'),
+      path.join(metaPath, 'full-svg.json')
+    );
+    resolve();
   });
 }
 

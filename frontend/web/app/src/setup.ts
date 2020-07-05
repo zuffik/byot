@@ -11,7 +11,10 @@ export const [i18n] = createI18n(
     sk: {},
     cs: {},
   },
-  languageProvider
+  languageProvider,
+  {
+    debug: process.env.NODE_ENV === 'development',
+  }
 );
 export const theme = (dark?: boolean) =>
   createTheme({
@@ -19,4 +22,6 @@ export const theme = (dark?: boolean) =>
       type: dark ? 'dark' : 'light',
     },
   });
-export const reduxStore = storeFactory(() => new WebAppState());
+export const reduxStore = storeFactory(() => new WebAppState(), 'default', {
+  useLogger: process.env.NODE_ENV === 'development',
+});

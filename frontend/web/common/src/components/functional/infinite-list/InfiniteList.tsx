@@ -23,6 +23,7 @@ export const InfiniteList = <T extends any>(props: Props<T>) => {
   const missingItems = Math.min(step, props.resource.totalCount - props.resource.data.length);
   return (
     <InfiniteScroll
+      {...props}
       dataLength={props.resource.data.length}
       hasMore={props.resource.totalCount > props.resource.data.length}
       next={next}

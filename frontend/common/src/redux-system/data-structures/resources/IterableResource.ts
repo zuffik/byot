@@ -2,8 +2,20 @@ import {EntityResource} from './EntityResource';
 import {ResourceState} from './Resource';
 
 export class IterableResource<T> extends EntityResource<T[]> {
-  constructor(defaultData: T[] = [], state: ResourceState = ResourceState.IDLE) {
+  public totalCount: number;
+
+  constructor(
+    defaultData: T[] = [],
+    {
+      state = ResourceState.IDLE,
+      totalCount = defaultData.length,
+    }: {
+      state?: ResourceState;
+      totalCount?: number;
+    } = {}
+  ) {
     super(defaultData, state);
+    this.totalCount = totalCount;
   }
 
   get hasData(): boolean {

@@ -1,9 +1,10 @@
 import * as React from 'react';
 import {makeStyles, Theme, Typography} from '@material-ui/core';
+import {CSSProperties} from '@material-ui/styles';
 import {ITraining} from '@byot-frontend/common/src/types/interfaces/ITraining';
 import {useTranslation} from 'react-i18next';
 import {WithStyles} from '@byot-frontend/web-common/src/types/WithStyles';
-import * as moment from 'moment';
+import moment from 'moment';
 import {Link} from 'react-router-dom';
 import {TrainingListItemImagePlaceholder} from './TrainingListItemImagePlaceholder';
 import {DateTimeTypography} from '../../elements/typography/DateTimeTypography';
@@ -19,7 +20,7 @@ const styles = (theme: Theme) => ({
     whiteSpace: 'nowrap',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
-  },
+  } as CSSProperties,
   textRoot: {
     margin: 0,
   },

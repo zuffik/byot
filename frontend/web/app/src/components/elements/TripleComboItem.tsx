@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {
+  BoxProps,
   ListItem as ListItemBase,
-  ListItemAvatar,
   ListItemProps,
   ListItemText,
   makeStyles,
@@ -10,19 +10,20 @@ import {
 import {WithStyles} from '@byot-frontend/web-common/src/types/WithStyles';
 import {Patch} from '@byot-frontend/web-common/src/components/elementary/patch/Patch';
 
-type Props = WithStyles<typeof styles> &
+type Props<P> = WithStyles<typeof styles> &
   ListItemProps & {
     title?: React.ReactNode;
     image?: string;
     imagePlaceholder?: boolean | React.ReactNode;
     description?: React.ReactNode;
-  };
+    component?: React.ComponentType<P>;
+  } & P;
 
 const styles = (theme: Theme) => ({
   root: {
     padding: theme.spacing(2),
   },
-  image: (props: Props) => ({
+  image: (props: Props<any>) => ({
     borderRadius: theme.shape.borderRadius,
     width: theme.spacing(8),
     height: theme.spacing(8),
@@ -40,7 +41,7 @@ const styles = (theme: Theme) => ({
 });
 const useStyles = makeStyles(styles);
 
-export const TripleComboItem: React.FC<Props> = (props: Props) => {
+export const TripleComboItem = <P extends object = object>(props: Props<P>) => {
   const styles = useStyles(props);
   const {title, description, imagePlaceholder, image, ...baseProps} = props;
   return (

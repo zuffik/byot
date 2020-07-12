@@ -9,7 +9,9 @@ async function main(args: Args) {
   const root = path.join(frontend, 'web', args.project);
   const common = path.join(frontend, 'common');
   const metaPath = path.join(common, 'src', 'static', 'meta');
+  const commonStaticPath = path.join(common, 'src', 'static', 'img');
   const project = path.join(root, 'public');
+  const raw = path.join(args.workingDirectory, 'raw', 'optimized');
   const meta = path.join(args.workingDirectory, 'raw', 'metadata');
   const faviconDir = path.join(args.workingDirectory, 'favicon');
   const bin = path.join(process.cwd(), 'node_modules', '.bin');
@@ -42,16 +44,21 @@ async function main(args: Args) {
       }
     });
   });
-  await new Promise((resolve) => {
-    if (!fs.existsSync(metaPath)) {
-      fs.mkdirSync(metaPath, { recursive: true });
-    }
-    fs.copyFileSync(
-      path.join(meta, 'full-svg.json'),
-      path.join(metaPath, 'full-svg.json')
-    );
-    resolve();
-  });
+  if (!fs.existsSync(metaPath)) {
+    fs.mkdirSync(metaPath, { recursive: true });
+  }
+  fs.copyFileSync(
+    path.join(meta, 'full-svg.json'),
+    path.join(metaPath, 'full-svg.json')
+  );
+  if (!fs.existsSync(metaPath)) {
+    fs.mkdirSync(metaPath, { recursive: true });
+  }
+  const commonLogo = path.join(commonStaticPath, 'logo.svg');
+  if (fs.existsSync(commonLogo)) {
+    fs.unlinkSync(commonLogo);
+  }
+  fs.copyFileSync(path.join(raw, 'full.svg'), commonLogo);
 }
 
 if (require.main === module) {

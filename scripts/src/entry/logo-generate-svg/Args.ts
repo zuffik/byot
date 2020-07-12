@@ -43,6 +43,19 @@ export const args = argv
       alias: 'h',
       type: 'boolean',
     },
+    gradient: {
+      alias: 'g',
+      type: 'boolean',
+      default: true,
+      description: 'Generate using main gradient',
+    },
+    color: {
+      alias: 'c',
+      type: 'string',
+      description:
+        'If generating logo without gradient, this color will be used for entire logo (this can be either color or "primary", "secondary)"',
+      default: 'primary',
+    },
   }).argv;
 
 export type Args = typeof args;

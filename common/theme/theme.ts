@@ -1,9 +1,9 @@
 const theme = {
   colors: {
-    primary: '#00c6ff',
-    secondary: '#0072ff',
+    secondary: '#0097ff',
+    primary: '#0072ff',
     light: '#fff',
-    dark: 'rgb(56, 56, 56)',
+    dark: '#304156',
     gradient: {
       middle: '#0097ff',
       contrast: '#FFF',

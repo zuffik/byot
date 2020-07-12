@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "logo:generate": "ts-node ./src/entry/logo-generate-svg/main.ts -S 56 -O 8 -p",
+    "logo:generate": "ts-node ./src/entry/logo-generate-svg/main.ts -S 56 -O 8 -p -g=false",
     "logo:native:generate": "ts-node ./src/entry/logo-native-generator/main.ts",
     "logo:native:inject": "ts-node ./src/entry/logo-native-injector/main.ts",
     "logo:favicon:generate": "ts-node ./src/entry/logo-favicon-generator/main.ts",

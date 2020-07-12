@@ -1,3 +1,9 @@
+/**
+ * Plural keys
+ * 0 - singular
+ * 1 - 2,3,4
+ * 2 - 0 and >5
+ */
 export default {
   'Login': 'Přihlášení',
   'Username or email': 'Použivatelské jméno nebo email',
@@ -26,4 +32,11 @@ export default {
   'Back': 'Zpět',
   'Error while trying to login, please, check username or password':
     'Nastala chyba při přihlašovaní, skontrolujte, prosím, zadané údaje',
+  'Log out': 'Odhlásit se',
+  'training_0': 'trénink',
+  'training_1': 'tréninky',
+  'training_2': 'tréninků',
+  'video_0': 'video',
+  'video_1': 'videa',
+  'video_2': 'videí',
 };

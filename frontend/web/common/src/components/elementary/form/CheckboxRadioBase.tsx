@@ -1,7 +1,7 @@
 import * as React from 'react';
-import {FormControlLabel, FormControlLabelProps, makeStyles, Theme, WithStyles} from '@material-ui/core';
+import {FormControlLabel, FormControlLabelProps, makeStyles, Theme, Typography} from '@material-ui/core';
 import {ClassesObject, CombineClasses} from '../../../types/CombineClasses';
-import {InputLabel} from './InputLabel';
+import {WithStyles} from '../../../types/WithStyles';
 
 export type Props<T extends ClassesObject<C>, C = any> = T &
   CombineClasses<WithStyles<typeof styles>, T> & {
@@ -10,11 +10,7 @@ export type Props<T extends ClassesObject<C>, C = any> = T &
     FormControlLabelProps?: Omit<FormControlLabelProps, 'control' | 'label'>;
   };
 
-const styles = (theme: Theme) => ({
-  label: {
-    marginTop: theme.spacing(1 / 4),
-  },
-});
+const styles = (theme: Theme) => ({});
 const useStyles = makeStyles(styles);
 
 export const CheckboxRadioBase = <T extends ClassesObject<C>, C = any>(props: Props<T, C>) => {
@@ -26,7 +22,7 @@ export const CheckboxRadioBase = <T extends ClassesObject<C>, C = any>(props: Pr
       control={<props.component {...(radioProps as any)} />}
       label={
         ['string', 'number'].includes(typeof props.label) ? (
-          <InputLabel classes={{root: styles.label}}>{props.label}</InputLabel>
+          <Typography>{props.label}</Typography>
         ) : (
           props.label
         )

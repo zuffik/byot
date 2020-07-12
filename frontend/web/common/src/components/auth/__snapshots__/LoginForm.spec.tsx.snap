@@ -6,10 +6,10 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="makeStyles-root-14"
+        class="makeStyles-root-9"
       >
         <div
-          class="MuiBox-root MuiBox-root-15"
+          class="MuiBox-root MuiBox-root-10"
         >
           <h3
             class="MuiTypography-root MuiTypography-h3"
@@ -22,141 +22,159 @@ Object {
           data-testid="common-auth-login-form-form"
         >
           <div
-            class="makeStyles-root-18"
+            class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2"
           >
-            <label
-              class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-19 makeStyles-label-21 MuiInputLabel-animated"
-            >
-              Username or email
-            </label>
             <div
-              class="MuiInputBase-root MuiInput-root makeStyles-inputRoot-16 MuiInput-underline MuiInputBase-colorSecondary MuiInput-colorSecondary MuiInputBase-fullWidth MuiInput-fullWidth"
-              data-testid="common-auth-login-form-username"
-              label="Username or email"
-            >
-              <input
-                class="MuiInputBase-input MuiInput-input makeStyles-input-17"
-                name="userNameOrEmail"
-                type="text"
-                value="username"
-              />
-            </div>
-            <div
-              class="MuiCollapse-container MuiCollapse-hidden"
-              style="min-height: 0px;"
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
             >
               <div
-                class="MuiCollapse-wrapper"
+                class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+                data-testid="common-auth-login-form-username"
               >
-                <div
-                  class="MuiCollapse-wrapperInner"
+                <label
+                  class="MuiFormLabel-root MuiFormLabel-colorSecondary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled"
+                  data-shrink="true"
                 >
-                  <p
-                    class="MuiFormHelperText-root makeStyles-errorText-20 Mui-error"
-                  >
-                    <span>
-                      ​
-                    </span>
-                  </p>
+                  Username or email
+                </label>
+                <div
+                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-11 MuiInputBase-colorSecondary MuiFilledInput-colorSecondary MuiInputBase-fullWidth MuiInputBase-formControl"
+                >
+                  <input
+                    aria-invalid="false"
+                    class="MuiInputBase-input MuiFilledInput-input"
+                    name="userNameOrEmail"
+                    type="text"
+                    value="username"
+                  />
                 </div>
               </div>
+              <div
+                class="MuiCollapse-container MuiCollapse-hidden"
+                style="min-height: 0px;"
+              >
+                <div
+                  class="MuiCollapse-wrapper"
+                >
+                  <div
+                    class="MuiCollapse-wrapperInner"
+                  >
+                    <p
+                      class="MuiFormHelperText-root MuiFormHelperText-contained"
+                    >
+                      <span>
+                        ​
+                      </span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+            >
+              <div
+                class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+                data-testid="common-auth-login-form-password"
+              >
+                <label
+                  class="MuiFormLabel-root MuiFormLabel-colorSecondary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled Mui-error Mui-error"
+                  data-shrink="false"
+                >
+                  Password
+                </label>
+                <div
+                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-11 MuiInputBase-colorSecondary MuiFilledInput-colorSecondary Mui-error Mui-error MuiInputBase-fullWidth MuiInputBase-formControl"
+                >
+                  <input
+                    aria-invalid="true"
+                    class="MuiInputBase-input MuiFilledInput-input"
+                    name="password"
+                    type="password"
+                    value=""
+                  />
+                </div>
+              </div>
+              <div
+                class="MuiCollapse-container"
+                style="min-height: 0px; height: 0px; transition-duration: 300ms;"
+              >
+                <div
+                  class="MuiCollapse-wrapper"
+                >
+                  <div
+                    class="MuiCollapse-wrapperInner"
+                  >
+                    <p
+                      class="MuiFormHelperText-root MuiFormHelperText-contained Mui-error"
+                    >
+                      Enter password
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+            >
+              <button
+                class="MuiButtonBase-root MuiButton-root makeStyles-root-12 makeStyles-root-15 MuiButton-contained MuiButton-containedPrimary MuiButton-disableElevation MuiButton-fullWidth"
+                data-testid="common-auth-login-form-button"
+                tabindex="0"
+                type="submit"
+              >
+                <span
+                  class="MuiButton-label"
+                >
+                  <span
+                    class="makeStyles-inner-13 makeStyles-inner-16"
+                    data-testid="common-elementary-button-children"
+                    style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+                  >
+                    Login
+                  </span>
+                  <div
+                    class="makeStyles-loader-14"
+                    data-testid="common-elementary-button-loader"
+                    style="opacity: 0; visibility: hidden;"
+                  >
+                    <div
+                      class="css-0"
+                    >
+                      <div
+                        class="css-1ab95gp"
+                      />
+                      <div
+                        class="css-tm4xur"
+                      />
+                      <div
+                        class="css-1epl0i6"
+                      />
+                      <div
+                        class="css-1fj2adh"
+                      />
+                      <div
+                        class="css-1vivfwt"
+                      />
+                    </div>
+                  </div>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
             </div>
           </div>
-          <div
-            class="makeStyles-root-18"
-          >
-            <label
-              class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-19 makeStyles-label-21 MuiInputLabel-animated"
-            >
-              Password
-            </label>
-            <div
-              class="MuiInputBase-root MuiInput-root makeStyles-inputRoot-16 MuiInput-underline MuiInputBase-colorSecondary MuiInput-colorSecondary MuiInputBase-fullWidth MuiInput-fullWidth"
-              data-testid="common-auth-login-form-password"
-              label="Password"
-            >
-              <input
-                class="MuiInputBase-input MuiInput-input makeStyles-input-17"
-                name="password"
-                type="password"
-                value=""
-              />
-            </div>
-            <div
-              class="MuiCollapse-container"
-              style="min-height: 0px; height: 0px; transition-duration: 300ms;"
-            >
-              <div
-                class="MuiCollapse-wrapper"
-              >
-                <div
-                  class="MuiCollapse-wrapperInner"
-                >
-                  <p
-                    class="MuiFormHelperText-root makeStyles-errorText-20 Mui-error"
-                  >
-                    Enter password
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <button
-            class="MuiButtonBase-root MuiButton-root makeStyles-root-22 makeStyles-root-25 MuiButton-contained MuiButton-containedSecondary MuiButton-fullWidth"
-            data-testid="common-auth-login-form-button"
-            tabindex="0"
-            type="submit"
-          >
-            <span
-              class="MuiButton-label"
-            >
-              <span
-                class="makeStyles-inner-23 makeStyles-inner-26"
-                data-testid="common-elementary-button-children"
-                style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
-              >
-                Login
-              </span>
-              <div
-                class="makeStyles-loader-24"
-                data-testid="common-elementary-button-loader"
-                style="opacity: 0; visibility: hidden;"
-              >
-                <div
-                  class="css-0"
-                >
-                  <div
-                    class="css-1ab95gp"
-                  />
-                  <div
-                    class="css-tm4xur"
-                  />
-                  <div
-                    class="css-1epl0i6"
-                  />
-                  <div
-                    class="css-1fj2adh"
-                  />
-                  <div
-                    class="css-1vivfwt"
-                  />
-                </div>
-              </div>
-            </span>
-            <span
-              class="MuiTouchRipple-root"
-            />
-          </button>
         </form>
       </div>
     </div>
   </body>,
   "container": <div>
     <div
-      class="makeStyles-root-14"
+      class="makeStyles-root-9"
     >
       <div
-        class="MuiBox-root MuiBox-root-15"
+        class="MuiBox-root MuiBox-root-10"
       >
         <h3
           class="MuiTypography-root MuiTypography-h3"
@@ -169,131 +187,149 @@ Object {
         data-testid="common-auth-login-form-form"
       >
         <div
-          class="makeStyles-root-18"
+          class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2"
         >
-          <label
-            class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-19 makeStyles-label-21 MuiInputLabel-animated"
-          >
-            Username or email
-          </label>
           <div
-            class="MuiInputBase-root MuiInput-root makeStyles-inputRoot-16 MuiInput-underline MuiInputBase-colorSecondary MuiInput-colorSecondary MuiInputBase-fullWidth MuiInput-fullWidth"
-            data-testid="common-auth-login-form-username"
-            label="Username or email"
-          >
-            <input
-              class="MuiInputBase-input MuiInput-input makeStyles-input-17"
-              name="userNameOrEmail"
-              type="text"
-              value="username"
-            />
-          </div>
-          <div
-            class="MuiCollapse-container MuiCollapse-hidden"
-            style="min-height: 0px;"
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
           >
             <div
-              class="MuiCollapse-wrapper"
+              class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+              data-testid="common-auth-login-form-username"
             >
-              <div
-                class="MuiCollapse-wrapperInner"
+              <label
+                class="MuiFormLabel-root MuiFormLabel-colorSecondary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled"
+                data-shrink="true"
               >
-                <p
-                  class="MuiFormHelperText-root makeStyles-errorText-20 Mui-error"
-                >
-                  <span>
-                    ​
-                  </span>
-                </p>
+                Username or email
+              </label>
+              <div
+                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-11 MuiInputBase-colorSecondary MuiFilledInput-colorSecondary MuiInputBase-fullWidth MuiInputBase-formControl"
+              >
+                <input
+                  aria-invalid="false"
+                  class="MuiInputBase-input MuiFilledInput-input"
+                  name="userNameOrEmail"
+                  type="text"
+                  value="username"
+                />
               </div>
             </div>
+            <div
+              class="MuiCollapse-container MuiCollapse-hidden"
+              style="min-height: 0px;"
+            >
+              <div
+                class="MuiCollapse-wrapper"
+              >
+                <div
+                  class="MuiCollapse-wrapperInner"
+                >
+                  <p
+                    class="MuiFormHelperText-root MuiFormHelperText-contained"
+                  >
+                    <span>
+                      ​
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+          >
+            <div
+              class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+              data-testid="common-auth-login-form-password"
+            >
+              <label
+                class="MuiFormLabel-root MuiFormLabel-colorSecondary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled Mui-error Mui-error"
+                data-shrink="false"
+              >
+                Password
+              </label>
+              <div
+                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-11 MuiInputBase-colorSecondary MuiFilledInput-colorSecondary Mui-error Mui-error MuiInputBase-fullWidth MuiInputBase-formControl"
+              >
+                <input
+                  aria-invalid="true"
+                  class="MuiInputBase-input MuiFilledInput-input"
+                  name="password"
+                  type="password"
+                  value=""
+                />
+              </div>
+            </div>
+            <div
+              class="MuiCollapse-container"
+              style="min-height: 0px; height: 0px; transition-duration: 300ms;"
+            >
+              <div
+                class="MuiCollapse-wrapper"
+              >
+                <div
+                  class="MuiCollapse-wrapperInner"
+                >
+                  <p
+                    class="MuiFormHelperText-root MuiFormHelperText-contained Mui-error"
+                  >
+                    Enter password
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+          >
+            <button
+              class="MuiButtonBase-root MuiButton-root makeStyles-root-12 makeStyles-root-15 MuiButton-contained MuiButton-containedPrimary MuiButton-disableElevation MuiButton-fullWidth"
+              data-testid="common-auth-login-form-button"
+              tabindex="0"
+              type="submit"
+            >
+              <span
+                class="MuiButton-label"
+              >
+                <span
+                  class="makeStyles-inner-13 makeStyles-inner-16"
+                  data-testid="common-elementary-button-children"
+                  style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+                >
+                  Login
+                </span>
+                <div
+                  class="makeStyles-loader-14"
+                  data-testid="common-elementary-button-loader"
+                  style="opacity: 0; visibility: hidden;"
+                >
+                  <div
+                    class="css-0"
+                  >
+                    <div
+                      class="css-1ab95gp"
+                    />
+                    <div
+                      class="css-tm4xur"
+                    />
+                    <div
+                      class="css-1epl0i6"
+                    />
+                    <div
+                      class="css-1fj2adh"
+                    />
+                    <div
+                      class="css-1vivfwt"
+                    />
+                  </div>
+                </div>
+              </span>
+              <span
+                class="MuiTouchRipple-root"
+              />
+            </button>
           </div>
         </div>
-        <div
-          class="makeStyles-root-18"
-        >
-          <label
-            class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-19 makeStyles-label-21 MuiInputLabel-animated"
-          >
-            Password
-          </label>
-          <div
-            class="MuiInputBase-root MuiInput-root makeStyles-inputRoot-16 MuiInput-underline MuiInputBase-colorSecondary MuiInput-colorSecondary MuiInputBase-fullWidth MuiInput-fullWidth"
-            data-testid="common-auth-login-form-password"
-            label="Password"
-          >
-            <input
-              class="MuiInputBase-input MuiInput-input makeStyles-input-17"
-              name="password"
-              type="password"
-              value=""
-            />
-          </div>
-          <div
-            class="MuiCollapse-container"
-            style="min-height: 0px; height: 0px; transition-duration: 300ms;"
-          >
-            <div
-              class="MuiCollapse-wrapper"
-            >
-              <div
-                class="MuiCollapse-wrapperInner"
-              >
-                <p
-                  class="MuiFormHelperText-root makeStyles-errorText-20 Mui-error"
-                >
-                  Enter password
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <button
-          class="MuiButtonBase-root MuiButton-root makeStyles-root-22 makeStyles-root-25 MuiButton-contained MuiButton-containedSecondary MuiButton-fullWidth"
-          data-testid="common-auth-login-form-button"
-          tabindex="0"
-          type="submit"
-        >
-          <span
-            class="MuiButton-label"
-          >
-            <span
-              class="makeStyles-inner-23 makeStyles-inner-26"
-              data-testid="common-elementary-button-children"
-              style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
-            >
-              Login
-            </span>
-            <div
-              class="makeStyles-loader-24"
-              data-testid="common-elementary-button-loader"
-              style="opacity: 0; visibility: hidden;"
-            >
-              <div
-                class="css-0"
-              >
-                <div
-                  class="css-1ab95gp"
-                />
-                <div
-                  class="css-tm4xur"
-                />
-                <div
-                  class="css-1epl0i6"
-                />
-                <div
-                  class="css-1fj2adh"
-                />
-                <div
-                  class="css-1vivfwt"
-                />
-              </div>
-            </div>
-          </span>
-          <span
-            class="MuiTouchRipple-root"
-          />
-        </button>
       </form>
     </div>
   </div>,
@@ -373,133 +409,151 @@ Object {
           data-testid="common-auth-login-form-form"
         >
           <div
-            class="makeStyles-root-5"
+            class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2"
           >
-            <label
-              class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-6 makeStyles-label-8 MuiInputLabel-animated"
-            >
-              Username or email
-            </label>
             <div
-              class="MuiInputBase-root MuiInput-root makeStyles-inputRoot-3 MuiInput-underline MuiInputBase-colorSecondary MuiInput-colorSecondary MuiInputBase-fullWidth MuiInput-fullWidth"
-              data-testid="common-auth-login-form-username"
-              label="Username or email"
-            >
-              <input
-                class="MuiInputBase-input MuiInput-input makeStyles-input-4"
-                name="userNameOrEmail"
-                type="text"
-                value="username"
-              />
-            </div>
-            <div
-              class="MuiCollapse-container MuiCollapse-hidden"
-              style="min-height: 0px;"
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
             >
               <div
-                class="MuiCollapse-wrapper"
+                class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+                data-testid="common-auth-login-form-username"
               >
-                <div
-                  class="MuiCollapse-wrapperInner"
+                <label
+                  class="MuiFormLabel-root MuiFormLabel-colorSecondary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled"
+                  data-shrink="true"
                 >
-                  <p
-                    class="MuiFormHelperText-root makeStyles-errorText-7 Mui-error"
-                  >
-                    <span>
-                      ​
-                    </span>
-                  </p>
+                  Username or email
+                </label>
+                <div
+                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-3 MuiInputBase-colorSecondary MuiFilledInput-colorSecondary MuiInputBase-fullWidth MuiInputBase-formControl"
+                >
+                  <input
+                    aria-invalid="false"
+                    class="MuiInputBase-input MuiFilledInput-input"
+                    name="userNameOrEmail"
+                    type="text"
+                    value="username"
+                  />
                 </div>
               </div>
+              <div
+                class="MuiCollapse-container MuiCollapse-hidden"
+                style="min-height: 0px;"
+              >
+                <div
+                  class="MuiCollapse-wrapper"
+                >
+                  <div
+                    class="MuiCollapse-wrapperInner"
+                  >
+                    <p
+                      class="MuiFormHelperText-root MuiFormHelperText-contained"
+                    >
+                      <span>
+                        ​
+                      </span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+            >
+              <div
+                class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+                data-testid="common-auth-login-form-password"
+              >
+                <label
+                  class="MuiFormLabel-root MuiFormLabel-colorSecondary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled"
+                  data-shrink="true"
+                >
+                  Password
+                </label>
+                <div
+                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-3 MuiInputBase-colorSecondary MuiFilledInput-colorSecondary MuiInputBase-fullWidth MuiInputBase-formControl"
+                >
+                  <input
+                    aria-invalid="false"
+                    class="MuiInputBase-input MuiFilledInput-input"
+                    name="password"
+                    type="password"
+                    value="password"
+                  />
+                </div>
+              </div>
+              <div
+                class="MuiCollapse-container"
+                style="min-height: 0px; height: 0px; transition-duration: 300ms;"
+              >
+                <div
+                  class="MuiCollapse-wrapper"
+                >
+                  <div
+                    class="MuiCollapse-wrapperInner"
+                  >
+                    <p
+                      class="MuiFormHelperText-root MuiFormHelperText-contained"
+                    >
+                      <span>
+                        ​
+                      </span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+            >
+              <button
+                class="MuiButtonBase-root MuiButton-root makeStyles-root-4 makeStyles-root-7 MuiButton-contained MuiButton-containedPrimary MuiButton-disableElevation MuiButton-fullWidth"
+                data-testid="common-auth-login-form-button"
+                tabindex="0"
+                type="submit"
+              >
+                <span
+                  class="MuiButton-label"
+                >
+                  <span
+                    class="makeStyles-inner-5 makeStyles-inner-8"
+                    data-testid="common-elementary-button-children"
+                    style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+                  >
+                    Login
+                  </span>
+                  <div
+                    class="makeStyles-loader-6"
+                    data-testid="common-elementary-button-loader"
+                    style="opacity: 0; visibility: hidden;"
+                  >
+                    <div
+                      class="css-0"
+                    >
+                      <div
+                        class="css-1ab95gp"
+                      />
+                      <div
+                        class="css-tm4xur"
+                      />
+                      <div
+                        class="css-1epl0i6"
+                      />
+                      <div
+                        class="css-1fj2adh"
+                      />
+                      <div
+                        class="css-1vivfwt"
+                      />
+                    </div>
+                  </div>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
             </div>
           </div>
-          <div
-            class="makeStyles-root-5"
-          >
-            <label
-              class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-6 makeStyles-label-8 MuiInputLabel-animated"
-            >
-              Password
-            </label>
-            <div
-              class="MuiInputBase-root MuiInput-root makeStyles-inputRoot-3 MuiInput-underline MuiInputBase-colorSecondary MuiInput-colorSecondary MuiInputBase-fullWidth MuiInput-fullWidth"
-              data-testid="common-auth-login-form-password"
-              label="Password"
-            >
-              <input
-                class="MuiInputBase-input MuiInput-input makeStyles-input-4"
-                name="password"
-                type="password"
-                value="password"
-              />
-            </div>
-            <div
-              class="MuiCollapse-container"
-              style="min-height: 0px; height: 0px; transition-duration: 300ms;"
-            >
-              <div
-                class="MuiCollapse-wrapper"
-              >
-                <div
-                  class="MuiCollapse-wrapperInner"
-                >
-                  <p
-                    class="MuiFormHelperText-root makeStyles-errorText-7 Mui-error"
-                  >
-                    <span>
-                      ​
-                    </span>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <button
-            class="MuiButtonBase-root MuiButton-root makeStyles-root-9 makeStyles-root-12 MuiButton-contained MuiButton-containedSecondary MuiButton-fullWidth"
-            data-testid="common-auth-login-form-button"
-            tabindex="0"
-            type="submit"
-          >
-            <span
-              class="MuiButton-label"
-            >
-              <span
-                class="makeStyles-inner-10 makeStyles-inner-13"
-                data-testid="common-elementary-button-children"
-                style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
-              >
-                Login
-              </span>
-              <div
-                class="makeStyles-loader-11"
-                data-testid="common-elementary-button-loader"
-                style="opacity: 0; visibility: hidden;"
-              >
-                <div
-                  class="css-0"
-                >
-                  <div
-                    class="css-1ab95gp"
-                  />
-                  <div
-                    class="css-tm4xur"
-                  />
-                  <div
-                    class="css-1epl0i6"
-                  />
-                  <div
-                    class="css-1fj2adh"
-                  />
-                  <div
-                    class="css-1vivfwt"
-                  />
-                </div>
-              </div>
-            </span>
-            <span
-              class="MuiTouchRipple-root"
-            />
-          </button>
         </form>
       </div>
     </div>
@@ -522,133 +576,151 @@ Object {
         data-testid="common-auth-login-form-form"
       >
         <div
-          class="makeStyles-root-5"
+          class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2"
         >
-          <label
-            class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-6 makeStyles-label-8 MuiInputLabel-animated"
-          >
-            Username or email
-          </label>
           <div
-            class="MuiInputBase-root MuiInput-root makeStyles-inputRoot-3 MuiInput-underline MuiInputBase-colorSecondary MuiInput-colorSecondary MuiInputBase-fullWidth MuiInput-fullWidth"
-            data-testid="common-auth-login-form-username"
-            label="Username or email"
-          >
-            <input
-              class="MuiInputBase-input MuiInput-input makeStyles-input-4"
-              name="userNameOrEmail"
-              type="text"
-              value="username"
-            />
-          </div>
-          <div
-            class="MuiCollapse-container MuiCollapse-hidden"
-            style="min-height: 0px;"
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
           >
             <div
-              class="MuiCollapse-wrapper"
+              class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+              data-testid="common-auth-login-form-username"
             >
-              <div
-                class="MuiCollapse-wrapperInner"
+              <label
+                class="MuiFormLabel-root MuiFormLabel-colorSecondary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled"
+                data-shrink="true"
               >
-                <p
-                  class="MuiFormHelperText-root makeStyles-errorText-7 Mui-error"
-                >
-                  <span>
-                    ​
-                  </span>
-                </p>
+                Username or email
+              </label>
+              <div
+                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-3 MuiInputBase-colorSecondary MuiFilledInput-colorSecondary MuiInputBase-fullWidth MuiInputBase-formControl"
+              >
+                <input
+                  aria-invalid="false"
+                  class="MuiInputBase-input MuiFilledInput-input"
+                  name="userNameOrEmail"
+                  type="text"
+                  value="username"
+                />
               </div>
             </div>
+            <div
+              class="MuiCollapse-container MuiCollapse-hidden"
+              style="min-height: 0px;"
+            >
+              <div
+                class="MuiCollapse-wrapper"
+              >
+                <div
+                  class="MuiCollapse-wrapperInner"
+                >
+                  <p
+                    class="MuiFormHelperText-root MuiFormHelperText-contained"
+                  >
+                    <span>
+                      ​
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+          >
+            <div
+              class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+              data-testid="common-auth-login-form-password"
+            >
+              <label
+                class="MuiFormLabel-root MuiFormLabel-colorSecondary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled"
+                data-shrink="true"
+              >
+                Password
+              </label>
+              <div
+                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-3 MuiInputBase-colorSecondary MuiFilledInput-colorSecondary MuiInputBase-fullWidth MuiInputBase-formControl"
+              >
+                <input
+                  aria-invalid="false"
+                  class="MuiInputBase-input MuiFilledInput-input"
+                  name="password"
+                  type="password"
+                  value="password"
+                />
+              </div>
+            </div>
+            <div
+              class="MuiCollapse-container"
+              style="min-height: 0px; height: 0px; transition-duration: 300ms;"
+            >
+              <div
+                class="MuiCollapse-wrapper"
+              >
+                <div
+                  class="MuiCollapse-wrapperInner"
+                >
+                  <p
+                    class="MuiFormHelperText-root MuiFormHelperText-contained"
+                  >
+                    <span>
+                      ​
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+          >
+            <button
+              class="MuiButtonBase-root MuiButton-root makeStyles-root-4 makeStyles-root-7 MuiButton-contained MuiButton-containedPrimary MuiButton-disableElevation MuiButton-fullWidth"
+              data-testid="common-auth-login-form-button"
+              tabindex="0"
+              type="submit"
+            >
+              <span
+                class="MuiButton-label"
+              >
+                <span
+                  class="makeStyles-inner-5 makeStyles-inner-8"
+                  data-testid="common-elementary-button-children"
+                  style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+                >
+                  Login
+                </span>
+                <div
+                  class="makeStyles-loader-6"
+                  data-testid="common-elementary-button-loader"
+                  style="opacity: 0; visibility: hidden;"
+                >
+                  <div
+                    class="css-0"
+                  >
+                    <div
+                      class="css-1ab95gp"
+                    />
+                    <div
+                      class="css-tm4xur"
+                    />
+                    <div
+                      class="css-1epl0i6"
+                    />
+                    <div
+                      class="css-1fj2adh"
+                    />
+                    <div
+                      class="css-1vivfwt"
+                    />
+                  </div>
+                </div>
+              </span>
+              <span
+                class="MuiTouchRipple-root"
+              />
+            </button>
           </div>
         </div>
-        <div
-          class="makeStyles-root-5"
-        >
-          <label
-            class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-6 makeStyles-label-8 MuiInputLabel-animated"
-          >
-            Password
-          </label>
-          <div
-            class="MuiInputBase-root MuiInput-root makeStyles-inputRoot-3 MuiInput-underline MuiInputBase-colorSecondary MuiInput-colorSecondary MuiInputBase-fullWidth MuiInput-fullWidth"
-            data-testid="common-auth-login-form-password"
-            label="Password"
-          >
-            <input
-              class="MuiInputBase-input MuiInput-input makeStyles-input-4"
-              name="password"
-              type="password"
-              value="password"
-            />
-          </div>
-          <div
-            class="MuiCollapse-container"
-            style="min-height: 0px; height: 0px; transition-duration: 300ms;"
-          >
-            <div
-              class="MuiCollapse-wrapper"
-            >
-              <div
-                class="MuiCollapse-wrapperInner"
-              >
-                <p
-                  class="MuiFormHelperText-root makeStyles-errorText-7 Mui-error"
-                >
-                  <span>
-                    ​
-                  </span>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <button
-          class="MuiButtonBase-root MuiButton-root makeStyles-root-9 makeStyles-root-12 MuiButton-contained MuiButton-containedSecondary MuiButton-fullWidth"
-          data-testid="common-auth-login-form-button"
-          tabindex="0"
-          type="submit"
-        >
-          <span
-            class="MuiButton-label"
-          >
-            <span
-              class="makeStyles-inner-10 makeStyles-inner-13"
-              data-testid="common-elementary-button-children"
-              style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
-            >
-              Login
-            </span>
-            <div
-              class="makeStyles-loader-11"
-              data-testid="common-elementary-button-loader"
-              style="opacity: 0; visibility: hidden;"
-            >
-              <div
-                class="css-0"
-              >
-                <div
-                  class="css-1ab95gp"
-                />
-                <div
-                  class="css-tm4xur"
-                />
-                <div
-                  class="css-1epl0i6"
-                />
-                <div
-                  class="css-1fj2adh"
-                />
-                <div
-                  class="css-1vivfwt"
-                />
-              </div>
-            </div>
-          </span>
-          <span
-            class="MuiTouchRipple-root"
-          />
-        </button>
       </form>
     </div>
   </div>,

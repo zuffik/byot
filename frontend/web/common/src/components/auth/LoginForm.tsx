@@ -8,6 +8,7 @@ import {UserLogin} from '@byot-frontend/common/src/shared/graphql/ts/types';
 import {PlainLayoutNarrow} from '../plain-layout/PlainLayoutNarrow';
 import {PlainLayoutTitle} from '../plain-layout/PlainLayoutTitle';
 import {useTranslation} from 'react-i18next';
+import {Grid} from '@material-ui/core';
 
 type Values = UserLogin;
 const loginSchema = (t: TFunction) =>
@@ -36,36 +37,45 @@ export const LoginForm: React.FC<Props> = (props: Props) => {
         validationSchema={loginSchema(t)}>
         {({values, errors, touched, handleChange, handleBlur}) => (
           <Form data-testid="common-auth-login-form-form">
-            <Input
-              color="secondary"
-              type="text"
-              label={t('Username or email')}
-              value={values.userNameOrEmail}
-              onBlur={handleBlur('userNameOrEmail')}
-              onChange={handleChange('userNameOrEmail')}
-              name="userNameOrEmail"
-              errorText={touched.userNameOrEmail && errors.userNameOrEmail}
-              data-testid="common-auth-login-form-username"
-            />
-            <Input
-              color="secondary"
-              type="password"
-              label={t('Password')}
-              value={values.password}
-              onBlur={handleBlur('password')}
-              onChange={handleChange('password')}
-              name="password"
-              errorText={touched.password && errors.password}
-              data-testid="common-auth-login-form-password"
-            />
-            <Button
-              type="submit"
-              color="gradient"
-              data-testid="common-auth-login-form-button"
-              fullWidth
-              loading={props.loading}>
-              {t('Login')}
-            </Button>
+            <Grid container spacing={2}>
+              <Grid item xs={12}>
+                <Input
+                  color="secondary"
+                  type="text"
+                  label={t('Username or email')}
+                  value={values.userNameOrEmail}
+                  onBlur={handleBlur('userNameOrEmail')}
+                  onChange={handleChange('userNameOrEmail')}
+                  name="userNameOrEmail"
+                  error={!!(touched.userNameOrEmail && errors.userNameOrEmail)}
+                  helperText={touched.userNameOrEmail && errors.userNameOrEmail}
+                  data-testid="common-auth-login-form-username"
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <Input
+                  color="secondary"
+                  type="password"
+                  label={t('Password')}
+                  value={values.password}
+                  onBlur={handleBlur('password')}
+                  onChange={handleChange('password')}
+                  name="password"
+                  error={!!(touched.password && errors.password)}
+                  helperText={touched.password && errors.password}
+                  data-testid="common-auth-login-form-password"
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <Button
+                  type="submit"
+                  data-testid="common-auth-login-form-button"
+                  fullWidth
+                  loading={props.loading}>
+                  {t('Login')}
+                </Button>
+              </Grid>
+            </Grid>
             {props.children}
           </Form>
         )}

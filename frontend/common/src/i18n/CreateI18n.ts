@@ -6,8 +6,12 @@ import sk from './resources/sk';
 import cs from './resources/cs';
 import {CurrentLanguageProvider} from './providers/CurrentLanguageProvider';
 import * as _ from 'lodash';
+import * as moment from 'moment';
 import {FixedLanguageProvider} from './providers/FixedLanguageProvider';
 import {defaultLanguage, getCurrentLanguage} from './GetCurrentLanguage';
+
+import 'moment/locale/sk';
+import 'moment/locale/cs';
 
 type DeepSameObject<T> = {
   [K in keyof T]: T[K] extends object ? DeepSameObject<T[K]> : string;
@@ -25,9 +29,11 @@ export const createI18n = <T>(
     sk: {...sk, ...(data?.sk as object)},
     cs: {...cs, ...(data?.cs as object)},
   };
+  const lng = getCurrentLanguage(provider);
+  moment.locale(lng);
   const loader = i18n.use(initReactI18next).init({
     resources: _.mapValues(resources, translation => ({translation})),
-    lng: getCurrentLanguage(provider),
+    lng,
     keySeparator: false,
     interpolation: {
       escapeValue: false,

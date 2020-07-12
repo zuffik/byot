@@ -1,35 +1,51 @@
 import React from 'react';
-import {Input as MuiInput, InputProps, makeStyles, Theme, WithStyles} from '@material-ui/core';
-import {InputBase, Props as InputBaseProps} from './InputBase';
+import {makeStyles, TextField, TextFieldProps, Theme} from '@material-ui/core';
 import classNames from 'classnames';
+import {WithStyles} from '../../../types/WithStyles';
+import {FormHelperText} from './FormHelperText';
 
-type Props = Omit<InputBaseProps<InputProps>, 'component'> & Partial<WithStyles<typeof styles>>;
+export type Props = Omit<TextFieldProps, 'variant'> & WithStyles<typeof styles>;
 
 const styles = (theme: Theme) => ({
-  inputRoot: {
-    color: theme.palette.grey[500],
-    '&:before': {
-      borderBottomColor: theme.palette.grey[300],
+  filledRoot: {
+    borderRadius: theme.shape.borderRadius,
+    backgroundColor: theme.palette.grey[100],
+    '&:hover': {
+      backgroundColor: theme.palette.grey[200],
     },
   },
-  input: {
-    paddingLeft: theme.spacing(1 / 2),
-    paddingRight: theme.spacing(1 / 2),
+  label: {
+    color: theme.palette.grey[500],
   },
 });
 const useStyles = makeStyles(styles);
 
 export const Input: React.FC<Props> = (props: Props) => {
   const styles = useStyles(props);
+  const {helperText, ...p} = props;
   return (
-    <InputBase
-      fullWidth
-      component={MuiInput}
-      {...props}
-      classes={{
-        root: classNames(styles.inputRoot, props.classes?.root),
-        input: classNames(styles.input, props.classes?.input),
-      }}
-    />
+    <>
+      <TextField
+        fullWidth
+        {...p}
+        variant="filled"
+        InputLabelProps={{
+          ...props.InputLabelProps,
+          classes: {
+            root: classNames(styles.label, props.InputLabelProps?.classes?.root),
+          },
+        }}
+        InputProps={{
+          disableUnderline: true,
+          ...props.InputProps,
+          classes: {
+            root: classNames(styles.filledRoot, props.InputProps?.classes?.root),
+          },
+        }}
+      />
+      <FormHelperText error={props.error} variant="filled">
+        {props.helperText}
+      </FormHelperText>
+    </>
   );
 };

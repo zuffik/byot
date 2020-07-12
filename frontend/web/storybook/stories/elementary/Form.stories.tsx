@@ -18,15 +18,15 @@ export const input = () => (
     label="Label"
     onChange={action('onChange')}
     color={colorVariants()}
-    errorText={text('Error text', '')}
+    helperText={text('Error text', '')}
   />
 );
 
 export const select = () => (
-  <Select label="Label" onChange={action('onChange')} color={colorVariants()}>
+  <Select label="Label" onChange={action('onChange')} color={colorVariants()} fullWidth>
     {_.times(10, i => (
       <MenuItem key={i} value={i}>
-        {i}
+        {`Menu item ${i}`}
       </MenuItem>
     ))}
   </Select>
@@ -47,8 +47,7 @@ export const radio = () => (
         'Label 2': 'radio2',
       },
       'radio1'
-    )}
-  >
+    )}>
     <Radio label="Label 1" value="radio1" color={colorVariants()} />
     <Radio label="Label 2" value="radio2" color={colorVariants()} />
   </RadioGroup>

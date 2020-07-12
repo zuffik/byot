@@ -1,29 +1,14 @@
 import React from 'react';
-import {makeStyles, Select as MuiSelect, SelectProps, Theme, WithStyles} from '@material-ui/core';
-import {InputBase, Props as InputBaseProps} from './InputBase';
-import classNames from 'classnames';
+import {makeStyles, TextFieldProps, Theme} from '@material-ui/core';
+import {Input} from './Input';
+import {WithStyles} from '../../../types/WithStyles';
 
-type Props = Omit<InputBaseProps<SelectProps>, 'component'> & Partial<WithStyles<typeof styles>>;
+type Props = Omit<TextFieldProps, 'variant' | 'select'> & WithStyles<typeof styles>;
 
-const styles = (theme: Theme) => ({
-  select: {
-    paddingLeft: theme.spacing(1 / 2),
-    minWidth: 50,
-    '&:focus': {
-      backgroundColor: 'transparent',
-    },
-  },
-});
+const styles = (theme: Theme) => ({});
 const useStyles = makeStyles(styles);
 
 export const Select: React.FC<Props> = (props: Props) => {
   const styles = useStyles(props);
-  return (
-    <InputBase
-      fullWidth
-      component={MuiSelect}
-      {...props}
-      classes={{select: classNames(styles.select, props.classes?.select)}}
-    />
-  );
+  return <Input select {...props} />;
 };

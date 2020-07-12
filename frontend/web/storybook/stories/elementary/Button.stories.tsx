@@ -10,13 +10,23 @@ export default {
 
 export const button = () => (
   <Button
+    disableElevation={boolean('Disable elevation', true)}
+    size={select(
+      'Size',
+      {
+        Small: 'small',
+        Medium: 'medium',
+        Large: 'large',
+      },
+      'medium'
+    )}
     variant={select(
       'Variant',
       {
         Outlined: 'outlined',
         Contained: 'contained',
       },
-      'outlined'
+      'contained'
     )}
     color={colorVariants({Gradient: 'gradient'})}
     loading={boolean('Loading', false)}>

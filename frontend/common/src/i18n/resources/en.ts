@@ -28,4 +28,9 @@ export default {
   'Back': 'Back',
   'Error while trying to login, please, check username or password':
     'Error while trying to login, please, check username or password',
+  'Log out': 'Log out',
+  'training': 'training',
+  'training_plural': 'trainings',
+  'video': 'video',
+  'video_plural': 'videos',
 };

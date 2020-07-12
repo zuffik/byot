@@ -21,10 +21,15 @@ const styles = (theme: Theme): StyleRules<Props> => ({
       background: baseTheme.colors.gradient.css,
       color: baseTheme.colors.gradient.contrast,
     }),
-    fontWeight: 400,
     position: 'relative',
+    ...(props.size === 'large' && {
+      paddingTop: theme.spacing(0.75),
+      paddingBottom: theme.spacing(0.75),
+    }),
   }),
   inner: (props: Props) => ({
+    textTransform: 'none',
+    fontSize: theme.typography.pxToRem(16),
     ...(props.loading && {visibility: 'hidden'}),
   }),
   loader: {
@@ -43,7 +48,7 @@ const styles = (theme: Theme): StyleRules<Props> => ({
 });
 const useStyles = makeStyles(styles);
 
-export const Button: ExtendButtonBase<ButtonTypeMap> & React.FC<Props> = (props: Props) => {
+export const Button: ExtendButtonBase<ButtonTypeMap> & React.FC<Props> = ((props: Props) => {
   const styles = useStyles(props);
   const theme = useTheme();
   const color = (props.color === 'gradient' ? 'secondary' : props.color) || 'primary';
@@ -53,17 +58,18 @@ export const Button: ExtendButtonBase<ButtonTypeMap> & React.FC<Props> = (props:
     ? theme.palette[psColor][variant !== 'outlined' ? 'contrastText' : 'main']
     : theme.palette.common.black;
   const {loading, ...buttonProps} = props;
+  const disableElevation = typeof props.disableElevation === 'undefined' ? true : props.disableElevation;
 
   return (
     <MuiButton
       {...buttonProps}
       color={color}
       variant={variant}
+      disableElevation={disableElevation}
       classes={{
         ...(props.classes || {}),
         root: classNames(styles.root, props.classes?.root),
-      }}
-    >
+      }}>
       <Fade in={!props.loading}>
         <span className={styles.inner} data-testid="common-elementary-button-children">
           {props.children}
@@ -76,4 +82,5 @@ export const Button: ExtendButtonBase<ButtonTypeMap> & React.FC<Props> = (props:
       </Fade>
     </MuiButton>
   );
-};
+  // todo
+}) as any;

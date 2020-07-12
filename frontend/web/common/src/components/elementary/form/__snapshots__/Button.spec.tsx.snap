@@ -6,7 +6,7 @@ Object {
   "baseElement": <body>
     <div>
       <button
-        class="MuiButtonBase-root MuiButton-root makeStyles-root-6 makeStyles-root-9 MuiButton-contained MuiButton-containedPrimary"
+        class="MuiButtonBase-root MuiButton-root makeStyles-root-6 makeStyles-root-9 MuiButton-contained MuiButton-containedPrimary MuiButton-disableElevation"
         tabindex="0"
         type="button"
       >
@@ -54,7 +54,7 @@ Object {
   </body>,
   "container": <div>
     <button
-      class="MuiButtonBase-root MuiButton-root makeStyles-root-6 makeStyles-root-9 MuiButton-contained MuiButton-containedPrimary"
+      class="MuiButtonBase-root MuiButton-root makeStyles-root-6 makeStyles-root-9 MuiButton-contained MuiButton-containedPrimary MuiButton-disableElevation"
       tabindex="0"
       type="button"
     >
@@ -159,7 +159,7 @@ Object {
   "baseElement": <body>
     <div>
       <button
-        class="MuiButtonBase-root MuiButton-root makeStyles-root-1 makeStyles-root-4 MuiButton-contained MuiButton-containedPrimary"
+        class="MuiButtonBase-root MuiButton-root makeStyles-root-1 makeStyles-root-4 MuiButton-contained MuiButton-containedPrimary MuiButton-disableElevation"
         tabindex="0"
         type="button"
       >
@@ -207,7 +207,7 @@ Object {
   </body>,
   "container": <div>
     <button
-      class="MuiButtonBase-root MuiButton-root makeStyles-root-1 makeStyles-root-4 MuiButton-contained MuiButton-containedPrimary"
+      class="MuiButtonBase-root MuiButton-root makeStyles-root-1 makeStyles-root-4 MuiButton-contained MuiButton-containedPrimary MuiButton-disableElevation"
       tabindex="0"
       type="button"
     >

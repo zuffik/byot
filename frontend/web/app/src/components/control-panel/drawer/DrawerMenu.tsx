@@ -1,21 +1,29 @@
 import * as React from 'react';
-import {makeStyles, Theme, List} from '@material-ui/core';
-import {Home} from '@material-ui/icons';
-import {WithStyles} from '@byot-frontend/web-common/src/types/WithStyles';
+import {List} from '@material-ui/core';
 import {DrawerMenuItem} from './DrawerMenuItem';
+import {Patch} from '@byot-frontend/web-common/src/components/elementary/patch/Patch';
+import {LinkMenuItem} from '@byot-frontend/common/src/types/app/structurals/MenuItem';
 
-interface Props extends WithStyles<typeof styles> {}
-
-const styles = (theme: Theme) => ({});
-const useStyles = makeStyles(styles);
+interface Props {
+  selected?: string;
+  menu: LinkMenuItem[];
+  disablePadding?: boolean;
+}
 
 export const DrawerMenu: React.FC<Props> = (props: Props) => {
-  const styles = useStyles(props);
   return (
-    <List disablePadding>
-      <DrawerMenuItem icon={<Home />} link="/">
-        asdlfkjsd
-      </DrawerMenuItem>
-    </List>
+    <Patch px={0} py={props.disablePadding ? 0 : 2} width="100%" overflow="hidden">
+      <List disablePadding>
+        {props.menu.map(item => (
+          <DrawerMenuItem
+            key={item.id}
+            link={item.link}
+            icon={item.icon}
+            selected={props.selected === item.id}>
+            {item.label}
+          </DrawerMenuItem>
+        ))}
+      </List>
+    </Patch>
   );
 };

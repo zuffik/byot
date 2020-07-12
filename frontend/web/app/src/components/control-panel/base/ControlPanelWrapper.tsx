@@ -1,25 +1,23 @@
 import * as React from 'react';
-import {Grid, makeStyles, Theme} from '@material-ui/core';
+import {makeStyles, Theme} from '@material-ui/core';
 import {WithStyles} from '@byot-frontend/web-common/src/types/WithStyles';
-import {ControlPanelHeader} from './ControlPanelHeader';
 import {ControlPanelSidebar} from './ControlPanelSidebar';
+import {LinkMenuItem} from '@byot-frontend/common/src/types/app/structurals/MenuItem';
 
 interface Props extends WithStyles<typeof styles> {
   children: React.ReactNode;
+  menuItems: LinkMenuItem[];
+  selected?: string;
 }
 
 const styles = (theme: Theme) => ({
-  '@global': {
-    body: {
-      backgroundColor: theme.palette.grey[100],
-    },
-  },
-  root: {
-    height: '100vh',
-  },
   content: {
-    paddingLeft: '25%',
-    paddingTop: theme.spacing(8),
+    [theme.breakpoints.between('sm', 'md')]: {
+      paddingLeft: '33%',
+    },
+    [theme.breakpoints.up('md')]: {
+      paddingLeft: '25%',
+    },
   },
 });
 const useStyles = makeStyles(styles);
@@ -27,10 +25,9 @@ const useStyles = makeStyles(styles);
 export const ControlPanelWrapper: React.FC<Props> = (props: Props) => {
   const styles = useStyles(props);
   return (
-    <div className={styles.root}>
-      <ControlPanelHeader />
-      <ControlPanelSidebar />
+    <>
+      <ControlPanelSidebar selected={props.selected} menuItems={props.menuItems} />
       <div className={styles.content}>{props.children}</div>
-    </div>
+    </>
   );
 };

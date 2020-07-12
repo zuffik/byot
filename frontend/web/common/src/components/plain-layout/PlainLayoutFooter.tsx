@@ -1,27 +1,13 @@
 import * as React from 'react';
-import {Box, makeStyles, Theme, Typography} from '@material-ui/core';
-import {WithStyles} from '../../types/WithStyles';
-import {useTranslation} from 'react-i18next';
+import {Box} from '@material-ui/core';
+import {Copyright} from '../content/Copyright';
 
-interface Props extends WithStyles<typeof styles> {}
-
-const styles = (theme: Theme) => ({
-  typography: {
-    color: theme.palette.grey[300],
-    fontSize: theme.typography.pxToRem(12),
-  },
-});
-const useStyles = makeStyles(styles);
+interface Props {}
 
 export const PlainLayoutFooter: React.FC<Props> = (props: Props) => {
-  const styles = useStyles(props);
-  const {t} = useTranslation();
   return (
     <Box alignItems="center" justifyContent="center" display="flex" mt={4}>
-      <Typography classes={{root: styles.typography}}>
-        {t('All rights reserved to')}
-        <strong> byoT</strong>
-      </Typography>
+      <Copyright />
     </Box>
   );
 };

@@ -17,11 +17,13 @@ export const logoGenerate = (
     bg = false,
     roundedBg = true,
     center = false,
+    gradient: withGradient = true,
   }: {
     full?: boolean;
     bg?: boolean;
     roundedBg?: boolean;
     center?: boolean;
+    gradient?: boolean;
   }
 ): Svg => {
   type Variants = 'full' | 'square';
@@ -54,29 +56,36 @@ export const logoGenerate = (
 
   // gradient
   const defs = svg.defs();
-  const gradient = svg.gradient('linear').attr({
-    id: 'gradient-root',
-    x1: '0',
-    y1: '0',
-    x2: '100%',
-    y2: '0',
-    gradientUnits: 'userSpaceOnUse',
-    gradientTransform: `rotate(${180 - themeGradient.angle})`,
-  });
-  gradient.add(
-    svg.element('stop').attr({
-      offset: `${themeGradient.start.position}%`,
-      'stop-color': themeGradient.start.color,
-    })
-  );
-  gradient.add(
-    svg.element('stop').attr({
-      offset: `${themeGradient.end.position}%`,
-      'stop-color': themeGradient.end.color,
-    })
-  );
-  defs.add(gradient);
-  svg.add(defs);
+  let stroke: string;
+  if (withGradient) {
+    const gradient = svg.gradient('linear').attr({
+      id: 'gradient-root',
+      x1: '0',
+      y1: '0',
+      x2: '100%',
+      y2: '0',
+      gradientUnits: 'userSpaceOnUse',
+      gradientTransform: `rotate(${180 - themeGradient.angle})`,
+    });
+    gradient.add(
+      svg.element('stop').attr({
+        offset: `${themeGradient.start.position}%`,
+        'stop-color': themeGradient.start.color,
+      })
+    );
+    gradient.add(
+      svg.element('stop').attr({
+        offset: `${themeGradient.end.position}%`,
+        'stop-color': themeGradient.end.color,
+      })
+    );
+    defs.add(gradient);
+    svg.add(defs);
+    stroke = `url(#${gradient.attr('id')})`;
+  } else {
+    stroke = theme.colors.primary;
+  }
+
   const baseAttrs = {
     'stroke-linecap': 'round',
     'stroke-width': strokeWidth,
@@ -84,7 +93,7 @@ export const logoGenerate = (
   };
 
   const root = svg.group().attr({
-    stroke: `url(#${gradient.attr('id')})`,
+    stroke,
     id: 'root',
   });
   if (!full && bg) {

@@ -8,5 +8,6 @@ export type GeneratedVariant = {
 export type GenerateVariant = (
   strokeWidth: number,
   offset: number,
-  height: number
+  height: number,
+  gradient?: boolean
 ) => GeneratedVariant[];

@@ -10,28 +10,34 @@ export const createTheme = <T extends ThemeOptions>(options?: T): Theme =>
       {},
       {
         shape: {
-          borderRadius: 20,
+          borderRadius: spacing * 1.5,
         },
         spacing,
         typography: {
-          fontFamily: 'rubik, sans-serif',
+          fontFamily: 'nunito, sans-serif',
           h1: {
             fontWeight: 700,
+            color: theme.colors.dark,
           },
           h2: {
             fontWeight: 800,
+            color: theme.colors.dark,
           },
           h3: {
             fontWeight: 800,
+            color: theme.colors.dark,
           },
           h4: {
             fontWeight: 800,
+            color: theme.colors.dark,
           },
           h5: {
             fontWeight: 700,
+            color: theme.colors.dark,
           },
           h6: {
             fontWeight: 700,
+            color: theme.colors.dark,
           },
         },
         palette: {
@@ -56,13 +62,16 @@ export const createTheme = <T extends ThemeOptions>(options?: T): Theme =>
           },
           gradient: theme.colors.gradient,
           grey: {
-            [100]: '#fafafa',
+            [100]: '#F8F9F8',
+            [300]: '#E5E5E5',
+            [400]: '#D0D0D2',
+            [900]: theme.colors.dark,
           },
         },
         overrides: {
-          MuiPopover: {
-            paper: {
-              borderRadius: 4,
+          MuiListItemIcon: {
+            root: {
+              minWidth: 40,
             },
           },
         },

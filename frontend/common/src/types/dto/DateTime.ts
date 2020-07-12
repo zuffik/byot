@@ -15,4 +15,8 @@ export class DateTime implements IDateTime {
       this.humanReadable = dateTime.humanReadable;
     }
   }
+
+  get moment(): moment.Moment {
+    return moment(this.iso);
+  }
 }

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Box, FormHelperText, Grid, makeStyles, Theme, WithStyles} from '@material-ui/core';
+import {FormHelperText, Grid, makeStyles, Theme, WithStyles} from '@material-ui/core';
 import {PlainLayoutNarrow} from '../plain-layout/PlainLayoutNarrow';
 import {PlainLayoutTitle} from '../plain-layout/PlainLayoutTitle';
 import {Form, Formik} from 'formik';
@@ -83,57 +83,70 @@ export const RegistrationForm: React.FC<Props> = (props: Props) => {
                   label={t('Last name')}
                 />
               </Grid>
+              <Grid item xs={12}>
+                <Input
+                  type="email"
+                  value={values.email}
+                  error={!!(touched.email && errors.email)}
+                  helperText={touched.email && errors.email}
+                  onChange={handleChange('email')}
+                  name="email"
+                  data-testid="common-auth-registration-form-email"
+                  onBlur={handleBlur('email')}
+                  label={t('Email')}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <Input
+                  type="password"
+                  value={values.password}
+                  error={!!(touched.password && errors.password)}
+                  helperText={touched.password && errors.password}
+                  onChange={e => {
+                    handleChange('password')(e);
+                    setPassword(e.target.value);
+                  }}
+                  onBlur={handleBlur('password')}
+                  name="password"
+                  data-testid="common-auth-registration-form-password"
+                  label={t('Password')}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <Input
+                  type="password"
+                  value={values.passwordRepeat}
+                  error={!!(touched.passwordRepeat && errors.passwordRepeat)}
+                  helperText={touched.passwordRepeat && errors.passwordRepeat}
+                  onChange={handleChange('passwordRepeat')}
+                  onBlur={handleBlur('passwordRepeat')}
+                  name="passwordRepeat"
+                  data-testid="common-auth-registration-form-passwordRepeat"
+                  label={t('Confirm password')}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <Checkbox
+                  color="primary"
+                  label={t('I allow this website to collect and store submitted data.')}
+                  classes={{label: styles.checkbox}}
+                  onChange={handleChange('consent')}
+                  checked={values.consent}
+                  data-testid="common-auth-registration-form-consent"
+                />
+                {touched.consent && errors.consent && (
+                  <FormHelperText error>
+                    {t('You have to allow this website to collect the data.')}
+                  </FormHelperText>
+                )}
+              </Grid>
+              <Grid item xs={12}>
+                <Button type="submit" fullWidth loading={props.loading}>
+                  {t('Sign up')}
+                </Button>
+              </Grid>
             </Grid>
-            <Input
-              type="email"
-              value={values.email}
-              errorText={touched.email && errors.email}
-              onChange={handleChange('email')}
-              name="email"
-              data-testid="common-auth-registration-form-email"
-              onBlur={handleBlur('email')}
-              label={t('Email')}
-            />
-            <Input
-              type="password"
-              value={values.password}
-              errorText={touched.password && errors.password}
-              onChange={e => {
-                handleChange('password')(e);
-                setPassword(e.target.value);
-              }}
-              onBlur={handleBlur('password')}
-              name="password"
-              data-testid="common-auth-registration-form-password"
-              label={t('Password')}
-            />
-            <Input
-              type="password"
-              value={values.passwordRepeat}
-              errorText={touched.passwordRepeat && errors.passwordRepeat}
-              onChange={handleChange('passwordRepeat')}
-              onBlur={handleBlur('passwordRepeat')}
-              name="passwordRepeat"
-              data-testid="common-auth-registration-form-passwordRepeat"
-              label={t('Confirm password')}
-            />
-            <Box mb={2}>
-              <Checkbox
-                label={t('I allow this website to collect and store submitted data.')}
-                classes={{label: styles.checkbox}}
-                onChange={handleChange('consent')}
-                checked={values.consent}
-                data-testid="common-auth-registration-form-consent"
-              />
-              {touched.consent && errors.consent && (
-                <FormHelperText error>
-                  {t('You have to allow this website to collect the data.')}
-                </FormHelperText>
-              )}
-            </Box>
-            <Button type="submit" color="gradient" fullWidth loading={props.loading}>
-              {t('Sign up')}
-            </Button>
+
             {props.children}
           </Form>
         )}

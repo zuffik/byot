@@ -28,13 +28,24 @@ async function main(args: Args) {
   await recreateDirectory(workingDirectory);
   createDirectories(workingSubdirectories);
 
-  const full = generateFullLogo(args.strokeWidth, args.offset, args.height);
+  const full = generateFullLogo(
+    args.strokeWidth,
+    args.offset,
+    args.height,
+    args.gradient
+  );
   const favicon = generateFaviconLogo(
     args.strokeWidth,
     args.offset,
-    args.height
+    args.height,
+    args.gradient
   );
-  const native = generateNativeLogo(args.strokeWidth, args.offset, args.height);
+  const native = generateNativeLogo(
+    args.strokeWidth,
+    args.offset,
+    args.height,
+    args.gradient
+  );
 
   const raw: string[] = [
     ...full.map((o) => createSvgFile(workingSubdirectories.raw.generated, o)),

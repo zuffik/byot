@@ -9,9 +9,9 @@ export type Props = Omit<TextFieldProps, 'variant'> & WithStyles<typeof styles>;
 const styles = (theme: Theme) => ({
   filledRoot: {
     borderRadius: theme.shape.borderRadius,
-    backgroundColor: theme.palette.grey[100],
+    backgroundColor: theme.palette.background.paper,
     '&:hover': {
-      backgroundColor: theme.palette.grey[200],
+      backgroundColor: theme.palette.type == 'light' && theme.palette.grey[200],
     },
   },
   label: {

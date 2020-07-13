@@ -1,13 +1,13 @@
 import {createMuiTheme, Theme, ThemeOptions} from '@material-ui/core';
-import * as _ from 'lodash';
+import merge from 'deepmerge';
 import theme from '@byot-frontend/common/src/shared/theme/theme';
 
 const spacing = 8;
+const white = '#ffffff';
 
 export const createTheme = <T extends ThemeOptions>(options?: T): Theme =>
   createMuiTheme(
-    _.merge(
-      {},
+    merge(
       {
         shape: {
           borderRadius: spacing * 1.5,
@@ -17,32 +17,33 @@ export const createTheme = <T extends ThemeOptions>(options?: T): Theme =>
           fontFamily: 'nunito, sans-serif',
           h1: {
             fontWeight: 700,
-            color: theme.colors.dark,
+            color: options?.palette?.type === 'dark' ? white : theme.colors.dark,
           },
           h2: {
             fontWeight: 800,
-            color: theme.colors.dark,
+            color: options?.palette?.type === 'dark' ? white : theme.colors.dark,
           },
           h3: {
             fontWeight: 800,
-            color: theme.colors.dark,
+            color: options?.palette?.type === 'dark' ? white : theme.colors.dark,
           },
           h4: {
             fontWeight: 800,
-            color: theme.colors.dark,
+            color: options?.palette?.type === 'dark' ? white : theme.colors.dark,
           },
           h5: {
             fontWeight: 700,
-            color: theme.colors.dark,
+            color: options?.palette?.type === 'dark' ? white : theme.colors.dark,
           },
           h6: {
             fontWeight: 700,
-            color: theme.colors.dark,
+            color: options?.palette?.type === 'dark' ? white : theme.colors.dark,
           },
         },
         palette: {
           background: {
-            default: '#fff',
+            default: options?.palette?.type === 'dark' ? '#203045' : white,
+            paper: options?.palette?.type === 'dark' ? theme.colors.dark : '#F8F9F8',
           },
           primary: {
             main: theme.colors.primary,
@@ -76,6 +77,6 @@ export const createTheme = <T extends ThemeOptions>(options?: T): Theme =>
           },
         },
       } as ThemeOptions,
-      options
+      options || {}
     )
   );

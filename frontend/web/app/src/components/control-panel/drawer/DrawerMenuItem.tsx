@@ -25,11 +25,14 @@ const styles = (theme: Theme) => ({
     position: 'absolute' as 'absolute',
   }),
   icon: (props: Props) => ({
-    color: props.selected ? theme.palette.secondary.main : theme.palette.grey[500],
+    color: props.selected
+      ? theme.palette.secondary.main
+      : theme.palette.type == 'light' && theme.palette.grey[500],
     transition: `color ${theme.transitions.duration.standard}ms`,
   }),
   textPrimary: (props: Props) => ({
-    color: props.selected ? theme.palette.grey[900] : theme.palette.grey[500],
+    color:
+      theme.palette.type == 'light' && (props.selected ? theme.palette.grey[900] : theme.palette.grey[500]),
     transition: `color ${theme.transitions.duration.standard}ms`,
     fontWeight: 500,
   }),

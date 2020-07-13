@@ -6,7 +6,7 @@ import {gql} from 'apollo-boost';
 import {call} from 'redux-saga/effects';
 import {fullAuthFragment} from '../../../graphql/fragments/FullAuthFragment';
 import {apolloClient} from '@byot-frontend/web-common/src/graphql/WebApolloClient';
-import {ErrorSnackbar} from '../../../types/app/ErrorSnackbar';
+import {ErrorSnackbar} from '../../../types/app/snackbar/ErrorSnackbar';
 
 export type Request = UserLogin;
 export type Response = Auth;

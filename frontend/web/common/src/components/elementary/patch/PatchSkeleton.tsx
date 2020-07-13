@@ -1,8 +1,10 @@
 import * as React from 'react';
-import {makeStyles, Theme, WithStyles} from '@material-ui/core';
+import {makeStyles, Theme} from '@material-ui/core';
 import {Skeleton, SkeletonProps} from '@material-ui/lab';
+import {WithStyles} from '../../../types/WithStyles';
+import {CombineClasses} from '../../../types/CombineClasses';
 
-interface Props extends WithStyles<typeof styles>, SkeletonProps {}
+interface Props extends CombineClasses<WithStyles<typeof styles>, SkeletonProps> {}
 
 const styles = (theme: Theme) => ({
   root: {

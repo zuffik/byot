@@ -8,7 +8,7 @@ interface Props extends WithStyles<typeof styles>, BoxProps {}
 const styles = (theme: Theme) => ({
   root: {
     borderRadius: theme.shape.borderRadius,
-    backgroundColor: theme.palette.grey[100],
+    backgroundColor: theme.palette.background.paper,
   },
 });
 const useStyles = makeStyles(styles);

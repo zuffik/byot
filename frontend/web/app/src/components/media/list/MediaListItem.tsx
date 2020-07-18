@@ -2,7 +2,7 @@ import * as React from 'react';
 import {Link} from 'react-router-dom';
 import {Theme, makeStyles} from '@material-ui/core';
 import {IMedia} from '@byot-frontend/common/src/types/interfaces/IMedia';
-import {TripleComboItem} from '../../elements/TripleComboItem';
+import {TripleComboItem} from '../../elements/list-items/TripleComboItem';
 import {MediaListItemPlaceholder} from './MediaListItemPlaceholder';
 import {WithStyles} from '@byot-frontend/web-common/src/types/WithStyles';
 

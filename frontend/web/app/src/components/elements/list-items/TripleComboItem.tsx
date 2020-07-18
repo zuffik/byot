@@ -54,7 +54,7 @@ const useStyles = makeStyles(styles);
 
 export const TripleComboItem = <P extends object = object>(props: Props<P>) => {
   const styles = useStyles(props);
-  const {title, description, imagePlaceholder, image, transparent, ...baseProps} = props;
+  const {title, description, imagePlaceholder, image, transparent, singleLine, ...baseProps} = props;
   return (
     <ListItemBase
       alignItems="flex-start"

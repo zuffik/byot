@@ -15,6 +15,7 @@ const styles = (theme: Theme) => ({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-end',
+    minHeight: 240,
   } as CSSProperties,
   skeleton: {
     height: theme.spacing(2),

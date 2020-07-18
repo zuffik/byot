@@ -14,6 +14,7 @@ type EditableProps = {
 
 type ViewOnlyProps = {
   editable?: false;
+  onItemClick?: (media: IMedia) => void;
 };
 
 type Props = {
@@ -64,7 +65,11 @@ export const MediaList: React.FC<Props> = (props: Props) => {
         <Container>
           {props.items.map(item => (
             <Item>
-              <MediaListItem media={item} classes={{root: styles.readonlyItem}} />
+              <MediaListItem
+                media={item}
+                classes={{root: styles.readonlyItem}}
+                onClick={() => props.onItemClick?.(item)}
+              />
             </Item>
           ))}
         </Container>

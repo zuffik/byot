@@ -8,7 +8,7 @@ import moment from 'moment';
 import {Link} from 'react-router-dom';
 import {TrainingSetListItemImagePlaceholder} from './TrainingSetListItemImagePlaceholder';
 import {DateTimeTypography} from '../../elements/typography/DateTimeTypography';
-import {TripleComboItem} from '../../elements/TripleComboItem';
+import {TripleComboItem} from '../../elements/list-items/TripleComboItem';
 import {Router} from '../../../router/Router';
 
 interface Props extends WithStyles<typeof styles> {

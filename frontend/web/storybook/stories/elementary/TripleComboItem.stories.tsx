@@ -1,7 +1,9 @@
 import * as React from 'react';
-import {TripleComboItem} from '@byot-frontend/web-app/src/components/elements/TripleComboItem';
 import {text} from '@storybook/addon-knobs';
 import {getImage, size} from '../../fixtures/GetImage';
+import {TripleComboItemSkeleton} from '@byot-frontend/web-app/src/components/elements/list-items/TripleComboItemSkeleton';
+import {TripleComboItem} from '@byot-frontend/web-app/src/components/elements/list-items/TripleComboItem';
+import {TripleComboItemSkeletonList} from '@byot-frontend/web-app/src/components/elements/lists/TripleComboItemSkeletonList';
 
 export default {
   title: 'Elementary/Triple combo item',
@@ -32,3 +34,7 @@ export const bothTextWithImage = () => (
     description={text('Description', 'Description')}
   />
 );
+
+export const skeleton = () => <TripleComboItemSkeleton />;
+
+export const skeletonList = () => <TripleComboItemSkeletonList />;

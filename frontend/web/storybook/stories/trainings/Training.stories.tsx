@@ -17,6 +17,7 @@ import {
   MediaAutocompleteInput,
   MediaAutocompleteInputProps,
 } from '@byot-frontend/web-app/src/components/media/form/MediaAutocompleteInput';
+import {TrainingDetail} from '@byot-frontend/web-app/src/components/training/training/TrainingDetail';
 
 export default {
   title: 'Trainings/Training',
@@ -50,4 +51,10 @@ export const form = () => {
       )}
     />
   );
+};
+
+export const detail = () => {
+  const m = new IterableResource<IMedia>(_.times(10, () => media()));
+  m.state = boolean('Is loading', false) ? ResourceState.LOADING : ResourceState.IDLE;
+  return <TrainingDetail media={m} onMediaClick={action('onMediaClick')} currentMedia={m.data[0]} />;
 };

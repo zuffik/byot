@@ -18,7 +18,7 @@ export const training = ({
     createdAt: dateTime(),
     updatedAt: dateTime(),
     label: mocker.sentence(),
-    trainingSet: withTrainingSet && trainingSet({withTrainings: false}),
+    trainingSet: withTrainingSet ? trainingSet({withTrainings: false}) : undefined,
     owner: owner || user(),
     media: list(_.times(mocker.integer({min: 2, max: 20}), () => media())),
   });

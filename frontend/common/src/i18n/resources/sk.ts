@@ -39,4 +39,9 @@ export default {
   'video_0': 'video',
   'video_1': 'videá',
   'video_2': 'videí',
+  'Enter training name': 'Názov tréningu',
+  'Add video': 'Pridať video',
+  'Save training': 'Uložiť tréning',
+  'Video label': 'Názov videa',
+  'Start typing to search or paste URL': 'Vyhľadajte alebo vložte URL',
 };

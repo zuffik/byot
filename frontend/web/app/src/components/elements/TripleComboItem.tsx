@@ -9,6 +9,7 @@ import {
 } from '@material-ui/core';
 import {WithStyles} from '@byot-frontend/web-common/src/types/WithStyles';
 import {Patch} from '@byot-frontend/web-common/src/components/elementary/patch/Patch';
+import {CSSProperties} from '@material-ui/styles';
 
 type Props<P> = WithStyles<typeof styles> &
   ListItemProps & {
@@ -17,6 +18,8 @@ type Props<P> = WithStyles<typeof styles> &
     imagePlaceholder?: boolean | React.ReactNode;
     description?: React.ReactNode;
     component?: React.ComponentType<P>;
+    singleLine?: boolean;
+    transparent?: boolean;
   } & P;
 
 const styles = (theme: Theme) => ({
@@ -34,21 +37,29 @@ const styles = (theme: Theme) => ({
     marginRight: theme.spacing(2),
     ...(props.image && {backgroundImage: `url(${props.image})`}),
   }),
-  primaryText: {
+  primaryText: (props: Props<any>) => ({
     fontWeight: 700,
-  },
-  textRoot: {},
+    ...(props.singleLine &&
+      ({
+        whiteSpace: 'nowrap',
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+      } as CSSProperties)),
+  }),
+  textRoot: (props: Props<any>) => ({
+    margin: props.singleLine && 0,
+  }),
 });
 const useStyles = makeStyles(styles);
 
 export const TripleComboItem = <P extends object = object>(props: Props<P>) => {
   const styles = useStyles(props);
-  const {title, description, imagePlaceholder, image, ...baseProps} = props;
+  const {title, description, imagePlaceholder, image, transparent, ...baseProps} = props;
   return (
     <ListItemBase
       alignItems="flex-start"
       {...(baseProps as any)}
-      component={p => <Patch component={props.component} {...p} />}
+      component={props.transparent ? undefined : p => <Patch component={props.component} {...p} />}
       classes={{root: styles.root, ...baseProps.classes}}>
       {(props.image || props.imagePlaceholder) && (
         <div className={styles.image}>
@@ -62,6 +73,7 @@ export const TripleComboItem = <P extends object = object>(props: Props<P>) => {
           secondary={props.description}
         />
       )}
+      {props.children}
     </ListItemBase>
   );
 };

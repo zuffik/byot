@@ -12,6 +12,7 @@ type Training implements Entity {
 input TrainingMediaInput {
     id: ID!
     sourceType: SourceType!
+    label: String!
 }
 
 input TrainingUpdateInput {

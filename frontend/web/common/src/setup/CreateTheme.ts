@@ -75,6 +75,11 @@ export const createTheme = <T extends ThemeOptions>(options?: T): Theme =>
               minWidth: 40,
             },
           },
+          MuiListItem: {
+            container: {
+              listStyle: 'none',
+            },
+          },
         },
       } as ThemeOptions,
       options || {}

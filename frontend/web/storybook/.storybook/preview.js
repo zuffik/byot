@@ -1,12 +1,11 @@
 import * as React from 'react';
 import 'loki/configure-react';
 import { addDecorator } from '@storybook/react';
-import { withKnobs } from '@storybook/addon-knobs';
-import { muiTheme } from 'storybook-addon-material-ui';
+import {boolean, withKnobs} from '@storybook/addon-knobs';
 import { createTheme } from '@byot-frontend/web-common/src/setup/CreateTheme';
 import configureStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
-import { CssBaseline } from '@material-ui/core';
+import { CssBaseline, ThemeProvider } from '@material-ui/core';
 import { withI18next } from 'storybook-addon-i18next';
 import { createI18n } from '@byot-frontend/common/src/i18n/CreateI18n';
 import * as _ from 'lodash';
@@ -23,8 +22,7 @@ const [i18n] = createI18n(_.mapValues(langs, () => ({})), new FixedLanguageProvi
 
 addDecorator(withKnobs);
 addDecorator(story => <Provider store={mockStore()}>{story()}</Provider>);
-addDecorator(story => <><CssBaseline/>{story()}</>);
-addDecorator(muiTheme([createTheme()]));
+addDecorator(story => <ThemeProvider theme={createTheme({palette: {type: boolean('Global: dark', false) ? 'dark' : 'light'}})}><CssBaseline/>{story()}</ThemeProvider>);
 addDecorator(withI18next({
   i18n,
   languages: langs,

@@ -7,7 +7,6 @@ module.exports = {
     '@storybook/addon-actions',
     '@storybook/addon-links',
     '@storybook/addon-knobs/register',
-    'storybook-addon-material-ui/register',
     'storybook-addon-i18next/register',
     '@storybook/addon-viewport/register'
   ],

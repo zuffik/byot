@@ -7,6 +7,7 @@ import {IMedia} from '../interfaces/IMedia';
 import {DateTime} from './DateTime';
 import {User} from './User';
 import {List} from './List';
+import {TrainingSet} from './TrainingSet';
 
 export class Training implements ITraining {
   public id: string;
@@ -16,13 +17,22 @@ export class Training implements ITraining {
   public trainingSet: ITrainingSet;
   public updatedAt?: IDateTime;
   public createdAt: IDateTime;
-  constructor({id, label, media, owner, trainingSet, updatedAt, createdAt}: ITraining) {
-    this.createdAt = createdAt instanceof DateTime ? createdAt : new DateTime(createdAt);
-    this.updatedAt = updatedAt && updatedAt instanceof DateTime ? updatedAt : new DateTime(updatedAt);
+  constructor({
+    id = '',
+    label = '',
+    media,
+    owner,
+    trainingSet,
+    updatedAt,
+    createdAt,
+  }: Partial<ITraining> = {}) {
+    this.createdAt = createdAt instanceof DateTime ? createdAt : new DateTime(createdAt as IDateTime);
+    this.updatedAt =
+      updatedAt && updatedAt instanceof DateTime ? updatedAt : new DateTime(updatedAt as IDateTime);
     this.id = id;
     this.label = label;
     this.media = media instanceof List ? media : new List(media);
     this.owner = owner instanceof User ? owner : new User(owner);
-    this.trainingSet = trainingSet;
+    this.trainingSet = trainingSet instanceof TrainingSet ? trainingSet : new TrainingSet(trainingSet);
   }
 }

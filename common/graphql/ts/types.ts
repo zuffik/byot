@@ -57,6 +57,7 @@ export interface Pagination {
 export interface TrainingMediaInput {
   id: string;
   sourceType: SourceType;
+  label: string;
 }
 
 export interface TrainingUpdateInput {

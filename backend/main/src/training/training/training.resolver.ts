@@ -120,6 +120,7 @@ export class TrainingResolver extends BaseResolver {
             return {
               id: source.resourceId,
               sourceType: source.sourceType,
+              label: m.label,
             };
           },
         ),

@@ -15,11 +15,13 @@ export class TrainingSet implements ITrainingSet {
   public trainings: IList<ITraining>;
   public updatedAt?: IDateTime;
 
-  constructor({createdAt, id, label, owner, trainings, updatedAt}: ITrainingSet) {
-    this.createdAt = createdAt instanceof DateTime ? createdAt : new DateTime(createdAt);
-    this.updatedAt = updatedAt && updatedAt instanceof DateTime ? updatedAt : new DateTime(updatedAt);
-    this.id = id;
-    this.label = label;
+  constructor({createdAt, id, label, owner, trainings, updatedAt}: Partial<ITrainingSet> = {}) {
+    this.createdAt =
+      createdAt && createdAt instanceof DateTime ? createdAt : new DateTime(createdAt as IDateTime);
+    this.updatedAt =
+      updatedAt && updatedAt instanceof DateTime ? updatedAt : new DateTime(updatedAt as IDateTime);
+    this.id = id || ((undefined as unknown) as string);
+    this.label = label || '';
     this.owner = owner instanceof User ? owner : new User(owner);
     this.trainings = trainings instanceof List ? trainings : new List(trainings);
   }

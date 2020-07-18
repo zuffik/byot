@@ -15,16 +15,7 @@ interface Props extends WithStyles<typeof styles> {
   trainingSet: ITrainingSet;
 }
 
-const styles = (theme: Theme) => ({
-  title: {
-    whiteSpace: 'nowrap',
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
-  } as CSSProperties,
-  textRoot: {
-    margin: 0,
-  },
-});
+const styles = (theme: Theme) => ({});
 const useStyles = makeStyles(styles);
 
 export const TrainingSetListItem: React.FC<Props> = (props: Props) => {
@@ -35,7 +26,7 @@ export const TrainingSetListItem: React.FC<Props> = (props: Props) => {
     <TripleComboItem
       imagePlaceholder={<TrainingSetListItemImagePlaceholder />}
       image={props.trainingSet.trainings.entries[0]?.media?.entries?.[0]?.source?.thumbnail}
-      classes={{primaryText: styles.title, textRoot: styles.textRoot}}
+      singleLine
       title={props.trainingSet.label}
       button
       component={Link}

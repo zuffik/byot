@@ -23,7 +23,7 @@ export class MediaService {
   ) {}
 
   public async findLocalOrCreateFromRemote(
-    media: TrainingMediaInput,
+    media: Omit<TrainingMediaInput, 'label'>,
   ): Promise<Media | undefined> {
     const local = await this.sourceRepository.findOne({
       relations: ['media'],

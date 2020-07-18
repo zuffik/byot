@@ -332,6 +332,7 @@ describe('TrainingResolver', () => {
               return {
                 id: source.resourceId,
                 sourceType: source.sourceType,
+                label: m.label,
               };
             },
           ),
@@ -370,6 +371,7 @@ describe('TrainingResolver', () => {
               return {
                 id: source.resourceId,
                 sourceType: source.sourceType,
+                label: m.label,
               };
             },
           ),

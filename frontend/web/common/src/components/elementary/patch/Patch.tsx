@@ -3,7 +3,11 @@ import {makeStyles, Theme, Box, BoxProps} from '@material-ui/core';
 import {WithStyles} from '../../../types/WithStyles';
 import classNames from 'classnames';
 
-interface Props extends WithStyles<typeof styles>, BoxProps {}
+export interface PatchProps extends WithStyles<typeof styles>, BoxProps {}
+
+interface Props extends PatchProps {
+  boxRef?: React.Ref<HTMLDivElement>;
+}
 
 const styles = (theme: Theme) => ({
   root: {
@@ -15,5 +19,13 @@ const useStyles = makeStyles(styles);
 
 export const Patch: React.FC<Props> = (props: Props) => {
   const styles = useStyles(props);
-  return <Box p={2} {...props} className={classNames(props.className, styles.root)} />;
+  return (
+    <Box
+      p={2}
+      {...props}
+      className={classNames(props.className, styles.root)}
+      // @ts-ignore
+      ref={props.boxRef}
+    />
+  );
 };

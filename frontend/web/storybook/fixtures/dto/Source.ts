@@ -25,7 +25,7 @@ const resourceIds = [
   'eTxO5ZMxcsc',
   'f7wy5DWM0jg',
 ];
-const thumb = (id: string) => `https://i.ytimg.com/vi/${id}/default.jpg`;
+const thumb = (id: string) => `https://i.ytimg.com/vi/${id}/mqdefault.jpg`;
 
 export const source = (): ISource => {
   const resourceId = mocker.pickone(resourceIds);

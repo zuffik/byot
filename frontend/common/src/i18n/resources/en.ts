@@ -33,4 +33,9 @@ export default {
   'training_plural': 'trainings',
   'video': 'video',
   'video_plural': 'videos',
+  'Enter training name': 'Enter training name',
+  'Add video': 'Add video',
+  'Save training': 'Save training',
+  'Video label': 'Video label',
+  'Start typing to search or paste URL': 'Start typing to search or paste URL',
 };

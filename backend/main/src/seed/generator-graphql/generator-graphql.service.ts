@@ -109,6 +109,7 @@ export class GeneratorGraphqlService {
     return {
       sourceType: SourceType.YOUTUBE,
       id: chance.guid(),
+      label: chance.sentence(),
     };
   }
 

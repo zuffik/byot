@@ -7,7 +7,7 @@ import * as _ from 'lodash';
 import {Checkbox} from '@byot-frontend/web-common/src/components/elementary/form/Checkbox';
 import {colorVariants} from '../../helpers/ColorVariants';
 import {Radio} from '@byot-frontend/web-common/src/components/elementary/form/Radio';
-import {select as selectKnob, text} from '@storybook/addon-knobs';
+import {number, select as selectKnob, text} from '@storybook/addon-knobs';
 
 export default {
   title: 'Elementary/Form',
@@ -17,6 +17,7 @@ export const input = () => (
   <Input
     label="Label"
     onChange={action('onChange')}
+    debounce={number('Debounce', 0)}
     color={colorVariants()}
     helperText={text('Error text', '')}
   />

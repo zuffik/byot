@@ -1,7 +1,6 @@
 import * as React from 'react';
 import {MediaPlayerSkeleton} from './MediaPlayerSkeleton';
 import {makeStyles, Theme} from '@material-ui/core';
-import {CSSProperties} from '@material-ui/styles';
 
 interface Props {
   children?: React.ReactNode;

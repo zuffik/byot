@@ -48,9 +48,9 @@ Build project:
   script:
     - cd ../scripts
     - yarn install
-    - yarn logo:favicon:inject frontend/web/admin
-    - yarn logo:favicon:inject frontend/web/app
-    - yarn logo:favicon:inject frontend/web/landing
+    - yarn logo:favicon:inject -p admin
+    - yarn logo:favicon:inject -p app
+    - yarn logo:favicon:inject -p landing
     - cd ../frontend/web/common
     - cd ../admin
     - yarn build

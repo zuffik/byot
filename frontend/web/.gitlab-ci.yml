@@ -76,39 +76,30 @@ Unit tests:
   stage: test
   dependencies:
     - Build project
-  script:
-    - cd web/common
-    - cd ../common
-    - yarn test
-    - cd ../admin
-    - yarn test
-    - cd ../app
-    - yarn test
-    - cd ../landing
-    - yarn test
-
-Regression test:
   artifacts:
-    when: always
     paths:
-      - frontend/web/storybook/.loki/**
-  stage: test
-  dependencies:
-    - Build storybook
-  before_script:
-    - apt-get update
-    - apt-get install -yq chromedriver libatk-bridge2.0-0 libgtk-3-0
-    - cd frontend/web/storybook
-    - yarn install
+      - frontend/common/coverage
+      - frontend/web/common/coverage
+      - frontend/web/admin/coverage
+      - frontend/web/app/coverage
+      - frontend/web/landing/coverage
   script:
-    - yarn test:ci || true
+    - cd common
+    - yarn test --coverage
+    - cd ../web/common
+    - yarn test --coverage
+    - cd ../admin
+    - yarn test --coverage
+    - cd ../app
+    - yarn test --coverage
+    - cd ../landing
+    - yarn test --coverage
 
 Deploy:
   stage: deploy
   dependencies:
     - Build project
     - Unit tests
-    - Regression test
   script:
     - echo "Deploying"
 

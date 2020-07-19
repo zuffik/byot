@@ -33,7 +33,6 @@
     "@types/testing-library__react": "10.2.0",
     "customize-cra": "1.0.0",
     "jest-environment-jsdom": "24.9.0",
-    "loki": "0.22.1",
     "react-app-rewire-yarn-workspaces": "1.0.3",
     "react-app-rewired": "2.1.6"
   },

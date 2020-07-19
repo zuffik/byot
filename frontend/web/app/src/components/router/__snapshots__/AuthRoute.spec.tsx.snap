@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AuthRoute/> should render 1`] = `
+<div>
+  <div
+    data-testid="auth-route-base"
+  />
+</div>
+`;

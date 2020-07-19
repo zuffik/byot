@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<InfiniteGridList/> should render 1`] = `
+<div>
+  <div
+    style="display: none;"
+  >
+    <div
+      class="MuiGrid-root"
+    />
+  </div>
+  <div
+    class="infinite-scroll-component__outerdiv"
+  >
+    <div
+      class="infinite-scroll-component MuiGrid-root"
+      style="height: auto; overflow: auto;"
+    />
+  </div>
+</div>
+`;

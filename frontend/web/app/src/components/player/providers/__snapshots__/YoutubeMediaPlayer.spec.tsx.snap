@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<YoutubeMediaPlayer/> should render 1`] = `
+<div>
+  <div
+    class="makeStyles-root-1"
+  >
+    <div
+      data-testid="youtube-player"
+    />
+  </div>
+</div>
+`;

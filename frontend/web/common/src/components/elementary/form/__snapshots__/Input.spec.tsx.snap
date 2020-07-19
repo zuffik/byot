@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Input/> should render 1`] = `
+<div>
+  <div
+    class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+  >
+    <div
+      class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-1 makeStyles-filledRoot-3 MuiInputBase-fullWidth MuiInputBase-formControl"
+    >
+      <input
+        aria-invalid="false"
+        class="MuiInputBase-input MuiFilledInput-input"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+  <div
+    class="MuiCollapse-container MuiCollapse-hidden"
+    style="min-height: 0px;"
+  >
+    <div
+      class="MuiCollapse-wrapper"
+    >
+      <div
+        class="MuiCollapse-wrapperInner"
+      >
+        <p
+          class="MuiFormHelperText-root MuiFormHelperText-contained"
+        >
+          <span>
+            ​
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;

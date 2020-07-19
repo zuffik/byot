@@ -18,17 +18,29 @@ const trainingSchema = (t: TFunction) =>
     label: Yup.string().required(t('Enter training name')),
   });
 
-interface Props {
-  training?: ITraining;
-  trainingSetId: string;
-  onSave: (training: ITrainingDraftInput) => void;
+type EditProps = {
+  training: ITraining;
   onRemove: () => void;
+};
+
+type CreateProps = {
+  trainingSetId: string;
+};
+
+type Props = {
+  onSave: (training: ITrainingDraftInput) => void;
   MediaProviderComponent: React.ComponentType<{handleMediaFound: (media: IMedia) => void}>;
-}
+} & (CreateProps | EditProps);
+
+const isEditProps = (props: Props | any): props is EditProps => 'training' in props;
 
 export const TrainingForm: React.FC<Props> = (props: Props) => {
-  const training = new TrainingDraftInput();
-  const [media, setMedia] = React.useState<IMedia[]>([]);
+  const training = new TrainingDraftInput(
+    isEditProps(props)
+      ? {label: props.training.label, idTrainingSet: props.training.trainingSet.id}
+      : {idTrainingSet: props.trainingSetId}
+  );
+  const [media, setMedia] = React.useState<IMedia[]>(isEditProps(props) ? props.training.media.entries : []);
   const {t} = useTranslation();
   const addMedia = (m: IMedia) => setMedia([...media, m]);
   const onSubmit = (values: ITrainingDraftInput) => {
@@ -47,11 +59,12 @@ export const TrainingForm: React.FC<Props> = (props: Props) => {
       validateOnBlur
       validateOnChange>
       {({errors, touched}) => (
-        <Form>
+        <Form data-testid="training-form-form">
           <Grid container spacing={2} justify="flex-end">
             <Grid item xs={12}>
               <FastField
                 as={Input}
+                data-testid="training-form-name"
                 name="label"
                 label={t('Enter training name')}
                 error={!!(touched.label && errors.label)}
@@ -74,7 +87,9 @@ export const TrainingForm: React.FC<Props> = (props: Props) => {
               <Button color="primary" type="submit">
                 {t('Save training')}
               </Button>
-              <ButtonRemove onClick={props.onRemove} />
+              {isEditProps(props) && (
+                <ButtonRemove onClick={props.onRemove} data-testid="training-form-button-remove" />
+              )}
             </Grid>
           </Grid>
         </Form>

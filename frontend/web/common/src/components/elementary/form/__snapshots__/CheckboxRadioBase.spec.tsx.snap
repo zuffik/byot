@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CheckboxRadioBase/> should render 1`] = `
+<div>
+  <label
+    class="MuiFormControlLabel-root"
+  >
+    <div />
+    <span
+      class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
+    >
+      <p
+        class="MuiTypography-root MuiTypography-body1"
+      >
+        Label
+      </p>
+    </span>
+  </label>
+</div>
+`;

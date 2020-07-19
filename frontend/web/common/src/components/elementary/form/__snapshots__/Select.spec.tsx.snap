@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Select/> should render 1`] = `
+<div>
+  <div
+    class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+  >
+    <div
+      class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-1 makeStyles-filledRoot-3 MuiInputBase-fullWidth MuiInputBase-formControl"
+    >
+      <div
+        aria-haspopup="listbox"
+        class="MuiSelect-root MuiSelect-select MuiSelect-selectMenu MuiSelect-filled MuiInputBase-input MuiFilledInput-input"
+        role="button"
+        tabindex="0"
+      >
+        <span>
+          ​
+        </span>
+      </div>
+      <input
+        aria-hidden="true"
+        class="MuiSelect-nativeInput"
+        tabindex="-1"
+        value=""
+      />
+      <svg
+        aria-hidden="true"
+        class="MuiSvgIcon-root MuiSelect-icon MuiSelect-iconFilled"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M7 10l5 5 5-5z"
+        />
+      </svg>
+    </div>
+  </div>
+  <div
+    class="MuiCollapse-container MuiCollapse-hidden"
+    style="min-height: 0px;"
+  >
+    <div
+      class="MuiCollapse-wrapper"
+    >
+      <div
+        class="MuiCollapse-wrapperInner"
+      >
+        <p
+          class="MuiFormHelperText-root MuiFormHelperText-contained"
+        >
+          <span>
+            ​
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SearchField/> should render and trigger the event 1`] = `
+<div>
+  <h6
+    class="MuiTypography-root MuiTypography-h6"
+  >
+    Search
+  </h6>
+  <div
+    class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+  >
+    <label
+      class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-2 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-marginDense MuiInputLabel-filled"
+      data-shrink="false"
+    >
+      Type to search
+    </label>
+    <div
+      class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-1 makeStyles-filledRoot-3 MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-marginDense MuiFilledInput-marginDense"
+    >
+      <input
+        aria-invalid="false"
+        class="MuiInputBase-input MuiFilledInput-input MuiInputBase-inputMarginDense MuiFilledInput-inputMarginDense"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+  <div
+    class="MuiCollapse-container MuiCollapse-hidden"
+    style="min-height: 0px;"
+  >
+    <div
+      class="MuiCollapse-wrapper"
+    >
+      <div
+        class="MuiCollapse-wrapperInner"
+      >
+        <p
+          class="MuiFormHelperText-root MuiFormHelperText-contained"
+        >
+          <span>
+            ​
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;

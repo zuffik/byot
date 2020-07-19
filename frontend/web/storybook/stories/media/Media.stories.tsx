@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {MediaList} from '@byot-frontend/web-app/src/components/media/list/MediaList';
 import * as _ from 'lodash';
-import {media} from '../../fixtures/dto/Media';
+import {media} from '@byot-frontend/common/test/fixtures/dto/Media';
 import {boolean} from '@storybook/addon-knobs';
 import {action} from '@storybook/addon-actions';
 import {

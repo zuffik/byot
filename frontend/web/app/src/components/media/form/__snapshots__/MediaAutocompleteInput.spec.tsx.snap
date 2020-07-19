@@ -1,0 +1,332 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MediaAutocompleteInput/> should render focused state 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="true"
+      aria-owns="autocomplete-popup"
+      class="MuiAutocomplete-root MuiAutocomplete-hasClearIcon"
+      role="combobox"
+    >
+      <div
+        class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+      >
+        <label
+          class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-7 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled"
+          data-shrink="false"
+          for="autocomplete"
+          id="autocomplete-label"
+        >
+          Start typing to search or paste URL
+        </label>
+        <div
+          class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-6 makeStyles-filledRoot-8 MuiAutocomplete-inputRoot MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiFilledInput-adornedEnd"
+        >
+          <input
+            aria-autocomplete="list"
+            aria-controls="autocomplete-popup"
+            aria-invalid="false"
+            autocapitalize="none"
+            autocomplete="off"
+            class="MuiInputBase-input MuiFilledInput-input MuiAutocomplete-input MuiAutocomplete-inputFocused MuiInputBase-inputAdornedEnd MuiFilledInput-inputAdornedEnd"
+            data-testid="media-form-autocomplete-input"
+            id="autocomplete"
+            spellcheck="false"
+            type="text"
+            value=""
+          />
+          <div
+            class="MuiAutocomplete-endAdornment"
+          >
+            <button
+              aria-label="Clear"
+              class="MuiButtonBase-root MuiIconButton-root MuiAutocomplete-clearIndicator"
+              tabindex="-1"
+              title="Clear"
+              type="button"
+            >
+              <span
+                class="MuiIconButton-label"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                  />
+                </svg>
+              </span>
+              <span
+                class="MuiTouchRipple-root"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="MuiCollapse-container MuiCollapse-hidden"
+        style="min-height: 0px;"
+      >
+        <div
+          class="MuiCollapse-wrapper"
+        >
+          <div
+            class="MuiCollapse-wrapperInner"
+          >
+            <p
+              class="MuiFormHelperText-root MuiFormHelperText-contained"
+            >
+              <span>
+                ​
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="MuiAutocomplete-popper"
+    role="presentation"
+    style="position: absolute; top: 0px; left: 0px; width: 0px;"
+    x-placement="bottom"
+  >
+    <div
+      class="MuiPaper-root MuiAutocomplete-paper MuiPaper-elevation0 MuiPaper-rounded"
+      data-testid="media-form-autocomplete-suggestions"
+    >
+      <ul
+        aria-labelledby="autocomplete-label"
+        class="MuiAutocomplete-listbox"
+        id="autocomplete-popup"
+        role="listbox"
+      >
+        <li
+          aria-disabled="false"
+          aria-selected="false"
+          class="MuiAutocomplete-option"
+          data-option-index="0"
+          id="autocomplete-option-0"
+          role="option"
+          tabindex="-1"
+        >
+          <div
+            data-media-id="1ca93012-1ffc-5d64-ae2e-54835c234c67"
+            data-testid="media-list-item"
+          />
+        </li>
+        <li
+          aria-disabled="false"
+          aria-selected="false"
+          class="MuiAutocomplete-option"
+          data-option-index="1"
+          id="autocomplete-option-1"
+          role="option"
+          tabindex="-1"
+        >
+          <div
+            data-media-id="647b3fdd-9747-5f3e-9991-0394a8649c84"
+            data-testid="media-list-item"
+          />
+        </li>
+        <li
+          aria-disabled="false"
+          aria-selected="false"
+          class="MuiAutocomplete-option"
+          data-option-index="2"
+          id="autocomplete-option-2"
+          role="option"
+          tabindex="-1"
+        >
+          <div
+            data-media-id="662aca80-3bf5-58ea-ab15-954792683130"
+            data-testid="media-list-item"
+          />
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`<MediaAutocompleteInput/> should render idle state 1`] = `
+<div>
+  <div
+    aria-expanded="false"
+    class="MuiAutocomplete-root MuiAutocomplete-hasClearIcon"
+    role="combobox"
+  >
+    <div
+      class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+    >
+      <label
+        class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-3 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled"
+        data-shrink="false"
+        for="autocomplete"
+        id="autocomplete-label"
+      >
+        Start typing to search or paste URL
+      </label>
+      <div
+        class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-2 makeStyles-filledRoot-4 MuiAutocomplete-inputRoot MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiFilledInput-adornedEnd"
+      >
+        <input
+          aria-autocomplete="list"
+          aria-invalid="false"
+          autocapitalize="none"
+          autocomplete="off"
+          class="MuiInputBase-input MuiFilledInput-input MuiAutocomplete-input MuiAutocomplete-inputFocused MuiInputBase-inputAdornedEnd MuiFilledInput-inputAdornedEnd"
+          data-testid="media-form-autocomplete-input"
+          id="autocomplete"
+          spellcheck="false"
+          type="text"
+          value=""
+        />
+        <div
+          class="MuiAutocomplete-endAdornment"
+        >
+          <button
+            aria-label="Clear"
+            class="MuiButtonBase-root MuiIconButton-root MuiAutocomplete-clearIndicator"
+            tabindex="-1"
+            title="Clear"
+            type="button"
+          >
+            <span
+              class="MuiIconButton-label"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                />
+              </svg>
+            </span>
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      class="MuiCollapse-container MuiCollapse-hidden"
+      style="min-height: 0px;"
+    >
+      <div
+        class="MuiCollapse-wrapper"
+      >
+        <div
+          class="MuiCollapse-wrapperInner"
+        >
+          <p
+            class="MuiFormHelperText-root MuiFormHelperText-contained"
+          >
+            <span>
+              ​
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<MediaAutocompleteInput/> should select the right media 1`] = `
+<div>
+  <div
+    aria-expanded="true"
+    aria-owns="autocomplete-popup"
+    class="MuiAutocomplete-root MuiAutocomplete-hasClearIcon"
+    role="combobox"
+  >
+    <div
+      class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+    >
+      <label
+        class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-11 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled"
+        data-shrink="true"
+        for="autocomplete"
+        id="autocomplete-label"
+      >
+        Start typing to search or paste URL
+      </label>
+      <div
+        class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-10 makeStyles-filledRoot-12 MuiAutocomplete-inputRoot MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiFilledInput-adornedEnd"
+      >
+        <input
+          aria-autocomplete="list"
+          aria-controls="autocomplete-popup"
+          aria-invalid="false"
+          autocapitalize="none"
+          autocomplete="off"
+          class="MuiInputBase-input MuiFilledInput-input MuiAutocomplete-input MuiAutocomplete-inputFocused MuiInputBase-inputAdornedEnd MuiFilledInput-inputAdornedEnd"
+          data-testid="media-form-autocomplete-input"
+          id="autocomplete"
+          spellcheck="false"
+          type="text"
+          value="Totally unique label that the chance won't didly generate"
+        />
+        <div
+          class="MuiAutocomplete-endAdornment"
+        >
+          <button
+            aria-label="Clear"
+            class="MuiButtonBase-root MuiIconButton-root MuiAutocomplete-clearIndicator MuiAutocomplete-clearIndicatorDirty"
+            tabindex="-1"
+            title="Clear"
+            type="button"
+          >
+            <span
+              class="MuiIconButton-label"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                />
+              </svg>
+            </span>
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      class="MuiCollapse-container MuiCollapse-hidden"
+      style="min-height: 0px;"
+    >
+      <div
+        class="MuiCollapse-wrapper"
+      >
+        <div
+          class="MuiCollapse-wrapperInner"
+        >
+          <p
+            class="MuiFormHelperText-root MuiFormHelperText-contained"
+          >
+            <span>
+              ​
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

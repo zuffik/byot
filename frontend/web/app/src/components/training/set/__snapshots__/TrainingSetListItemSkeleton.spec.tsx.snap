@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TrainingSetListItemSkeleton/> should render 1`] = `
+<div>
+  <div
+    class="MuiBox-root MuiBox-root-5 makeStyles-root-4"
+  >
+    <div
+      class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2"
+    >
+      <div
+        class="MuiGrid-root MuiGrid-item"
+      >
+        <span
+          class="MuiSkeleton-root makeStyles-root-6 makeStyles-image-1 MuiSkeleton-rect MuiSkeleton-pulse"
+        />
+      </div>
+      <div
+        class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-item MuiGrid-grid-xs-true"
+      >
+        <div
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+        >
+          <span
+            class="MuiSkeleton-root makeStyles-root-6 makeStyles-title-2 MuiSkeleton-rect MuiSkeleton-pulse"
+            style="width: 100%;"
+          />
+        </div>
+        <div
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+        >
+          <span
+            class="MuiSkeleton-root makeStyles-root-6 makeStyles-descriptions-3 MuiSkeleton-rect MuiSkeleton-pulse"
+            style="width: 100%;"
+          />
+        </div>
+        <div
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+        >
+          <span
+            class="MuiSkeleton-root makeStyles-root-6 makeStyles-descriptions-3 MuiSkeleton-rect MuiSkeleton-pulse"
+            style="width: 100%;"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

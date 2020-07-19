@@ -19,10 +19,11 @@ const useStyles = makeStyles(styles);
 
 export const Patch: React.FC<Props> = (props: Props) => {
   const styles = useStyles(props);
+  const {boxRef, ...rest} = props;
   return (
     <Box
       p={2}
-      {...props}
+      {...rest}
       className={classNames(props.className, styles.root)}
       // @ts-ignore
       ref={props.boxRef}

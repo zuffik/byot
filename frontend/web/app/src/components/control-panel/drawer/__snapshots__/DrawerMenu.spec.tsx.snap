@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DrawerMenu/> should render 1`] = `
+<div>
+  <div
+    class="MuiBox-root MuiBox-root-2 makeStyles-root-1"
+  >
+    <ul
+      class="MuiList-root"
+    />
+  </div>
+</div>
+`;
+
+exports[`<DrawerMenu/> should render as many items as pr 1`] = `
+<div>
+  <div
+    class="MuiBox-root MuiBox-root-4 makeStyles-root-3"
+  >
+    <ul
+      class="MuiList-root"
+    >
+      <div
+        aria-disabled="false"
+        class="MuiButtonBase-root MuiListItem-root makeStyles-root-5 MuiListItem-gutters MuiListItem-button"
+        data-testid="control-panel-drawer-menu-item"
+        role="button"
+        tabindex="0"
+        to="/route-0"
+      >
+        <span
+          class="makeStyles-highlight-6 makeStyles-highlight-9"
+        />
+        <div
+          class="MuiListItemIcon-root makeStyles-icon-7 makeStyles-icon-10"
+        />
+        <div
+          class="MuiListItemText-root"
+        >
+          <span
+            class="MuiTypography-root MuiListItemText-primary makeStyles-textPrimary-8 makeStyles-textPrimary-11 MuiTypography-body1 MuiTypography-displayBlock"
+          >
+            Label 0
+          </span>
+        </div>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </div>
+      <div
+        aria-disabled="false"
+        class="MuiButtonBase-root MuiListItem-root makeStyles-root-5 MuiListItem-gutters MuiListItem-button"
+        data-testid="control-panel-drawer-menu-item"
+        role="button"
+        tabindex="0"
+        to="/route-1"
+      >
+        <span
+          class="makeStyles-highlight-6 makeStyles-highlight-12"
+        />
+        <div
+          class="MuiListItemIcon-root makeStyles-icon-7 makeStyles-icon-13"
+        />
+        <div
+          class="MuiListItemText-root"
+        >
+          <span
+            class="MuiTypography-root MuiListItemText-primary makeStyles-textPrimary-8 makeStyles-textPrimary-14 MuiTypography-body1 MuiTypography-displayBlock"
+          >
+            Label 1
+          </span>
+        </div>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </div>
+    </ul>
+  </div>
+</div>
+`;

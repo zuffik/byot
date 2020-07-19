@@ -1,0 +1,130 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MediaListItem/> should render 1`] = `
+<div>
+  <div
+    class="MuiBox-root MuiBox-root-10 MuiListItem-root makeStyles-root-1 MuiListItem-gutters MuiListItem-alignItemsFlexStart makeStyles-root-9"
+    data-testid="media-list-item"
+  >
+    <div
+      class="makeStyles-image-3 makeStyles-image-6"
+    />
+    <div
+      class="MuiListItemText-root makeStyles-textRoot-5 makeStyles-textRoot-8"
+    >
+      <span
+        class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-4 makeStyles-primaryText-7 MuiTypography-body1 MuiTypography-displayBlock"
+      >
+        Mucu ceda pi hahij le vitvep sadwupif kenmulo jutacu emibo cu umusosfu re cuznim reletwaj lojeibe lolmuj.
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<MediaListItem/> should render transparent 1`] = `
+<div>
+  <li
+    class="MuiListItem-root makeStyles-root-21 MuiListItem-gutters MuiListItem-alignItemsFlexStart"
+    data-testid="media-list-item"
+  >
+    <div
+      class="makeStyles-image-23 makeStyles-image-26"
+    />
+    <div
+      class="MuiListItemText-root makeStyles-textRoot-25 makeStyles-textRoot-28"
+    >
+      <span
+        class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-24 makeStyles-primaryText-27 MuiTypography-body1 MuiTypography-displayBlock"
+      >
+        Me ikoeru kunmega avjiac gomusja ufizowu kesoma tabuli zal koupeas dahisli wacef mo erdeko cudpiv ro pu.
+      </span>
+    </div>
+  </li>
+</div>
+`;
+
+exports[`<MediaListItem/> should render with description 1`] = `
+<div>
+  <div
+    class="MuiBox-root MuiBox-root-20 MuiListItem-root makeStyles-root-11 MuiListItem-gutters MuiListItem-alignItemsFlexStart makeStyles-root-19"
+    data-testid="media-list-item"
+  >
+    <div
+      class="makeStyles-image-13 makeStyles-image-16"
+    />
+    <div
+      class="MuiListItemText-root makeStyles-textRoot-15 makeStyles-textRoot-18 MuiListItemText-multiline"
+    >
+      <span
+        class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-14 makeStyles-primaryText-17 MuiTypography-body1 MuiTypography-displayBlock"
+      >
+        Mog gic gataga ihgih bi judpeta iv zap jatro ba licucce vibu bo sooki ikno.
+      </span>
+      <p
+        class="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+      >
+        Description
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<MediaListItem/> should render with link 1`] = `
+<div>
+  <a
+    aria-disabled="false"
+    class="MuiBox-root MuiBox-root-38 MuiButtonBase-root MuiListItem-root makeStyles-root-29 MuiListItem-gutters MuiListItem-button MuiListItem-alignItemsFlexStart makeStyles-root-37"
+    data-testid="media-list-item"
+    href="http://example.com/url"
+    role="button"
+    tabindex="0"
+    target="_blank"
+  >
+    <div
+      class="makeStyles-image-31 makeStyles-image-34"
+    />
+    <div
+      class="MuiListItemText-root makeStyles-textRoot-33 makeStyles-textRoot-36"
+    >
+      <span
+        class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-32 makeStyles-primaryText-35 MuiTypography-body1 MuiTypography-displayBlock"
+      >
+        Hu ibezvu liuz hirneom luze zakef ac aconki kekefjud voswulun kepdub optiowa ti velfo.
+      </span>
+    </div>
+    <span
+      class="MuiTouchRipple-root"
+    />
+  </a>
+</div>
+`;
+
+exports[`<MediaListItem/> should render with onClick 1`] = `
+<div>
+  <div
+    aria-disabled="false"
+    class="MuiBox-root MuiBox-root-48 MuiButtonBase-root MuiListItem-root makeStyles-root-39 MuiListItem-gutters MuiListItem-button MuiListItem-alignItemsFlexStart makeStyles-root-47"
+    data-testid="media-list-item"
+    role="button"
+    tabindex="0"
+  >
+    <div
+      class="makeStyles-image-41 makeStyles-image-44"
+    />
+    <div
+      class="MuiListItemText-root makeStyles-textRoot-43 makeStyles-textRoot-46"
+    >
+      <span
+        class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-42 makeStyles-primaryText-45 MuiTypography-body1 MuiTypography-displayBlock"
+      >
+        Pe jilre itefihpaz zij di mu tu juf ugibo etauznop ofo fuz.
+      </span>
+    </div>
+    <span
+      class="MuiTouchRipple-root"
+    />
+  </div>
+</div>
+`;

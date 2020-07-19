@@ -5,7 +5,7 @@ import {MediaPlayerControls} from '@byot-frontend/web-app/src/components/player/
 import {boolean, number} from '@storybook/addon-knobs';
 import {action} from '@storybook/addon-actions';
 import {MediaPlayer} from '@byot-frontend/web-app/src/components/player/MediaPlayer';
-import {media} from '../../fixtures/dto/Media';
+import {media} from '@byot-frontend/common/test/fixtures/dto/Media';
 
 export default {
   title: 'Media/Player',

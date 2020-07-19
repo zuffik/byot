@@ -47,6 +47,7 @@ export const MediaListItem: React.FC<Props> = (props: Props) => {
       imagePlaceholder={<MediaListItemPlaceholder />}
       classes={{root: styles.root}}
       transparent={props.transparent}
+      data-testid="media-list-item"
       {...p}>
       {props.children}
     </TripleComboItem>

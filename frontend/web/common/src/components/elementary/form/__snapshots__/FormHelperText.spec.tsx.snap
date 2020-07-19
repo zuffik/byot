@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FormHelperText/> should render 1`] = `
+<div>
+  <div
+    class="MuiCollapse-container MuiCollapse-hidden"
+    style="min-height: 0px;"
+  >
+    <div
+      class="MuiCollapse-wrapper"
+    >
+      <div
+        class="MuiCollapse-wrapperInner"
+      >
+        <p
+          class="MuiFormHelperText-root"
+        >
+          <span>
+            ​
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;

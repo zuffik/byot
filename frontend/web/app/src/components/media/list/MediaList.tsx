@@ -64,7 +64,7 @@ export const MediaList: React.FC<Props> = (props: Props) => {
       ) : (
         <Container>
           {props.items.map(item => (
-            <Item>
+            <Item key={item.id}>
               <MediaListItem
                 media={item}
                 classes={{root: styles.readonlyItem}}

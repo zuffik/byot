@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {trainingSet} from '../../fixtures/dto/TrainingSet';
+import {trainingSet} from '@byot-frontend/common/test/fixtures/dto/TrainingSet';
 import {TrainingSetListItem} from '@byot-frontend/web-app/src/components/training/set/TrainingSetListItem';
 import {TrainingSetListItemImagePlaceholder} from '@byot-frontend/web-app/src/components/training/set/TrainingSetListItemImagePlaceholder';
 import {TrainingSetListItemSkeleton} from '@byot-frontend/web-app/src/components/training/set/TrainingSetListItemSkeleton';

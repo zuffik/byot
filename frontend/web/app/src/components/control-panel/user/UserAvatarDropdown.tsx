@@ -39,7 +39,10 @@ export const UserAvatarDropdown: React.FC<Props> = (props: Props) => {
   return (
     <>
       <Box px={2}>
-        <ButtonBase classes={{root: styles.button}} onClick={setMenuOpen}>
+        <ButtonBase
+          data-testid="control-panel-user-avatar-dropdown-trigger"
+          classes={{root: styles.button}}
+          onClick={setMenuOpen}>
           <Box pr={1} display="flex" flexDirection="row" alignItems="center">
             <Avatar />
             <KeyboardArrowDown />
@@ -48,6 +51,7 @@ export const UserAvatarDropdown: React.FC<Props> = (props: Props) => {
       </Box>
       <Menu
         open={!!anchorElement}
+        data-testid="control-panel-user-avatar-dropdown-menu"
         onClose={setMenuClose}
         anchorEl={anchorElement}
         getContentAnchorEl={null}

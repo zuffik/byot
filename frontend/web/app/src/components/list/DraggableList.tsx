@@ -79,8 +79,8 @@ export const DraggableList = <T extends object>(props: Props<T>) => {
               return (
                 <Draggable draggableId={id.toString()} key={id} index={i}>
                   {(draggableProvided, draggableSnapshot) => (
-                    // @ts-ignore
                     <Box
+                      // @ts-ignore
                       ref={draggableProvided.innerRef}
                       component={props.itemComponent}
                       {...draggableProvided.draggableProps}

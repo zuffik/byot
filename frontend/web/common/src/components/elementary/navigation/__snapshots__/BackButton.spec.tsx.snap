@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BackButton/> should render 1`] = `
+<div>
+  <button
+    class="MuiButtonBase-root MuiButton-root makeStyles-root-1 MuiButton-text MuiButton-textPrimary"
+    tabindex="0"
+    type="button"
+  >
+    <span
+      class="MuiButton-label"
+    >
+      <svg
+        aria-hidden="true"
+        class="MuiSvgIcon-root makeStyles-icon-2 MuiSvgIcon-colorPrimary"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M21 11H6.83l3.58-3.59L9 6l-6 6 6 6 1.41-1.41L6.83 13H21z"
+        />
+      </svg>
+      <p
+        class="MuiTypography-root makeStyles-label-3 MuiTypography-body1 MuiTypography-colorPrimary"
+      >
+        Back
+      </p>
+    </span>
+    <span
+      class="MuiTouchRipple-root"
+    />
+  </button>
+</div>
+`;

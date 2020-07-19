@@ -1,8 +1,9 @@
 import * as React from 'react';
 import {makeStyles, Theme, Typography, TypographyProps} from '@material-ui/core';
 import {WithStyles} from '@byot-frontend/web-common/src/types/WithStyles';
+import {CombineClasses} from '@byot-frontend/web-common/src/types/CombineClasses';
 
-interface Props extends WithStyles<typeof styles>, TypographyProps {}
+interface Props extends CombineClasses<WithStyles<typeof styles>, TypographyProps> {}
 
 const styles = (theme: Theme) => ({
   root: {

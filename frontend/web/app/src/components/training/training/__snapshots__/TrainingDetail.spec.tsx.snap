@@ -1,0 +1,125 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TrainingDetail/> should display skeletons 1`] = `
+<div>
+  <div
+    class="MuiGrid-root makeStyles-root-7 MuiGrid-container MuiGrid-spacing-xs-2"
+  >
+    <div
+      class="MuiGrid-root makeStyles-list-9 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-4 MuiGrid-grid-md-3"
+    >
+      <div
+        data-testid="training-detail-tci-skeletons"
+      />
+    </div>
+    <div
+      class="MuiGrid-root makeStyles-player-8 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-8 MuiGrid-grid-md-9"
+    >
+      <div
+        data-testid="training-detail-media-skeleton"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<TrainingDetail/> should render 1`] = `
+<div>
+  <div
+    class="MuiGrid-root makeStyles-root-1 MuiGrid-container MuiGrid-spacing-xs-2"
+  >
+    <div
+      class="MuiGrid-root makeStyles-list-3 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-4 MuiGrid-grid-md-3"
+    >
+      <div
+        class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1"
+      />
+    </div>
+    <div
+      class="MuiGrid-root makeStyles-player-2 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-8 MuiGrid-grid-md-9"
+    >
+      <div
+        data-testid="training-detail-media-player"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<TrainingDetail/> should select a media 1`] = `
+<div>
+  <div
+    class="MuiGrid-root makeStyles-root-10 MuiGrid-container MuiGrid-spacing-xs-2"
+  >
+    <div
+      class="MuiGrid-root makeStyles-list-12 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-4 MuiGrid-grid-md-3"
+    >
+      <div
+        class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1"
+      >
+        <div
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+        >
+          <div
+            aria-disabled="false"
+            class="MuiBox-root MuiBox-root-25 MuiButtonBase-root MuiListItem-root makeStyles-root-16 makeStyles-readonlyItem-14 MuiListItem-gutters MuiListItem-button MuiListItem-alignItemsFlexStart makeStyles-root-24"
+            data-testid="media-list-item"
+            role="button"
+            tabindex="0"
+          >
+            <div
+              class="makeStyles-image-18 makeStyles-image-21"
+            />
+            <div
+              class="MuiListItemText-root makeStyles-textRoot-20 makeStyles-textRoot-23"
+            >
+              <span
+                class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-19 makeStyles-primaryText-22 MuiTypography-body1 MuiTypography-displayBlock"
+              >
+                Hu ibezvu liuz hirneom luze zakef ac aconki kekefjud voswulun kepdub optiowa ti velfo.
+              </span>
+            </div>
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </div>
+        </div>
+        <div
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+        >
+          <div
+            aria-disabled="false"
+            class="MuiBox-root MuiBox-root-29 MuiButtonBase-root MuiListItem-root makeStyles-root-16 makeStyles-readonlyItem-14 MuiListItem-gutters MuiListItem-button MuiListItem-alignItemsFlexStart makeStyles-root-24"
+            data-testid="media-list-item"
+            role="button"
+            tabindex="0"
+          >
+            <div
+              class="makeStyles-image-18 makeStyles-image-26"
+            />
+            <div
+              class="MuiListItemText-root makeStyles-textRoot-20 makeStyles-textRoot-28"
+            >
+              <span
+                class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-19 makeStyles-primaryText-27 MuiTypography-body1 MuiTypography-displayBlock"
+              >
+                Pe jilre itefihpaz zij di mu tu juf ugibo etauznop ofo fuz.
+              </span>
+            </div>
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="MuiGrid-root makeStyles-player-11 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-8 MuiGrid-grid-md-9"
+    >
+      <div
+        data-testid="training-detail-media-player"
+      />
+    </div>
+  </div>
+</div>
+`;

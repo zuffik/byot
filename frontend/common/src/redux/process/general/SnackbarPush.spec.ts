@@ -1,7 +1,7 @@
 import {SnackbarPush} from './SnackbarPush';
 import {ProcessActionExtractor} from '../../../redux-system/process/ProcessActionExtractor';
-import {ErrorSnackbar} from '../../../types/app/ErrorSnackbar';
 import {FrontendCommonState} from '../../FrontendCommonState';
+import {ErrorSnackbar} from '../../../types/app/snackbar/ErrorSnackbar';
 
 describe('SnackbarPush', () => {
   it('should set content', () => {

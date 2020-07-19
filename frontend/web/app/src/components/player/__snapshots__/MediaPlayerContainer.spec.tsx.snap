@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MediaPlayerContainer/> should calculate width (4:3) 1`] = `
+<div>
+  <div
+    class="makeStyles-root-23"
+  >
+    <div
+      class="makeStyles-container-25"
+      data-testid="media-player-container"
+      style="height: 300px;"
+    />
+  </div>
+</div>
+`;
+
+exports[`<MediaPlayerContainer/> should calculate width (16:9) 1`] = `
+<div>
+  <div
+    class="makeStyles-root-12"
+  >
+    <div
+      class="makeStyles-container-14"
+      data-testid="media-player-container"
+      style="height: 900px;"
+    />
+  </div>
+</div>
+`;
+
+exports[`<MediaPlayerContainer/> should render 1`] = `
+<div>
+  <div
+    class="makeStyles-root-1"
+  >
+    <div
+      class="makeStyles-skeleton-2"
+    >
+      <div
+        class="MuiBox-root MuiBox-root-10 makeStyles-root-4 makeStyles-root-9 makeStyles-root-4"
+        classes="[object Object]"
+      >
+        <div
+          class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1"
+        >
+          <div
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-1"
+          >
+            <span
+              class="MuiSkeleton-root makeStyles-root-11 MuiSkeleton-rect MuiSkeleton-pulse"
+            />
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-1"
+          >
+            <span
+              class="MuiSkeleton-root makeStyles-root-11 MuiSkeleton-rect MuiSkeleton-pulse"
+            />
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-true"
+          >
+            <span
+              class="MuiSkeleton-root makeStyles-root-11 MuiSkeleton-rect MuiSkeleton-pulse"
+            />
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-1"
+          >
+            <span
+              class="MuiSkeleton-root makeStyles-root-11 MuiSkeleton-rect MuiSkeleton-pulse"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

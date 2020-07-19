@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TrainingListItem/> should render 1`] = `
+<div>
+  <div
+    aria-disabled="false"
+    class="MuiBox-root MuiBox-root-11 MuiButtonBase-root MuiListItem-root makeStyles-root-3 MuiListItem-gutters MuiListItem-button MuiListItem-alignItemsFlexStart makeStyles-root-10"
+    role="button"
+    tabindex="0"
+    to="/training/1ca93012-1ffc-5d64-ae2e-54835c234c67"
+  >
+    <div
+      class="makeStyles-image-4 makeStyles-image-7"
+    />
+    <div
+      class="MuiListItemText-root makeStyles-textRoot-6 makeStyles-textRoot-9 makeStyles-textRoot-2 MuiListItemText-multiline"
+    >
+      <span
+        class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-5 makeStyles-primaryText-8 makeStyles-title-1 MuiTypography-body1 MuiTypography-displayBlock"
+      >
+        Efum ji ga sefze figi pomlot dadeziguz seak nigamu luv hahic oziworpaz re cuznim reletwaj.
+      </span>
+      <p
+        class="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+      >
+        <p
+          class="MuiTypography-root MuiTypography-body2"
+        >
+          20
+           
+          video
+        </p>
+        <span
+          class="MuiTypography-root makeStyles-root-12 MuiTypography-caption"
+        >
+          5 months ago
+        </span>
+      </p>
+    </div>
+    <span
+      class="MuiTouchRipple-root"
+    />
+  </div>
+</div>
+`;

@@ -1,0 +1,219 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TrainingSetForm/> should render 1`] = `
+<div>
+  <form
+    action="#"
+    data-testid="training-set-form-form"
+  >
+    <div
+      class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-justify-xs-flex-end"
+    >
+      <div
+        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+      >
+        <div
+          class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+          data-testid="training-set-form-label"
+        >
+          <label
+            class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-2 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled"
+            data-shrink="false"
+          >
+            Enter training set name
+          </label>
+          <div
+            class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-1 makeStyles-filledRoot-3 MuiInputBase-fullWidth MuiInputBase-formControl"
+          >
+            <input
+              aria-invalid="false"
+              class="MuiInputBase-input MuiFilledInput-input"
+              name="label"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="MuiCollapse-container MuiCollapse-hidden"
+          style="min-height: 0px;"
+        >
+          <div
+            class="MuiCollapse-wrapper"
+          >
+            <div
+              class="MuiCollapse-wrapperInner"
+            >
+              <p
+                class="MuiFormHelperText-root MuiFormHelperText-contained"
+              >
+                <span>
+                  ​
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="MuiGrid-root MuiGrid-item"
+      >
+        <button
+          class="MuiButtonBase-root MuiButton-root makeStyles-root-4 makeStyles-root-7 MuiButton-contained MuiButton-containedPrimary MuiButton-disableElevation"
+          tabindex="0"
+          type="submit"
+        >
+          <span
+            class="MuiButton-label"
+          >
+            <span
+              class="makeStyles-inner-5 makeStyles-inner-8"
+              data-testid="common-elementary-button-children"
+              style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+            >
+              Save training set
+            </span>
+            <div
+              class="makeStyles-loader-6"
+              data-testid="common-elementary-button-loader"
+              style="opacity: 0; visibility: hidden;"
+            >
+              <div
+                class="css-0"
+              >
+                <div
+                  class="css-1ab95gp"
+                />
+                <div
+                  class="css-tm4xur"
+                />
+                <div
+                  class="css-1epl0i6"
+                />
+                <div
+                  class="css-1fj2adh"
+                />
+                <div
+                  class="css-1vivfwt"
+                />
+              </div>
+            </div>
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`<TrainingSetForm/> should submit only if label is provided 1`] = `
+<div>
+  <form
+    action="#"
+    data-testid="training-set-form-form"
+  >
+    <div
+      class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-justify-xs-flex-end"
+    >
+      <div
+        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+      >
+        <div
+          class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+          data-testid="training-set-form-label"
+        >
+          <label
+            class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-10 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled"
+            data-shrink="true"
+          >
+            Enter training set name
+          </label>
+          <div
+            class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-9 makeStyles-filledRoot-11 MuiInputBase-fullWidth MuiInputBase-formControl"
+          >
+            <input
+              aria-invalid="false"
+              class="MuiInputBase-input MuiFilledInput-input"
+              name="label"
+              type="text"
+              value="Training set label"
+            />
+          </div>
+        </div>
+        <div
+          class="MuiCollapse-container"
+          style="min-height: 0px; height: 0px; transition-duration: 300ms;"
+        >
+          <div
+            class="MuiCollapse-wrapper"
+          >
+            <div
+              class="MuiCollapse-wrapperInner"
+            >
+              <p
+                class="MuiFormHelperText-root MuiFormHelperText-contained"
+              >
+                <span>
+                  ​
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="MuiGrid-root MuiGrid-item"
+      >
+        <button
+          class="MuiButtonBase-root MuiButton-root makeStyles-root-12 makeStyles-root-15 MuiButton-contained MuiButton-containedPrimary MuiButton-disableElevation"
+          tabindex="0"
+          type="submit"
+        >
+          <span
+            class="MuiButton-label"
+          >
+            <span
+              class="makeStyles-inner-13 makeStyles-inner-16"
+              data-testid="common-elementary-button-children"
+              style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+            >
+              Save training set
+            </span>
+            <div
+              class="makeStyles-loader-14"
+              data-testid="common-elementary-button-loader"
+              style="opacity: 0; visibility: hidden;"
+            >
+              <div
+                class="css-0"
+              >
+                <div
+                  class="css-1ab95gp"
+                />
+                <div
+                  class="css-tm4xur"
+                />
+                <div
+                  class="css-1epl0i6"
+                />
+                <div
+                  class="css-1fj2adh"
+                />
+                <div
+                  class="css-1vivfwt"
+                />
+              </div>
+            </div>
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+`;

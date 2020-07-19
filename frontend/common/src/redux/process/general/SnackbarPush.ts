@@ -1,8 +1,8 @@
-import {SnackbarContent} from '../../../types/app/SnackbarContent';
 import {SynchronousAction} from '../../../redux-system/process/ProcessActions';
 import {FrontendCommonState} from '../../FrontendCommonState';
 import {Action} from 'typescript-fsa';
 import {ProcessActionCreator} from '../../../redux-system/process/ProcessActionCreator';
+import {SnackbarContent} from '../../../types/app/snackbar/SnackbarContent';
 
 export type Payload = SnackbarContent;
 

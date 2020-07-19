@@ -8,6 +8,9 @@ interface Props {
 }
 
 const styles = (theme: Theme) => ({
+  root: {
+    width: '100%',
+  },
   skeleton: {
     height: theme.spacing(20),
   },
@@ -38,13 +41,16 @@ export const MediaPlayerContainer: React.FC<Props> = (props: Props) => {
     return () => window.removeEventListener('resize', onResize);
   }, [node, ratio]);
   return (
-    <div ref={ref}>
+    <div ref={ref} className={styles.root}>
       {height == 0 ? (
         <div className={styles.skeleton}>
           <MediaPlayerSkeleton />
         </div>
       ) : (
-        <div className={styles.container} style={{height: `${height}px`}}>
+        <div
+          className={styles.container}
+          style={{height: `${height}px`}}
+          data-testid="media-player-container">
           {props.children}
         </div>
       )}

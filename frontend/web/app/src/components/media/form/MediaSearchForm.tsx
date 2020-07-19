@@ -41,18 +41,22 @@ export const MediaSearchForm: React.FC<Props> = (props: Props) => {
   return (
     <Grid container spacing={2} justify="flex-end" alignItems="center">
       <Grid item xs={12} sm={6}>
-        <props.AutocompleteComponent onSelect={setMedia} onClear={() => setMedia(undefined)} />
+        <props.AutocompleteComponent
+          onSelect={m => setMedia({...m, id: (++id).toString()})}
+          onClear={() => setMedia(undefined)}
+        />
       </Grid>
       <Grid item xs={12} sm={5}>
         <Input
+          data-testid="media-form-search-input"
           label={t('Video label')}
           disabled={!media}
           value={media?.label || ''}
-          onChange={e => media && setMedia({...media, label: e.target.value, id: (++id).toString()})}
+          onChange={e => media && setMedia({...media, label: e.target.value})}
         />
       </Grid>
       <Grid item xs={12} sm={1} classes={{root: styles.lastItem}}>
-        <IconButton color="secondary" onClick={onSubmit}>
+        <IconButton color="secondary" onClick={onSubmit} data-testid="media-form-search-button">
           <AddRounded />
         </IconButton>
       </Grid>

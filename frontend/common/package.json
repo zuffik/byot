@@ -6,6 +6,7 @@
   "dependencies": {
     "apollo-boost": "0.4.9",
     "axios": "0.19.2",
+    "chance": "1.1.6",
     "color": "3.1.2",
     "dotenv": "8.2.0",
     "formik": "2.1.4",
@@ -30,6 +31,7 @@
   },
   "devDependencies": {
     "@types/axios": "0.14.0",
+    "@types/chance": "1.1.0",
     "@types/color": "3.0.1",
     "@types/dotenv": "8.2.0",
     "@types/graphql": "14.5.0",

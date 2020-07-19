@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {ControlPanelLayout} from '@byot-frontend/web-app/src/components/layout/ControlPanelLayout';
-import {mainDrawerItems} from '../../fixtures/MainDrawerItems';
+import {mainDrawerItems} from '../../../../common/test/fixtures/MainDrawerItems';
 import {selectMenuItem} from '../../addons/SelectMenuItem';
 import {ControlPanelTwoColumnsContent} from '@byot-frontend/web-app/src/components/control-panel/base/ControlPanelTwoColumnsContent';
 import {SearchField} from '@byot-frontend/web-app/src/components/control-panel/search/SearchField';

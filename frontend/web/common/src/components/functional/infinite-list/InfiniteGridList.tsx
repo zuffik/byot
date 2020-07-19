@@ -8,7 +8,9 @@ interface Props<T> extends InfiniteListProps<T> {
 
 export const InfiniteGridList = <T extends any>(props: Props<T>) => {
   const [className, setClassName] = React.useState('');
-  const ref = React.useCallback((node: HTMLDivElement) => setClassName(node.className), [props.GridProps]);
+  const ref = React.useCallback((node: HTMLDivElement) => node && setClassName(node.className), [
+    props.GridProps,
+  ]);
   return (
     <>
       <div style={{display: 'none'}}>

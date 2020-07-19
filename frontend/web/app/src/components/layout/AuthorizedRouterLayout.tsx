@@ -9,9 +9,9 @@ interface Props {}
 
 export const AuthorizedRouterLayout: React.FC<Props> = (props: Props) => {
   return (
-    <ControlPanelLayout>
+    <ControlPanelLayout menuItems={[]}>
       <Switch>
-        <AuthRoute path={Router.URI()}>
+        <AuthRoute exact path={Router.URI()}>
           <TrainingListPage />
         </AuthRoute>
       </Switch>

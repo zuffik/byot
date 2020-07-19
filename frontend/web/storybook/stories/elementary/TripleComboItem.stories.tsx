@@ -1,9 +1,9 @@
 import * as React from 'react';
 import {text} from '@storybook/addon-knobs';
-import {getImage, size} from '../../fixtures/GetImage';
+import {getImage, size} from '../../../../common/test/fixtures/GetImage';
 import {TripleComboItemSkeleton} from '@byot-frontend/web-app/src/components/elements/list-items/TripleComboItemSkeleton';
 import {TripleComboItem} from '@byot-frontend/web-app/src/components/elements/list-items/TripleComboItem';
-import {TripleComboItemSkeletonList} from '@byot-frontend/web-app/src/components/elements/lists/TripleComboItemSkeletonList';
+import {TripleComboItemSkeletonList} from '@byot-frontend/web-app/src/components/list/TripleComboItemSkeletonList';
 
 export default {
   title: 'Elementary/Triple combo item',

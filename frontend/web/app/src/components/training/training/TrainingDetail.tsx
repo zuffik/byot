@@ -6,7 +6,7 @@ import {IMedia} from '@byot-frontend/common/src/types/interfaces/IMedia';
 import {MediaList} from '../../media/list/MediaList';
 import {MediaPlayer} from '../../player/MediaPlayer';
 import {MediaPlayerSkeleton} from '../../player/MediaPlayerSkeleton';
-import {TripleComboItemSkeletonList} from '../../elements/lists/TripleComboItemSkeletonList';
+import {TripleComboItemSkeletonList} from '../../list/TripleComboItemSkeletonList';
 
 interface Props extends WithStyles<typeof styles> {
   media: IterableResource<IMedia>;

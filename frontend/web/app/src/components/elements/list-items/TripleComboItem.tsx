@@ -12,7 +12,7 @@ import {Patch} from '@byot-frontend/web-common/src/components/elementary/patch/P
 import {CSSProperties} from '@material-ui/styles';
 
 type Props<P> = WithStyles<typeof styles> &
-  ListItemProps & {
+  Omit<ListItemProps, 'title'> & {
     title?: React.ReactNode;
     image?: string;
     imagePlaceholder?: boolean | React.ReactNode;
@@ -59,7 +59,13 @@ export const TripleComboItem = <P extends object = object>(props: Props<P>) => {
     <ListItemBase
       alignItems="flex-start"
       {...(baseProps as any)}
-      component={props.transparent ? undefined : p => <Patch component={props.component} {...p} />}
+      component={
+        props.transparent
+          ? undefined
+          : React.forwardRef((p, ref: React.Ref<HTMLDivElement>) => (
+              <Patch boxRef={ref} component={props.component} {...p} />
+            ))
+      }
       classes={{root: styles.root, ...baseProps.classes}}>
       {(props.image || props.imagePlaceholder) && (
         <div className={styles.image}>

@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Patch/> should render 1`] = `
+<div>
+  <div
+    class="MuiBox-root MuiBox-root-2 makeStyles-root-1"
+  />
+</div>
+`;

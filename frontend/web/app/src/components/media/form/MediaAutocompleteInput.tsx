@@ -17,6 +17,7 @@ export interface MediaAutocompleteInputProps {
 interface Props extends WithStyles<typeof styles>, MediaAutocompleteInputProps {
   media: IterableResource<IMedia>;
   onTextChange?: (text: string) => void;
+  id?: string;
 }
 
 const styles = (theme: Theme) => ({
@@ -36,9 +37,10 @@ export const MediaAutocompleteInput: React.FC<Props> = (props: Props) => {
       getOptionLabel={m => m.label}
       loading={props.media.isProcessing}
       freeSolo
+      id={props.id}
       clearOnEscape
       clearOnBlur
-      PaperComponent={p => <Paper {...p} elevation={0} />}
+      PaperComponent={p => <Paper {...p} elevation={0} data-testid="media-form-autocomplete-suggestions" />}
       onInputChange={_.debounce((v, text) => props.onTextChange?.(text), 300)}
       onChange={(e, v) => (v ? props.onSelect(v as IMedia) : props.onClear?.())}
       renderOption={media => <MediaListItem transparent media={media} />}
@@ -46,15 +48,16 @@ export const MediaAutocompleteInput: React.FC<Props> = (props: Props) => {
         <Input
           {...params}
           label={t('Start typing to search or paste URL')}
+          inputProps={{...params.inputProps, 'data-testid': 'media-form-autocomplete-input'}}
           InputProps={{
             ...params.InputProps,
             endAdornment: (
-              <React.Fragment>
+              <>
                 {props.media.isProcessing ? (
                   <CircularProgress classes={{root: styles.loader}} color="inherit" size={20} />
                 ) : null}
                 {params.InputProps.endAdornment}
-              </React.Fragment>
+              </>
             ),
           }}
         />

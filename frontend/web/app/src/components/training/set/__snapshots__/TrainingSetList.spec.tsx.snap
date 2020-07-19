@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TrainingSetList/> should render 1`] = `
+<div>
+  <div
+    data-testid="infinite-grid-list"
+  >
+    <div
+      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-6"
+    >
+      <div
+        aria-disabled="false"
+        class="MuiBox-root MuiBox-root-9 MuiButtonBase-root MuiListItem-root makeStyles-root-1 MuiListItem-gutters MuiListItem-button MuiListItem-alignItemsFlexStart makeStyles-root-8"
+        role="button"
+        tabindex="0"
+        to="/training/set/fd255273-5147-504b-ac68-033d90ff4e17"
+      >
+        <div
+          class="makeStyles-image-2 makeStyles-image-5"
+        />
+        <div
+          class="MuiListItemText-root makeStyles-textRoot-4 makeStyles-textRoot-7 MuiListItemText-multiline"
+        >
+          <span
+            class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-3 makeStyles-primaryText-6 MuiTypography-body1 MuiTypography-displayBlock"
+          >
+            Jutacu emibo cu umusosfu re cuznim reletwaj lojeibe lolmuj tujle tovufmu vofizo nuzi regusoj iwmum busifurih weof.
+          </span>
+          <p
+            class="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+          >
+            <p
+              class="MuiTypography-root MuiTypography-body2"
+            >
+              33
+               
+              training
+            </p>
+            <span
+              class="MuiTypography-root makeStyles-root-10 MuiTypography-caption"
+            >
+              4 months ago
+            </span>
+          </p>
+        </div>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

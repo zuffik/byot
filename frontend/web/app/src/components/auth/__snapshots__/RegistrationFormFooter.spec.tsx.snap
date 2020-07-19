@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RegistrationFormFooter/> should render 1`] = `
+<div>
+  <div
+    class="MuiBox-root MuiBox-root-2"
+  >
+    <p
+      class="MuiTypography-root makeStyles-alreadyHaveLabel-1 MuiTypography-body1"
+    >
+      Already have an account?
+    </p>
+    <button
+      class="MuiButtonBase-root MuiButton-root makeStyles-root-3 makeStyles-root-6 MuiButton-text MuiButton-textSecondary MuiButton-disableElevation"
+      tabindex="0"
+      to="/login"
+      type="button"
+    >
+      <span
+        class="MuiButton-label"
+      >
+        <span
+          class="makeStyles-inner-4 makeStyles-inner-7"
+          data-testid="common-elementary-button-children"
+          style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+        >
+          Log in
+        </span>
+        <div
+          class="makeStyles-loader-5"
+          data-testid="common-elementary-button-loader"
+          style="opacity: 0; visibility: hidden;"
+        >
+          <div
+            class="css-0"
+          >
+            <div
+              class="css-1ab95gp"
+            />
+            <div
+              class="css-tm4xur"
+            />
+            <div
+              class="css-1epl0i6"
+            />
+            <div
+              class="css-1fj2adh"
+            />
+            <div
+              class="css-1vivfwt"
+            />
+          </div>
+        </div>
+      </span>
+      <span
+        class="MuiTouchRipple-root"
+      />
+    </button>
+  </div>
+</div>
+`;

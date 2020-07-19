@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MediaPlayer/> should render with youtube provider 1`] = `
+<div>
+  <div>
+    <div
+      data-testid="youtube-media-player"
+    />
+  </div>
+</div>
+`;

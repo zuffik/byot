@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PlainLayoutFooter/> should render 1`] = `
+<div>
+  <div
+    class="MuiBox-root MuiBox-root-1"
+  >
+    <p
+      class="MuiTypography-root makeStyles-typography-2 MuiTypography-body1"
+    >
+      All rights reserved to
+      <strong>
+         byoT
+      </strong>
+    </p>
+  </div>
+</div>
+`;

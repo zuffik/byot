@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DrawerMenuItem/> should render 1`] = `
+<div>
+  <div
+    aria-disabled="false"
+    class="MuiButtonBase-root MuiListItem-root makeStyles-root-1 MuiListItem-gutters MuiListItem-button"
+    data-testid="control-panel-drawer-menu-item"
+    role="button"
+    tabindex="0"
+    to="link"
+  >
+    <span
+      class="makeStyles-highlight-2 makeStyles-highlight-5"
+    />
+    <div
+      class="MuiListItemIcon-root makeStyles-icon-3 makeStyles-icon-6"
+    />
+    <div
+      class="MuiListItemText-root"
+    />
+    <span
+      class="MuiTouchRipple-root"
+    />
+  </div>
+</div>
+`;
+
+exports[`<DrawerMenuItem/> should render selected 1`] = `
+<div>
+  <div
+    aria-disabled="false"
+    class="MuiButtonBase-root MuiListItem-root makeStyles-root-8 MuiListItem-gutters MuiListItem-button"
+    data-testid="control-panel-drawer-menu-item"
+    role="button"
+    tabindex="0"
+    to="link"
+  >
+    <span
+      class="makeStyles-highlight-9 makeStyles-highlight-12"
+    />
+    <div
+      class="MuiListItemIcon-root makeStyles-icon-10 makeStyles-icon-13"
+    />
+    <div
+      class="MuiListItemText-root"
+    />
+    <span
+      class="MuiTouchRipple-root"
+    />
+  </div>
+</div>
+`;

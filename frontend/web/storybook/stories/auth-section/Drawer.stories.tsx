@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {DrawerMenu} from '@byot-frontend/web-app/src/components/control-panel/drawer/DrawerMenu';
-import {mainDrawerItems} from '../../fixtures/MainDrawerItems';
+import {mainDrawerItems} from '../../../../common/test/fixtures/MainDrawerItems';
 import {selectMenuItem} from '../../addons/SelectMenuItem';
 
 export default {

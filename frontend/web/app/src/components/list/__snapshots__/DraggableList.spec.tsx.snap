@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DraggableList/> should render 1`] = `
+<div>
+  <div
+    data-testid="react-beautiful-dnd-dragdrop-context"
+  >
+    <div
+      data-testid="react-beautiful-dnd-droppable"
+    />
+  </div>
+</div>
+`;

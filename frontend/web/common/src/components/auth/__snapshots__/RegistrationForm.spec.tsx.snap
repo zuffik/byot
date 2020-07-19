@@ -32,13 +32,13 @@ Object {
                 data-testid="common-auth-registration-form-firstName"
               >
                 <label
-                  class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled"
+                  class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-5 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled"
                   data-shrink="true"
                 >
                   First name
                 </label>
                 <div
-                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-4 MuiInputBase-fullWidth MuiInputBase-formControl"
+                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-4 makeStyles-filledRoot-6 MuiInputBase-fullWidth MuiInputBase-formControl"
                 >
                   <input
                     aria-invalid="false"
@@ -78,13 +78,13 @@ Object {
                 data-testid="common-auth-registration-form-lastName"
               >
                 <label
-                  class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled"
+                  class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-5 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled"
                   data-shrink="true"
                 >
                   Last name
                 </label>
                 <div
-                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-4 MuiInputBase-fullWidth MuiInputBase-formControl"
+                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-4 makeStyles-filledRoot-7 MuiInputBase-fullWidth MuiInputBase-formControl"
                 >
                   <input
                     aria-invalid="false"
@@ -124,13 +124,13 @@ Object {
                 data-testid="common-auth-registration-form-email"
               >
                 <label
-                  class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled Mui-error Mui-error MuiFormLabel-filled"
+                  class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-5 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled Mui-error Mui-error MuiFormLabel-filled"
                   data-shrink="true"
                 >
                   Email
                 </label>
                 <div
-                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-4 Mui-error Mui-error MuiInputBase-fullWidth MuiInputBase-formControl"
+                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-4 makeStyles-filledRoot-8 Mui-error Mui-error MuiInputBase-fullWidth MuiInputBase-formControl"
                 >
                   <input
                     aria-invalid="true"
@@ -168,13 +168,13 @@ Object {
                 data-testid="common-auth-registration-form-password"
               >
                 <label
-                  class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled Mui-error Mui-error MuiFormLabel-filled"
+                  class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-5 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled Mui-error Mui-error MuiFormLabel-filled"
                   data-shrink="true"
                 >
                   Password
                 </label>
                 <div
-                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-4 Mui-error Mui-error MuiInputBase-fullWidth MuiInputBase-formControl"
+                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-4 makeStyles-filledRoot-9 Mui-error Mui-error MuiInputBase-fullWidth MuiInputBase-formControl"
                 >
                   <input
                     aria-invalid="true"
@@ -212,13 +212,13 @@ Object {
                 data-testid="common-auth-registration-form-passwordRepeat"
               >
                 <label
-                  class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled Mui-error Mui-error MuiFormLabel-filled"
+                  class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-5 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled Mui-error Mui-error MuiFormLabel-filled"
                   data-shrink="true"
                 >
                   Confirm password
                 </label>
                 <div
-                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-4 Mui-error Mui-error MuiInputBase-fullWidth MuiInputBase-formControl"
+                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-4 makeStyles-filledRoot-10 Mui-error Mui-error MuiInputBase-fullWidth MuiInputBase-formControl"
                 >
                   <input
                     aria-invalid="true"
@@ -230,8 +230,8 @@ Object {
                 </div>
               </div>
               <div
-                class="MuiCollapse-container MuiCollapse-entered"
-                style="min-height: 0px; height: auto; transition-duration: 300ms;"
+                class="MuiCollapse-container"
+                style="min-height: 0px; height: 0px; transition-duration: 300ms;"
               >
                 <div
                   class="MuiCollapse-wrapper"
@@ -256,7 +256,7 @@ Object {
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-6 MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-checked-7 Mui-checked MuiIconButton-colorPrimary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-11 MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-checked-12 Mui-checked MuiIconButton-colorPrimary"
                   data-testid="common-auth-registration-form-consent"
                   label="I allow this website to collect and store submitted data."
                 >
@@ -264,7 +264,7 @@ Object {
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-9"
+                      class="PrivateSwitchBase-input-14"
                       data-indeterminate="false"
                       type="checkbox"
                       value=""
@@ -288,7 +288,7 @@ Object {
                   class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
                 >
                   <p
-                    class="MuiTypography-root makeStyles-label-5 makeStyles-checkbox-1 MuiTypography-body1"
+                    class="MuiTypography-root MuiTypography-body1"
                   >
                     I allow this website to collect and store submitted data.
                   </p>
@@ -299,7 +299,7 @@ Object {
               class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
             >
               <button
-                class="MuiButtonBase-root MuiButton-root makeStyles-root-10 makeStyles-root-13 MuiButton-contained MuiButton-containedPrimary MuiButton-disableElevation MuiButton-fullWidth"
+                class="MuiButtonBase-root MuiButton-root makeStyles-root-15 makeStyles-root-18 MuiButton-contained MuiButton-containedPrimary MuiButton-disableElevation MuiButton-fullWidth"
                 tabindex="0"
                 type="submit"
               >
@@ -307,14 +307,14 @@ Object {
                   class="MuiButton-label"
                 >
                   <span
-                    class="makeStyles-inner-11 makeStyles-inner-14"
+                    class="makeStyles-inner-16 makeStyles-inner-19"
                     data-testid="common-elementary-button-children"
                     style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
                   >
                     Sign up
                   </span>
                   <div
-                    class="makeStyles-loader-12"
+                    class="makeStyles-loader-17"
                     data-testid="common-elementary-button-loader"
                     style="opacity: 0; visibility: hidden;"
                   >
@@ -377,13 +377,13 @@ Object {
               data-testid="common-auth-registration-form-firstName"
             >
               <label
-                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled"
+                class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-5 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled"
                 data-shrink="true"
               >
                 First name
               </label>
               <div
-                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-4 MuiInputBase-fullWidth MuiInputBase-formControl"
+                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-4 makeStyles-filledRoot-6 MuiInputBase-fullWidth MuiInputBase-formControl"
               >
                 <input
                   aria-invalid="false"
@@ -423,13 +423,13 @@ Object {
               data-testid="common-auth-registration-form-lastName"
             >
               <label
-                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled"
+                class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-5 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled"
                 data-shrink="true"
               >
                 Last name
               </label>
               <div
-                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-4 MuiInputBase-fullWidth MuiInputBase-formControl"
+                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-4 makeStyles-filledRoot-7 MuiInputBase-fullWidth MuiInputBase-formControl"
               >
                 <input
                   aria-invalid="false"
@@ -469,13 +469,13 @@ Object {
               data-testid="common-auth-registration-form-email"
             >
               <label
-                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled Mui-error Mui-error MuiFormLabel-filled"
+                class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-5 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled Mui-error Mui-error MuiFormLabel-filled"
                 data-shrink="true"
               >
                 Email
               </label>
               <div
-                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-4 Mui-error Mui-error MuiInputBase-fullWidth MuiInputBase-formControl"
+                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-4 makeStyles-filledRoot-8 Mui-error Mui-error MuiInputBase-fullWidth MuiInputBase-formControl"
               >
                 <input
                   aria-invalid="true"
@@ -513,13 +513,13 @@ Object {
               data-testid="common-auth-registration-form-password"
             >
               <label
-                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled Mui-error Mui-error MuiFormLabel-filled"
+                class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-5 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled Mui-error Mui-error MuiFormLabel-filled"
                 data-shrink="true"
               >
                 Password
               </label>
               <div
-                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-4 Mui-error Mui-error MuiInputBase-fullWidth MuiInputBase-formControl"
+                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-4 makeStyles-filledRoot-9 Mui-error Mui-error MuiInputBase-fullWidth MuiInputBase-formControl"
               >
                 <input
                   aria-invalid="true"
@@ -557,13 +557,13 @@ Object {
               data-testid="common-auth-registration-form-passwordRepeat"
             >
               <label
-                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled Mui-error Mui-error MuiFormLabel-filled"
+                class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-5 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled Mui-error Mui-error MuiFormLabel-filled"
                 data-shrink="true"
               >
                 Confirm password
               </label>
               <div
-                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-4 Mui-error Mui-error MuiInputBase-fullWidth MuiInputBase-formControl"
+                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-4 makeStyles-filledRoot-10 Mui-error Mui-error MuiInputBase-fullWidth MuiInputBase-formControl"
               >
                 <input
                   aria-invalid="true"
@@ -575,8 +575,8 @@ Object {
               </div>
             </div>
             <div
-              class="MuiCollapse-container MuiCollapse-entered"
-              style="min-height: 0px; height: auto; transition-duration: 300ms;"
+              class="MuiCollapse-container"
+              style="min-height: 0px; height: 0px; transition-duration: 300ms;"
             >
               <div
                 class="MuiCollapse-wrapper"
@@ -601,7 +601,7 @@ Object {
             >
               <span
                 aria-disabled="false"
-                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-6 MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-checked-7 Mui-checked MuiIconButton-colorPrimary"
+                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-11 MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-checked-12 Mui-checked MuiIconButton-colorPrimary"
                 data-testid="common-auth-registration-form-consent"
                 label="I allow this website to collect and store submitted data."
               >
@@ -609,7 +609,7 @@ Object {
                   class="MuiIconButton-label"
                 >
                   <input
-                    class="PrivateSwitchBase-input-9"
+                    class="PrivateSwitchBase-input-14"
                     data-indeterminate="false"
                     type="checkbox"
                     value=""
@@ -633,7 +633,7 @@ Object {
                 class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
               >
                 <p
-                  class="MuiTypography-root makeStyles-label-5 makeStyles-checkbox-1 MuiTypography-body1"
+                  class="MuiTypography-root MuiTypography-body1"
                 >
                   I allow this website to collect and store submitted data.
                 </p>
@@ -644,7 +644,7 @@ Object {
             class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
           >
             <button
-              class="MuiButtonBase-root MuiButton-root makeStyles-root-10 makeStyles-root-13 MuiButton-contained MuiButton-containedPrimary MuiButton-disableElevation MuiButton-fullWidth"
+              class="MuiButtonBase-root MuiButton-root makeStyles-root-15 makeStyles-root-18 MuiButton-contained MuiButton-containedPrimary MuiButton-disableElevation MuiButton-fullWidth"
               tabindex="0"
               type="submit"
             >
@@ -652,14 +652,14 @@ Object {
                 class="MuiButton-label"
               >
                 <span
-                  class="makeStyles-inner-11 makeStyles-inner-14"
+                  class="makeStyles-inner-16 makeStyles-inner-19"
                   data-testid="common-elementary-button-children"
                   style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
                 >
                   Sign up
                 </span>
                 <div
-                  class="makeStyles-loader-12"
+                  class="makeStyles-loader-17"
                   data-testid="common-elementary-button-loader"
                   style="opacity: 0; visibility: hidden;"
                 >
@@ -753,10 +753,10 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="makeStyles-root-16"
+        class="makeStyles-root-21"
       >
         <div
-          class="MuiBox-root MuiBox-root-17"
+          class="MuiBox-root MuiBox-root-22"
         >
           <h3
             class="MuiTypography-root MuiTypography-h3"
@@ -779,13 +779,13 @@ Object {
                 data-testid="common-auth-registration-form-firstName"
               >
                 <label
-                  class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled"
+                  class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-24 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled"
                   data-shrink="false"
                 >
                   First name
                 </label>
                 <div
-                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-18 MuiInputBase-fullWidth MuiInputBase-formControl"
+                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-23 makeStyles-filledRoot-25 MuiInputBase-fullWidth MuiInputBase-formControl"
                 >
                   <input
                     aria-invalid="false"
@@ -825,13 +825,13 @@ Object {
                 data-testid="common-auth-registration-form-lastName"
               >
                 <label
-                  class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled"
+                  class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-24 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled"
                   data-shrink="false"
                 >
                   Last name
                 </label>
                 <div
-                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-18 MuiInputBase-fullWidth MuiInputBase-formControl"
+                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-23 makeStyles-filledRoot-26 MuiInputBase-fullWidth MuiInputBase-formControl"
                 >
                   <input
                     aria-invalid="false"
@@ -871,13 +871,13 @@ Object {
                 data-testid="common-auth-registration-form-email"
               >
                 <label
-                  class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled Mui-error Mui-error MuiFormLabel-filled"
+                  class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-24 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled Mui-error Mui-error MuiFormLabel-filled"
                   data-shrink="true"
                 >
                   Email
                 </label>
                 <div
-                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-18 Mui-error Mui-error MuiInputBase-fullWidth MuiInputBase-formControl"
+                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-23 makeStyles-filledRoot-27 Mui-error Mui-error MuiInputBase-fullWidth MuiInputBase-formControl"
                 >
                   <input
                     aria-invalid="true"
@@ -889,8 +889,8 @@ Object {
                 </div>
               </div>
               <div
-                class="MuiCollapse-container MuiCollapse-entered"
-                style="min-height: 0px; height: auto; transition-duration: 300ms;"
+                class="MuiCollapse-container"
+                style="min-height: 0px; height: 0px; transition-duration: 300ms;"
               >
                 <div
                   class="MuiCollapse-wrapper"
@@ -915,13 +915,13 @@ Object {
                 data-testid="common-auth-registration-form-password"
               >
                 <label
-                  class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled Mui-error Mui-error MuiFormLabel-filled"
+                  class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-24 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled Mui-error Mui-error MuiFormLabel-filled"
                   data-shrink="true"
                 >
                   Password
                 </label>
                 <div
-                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-18 Mui-error Mui-error MuiInputBase-fullWidth MuiInputBase-formControl"
+                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-23 makeStyles-filledRoot-28 Mui-error Mui-error MuiInputBase-fullWidth MuiInputBase-formControl"
                 >
                   <input
                     aria-invalid="true"
@@ -933,8 +933,8 @@ Object {
                 </div>
               </div>
               <div
-                class="MuiCollapse-container MuiCollapse-entered"
-                style="min-height: 0px; height: auto; transition-duration: 300ms;"
+                class="MuiCollapse-container"
+                style="min-height: 0px; height: 0px; transition-duration: 300ms;"
               >
                 <div
                   class="MuiCollapse-wrapper"
@@ -959,13 +959,13 @@ Object {
                 data-testid="common-auth-registration-form-passwordRepeat"
               >
                 <label
-                  class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled Mui-error Mui-error MuiFormLabel-filled"
+                  class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-24 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled Mui-error Mui-error MuiFormLabel-filled"
                   data-shrink="true"
                 >
                   Confirm password
                 </label>
                 <div
-                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-18 Mui-error Mui-error MuiInputBase-fullWidth MuiInputBase-formControl"
+                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-23 makeStyles-filledRoot-29 Mui-error Mui-error MuiInputBase-fullWidth MuiInputBase-formControl"
                 >
                   <input
                     aria-invalid="true"
@@ -977,8 +977,8 @@ Object {
                 </div>
               </div>
               <div
-                class="MuiCollapse-container MuiCollapse-entered"
-                style="min-height: 0px; height: auto; transition-duration: 300ms;"
+                class="MuiCollapse-container"
+                style="min-height: 0px; height: 0px; transition-duration: 300ms;"
               >
                 <div
                   class="MuiCollapse-wrapper"
@@ -1003,7 +1003,7 @@ Object {
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-20 MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-checked-21 Mui-checked MuiIconButton-colorPrimary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-30 MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-checked-31 Mui-checked MuiIconButton-colorPrimary"
                   data-testid="common-auth-registration-form-consent"
                   label="I allow this website to collect and store submitted data."
                 >
@@ -1011,7 +1011,7 @@ Object {
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-23"
+                      class="PrivateSwitchBase-input-33"
                       data-indeterminate="false"
                       type="checkbox"
                       value=""
@@ -1035,7 +1035,7 @@ Object {
                   class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
                 >
                   <p
-                    class="MuiTypography-root makeStyles-label-19 makeStyles-checkbox-15 MuiTypography-body1"
+                    class="MuiTypography-root MuiTypography-body1"
                   >
                     I allow this website to collect and store submitted data.
                   </p>
@@ -1046,7 +1046,7 @@ Object {
               class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
             >
               <button
-                class="MuiButtonBase-root MuiButton-root makeStyles-root-24 makeStyles-root-27 MuiButton-contained MuiButton-containedPrimary MuiButton-disableElevation MuiButton-fullWidth"
+                class="MuiButtonBase-root MuiButton-root makeStyles-root-34 makeStyles-root-37 MuiButton-contained MuiButton-containedPrimary MuiButton-disableElevation MuiButton-fullWidth"
                 tabindex="0"
                 type="submit"
               >
@@ -1054,14 +1054,14 @@ Object {
                   class="MuiButton-label"
                 >
                   <span
-                    class="makeStyles-inner-25 makeStyles-inner-28"
+                    class="makeStyles-inner-35 makeStyles-inner-38"
                     data-testid="common-elementary-button-children"
                     style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
                   >
                     Sign up
                   </span>
                   <div
-                    class="makeStyles-loader-26"
+                    class="makeStyles-loader-36"
                     data-testid="common-elementary-button-loader"
                     style="opacity: 0; visibility: hidden;"
                   >
@@ -1098,10 +1098,10 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="makeStyles-root-16"
+      class="makeStyles-root-21"
     >
       <div
-        class="MuiBox-root MuiBox-root-17"
+        class="MuiBox-root MuiBox-root-22"
       >
         <h3
           class="MuiTypography-root MuiTypography-h3"
@@ -1124,13 +1124,13 @@ Object {
               data-testid="common-auth-registration-form-firstName"
             >
               <label
-                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled"
+                class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-24 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled"
                 data-shrink="false"
               >
                 First name
               </label>
               <div
-                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-18 MuiInputBase-fullWidth MuiInputBase-formControl"
+                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-23 makeStyles-filledRoot-25 MuiInputBase-fullWidth MuiInputBase-formControl"
               >
                 <input
                   aria-invalid="false"
@@ -1170,13 +1170,13 @@ Object {
               data-testid="common-auth-registration-form-lastName"
             >
               <label
-                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled"
+                class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-24 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled"
                 data-shrink="false"
               >
                 Last name
               </label>
               <div
-                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-18 MuiInputBase-fullWidth MuiInputBase-formControl"
+                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-23 makeStyles-filledRoot-26 MuiInputBase-fullWidth MuiInputBase-formControl"
               >
                 <input
                   aria-invalid="false"
@@ -1216,13 +1216,13 @@ Object {
               data-testid="common-auth-registration-form-email"
             >
               <label
-                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled Mui-error Mui-error MuiFormLabel-filled"
+                class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-24 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled Mui-error Mui-error MuiFormLabel-filled"
                 data-shrink="true"
               >
                 Email
               </label>
               <div
-                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-18 Mui-error Mui-error MuiInputBase-fullWidth MuiInputBase-formControl"
+                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-23 makeStyles-filledRoot-27 Mui-error Mui-error MuiInputBase-fullWidth MuiInputBase-formControl"
               >
                 <input
                   aria-invalid="true"
@@ -1234,8 +1234,8 @@ Object {
               </div>
             </div>
             <div
-              class="MuiCollapse-container MuiCollapse-entered"
-              style="min-height: 0px; height: auto; transition-duration: 300ms;"
+              class="MuiCollapse-container"
+              style="min-height: 0px; height: 0px; transition-duration: 300ms;"
             >
               <div
                 class="MuiCollapse-wrapper"
@@ -1260,13 +1260,13 @@ Object {
               data-testid="common-auth-registration-form-password"
             >
               <label
-                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled Mui-error Mui-error MuiFormLabel-filled"
+                class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-24 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled Mui-error Mui-error MuiFormLabel-filled"
                 data-shrink="true"
               >
                 Password
               </label>
               <div
-                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-18 Mui-error Mui-error MuiInputBase-fullWidth MuiInputBase-formControl"
+                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-23 makeStyles-filledRoot-28 Mui-error Mui-error MuiInputBase-fullWidth MuiInputBase-formControl"
               >
                 <input
                   aria-invalid="true"
@@ -1278,8 +1278,8 @@ Object {
               </div>
             </div>
             <div
-              class="MuiCollapse-container MuiCollapse-entered"
-              style="min-height: 0px; height: auto; transition-duration: 300ms;"
+              class="MuiCollapse-container"
+              style="min-height: 0px; height: 0px; transition-duration: 300ms;"
             >
               <div
                 class="MuiCollapse-wrapper"
@@ -1304,13 +1304,13 @@ Object {
               data-testid="common-auth-registration-form-passwordRepeat"
             >
               <label
-                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled Mui-error Mui-error MuiFormLabel-filled"
+                class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-24 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled Mui-error Mui-error MuiFormLabel-filled"
                 data-shrink="true"
               >
                 Confirm password
               </label>
               <div
-                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-18 Mui-error Mui-error MuiInputBase-fullWidth MuiInputBase-formControl"
+                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-23 makeStyles-filledRoot-29 Mui-error Mui-error MuiInputBase-fullWidth MuiInputBase-formControl"
               >
                 <input
                   aria-invalid="true"
@@ -1322,8 +1322,8 @@ Object {
               </div>
             </div>
             <div
-              class="MuiCollapse-container MuiCollapse-entered"
-              style="min-height: 0px; height: auto; transition-duration: 300ms;"
+              class="MuiCollapse-container"
+              style="min-height: 0px; height: 0px; transition-duration: 300ms;"
             >
               <div
                 class="MuiCollapse-wrapper"
@@ -1348,7 +1348,7 @@ Object {
             >
               <span
                 aria-disabled="false"
-                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-20 MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-checked-21 Mui-checked MuiIconButton-colorPrimary"
+                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-30 MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-checked-31 Mui-checked MuiIconButton-colorPrimary"
                 data-testid="common-auth-registration-form-consent"
                 label="I allow this website to collect and store submitted data."
               >
@@ -1356,7 +1356,7 @@ Object {
                   class="MuiIconButton-label"
                 >
                   <input
-                    class="PrivateSwitchBase-input-23"
+                    class="PrivateSwitchBase-input-33"
                     data-indeterminate="false"
                     type="checkbox"
                     value=""
@@ -1380,7 +1380,7 @@ Object {
                 class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
               >
                 <p
-                  class="MuiTypography-root makeStyles-label-19 makeStyles-checkbox-15 MuiTypography-body1"
+                  class="MuiTypography-root MuiTypography-body1"
                 >
                   I allow this website to collect and store submitted data.
                 </p>
@@ -1391,7 +1391,7 @@ Object {
             class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
           >
             <button
-              class="MuiButtonBase-root MuiButton-root makeStyles-root-24 makeStyles-root-27 MuiButton-contained MuiButton-containedPrimary MuiButton-disableElevation MuiButton-fullWidth"
+              class="MuiButtonBase-root MuiButton-root makeStyles-root-34 makeStyles-root-37 MuiButton-contained MuiButton-containedPrimary MuiButton-disableElevation MuiButton-fullWidth"
               tabindex="0"
               type="submit"
             >
@@ -1399,14 +1399,14 @@ Object {
                 class="MuiButton-label"
               >
                 <span
-                  class="makeStyles-inner-25 makeStyles-inner-28"
+                  class="makeStyles-inner-35 makeStyles-inner-38"
                   data-testid="common-elementary-button-children"
                   style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
                 >
                   Sign up
                 </span>
                 <div
-                  class="makeStyles-loader-26"
+                  class="makeStyles-loader-36"
                   data-testid="common-elementary-button-loader"
                   style="opacity: 0; visibility: hidden;"
                 >
@@ -1500,10 +1500,10 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="makeStyles-root-30"
+        class="makeStyles-root-40"
       >
         <div
-          class="MuiBox-root MuiBox-root-31"
+          class="MuiBox-root MuiBox-root-41"
         >
           <h3
             class="MuiTypography-root MuiTypography-h3"
@@ -1526,13 +1526,13 @@ Object {
                 data-testid="common-auth-registration-form-firstName"
               >
                 <label
-                  class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled"
+                  class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-43 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled"
                   data-shrink="true"
                 >
                   First name
                 </label>
                 <div
-                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-32 MuiInputBase-fullWidth MuiInputBase-formControl"
+                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-42 makeStyles-filledRoot-44 MuiInputBase-fullWidth MuiInputBase-formControl"
                 >
                   <input
                     aria-invalid="false"
@@ -1572,13 +1572,13 @@ Object {
                 data-testid="common-auth-registration-form-lastName"
               >
                 <label
-                  class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled"
+                  class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-43 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled"
                   data-shrink="true"
                 >
                   Last name
                 </label>
                 <div
-                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-32 MuiInputBase-fullWidth MuiInputBase-formControl"
+                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-42 makeStyles-filledRoot-45 MuiInputBase-fullWidth MuiInputBase-formControl"
                 >
                   <input
                     aria-invalid="false"
@@ -1618,13 +1618,13 @@ Object {
                 data-testid="common-auth-registration-form-email"
               >
                 <label
-                  class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled"
+                  class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-43 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled"
                   data-shrink="true"
                 >
                   Email
                 </label>
                 <div
-                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-32 MuiInputBase-fullWidth MuiInputBase-formControl"
+                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-42 makeStyles-filledRoot-46 MuiInputBase-fullWidth MuiInputBase-formControl"
                 >
                   <input
                     aria-invalid="false"
@@ -1664,13 +1664,13 @@ Object {
                 data-testid="common-auth-registration-form-password"
               >
                 <label
-                  class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled"
+                  class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-43 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled"
                   data-shrink="true"
                 >
                   Password
                 </label>
                 <div
-                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-32 MuiInputBase-fullWidth MuiInputBase-formControl"
+                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-42 makeStyles-filledRoot-47 MuiInputBase-fullWidth MuiInputBase-formControl"
                 >
                   <input
                     aria-invalid="false"
@@ -1710,13 +1710,13 @@ Object {
                 data-testid="common-auth-registration-form-passwordRepeat"
               >
                 <label
-                  class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled"
+                  class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-43 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled"
                   data-shrink="true"
                 >
                   Confirm password
                 </label>
                 <div
-                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-32 MuiInputBase-fullWidth MuiInputBase-formControl"
+                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-42 makeStyles-filledRoot-48 MuiInputBase-fullWidth MuiInputBase-formControl"
                 >
                   <input
                     aria-invalid="false"
@@ -1756,7 +1756,7 @@ Object {
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-34 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-49 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
                   data-testid="common-auth-registration-form-consent"
                   label="I allow this website to collect and store submitted data."
                 >
@@ -1764,7 +1764,7 @@ Object {
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-37"
+                      class="PrivateSwitchBase-input-52"
                       data-indeterminate="false"
                       type="checkbox"
                       value=""
@@ -1788,7 +1788,7 @@ Object {
                   class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
                 >
                   <p
-                    class="MuiTypography-root makeStyles-label-33 makeStyles-checkbox-29 MuiTypography-body1"
+                    class="MuiTypography-root MuiTypography-body1"
                   >
                     I allow this website to collect and store submitted data.
                   </p>
@@ -1804,7 +1804,7 @@ Object {
               class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
             >
               <button
-                class="MuiButtonBase-root MuiButton-root makeStyles-root-38 makeStyles-root-41 MuiButton-contained MuiButton-containedPrimary MuiButton-disableElevation MuiButton-fullWidth"
+                class="MuiButtonBase-root MuiButton-root makeStyles-root-53 makeStyles-root-56 MuiButton-contained MuiButton-containedPrimary MuiButton-disableElevation MuiButton-fullWidth"
                 tabindex="0"
                 type="submit"
               >
@@ -1812,14 +1812,14 @@ Object {
                   class="MuiButton-label"
                 >
                   <span
-                    class="makeStyles-inner-39 makeStyles-inner-42"
+                    class="makeStyles-inner-54 makeStyles-inner-57"
                     data-testid="common-elementary-button-children"
                     style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
                   >
                     Sign up
                   </span>
                   <div
-                    class="makeStyles-loader-40"
+                    class="makeStyles-loader-55"
                     data-testid="common-elementary-button-loader"
                     style="opacity: 0; visibility: hidden;"
                   >
@@ -1856,10 +1856,10 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="makeStyles-root-30"
+      class="makeStyles-root-40"
     >
       <div
-        class="MuiBox-root MuiBox-root-31"
+        class="MuiBox-root MuiBox-root-41"
       >
         <h3
           class="MuiTypography-root MuiTypography-h3"
@@ -1882,13 +1882,13 @@ Object {
               data-testid="common-auth-registration-form-firstName"
             >
               <label
-                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled"
+                class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-43 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled"
                 data-shrink="true"
               >
                 First name
               </label>
               <div
-                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-32 MuiInputBase-fullWidth MuiInputBase-formControl"
+                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-42 makeStyles-filledRoot-44 MuiInputBase-fullWidth MuiInputBase-formControl"
               >
                 <input
                   aria-invalid="false"
@@ -1928,13 +1928,13 @@ Object {
               data-testid="common-auth-registration-form-lastName"
             >
               <label
-                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled"
+                class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-43 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled"
                 data-shrink="true"
               >
                 Last name
               </label>
               <div
-                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-32 MuiInputBase-fullWidth MuiInputBase-formControl"
+                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-42 makeStyles-filledRoot-45 MuiInputBase-fullWidth MuiInputBase-formControl"
               >
                 <input
                   aria-invalid="false"
@@ -1974,13 +1974,13 @@ Object {
               data-testid="common-auth-registration-form-email"
             >
               <label
-                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled"
+                class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-43 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled"
                 data-shrink="true"
               >
                 Email
               </label>
               <div
-                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-32 MuiInputBase-fullWidth MuiInputBase-formControl"
+                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-42 makeStyles-filledRoot-46 MuiInputBase-fullWidth MuiInputBase-formControl"
               >
                 <input
                   aria-invalid="false"
@@ -2020,13 +2020,13 @@ Object {
               data-testid="common-auth-registration-form-password"
             >
               <label
-                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled"
+                class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-43 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled"
                 data-shrink="true"
               >
                 Password
               </label>
               <div
-                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-32 MuiInputBase-fullWidth MuiInputBase-formControl"
+                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-42 makeStyles-filledRoot-47 MuiInputBase-fullWidth MuiInputBase-formControl"
               >
                 <input
                   aria-invalid="false"
@@ -2066,13 +2066,13 @@ Object {
               data-testid="common-auth-registration-form-passwordRepeat"
             >
               <label
-                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled"
+                class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-43 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled"
                 data-shrink="true"
               >
                 Confirm password
               </label>
               <div
-                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-32 MuiInputBase-fullWidth MuiInputBase-formControl"
+                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-42 makeStyles-filledRoot-48 MuiInputBase-fullWidth MuiInputBase-formControl"
               >
                 <input
                   aria-invalid="false"
@@ -2112,7 +2112,7 @@ Object {
             >
               <span
                 aria-disabled="false"
-                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-34 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
+                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-49 MuiCheckbox-root MuiCheckbox-colorPrimary MuiIconButton-colorPrimary"
                 data-testid="common-auth-registration-form-consent"
                 label="I allow this website to collect and store submitted data."
               >
@@ -2120,7 +2120,7 @@ Object {
                   class="MuiIconButton-label"
                 >
                   <input
-                    class="PrivateSwitchBase-input-37"
+                    class="PrivateSwitchBase-input-52"
                     data-indeterminate="false"
                     type="checkbox"
                     value=""
@@ -2144,7 +2144,7 @@ Object {
                 class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
               >
                 <p
-                  class="MuiTypography-root makeStyles-label-33 makeStyles-checkbox-29 MuiTypography-body1"
+                  class="MuiTypography-root MuiTypography-body1"
                 >
                   I allow this website to collect and store submitted data.
                 </p>
@@ -2160,7 +2160,7 @@ Object {
             class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
           >
             <button
-              class="MuiButtonBase-root MuiButton-root makeStyles-root-38 makeStyles-root-41 MuiButton-contained MuiButton-containedPrimary MuiButton-disableElevation MuiButton-fullWidth"
+              class="MuiButtonBase-root MuiButton-root makeStyles-root-53 makeStyles-root-56 MuiButton-contained MuiButton-containedPrimary MuiButton-disableElevation MuiButton-fullWidth"
               tabindex="0"
               type="submit"
             >
@@ -2168,14 +2168,14 @@ Object {
                 class="MuiButton-label"
               >
                 <span
-                  class="makeStyles-inner-39 makeStyles-inner-42"
+                  class="makeStyles-inner-54 makeStyles-inner-57"
                   data-testid="common-elementary-button-children"
                   style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
                 >
                   Sign up
                 </span>
                 <div
-                  class="makeStyles-loader-40"
+                  class="makeStyles-loader-55"
                   data-testid="common-elementary-button-loader"
                   style="opacity: 0; visibility: hidden;"
                 >
@@ -2269,10 +2269,10 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="makeStyles-root-44"
+        class="makeStyles-root-59"
       >
         <div
-          class="MuiBox-root MuiBox-root-45"
+          class="MuiBox-root MuiBox-root-60"
         >
           <h3
             class="MuiTypography-root MuiTypography-h3"
@@ -2295,13 +2295,13 @@ Object {
                 data-testid="common-auth-registration-form-firstName"
               >
                 <label
-                  class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled"
+                  class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-62 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled"
                   data-shrink="false"
                 >
                   First name
                 </label>
                 <div
-                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-46 MuiInputBase-fullWidth MuiInputBase-formControl"
+                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-61 makeStyles-filledRoot-63 MuiInputBase-fullWidth MuiInputBase-formControl"
                 >
                   <input
                     aria-invalid="false"
@@ -2341,13 +2341,13 @@ Object {
                 data-testid="common-auth-registration-form-lastName"
               >
                 <label
-                  class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled"
+                  class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-62 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled"
                   data-shrink="false"
                 >
                   Last name
                 </label>
                 <div
-                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-46 MuiInputBase-fullWidth MuiInputBase-formControl"
+                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-61 makeStyles-filledRoot-64 MuiInputBase-fullWidth MuiInputBase-formControl"
                 >
                   <input
                     aria-invalid="false"
@@ -2387,13 +2387,13 @@ Object {
                 data-testid="common-auth-registration-form-email"
               >
                 <label
-                  class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled Mui-error Mui-error"
+                  class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-62 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled Mui-error Mui-error"
                   data-shrink="false"
                 >
                   Email
                 </label>
                 <div
-                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-46 Mui-error Mui-error MuiInputBase-fullWidth MuiInputBase-formControl"
+                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-61 makeStyles-filledRoot-65 Mui-error Mui-error MuiInputBase-fullWidth MuiInputBase-formControl"
                 >
                   <input
                     aria-invalid="true"
@@ -2431,13 +2431,13 @@ Object {
                 data-testid="common-auth-registration-form-password"
               >
                 <label
-                  class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled Mui-error Mui-error"
+                  class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-62 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled Mui-error Mui-error"
                   data-shrink="false"
                 >
                   Password
                 </label>
                 <div
-                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-46 Mui-error Mui-error MuiInputBase-fullWidth MuiInputBase-formControl"
+                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-61 makeStyles-filledRoot-66 Mui-error Mui-error MuiInputBase-fullWidth MuiInputBase-formControl"
                 >
                   <input
                     aria-invalid="true"
@@ -2475,13 +2475,13 @@ Object {
                 data-testid="common-auth-registration-form-passwordRepeat"
               >
                 <label
-                  class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled Mui-error Mui-error"
+                  class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-62 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled Mui-error Mui-error"
                   data-shrink="false"
                 >
                   Confirm password
                 </label>
                 <div
-                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-46 Mui-error Mui-error MuiInputBase-fullWidth MuiInputBase-formControl"
+                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-61 makeStyles-filledRoot-67 Mui-error Mui-error MuiInputBase-fullWidth MuiInputBase-formControl"
                 >
                   <input
                     aria-invalid="true"
@@ -2519,7 +2519,7 @@ Object {
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-48 MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-checked-49 Mui-checked MuiIconButton-colorPrimary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-68 MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-checked-69 Mui-checked MuiIconButton-colorPrimary"
                   data-testid="common-auth-registration-form-consent"
                   label="I allow this website to collect and store submitted data."
                 >
@@ -2527,7 +2527,7 @@ Object {
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-51"
+                      class="PrivateSwitchBase-input-71"
                       data-indeterminate="false"
                       type="checkbox"
                       value=""
@@ -2551,7 +2551,7 @@ Object {
                   class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
                 >
                   <p
-                    class="MuiTypography-root makeStyles-label-47 makeStyles-checkbox-43 MuiTypography-body1"
+                    class="MuiTypography-root MuiTypography-body1"
                   >
                     I allow this website to collect and store submitted data.
                   </p>
@@ -2562,7 +2562,7 @@ Object {
               class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
             >
               <button
-                class="MuiButtonBase-root MuiButton-root makeStyles-root-52 makeStyles-root-55 MuiButton-contained MuiButton-containedPrimary MuiButton-disableElevation MuiButton-fullWidth"
+                class="MuiButtonBase-root MuiButton-root makeStyles-root-72 makeStyles-root-75 MuiButton-contained MuiButton-containedPrimary MuiButton-disableElevation MuiButton-fullWidth"
                 tabindex="0"
                 type="submit"
               >
@@ -2570,14 +2570,14 @@ Object {
                   class="MuiButton-label"
                 >
                   <span
-                    class="makeStyles-inner-53 makeStyles-inner-56"
+                    class="makeStyles-inner-73 makeStyles-inner-76"
                     data-testid="common-elementary-button-children"
                     style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
                   >
                     Sign up
                   </span>
                   <div
-                    class="makeStyles-loader-54"
+                    class="makeStyles-loader-74"
                     data-testid="common-elementary-button-loader"
                     style="opacity: 0; visibility: hidden;"
                   >
@@ -2614,10 +2614,10 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="makeStyles-root-44"
+      class="makeStyles-root-59"
     >
       <div
-        class="MuiBox-root MuiBox-root-45"
+        class="MuiBox-root MuiBox-root-60"
       >
         <h3
           class="MuiTypography-root MuiTypography-h3"
@@ -2640,13 +2640,13 @@ Object {
               data-testid="common-auth-registration-form-firstName"
             >
               <label
-                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled"
+                class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-62 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled"
                 data-shrink="false"
               >
                 First name
               </label>
               <div
-                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-46 MuiInputBase-fullWidth MuiInputBase-formControl"
+                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-61 makeStyles-filledRoot-63 MuiInputBase-fullWidth MuiInputBase-formControl"
               >
                 <input
                   aria-invalid="false"
@@ -2686,13 +2686,13 @@ Object {
               data-testid="common-auth-registration-form-lastName"
             >
               <label
-                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled"
+                class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-62 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled"
                 data-shrink="false"
               >
                 Last name
               </label>
               <div
-                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-46 MuiInputBase-fullWidth MuiInputBase-formControl"
+                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-61 makeStyles-filledRoot-64 MuiInputBase-fullWidth MuiInputBase-formControl"
               >
                 <input
                   aria-invalid="false"
@@ -2732,13 +2732,13 @@ Object {
               data-testid="common-auth-registration-form-email"
             >
               <label
-                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled Mui-error Mui-error"
+                class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-62 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled Mui-error Mui-error"
                 data-shrink="false"
               >
                 Email
               </label>
               <div
-                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-46 Mui-error Mui-error MuiInputBase-fullWidth MuiInputBase-formControl"
+                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-61 makeStyles-filledRoot-65 Mui-error Mui-error MuiInputBase-fullWidth MuiInputBase-formControl"
               >
                 <input
                   aria-invalid="true"
@@ -2776,13 +2776,13 @@ Object {
               data-testid="common-auth-registration-form-password"
             >
               <label
-                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled Mui-error Mui-error"
+                class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-62 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled Mui-error Mui-error"
                 data-shrink="false"
               >
                 Password
               </label>
               <div
-                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-46 Mui-error Mui-error MuiInputBase-fullWidth MuiInputBase-formControl"
+                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-61 makeStyles-filledRoot-66 Mui-error Mui-error MuiInputBase-fullWidth MuiInputBase-formControl"
               >
                 <input
                   aria-invalid="true"
@@ -2820,13 +2820,13 @@ Object {
               data-testid="common-auth-registration-form-passwordRepeat"
             >
               <label
-                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled Mui-error Mui-error"
+                class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-62 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled Mui-error Mui-error"
                 data-shrink="false"
               >
                 Confirm password
               </label>
               <div
-                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-46 Mui-error Mui-error MuiInputBase-fullWidth MuiInputBase-formControl"
+                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-61 makeStyles-filledRoot-67 Mui-error Mui-error MuiInputBase-fullWidth MuiInputBase-formControl"
               >
                 <input
                   aria-invalid="true"
@@ -2864,7 +2864,7 @@ Object {
             >
               <span
                 aria-disabled="false"
-                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-48 MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-checked-49 Mui-checked MuiIconButton-colorPrimary"
+                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-68 MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-checked-69 Mui-checked MuiIconButton-colorPrimary"
                 data-testid="common-auth-registration-form-consent"
                 label="I allow this website to collect and store submitted data."
               >
@@ -2872,7 +2872,7 @@ Object {
                   class="MuiIconButton-label"
                 >
                   <input
-                    class="PrivateSwitchBase-input-51"
+                    class="PrivateSwitchBase-input-71"
                     data-indeterminate="false"
                     type="checkbox"
                     value=""
@@ -2896,7 +2896,7 @@ Object {
                 class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
               >
                 <p
-                  class="MuiTypography-root makeStyles-label-47 makeStyles-checkbox-43 MuiTypography-body1"
+                  class="MuiTypography-root MuiTypography-body1"
                 >
                   I allow this website to collect and store submitted data.
                 </p>
@@ -2907,7 +2907,7 @@ Object {
             class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
           >
             <button
-              class="MuiButtonBase-root MuiButton-root makeStyles-root-52 makeStyles-root-55 MuiButton-contained MuiButton-containedPrimary MuiButton-disableElevation MuiButton-fullWidth"
+              class="MuiButtonBase-root MuiButton-root makeStyles-root-72 makeStyles-root-75 MuiButton-contained MuiButton-containedPrimary MuiButton-disableElevation MuiButton-fullWidth"
               tabindex="0"
               type="submit"
             >
@@ -2915,14 +2915,14 @@ Object {
                 class="MuiButton-label"
               >
                 <span
-                  class="makeStyles-inner-53 makeStyles-inner-56"
+                  class="makeStyles-inner-73 makeStyles-inner-76"
                   data-testid="common-elementary-button-children"
                   style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
                 >
                   Sign up
                 </span>
                 <div
-                  class="makeStyles-loader-54"
+                  class="makeStyles-loader-74"
                   data-testid="common-elementary-button-loader"
                   style="opacity: 0; visibility: hidden;"
                 >
@@ -3016,10 +3016,10 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="makeStyles-root-72"
+        class="makeStyles-root-97"
       >
         <div
-          class="MuiBox-root MuiBox-root-73"
+          class="MuiBox-root MuiBox-root-98"
         >
           <h3
             class="MuiTypography-root MuiTypography-h3"
@@ -3042,13 +3042,13 @@ Object {
                 data-testid="common-auth-registration-form-firstName"
               >
                 <label
-                  class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled"
+                  class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-100 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled"
                   data-shrink="false"
                 >
                   First name
                 </label>
                 <div
-                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-74 MuiInputBase-fullWidth MuiInputBase-formControl"
+                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-99 makeStyles-filledRoot-101 MuiInputBase-fullWidth MuiInputBase-formControl"
                 >
                   <input
                     aria-invalid="false"
@@ -3088,13 +3088,13 @@ Object {
                 data-testid="common-auth-registration-form-lastName"
               >
                 <label
-                  class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled"
+                  class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-100 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled"
                   data-shrink="false"
                 >
                   Last name
                 </label>
                 <div
-                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-74 MuiInputBase-fullWidth MuiInputBase-formControl"
+                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-99 makeStyles-filledRoot-102 MuiInputBase-fullWidth MuiInputBase-formControl"
                 >
                   <input
                     aria-invalid="false"
@@ -3134,13 +3134,13 @@ Object {
                 data-testid="common-auth-registration-form-email"
               >
                 <label
-                  class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled"
+                  class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-100 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled"
                   data-shrink="true"
                 >
                   Email
                 </label>
                 <div
-                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-74 MuiInputBase-fullWidth MuiInputBase-formControl"
+                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-99 makeStyles-filledRoot-103 MuiInputBase-fullWidth MuiInputBase-formControl"
                 >
                   <input
                     aria-invalid="false"
@@ -3180,13 +3180,13 @@ Object {
                 data-testid="common-auth-registration-form-password"
               >
                 <label
-                  class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled"
+                  class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-100 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled"
                   data-shrink="true"
                 >
                   Password
                 </label>
                 <div
-                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-74 MuiInputBase-fullWidth MuiInputBase-formControl"
+                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-99 makeStyles-filledRoot-104 MuiInputBase-fullWidth MuiInputBase-formControl"
                 >
                   <input
                     aria-invalid="false"
@@ -3226,13 +3226,13 @@ Object {
                 data-testid="common-auth-registration-form-passwordRepeat"
               >
                 <label
-                  class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled Mui-error Mui-error MuiFormLabel-filled"
+                  class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-100 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled Mui-error Mui-error MuiFormLabel-filled"
                   data-shrink="true"
                 >
                   Confirm password
                 </label>
                 <div
-                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-74 Mui-error Mui-error MuiInputBase-fullWidth MuiInputBase-formControl"
+                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-99 makeStyles-filledRoot-105 Mui-error Mui-error MuiInputBase-fullWidth MuiInputBase-formControl"
                 >
                   <input
                     aria-invalid="true"
@@ -3270,7 +3270,7 @@ Object {
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-76 MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-checked-77 Mui-checked MuiIconButton-colorPrimary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-106 MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-checked-107 Mui-checked MuiIconButton-colorPrimary"
                   data-testid="common-auth-registration-form-consent"
                   label="I allow this website to collect and store submitted data."
                 >
@@ -3278,7 +3278,7 @@ Object {
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-79"
+                      class="PrivateSwitchBase-input-109"
                       data-indeterminate="false"
                       type="checkbox"
                       value=""
@@ -3302,7 +3302,7 @@ Object {
                   class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
                 >
                   <p
-                    class="MuiTypography-root makeStyles-label-75 makeStyles-checkbox-71 MuiTypography-body1"
+                    class="MuiTypography-root MuiTypography-body1"
                   >
                     I allow this website to collect and store submitted data.
                   </p>
@@ -3313,7 +3313,7 @@ Object {
               class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
             >
               <button
-                class="MuiButtonBase-root MuiButton-root makeStyles-root-80 makeStyles-root-83 MuiButton-contained MuiButton-containedPrimary MuiButton-disableElevation MuiButton-fullWidth"
+                class="MuiButtonBase-root MuiButton-root makeStyles-root-110 makeStyles-root-113 MuiButton-contained MuiButton-containedPrimary MuiButton-disableElevation MuiButton-fullWidth"
                 tabindex="0"
                 type="submit"
               >
@@ -3321,14 +3321,14 @@ Object {
                   class="MuiButton-label"
                 >
                   <span
-                    class="makeStyles-inner-81 makeStyles-inner-84"
+                    class="makeStyles-inner-111 makeStyles-inner-114"
                     data-testid="common-elementary-button-children"
                     style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
                   >
                     Sign up
                   </span>
                   <div
-                    class="makeStyles-loader-82"
+                    class="makeStyles-loader-112"
                     data-testid="common-elementary-button-loader"
                     style="opacity: 0; visibility: hidden;"
                   >
@@ -3365,10 +3365,10 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="makeStyles-root-72"
+      class="makeStyles-root-97"
     >
       <div
-        class="MuiBox-root MuiBox-root-73"
+        class="MuiBox-root MuiBox-root-98"
       >
         <h3
           class="MuiTypography-root MuiTypography-h3"
@@ -3391,13 +3391,13 @@ Object {
               data-testid="common-auth-registration-form-firstName"
             >
               <label
-                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled"
+                class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-100 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled"
                 data-shrink="false"
               >
                 First name
               </label>
               <div
-                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-74 MuiInputBase-fullWidth MuiInputBase-formControl"
+                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-99 makeStyles-filledRoot-101 MuiInputBase-fullWidth MuiInputBase-formControl"
               >
                 <input
                   aria-invalid="false"
@@ -3437,13 +3437,13 @@ Object {
               data-testid="common-auth-registration-form-lastName"
             >
               <label
-                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled"
+                class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-100 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled"
                 data-shrink="false"
               >
                 Last name
               </label>
               <div
-                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-74 MuiInputBase-fullWidth MuiInputBase-formControl"
+                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-99 makeStyles-filledRoot-102 MuiInputBase-fullWidth MuiInputBase-formControl"
               >
                 <input
                   aria-invalid="false"
@@ -3483,13 +3483,13 @@ Object {
               data-testid="common-auth-registration-form-email"
             >
               <label
-                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled"
+                class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-100 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled"
                 data-shrink="true"
               >
                 Email
               </label>
               <div
-                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-74 MuiInputBase-fullWidth MuiInputBase-formControl"
+                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-99 makeStyles-filledRoot-103 MuiInputBase-fullWidth MuiInputBase-formControl"
               >
                 <input
                   aria-invalid="false"
@@ -3529,13 +3529,13 @@ Object {
               data-testid="common-auth-registration-form-password"
             >
               <label
-                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled"
+                class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-100 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled"
                 data-shrink="true"
               >
                 Password
               </label>
               <div
-                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-74 MuiInputBase-fullWidth MuiInputBase-formControl"
+                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-99 makeStyles-filledRoot-104 MuiInputBase-fullWidth MuiInputBase-formControl"
               >
                 <input
                   aria-invalid="false"
@@ -3575,13 +3575,13 @@ Object {
               data-testid="common-auth-registration-form-passwordRepeat"
             >
               <label
-                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled Mui-error Mui-error MuiFormLabel-filled"
+                class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-100 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled Mui-error Mui-error MuiFormLabel-filled"
                 data-shrink="true"
               >
                 Confirm password
               </label>
               <div
-                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-74 Mui-error Mui-error MuiInputBase-fullWidth MuiInputBase-formControl"
+                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-99 makeStyles-filledRoot-105 Mui-error Mui-error MuiInputBase-fullWidth MuiInputBase-formControl"
               >
                 <input
                   aria-invalid="true"
@@ -3619,7 +3619,7 @@ Object {
             >
               <span
                 aria-disabled="false"
-                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-76 MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-checked-77 Mui-checked MuiIconButton-colorPrimary"
+                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-106 MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-checked-107 Mui-checked MuiIconButton-colorPrimary"
                 data-testid="common-auth-registration-form-consent"
                 label="I allow this website to collect and store submitted data."
               >
@@ -3627,7 +3627,7 @@ Object {
                   class="MuiIconButton-label"
                 >
                   <input
-                    class="PrivateSwitchBase-input-79"
+                    class="PrivateSwitchBase-input-109"
                     data-indeterminate="false"
                     type="checkbox"
                     value=""
@@ -3651,7 +3651,7 @@ Object {
                 class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
               >
                 <p
-                  class="MuiTypography-root makeStyles-label-75 makeStyles-checkbox-71 MuiTypography-body1"
+                  class="MuiTypography-root MuiTypography-body1"
                 >
                   I allow this website to collect and store submitted data.
                 </p>
@@ -3662,7 +3662,7 @@ Object {
             class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
           >
             <button
-              class="MuiButtonBase-root MuiButton-root makeStyles-root-80 makeStyles-root-83 MuiButton-contained MuiButton-containedPrimary MuiButton-disableElevation MuiButton-fullWidth"
+              class="MuiButtonBase-root MuiButton-root makeStyles-root-110 makeStyles-root-113 MuiButton-contained MuiButton-containedPrimary MuiButton-disableElevation MuiButton-fullWidth"
               tabindex="0"
               type="submit"
             >
@@ -3670,14 +3670,14 @@ Object {
                 class="MuiButton-label"
               >
                 <span
-                  class="makeStyles-inner-81 makeStyles-inner-84"
+                  class="makeStyles-inner-111 makeStyles-inner-114"
                   data-testid="common-elementary-button-children"
                   style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
                 >
                   Sign up
                 </span>
                 <div
-                  class="makeStyles-loader-82"
+                  class="makeStyles-loader-112"
                   data-testid="common-elementary-button-loader"
                   style="opacity: 0; visibility: hidden;"
                 >
@@ -3771,10 +3771,10 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="makeStyles-root-58"
+        class="makeStyles-root-78"
       >
         <div
-          class="MuiBox-root MuiBox-root-59"
+          class="MuiBox-root MuiBox-root-79"
         >
           <h3
             class="MuiTypography-root MuiTypography-h3"
@@ -3797,13 +3797,13 @@ Object {
                 data-testid="common-auth-registration-form-firstName"
               >
                 <label
-                  class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled"
+                  class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-81 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled"
                   data-shrink="false"
                 >
                   First name
                 </label>
                 <div
-                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-60 MuiInputBase-fullWidth MuiInputBase-formControl"
+                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-80 makeStyles-filledRoot-82 MuiInputBase-fullWidth MuiInputBase-formControl"
                 >
                   <input
                     aria-invalid="false"
@@ -3843,13 +3843,13 @@ Object {
                 data-testid="common-auth-registration-form-lastName"
               >
                 <label
-                  class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled"
+                  class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-81 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled"
                   data-shrink="false"
                 >
                   Last name
                 </label>
                 <div
-                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-60 MuiInputBase-fullWidth MuiInputBase-formControl"
+                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-80 makeStyles-filledRoot-83 MuiInputBase-fullWidth MuiInputBase-formControl"
                 >
                   <input
                     aria-invalid="false"
@@ -3889,13 +3889,13 @@ Object {
                 data-testid="common-auth-registration-form-email"
               >
                 <label
-                  class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled"
+                  class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-81 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled"
                   data-shrink="true"
                 >
                   Email
                 </label>
                 <div
-                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-60 MuiInputBase-fullWidth MuiInputBase-formControl"
+                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-80 makeStyles-filledRoot-84 MuiInputBase-fullWidth MuiInputBase-formControl"
                 >
                   <input
                     aria-invalid="false"
@@ -3935,13 +3935,13 @@ Object {
                 data-testid="common-auth-registration-form-password"
               >
                 <label
-                  class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled Mui-error Mui-error MuiFormLabel-filled"
+                  class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-81 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled Mui-error Mui-error MuiFormLabel-filled"
                   data-shrink="true"
                 >
                   Password
                 </label>
                 <div
-                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-60 Mui-error Mui-error MuiInputBase-fullWidth MuiInputBase-formControl"
+                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-80 makeStyles-filledRoot-85 Mui-error Mui-error MuiInputBase-fullWidth MuiInputBase-formControl"
                 >
                   <input
                     aria-invalid="true"
@@ -3953,8 +3953,8 @@ Object {
                 </div>
               </div>
               <div
-                class="MuiCollapse-container MuiCollapse-entered"
-                style="min-height: 0px; height: auto; transition-duration: 300ms;"
+                class="MuiCollapse-container"
+                style="min-height: 0px; height: 0px; transition-duration: 300ms;"
               >
                 <div
                   class="MuiCollapse-wrapper"
@@ -3979,13 +3979,13 @@ Object {
                 data-testid="common-auth-registration-form-passwordRepeat"
               >
                 <label
-                  class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled"
+                  class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-81 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled"
                   data-shrink="true"
                 >
                   Confirm password
                 </label>
                 <div
-                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-60 MuiInputBase-fullWidth MuiInputBase-formControl"
+                  class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-80 makeStyles-filledRoot-86 MuiInputBase-fullWidth MuiInputBase-formControl"
                 >
                   <input
                     aria-invalid="false"
@@ -4025,7 +4025,7 @@ Object {
               >
                 <span
                   aria-disabled="false"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-62 MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-checked-63 Mui-checked MuiIconButton-colorPrimary"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-87 MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-checked-88 Mui-checked MuiIconButton-colorPrimary"
                   data-testid="common-auth-registration-form-consent"
                   label="I allow this website to collect and store submitted data."
                 >
@@ -4033,7 +4033,7 @@ Object {
                     class="MuiIconButton-label"
                   >
                     <input
-                      class="PrivateSwitchBase-input-65"
+                      class="PrivateSwitchBase-input-90"
                       data-indeterminate="false"
                       type="checkbox"
                       value=""
@@ -4057,7 +4057,7 @@ Object {
                   class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
                 >
                   <p
-                    class="MuiTypography-root makeStyles-label-61 makeStyles-checkbox-57 MuiTypography-body1"
+                    class="MuiTypography-root MuiTypography-body1"
                   >
                     I allow this website to collect and store submitted data.
                   </p>
@@ -4068,7 +4068,7 @@ Object {
               class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
             >
               <button
-                class="MuiButtonBase-root MuiButton-root makeStyles-root-66 makeStyles-root-69 MuiButton-contained MuiButton-containedPrimary MuiButton-disableElevation MuiButton-fullWidth"
+                class="MuiButtonBase-root MuiButton-root makeStyles-root-91 makeStyles-root-94 MuiButton-contained MuiButton-containedPrimary MuiButton-disableElevation MuiButton-fullWidth"
                 tabindex="0"
                 type="submit"
               >
@@ -4076,14 +4076,14 @@ Object {
                   class="MuiButton-label"
                 >
                   <span
-                    class="makeStyles-inner-67 makeStyles-inner-70"
+                    class="makeStyles-inner-92 makeStyles-inner-95"
                     data-testid="common-elementary-button-children"
                     style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
                   >
                     Sign up
                   </span>
                   <div
-                    class="makeStyles-loader-68"
+                    class="makeStyles-loader-93"
                     data-testid="common-elementary-button-loader"
                     style="opacity: 0; visibility: hidden;"
                   >
@@ -4120,10 +4120,10 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="makeStyles-root-58"
+      class="makeStyles-root-78"
     >
       <div
-        class="MuiBox-root MuiBox-root-59"
+        class="MuiBox-root MuiBox-root-79"
       >
         <h3
           class="MuiTypography-root MuiTypography-h3"
@@ -4146,13 +4146,13 @@ Object {
               data-testid="common-auth-registration-form-firstName"
             >
               <label
-                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled"
+                class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-81 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled"
                 data-shrink="false"
               >
                 First name
               </label>
               <div
-                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-60 MuiInputBase-fullWidth MuiInputBase-formControl"
+                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-80 makeStyles-filledRoot-82 MuiInputBase-fullWidth MuiInputBase-formControl"
               >
                 <input
                   aria-invalid="false"
@@ -4192,13 +4192,13 @@ Object {
               data-testid="common-auth-registration-form-lastName"
             >
               <label
-                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled"
+                class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-81 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled"
                 data-shrink="false"
               >
                 Last name
               </label>
               <div
-                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-60 MuiInputBase-fullWidth MuiInputBase-formControl"
+                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-80 makeStyles-filledRoot-83 MuiInputBase-fullWidth MuiInputBase-formControl"
               >
                 <input
                   aria-invalid="false"
@@ -4238,13 +4238,13 @@ Object {
               data-testid="common-auth-registration-form-email"
             >
               <label
-                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled"
+                class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-81 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled"
                 data-shrink="true"
               >
                 Email
               </label>
               <div
-                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-60 MuiInputBase-fullWidth MuiInputBase-formControl"
+                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-80 makeStyles-filledRoot-84 MuiInputBase-fullWidth MuiInputBase-formControl"
               >
                 <input
                   aria-invalid="false"
@@ -4284,13 +4284,13 @@ Object {
               data-testid="common-auth-registration-form-password"
             >
               <label
-                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled Mui-error Mui-error MuiFormLabel-filled"
+                class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-81 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled Mui-error Mui-error MuiFormLabel-filled"
                 data-shrink="true"
               >
                 Password
               </label>
               <div
-                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-60 Mui-error Mui-error MuiInputBase-fullWidth MuiInputBase-formControl"
+                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-80 makeStyles-filledRoot-85 Mui-error Mui-error MuiInputBase-fullWidth MuiInputBase-formControl"
               >
                 <input
                   aria-invalid="true"
@@ -4302,8 +4302,8 @@ Object {
               </div>
             </div>
             <div
-              class="MuiCollapse-container MuiCollapse-entered"
-              style="min-height: 0px; height: auto; transition-duration: 300ms;"
+              class="MuiCollapse-container"
+              style="min-height: 0px; height: 0px; transition-duration: 300ms;"
             >
               <div
                 class="MuiCollapse-wrapper"
@@ -4328,13 +4328,13 @@ Object {
               data-testid="common-auth-registration-form-passwordRepeat"
             >
               <label
-                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled"
+                class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-81 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled"
                 data-shrink="true"
               >
                 Confirm password
               </label>
               <div
-                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-60 MuiInputBase-fullWidth MuiInputBase-formControl"
+                class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-80 makeStyles-filledRoot-86 MuiInputBase-fullWidth MuiInputBase-formControl"
               >
                 <input
                   aria-invalid="false"
@@ -4374,7 +4374,7 @@ Object {
             >
               <span
                 aria-disabled="false"
-                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-62 MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-checked-63 Mui-checked MuiIconButton-colorPrimary"
+                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-87 MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-checked-88 Mui-checked MuiIconButton-colorPrimary"
                 data-testid="common-auth-registration-form-consent"
                 label="I allow this website to collect and store submitted data."
               >
@@ -4382,7 +4382,7 @@ Object {
                   class="MuiIconButton-label"
                 >
                   <input
-                    class="PrivateSwitchBase-input-65"
+                    class="PrivateSwitchBase-input-90"
                     data-indeterminate="false"
                     type="checkbox"
                     value=""
@@ -4406,7 +4406,7 @@ Object {
                 class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
               >
                 <p
-                  class="MuiTypography-root makeStyles-label-61 makeStyles-checkbox-57 MuiTypography-body1"
+                  class="MuiTypography-root MuiTypography-body1"
                 >
                   I allow this website to collect and store submitted data.
                 </p>
@@ -4417,7 +4417,7 @@ Object {
             class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
           >
             <button
-              class="MuiButtonBase-root MuiButton-root makeStyles-root-66 makeStyles-root-69 MuiButton-contained MuiButton-containedPrimary MuiButton-disableElevation MuiButton-fullWidth"
+              class="MuiButtonBase-root MuiButton-root makeStyles-root-91 makeStyles-root-94 MuiButton-contained MuiButton-containedPrimary MuiButton-disableElevation MuiButton-fullWidth"
               tabindex="0"
               type="submit"
             >
@@ -4425,14 +4425,14 @@ Object {
                 class="MuiButton-label"
               >
                 <span
-                  class="makeStyles-inner-67 makeStyles-inner-70"
+                  class="makeStyles-inner-92 makeStyles-inner-95"
                   data-testid="common-elementary-button-children"
                   style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
                 >
                   Sign up
                 </span>
                 <div
-                  class="makeStyles-loader-68"
+                  class="makeStyles-loader-93"
                   data-testid="common-elementary-button-loader"
                   style="opacity: 0; visibility: hidden;"
                 >

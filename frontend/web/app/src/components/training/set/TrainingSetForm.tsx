@@ -8,6 +8,7 @@ import {useTranslation} from 'react-i18next';
 import {Button} from '@byot-frontend/web-common/src/components/elementary/form/Button';
 import {TFunction} from 'i18next';
 import * as Yup from 'yup';
+import {ITrainingSetInput} from '@byot-frontend/common/src/types/interfaces/ITrainingSetInput';
 
 const trainingSetSchema = (t: TFunction) =>
   Yup.object().shape({
@@ -16,7 +17,7 @@ const trainingSetSchema = (t: TFunction) =>
 
 interface Props {
   trainingSet?: ITrainingSet;
-  onSave: (trainingSet: ITrainingSet) => void;
+  onSave: (trainingSet: ITrainingSetInput) => void;
 }
 
 export const TrainingSetForm: React.FC<Props> = (props: Props) => {
@@ -31,11 +32,12 @@ export const TrainingSetForm: React.FC<Props> = (props: Props) => {
       validateOnBlur
       validateOnChange>
       {({errors, touched}) => (
-        <Form>
+        <Form data-testid="training-set-form-form">
           <Grid container spacing={2} justify="flex-end">
             <Grid item xs={12}>
               <FastField
                 as={Input}
+                data-testid="training-set-form-label"
                 name="label"
                 label={t('Enter training set name')}
                 error={touched.label && errors.label}

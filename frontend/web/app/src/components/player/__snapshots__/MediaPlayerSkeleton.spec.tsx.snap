@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MediaPlayerSkeleton/> should render 1`] = `
+<div>
+  <div
+    class="MuiBox-root MuiBox-root-4 makeStyles-root-1 makeStyles-root-3 makeStyles-root-1"
+    classes="[object Object]"
+  >
+    <div
+      class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1"
+    >
+      <div
+        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-1"
+      >
+        <span
+          class="MuiSkeleton-root makeStyles-root-5 MuiSkeleton-rect MuiSkeleton-pulse"
+        />
+      </div>
+      <div
+        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-1"
+      >
+        <span
+          class="MuiSkeleton-root makeStyles-root-5 MuiSkeleton-rect MuiSkeleton-pulse"
+        />
+      </div>
+      <div
+        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-true"
+      >
+        <span
+          class="MuiSkeleton-root makeStyles-root-5 MuiSkeleton-rect MuiSkeleton-pulse"
+        />
+      </div>
+      <div
+        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-1"
+      >
+        <span
+          class="MuiSkeleton-root makeStyles-root-5 MuiSkeleton-rect MuiSkeleton-pulse"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

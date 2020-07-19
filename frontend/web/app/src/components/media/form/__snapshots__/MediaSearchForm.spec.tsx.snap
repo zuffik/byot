@@ -1,0 +1,269 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MediaSearchForm/> should call event only once when the media is selected 1`] = `
+<div>
+  <div
+    class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-align-items-xs-center MuiGrid-justify-xs-flex-end"
+  >
+    <div
+      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6"
+    >
+      <div
+        data-testid="test-media-trigger"
+      />
+    </div>
+    <div
+      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-5"
+    >
+      <div
+        class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+        data-testid="media-form-search-input"
+      >
+        <label
+          class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-7 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled Mui-disabled Mui-disabled"
+          data-shrink="false"
+        >
+          Video label
+        </label>
+        <div
+          class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-6 makeStyles-filledRoot-8 Mui-disabled Mui-disabled MuiInputBase-fullWidth MuiInputBase-formControl"
+        >
+          <input
+            aria-invalid="false"
+            class="MuiInputBase-input MuiFilledInput-input Mui-disabled Mui-disabled"
+            disabled=""
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="MuiCollapse-container MuiCollapse-hidden"
+        style="min-height: 0px;"
+      >
+        <div
+          class="MuiCollapse-wrapper"
+        >
+          <div
+            class="MuiCollapse-wrapperInner"
+          >
+            <p
+              class="MuiFormHelperText-root MuiFormHelperText-contained"
+            >
+              <span>
+                ​
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="MuiGrid-root makeStyles-lastItem-5 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-1"
+    >
+      <button
+        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorSecondary"
+        data-testid="media-form-search-button"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="MuiIconButton-label"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M18 13h-5v5c0 .55-.45 1-1 1s-1-.45-1-1v-5H6c-.55 0-1-.45-1-1s.45-1 1-1h5V6c0-.55.45-1 1-1s1 .45 1 1v5h5c.55 0 1 .45 1 1s-.45 1-1 1z"
+            />
+          </svg>
+        </span>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<MediaSearchForm/> should call event with custom label 1`] = `
+<div>
+  <div
+    class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-align-items-xs-center MuiGrid-justify-xs-flex-end"
+  >
+    <div
+      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6"
+    >
+      <div
+        data-testid="test-media-trigger"
+      />
+    </div>
+    <div
+      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-5"
+    >
+      <div
+        class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+        data-testid="media-form-search-input"
+      >
+        <label
+          class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-11 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled Mui-disabled Mui-disabled"
+          data-shrink="false"
+        >
+          Video label
+        </label>
+        <div
+          class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-10 makeStyles-filledRoot-12 Mui-disabled Mui-disabled MuiInputBase-fullWidth MuiInputBase-formControl"
+        >
+          <input
+            aria-invalid="false"
+            class="MuiInputBase-input MuiFilledInput-input Mui-disabled Mui-disabled"
+            disabled=""
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="MuiCollapse-container MuiCollapse-hidden"
+        style="min-height: 0px;"
+      >
+        <div
+          class="MuiCollapse-wrapper"
+        >
+          <div
+            class="MuiCollapse-wrapperInner"
+          >
+            <p
+              class="MuiFormHelperText-root MuiFormHelperText-contained"
+            >
+              <span>
+                ​
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="MuiGrid-root makeStyles-lastItem-9 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-1"
+    >
+      <button
+        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorSecondary"
+        data-testid="media-form-search-button"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="MuiIconButton-label"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M18 13h-5v5c0 .55-.45 1-1 1s-1-.45-1-1v-5H6c-.55 0-1-.45-1-1s.45-1 1-1h5V6c0-.55.45-1 1-1s1 .45 1 1v5h5c.55 0 1 .45 1 1s-.45 1-1 1z"
+            />
+          </svg>
+        </span>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<MediaSearchForm/> should render idle state 1`] = `
+<div>
+  <div
+    class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-align-items-xs-center MuiGrid-justify-xs-flex-end"
+  >
+    <div
+      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6"
+    >
+      <div />
+    </div>
+    <div
+      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-5"
+    >
+      <div
+        class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+        data-testid="media-form-search-input"
+      >
+        <label
+          class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-3 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled Mui-disabled Mui-disabled"
+          data-shrink="false"
+        >
+          Video label
+        </label>
+        <div
+          class="MuiInputBase-root MuiFilledInput-root makeStyles-filledRoot-2 makeStyles-filledRoot-4 Mui-disabled Mui-disabled MuiInputBase-fullWidth MuiInputBase-formControl"
+        >
+          <input
+            aria-invalid="false"
+            class="MuiInputBase-input MuiFilledInput-input Mui-disabled Mui-disabled"
+            disabled=""
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="MuiCollapse-container MuiCollapse-hidden"
+        style="min-height: 0px;"
+      >
+        <div
+          class="MuiCollapse-wrapper"
+        >
+          <div
+            class="MuiCollapse-wrapperInner"
+          >
+            <p
+              class="MuiFormHelperText-root MuiFormHelperText-contained"
+            >
+              <span>
+                ​
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="MuiGrid-root makeStyles-lastItem-1 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-1"
+    >
+      <button
+        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorSecondary"
+        data-testid="media-form-search-button"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="MuiIconButton-label"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M18 13h-5v5c0 .55-.45 1-1 1s-1-.45-1-1v-5H6c-.55 0-1-.45-1-1s.45-1 1-1h5V6c0-.55.45-1 1-1s1 .45 1 1v5h5c.55 0 1 .45 1 1s-.45 1-1 1z"
+            />
+          </svg>
+        </span>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </button>
+    </div>
+  </div>
+</div>
+`;

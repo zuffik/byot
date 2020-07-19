@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LoginFormFooter/> should render 1`] = `
+<div>
+  <div
+    class="MuiBox-root MuiBox-root-1"
+  >
+    <button
+      class="MuiButtonBase-root MuiButton-root makeStyles-root-2 makeStyles-root-5 MuiButton-text MuiButton-textPrimary MuiButton-disableElevation"
+      tabindex="0"
+      to="/reset-password"
+      type="button"
+    >
+      <span
+        class="MuiButton-label"
+      >
+        <span
+          class="makeStyles-inner-3 makeStyles-inner-6"
+          data-testid="common-elementary-button-children"
+          style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+        >
+          Forgot password?
+        </span>
+        <div
+          class="makeStyles-loader-4"
+          data-testid="common-elementary-button-loader"
+          style="opacity: 0; visibility: hidden;"
+        >
+          <div
+            class="css-0"
+          >
+            <div
+              class="css-1ab95gp"
+            />
+            <div
+              class="css-tm4xur"
+            />
+            <div
+              class="css-1epl0i6"
+            />
+            <div
+              class="css-1fj2adh"
+            />
+            <div
+              class="css-1vivfwt"
+            />
+          </div>
+        </div>
+      </span>
+      <span
+        class="MuiTouchRipple-root"
+      />
+    </button>
+    <button
+      class="MuiButtonBase-root MuiButton-root makeStyles-root-2 makeStyles-root-7 MuiButton-text MuiButton-textSecondary MuiButton-disableElevation"
+      tabindex="0"
+      to="/sign-up"
+      type="button"
+    >
+      <span
+        class="MuiButton-label"
+      >
+        <span
+          class="makeStyles-inner-3 makeStyles-inner-8"
+          data-testid="common-elementary-button-children"
+          style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+        >
+          Don't have an account?
+        </span>
+        <div
+          class="makeStyles-loader-4"
+          data-testid="common-elementary-button-loader"
+          style="opacity: 0; visibility: hidden;"
+        >
+          <div
+            class="css-0"
+          >
+            <div
+              class="css-1ab95gp"
+            />
+            <div
+              class="css-tm4xur"
+            />
+            <div
+              class="css-1epl0i6"
+            />
+            <div
+              class="css-1fj2adh"
+            />
+            <div
+              class="css-1vivfwt"
+            />
+          </div>
+        </div>
+      </span>
+      <span
+        class="MuiTouchRipple-root"
+      />
+    </button>
+  </div>
+</div>
+`;

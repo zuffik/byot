@@ -1,59 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BaseRouterLayout should match snapshot 1`] = `
+exports[`BaseRouterLayout should render 1`] = `
 <div>
   <div
-    data-testid="test-app-switch"
+    data-testid="react-router-dom-switch"
   >
     <div
-      data-path="/login,/sign-up,/reset-password"
-      data-testid="test-app-route"
-    >
-      <div
-        class="makeStyles-root-9"
-      >
-        <div
-          class="makeStyles-header-10"
-        >
-          <div
-            class="MuiBox-root MuiBox-root-15 makeStyles-root-12 makeStyles-root-14"
-          >
-            <img
-              class="makeStyles-img-13 makeStyles-logo-11"
-              classes="[object Object]"
-              src="logo.svg"
-            />
-          </div>
-        </div>
-        <div
-          data-testid="test-app-switch"
-        >
-          <div
-            data-path="/login"
-            data-testid="test-app-route"
-          />
-          <div
-            data-path="/sign-up"
-            data-testid="test-app-route"
-          />
-          <div
-            data-path="/reset-password"
-            data-testid="test-app-route"
-          />
-        </div>
-        <div
-          class="MuiBox-root MuiBox-root-16"
-        >
-          <p
-            class="MuiTypography-root MuiTypography-body1"
-          >
-            All rights reserved to byoT
-          </p>
-        </div>
-      </div>
-    </div>
+      data-testid="unauthorized-route-base"
+    />
     <div
-      data-testid="test-app-redirect"
+      data-testid="auth-route-base"
+    />
+    <div
+      data-testid="react-router-dom-redirect"
     />
   </div>
 </div>

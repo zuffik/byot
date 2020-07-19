@@ -1,6 +1,5 @@
 import * as React from 'react';
 import {makeStyles, Theme} from '@material-ui/core';
-import {Patch} from '@byot-frontend/web-common/src/components/elementary/patch/Patch';
 import {WithStyles} from '@byot-frontend/web-common/src/types/WithStyles';
 import {TripleComboItem} from './TripleComboItem';
 import {PatchSkeleton} from '@byot-frontend/web-common/src/components/elementary/patch/PatchSkeleton';

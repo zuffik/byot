@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TripleComboItemSkeleton/> should render 1`] = `
+<div>
+  <div
+    class="MuiBox-root MuiBox-root-12 MuiListItem-root makeStyles-root-4 MuiListItem-gutters MuiListItem-alignItemsFlexStart makeStyles-root-11"
+  >
+    <div
+      class="makeStyles-image-5 makeStyles-image-8"
+    >
+      <span
+        class="MuiSkeleton-root makeStyles-root-13 makeStyles-imagePlaceholder-2 MuiSkeleton-rect MuiSkeleton-pulse"
+      />
+    </div>
+    <div
+      class="MuiListItemText-root makeStyles-textRoot-7 makeStyles-textRoot-10 MuiListItemText-multiline"
+    >
+      <span
+        class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-6 makeStyles-primaryText-9 MuiTypography-body1 MuiTypography-displayBlock"
+      >
+        <span
+          class="MuiSkeleton-root makeStyles-root-13 makeStyles-title-1 MuiSkeleton-rect MuiSkeleton-pulse"
+        />
+      </span>
+      <p
+        class="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+      >
+        <span
+          class="MuiSkeleton-root makeStyles-root-13 makeStyles-description-3 MuiSkeleton-rect MuiSkeleton-pulse"
+        />
+      </p>
+    </div>
+  </div>
+</div>
+`;

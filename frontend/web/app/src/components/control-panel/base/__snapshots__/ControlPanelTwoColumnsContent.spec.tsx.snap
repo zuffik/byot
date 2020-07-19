@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ControlPanelTwoColumnsContent/> should render 1`] = `
+<div>
+  <div
+    class="makeStyles-mainColumn-1"
+  />
+  <div
+    class="makeStyles-secondaryColumn-2"
+  />
+</div>
+`;

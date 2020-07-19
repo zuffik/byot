@@ -23,7 +23,7 @@ describe('<LoginForm/>', () => {
     expect(password.value).toEqual(credentials.password);
     fireEvent.submit(form);
     await waitFor(() => expect(onLogin).toBeCalledWith(credentials));
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.container).toMatchSnapshot();
   });
 
   it('should not submit form with one credential missing', async () => {
@@ -44,6 +44,6 @@ describe('<LoginForm/>', () => {
     expect(username.value).toEqual(credentials.userNameOrEmail);
     fireEvent.submit(form);
     await waitFor(() => expect(onLogin).not.toBeCalled());
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.container).toMatchSnapshot();
   });
 });

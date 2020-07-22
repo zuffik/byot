@@ -18,7 +18,6 @@ import { sharedConfig } from './config/shared.config';
 import { mailConfig } from './config/mail.config';
 import { MailModule } from './mail/mail.module';
 import { Verbosity } from './helpers/Verbosity';
-import { DbModule } from './db/db.module';
 
 @Module({
   imports: [
@@ -47,7 +46,7 @@ import { DbModule } from './db/db.module';
       inject: [ConfigService],
       useFactory: (cfg: ConfigService) => ({
         debug: cfg.get('node.env') === 'development',
-        playground: cfg.get('node.env') === 'development',
+        playground: cfg.get('node.env') !== 'production',
         typePaths: ['./**/graphql/schema/*.graphql'],
         context: ({ req }) => ({ req }),
         definitions: ['test', 'development'].includes(cfg.get('node.env')) && {
@@ -80,7 +79,6 @@ import { DbModule } from './db/db.module';
     MediaModule,
     TrainingModule,
     MailModule,
-    DbModule,
   ],
   controllers: [],
   providers: [],

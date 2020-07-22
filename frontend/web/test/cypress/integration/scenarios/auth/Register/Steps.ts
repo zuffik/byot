@@ -1,4 +1,4 @@
-import {When, And, Then} from 'cypress-cucumber-preprocessor/steps';
+import {When, And, Then, After} from 'cypress-cucumber-preprocessor/steps';
 import {envString} from '../../../../../shared/EnvString';
 
 // registering user
@@ -63,4 +63,8 @@ Then(/^the result should be (.*)$/, result => {
     cy.url().should('contain', '/sign-up');
     cy.get('[data-testid="common-auth-registration-form-form"]').should('exist');
   }
+});
+
+After(async () => {
+  // todo cleanup
 });

@@ -226,6 +226,7 @@ export class MigrationsService implements OnModuleInit {
                               const media = _.sample(medias);
                               const source = await media.source;
                               return {
+                                label: media.label,
                                 id: source.resourceId,
                                 sourceType: source.sourceType,
                               };

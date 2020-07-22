@@ -30,13 +30,14 @@ const styles = (theme: Theme) => ({
     ({
       color: props.selected
         ? theme.palette.secondary.main
-        : theme.palette.type == 'light' && theme.palette.grey[500],
+        : theme.palette.type === 'light' && theme.palette.grey[500],
       transition: `color ${theme.transitions.duration.standard}ms`,
     } as CreateCSSProperties<Props>),
   textPrimary: (props: Props) =>
     ({
       color:
-        theme.palette.type == 'light' && (props.selected ? theme.palette.grey[900] : theme.palette.grey[500]),
+        theme.palette.type === 'light' &&
+        (props.selected ? theme.palette.grey[900] : theme.palette.grey[500]),
       transition: `color ${theme.transitions.duration.standard}ms`,
       fontWeight: 500,
     } as CreateCSSProperties<Props>),

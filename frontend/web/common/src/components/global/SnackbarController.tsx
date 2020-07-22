@@ -5,6 +5,7 @@ import {SnackbarProvider, useSnackbar} from 'notistack';
 import {makeStyles, Theme} from '@material-ui/core';
 import {WithStyles} from '../../types/WithStyles';
 import {useTranslation} from 'react-i18next';
+import {SnackbarContentProps} from '@material-ui/core/SnackbarContent';
 
 interface Props extends WithStyles<typeof styles> {
   children?: React.ReactNode;
@@ -27,7 +28,10 @@ const Child: React.FC<Props> = (props: Props) => {
       enqueueSnackbar(t(snackbar.message), {
         autoHideDuration: snackbar.timeout,
         variant: snackbar.type,
-        ContentProps: {classes: {root: styles.snackbar}},
+        ContentProps: {
+          classes: {root: styles.snackbar},
+          'data-testid': 'common-elementary-snackbar',
+        } as SnackbarContentProps,
       });
     }
   }, [snackbar, enqueueSnackbar, styles, t]);

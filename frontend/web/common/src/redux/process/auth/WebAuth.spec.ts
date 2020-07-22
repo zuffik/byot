@@ -14,7 +14,6 @@ describe('WebAuth process', () => {
   beforeEach(() => (process = new WebAuth()));
 
   it('should successfully login', () => {
-    jest.spyOn(apolloClient, 'mutate').mockImplementation(jest.fn());
     const setItemSpy = jest.spyOn(frontendCommonWebStorage, 'setItem').mockImplementation(jest.fn());
     const state: Readonly<WebState> = {} as Readonly<WebState>;
     const payload: UserLogin = {

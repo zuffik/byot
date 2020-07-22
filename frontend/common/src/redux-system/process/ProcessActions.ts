@@ -1,4 +1,5 @@
 import {Action} from 'typescript-fsa';
+import {Effect} from 'redux-saga/effects';
 import {DataResponse} from '../data-structures/responses/DataResponse';
 
 export interface AsynchronousActionResponse<QP, RP> {
@@ -15,7 +16,7 @@ export interface SynchronousAction<S, P> {
 export interface AsynchronousAction<S, QP, RP, P extends AAR<QP, RP> = AsynchronousActionResponse<QP, RP>> {
   handleRequest?(action: Action<QP>, nextState: Readonly<S>, prevState: Readonly<S>): Readonly<S>;
 
-  saga(action: Action<QP>, state: Readonly<S>): Generator<any, any, any>;
+  saga(action: Action<QP>, state: Readonly<S>): Effect | Generator<any, any, any>;
 
   handleResponse?(action: Action<P>, nextState: Readonly<S>, prevState: Readonly<S>): Readonly<S>;
 }

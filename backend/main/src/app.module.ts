@@ -18,6 +18,7 @@ import { sharedConfig } from './config/shared.config';
 import { mailConfig } from './config/mail.config';
 import { MailModule } from './mail/mail.module';
 import { Verbosity } from './helpers/Verbosity';
+import { DbModule } from './db/db.module';
 
 @Module({
   imports: [
@@ -79,6 +80,7 @@ import { Verbosity } from './helpers/Verbosity';
     MediaModule,
     TrainingModule,
     MailModule,
+    DbModule,
   ],
   controllers: [],
   providers: [],

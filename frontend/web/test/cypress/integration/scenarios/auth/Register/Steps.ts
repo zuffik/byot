@@ -20,7 +20,9 @@ And(/^enters lastName (.*)$/, lastName => {
 
 And(/^enters email (.*)$/, email => {
   if (email.trim() != '') {
-    cy.get('[data-testid="common-auth-registration-form-email"] input').type(email);
+    cy.get('[data-testid="common-auth-registration-form-email"] input').type(
+      envString(email, key => Cypress.env(key))
+    );
   }
 });
 
@@ -48,23 +50,14 @@ And(/^clicks register$/, () => {
 
 Then(/^the result should be (.*)$/, result => {
   if (result == 'successful') {
-    cy.get(
-      '[data-testid="common-auth-login-form-form"] [data-testid="common-elementary-button-loader"]'
-    ).should('be.visible');
-    cy.get(
-      '[data-testid="common-auth-login-form-form"] [data-testid="common-elementary-button-loader"]'
-    ).should('not.be.visible');
     cy.url().should('not.contain', '/sign-up');
     cy.get('[data-testid="common-auth-registration-form-form"]').should('not.exist');
   } else {
-    cy.get(
-      '[data-testid="common-auth-login-form-form"] [data-testid="common-elementary-button-loader"]'
-    ).should('not.be.visible');
     cy.url().should('contain', '/sign-up');
     cy.get('[data-testid="common-auth-registration-form-form"]').should('exist');
   }
 });
 
-After(async () => {
-  // todo cleanup
+After(() => {
+  cy.request('DELETE', Cypress.env('PUBLIC_API_URL') + '/cleaner/test/user');
 });

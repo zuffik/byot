@@ -18,6 +18,7 @@ import { sharedConfig } from './config/shared.config';
 import { mailConfig } from './config/mail.config';
 import { MailModule } from './mail/mail.module';
 import { Verbosity } from './helpers/Verbosity';
+import { CleanerModule } from './cleaner/cleaner.module';
 
 @Module({
   imports: [
@@ -79,7 +80,8 @@ import { Verbosity } from './helpers/Verbosity';
     MediaModule,
     TrainingModule,
     MailModule,
-  ],
+    process.env.NODE_ENV === 'test' && CleanerModule,
+  ].filter(Boolean),
   controllers: [],
   providers: [],
 })

@@ -12,6 +12,13 @@ export const Router = new (class {
   })();
   resetPassword = new (class {
     URI = () => `${Router.URI()}reset-password`;
+    confirmPasswords = new (class {
+      params = new (class {
+        token?: string;
+      })();
+      URI = ({token = ':token'}: typeof Router.resetPassword.confirmPasswords.params = {}) =>
+        `${Router.resetPassword.URI()}/${token}`;
+    })();
   })();
   training = new (class {
     URI = () => `${Router.URI()}training`;
@@ -22,7 +29,7 @@ export const Router = new (class {
       params = new (class {
         trainingId?: string;
       })();
-      URI = ({trainingId = ':trainingId'}: typeof Router.training.detail.params) =>
+      URI = ({trainingId = ':trainingId'}: typeof Router.training.detail.params = {}) =>
         `${Router.training.URI()}/${trainingId}`;
     })();
     trainingSet = new (class {
@@ -34,7 +41,7 @@ export const Router = new (class {
         params = new (class {
           trainingSetId?: string;
         })();
-        URI = ({trainingSetId = ':trainingSetId'}: typeof Router.training.trainingSet.detail.params) =>
+        URI = ({trainingSetId = ':trainingSetId'}: typeof Router.training.trainingSet.detail.params = {}) =>
           `${Router.training.trainingSet.URI()}/${trainingSetId}`;
       })();
     })();

@@ -10,7 +10,9 @@ export type Props<T extends ClassesObject<C>, C = any> = T &
     FormControlLabelProps?: Omit<FormControlLabelProps, 'control' | 'label'>;
   };
 
-const styles = (theme: Theme) => ({});
+const styles = (theme: Theme) => ({
+  label: {},
+});
 const useStyles = makeStyles(styles);
 
 export const CheckboxRadioBase = <T extends ClassesObject<C>, C = any>(props: Props<T, C>) => {
@@ -22,7 +24,7 @@ export const CheckboxRadioBase = <T extends ClassesObject<C>, C = any>(props: Pr
       control={<props.component {...(radioProps as any)} />}
       label={
         ['string', 'number'].includes(typeof props.label) ? (
-          <Typography>{props.label}</Typography>
+          <Typography classes={{root: styles.label}}>{props.label}</Typography>
         ) : (
           props.label
         )

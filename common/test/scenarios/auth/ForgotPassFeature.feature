@@ -9,20 +9,22 @@ Feature: Forgot password
     And user enters password <password>
     And user confirms password <passwordRepeat>
     Then the result should be <state>
+    When user with email <email> tries to login with new password <password>
+    Then it should be <loginState>
     Examples:
-      | email                | password                 | passwordRepeat           | state        |
-      | john.doe@example.com | {env.APP_DEMO_USER_PASS} | {env.APP_DEMO_USER_PASS} | successful   |
-      | john.doe@example.com | {env.APP_DEMO_USER_PASS} | not matching pass        | unsuccessful |
-      | john.doe@example.com | abc                      | abc                      | unsuccessful |
+      | email                     | password                 | passwordRepeat           | state        | loginState   |
+      | {env.APP_DEMO_USER_EMAIL} | {env.APP_DEMO_USER_PASS} | {env.APP_DEMO_USER_PASS} | successful   | successful   |
+      | {env.APP_DEMO_USER_EMAIL} | 123-Abc$                 | not matching pass        | unsuccessful | unsuccessful |
+      | {env.APP_DEMO_USER_EMAIL} | abc                      | abc                      | unsuccessful | unsuccessful |
 
   Scenario Outline: user will never receive email within this scenario
-    Given user has been registered with email <registerEmail>
+    Given user has been registered with email <email>
     And user tries to reset his password
-    When user enters email <forgotPasswordEmail>
+    When user enters wrong email <forgotPasswordEmail>
     And form <isOrIsNot> submitted
     Then user should not receive email with link
     Examples:
-      | registerEmail        | forgotPasswordEmail   | isOrIsNot    |
-      |                      | john.doe@eample.com   | is           |
-      | john.doe@example.com | john.doe@e1xample.com | is           |
-      | john.doe@example.com | john.com              | is not       |
+      | email                     | forgotPasswordEmail   | isOrIsNot    |
+      | {env.APP_DEMO_USER_EMAIL} | john.doe@eample.com   | is           |
+      | {env.APP_DEMO_USER_EMAIL} | john.doe@e1xample.com | is           |
+      | {env.APP_DEMO_USER_EMAIL} | john.com              | is not       |

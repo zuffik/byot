@@ -53,7 +53,10 @@ export const Input: React.FC<Props> = (props: Props) => {
           },
         }}
       />
-      <FormHelperText error={props.error} variant="filled">
+      <FormHelperText
+        error={props.error}
+        variant="filled"
+        data-testid="common-elementary-form-input-helperText">
         {props.helperText}
       </FormHelperText>
     </>

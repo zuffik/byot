@@ -9,6 +9,7 @@ import {PlainLayout} from '@byot-frontend/web-common/src/components/plain-layout
 import {RegistrationFormFooter} from '@byot-frontend/web-app/src/components/auth/RegistrationFormFooter';
 import {ForgotPasswordForm} from '@byot-frontend/web-app/src/components/auth/ForgotPasswordForm';
 import {BackButton} from '@byot-frontend/web-common/src/components/elementary/navigation/BackButton';
+import {ResetPasswordForm} from '@byot-frontend/web-app/src/components/auth/ResetPasswordForm';
 
 export default {
   title: 'User/Auth',
@@ -29,10 +30,14 @@ export const registrationForm = () => (
   </RegistrationForm>
 );
 
-export const resetPassword = () => (
+export const forgotPassword = () => (
   <ForgotPasswordForm
     onSubmit={action('onSubmit')}
     loading={boolean('Loading', false)}
     overTitle={<BackButton />}
   />
+);
+
+export const resetPassword = () => (
+  <ResetPasswordForm onSubmit={action('onSubmit')} loading={boolean('Loading', false)} token="token" />
 );

@@ -5,15 +5,15 @@ import {Auth} from '../../../shared/graphql/ts/types';
 import {gql} from 'apollo-boost';
 import {call} from 'redux-saga/effects';
 import {fullAuthFragment} from '../../../graphql/fragments/FullAuthFragment';
-import {apolloClient} from '@byot-frontend/web-common/src/graphql/WebApolloClient';
 import {IUserRegister} from '../../../types/interfaces/IUserRegister';
+import {ApolloContext} from '../../../graphql/context/ApolloContext';
 
 export type Request = IUserRegister;
 export type Response = Auth;
 
 export abstract class Register implements AsynchronousAction<FrontendCommonState, Request, Response> {
   *saga(action: Action<Request>, state: Readonly<FrontendCommonState>): Generator<any, any, any> {
-    return (yield call(apolloClient.mutate, {
+    return (yield call(ApolloContext.apolloClient.mutate, {
       mutation: gql`
         mutation register($userRegister: UserRegister!) {
           userRegister(user: $userRegister) {

@@ -2,7 +2,10 @@ import '@testing-library/jest-dom/extend-expect';
 // @ts-ignore
 import MutationObserver from '@sheerun/mutationobserver-shim';
 import * as React from 'react';
+import {createMockClient} from 'mock-apollo-client';
+import {ApolloContext} from '@byot-frontend/common/src/graphql/context/ApolloContext';
 
+ApolloContext.apolloClient = createMockClient();
 window.MutationObserver = MutationObserver;
 
 jest.mock('react-router-dom', () => ({

@@ -5,6 +5,7 @@ import {LoginFormPage} from '../pages/LoginFormPage';
 import {RegistrationFormPage} from '../pages/RegistrationFormPage';
 import {RequestResetPasswordFormPage} from '../pages/RequestResetPasswordFormPage';
 import {PlainLayout} from '@byot-frontend/web-common/src/components/plain-layout/PlainLayout';
+import {ResetPasswordFormPage} from '../pages/ResetPasswordFormPage';
 
 interface Props {}
 
@@ -20,6 +21,9 @@ export const UnauthorizedRouterLayout: React.FC<Props> = (props: Props) => {
         </Route>
         <Route exact path={Router.resetPassword.URI()}>
           <RequestResetPasswordFormPage />
+        </Route>
+        <Route exact path={Router.resetPassword.confirmPasswords.URI()}>
+          <ResetPasswordFormPage />
         </Route>
       </Switch>
     </PlainLayout>

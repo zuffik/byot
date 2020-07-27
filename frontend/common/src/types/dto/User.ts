@@ -31,16 +31,16 @@ export class User implements IUser {
       userName = '',
     }: IUser = {} as IUser
   ) {
-    this.createdAt = createdAt;
+    this.createdAt = createdAt as IDateTime;
     this.email = email;
     this.emailValidated = emailValidated;
     this.firstName = firstName;
     this.fullName = fullName;
     this.id = id;
-    this.lastLogin = lastLogin;
+    this.lastLogin = lastLogin as IDateTime;
     this.lastName = lastName;
     this.role = role;
-    this.updatedAt = updatedAt;
+    this.updatedAt = updatedAt as IDateTime;
     this.userName = userName;
   }
 }

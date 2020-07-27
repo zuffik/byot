@@ -1,5 +1,4 @@
 import * as React from 'react';
-import 'loki/configure-react';
 import { addDecorator } from '@storybook/react';
 import {boolean, withKnobs} from '@storybook/addon-knobs';
 import { createTheme } from '@byot-frontend/web-common/src/setup/CreateTheme';

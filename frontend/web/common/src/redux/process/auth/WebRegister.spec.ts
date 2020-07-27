@@ -1,13 +1,13 @@
 import {Auth} from '@byot-frontend/common/src/shared/graphql/ts/types';
 import {ProcessActionExtractor} from '@byot-frontend/common/src/redux-system/process/ProcessActionExtractor';
 import {WebRegister} from './WebRegister';
-import {apolloClient} from '../../../graphql/WebApolloClient';
 import {WebState} from '../../WebState';
 import {frontendCommonWebStorage} from '../../../dom/FrontendCommonWebStorage';
 import {GraphQLResponse} from '@byot-frontend/common/src/redux-system/data-structures/responses/GraphQLResponse';
 import {User} from '@byot-frontend/common/src/types/dto/User';
 import {IUserRegister} from '@byot-frontend/common/src/types/interfaces/IUserRegister';
 import {GraphQLError} from 'graphql';
+import {ApolloContext} from '@byot-frontend/common/src/graphql/context/ApolloContext';
 
 describe('WebRegister process', () => {
   let process: WebRegister;
@@ -15,7 +15,7 @@ describe('WebRegister process', () => {
   beforeEach(() => (process = new WebRegister()));
 
   it('should successfully register', () => {
-    jest.spyOn(apolloClient, 'mutate').mockImplementation(jest.fn());
+    jest.spyOn(ApolloContext.apolloClient, 'mutate').mockImplementation(jest.fn());
     const setItemSpy = jest.spyOn(frontendCommonWebStorage, 'setItem').mockImplementation(jest.fn());
     const state: Readonly<WebState> = {} as Readonly<WebState>;
     const payload: IUserRegister = {
@@ -34,7 +34,7 @@ describe('WebRegister process', () => {
   });
 
   it('should fail registering', () => {
-    jest.spyOn(apolloClient, 'mutate').mockImplementation(jest.fn());
+    jest.spyOn(ApolloContext.apolloClient, 'mutate').mockImplementation(jest.fn());
     const setItemSpy = jest.spyOn(frontendCommonWebStorage, 'setItem').mockImplementation(jest.fn());
     const state: Readonly<WebState> = {} as Readonly<WebState>;
     const payload: IUserRegister = {

@@ -5,15 +5,15 @@ import {Auth, UserLogin} from '../../../shared/graphql/ts/types';
 import {gql} from 'apollo-boost';
 import {call, Effect} from 'redux-saga/effects';
 import {fullAuthFragment} from '../../../graphql/fragments/FullAuthFragment';
-import {apolloClient} from '@byot-frontend/web-common/src/graphql/WebApolloClient';
 import {ErrorSnackbar} from '../../../types/app/snackbar/ErrorSnackbar';
+import {ApolloContext} from '../../../graphql/context/ApolloContext';
 
 export type Request = UserLogin;
 export type Response = Auth;
 
 export abstract class Login implements AsynchronousAction<FrontendCommonState, Request, Response> {
-  saga(action: Action<Request>, state: Readonly<FrontendCommonState>): Effect | Generator<any, any, any> {
-    return call(apolloClient.mutate, {
+  *saga(action: Action<Request>, state: Readonly<FrontendCommonState>): Effect | Generator<any, any, any> {
+    return (yield call(ApolloContext.apolloClient.mutate, {
       mutation: gql`
         mutation login($userLogin: UserLogin!) {
           userLogin(user: $userLogin) {
@@ -23,7 +23,7 @@ export abstract class Login implements AsynchronousAction<FrontendCommonState, R
         ${fullAuthFragment()}
       `,
       variables: {userLogin: action.payload},
-    });
+    })).data.userLogin;
   }
 
   handleResponse(

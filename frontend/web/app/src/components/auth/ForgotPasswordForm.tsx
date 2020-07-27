@@ -9,7 +9,7 @@ import {Button} from '@byot-frontend/web-common/src/components/elementary/form/B
 import {Box, Grid} from '@material-ui/core';
 import {useTranslation} from 'react-i18next';
 
-const loginSchema = (t: TFunction) =>
+const forgotPassSchema = (t: TFunction) =>
   Yup.object().shape({
     email: Yup.string().required(t('Enter email')).email(t('Enter valid email')),
   });
@@ -31,7 +31,7 @@ export const ForgotPasswordForm: React.FC<Props> = (props: Props) => {
         initialValues={initialValues}
         validateOnBlur
         validateOnChange
-        validationSchema={loginSchema(t)}
+        validationSchema={forgotPassSchema(t)}
         onSubmit={({email}) => props.onSubmit(email)}>
         {({values, handleChange, handleBlur, errors, touched}) => (
           <Form data-testid="common-auth-forgotPassword-form-form">

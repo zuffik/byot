@@ -9,14 +9,30 @@ import {ApolloContext} from '@byot-frontend/common/src/graphql/context/ApolloCon
 import {call} from 'redux-saga/effects';
 import {gql} from 'apollo-boost';
 import {Filter} from '@byot-frontend/common/src/types/app/filter/Filter';
+import {ITrainingSet} from '@byot-frontend/common/src/types/interfaces/ITrainingSet';
+import {IterableResource} from '@byot-frontend/common/src/redux-system/data-structures/resources/IterableResource';
 
 export type Request = {filter?: Filter};
 export type Response = {};
 
 @ProcessActionCreator()
 export class FetchTrainingSets implements AsynchronousAction<WebAppState, Request, Response> {
+  handleRequest(
+    action: Action<Request>,
+    nextState: Readonly<WebAppState>,
+    prevState: Readonly<WebAppState>
+  ): Readonly<WebAppState> {
+    if (action.payload.filter?.reset) {
+      return {
+        ...nextState,
+        trainingSetListItems: new IterableResource<ITrainingSet>(),
+      };
+    }
+    return nextState;
+  }
+
   *saga(action: Action<Request>, state: Readonly<WebAppState>) {
-    const {reset, ...filter} = action.payload.filter!;
+    const {reset, ...filter} = action.payload?.filter || {};
     return (yield call(ApolloContext.apolloClient.query, {
       query: gql`
         query fetchTrainingSets($filter: FulltextFilterForUser) {

@@ -15,7 +15,7 @@ export const [i18n] = createI18n(
   },
   languageProvider,
   {
-    debug: process.env.NODE_ENV === 'development',
+    debug: false, //process.env.NODE_ENV === 'development',
   }
 );
 export const theme = (dark?: boolean) =>

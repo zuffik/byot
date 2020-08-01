@@ -5,7 +5,7 @@ import {SearchField} from './SearchField';
 describe('<SearchField/>', () => {
   it('should render and trigger the event', () => {
     const onChange = jest.fn();
-    const {container} = render(<SearchField onChange={onChange} value="" />);
+    const {container} = render(<SearchField onChange={onChange} value="" debounce={0} />);
     const input = container.querySelector('input');
     expect(input).not.toBeNull();
     fireEvent.change(input!, {target: {value: 'something'}});

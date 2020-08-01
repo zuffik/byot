@@ -6,6 +6,7 @@ import {AsynchronousActionResponse} from '@byot-frontend/common/src/redux-system
 import {DataResponse} from '@byot-frontend/common/src/redux-system/data-structures/responses/DataResponse';
 import {WebAppState} from '../../WebAppState';
 import {IterableResource} from '@byot-frontend/common/src/redux-system/data-structures/resources/IterableResource';
+import {ITrainingSet} from '@byot-frontend/common/src/types/interfaces/ITrainingSet';
 
 describe('FetchTrainingSets process', () => {
   let process: FetchTrainingSets;
@@ -19,14 +20,36 @@ describe('FetchTrainingSets process', () => {
   });
 
   it('should not reset data', () => {
-    const state = process.handleRequest(request, {} as WebAppState, {} as WebAppState);
+    const state = process.handleResponse(response, {} as WebAppState, {} as WebAppState);
     expect(state).toEqual({});
   });
 
   it('should reset data', () => {
-    request.payload = {filter: {reset: true}};
-    const state = process.handleRequest(request, {} as WebAppState, {} as WebAppState);
-    expect(state).toEqual({trainingSetListItems: expect.any(IterableResource)});
+    response.payload.request = {filter: {reset: true}};
+    const state = process.handleResponse(response, {} as WebAppState, {} as WebAppState);
+    expect(state).toEqual({
+      trainingSetListItems: expect.any(IterableResource),
+    });
+  });
+
+  it('should save filter', () => {
+    request.payload = {filter: {reset: true, pagination: {limit: 10, offset: 20}, query: 'Query'}};
+    const state = process.handleRequest(
+      request,
+      {
+        trainingSetListItems: new IterableResource<ITrainingSet>(),
+      } as WebAppState,
+      {} as WebAppState
+    );
+    expect(state).toEqual(
+      expect.objectContaining({
+        trainingSetListItems: expect.any(IterableResource),
+        trainingSetListFilter: {
+          ...request.payload.filter,
+          reset: false,
+        },
+      })
+    );
   });
 
   it('should run valid query', () => {

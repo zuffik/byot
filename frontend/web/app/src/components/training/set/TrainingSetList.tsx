@@ -5,6 +5,7 @@ import {ITrainingSet} from '@byot-frontend/common/src/types/interfaces/ITraining
 import {InfiniteGridList} from '@byot-frontend/web-common/src/components/functional/infinite-list/InfiniteGridList';
 import {TrainingSetListItemSkeleton} from './TrainingSetListItemSkeleton';
 import {TrainingSetListItem} from './TrainingSetListItem';
+import {EmptyListInfo} from '@byot-frontend/web-common/src/components/elementary/complement/EmptyListInfo';
 
 interface Props {
   items: IterableResource<ITrainingSet>;
@@ -20,6 +21,7 @@ export const TrainingSetList: React.FC<Props> = (props: Props) => {
       next={props.onLoadMore}
       skeletonCount={props.limit}
       step={props.limit}
+      noItems={<EmptyListInfo />}
       skeleton={
         <Grid item xs={12} md={6}>
           <TrainingSetListItemSkeleton />

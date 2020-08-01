@@ -13,6 +13,7 @@ export interface InfiniteListProps<T>
   skeleton?: React.ReactNode;
   children?: React.ReactNode;
   skeletonCount?: number;
+  noItems?: React.ReactNode;
 }
 
 interface Props<T> extends InfiniteListProps<T> {}
@@ -37,7 +38,10 @@ export const InfiniteList = <T extends any>(props: Props<T>) => {
         ((props.skeleton &&
           _.times(missingItems, i => <React.Fragment key={i}>{props.skeleton}</React.Fragment>)) ||
           props.loader || <></>)}
-      {props.resource.totalCount <= props.resource.data.length && <InfiniteListEndIcon />}
+      {props.resource.totalCount <= props.resource.data.length && props.resource.data.length > 0 && (
+        <InfiniteListEndIcon />
+      )}
+      {!props.resource.isProcessing && props.resource.data.length === 0 && props.noItems}
     </InfiniteScroll>
   );
 };

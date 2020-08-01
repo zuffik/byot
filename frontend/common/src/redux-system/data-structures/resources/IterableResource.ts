@@ -1,5 +1,5 @@
 import {EntityResource} from './EntityResource';
-import {ResourceState} from './Resource';
+import {Resource, ResourceState} from './Resource';
 import {IList} from '../../../types/interfaces/IList';
 
 export class IterableResource<T> extends EntityResource<T[]> {
@@ -27,18 +27,22 @@ export class IterableResource<T> extends EntityResource<T[]> {
     return this.data!.length > 0;
   }
 
-  set data(value: T[] | IList) {
-    const data = Array.isArray(value) ? value || [] : value.entries;
-    this._data = this.appendNewData ? [...this._data, ...data] : data;
-    this.totalCount = Array.isArray(value) ? value.length : value.meta?.totalCount;
+  setData<D = T[] | IList<any>>(value: D) {
+    const data = Array.isArray(value) ? value || [] : ((value as unknown) as IList<any>).entries;
+    this._data = this.appendNewData ? [...(this._data || []), ...data] : data;
+    this.totalCount = Array.isArray(value)
+      ? value.length
+      : ((value as unknown) as IList<any>).meta?.totalCount;
   }
 
   get data(): T[] {
     return this._data || [];
   }
 
-  reset() {
-    super.reset();
-    this.totalCount = this.data.length;
+  public reset<R extends Resource<T[]> = IterableResource<T>>(): R {
+    return (new IterableResource<T>(this.defaultData, {
+      appendNewData: this.appendNewData,
+      totalCount: this.defaultData?.length,
+    }) as unknown) as R;
   }
 }

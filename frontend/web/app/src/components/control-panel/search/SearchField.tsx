@@ -4,8 +4,9 @@ import {useTranslation} from 'react-i18next';
 import {Input} from '@byot-frontend/web-common/src/components/elementary/form/Input';
 
 interface Props {
-  onChange: React.ChangeEventHandler<HTMLInputElement>;
+  onChange: (value: string) => void;
   value: string;
+  debounce?: number;
 }
 
 export const SearchField: React.FC<Props> = (props: Props) => {
@@ -13,7 +14,13 @@ export const SearchField: React.FC<Props> = (props: Props) => {
   return (
     <>
       <Typography variant="h6">{t('Search')}</Typography>
-      <Input size="small" label={t('Type to search')} value={props.value} onChange={props.onChange} />
+      <Input
+        size="small"
+        label={t('Type to search')}
+        value={props.value}
+        onChangeText={props.onChange}
+        debounce={typeof props.debounce == 'undefined' ? 300 : props.debounce}
+      />
     </>
   );
 };

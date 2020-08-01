@@ -68,7 +68,9 @@ export const TripleComboItem = <P extends object = object>(props: Props<P>) => {
       {(props.title || props.description) && (
         <ListItemText
           classes={{primary: styles.primaryText, root: styles.textRoot}}
+          primaryTypographyProps={{component: 'div'}}
           primary={props.title}
+          secondaryTypographyProps={{component: 'div'}}
           secondary={props.description}
         />
       )}

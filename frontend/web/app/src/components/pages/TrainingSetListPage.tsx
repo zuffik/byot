@@ -17,10 +17,10 @@ export const TrainingSetListPage: React.FC<Props> = (props: Props) => {
   const dispatch = useDispatch();
   const filter = useSelector((state: WebAppState) => state.trainingSetListFilter);
   const items = useSelector((state: WebAppState) => state.trainingSetListItems);
-  const onChange = (e: React.ChangeEvent<HTMLInputElement>) =>
+  const onChange = (query: string) =>
     dispatch(
       ProcessActionExtractor.dispatch(FetchTrainingSets, {
-        filter: {...filter, query: e.target.value, reset: true},
+        filter: {...filter, query, reset: true},
       })
     );
   const onLoadMore = (offset: number, limit: number) =>

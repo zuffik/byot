@@ -22,13 +22,17 @@ export class FetchTrainingSets implements AsynchronousAction<WebAppState, Reques
     nextState: Readonly<WebAppState>,
     prevState: Readonly<WebAppState>
   ): Readonly<WebAppState> {
-    if (action.payload.filter?.reset) {
-      return {
-        ...nextState,
-        trainingSetListItems: new IterableResource<ITrainingSet>(),
-      };
-    }
-    return nextState;
+    return {
+      ...nextState,
+      trainingSetListItems: action.payload.filter?.reset
+        ? nextState.trainingSetListItems.reset()
+        : nextState.trainingSetListItems,
+      trainingSetListFilter: {
+        ...nextState.trainingSetListFilter,
+        ...action.payload.filter,
+        reset: false,
+      },
+    };
   }
 
   *saga(action: Action<Request>, state: Readonly<WebAppState>) {
@@ -78,10 +82,9 @@ export class FetchTrainingSets implements AsynchronousAction<WebAppState, Reques
   ): Readonly<WebAppState> {
     return {
       ...nextState,
-      trainingSetListFilter: {
-        ...nextState.trainingSetListFilter,
-        reset: false,
-      },
+      ...(action.payload.request.filter?.reset && {
+        trainingSetListItems: new IterableResource<ITrainingSet>(),
+      }),
     };
   }
 }

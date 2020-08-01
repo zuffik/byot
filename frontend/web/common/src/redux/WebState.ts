@@ -14,6 +14,6 @@ export class WebState extends FrontendCommonState {
 
   constructor() {
     super();
-    this.auth.data = frontendCommonWebStorage.getItem('auth');
+    this.auth.setData(frontendCommonWebStorage.getItem('auth'));
   }
 }

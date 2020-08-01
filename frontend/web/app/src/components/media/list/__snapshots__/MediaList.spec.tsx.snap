@@ -29,11 +29,11 @@ exports[`<MediaList/> should match click on the item 1`] = `
         <div
           class="MuiListItemText-root makeStyles-textRoot-21 makeStyles-textRoot-24"
         >
-          <span
+          <div
             class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-20 makeStyles-primaryText-23 MuiTypography-body1 MuiTypography-displayBlock"
           >
             Me ikoeru kunmega avjiac gomusja ufizowu kesoma tabuli zal koupeas dahisli wacef mo erdeko cudpiv ro pu.
-          </span>
+          </div>
         </div>
         <span
           class="MuiTouchRipple-root"
@@ -56,11 +56,11 @@ exports[`<MediaList/> should match click on the item 1`] = `
         <div
           class="MuiListItemText-root makeStyles-textRoot-21 makeStyles-textRoot-29"
         >
-          <span
+          <div
             class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-20 makeStyles-primaryText-28 MuiTypography-body1 MuiTypography-displayBlock"
           >
             Mog gic gataga ihgih bi judpeta iv zap jatro ba licucce vibu bo sooki ikno.
-          </span>
+          </div>
         </div>
         <span
           class="MuiTouchRipple-root"
@@ -92,11 +92,11 @@ exports[`<MediaList/> should render 1`] = `
         <div
           class="MuiListItemText-root makeStyles-textRoot-8 makeStyles-textRoot-11"
         >
-          <span
+          <div
             class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-7 makeStyles-primaryText-10 MuiTypography-body1 MuiTypography-displayBlock"
           >
             Mucu ceda pi hahij le vitvep sadwupif kenmulo jutacu emibo cu umusosfu re cuznim reletwaj lojeibe lolmuj.
-          </span>
+          </div>
         </div>
         <span
           class="MuiTouchRipple-root"

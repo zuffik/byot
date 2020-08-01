@@ -5,7 +5,8 @@ export enum ResourceState {
 }
 
 export interface Resource<T> {
-  data?: T | undefined;
+  readonly data?: T | undefined;
+  setData<D = T | undefined>(data: D): void;
   errors?: any;
   isProcessing: boolean;
   isLoaded: boolean;

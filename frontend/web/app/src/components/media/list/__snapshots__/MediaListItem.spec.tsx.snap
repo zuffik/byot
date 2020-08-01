@@ -12,11 +12,11 @@ exports[`<MediaListItem/> should render 1`] = `
     <div
       class="MuiListItemText-root makeStyles-textRoot-5 makeStyles-textRoot-8"
     >
-      <span
+      <div
         class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-4 makeStyles-primaryText-7 MuiTypography-body1 MuiTypography-displayBlock"
       >
         Mucu ceda pi hahij le vitvep sadwupif kenmulo jutacu emibo cu umusosfu re cuznim reletwaj lojeibe lolmuj.
-      </span>
+      </div>
     </div>
   </div>
 </div>
@@ -34,11 +34,11 @@ exports[`<MediaListItem/> should render transparent 1`] = `
     <div
       class="MuiListItemText-root makeStyles-textRoot-25 makeStyles-textRoot-28"
     >
-      <span
+      <div
         class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-24 makeStyles-primaryText-27 MuiTypography-body1 MuiTypography-displayBlock"
       >
         Me ikoeru kunmega avjiac gomusja ufizowu kesoma tabuli zal koupeas dahisli wacef mo erdeko cudpiv ro pu.
-      </span>
+      </div>
     </div>
   </li>
 </div>
@@ -56,16 +56,16 @@ exports[`<MediaListItem/> should render with description 1`] = `
     <div
       class="MuiListItemText-root makeStyles-textRoot-15 makeStyles-textRoot-18 MuiListItemText-multiline"
     >
-      <span
+      <div
         class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-14 makeStyles-primaryText-17 MuiTypography-body1 MuiTypography-displayBlock"
       >
         Mog gic gataga ihgih bi judpeta iv zap jatro ba licucce vibu bo sooki ikno.
-      </span>
-      <p
+      </div>
+      <div
         class="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
       >
         Description
-      </p>
+      </div>
     </div>
   </div>
 </div>
@@ -88,11 +88,11 @@ exports[`<MediaListItem/> should render with link 1`] = `
     <div
       class="MuiListItemText-root makeStyles-textRoot-33 makeStyles-textRoot-36"
     >
-      <span
+      <div
         class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-32 makeStyles-primaryText-35 MuiTypography-body1 MuiTypography-displayBlock"
       >
         Hu ibezvu liuz hirneom luze zakef ac aconki kekefjud voswulun kepdub optiowa ti velfo.
-      </span>
+      </div>
     </div>
     <span
       class="MuiTouchRipple-root"
@@ -116,11 +116,11 @@ exports[`<MediaListItem/> should render with onClick 1`] = `
     <div
       class="MuiListItemText-root makeStyles-textRoot-43 makeStyles-textRoot-46"
     >
-      <span
+      <div
         class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-42 makeStyles-primaryText-45 MuiTypography-body1 MuiTypography-displayBlock"
       >
         Pe jilre itefihpaz zij di mu tu juf ugibo etauznop ofo fuz.
-      </span>
+      </div>
     </div>
     <span
       class="MuiTouchRipple-root"

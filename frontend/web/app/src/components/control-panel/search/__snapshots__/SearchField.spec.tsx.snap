@@ -9,6 +9,7 @@ exports[`<SearchField/> should render and trigger the event 1`] = `
   </h6>
   <div
     class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+    debounce="0"
   >
     <label
       class="MuiFormLabel-root MuiInputLabel-root makeStyles-label-2 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-marginDense MuiInputLabel-filled"

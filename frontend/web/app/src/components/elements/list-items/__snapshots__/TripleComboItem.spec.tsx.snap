@@ -8,16 +8,16 @@ exports[`<TripleComboItem/> should render with different props 1`] = `
     <div
       class="MuiListItemText-root makeStyles-textRoot-4 makeStyles-textRoot-7 MuiListItemText-multiline"
     >
-      <span
+      <div
         class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-3 makeStyles-primaryText-6 MuiTypography-body1 MuiTypography-displayBlock"
       >
         Something
-      </span>
-      <p
+      </div>
+      <div
         class="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
       >
         description
-      </p>
+      </div>
     </div>
   </div>
 </div>
@@ -31,16 +31,16 @@ exports[`<TripleComboItem/> should render with different props 2`] = `
     <div
       class="MuiListItemText-root makeStyles-textRoot-4 makeStyles-textRoot-12 MuiListItemText-multiline"
     >
-      <span
+      <div
         class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-3 makeStyles-primaryText-11 MuiTypography-body1 MuiTypography-displayBlock"
       >
         Something
-      </span>
-      <p
+      </div>
+      <div
         class="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
       >
         description
-      </p>
+      </div>
     </div>
   </li>
 </div>
@@ -54,11 +54,11 @@ exports[`<TripleComboItem/> should render with different props 3`] = `
     <div
       class="MuiListItemText-root makeStyles-textRoot-4 makeStyles-textRoot-15"
     >
-      <span
+      <div
         class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-3 makeStyles-primaryText-14 MuiTypography-body1 MuiTypography-displayBlock"
       >
         Something
-      </span>
+      </div>
     </div>
   </div>
 </div>
@@ -75,16 +75,16 @@ exports[`<TripleComboItem/> should render with different props 4`] = `
     <div
       class="MuiListItemText-root makeStyles-textRoot-4 makeStyles-textRoot-19 MuiListItemText-multiline"
     >
-      <span
+      <div
         class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-3 makeStyles-primaryText-18 MuiTypography-body1 MuiTypography-displayBlock"
       >
         Something
-      </span>
-      <p
+      </div>
+      <div
         class="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
       >
         description
-      </p>
+      </div>
     </div>
   </div>
 </div>
@@ -101,16 +101,16 @@ exports[`<TripleComboItem/> should render with different props 5`] = `
     <div
       class="MuiListItemText-root makeStyles-textRoot-4 makeStyles-textRoot-23 MuiListItemText-multiline"
     >
-      <span
+      <div
         class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-3 makeStyles-primaryText-22 MuiTypography-body1 MuiTypography-displayBlock"
       >
         Something
-      </span>
-      <p
+      </div>
+      <div
         class="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
       >
         description
-      </p>
+      </div>
     </div>
   </div>
 </div>

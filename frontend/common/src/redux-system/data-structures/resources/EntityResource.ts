@@ -5,7 +5,11 @@ export class EntityResource<T> implements Resource<T> {
   protected _data?: T;
   protected _isLoaded: boolean = false;
 
-  constructor(private defaultData?: T, public state: ResourceState = ResourceState.IDLE) {
+  /**
+   * @param defaultData is supposed to be just simple structure or primitive (eg. {}, [], null, 0)
+   * @param state
+   */
+  constructor(protected defaultData?: T, public state: ResourceState = ResourceState.IDLE) {
     this._data = _.cloneDeep(this.defaultData);
   }
 
@@ -21,17 +25,16 @@ export class EntityResource<T> implements Resource<T> {
     return this._data;
   }
 
-  set data(value: T | undefined) {
+  setData<D = T | undefined>(value: D) {
     this._isLoaded = true;
-    this._data = value;
+    this._data = (value as unknown) as T | undefined;
   }
 
   get isLoaded(): boolean {
     return this._isLoaded;
   }
 
-  public reset() {
-    this._data = _.cloneDeep(this.defaultData);
-    this.state = ResourceState.IDLE;
+  public reset<R extends Resource<T> = EntityResource<T>>(): R {
+    return (new EntityResource<T>(this.defaultData) as unknown) as R;
   }
 }

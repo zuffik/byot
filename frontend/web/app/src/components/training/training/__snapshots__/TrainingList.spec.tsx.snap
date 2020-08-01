@@ -21,12 +21,12 @@ exports[`<TrainingList/> should render 1`] = `
         <div
           class="MuiListItemText-root makeStyles-textRoot-6 makeStyles-textRoot-9 makeStyles-textRoot-2 MuiListItemText-multiline"
         >
-          <span
+          <div
             class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-5 makeStyles-primaryText-8 makeStyles-title-1 MuiTypography-body1 MuiTypography-displayBlock"
           >
             Efum ji ga sefze figi pomlot dadeziguz seak nigamu luv hahic oziworpaz re cuznim reletwaj.
-          </span>
-          <p
+          </div>
+          <div
             class="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
           >
             <p
@@ -41,7 +41,7 @@ exports[`<TrainingList/> should render 1`] = `
             >
               5 months ago
             </span>
-          </p>
+          </div>
         </div>
         <span
           class="MuiTouchRipple-root"

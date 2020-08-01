@@ -73,11 +73,11 @@ exports[`<TrainingDetail/> should select a media 1`] = `
             <div
               class="MuiListItemText-root makeStyles-textRoot-20 makeStyles-textRoot-23"
             >
-              <span
+              <div
                 class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-19 makeStyles-primaryText-22 MuiTypography-body1 MuiTypography-displayBlock"
               >
                 Hu ibezvu liuz hirneom luze zakef ac aconki kekefjud voswulun kepdub optiowa ti velfo.
-              </span>
+              </div>
             </div>
             <span
               class="MuiTouchRipple-root"
@@ -100,11 +100,11 @@ exports[`<TrainingDetail/> should select a media 1`] = `
             <div
               class="MuiListItemText-root makeStyles-textRoot-20 makeStyles-textRoot-28"
             >
-              <span
+              <div
                 class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-19 makeStyles-primaryText-27 MuiTypography-body1 MuiTypography-displayBlock"
               >
                 Pe jilre itefihpaz zij di mu tu juf ugibo etauznop ofo fuz.
-              </span>
+              </div>
             </div>
             <span
               class="MuiTouchRipple-root"

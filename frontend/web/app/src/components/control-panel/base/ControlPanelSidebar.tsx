@@ -45,7 +45,13 @@ export const ControlPanelSidebar: React.FC<Props> = (props: Props) => {
   return (
     <div className={styles.root}>
       <Logo height={64} />
-      <DrawerMenu menu={props.menuItems} selected={props.selected} />
+      <DrawerMenu
+        menu={props.menuItems.map(i => ({
+          ...i,
+          label: t(i.label),
+        }))}
+        selected={props.selected}
+      />
       <Box width="100%" textAlign="center">
         <DrawerMenu
           disablePadding

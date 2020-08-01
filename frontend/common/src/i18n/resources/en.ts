@@ -38,4 +38,11 @@ export default {
   'Save training': 'Save training',
   'Video label': 'Video label',
   'Start typing to search or paste URL': 'Start typing to search or paste URL',
+  'My training sets': 'My training sets',
+  'Nothing found': 'Nothing found',
+  'Type to search': 'Type to search',
+  'Search': 'Search',
+  'Home': 'Home',
+  'Create training set': 'Create training set',
+  'My profile': 'My profile',
 };

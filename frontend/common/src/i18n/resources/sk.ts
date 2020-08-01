@@ -44,4 +44,11 @@ export default {
   'Save training': 'Uložiť tréning',
   'Video label': 'Názov videa',
   'Start typing to search or paste URL': 'Vyhľadajte alebo vložte URL',
+  'My training sets': 'Moje zoznamy tréningov',
+  'Nothing found': 'Nič nenájdené',
+  'Type to search': 'Pre vyhľadávanie začnite písať',
+  'Search': 'Vyhľadávanie',
+  'Home': 'Domov',
+  'Create training set': 'Vytvoriť zoznam tréningov',
+  'My profile': 'Môj profil',
 };

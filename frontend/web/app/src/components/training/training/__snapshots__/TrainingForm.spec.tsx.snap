@@ -46,6 +46,7 @@ exports[`<TrainingForm/> should edit the training 1`] = `
             >
               <p
                 class="MuiFormHelperText-root MuiFormHelperText-contained"
+                data-testid="common-elementary-form-input-helperText"
               >
                 <span>
                   ​
@@ -1139,6 +1140,7 @@ exports[`<TrainingForm/> should render 1`] = `
             >
               <p
                 class="MuiFormHelperText-root MuiFormHelperText-contained"
+                data-testid="common-elementary-form-input-helperText"
               >
                 <span>
                   ​
@@ -1267,6 +1269,7 @@ exports[`<TrainingForm/> should submit only with label provided 1`] = `
             >
               <p
                 class="MuiFormHelperText-root MuiFormHelperText-contained"
+                data-testid="common-elementary-form-input-helperText"
               >
                 <span>
                   ​

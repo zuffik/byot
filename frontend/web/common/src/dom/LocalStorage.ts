@@ -10,4 +10,8 @@ export class LocalStorage<T extends object> {
   setItem<K extends keyof T>(key: K, value: T[K]): void {
     localStorage.setItem(key.toString(), JSON.stringify(value));
   }
+
+  removeItem<K extends keyof T>(key: K): void {
+    localStorage.removeItem(key.toString());
+  }
 }

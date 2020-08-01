@@ -2,6 +2,7 @@ import * as React from 'react';
 import * as _ from 'lodash';
 import InfiniteScroll, {Props as InfiniteScrollProps} from 'react-infinite-scroll-component';
 import {IterableResource} from '@byot-frontend/common/src/redux-system/data-structures/resources/IterableResource';
+import {InfiniteListEndIcon} from './InfiniteListEndIcon';
 
 export interface InfiniteListProps<T>
   extends Omit<InfiniteScrollProps, 'dataLength' | 'hasMore' | 'next' | 'loader' | 'children'> {
@@ -11,6 +12,7 @@ export interface InfiniteListProps<T>
   loader?: React.ReactNode;
   skeleton?: React.ReactNode;
   children?: React.ReactNode;
+  skeletonCount?: number;
 }
 
 interface Props<T> extends InfiniteListProps<T> {}
@@ -20,20 +22,22 @@ export const InfiniteList = <T extends any>(props: Props<T>) => {
   const next = () => {
     props.next(props.resource.data.length, step);
   };
-  const missingItems = Math.min(step, props.resource.totalCount - props.resource.data.length);
+  const missingItems =
+    props.skeletonCount || Math.min(step, props.resource.totalCount - props.resource.data.length);
   return (
     <InfiniteScroll
       {...props}
       dataLength={props.resource.data.length}
       hasMore={props.resource.totalCount > props.resource.data.length}
       next={next}
-      hasChildren={false}
-      loader={
-        (props.skeleton &&
-          _.times(missingItems, i => <React.Fragment key={i}>{props.skeleton}</React.Fragment>)) ||
-        props.loader || <></>
-      }>
+      loader={<></>}
+      hasChildren={false}>
       {props.children}
+      {props.resource.isProcessing &&
+        ((props.skeleton &&
+          _.times(missingItems, i => <React.Fragment key={i}>{props.skeleton}</React.Fragment>)) ||
+          props.loader || <></>)}
+      {props.resource.totalCount <= props.resource.data.length && <InfiniteListEndIcon />}
     </InfiniteScroll>
   );
 };

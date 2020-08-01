@@ -1,11 +1,11 @@
 import * as React from 'react';
 
-export interface MenuItem {
+export interface MenuItem<I = string | number> {
   label: string;
-  id: string | number;
+  id: I;
   icon?: React.ReactNode;
 }
 
-export interface LinkMenuItem extends MenuItem {
+export interface LinkMenuItem<I = string | number> extends MenuItem<I> {
   link: string;
 }

@@ -32,6 +32,10 @@ exports[`<UnauthorizedRouterLayout/> should render 1`] = `
         data-path="/reset-password"
         data-testid="react-router-dom-route"
       />
+      <div
+        data-path="/reset-password/:token"
+        data-testid="react-router-dom-route"
+      />
     </div>
     <div
       class="MuiBox-root MuiBox-root-8"

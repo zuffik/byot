@@ -48,6 +48,7 @@ exports[`<Select/> should render 1`] = `
       >
         <p
           class="MuiFormHelperText-root MuiFormHelperText-contained"
+          data-testid="common-elementary-form-input-helperText"
         >
           <span>
             ​

@@ -10,6 +10,8 @@ import { createI18n } from '@byot-frontend/common/src/i18n/CreateI18n';
 import * as _ from 'lodash';
 import { FixedLanguageProvider } from '@byot-frontend/common/src/i18n/providers/FixedLanguageProvider';
 import StoryRouter from 'storybook-react-router';
+import { addParameters } from '@storybook/client-api';
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 
 const mockStore = configureStore();
 const langs = {
@@ -27,3 +29,17 @@ addDecorator(withI18next({
   languages: langs,
 }));
 addDecorator(StoryRouter());
+addParameters({
+  viewport: {
+    viewports: {
+      ...INITIAL_VIEWPORTS,
+      fullHD: {
+        name: 'Full HD',
+        styles: {
+          width: '1920px',
+          height: '1080px',
+        },
+      }
+    },
+  },
+});

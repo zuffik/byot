@@ -1,9 +1,7 @@
 import * as React from 'react';
-import {makeStyles, Theme, Typography} from '@material-ui/core';
-import {CSSProperties} from '@material-ui/styles';
+import {Typography} from '@material-ui/core';
 import {ITrainingSet} from '@byot-frontend/common/src/types/interfaces/ITrainingSet';
 import {useTranslation} from 'react-i18next';
-import {WithStyles} from '@byot-frontend/web-common/src/types/WithStyles';
 import moment from 'moment';
 import {Link} from 'react-router-dom';
 import {TrainingSetListItemImagePlaceholder} from './TrainingSetListItemImagePlaceholder';
@@ -11,15 +9,11 @@ import {DateTimeTypography} from '../../elements/typography/DateTimeTypography';
 import {TripleComboItem} from '../../elements/list-items/TripleComboItem';
 import {Router} from '../../../router/Router';
 
-interface Props extends WithStyles<typeof styles> {
+interface Props {
   trainingSet: ITrainingSet;
 }
 
-const styles = (theme: Theme) => ({});
-const useStyles = makeStyles(styles);
-
 export const TrainingSetListItem: React.FC<Props> = (props: Props) => {
-  const styles = useStyles(props);
   const {t} = useTranslation();
   const created = moment(props.trainingSet.createdAt.iso);
   return (

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {makeStyles, Theme, Grid} from '@material-ui/core';
+import {makeStyles, Theme} from '@material-ui/core';
 import {WithStyles} from '@byot-frontend/web-common/src/types/WithStyles';
 
 interface Props extends WithStyles<typeof styles> {
@@ -12,6 +12,9 @@ const styles = (theme: Theme) => ({
     [theme.breakpoints.up('md')]: {
       paddingRight: '33%',
     },
+    [theme.breakpoints.up('lg')]: {
+      paddingRight: '25%',
+    },
   },
   secondaryColumn: {
     padding: theme.spacing(2),
@@ -21,6 +24,9 @@ const styles = (theme: Theme) => ({
     [theme.breakpoints.up('md')]: {
       position: 'fixed' as 'fixed',
       width: '25%',
+    },
+    [theme.breakpoints.up('lg')]: {
+      width: '20%',
     },
   },
 });

@@ -58,6 +58,7 @@ exports[`<LoginForm/> should not submit form with one credential missing 1`] = `
               >
                 <p
                   class="MuiFormHelperText-root MuiFormHelperText-contained"
+                  data-testid="common-elementary-form-input-helperText"
                 >
                   <span>
                     ​
@@ -104,6 +105,7 @@ exports[`<LoginForm/> should not submit form with one credential missing 1`] = `
               >
                 <p
                   class="MuiFormHelperText-root MuiFormHelperText-contained Mui-error"
+                  data-testid="common-elementary-form-input-helperText"
                 >
                   Enter password
                 </p>
@@ -225,6 +227,7 @@ exports[`<LoginForm/> should submit form with credentials 1`] = `
               >
                 <p
                   class="MuiFormHelperText-root MuiFormHelperText-contained"
+                  data-testid="common-elementary-form-input-helperText"
                 >
                   <span>
                     ​
@@ -271,6 +274,7 @@ exports[`<LoginForm/> should submit form with credentials 1`] = `
               >
                 <p
                   class="MuiFormHelperText-root MuiFormHelperText-contained"
+                  data-testid="common-elementary-form-input-helperText"
                 >
                   <span>
                     ​

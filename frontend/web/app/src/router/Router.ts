@@ -10,6 +10,9 @@ export const Router = new (class {
   register = new (class {
     URI = () => `${Router.URI()}sign-up`;
   })();
+  user = new (class {
+    URI = () => `${Router.URI()}profile`;
+  })();
   resetPassword = new (class {
     URI = () => `${Router.URI()}reset-password`;
     confirmPasswords = new (class {
@@ -22,6 +25,9 @@ export const Router = new (class {
   })();
   training = new (class {
     URI = () => `${Router.URI()}training`;
+    create = new (class {
+      URI = () => `${Router.training.trainingSet.URI()}/create`;
+    })();
     list = new (class {
       URI = () => `${Router.training.URI()}/list`;
     })();
@@ -34,6 +40,9 @@ export const Router = new (class {
     })();
     trainingSet = new (class {
       URI = () => `${Router.training.URI()}/set`;
+      create = new (class {
+        URI = () => `${Router.training.trainingSet.URI()}/create`;
+      })();
       list = new (class {
         URI = () => `${Router.training.trainingSet.URI()}/list`;
       })();

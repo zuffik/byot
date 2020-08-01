@@ -29,4 +29,9 @@ export class EntityResource<T> implements Resource<T> {
   get isLoaded(): boolean {
     return this._isLoaded;
   }
+
+  public reset() {
+    this._data = _.cloneDeep(this.defaultData);
+    this.state = ResourceState.IDLE;
+  }
 }

@@ -79,6 +79,7 @@ exports[`<MediaAutocompleteInput/> should render focused state 1`] = `
           >
             <p
               class="MuiFormHelperText-root MuiFormHelperText-contained"
+              data-testid="common-elementary-form-input-helperText"
             >
               <span>
                 ​
@@ -229,6 +230,7 @@ exports[`<MediaAutocompleteInput/> should render idle state 1`] = `
         >
           <p
             class="MuiFormHelperText-root MuiFormHelperText-contained"
+            data-testid="common-elementary-form-input-helperText"
           >
             <span>
               ​
@@ -319,6 +321,7 @@ exports[`<MediaAutocompleteInput/> should select the right media 1`] = `
         >
           <p
             class="MuiFormHelperText-root MuiFormHelperText-contained"
+            data-testid="common-elementary-form-input-helperText"
           >
             <span>
               ​

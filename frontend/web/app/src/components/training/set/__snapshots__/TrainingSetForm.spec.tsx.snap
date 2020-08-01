@@ -46,6 +46,7 @@ exports[`<TrainingSetForm/> should render 1`] = `
             >
               <p
                 class="MuiFormHelperText-root MuiFormHelperText-contained"
+                data-testid="common-elementary-form-input-helperText"
               >
                 <span>
                   ​
@@ -155,6 +156,7 @@ exports[`<TrainingSetForm/> should submit only if label is provided 1`] = `
             >
               <p
                 class="MuiFormHelperText-root MuiFormHelperText-contained"
+                data-testid="common-elementary-form-input-helperText"
               >
                 <span>
                   ​

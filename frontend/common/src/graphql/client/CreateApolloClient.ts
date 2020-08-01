@@ -46,9 +46,11 @@ export const createApolloClient = (
     defaultOptions: {
       query: {
         errorPolicy: 'ignore',
+        fetchPolicy: 'no-cache',
       },
       mutate: {
         errorPolicy: 'ignore',
+        fetchPolicy: 'no-cache',
       },
     },
   });

@@ -10,7 +10,7 @@ exports[`<CheckboxRadioBase/> should render 1`] = `
       class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
     >
       <p
-        class="MuiTypography-root MuiTypography-body1"
+        class="MuiTypography-root makeStyles-label-1 MuiTypography-body1"
       >
         Label
       </p>

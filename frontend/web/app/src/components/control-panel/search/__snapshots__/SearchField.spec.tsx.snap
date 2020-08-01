@@ -39,6 +39,7 @@ exports[`<SearchField/> should render and trigger the event 1`] = `
       >
         <p
           class="MuiFormHelperText-root MuiFormHelperText-contained"
+          data-testid="common-elementary-form-input-helperText"
         >
           <span>
             ​

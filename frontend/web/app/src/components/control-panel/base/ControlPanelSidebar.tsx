@@ -32,6 +32,9 @@ const styles = (theme: Theme) => ({
     [theme.breakpoints.up('md')]: {
       width: '25%',
     },
+    [theme.breakpoints.up('lg')]: {
+      width: '20%',
+    },
   },
 });
 const useStyles = makeStyles(styles);

@@ -1,12 +1,5 @@
 import * as React from 'react';
-import {
-  BoxProps,
-  ListItem as ListItemBase,
-  ListItemProps,
-  ListItemText,
-  makeStyles,
-  Theme,
-} from '@material-ui/core';
+import {ListItem as ListItemBase, ListItemProps, ListItemText, makeStyles, Theme} from '@material-ui/core';
 import {WithStyles} from '@byot-frontend/web-common/src/types/WithStyles';
 import {Patch} from '@byot-frontend/web-common/src/components/elementary/patch/Patch';
 import {CSSProperties} from '@material-ui/styles';

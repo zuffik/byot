@@ -18,6 +18,9 @@ const styles = (theme: Theme) => ({
     [theme.breakpoints.up('md')]: {
       paddingLeft: '25%',
     },
+    [theme.breakpoints.up('lg')]: {
+      paddingLeft: '20%',
+    },
   },
 });
 const useStyles = makeStyles(styles);

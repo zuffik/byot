@@ -49,6 +49,7 @@ exports[`<MediaSearchForm/> should call event only once when the media is select
           >
             <p
               class="MuiFormHelperText-root MuiFormHelperText-contained"
+              data-testid="common-elementary-form-input-helperText"
             >
               <span>
                 ​
@@ -139,6 +140,7 @@ exports[`<MediaSearchForm/> should call event with custom label 1`] = `
           >
             <p
               class="MuiFormHelperText-root MuiFormHelperText-contained"
+              data-testid="common-elementary-form-input-helperText"
             >
               <span>
                 ​
@@ -227,6 +229,7 @@ exports[`<MediaSearchForm/> should render idle state 1`] = `
           >
             <p
               class="MuiFormHelperText-root MuiFormHelperText-contained"
+              data-testid="common-elementary-form-input-helperText"
             >
               <span>
                 ​

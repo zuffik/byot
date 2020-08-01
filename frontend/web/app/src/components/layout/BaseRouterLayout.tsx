@@ -14,7 +14,7 @@ export const BaseRouterLayout: React.FC<Props> = (props: Props) => {
       <UnauthorizedRoute path={[Router.login.URI(), Router.register.URI(), Router.resetPassword.URI()]}>
         <UnauthorizedRouterLayout />
       </UnauthorizedRoute>
-      <AuthRoute exact path={Router.URI()}>
+      <AuthRoute path={Router.URI()}>
         <AuthorizedRouterLayout />
       </AuthRoute>
       <Redirect to={Router.login.URI()} />

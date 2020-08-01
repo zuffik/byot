@@ -9,6 +9,7 @@ import {TrainingSetListItem} from './TrainingSetListItem';
 interface Props {
   items: IterableResource<ITrainingSet>;
   onLoadMore: (offset: number, limit: number) => void;
+  limit?: number;
 }
 
 export const TrainingSetList: React.FC<Props> = (props: Props) => {
@@ -17,6 +18,8 @@ export const TrainingSetList: React.FC<Props> = (props: Props) => {
       resource={props.items}
       GridProps={{container: true, spacing: 2}}
       next={props.onLoadMore}
+      skeletonCount={props.limit}
+      step={props.limit}
       skeleton={
         <Grid item xs={12} md={6}>
           <TrainingSetListItemSkeleton />

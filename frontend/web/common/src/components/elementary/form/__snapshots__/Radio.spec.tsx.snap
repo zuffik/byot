@@ -7,18 +7,18 @@ exports[`<Radio/> should render 1`] = `
   >
     <span
       aria-disabled="false"
-      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root MuiRadio-colorSecondary MuiIconButton-colorSecondary"
+      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-2 MuiRadio-root MuiRadio-colorSecondary MuiIconButton-colorSecondary"
     >
       <span
         class="MuiIconButton-label"
       >
         <input
-          class="PrivateSwitchBase-input-4"
+          class="PrivateSwitchBase-input-5"
           type="radio"
           value=""
         />
         <div
-          class="PrivateRadioButtonIcon-root-5"
+          class="PrivateRadioButtonIcon-root-6"
         >
           <svg
             aria-hidden="true"
@@ -32,7 +32,7 @@ exports[`<Radio/> should render 1`] = `
           </svg>
           <svg
             aria-hidden="true"
-            class="MuiSvgIcon-root PrivateRadioButtonIcon-layer-6"
+            class="MuiSvgIcon-root PrivateRadioButtonIcon-layer-7"
             focusable="false"
             viewBox="0 0 24 24"
           >

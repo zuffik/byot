@@ -13,11 +13,11 @@ Feature: Register user
     Then the result should be <result>
 
     Examples:
-    | firstName | lastName | email                     | password                 | passwordRepeat           | does     | result       |
-    | John      | Doe      | {env.APP_DEMO_USER_EMAIL} | {env.APP_DEMO_USER_PASS} | {env.APP_DEMO_USER_PASS} | does     | successful   |
-    |           |          | {env.APP_DEMO_USER_EMAIL} | {env.APP_DEMO_USER_PASS} | {env.APP_DEMO_USER_PASS} | does     | successful   |
-    | John      |          | {env.APP_DEMO_USER_EMAIL} | {env.APP_DEMO_USER_PASS} | {env.APP_DEMO_USER_PASS} | does     | successful   |
-    | John      |          |                           | {env.APP_DEMO_USER_PASS} | {env.APP_DEMO_USER_PASS} | does     | unsuccessful |
-    | John      |          | {env.APP_DEMO_USER_EMAIL} | {env.APP_DEMO_USER_PASS} | not matching pass        | does     | unsuccessful |
-    | John      | Doe      | {env.APP_DEMO_USER_EMAIL} | abc                      | abc                      | does     | unsuccessful |
-    | John      | Doe      | {env.APP_DEMO_USER_EMAIL} | {env.APP_DEMO_USER_PASS} | {env.APP_DEMO_USER_PASS} | does not | unsuccessful |
+    | firstName | lastName | email                     | password                     | passwordRepeat               | does     | result       |
+    | John      | Doe      | {env.APP_DEMO_USER_EMAIL} | {env.APP_DEMO_USER_PASSWORD} | {env.APP_DEMO_USER_PASSWORD} | does     | successful   |
+    |           |          | {env.APP_DEMO_USER_EMAIL} | {env.APP_DEMO_USER_PASSWORD} | {env.APP_DEMO_USER_PASSWORD} | does     | successful   |
+    | John      |          | {env.APP_DEMO_USER_EMAIL} | {env.APP_DEMO_USER_PASSWORD} | {env.APP_DEMO_USER_PASSWORD} | does     | successful   |
+    | John      |          |                           | {env.APP_DEMO_USER_PASSWORD} | {env.APP_DEMO_USER_PASSWORD} | does     | unsuccessful |
+    | John      |          | {env.APP_DEMO_USER_EMAIL} | {env.APP_DEMO_USER_PASSWORD} | not matching pass            | does     | unsuccessful |
+    | John      | Doe      | {env.APP_DEMO_USER_EMAIL} | abc                          | abc                          | does     | unsuccessful |
+    | John      | Doe      | {env.APP_DEMO_USER_EMAIL} | {env.APP_DEMO_USER_PASSWORD} | {env.APP_DEMO_USER_PASSWORD} | does not | unsuccessful |

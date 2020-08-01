@@ -1,15 +1,16 @@
 import {Action} from 'typescript-fsa';
 import {AsynchronousAction, AsynchronousActionResponse} from '../../../redux-system/process/ProcessActions';
 import {FrontendCommonState} from '../../FrontendCommonState';
-import {Auth, UserLogin} from '../../../shared/graphql/ts/types';
 import {gql} from 'apollo-boost';
 import {call, Effect} from 'redux-saga/effects';
 import {fullAuthFragment} from '../../../graphql/fragments/FullAuthFragment';
 import {ErrorSnackbar} from '../../../types/app/snackbar/ErrorSnackbar';
 import {ApolloContext} from '../../../graphql/context/ApolloContext';
+import {IUserLogin} from '../../../types/interfaces/IUserLogin';
+import {IAuth} from '../../../types/interfaces/IAuth';
 
-export type Request = UserLogin;
-export type Response = Auth;
+export type Request = IUserLogin;
+export type Response = IAuth;
 
 export abstract class Login implements AsynchronousAction<FrontendCommonState, Request, Response> {
   *saga(action: Action<Request>, state: Readonly<FrontendCommonState>): Effect | Generator<any, any, any> {

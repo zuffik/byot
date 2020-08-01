@@ -1,7 +1,6 @@
 import { AuthGuard } from './auth.guard';
 import { ExecutionContext, Injectable } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
-import * as _ from 'lodash';
 import { AuthRolesMetaDataKey } from '../decorators/auth-roles.decorator';
 
 @Injectable()

@@ -263,8 +263,8 @@ describe('Auth integration', () => {
     await makeGraphQLRequest(
       app,
       graphQLInteraction.userUpdateMyself({
-        password: envVars.APP_DEMO_USER_PASS,
-        passwordRepeat: envVars.APP_DEMO_USER_PASS,
+        password: envVars.APP_DEMO_USER_PASSWORD,
+        passwordRepeat: envVars.APP_DEMO_USER_PASSWORD,
       }),
       { token: auth.token },
     );

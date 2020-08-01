@@ -1,5 +1,5 @@
 import {IUser} from '../interfaces/IUser';
-import {Role} from '../../shared/graphql/ts/types';
+import {Role} from '@byot/common/graphql/ts/types';
 import {IDateTime} from '../interfaces/IDateTime';
 import {DateTime} from './DateTime';
 

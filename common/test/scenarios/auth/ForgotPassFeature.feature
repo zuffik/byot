@@ -12,10 +12,10 @@ Feature: Forgot password
     When user with email <email> tries to login with new password <password>
     Then it should be <loginState>
     Examples:
-      | email                     | password                 | passwordRepeat           | state        | loginState   |
-      | {env.APP_DEMO_USER_EMAIL} | {env.APP_DEMO_USER_PASS} | {env.APP_DEMO_USER_PASS} | successful   | successful   |
-      | {env.APP_DEMO_USER_EMAIL} | 123-Abc$                 | not matching pass        | unsuccessful | unsuccessful |
-      | {env.APP_DEMO_USER_EMAIL} | abc                      | abc                      | unsuccessful | unsuccessful |
+      | email                     | password                     | passwordRepeat               | state        | loginState   |
+      | {env.APP_DEMO_USER_EMAIL} | {env.APP_DEMO_USER_PASSWORD} | {env.APP_DEMO_USER_PASSWORD} | successful   | successful   |
+      | {env.APP_DEMO_USER_EMAIL} | 123-Abc$                     | not matching pass            | unsuccessful | unsuccessful |
+      | {env.APP_DEMO_USER_EMAIL} | abc                          | abc                          | unsuccessful | unsuccessful |
 
   Scenario Outline: user will never receive email within this scenario
     Given user has been registered with email <email>

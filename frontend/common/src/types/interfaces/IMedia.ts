@@ -1,1 +1,1 @@
-export {Media as IMedia} from '../../shared/graphql/ts/types';
+export {Media as IMedia} from '@byot/common/graphql/ts/types';

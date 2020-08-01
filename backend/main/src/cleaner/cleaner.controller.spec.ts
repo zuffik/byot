@@ -20,8 +20,13 @@ describe('Cleaner Controller', () => {
           provide: ConfigService,
           useValue: {
             get: (key) => {
-              if (key === 'app.demo.email') {
-                return 'app@demo.email';
+              switch (key) {
+                case 'app.demo.email':
+                  return 'app@demo.email';
+                case 'app.test.email':
+                  return 'app@test.email';
+                case 'app.test.password':
+                  return 'app@test.password';
               }
             },
           },
@@ -38,9 +43,15 @@ describe('Cleaner Controller', () => {
     expect(service).toBeDefined();
   });
 
-  it('should get email from config', async () => {
+  it('should clean email from config', async () => {
     const spy = jest.spyOn(service, 'removeUserByEmail');
     await controller.purgeUserTestData();
     expect(spy).toBeCalledWith('app@demo.email');
+  });
+
+  it('should clean email from config', async () => {
+    const spy = jest.spyOn(service, 'removeLatestTrainingSetByCreator');
+    await controller.purgeCreateTrainingSetData();
+    expect(spy).toBeCalledWith('app@test.email', 1);
   });
 });

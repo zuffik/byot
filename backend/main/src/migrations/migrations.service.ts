@@ -106,8 +106,10 @@ export class MigrationsService implements OnModuleInit {
     const demoUser = await this.userService.findByUsernameOrEmail(
       this.demoUser.prefix + '0',
     );
+    let users: User[];
+    let exist: boolean = true;
     if (!demoUser) {
-      return await Promise.all(
+      users = await Promise.all(
         _.times(this.demoUser.count, (i) =>
           this.userService.create({
             ...this.gqlGenerator.userRegister(),
@@ -117,7 +119,31 @@ export class MigrationsService implements OnModuleInit {
           }),
         ),
       );
+      exist = false;
     }
+
+    const testUser = await this.userService.findByUsernameOrEmail(
+      this.configService.get('app.test.email'),
+    );
+    if (!testUser) {
+      users.push(
+        await this.userService.create({
+          ...this.gqlGenerator.userRegister(),
+          userName: 'test-user',
+          email: this.configService.get('app.test.email'),
+          password: this.authService.createPasswordHash(
+            this.configService.get('app.test.password'),
+          ),
+        }),
+      );
+    } else {
+      users.push(
+        await this.userService.findByUsernameOrEmail(
+          this.configService.get('app.test.email'),
+        ),
+      );
+    }
+    if (!exist) return users;
     return await Promise.all(
       _.times(this.demoUser.count, (i) =>
         this.userService.findByUsernameOrEmail(this.demoUser.prefix + i),

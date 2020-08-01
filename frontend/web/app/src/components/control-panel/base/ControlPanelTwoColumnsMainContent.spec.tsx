@@ -1,10 +1,10 @@
 import * as React from 'react';
 import {render} from '@testing-library/react';
-import {ControlPanelTwoColumnsMainContent} from './ControlPanelTwoColumnsMainContent';
+import {ControlPanelMainContent} from './ControlPanelMainContent';
 
-describe('<ControlPanelTwoColumnsMainContent/>', () => {
+describe('<ControlPanelMainContent/>', () => {
   it('should render', () => {
-    const {container} = render(<ControlPanelTwoColumnsMainContent />);
+    const {container} = render(<ControlPanelMainContent />);
     expect(container).toMatchSnapshot();
   });
 });

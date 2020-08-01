@@ -1,5 +1,5 @@
 import React from 'react';
-import baseTheme from '@byot-frontend/common/src/shared/theme/theme';
+import baseTheme from '@byot/common/theme/theme';
 import {Button as MuiButton, ButtonProps, Fade, makeStyles, Theme, useTheme} from '@material-ui/core';
 import classNames from 'classnames';
 import {StyleRules} from '@material-ui/styles';

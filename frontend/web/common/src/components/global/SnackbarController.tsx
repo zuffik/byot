@@ -26,6 +26,10 @@ const Child: React.FC<Props> = (props: Props) => {
   React.useEffect(() => {
     if (snackbar) {
       enqueueSnackbar(t(snackbar.message), {
+        anchorOrigin: {
+          vertical: 'bottom',
+          horizontal: 'right',
+        },
         autoHideDuration: snackbar.timeout,
         variant: snackbar.type,
         ContentProps: {

@@ -1,1 +1,1 @@
-export {ResetPassword as IResetPassword} from '../../shared/graphql/ts/types';
+export {ResetPassword as IResetPassword} from '@byot/common/graphql/ts/types';

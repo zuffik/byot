@@ -1,1 +1,1 @@
-export {User as IUser} from '../../shared/graphql/ts/types';
+export {User as IUser} from '@byot/common/graphql/ts/types';

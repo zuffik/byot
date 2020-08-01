@@ -1,1 +1,1 @@
-export {MediaType} from '../../shared/graphql/ts/types';
+export {MediaType} from '@byot/common/graphql/ts/types';

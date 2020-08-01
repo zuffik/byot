@@ -7,6 +7,7 @@ import {MuiThemeProvider, CssBaseline, useMediaQuery} from '@material-ui/core';
 import {BaseRouterLayout} from './components/layout/BaseRouterLayout';
 import {BrowserRouter} from '@byot-frontend/web-common/src/components/router/BrowserRouter';
 import {SnackbarController} from '@byot-frontend/web-common/src/components/global/SnackbarController';
+import {RedirectWatcher} from '@byot-frontend/web-common/src/components/functional/routing/RedirectWatcher';
 
 const App = () => {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
@@ -17,6 +18,7 @@ const App = () => {
           <CssBaseline />
           <SnackbarController>
             <BrowserRouter languageProvider={setup.languageProvider}>
+              <RedirectWatcher />
               <BaseRouterLayout />
             </BrowserRouter>
           </SnackbarController>

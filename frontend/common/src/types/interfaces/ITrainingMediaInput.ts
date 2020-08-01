@@ -1,1 +1,1 @@
-export {TrainingMediaInput as ITrainingMediaInput} from '../../shared/graphql/ts/types';
+export {TrainingMediaInput as ITrainingMediaInput} from '@byot/common/graphql/ts/types';

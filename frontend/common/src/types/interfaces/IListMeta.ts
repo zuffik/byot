@@ -1,1 +1,1 @@
-export {ListMeta as IListMeta} from '../../shared/graphql/ts/types';
+export {ListMeta as IListMeta} from '@byot/common/graphql/ts/types';

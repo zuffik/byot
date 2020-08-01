@@ -59,7 +59,7 @@ export const loginTestUser = async (
       ? app
           .get<ConfigService>(ConfigService)
           .get<string>('app.superAdmin.password')
-      : envVars.APP_DEMO_USER_PASS;
+      : envVars.APP_DEMO_USER_PASSWORD;
   const response = await makeGraphQLRequest(
     app,
     graphQLInteraction.userLogin(userNameOrEmail, password),

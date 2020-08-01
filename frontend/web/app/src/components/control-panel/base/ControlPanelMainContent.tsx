@@ -5,7 +5,7 @@ interface Props {
   children?: React.ReactNode;
 }
 
-export const ControlPanelTwoColumnsMainContent: React.FC<Props> = (props: Props) => {
+export const ControlPanelMainContent: React.FC<Props> = (props: Props) => {
   return (
     <Box px={4} pt={4}>
       {props.children}

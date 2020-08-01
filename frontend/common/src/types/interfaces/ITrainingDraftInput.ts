@@ -1,1 +1,1 @@
-export {TrainingDraftInput as ITrainingDraftInput} from '../../shared/graphql/ts/types';
+export {TrainingDraftInput as ITrainingDraftInput} from '@byot/common/graphql/ts/types';

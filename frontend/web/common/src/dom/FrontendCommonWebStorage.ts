@@ -1,5 +1,5 @@
 import {LocalStorage} from './LocalStorage';
-import {Auth} from '@byot-frontend/common/src/shared/graphql/ts/types';
+import {Auth} from '@byot/common/graphql/ts/types';
 
 export interface FrontendCommonWebStorage {
   auth: Auth;

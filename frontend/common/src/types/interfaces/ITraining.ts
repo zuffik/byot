@@ -1,1 +1,1 @@
-export {Training as ITraining} from '../../shared/graphql/ts/types';
+export {Training as ITraining} from '@byot/common/graphql/ts/types';

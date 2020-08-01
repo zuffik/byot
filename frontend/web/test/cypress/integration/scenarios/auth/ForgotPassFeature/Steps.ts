@@ -12,10 +12,10 @@ Given(/^user has been registered with email (.*)$/, email => {
     envString(email, key => Cypress.env(key))
   );
   cy.get('[data-testid="common-auth-registration-form-password"] input').type(
-    Cypress.env('APP_DEMO_USER_PASS')
+    Cypress.env('APP_DEMO_USER_PASSWORD')
   );
   cy.get('[data-testid="common-auth-registration-form-passwordRepeat"] input').type(
-    Cypress.env('APP_DEMO_USER_PASS')
+    Cypress.env('APP_DEMO_USER_PASSWORD')
   );
   cy.get('[data-testid="common-auth-registration-form-consent"]').click();
   cy.get('[data-testid="common-auth-registration-form-form"] button[type="submit"]').click();

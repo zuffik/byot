@@ -7,7 +7,7 @@ import {
   Response as RegisterResponse,
 } from '@byot-frontend/common/src/redux/process/auth/Register';
 import {GraphQLResponse} from '@byot-frontend/common/src/redux-system/data-structures/responses/GraphQLResponse';
-import {Auth} from '@byot-frontend/common/src/shared/graphql/ts/types';
+import {Auth} from '@byot/common/graphql/ts/types';
 import {frontendCommonWebStorage} from '../../../dom/FrontendCommonWebStorage';
 
 export type Request = RegisterRequest;

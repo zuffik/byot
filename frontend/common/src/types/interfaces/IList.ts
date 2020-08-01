@@ -1,5 +1,5 @@
-import {MediaList, TokenList, TrainingList, TrainingSetList, UserList} from '../../shared/graphql/ts/types';
-import {Media, Token, Training, TrainingSet, User} from '../../shared/graphql/ts/types';
+import {MediaList, TokenList, TrainingList, TrainingSetList, UserList} from '@byot/common/graphql/ts/types';
+import {Media, Token, Training, TrainingSet, User} from '@byot/common/graphql/ts/types';
 import {IListMeta} from './IListMeta';
 
 export type ListEntity = Media | Token | Training | TrainingSet | User;

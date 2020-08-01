@@ -1,1 +1,1 @@
-export {UserRegister as IUserRegister} from '../../shared/graphql/ts/types';
+export {UserRegister as IUserRegister} from '@byot/common/graphql/ts/types';

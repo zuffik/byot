@@ -23,8 +23,10 @@ export const validationSchema = Joi.object({
   APP_SUPER_ADMIN_USERNAME: Joi.string().required(),
   APP_SUPER_ADMIN_EMAIL: Joi.string().email().required(),
   APP_SUPER_ADMIN_PASSWORD: Joi.string().required(),
-  APP_DEMO_USER_PASS: Joi.string().required(),
+  APP_DEMO_USER_PASSWORD: Joi.string().required(),
   APP_DEMO_USER_EMAIL: Joi.string().required(),
+  APP_TEST_USER_PASSWORD: Joi.string().required(),
+  APP_TEST_USER_EMAIL: Joi.string().required(),
 
   SQL_SCHEME: Joi.string().valid('mysql').default('mysql'),
   SQL_HOST: Joi.string().default('localhost'),

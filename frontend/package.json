@@ -11,7 +11,8 @@
       "web/storybook",
       "native/app",
       "native/storybook",
-      "common"
+      "common",
+      "../common"
     ],
     "nohoist": [
       "**/@bam.tech/react-native-make",

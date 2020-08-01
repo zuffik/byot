@@ -1,1 +1,1 @@
-export {Source as ISource} from '../../shared/graphql/ts/types';
+export {Source as ISource} from '@byot/common/graphql/ts/types';

@@ -1,4 +1,4 @@
-import {Auth} from '@byot-frontend/common/src/shared/graphql/ts/types';
+import {Auth} from '@byot/common/graphql/ts/types';
 import {ProcessActionExtractor} from '@byot-frontend/common/src/redux-system/process/ProcessActionExtractor';
 import {WebRegister} from './WebRegister';
 import {WebState} from '../../WebState';

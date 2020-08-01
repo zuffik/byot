@@ -1,6 +1,6 @@
 import {createMuiTheme, Theme, ThemeOptions} from '@material-ui/core';
 import merge from 'deepmerge';
-import theme from '@byot-frontend/common/src/shared/theme/theme';
+import theme from '@byot/common/theme/theme';
 
 const spacing = 8;
 const white = '#ffffff';

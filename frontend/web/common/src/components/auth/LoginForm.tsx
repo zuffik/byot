@@ -4,7 +4,7 @@ import {Button} from '../elementary/form/Button';
 import {Form, Formik} from 'formik';
 import * as Yup from 'yup';
 import {TFunction} from 'i18next';
-import {UserLogin} from '@byot-frontend/common/src/shared/graphql/ts/types';
+import {UserLogin} from '@byot/common/graphql/ts/types';
 import {PlainLayoutNarrow} from '../plain-layout/PlainLayoutNarrow';
 import {PlainLayoutTitle} from '../plain-layout/PlainLayoutTitle';
 import {useTranslation} from 'react-i18next';

@@ -9,7 +9,11 @@ export const appConfig = registerAs('app', () => ({
     password: process.env.APP_SUPER_ADMIN_PASSWORD,
   },
   demo: {
-    password: process.env.APP_DEMO_USER_PASS,
     email: process.env.APP_DEMO_USER_EMAIL,
+    password: process.env.APP_DEMO_USER_PASSWORD,
+  },
+  test: {
+    email: process.env.APP_TEST_USER_EMAIL,
+    password: process.env.APP_TEST_USER_PASSWORD,
   },
 }));

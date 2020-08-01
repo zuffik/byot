@@ -8,7 +8,7 @@ import {ProcessActionExtractor} from '@byot-frontend/common/src/redux-system/pro
 import {FetchTrainingSets} from '../../redux/process/training-set/FetchTrainingSets';
 import {ControlPanelTitle} from '../control-panel/base/ControlPanelTitle';
 import {useTranslation} from 'react-i18next';
-import {ControlPanelTwoColumnsMainContent} from '../control-panel/base/ControlPanelTwoColumnsMainContent';
+import {ControlPanelMainContent} from '../control-panel/base/ControlPanelMainContent';
 
 interface Props {}
 
@@ -42,10 +42,10 @@ export const TrainingSetListPage: React.FC<Props> = (props: Props) => {
   return (
     <ControlPanelTwoColumnsContent
       secondaryContent={<SearchField onChange={onChange} value={filter.query || ''} />}>
-      <ControlPanelTwoColumnsMainContent>
+      <ControlPanelMainContent>
         <ControlPanelTitle>{t('My training sets')}</ControlPanelTitle>
         <TrainingSetList limit={limit} items={items} onLoadMore={onLoadMore} />
-      </ControlPanelTwoColumnsMainContent>
+      </ControlPanelMainContent>
     </ControlPanelTwoColumnsContent>
   );
 };

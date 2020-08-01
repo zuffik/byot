@@ -5,10 +5,11 @@ import { User } from '../user/user.entity';
 import { CleanerController } from './cleaner.controller';
 import { ConfigModule } from '@nestjs/config';
 import { Token } from '../user/token/token.entity';
+import { TrainingSet } from '../training/training-set/training-set.entity';
 
 @Module({
   providers: [CleanerService],
-  imports: [TypeOrmModule.forFeature([User, Token]), ConfigModule],
+  imports: [TypeOrmModule.forFeature([User, Token, TrainingSet]), ConfigModule],
   controllers: [CleanerController],
 })
 export class CleanerModule {}

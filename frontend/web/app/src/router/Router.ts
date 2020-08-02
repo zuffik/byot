@@ -26,7 +26,7 @@ export const Router = new (class {
   training = new (class {
     URI = () => `${Router.URI()}training`;
     create = new (class {
-      URI = () => `${Router.training.trainingSet.URI()}/create`;
+      URI = () => `${Router.training.URI()}/create`;
     })();
     list = new (class {
       URI = () => `${Router.training.URI()}/list`;

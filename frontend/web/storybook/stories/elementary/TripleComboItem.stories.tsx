@@ -11,16 +11,16 @@ export default {
 
 export const empty = () => <TripleComboItem />;
 
-export const titleOnly = () => <TripleComboItem title={text('Title', 'Title')} />;
+export const titleOnly = () => <TripleComboItem primary={text('Title', 'Title')} />;
 
 export const descriptionOnly = () => <TripleComboItem description={text('Description', 'Description')} />;
 
 export const bothText = () => (
-  <TripleComboItem title={text('Title', 'Title')} description={text('Description', 'Description')} />
+  <TripleComboItem primary={text('Title', 'Title')} description={text('Description', 'Description')} />
 );
 
 export const titleOnlyWithImage = () => (
-  <TripleComboItem image={getImage(size(50))} title={text('Title', 'Title')} />
+  <TripleComboItem image={getImage(size(50))} primary={text('Title', 'Title')} />
 );
 
 export const descriptionOnlyWithImage = () => (
@@ -30,7 +30,7 @@ export const descriptionOnlyWithImage = () => (
 export const bothTextWithImage = () => (
   <TripleComboItem
     image={getImage(size(50))}
-    title={text('Title', 'Title')}
+    primary={text('Title', 'Title')}
     description={text('Description', 'Description')}
   />
 );

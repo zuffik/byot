@@ -5,11 +5,13 @@ import {TrainingListItem} from './TrainingListItem';
 
 interface Props {
   items: ITraining[];
+  children?: React.ReactNode;
 }
 
 export const TrainingList: React.FC<Props> = (props: Props) => {
   return (
     <Grid container spacing={2}>
+      {props.children}
       {props.items.map(item => (
         <Grid item xs={12} md={6} key={item.id}>
           <TrainingListItem training={item} />

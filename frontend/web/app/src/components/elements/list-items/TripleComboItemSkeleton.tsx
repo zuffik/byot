@@ -21,7 +21,7 @@ export const TripleComboItemSkeleton: React.FC<Props> = (props: Props) => {
   const styles = useStyles(props);
   return (
     <TripleComboItem
-      title={<PatchSkeleton variant="rect" classes={{root: styles.title}} />}
+      primary={<PatchSkeleton variant="rect" classes={{root: styles.title}} />}
       imagePlaceholder={<PatchSkeleton variant="rect" classes={{root: styles.imagePlaceholder}} />}
       description={<PatchSkeleton variant="rect" classes={{root: styles.description}} />}
     />

@@ -39,7 +39,7 @@ export const MediaListItem: React.FC<Props> = (props: Props) => {
     : {};
   return (
     <TripleComboItem
-      title={props.media.label}
+      primary={props.media.label}
       image={props.media.source.thumbnail}
       singleLine
       description={props.description}

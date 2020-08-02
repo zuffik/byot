@@ -36,7 +36,7 @@ export const TrainingListItem: React.FC<Props> = (props: Props) => {
       imagePlaceholder={<TrainingListItemImagePlaceholder />}
       image={props.training.media?.entries?.[0]?.source?.thumbnail}
       classes={{primaryText: styles.title, textRoot: styles.textRoot}}
-      title={props.training.label}
+      primary={props.training.label}
       button
       component={Link}
       to={Router.training.detail.URI({trainingId: props.training.id})}

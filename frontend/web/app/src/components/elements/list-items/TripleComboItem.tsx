@@ -12,9 +12,9 @@ import {Patch} from '@byot-frontend/web-common/src/components/elementary/patch/P
 import {CSSProperties} from '@material-ui/styles';
 
 type Props<P> = WithStyles<typeof styles> &
-  Omit<ListItemProps, 'title'> & {
-    title?: React.ReactNode;
-    image?: string;
+  ListItemProps & {
+    primary?: React.ReactNode;
+    image?: string | React.ReactNode;
     imagePlaceholder?: boolean | React.ReactNode;
     description?: React.ReactNode;
     component?: React.ComponentType<P>;
@@ -35,7 +35,7 @@ const styles = (theme: Theme) => ({
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     marginRight: theme.spacing(2),
-    ...(props.image && {backgroundImage: `url(${props.image})`}),
+    ...(props.image && typeof props.image === 'string' && {backgroundImage: `url(${props.image})`}),
   }),
   primaryText: (props: Props<any>) => ({
     fontWeight: 700,
@@ -54,7 +54,7 @@ const useStyles = makeStyles(styles);
 
 export const TripleComboItem = <P extends object = object>(props: Props<P>) => {
   const styles = useStyles(props);
-  const {title, description, imagePlaceholder, image, transparent, singleLine, ...baseProps} = props;
+  const {primary, description, imagePlaceholder, image, transparent, singleLine, ...baseProps} = props;
   return (
     <ListItemBase
       alignItems="flex-start"
@@ -69,16 +69,17 @@ export const TripleComboItem = <P extends object = object>(props: Props<P>) => {
       classes={{root: styles.root, ...baseProps.classes}}>
       {(props.image || props.imagePlaceholder) && (
         <div className={styles.image}>
+          {typeof props.image !== 'string' && props.image}
           {typeof props.imagePlaceholder !== 'boolean' && !props.image && props.imagePlaceholder}
         </div>
       )}
-      {(props.title || props.description) && (
+      {(props.primary || props.description) && (
         <ListItemText
           classes={{primary: styles.primaryText, root: styles.textRoot}}
           primaryTypographyProps={
             {component: 'div', 'data-testid': 'triple-combo-item-text-primary'} as TypographyProps
           }
-          primary={props.title}
+          primary={props.primary}
           secondaryTypographyProps={
             {component: 'div', 'data-testid': 'triple-combo-item-text-secondary'} as TypographyProps
           }

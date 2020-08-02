@@ -22,7 +22,7 @@ export const TrainingSetListItem: React.FC<Props> = (props: Props) => {
       imagePlaceholder={<TrainingSetListItemImagePlaceholder />}
       image={props.trainingSet.trainings.entries[0]?.media?.entries?.[0]?.source?.thumbnail}
       singleLine
-      title={props.trainingSet.label}
+      primary={props.trainingSet.label}
       button
       component={Link}
       to={Router.training.trainingSet.detail.URI({trainingSetId: props.trainingSet.id})}

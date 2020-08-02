@@ -22,7 +22,9 @@ export class TrainingSetService {
   public async findAndCount(
     filter?: FulltextFilterForUser,
   ): Promise<[TrainingSet[], number]> {
-    let query: FindManyOptions<TrainingSet> = {};
+    let query: FindManyOptions<TrainingSet> = {
+      order: { createdAt: 'DESC' },
+    };
     if (filter?.idUser) {
       query.relations = ['owner'];
       query = _.set(query, ['where', 'owner', 'id'], filter.idUser);

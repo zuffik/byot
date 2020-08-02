@@ -63,7 +63,9 @@ describe('TrainingService', () => {
   it('should fetch all trainings with no filter', async () => {
     const spy = jest.spyOn(repository, 'findAndCount');
     await service.findAndCount();
-    expect(spy).toBeCalledWith({});
+    expect(spy).toBeCalledWith({
+      order: { createdAt: 'DESC' },
+    });
   });
 
   it('should fetch all trainings with pagination', async () => {
@@ -73,6 +75,7 @@ describe('TrainingService', () => {
     const spy = jest.spyOn(repository, 'findAndCount');
     await service.findAndCount(filter);
     expect(spy).toBeCalledWith({
+      order: { createdAt: 'DESC' },
       skip: filter.pagination.offset,
       take: filter.pagination.limit,
     });
@@ -85,6 +88,7 @@ describe('TrainingService', () => {
     const spy = jest.spyOn(repository, 'findAndCount');
     await service.findAndCount(filter);
     expect(spy).toBeCalledWith({
+      order: { createdAt: 'DESC' },
       relations: ['medias'],
       where: {
         label: expect.anything(),
@@ -102,6 +106,7 @@ describe('TrainingService', () => {
     const spy = jest.spyOn(repository, 'findAndCount');
     await service.findAndCount(filter);
     expect(spy).toBeCalledWith({
+      order: { createdAt: 'DESC' },
       relations: ['trainingSet', 'trainingSet.owner'],
       where: {
         trainingSet: {
@@ -122,6 +127,7 @@ describe('TrainingService', () => {
     const spy = jest.spyOn(repository, 'findAndCount');
     await service.findAndCount(filter);
     expect(spy).toBeCalledWith({
+      order: { createdAt: 'DESC' },
       relations: expect.arrayContaining([
         'trainingSet',
         'trainingSet.owner',

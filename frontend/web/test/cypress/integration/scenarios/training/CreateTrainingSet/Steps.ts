@@ -1,5 +1,8 @@
 import {Given, When, And, Then, After} from 'cypress-cucumber-preprocessor/steps';
 
+let trainingSetName: string;
+let shouldPerformCleanup: boolean;
+
 // create named training set
 Given(/^user visits "create training set" form$/, () => {
   cy.login();
@@ -7,6 +10,7 @@ Given(/^user visits "create training set" form$/, () => {
 });
 
 When(/^user enters name of training set (.*)$/, name => {
+  trainingSetName = name;
   if (name) {
     cy.get('[data-testid="training-set-form-label"]').type(name);
   }
@@ -21,11 +25,20 @@ Then(/^the training set (.*) be created$/, shouldOrShouldNot => {
     cy.get('[data-testid="common-elementary-snackbar"]')
       .should('exist')
       .should('not.contain.text', 'Something went wrong');
+    cy.visit(Cypress.env('PUBLIC_APP_URL'));
+    cy.get('[data-testid="training-set-list-item"]')
+      .first()
+      .get('[data-testid="triple-combo-item-text-primary"]')
+      .should('contain.text', trainingSetName);
+    shouldPerformCleanup = true;
   } else {
     cy.url().should('contain', '/training/set/create');
+    shouldPerformCleanup = false;
   }
 });
 
 After(() => {
-  cy.request('DELETE', Cypress.env('PUBLIC_API_URL') + '/cleaner/test/training-set/create');
+  if (shouldPerformCleanup) {
+    cy.request('DELETE', Cypress.env('PUBLIC_API_URL') + '/cleaner/test/training-set/create');
+  }
 });

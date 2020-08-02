@@ -24,6 +24,7 @@ export class TrainingService {
     filter?: FulltextFilterForUser,
   ): Promise<[Training[], number]> {
     let query: FindManyOptions<Training> = {
+      order: { createdAt: 'DESC' },
       relations: [],
     };
     if (filter?.query) {

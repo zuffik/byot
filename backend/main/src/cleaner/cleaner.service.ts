@@ -27,10 +27,11 @@ export class CleanerService {
     const user = await this.userRepository.findOne({ where: { email } });
     if (user) {
       const sets = await this.trainingSetRepository.find({
+        relations: ['owner'],
         where: {
-          owner: Promise.resolve({
+          owner: {
             id: user.id,
-          }),
+          },
         },
         take: count,
         order: {

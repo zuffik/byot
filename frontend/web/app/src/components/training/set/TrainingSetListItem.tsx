@@ -18,6 +18,7 @@ export const TrainingSetListItem: React.FC<Props> = (props: Props) => {
   const created = moment(props.trainingSet.createdAt.iso);
   return (
     <TripleComboItem
+      data-testid="training-set-list-item"
       imagePlaceholder={<TrainingSetListItemImagePlaceholder />}
       image={props.trainingSet.trainings.entries[0]?.media?.entries?.[0]?.source?.thumbnail}
       singleLine

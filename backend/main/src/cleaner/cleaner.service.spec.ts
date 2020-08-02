@@ -108,14 +108,15 @@ describe('CleanerService', () => {
     await service.removeLatestTrainingSetByCreator(email, count);
     expect(spyFind).toBeCalledWith({ where: { email } });
     expect(spyFindSets).toBeCalledWith({
-      where: { owner: Promise.resolve({ id: user.id }) },
+      relations: ['owner'],
+      where: { owner: { id: user.id } },
       take: count,
       order: { createdAt: 'DESC' },
     });
     expect(spyRemove).toBeCalledWith(trainingSets);
   });
 
-  it('should cleanup after training set create', async () => {
+  it('should not cleanup after training set create due to non existing user', async () => {
     const spyFind = jest
       .spyOn(userRepo, 'findOne')
       .mockImplementation(jest.fn(async () => undefined));

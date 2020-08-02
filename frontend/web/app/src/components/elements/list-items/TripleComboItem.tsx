@@ -1,5 +1,12 @@
 import * as React from 'react';
-import {ListItem as ListItemBase, ListItemProps, ListItemText, makeStyles, Theme} from '@material-ui/core';
+import {
+  ListItem as ListItemBase,
+  ListItemProps,
+  ListItemText,
+  makeStyles,
+  Theme,
+  TypographyProps,
+} from '@material-ui/core';
 import {WithStyles} from '@byot-frontend/web-common/src/types/WithStyles';
 import {Patch} from '@byot-frontend/web-common/src/components/elementary/patch/Patch';
 import {CSSProperties} from '@material-ui/styles';
@@ -68,9 +75,13 @@ export const TripleComboItem = <P extends object = object>(props: Props<P>) => {
       {(props.title || props.description) && (
         <ListItemText
           classes={{primary: styles.primaryText, root: styles.textRoot}}
-          primaryTypographyProps={{component: 'div'}}
+          primaryTypographyProps={
+            {component: 'div', 'data-testid': 'triple-combo-item-text-primary'} as TypographyProps
+          }
           primary={props.title}
-          secondaryTypographyProps={{component: 'div'}}
+          secondaryTypographyProps={
+            {component: 'div', 'data-testid': 'triple-combo-item-text-secondary'} as TypographyProps
+          }
           secondary={props.description}
         />
       )}

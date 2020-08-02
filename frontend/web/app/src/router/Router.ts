@@ -53,6 +53,13 @@ export const Router = new (class {
         URI = ({trainingSetId = ':trainingSetId'}: typeof Router.training.trainingSet.detail.params = {}) =>
           `${Router.training.trainingSet.URI()}/${trainingSetId}`;
       })();
+      edit = new (class {
+        params = new (class {
+          trainingSetId?: string;
+        })();
+        URI = ({trainingSetId = ':trainingSetId'}: typeof Router.training.trainingSet.edit.params = {}) =>
+          `${Router.training.trainingSet.URI()}/${trainingSetId}/edit`;
+      })();
     })();
   })();
 })();

@@ -18,13 +18,14 @@ export const TrainingSetDetailPage: React.FC<Props> = (props: Props) => {
     dispatch(ProcessActionExtractor.dispatch(TrainingSetFetch, {id: trainingSetId}));
   }, [trainingSetId, dispatch]);
   const trainingSet = useSelector((state: WebAppState) => state.trainingSetDetail);
+  const onRemove = () => {};
 
   return (
     <ControlPanelMainContent>
       {trainingSet.isProcessing || !trainingSet.hasData ? (
         <TrainingSetDetailSkeleton />
       ) : (
-        <TrainingSetDetailContent trainingSet={trainingSet.data} />
+        <TrainingSetDetailContent trainingSet={trainingSet.data} onRemove={onRemove} />
       )}
     </ControlPanelMainContent>
   );

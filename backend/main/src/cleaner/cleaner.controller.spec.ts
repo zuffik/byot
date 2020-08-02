@@ -49,9 +49,15 @@ describe('Cleaner Controller', () => {
     expect(spy).toBeCalledWith('app@demo.email');
   });
 
-  it('should clean email from config', async () => {
+  it('should clean created training set', async () => {
     const spy = jest.spyOn(service, 'removeLatestTrainingSetByCreator');
     await controller.purgeCreateTrainingSetData();
+    expect(spy).toBeCalledWith('app@test.email', 1);
+  });
+
+  it('should clean updated training set', async () => {
+    const spy = jest.spyOn(service, 'removeLatestTrainingSetByCreator');
+    await controller.purgeUpdateTrainingSetData();
     expect(spy).toBeCalledWith('app@test.email', 1);
   });
 });

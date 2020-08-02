@@ -7,7 +7,7 @@ interface Props {
 
 export const ControlPanelTitle: React.FC<Props> = (props: Props) => {
   return (
-    <Box mb={4} mt={2}>
+    <Box mb={4} mt={2} data-testid="app-controlPanel-title">
       <Typography variant="h3">{props.children}</Typography>
     </Box>
   );

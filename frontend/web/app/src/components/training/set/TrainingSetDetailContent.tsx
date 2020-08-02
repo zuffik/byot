@@ -1,25 +1,31 @@
 import * as React from 'react';
 import {ControlPanelTitle} from '../../control-panel/base/ControlPanelTitle/ControlPanelTitle';
-import {EmptyListInfo} from '@byot-frontend/web-common/src/components/elementary/complement/EmptyListInfo';
 import {TrainingList} from '../training/TrainingList';
 import {TrainingCreateListItem} from '../training/TrainingCreateListItem';
 import {ITrainingSet} from '@byot-frontend/common/src/types/interfaces/ITrainingSet';
+import {EditConfirmDeleteControls} from '../../elements/controls/EditConfirmDeleteControls';
+import {Router} from '../../../router/Router';
+import {useTranslation} from 'react-i18next';
 
 interface Props {
   trainingSet?: ITrainingSet;
+  onRemove: () => void;
 }
 
 export const TrainingSetDetailContent: React.FC<Props> = (props: Props) => {
+  const {t} = useTranslation();
+
   return (
     <>
+      <EditConfirmDeleteControls
+        editUrl={Router.training.trainingSet.edit.URI({trainingSetId: props.trainingSet?.id})}
+        onDeleteClick={props.onRemove}
+        confirmationText={t('Are you really want to delete this training set?')}
+      />
       <ControlPanelTitle>{props.trainingSet?.label}</ControlPanelTitle>
-      {props.trainingSet?.trainings.meta.totalCount === 0 ? (
-        <EmptyListInfo />
-      ) : (
-        <TrainingList items={props.trainingSet?.trainings.entries || []}>
-          <TrainingCreateListItem />
-        </TrainingList>
-      )}
+      <TrainingList items={props.trainingSet?.trainings.entries || []}>
+        <TrainingCreateListItem />
+      </TrainingList>
     </>
   );
 };

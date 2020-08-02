@@ -12,10 +12,13 @@ import {SuccessSnackbar} from '../../../types/app/snackbar/SuccessSnackbar';
 import {ErrorSnackbar} from '../../../types/app/snackbar/ErrorSnackbar';
 import {ITrainingSet} from '../../../types/interfaces/ITrainingSet';
 
-export type Request = ITrainingSetInput;
+export type Request = {
+  trainingSet: ITrainingSetInput;
+  id: string;
+};
 export type Response = ITrainingSet;
 
-export abstract class TrainingSetCreate
+export abstract class TrainingSetUpdate
   implements AsynchronousAction<FrontendCommonState, Request, Response> {
   handleRequest(
     action: Action<Request>,
@@ -34,14 +37,14 @@ export abstract class TrainingSetCreate
   *saga(action: Action<Request>, state: Readonly<FrontendCommonState>) {
     return (yield call(ApolloContext.apolloClient.mutate, {
       mutation: gql`
-        mutation createTraininSet($trainingSet: TrainingSetInput!) {
-          createTrainingSet(trainingSet: $trainingSet) {
+        mutation updateTrainingSet($trainingSet: TrainingSetInput!, $id: ID!) {
+          updateTrainingSet(trainingSet: $trainingSet, id: $id) {
             id
           }
         }
       `,
-      variables: {trainingSet: action.payload},
-    })).data.createTrainingSet;
+      variables: {trainingSet: action.payload.trainingSet, id: action.payload.id},
+    })).data.updateTrainingSet;
   }
 
   handleResponse(
@@ -52,8 +55,8 @@ export abstract class TrainingSetCreate
     return {
       ...nextState,
       snackbar: action.payload.response.success
-        ? new SuccessSnackbar('Successfully created training set')
-        : new ErrorSnackbar('There was an error creating training set'),
+        ? new SuccessSnackbar('Successfully updated training set')
+        : new ErrorSnackbar('There was an error updating training set'),
       is: {
         ...nextState.is,
         savingTrainingSet: false,

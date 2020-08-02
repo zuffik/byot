@@ -3,10 +3,11 @@ import {ControlPanelMainContent} from '../control-panel/base/ControlPanelMainCon
 import {ControlPanelTitle} from '../control-panel/base/ControlPanelTitle/ControlPanelTitle';
 import {useTranslation} from 'react-i18next';
 import {TrainingSetForm} from '../training/set/TrainingSetForm';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {ProcessActionExtractor} from '@byot-frontend/common/src/redux-system/process/ProcessActionExtractor';
 import {ITrainingSetInput} from '@byot-frontend/common/src/types/interfaces/ITrainingSetInput';
 import {TrainingSetCreate} from '../../redux/process/training-set/TrainingSetCreate';
+import {WebAppState} from '../../redux/WebAppState';
 
 interface Props {}
 
@@ -15,10 +16,11 @@ export const TrainingSetCreatePage: React.FC<Props> = (props: Props) => {
   const {t} = useTranslation();
   const onSave = (trainingSet: ITrainingSetInput) =>
     dispatch(ProcessActionExtractor.dispatch(TrainingSetCreate, trainingSet));
+  const isLoading = useSelector((state: WebAppState) => state.is.savingTrainingSet);
   return (
     <ControlPanelMainContent>
       <ControlPanelTitle>{t('Create training set')}</ControlPanelTitle>
-      <TrainingSetForm onSave={onSave} />
+      <TrainingSetForm onSave={onSave} isLoading={isLoading} />
     </ControlPanelMainContent>
   );
 };

@@ -18,6 +18,7 @@ const trainingSetSchema = (t: TFunction) =>
 interface Props {
   trainingSet?: ITrainingSet;
   onSave: (trainingSet: ITrainingSetInput) => void;
+  isLoading?: boolean;
 }
 
 export const TrainingSetForm: React.FC<Props> = (props: Props) => {
@@ -45,7 +46,7 @@ export const TrainingSetForm: React.FC<Props> = (props: Props) => {
               />
             </Grid>
             <Grid item>
-              <Button color="primary" type="submit">
+              <Button color="primary" type="submit" loading={props.isLoading}>
                 {t('Save training set')}
               </Button>
             </Grid>

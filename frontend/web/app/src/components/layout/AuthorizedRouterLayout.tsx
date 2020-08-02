@@ -9,6 +9,7 @@ import {WebAppState} from '../../redux/WebAppState';
 import {LogoutPage} from '../pages/LogoutPage';
 import {TrainingSetCreatePage} from '../pages/TrainingSetCreatePage';
 import {TrainingSetDetailPage} from '../pages/TrainingSetDetailPage';
+import {TrainingSetEditPage} from '../pages/TrainingSetEditPage';
 
 interface Props {}
 
@@ -25,6 +26,9 @@ export const AuthorizedRouterLayout: React.FC<Props> = (props: Props) => {
         </AuthRoute>
         <AuthRoute exact path={Router.training.trainingSet.create.URI()}>
           <TrainingSetCreatePage />
+        </AuthRoute>
+        <AuthRoute exact path={Router.training.trainingSet.edit.URI()}>
+          <TrainingSetEditPage />
         </AuthRoute>
         <AuthRoute exact path={Router.training.trainingSet.detail.URI()}>
           <TrainingSetDetailPage />

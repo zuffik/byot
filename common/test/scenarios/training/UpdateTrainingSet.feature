@@ -6,9 +6,9 @@ Feature: Update of a training set
     When user enters new name of training set <newName>
     And user submits the form
     Then the training set <shouldOrShouldNot> be updated
-    And the training set should have name <newName>
+    And the training set should have name <updatedName>
     Examples:
-      | originalName   | newName              | shouldOrShouldNot |
-      | Training set   | Updated training set | should            |
-      | Same name set  | Same name set        | should            |
-      | Ouch sth       |                      | should not        |
+      | originalName   | newName              | updatedName          | shouldOrShouldNot |
+      | Training set   | Updated training set | Updated training set | should            |
+      | Same name set  | Same name set        | Same name set        | should            |
+      | Ouch sth       |                      | Ouch sth             | should not        |

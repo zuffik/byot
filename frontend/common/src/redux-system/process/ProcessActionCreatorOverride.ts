@@ -13,6 +13,10 @@ export const ProcessActionCreatorOverride = <
 ) => (Target: {new (...args: any[]): ProcessAction<S, QP, RP, P>}) => {
   const id = Source.prototype.__uniqueIdentifier;
   const reducer = new Target();
-  Actions.reduxPack[group][id].reducer = reducer;
-  Actions.reduxBinds[group][id] = Actions.reduxBinds[group][id].map(b => ({...b, reducer}));
+  if (Actions.reduxPack[group]) {
+    Actions.reduxPack[group][id].reducer = reducer;
+  }
+  if (Actions.reduxBinds[group]) {
+    Actions.reduxBinds[group][id] = Actions.reduxBinds[group][id].map(b => ({...b, reducer}));
+  }
 };

@@ -32,7 +32,7 @@ export class ProcessActionExtractor {
     action: Action<QP>,
     payload?: DataResponse<RP>,
     {group = 'default'}: ProcessActionExtractorResponseOptions = {}
-  ): Action<AsynchronousActionResponse<QP, DataResponse<RP>>> {
+  ): Action<AsynchronousActionResponse<QP, RP>> {
     const pack = _.find(_.values(Actions.reduxPack[group] || {}), v => isType(action, v.entryAction));
     if (!pack || !pack.secondaryAction) {
       throw new Error(`Action ${action.type} has no response in pack`);

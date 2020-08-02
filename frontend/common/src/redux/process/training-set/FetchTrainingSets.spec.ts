@@ -4,7 +4,7 @@ import {ProcessActionExtractor} from '@byot-frontend/common/src/redux-system/pro
 import {GraphQLResponse} from '@byot-frontend/common/src/redux-system/data-structures/responses/GraphQLResponse';
 import {AsynchronousActionResponse} from '@byot-frontend/common/src/redux-system/process/ProcessActions';
 import {DataResponse} from '@byot-frontend/common/src/redux-system/data-structures/responses/DataResponse';
-import {WebAppState} from '../../WebAppState';
+import {WebAppState} from '@byot-frontend/web-app/src/redux/WebAppState';
 import {IterableResource} from '@byot-frontend/common/src/redux-system/data-structures/resources/IterableResource';
 import {ITrainingSet} from '@byot-frontend/common/src/types/interfaces/ITrainingSet';
 

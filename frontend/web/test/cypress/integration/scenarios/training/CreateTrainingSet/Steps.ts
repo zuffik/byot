@@ -29,7 +29,11 @@ Then(/^the training set (.*) be created$/, shouldOrShouldNot => {
     cy.get('[data-testid="training-set-list-item"]')
       .first()
       .get('[data-testid="triple-combo-item-text-primary"]')
-      .should('contain.text', trainingSetName);
+      .should('contain.text', trainingSetName)
+      .first()
+      .click();
+    cy.url().should('contain', '/training/set/');
+    cy.get('[data-testid="common-elementary-complement-emptyListInfo"]').should('exist');
     shouldPerformCleanup = true;
   } else {
     cy.url().should('contain', '/training/set/create');

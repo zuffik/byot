@@ -5,10 +5,10 @@ import {TrainingSetList} from '../training/set/TrainingSetList';
 import {useSelector, useDispatch} from 'react-redux';
 import {WebAppState} from '../../redux/WebAppState';
 import {ProcessActionExtractor} from '@byot-frontend/common/src/redux-system/process/ProcessActionExtractor';
-import {FetchTrainingSets} from '../../redux/process/training-set/FetchTrainingSets';
-import {ControlPanelTitle} from '../control-panel/base/ControlPanelTitle';
+import {ControlPanelTitle} from '../control-panel/base/ControlPanelTitle/ControlPanelTitle';
 import {useTranslation} from 'react-i18next';
 import {ControlPanelMainContent} from '../control-panel/base/ControlPanelMainContent';
+import {FetchTrainingSets} from '@byot-frontend/common/src/redux/process/training-set/FetchTrainingSets';
 
 interface Props {}
 

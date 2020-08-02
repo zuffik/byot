@@ -3,25 +3,25 @@ import {
   AsynchronousAction,
   AsynchronousActionResponse,
 } from '@byot-frontend/common/src/redux-system/process/ProcessActions';
-import {WebAppState} from '../../WebAppState';
 import {Action} from 'typescript-fsa';
 import {ApolloContext} from '@byot-frontend/common/src/graphql/context/ApolloContext';
 import {call} from 'redux-saga/effects';
 import {gql} from 'apollo-boost';
 import {Filter} from '@byot-frontend/common/src/types/app/filter/Filter';
 import {ITrainingSet} from '@byot-frontend/common/src/types/interfaces/ITrainingSet';
-import {IterableResource} from '@byot-frontend/common/src/redux-system/data-structures/resources/IterableResource';
+import {FrontendCommonState} from '../../FrontendCommonState';
+import {IterableResource} from '../../../redux-system/data-structures/resources/IterableResource';
 
-export type Request = {filter?: Filter};
+export type Request = {filter?: Filter<{idUser?: string}>};
 export type Response = {};
 
 @ProcessActionCreator()
-export class FetchTrainingSets implements AsynchronousAction<WebAppState, Request, Response> {
+export class FetchTrainingSets implements AsynchronousAction<FrontendCommonState, Request, Response> {
   handleRequest(
     action: Action<Request>,
-    nextState: Readonly<WebAppState>,
-    prevState: Readonly<WebAppState>
-  ): Readonly<WebAppState> {
+    nextState: Readonly<FrontendCommonState>,
+    prevState: Readonly<FrontendCommonState>
+  ): Readonly<FrontendCommonState> {
     return {
       ...nextState,
       trainingSetListItems: action.payload.filter?.reset
@@ -35,7 +35,7 @@ export class FetchTrainingSets implements AsynchronousAction<WebAppState, Reques
     };
   }
 
-  *saga(action: Action<Request>, state: Readonly<WebAppState>) {
+  *saga(action: Action<Request>, state: Readonly<FrontendCommonState>) {
     const {reset, ...filter} = action.payload?.filter || {};
     return (yield call(ApolloContext.apolloClient.query, {
       query: gql`
@@ -58,6 +58,9 @@ export class FetchTrainingSets implements AsynchronousAction<WebAppState, Reques
                 entries {
                   id
                   media {
+                    meta {
+                      totalCount
+                    }
                     entries {
                       id
                       source {
@@ -77,9 +80,9 @@ export class FetchTrainingSets implements AsynchronousAction<WebAppState, Reques
 
   handleResponse(
     action: Action<AsynchronousActionResponse<Request, Response>>,
-    nextState: Readonly<WebAppState>,
-    prevState: Readonly<WebAppState>
-  ): Readonly<WebAppState> {
+    nextState: Readonly<FrontendCommonState>,
+    prevState: Readonly<FrontendCommonState>
+  ): Readonly<FrontendCommonState> {
     return {
       ...nextState,
       ...(action.payload.request.filter?.reset && {

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {ControlPanelMainContent} from '../control-panel/base/ControlPanelMainContent';
-import {ControlPanelTitle} from '../control-panel/base/ControlPanelTitle';
+import {ControlPanelTitle} from '../control-panel/base/ControlPanelTitle/ControlPanelTitle';
 import {useTranslation} from 'react-i18next';
 import {TrainingSetForm} from '../training/set/TrainingSetForm';
 import {useDispatch} from 'react-redux';

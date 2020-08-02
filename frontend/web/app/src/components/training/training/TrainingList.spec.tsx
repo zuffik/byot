@@ -1,8 +1,6 @@
 import * as React from 'react';
 import {render} from '@testing-library/react';
 import {TrainingList} from './TrainingList';
-import {ITraining} from '@byot-frontend/common/src/types/interfaces/ITraining';
-import {IterableResource} from '@byot-frontend/common/src/redux-system/data-structures/resources/IterableResource';
 import {training} from '@byot-frontend/common/test/fixtures/dto/Training';
 
 jest.mock('@byot-frontend/web-common/src/components/functional/infinite-list/InfiniteGridList', () => ({
@@ -11,9 +9,7 @@ jest.mock('@byot-frontend/web-common/src/components/functional/infinite-list/Inf
 }));
 describe('<TrainingList/>', () => {
   it('should render', () => {
-    const {container} = render(
-      <TrainingList onLoadMore={jest.fn()} items={new IterableResource<ITraining>([training()])} />
-    );
+    const {container} = render(<TrainingList items={[training()]} />);
     expect(container).toMatchSnapshot();
   });
 });

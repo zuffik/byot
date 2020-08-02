@@ -29,7 +29,7 @@ export const EmptyListInfo: React.FC<Props> = (props: Props) => {
   const styles = useStyles(props);
   const {t} = useTranslation();
   return (
-    <div className={styles.root}>
+    <div className={styles.root} data-testid="common-elementary-complement-emptyListInfo">
       <SentimentDissatisfiedRounded classes={{root: styles.icon}} />
       <Typography classes={{root: styles.title}}>{t('Nothing found')}</Typography>
     </div>

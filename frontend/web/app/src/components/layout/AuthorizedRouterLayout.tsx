@@ -8,6 +8,7 @@ import {useSelector} from 'react-redux';
 import {WebAppState} from '../../redux/WebAppState';
 import {LogoutPage} from '../pages/LogoutPage';
 import {TrainingSetCreatePage} from '../pages/TrainingSetCreatePage';
+import {TrainingSetDetailPage} from '../pages/TrainingSetDetailPage';
 
 interface Props {}
 
@@ -24,6 +25,9 @@ export const AuthorizedRouterLayout: React.FC<Props> = (props: Props) => {
         </AuthRoute>
         <AuthRoute exact path={Router.training.trainingSet.create.URI()}>
           <TrainingSetCreatePage />
+        </AuthRoute>
+        <AuthRoute exact path={Router.training.trainingSet.detail.URI()}>
+          <TrainingSetDetailPage />
         </AuthRoute>
         <Redirect to={Router.URI()} />
       </Switch>

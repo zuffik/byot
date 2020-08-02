@@ -29,11 +29,7 @@ export const listItemImagePlaceholder = () => <TrainingListItemImagePlaceholder 
 
 export const listItem = () => <TrainingListItem training={training()} />;
 
-export const list = () => {
-  const items = new IterableResource(_.times(10, () => training()));
-  items.totalCount = 20;
-  return <TrainingList items={items} onLoadMore={action('onLoadMore')} />;
-};
+export const list = () => <TrainingList items={_.times(10, () => training())} />;
 
 export const form = () => {
   const m = new IterableResource<IMedia>(_.times(10, () => media()));

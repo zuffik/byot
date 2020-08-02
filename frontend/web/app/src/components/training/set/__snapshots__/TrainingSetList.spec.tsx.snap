@@ -11,6 +11,7 @@ exports[`<TrainingSetList/> should render 1`] = `
       <div
         aria-disabled="false"
         class="MuiBox-root MuiBox-root-9 MuiButtonBase-root MuiListItem-root makeStyles-root-1 MuiListItem-gutters MuiListItem-button MuiListItem-alignItemsFlexStart makeStyles-root-8"
+        data-testid="training-set-list-item"
         role="button"
         tabindex="0"
         to="/training/set/fd255273-5147-504b-ac68-033d90ff4e17"
@@ -23,11 +24,13 @@ exports[`<TrainingSetList/> should render 1`] = `
         >
           <div
             class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-3 makeStyles-primaryText-6 MuiTypography-body1 MuiTypography-displayBlock"
+            data-testid="triple-combo-item-text-primary"
           >
             Jutacu emibo cu umusosfu re cuznim reletwaj lojeibe lolmuj tujle tovufmu vofizo nuzi regusoj iwmum busifurih weof.
           </div>
           <div
             class="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+            data-testid="triple-combo-item-text-secondary"
           >
             <p
               class="MuiTypography-root MuiTypography-body2"

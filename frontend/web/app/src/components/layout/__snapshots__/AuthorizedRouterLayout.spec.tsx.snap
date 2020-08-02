@@ -92,6 +92,12 @@ exports[`<AuthorizedRouterLayout/> should render 1`] = `
         data-testid="auth-route-base"
       />
       <div
+        data-testid="auth-route-base"
+      />
+      <div
+        data-testid="auth-route-base"
+      />
+      <div
         data-testid="react-router-dom-redirect"
       />
     </div>

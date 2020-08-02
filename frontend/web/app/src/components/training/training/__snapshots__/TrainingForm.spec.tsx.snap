@@ -90,6 +90,7 @@ exports[`<TrainingForm/> should edit the training 1`] = `
                 >
                   <div
                     class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-45 makeStyles-primaryText-349 MuiTypography-body1 MuiTypography-displayBlock"
+                    data-testid="triple-combo-item-text-primary"
                   >
                     Cuh wit janufizo usa hi mafob ebma giskoupe zol eg demjo cef mo erdeko cudpiv.
                   </div>
@@ -137,6 +138,7 @@ exports[`<TrainingForm/> should edit the training 1`] = `
                 >
                   <div
                     class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-45 makeStyles-primaryText-354 MuiTypography-body1 MuiTypography-displayBlock"
+                    data-testid="triple-combo-item-text-primary"
                   >
                     Oke kad iku ez ime kuere cigom luze zakef ac aconki kekefjud voswulun kepdub optiowa.
                   </div>
@@ -184,6 +186,7 @@ exports[`<TrainingForm/> should edit the training 1`] = `
                 >
                   <div
                     class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-45 makeStyles-primaryText-359 MuiTypography-body1 MuiTypography-displayBlock"
+                    data-testid="triple-combo-item-text-primary"
                   >
                     Vejelav ki rem reput fih buwolah jek locohgiz setoeta unitez tafuzemo ras roru ri kadav mezwap.
                   </div>
@@ -231,6 +234,7 @@ exports[`<TrainingForm/> should edit the training 1`] = `
                 >
                   <div
                     class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-45 makeStyles-primaryText-364 MuiTypography-body1 MuiTypography-displayBlock"
+                    data-testid="triple-combo-item-text-primary"
                   >
                     Kozbuno lipolam we ovopu mofasmev ruci modkurne he tifufig em jucjana ka ow bago rombadki hidoc.
                   </div>
@@ -278,6 +282,7 @@ exports[`<TrainingForm/> should edit the training 1`] = `
                 >
                   <div
                     class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-45 makeStyles-primaryText-369 MuiTypography-body1 MuiTypography-displayBlock"
+                    data-testid="triple-combo-item-text-primary"
                   >
                     Hikpeuku wez vojsuf hatu mejci wujuvuz kados ufa rutaw nid madbik canida ritne kug jorwi hiwagna nomgitab jadu.
                   </div>
@@ -325,6 +330,7 @@ exports[`<TrainingForm/> should edit the training 1`] = `
                 >
                   <div
                     class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-45 makeStyles-primaryText-374 MuiTypography-body1 MuiTypography-displayBlock"
+                    data-testid="triple-combo-item-text-primary"
                   >
                     Biflo icbiil zapiw ugipo duwfo du bac canpanzav ico cuvaksos era be keopi.
                   </div>
@@ -372,6 +378,7 @@ exports[`<TrainingForm/> should edit the training 1`] = `
                 >
                   <div
                     class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-45 makeStyles-primaryText-379 MuiTypography-body1 MuiTypography-displayBlock"
+                    data-testid="triple-combo-item-text-primary"
                   >
                     Ev viglurupi sogdag pewo piec jel sihil im hisrok he joziha suikefu mewo fiw azecejiho sosoar.
                   </div>
@@ -419,6 +426,7 @@ exports[`<TrainingForm/> should edit the training 1`] = `
                 >
                   <div
                     class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-45 makeStyles-primaryText-384 MuiTypography-body1 MuiTypography-displayBlock"
+                    data-testid="triple-combo-item-text-primary"
                   >
                     Zemore kitop ucvewa de lamhekab hag ila ilulifnu udowep fepusbuh jeef lonjupif ve ho.
                   </div>
@@ -466,6 +474,7 @@ exports[`<TrainingForm/> should edit the training 1`] = `
                 >
                   <div
                     class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-45 makeStyles-primaryText-389 MuiTypography-body1 MuiTypography-displayBlock"
+                    data-testid="triple-combo-item-text-primary"
                   >
                     Ge so azebewo jocufci nise ci pi go mom poozgu anluduh tanfotumo dak lo ucu vamed.
                   </div>
@@ -513,6 +522,7 @@ exports[`<TrainingForm/> should edit the training 1`] = `
                 >
                   <div
                     class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-45 makeStyles-primaryText-394 MuiTypography-body1 MuiTypography-displayBlock"
+                    data-testid="triple-combo-item-text-primary"
                   >
                     Ripiv pusdouk na zugi ji golve vignod fah ilo sufka ov osa cek zo.
                   </div>
@@ -560,6 +570,7 @@ exports[`<TrainingForm/> should edit the training 1`] = `
                 >
                   <div
                     class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-45 makeStyles-primaryText-399 MuiTypography-body1 MuiTypography-displayBlock"
+                    data-testid="triple-combo-item-text-primary"
                   >
                     Becakanij nepav tud fokrigso hatuzeesa jeliw ifkor da wicualo gerbu ike liginjup ikpabdec ci ijovuroz ka suculev.
                   </div>
@@ -607,6 +618,7 @@ exports[`<TrainingForm/> should edit the training 1`] = `
                 >
                   <div
                     class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-45 makeStyles-primaryText-404 MuiTypography-body1 MuiTypography-displayBlock"
+                    data-testid="triple-combo-item-text-primary"
                   >
                     Izuesetu munuviw onozon dafadcac gusugid izajolec fonil buunho tihdinho buksak hudfunler ub matvait sukucul ez atifi sig gi.
                   </div>
@@ -654,6 +666,7 @@ exports[`<TrainingForm/> should edit the training 1`] = `
                 >
                   <div
                     class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-45 makeStyles-primaryText-409 MuiTypography-body1 MuiTypography-displayBlock"
+                    data-testid="triple-combo-item-text-primary"
                   >
                     Fo je ke nupri nidijpoj fesbokso bog mogolu as gabzas ohju tavruni fomdeeb.
                   </div>
@@ -701,6 +714,7 @@ exports[`<TrainingForm/> should edit the training 1`] = `
                 >
                   <div
                     class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-45 makeStyles-primaryText-414 MuiTypography-body1 MuiTypography-displayBlock"
+                    data-testid="triple-combo-item-text-primary"
                   >
                     Nemefu gi ta aci guewocuz cuz ba ah ilgufim irli vo kejzi idde visevatak ju su.
                   </div>
@@ -748,6 +762,7 @@ exports[`<TrainingForm/> should edit the training 1`] = `
                 >
                   <div
                     class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-45 makeStyles-primaryText-419 MuiTypography-body1 MuiTypography-displayBlock"
+                    data-testid="triple-combo-item-text-primary"
                   >
                     Ho ubababe pefuw do ralanra nepcogoz dalviku gidasir ilhe ter valih mug jop sop sawucva sag oz lilzulbad.
                   </div>
@@ -795,6 +810,7 @@ exports[`<TrainingForm/> should edit the training 1`] = `
                 >
                   <div
                     class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-45 makeStyles-primaryText-424 MuiTypography-body1 MuiTypography-displayBlock"
+                    data-testid="triple-combo-item-text-primary"
                   >
                     Muverisar ala for hapkav duppido humhi mudzo fadjugku nuwsik mi cebma en jirlemih vaudman cunwaka baparpis sa nobal.
                   </div>
@@ -842,6 +858,7 @@ exports[`<TrainingForm/> should edit the training 1`] = `
                 >
                   <div
                     class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-45 makeStyles-primaryText-429 MuiTypography-body1 MuiTypography-displayBlock"
+                    data-testid="triple-combo-item-text-primary"
                   >
                     Nowbok si ja gewguh zofep oha pohij diso sakoho lip jir benbes.
                   </div>
@@ -889,6 +906,7 @@ exports[`<TrainingForm/> should edit the training 1`] = `
                 >
                   <div
                     class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-45 makeStyles-primaryText-434 MuiTypography-body1 MuiTypography-displayBlock"
+                    data-testid="triple-combo-item-text-primary"
                   >
                     Ogi miwouc lerepnu kuv zo mubah fanuzva da ojaepfej fe po tu tatco pavava cosobin mi ajletu.
                   </div>
@@ -936,6 +954,7 @@ exports[`<TrainingForm/> should edit the training 1`] = `
                 >
                   <div
                     class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-45 makeStyles-primaryText-439 MuiTypography-body1 MuiTypography-displayBlock"
+                    data-testid="triple-combo-item-text-primary"
                   >
                     Zahik lu fuajadin bo wo ehteke da samma he oruwe rervamte fafnujnez.
                   </div>
@@ -983,6 +1002,7 @@ exports[`<TrainingForm/> should edit the training 1`] = `
                 >
                   <div
                     class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-45 makeStyles-primaryText-444 MuiTypography-body1 MuiTypography-displayBlock"
+                    data-testid="triple-combo-item-text-primary"
                   >
                     Tajomu ircimod taisu ovono jojovoju dejbej fa sut jiifla kuvje hi bi torogop jopa jejissaw calu.
                   </div>

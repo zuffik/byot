@@ -19,8 +19,8 @@ export const TrainingCreateListItem: React.FC<Props> = (props: Props) => {
         alignItems="center"
         image={<TrainingCreateListItemPlaceholder />}
         primary={
-          <Typography color="primary">
-            <strong>{t('Create training')}</strong>
+          <Typography color="primary" variant="h6">
+            {t('Create training')}
           </Typography>
         }
       />

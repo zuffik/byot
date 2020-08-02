@@ -1,0 +1,581 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TrainingSetDetailSkeleton/> should render 1`] = `
+<div>
+  <div
+    class="MuiBox-root MuiBox-root-2"
+  >
+    <span
+      class="MuiSkeleton-root makeStyles-root-3 makeStyles-skeleton-1 MuiSkeleton-rect MuiSkeleton-pulse"
+    />
+  </div>
+  <div
+    class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2"
+  >
+    <div
+      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-6"
+    >
+      <div
+        class="MuiBox-root MuiBox-root-8 makeStyles-root-7"
+      >
+        <div
+          class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2"
+        >
+          <div
+            class="MuiGrid-root MuiGrid-item"
+          >
+            <span
+              class="MuiSkeleton-root makeStyles-root-3 makeStyles-image-4 MuiSkeleton-rect MuiSkeleton-pulse"
+            />
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-item MuiGrid-grid-xs-true"
+          >
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+            >
+              <span
+                class="MuiSkeleton-root makeStyles-root-3 makeStyles-title-5 MuiSkeleton-rect MuiSkeleton-pulse"
+                style="width: 100%;"
+              />
+            </div>
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+            >
+              <span
+                class="MuiSkeleton-root makeStyles-root-3 makeStyles-descriptions-6 MuiSkeleton-rect MuiSkeleton-pulse"
+                style="width: 100%;"
+              />
+            </div>
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+            >
+              <span
+                class="MuiSkeleton-root makeStyles-root-3 makeStyles-descriptions-6 MuiSkeleton-rect MuiSkeleton-pulse"
+                style="width: 100%;"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-6"
+    >
+      <div
+        class="MuiBox-root MuiBox-root-9 makeStyles-root-7"
+      >
+        <div
+          class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2"
+        >
+          <div
+            class="MuiGrid-root MuiGrid-item"
+          >
+            <span
+              class="MuiSkeleton-root makeStyles-root-3 makeStyles-image-4 MuiSkeleton-rect MuiSkeleton-pulse"
+            />
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-item MuiGrid-grid-xs-true"
+          >
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+            >
+              <span
+                class="MuiSkeleton-root makeStyles-root-3 makeStyles-title-5 MuiSkeleton-rect MuiSkeleton-pulse"
+                style="width: 100%;"
+              />
+            </div>
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+            >
+              <span
+                class="MuiSkeleton-root makeStyles-root-3 makeStyles-descriptions-6 MuiSkeleton-rect MuiSkeleton-pulse"
+                style="width: 100%;"
+              />
+            </div>
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+            >
+              <span
+                class="MuiSkeleton-root makeStyles-root-3 makeStyles-descriptions-6 MuiSkeleton-rect MuiSkeleton-pulse"
+                style="width: 100%;"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-6"
+    >
+      <div
+        class="MuiBox-root MuiBox-root-10 makeStyles-root-7"
+      >
+        <div
+          class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2"
+        >
+          <div
+            class="MuiGrid-root MuiGrid-item"
+          >
+            <span
+              class="MuiSkeleton-root makeStyles-root-3 makeStyles-image-4 MuiSkeleton-rect MuiSkeleton-pulse"
+            />
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-item MuiGrid-grid-xs-true"
+          >
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+            >
+              <span
+                class="MuiSkeleton-root makeStyles-root-3 makeStyles-title-5 MuiSkeleton-rect MuiSkeleton-pulse"
+                style="width: 100%;"
+              />
+            </div>
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+            >
+              <span
+                class="MuiSkeleton-root makeStyles-root-3 makeStyles-descriptions-6 MuiSkeleton-rect MuiSkeleton-pulse"
+                style="width: 100%;"
+              />
+            </div>
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+            >
+              <span
+                class="MuiSkeleton-root makeStyles-root-3 makeStyles-descriptions-6 MuiSkeleton-rect MuiSkeleton-pulse"
+                style="width: 100%;"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-6"
+    >
+      <div
+        class="MuiBox-root MuiBox-root-11 makeStyles-root-7"
+      >
+        <div
+          class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2"
+        >
+          <div
+            class="MuiGrid-root MuiGrid-item"
+          >
+            <span
+              class="MuiSkeleton-root makeStyles-root-3 makeStyles-image-4 MuiSkeleton-rect MuiSkeleton-pulse"
+            />
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-item MuiGrid-grid-xs-true"
+          >
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+            >
+              <span
+                class="MuiSkeleton-root makeStyles-root-3 makeStyles-title-5 MuiSkeleton-rect MuiSkeleton-pulse"
+                style="width: 100%;"
+              />
+            </div>
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+            >
+              <span
+                class="MuiSkeleton-root makeStyles-root-3 makeStyles-descriptions-6 MuiSkeleton-rect MuiSkeleton-pulse"
+                style="width: 100%;"
+              />
+            </div>
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+            >
+              <span
+                class="MuiSkeleton-root makeStyles-root-3 makeStyles-descriptions-6 MuiSkeleton-rect MuiSkeleton-pulse"
+                style="width: 100%;"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-6"
+    >
+      <div
+        class="MuiBox-root MuiBox-root-12 makeStyles-root-7"
+      >
+        <div
+          class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2"
+        >
+          <div
+            class="MuiGrid-root MuiGrid-item"
+          >
+            <span
+              class="MuiSkeleton-root makeStyles-root-3 makeStyles-image-4 MuiSkeleton-rect MuiSkeleton-pulse"
+            />
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-item MuiGrid-grid-xs-true"
+          >
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+            >
+              <span
+                class="MuiSkeleton-root makeStyles-root-3 makeStyles-title-5 MuiSkeleton-rect MuiSkeleton-pulse"
+                style="width: 100%;"
+              />
+            </div>
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+            >
+              <span
+                class="MuiSkeleton-root makeStyles-root-3 makeStyles-descriptions-6 MuiSkeleton-rect MuiSkeleton-pulse"
+                style="width: 100%;"
+              />
+            </div>
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+            >
+              <span
+                class="MuiSkeleton-root makeStyles-root-3 makeStyles-descriptions-6 MuiSkeleton-rect MuiSkeleton-pulse"
+                style="width: 100%;"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-6"
+    >
+      <div
+        class="MuiBox-root MuiBox-root-13 makeStyles-root-7"
+      >
+        <div
+          class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2"
+        >
+          <div
+            class="MuiGrid-root MuiGrid-item"
+          >
+            <span
+              class="MuiSkeleton-root makeStyles-root-3 makeStyles-image-4 MuiSkeleton-rect MuiSkeleton-pulse"
+            />
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-item MuiGrid-grid-xs-true"
+          >
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+            >
+              <span
+                class="MuiSkeleton-root makeStyles-root-3 makeStyles-title-5 MuiSkeleton-rect MuiSkeleton-pulse"
+                style="width: 100%;"
+              />
+            </div>
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+            >
+              <span
+                class="MuiSkeleton-root makeStyles-root-3 makeStyles-descriptions-6 MuiSkeleton-rect MuiSkeleton-pulse"
+                style="width: 100%;"
+              />
+            </div>
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+            >
+              <span
+                class="MuiSkeleton-root makeStyles-root-3 makeStyles-descriptions-6 MuiSkeleton-rect MuiSkeleton-pulse"
+                style="width: 100%;"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-6"
+    >
+      <div
+        class="MuiBox-root MuiBox-root-14 makeStyles-root-7"
+      >
+        <div
+          class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2"
+        >
+          <div
+            class="MuiGrid-root MuiGrid-item"
+          >
+            <span
+              class="MuiSkeleton-root makeStyles-root-3 makeStyles-image-4 MuiSkeleton-rect MuiSkeleton-pulse"
+            />
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-item MuiGrid-grid-xs-true"
+          >
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+            >
+              <span
+                class="MuiSkeleton-root makeStyles-root-3 makeStyles-title-5 MuiSkeleton-rect MuiSkeleton-pulse"
+                style="width: 100%;"
+              />
+            </div>
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+            >
+              <span
+                class="MuiSkeleton-root makeStyles-root-3 makeStyles-descriptions-6 MuiSkeleton-rect MuiSkeleton-pulse"
+                style="width: 100%;"
+              />
+            </div>
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+            >
+              <span
+                class="MuiSkeleton-root makeStyles-root-3 makeStyles-descriptions-6 MuiSkeleton-rect MuiSkeleton-pulse"
+                style="width: 100%;"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-6"
+    >
+      <div
+        class="MuiBox-root MuiBox-root-15 makeStyles-root-7"
+      >
+        <div
+          class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2"
+        >
+          <div
+            class="MuiGrid-root MuiGrid-item"
+          >
+            <span
+              class="MuiSkeleton-root makeStyles-root-3 makeStyles-image-4 MuiSkeleton-rect MuiSkeleton-pulse"
+            />
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-item MuiGrid-grid-xs-true"
+          >
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+            >
+              <span
+                class="MuiSkeleton-root makeStyles-root-3 makeStyles-title-5 MuiSkeleton-rect MuiSkeleton-pulse"
+                style="width: 100%;"
+              />
+            </div>
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+            >
+              <span
+                class="MuiSkeleton-root makeStyles-root-3 makeStyles-descriptions-6 MuiSkeleton-rect MuiSkeleton-pulse"
+                style="width: 100%;"
+              />
+            </div>
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+            >
+              <span
+                class="MuiSkeleton-root makeStyles-root-3 makeStyles-descriptions-6 MuiSkeleton-rect MuiSkeleton-pulse"
+                style="width: 100%;"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-6"
+    >
+      <div
+        class="MuiBox-root MuiBox-root-16 makeStyles-root-7"
+      >
+        <div
+          class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2"
+        >
+          <div
+            class="MuiGrid-root MuiGrid-item"
+          >
+            <span
+              class="MuiSkeleton-root makeStyles-root-3 makeStyles-image-4 MuiSkeleton-rect MuiSkeleton-pulse"
+            />
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-item MuiGrid-grid-xs-true"
+          >
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+            >
+              <span
+                class="MuiSkeleton-root makeStyles-root-3 makeStyles-title-5 MuiSkeleton-rect MuiSkeleton-pulse"
+                style="width: 100%;"
+              />
+            </div>
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+            >
+              <span
+                class="MuiSkeleton-root makeStyles-root-3 makeStyles-descriptions-6 MuiSkeleton-rect MuiSkeleton-pulse"
+                style="width: 100%;"
+              />
+            </div>
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+            >
+              <span
+                class="MuiSkeleton-root makeStyles-root-3 makeStyles-descriptions-6 MuiSkeleton-rect MuiSkeleton-pulse"
+                style="width: 100%;"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-6"
+    >
+      <div
+        class="MuiBox-root MuiBox-root-17 makeStyles-root-7"
+      >
+        <div
+          class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2"
+        >
+          <div
+            class="MuiGrid-root MuiGrid-item"
+          >
+            <span
+              class="MuiSkeleton-root makeStyles-root-3 makeStyles-image-4 MuiSkeleton-rect MuiSkeleton-pulse"
+            />
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-item MuiGrid-grid-xs-true"
+          >
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+            >
+              <span
+                class="MuiSkeleton-root makeStyles-root-3 makeStyles-title-5 MuiSkeleton-rect MuiSkeleton-pulse"
+                style="width: 100%;"
+              />
+            </div>
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+            >
+              <span
+                class="MuiSkeleton-root makeStyles-root-3 makeStyles-descriptions-6 MuiSkeleton-rect MuiSkeleton-pulse"
+                style="width: 100%;"
+              />
+            </div>
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+            >
+              <span
+                class="MuiSkeleton-root makeStyles-root-3 makeStyles-descriptions-6 MuiSkeleton-rect MuiSkeleton-pulse"
+                style="width: 100%;"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-6"
+    >
+      <div
+        class="MuiBox-root MuiBox-root-18 makeStyles-root-7"
+      >
+        <div
+          class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2"
+        >
+          <div
+            class="MuiGrid-root MuiGrid-item"
+          >
+            <span
+              class="MuiSkeleton-root makeStyles-root-3 makeStyles-image-4 MuiSkeleton-rect MuiSkeleton-pulse"
+            />
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-item MuiGrid-grid-xs-true"
+          >
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+            >
+              <span
+                class="MuiSkeleton-root makeStyles-root-3 makeStyles-title-5 MuiSkeleton-rect MuiSkeleton-pulse"
+                style="width: 100%;"
+              />
+            </div>
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+            >
+              <span
+                class="MuiSkeleton-root makeStyles-root-3 makeStyles-descriptions-6 MuiSkeleton-rect MuiSkeleton-pulse"
+                style="width: 100%;"
+              />
+            </div>
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+            >
+              <span
+                class="MuiSkeleton-root makeStyles-root-3 makeStyles-descriptions-6 MuiSkeleton-rect MuiSkeleton-pulse"
+                style="width: 100%;"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-6"
+    >
+      <div
+        class="MuiBox-root MuiBox-root-19 makeStyles-root-7"
+      >
+        <div
+          class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2"
+        >
+          <div
+            class="MuiGrid-root MuiGrid-item"
+          >
+            <span
+              class="MuiSkeleton-root makeStyles-root-3 makeStyles-image-4 MuiSkeleton-rect MuiSkeleton-pulse"
+            />
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-item MuiGrid-grid-xs-true"
+          >
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+            >
+              <span
+                class="MuiSkeleton-root makeStyles-root-3 makeStyles-title-5 MuiSkeleton-rect MuiSkeleton-pulse"
+                style="width: 100%;"
+              />
+            </div>
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+            >
+              <span
+                class="MuiSkeleton-root makeStyles-root-3 makeStyles-descriptions-6 MuiSkeleton-rect MuiSkeleton-pulse"
+                style="width: 100%;"
+              />
+            </div>
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+            >
+              <span
+                class="MuiSkeleton-root makeStyles-root-3 makeStyles-descriptions-6 MuiSkeleton-rect MuiSkeleton-pulse"
+                style="width: 100%;"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

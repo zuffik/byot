@@ -31,6 +31,7 @@ exports[`<MediaList/> should match click on the item 1`] = `
         >
           <div
             class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-20 makeStyles-primaryText-23 MuiTypography-body1 MuiTypography-displayBlock"
+            data-testid="triple-combo-item-text-primary"
           >
             Me ikoeru kunmega avjiac gomusja ufizowu kesoma tabuli zal koupeas dahisli wacef mo erdeko cudpiv ro pu.
           </div>
@@ -58,6 +59,7 @@ exports[`<MediaList/> should match click on the item 1`] = `
         >
           <div
             class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-20 makeStyles-primaryText-28 MuiTypography-body1 MuiTypography-displayBlock"
+            data-testid="triple-combo-item-text-primary"
           >
             Mog gic gataga ihgih bi judpeta iv zap jatro ba licucce vibu bo sooki ikno.
           </div>
@@ -94,6 +96,7 @@ exports[`<MediaList/> should render 1`] = `
         >
           <div
             class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-7 makeStyles-primaryText-10 MuiTypography-body1 MuiTypography-displayBlock"
+            data-testid="triple-combo-item-text-primary"
           >
             Mucu ceda pi hahij le vitvep sadwupif kenmulo jutacu emibo cu umusosfu re cuznim reletwaj lojeibe lolmuj.
           </div>

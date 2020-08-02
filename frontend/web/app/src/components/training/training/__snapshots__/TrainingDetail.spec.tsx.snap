@@ -75,6 +75,7 @@ exports[`<TrainingDetail/> should select a media 1`] = `
             >
               <div
                 class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-19 makeStyles-primaryText-22 MuiTypography-body1 MuiTypography-displayBlock"
+                data-testid="triple-combo-item-text-primary"
               >
                 Hu ibezvu liuz hirneom luze zakef ac aconki kekefjud voswulun kepdub optiowa ti velfo.
               </div>
@@ -102,6 +103,7 @@ exports[`<TrainingDetail/> should select a media 1`] = `
             >
               <div
                 class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-19 makeStyles-primaryText-27 MuiTypography-body1 MuiTypography-displayBlock"
+                data-testid="triple-combo-item-text-primary"
               >
                 Pe jilre itefihpaz zij di mu tu juf ugibo etauznop ofo fuz.
               </div>

@@ -17,11 +17,13 @@ exports[`<TrainingListItem/> should render 1`] = `
     >
       <div
         class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-5 makeStyles-primaryText-8 makeStyles-title-1 MuiTypography-body1 MuiTypography-displayBlock"
+        data-testid="triple-combo-item-text-primary"
       >
         Efum ji ga sefze figi pomlot dadeziguz seak nigamu luv hahic oziworpaz re cuznim reletwaj.
       </div>
       <div
         class="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+        data-testid="triple-combo-item-text-secondary"
       >
         <p
           class="MuiTypography-root MuiTypography-body2"

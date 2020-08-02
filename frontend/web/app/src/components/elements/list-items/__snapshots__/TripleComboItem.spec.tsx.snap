@@ -10,11 +10,13 @@ exports[`<TripleComboItem/> should render with different props 1`] = `
     >
       <div
         class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-3 makeStyles-primaryText-6 MuiTypography-body1 MuiTypography-displayBlock"
+        data-testid="triple-combo-item-text-primary"
       >
         Something
       </div>
       <div
         class="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+        data-testid="triple-combo-item-text-secondary"
       >
         description
       </div>
@@ -33,11 +35,13 @@ exports[`<TripleComboItem/> should render with different props 2`] = `
     >
       <div
         class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-3 makeStyles-primaryText-11 MuiTypography-body1 MuiTypography-displayBlock"
+        data-testid="triple-combo-item-text-primary"
       >
         Something
       </div>
       <div
         class="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+        data-testid="triple-combo-item-text-secondary"
       >
         description
       </div>
@@ -56,6 +60,7 @@ exports[`<TripleComboItem/> should render with different props 3`] = `
     >
       <div
         class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-3 makeStyles-primaryText-14 MuiTypography-body1 MuiTypography-displayBlock"
+        data-testid="triple-combo-item-text-primary"
       >
         Something
       </div>
@@ -77,11 +82,13 @@ exports[`<TripleComboItem/> should render with different props 4`] = `
     >
       <div
         class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-3 makeStyles-primaryText-18 MuiTypography-body1 MuiTypography-displayBlock"
+        data-testid="triple-combo-item-text-primary"
       >
         Something
       </div>
       <div
         class="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+        data-testid="triple-combo-item-text-secondary"
       >
         description
       </div>
@@ -103,11 +110,13 @@ exports[`<TripleComboItem/> should render with different props 5`] = `
     >
       <div
         class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-3 makeStyles-primaryText-22 MuiTypography-body1 MuiTypography-displayBlock"
+        data-testid="triple-combo-item-text-primary"
       >
         Something
       </div>
       <div
         class="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+        data-testid="triple-combo-item-text-secondary"
       >
         description
       </div>

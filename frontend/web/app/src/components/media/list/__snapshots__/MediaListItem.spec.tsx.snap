@@ -14,6 +14,7 @@ exports[`<MediaListItem/> should render 1`] = `
     >
       <div
         class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-4 makeStyles-primaryText-7 MuiTypography-body1 MuiTypography-displayBlock"
+        data-testid="triple-combo-item-text-primary"
       >
         Mucu ceda pi hahij le vitvep sadwupif kenmulo jutacu emibo cu umusosfu re cuznim reletwaj lojeibe lolmuj.
       </div>
@@ -36,6 +37,7 @@ exports[`<MediaListItem/> should render transparent 1`] = `
     >
       <div
         class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-24 makeStyles-primaryText-27 MuiTypography-body1 MuiTypography-displayBlock"
+        data-testid="triple-combo-item-text-primary"
       >
         Me ikoeru kunmega avjiac gomusja ufizowu kesoma tabuli zal koupeas dahisli wacef mo erdeko cudpiv ro pu.
       </div>
@@ -58,11 +60,13 @@ exports[`<MediaListItem/> should render with description 1`] = `
     >
       <div
         class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-14 makeStyles-primaryText-17 MuiTypography-body1 MuiTypography-displayBlock"
+        data-testid="triple-combo-item-text-primary"
       >
         Mog gic gataga ihgih bi judpeta iv zap jatro ba licucce vibu bo sooki ikno.
       </div>
       <div
         class="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+        data-testid="triple-combo-item-text-secondary"
       >
         Description
       </div>
@@ -90,6 +94,7 @@ exports[`<MediaListItem/> should render with link 1`] = `
     >
       <div
         class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-32 makeStyles-primaryText-35 MuiTypography-body1 MuiTypography-displayBlock"
+        data-testid="triple-combo-item-text-primary"
       >
         Hu ibezvu liuz hirneom luze zakef ac aconki kekefjud voswulun kepdub optiowa ti velfo.
       </div>
@@ -118,6 +123,7 @@ exports[`<MediaListItem/> should render with onClick 1`] = `
     >
       <div
         class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-42 makeStyles-primaryText-45 MuiTypography-body1 MuiTypography-displayBlock"
+        data-testid="triple-combo-item-text-primary"
       >
         Pe jilre itefihpaz zij di mu tu juf ugibo etauznop ofo fuz.
       </div>

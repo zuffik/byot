@@ -26,7 +26,7 @@ export abstract class TrainingSetCreate
       ...nextState,
       is: {
         ...nextState.is,
-        savingTrainingSet: true,
+        processingTrainingSet: true,
       },
     };
   }
@@ -56,7 +56,7 @@ export abstract class TrainingSetCreate
         : new ErrorSnackbar('There was an error creating training set'),
       is: {
         ...nextState.is,
-        savingTrainingSet: false,
+        processingTrainingSet: false,
       },
     };
   }

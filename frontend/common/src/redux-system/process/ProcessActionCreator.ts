@@ -32,7 +32,7 @@ export const ProcessActionCreator = <
   const actionCreator = actionCreators[group];
   const reducer = new Target();
   const actionName = process.env.NODE_ENV === 'production' ? (++id).toString() : Target.name;
-  Target.prototype.uniqueIdentifier = actionName;
+  Target.prototype.__uniqueIdentifier = actionName;
   let entryAction: ActionCreator<QP>,
     secondaryAction: ActionCreator<P> | undefined = undefined;
   if (isAsynchronousAction(reducer)) {

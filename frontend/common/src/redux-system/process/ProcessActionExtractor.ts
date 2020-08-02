@@ -19,10 +19,10 @@ export class ProcessActionExtractor {
     {group = 'default'}: ProcessActionExtractorDispatchOptions = {}
   ): Action<QP> {
     const creator: ActionCreator<QP> =
-      Actions.reduxPack[group]?.[Target.prototype.uniqueIdentifier]?.entryAction;
+      Actions.reduxPack[group]?.[Target.prototype.__uniqueIdentifier]?.entryAction;
     if (!creator) {
       throw new Error(
-        `Action creator '${Target.prototype.uniqueIdentifier}' in group '${group}' does not exists.`
+        `Action creator '${Target.prototype.__uniqueIdentifier}' in group '${group}' does not exists.`
       );
     }
     return creator(payload!);

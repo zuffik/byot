@@ -4,10 +4,10 @@ import {SnackbarContent} from '../types/app/snackbar/SnackbarContent';
 import {IAuth} from '../types/interfaces/IAuth';
 import {ITrainingSet} from '../types/interfaces/ITrainingSet';
 import {BindProcessActionCreator} from '../redux-system/process/BindProcessActionCreator';
-import {TrainingSetFetch} from './process/training-set/TrainingSetFetch';
 import {IterableResource} from '../redux-system/data-structures/resources/IterableResource';
 import {FetchTrainingSets} from './process/training-set/FetchTrainingSets';
 import {Filter} from '../types/app/filter/Filter';
+import {TrainingSetBaseFetch} from './process/training-set/TrainingSetBaseFetch';
 
 export class FrontendCommonState {
   auth: Resource<IAuth> = new EntityResource();
@@ -16,13 +16,13 @@ export class FrontendCommonState {
     requestingPasswordReset: false,
     resettingPassword: false,
 
-    savingTrainingSet: false,
+    processingTrainingSet: false,
   };
   /**
    * Training sets
    */
   trainingSetListFilter: Filter<{idUser?: string}> = {};
-  @BindProcessActionCreator(TrainingSetFetch)
+  @BindProcessActionCreator(TrainingSetBaseFetch)
   trainingSetDetail: EntityResource<ITrainingSet> = new EntityResource<ITrainingSet>();
   @BindProcessActionCreator(FetchTrainingSets)
   trainingSetListItems: IterableResource<ITrainingSet> = new IterableResource<ITrainingSet>();

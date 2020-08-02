@@ -7,11 +7,11 @@ import {useDispatch, useSelector} from 'react-redux';
 import {ProcessActionExtractor} from '@byot-frontend/common/src/redux-system/process/ProcessActionExtractor';
 import {ITrainingSetInput} from '@byot-frontend/common/src/types/interfaces/ITrainingSetInput';
 import {WebAppState} from '../../redux/WebAppState';
-import {TrainingSetFetch} from '@byot-frontend/common/src/redux/process/training-set/TrainingSetFetch';
 import {useParams} from 'react-router-dom';
 import {Router} from '../../router/Router';
 import {ControlPanelTitleSkeleton} from '../control-panel/base/ControlPanelTitle/ControlPanelTitleSkeleton';
 import {TrainingSetUpdate} from '../../redux/process/training-set/TrainingSetUpdate';
+import {TrainingSetFetch} from '../../redux/process/training-set/TrainingSetFetch';
 
 interface Props {}
 
@@ -25,7 +25,7 @@ export const TrainingSetEditPage: React.FC<Props> = (props: Props) => {
     dispatch(ProcessActionExtractor.dispatch(TrainingSetFetch, {id: trainingSetId}));
   }, [dispatch, trainingSetId]);
   const trainingSet = useSelector((state: WebAppState) => state.trainingSetDetail);
-  const isLoading = useSelector((state: WebAppState) => state.is.savingTrainingSet);
+  const isLoading = useSelector((state: WebAppState) => state.is.processingTrainingSet);
   return (
     <ControlPanelMainContent>
       {!trainingSet.hasData || trainingSet.isProcessing ? (

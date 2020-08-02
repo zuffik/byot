@@ -7,18 +7,13 @@ import {FrontendCommonState} from '../../FrontendCommonState';
 import {call} from 'redux-saga/effects';
 import {ApolloContext} from '../../../graphql/context/ApolloContext';
 import {gql} from 'apollo-boost';
-import {ITrainingSetInput} from '../../../types/interfaces/ITrainingSetInput';
 import {SuccessSnackbar} from '../../../types/app/snackbar/SuccessSnackbar';
 import {ErrorSnackbar} from '../../../types/app/snackbar/ErrorSnackbar';
-import {ITrainingSet} from '../../../types/interfaces/ITrainingSet';
 
-export type Request = {
-  trainingSet: ITrainingSetInput;
-  id: string;
-};
-export type Response = ITrainingSet;
+export type Request = {id: string};
+export type Response = {};
 
-export abstract class TrainingSetUpdate
+export abstract class TrainingSetRemove
   implements AsynchronousAction<FrontendCommonState, Request, Response> {
   handleRequest(
     action: Action<Request>,
@@ -37,14 +32,14 @@ export abstract class TrainingSetUpdate
   *saga(action: Action<Request>, state: Readonly<FrontendCommonState>) {
     return (yield call(ApolloContext.apolloClient.mutate, {
       mutation: gql`
-        mutation updateTrainingSet($trainingSet: TrainingSetInput!, $id: ID!) {
-          updateTrainingSet(trainingSet: $trainingSet, id: $id) {
+        mutation removeTrainingSet($id: ID!) {
+          removeTrainingSet(id: $id) {
             id
           }
         }
       `,
-      variables: {trainingSet: action.payload.trainingSet, id: action.payload.id},
-    })).data.updateTrainingSet;
+      variables: {id: action.payload.id},
+    })).data.removeTrainingSet;
   }
 
   handleResponse(
@@ -55,8 +50,8 @@ export abstract class TrainingSetUpdate
     return {
       ...nextState,
       snackbar: action.payload.response.success
-        ? new SuccessSnackbar('Successfully updated training set')
-        : new ErrorSnackbar('There was an error updating training set'),
+        ? new SuccessSnackbar('Successfully removed training set')
+        : new ErrorSnackbar('There was an error creating training set'),
       is: {
         ...nextState.is,
         processingTrainingSet: false,

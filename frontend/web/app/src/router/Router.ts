@@ -28,9 +28,6 @@ export const Router = new (class {
     create = new (class {
       URI = () => `${Router.training.URI()}/create`;
     })();
-    list = new (class {
-      URI = () => `${Router.training.URI()}/list`;
-    })();
     detail = new (class {
       params = new (class {
         trainingId?: string;
@@ -42,9 +39,6 @@ export const Router = new (class {
       URI = () => `${Router.training.URI()}/set`;
       create = new (class {
         URI = () => `${Router.training.trainingSet.URI()}/create`;
-      })();
-      list = new (class {
-        URI = () => `${Router.training.trainingSet.URI()}/list`;
       })();
       detail = new (class {
         params = new (class {

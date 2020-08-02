@@ -4,10 +4,11 @@ import {useDispatch, useSelector} from 'react-redux';
 import {useParams} from 'react-router-dom';
 import {Router} from '../../router/Router';
 import {WebAppState} from '../../redux/WebAppState';
-import {TrainingSetFetch} from '@byot-frontend/common/src/redux/process/training-set/TrainingSetFetch';
 import {ProcessActionExtractor} from '@byot-frontend/common/src/redux-system/process/ProcessActionExtractor';
 import {TrainingSetDetailSkeleton} from '../training/set/TrainingSetDetailSkeleton';
 import {TrainingSetDetailContent} from '../training/set/TrainingSetDetailContent';
+import {TrainingSetRemove} from '../../redux/process/training-set/TrainingSetRemove';
+import {TrainingSetFetch} from '../../redux/process/training-set/TrainingSetFetch';
 
 interface Props {}
 
@@ -18,14 +19,19 @@ export const TrainingSetDetailPage: React.FC<Props> = (props: Props) => {
     dispatch(ProcessActionExtractor.dispatch(TrainingSetFetch, {id: trainingSetId}));
   }, [trainingSetId, dispatch]);
   const trainingSet = useSelector((state: WebAppState) => state.trainingSetDetail);
-  const onRemove = () => {};
+  const onRemove = () => dispatch(ProcessActionExtractor.dispatch(TrainingSetRemove, {id: trainingSetId}));
+  const isRemoving = useSelector((state: WebAppState) => state.is.processingTrainingSet);
 
   return (
     <ControlPanelMainContent>
       {trainingSet.isProcessing || !trainingSet.hasData ? (
         <TrainingSetDetailSkeleton />
       ) : (
-        <TrainingSetDetailContent trainingSet={trainingSet.data} onRemove={onRemove} />
+        <TrainingSetDetailContent
+          trainingSet={trainingSet.data}
+          onRemove={onRemove}
+          isRemoving={isRemoving}
+        />
       )}
     </ControlPanelMainContent>
   );

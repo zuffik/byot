@@ -1,4 +1,4 @@
-import {TrainingSetFetch, Request, Response} from './TrainingSetFetch';
+import {TrainingSetBaseFetch, Request, Response} from './TrainingSetBaseFetch';
 import {Action} from 'typescript-fsa';
 import {ProcessActionExtractor} from '@byot-frontend/common/src/redux-system/process/ProcessActionExtractor';
 import {GraphQLResponse} from '@byot-frontend/common/src/redux-system/data-structures/responses/GraphQLResponse';
@@ -6,14 +6,14 @@ import {AsynchronousActionResponse} from '@byot-frontend/common/src/redux-system
 import {DataResponse} from '@byot-frontend/common/src/redux-system/data-structures/responses/DataResponse';
 import {FrontendCommonState} from '../../FrontendCommonState';
 
-describe('TrainingSetFetch process', () => {
-  let process: TrainingSetFetch;
+describe('TrainingSetBaseFetch process', () => {
+  let process: TrainingSetBaseFetch;
   let request: Action<Request>;
   let response: Action<AsynchronousActionResponse<Request, DataResponse<Response>>>;
 
   beforeEach(() => {
-    process = new TrainingSetFetch();
-    request = ProcessActionExtractor.dispatch(TrainingSetFetch, {id: 'id'});
+    process = new TrainingSetBaseFetch();
+    request = ProcessActionExtractor.dispatch(TrainingSetBaseFetch, {id: 'id'});
     response = ProcessActionExtractor.response(request, new GraphQLResponse());
   });
 

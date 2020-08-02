@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Grid, IconButton, makeStyles, Theme, Tooltip} from '@material-ui/core';
+import {Grid, IconButton, makeStyles, Theme, Tooltip, CircularProgress} from '@material-ui/core';
 import {DeleteRounded, EditRounded} from '@material-ui/icons';
 import {WithStyles} from '@byot-frontend/web-common/src/types/WithStyles';
 import {Link} from 'react-router-dom';
@@ -8,6 +8,7 @@ import {useTranslation} from 'react-i18next';
 export interface EditDeleteControlsProps {
   editUrl: string;
   onDeleteClick: () => void;
+  isRemoving?: boolean;
 }
 
 interface Props extends WithStyles<typeof styles>, EditDeleteControlsProps {}
@@ -41,8 +42,13 @@ export const EditDeleteControls: React.FC<Props> = (props: Props) => {
           <IconButton
             classes={{root: styles.remove}}
             onClick={props.onDeleteClick}
+            disabled={props.isRemoving}
             data-testid="app-elements-controls-remove">
-            <DeleteRounded />
+            {props.isRemoving ? (
+              <CircularProgress size={24} classes={{root: styles.remove}} />
+            ) : (
+              <DeleteRounded />
+            )}
           </IconButton>
         </Tooltip>
       </Grid>

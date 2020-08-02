@@ -30,7 +30,11 @@ export const EditConfirmDeleteControls: React.FC<Props> = (props: Props) => {
   const {t} = useTranslation();
   return (
     <>
-      <EditDeleteControls onDeleteClick={() => setOpen(true)} editUrl={props.editUrl} />
+      <EditDeleteControls
+        onDeleteClick={() => setOpen(true)}
+        editUrl={props.editUrl}
+        isRemoving={props.isRemoving}
+      />
       <Dialog open={open} onClose={() => setOpen(false)}>
         <DialogTitle>{t('Confirmation')}</DialogTitle>
         <DialogContent>

@@ -10,7 +10,7 @@ export type Request = {id: string};
 export type Response = {};
 
 @ProcessActionCreator()
-export class TrainingSetFetch implements AsynchronousAction<FrontendCommonState, Request, Response> {
+export class TrainingSetBaseFetch implements AsynchronousAction<FrontendCommonState, Request, Response> {
   *saga(action: Action<Request>, state: Readonly<FrontendCommonState>) {
     return (yield call(ApolloContext.apolloClient.query, {
       query: gql`

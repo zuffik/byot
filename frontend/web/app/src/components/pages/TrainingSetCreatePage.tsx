@@ -16,7 +16,7 @@ export const TrainingSetCreatePage: React.FC<Props> = (props: Props) => {
   const {t} = useTranslation();
   const onSave = (trainingSet: ITrainingSetInput) =>
     dispatch(ProcessActionExtractor.dispatch(TrainingSetCreate, trainingSet));
-  const isLoading = useSelector((state: WebAppState) => state.is.savingTrainingSet);
+  const isLoading = useSelector((state: WebAppState) => state.is.processingTrainingSet);
   return (
     <ControlPanelMainContent>
       <ControlPanelTitle>{t('Create training set')}</ControlPanelTitle>

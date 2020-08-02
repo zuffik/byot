@@ -8,6 +8,7 @@ Given(/^created training with name (.*)$/, originalName => {
   cy.visit(Cypress.env('PUBLIC_APP_URL') + '/training/set/create');
   cy.get('[data-testid="training-set-form-label"]').type(originalName);
   cy.get('[data-testid="training-set-form-form"] button[type="submit"]').click();
+  // todo add a few trainings
 });
 
 And(/^user visits form with this training set$/, () => {

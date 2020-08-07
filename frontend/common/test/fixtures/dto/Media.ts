@@ -8,7 +8,7 @@ export const media = (): IMedia =>
   new Media({
     id: mocker.guid(),
     createdAt: dateTime(),
-    label: mocker.sentence(),
+    label: mocker.sentence() + ' ' + mocker.url(),
     source: source(),
     updatedAt: dateTime(),
   });

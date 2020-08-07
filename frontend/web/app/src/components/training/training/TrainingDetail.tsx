@@ -9,7 +9,8 @@ import {MediaPlayerSkeleton} from '../../player/MediaPlayerSkeleton';
 import {TripleComboItemSkeletonList} from '../../list/TripleComboItemSkeletonList';
 
 interface Props extends WithStyles<typeof styles> {
-  media: IterableResource<IMedia>;
+  media: IMedia[];
+  isLoading?: boolean;
   onMediaClick: (media: IMedia) => void;
   currentMedia: IMedia;
 }
@@ -39,14 +40,14 @@ export const TrainingDetail: React.FC<Props> = (props: Props) => {
   return (
     <Grid container spacing={2} classes={{root: styles.root}}>
       <Grid item xs={12} sm={4} md={3} classes={{root: styles.list}}>
-        {props.media.isProcessing ? (
+        {props.isLoading ? (
           <TripleComboItemSkeletonList />
         ) : (
-          <MediaList onItemClick={props.onMediaClick} items={props.media.data} />
+          <MediaList onItemClick={props.onMediaClick} items={props.media} />
         )}
       </Grid>
       <Grid item xs={12} sm={8} md={9} classes={{root: styles.player}}>
-        {props.media.isProcessing ? <MediaPlayerSkeleton /> : <MediaPlayer media={props.currentMedia} />}
+        {props.isLoading ? <MediaPlayerSkeleton /> : <MediaPlayer media={props.currentMedia} />}
       </Grid>
     </Grid>
   );

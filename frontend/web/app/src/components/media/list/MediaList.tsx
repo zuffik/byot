@@ -48,12 +48,14 @@ export const MediaList: React.FC<Props> = (props: Props) => {
           items={props.items}
           onDragEnd={props.onOrderChanged}
           id="media-list"
+          data-testid="media-list"
           itemId={m => m.id! || m.source.resourceId!}
           itemComponent={Item}
           component={Container}>
           {({item}) => (
             <MediaListItem media={item} classes={{root: styles.editableItem}}>
               <ListItemSecondaryAction
+                data-testid="media-list-item-remove"
                 onClick={() => props.onRemoveMedia(item)}
                 classes={{root: styles.editableItemSecondaryAction}}>
                 <ClearRounded />

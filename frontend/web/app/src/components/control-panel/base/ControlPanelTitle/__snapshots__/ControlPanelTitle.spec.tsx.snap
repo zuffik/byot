@@ -4,6 +4,7 @@ exports[`<ControlPanelTitle/> should render 1`] = `
 <div>
   <div
     class="MuiBox-root MuiBox-root-1"
+    data-testid="app-controlPanel-title"
   >
     <h3
       class="MuiTypography-root MuiTypography-h3"

@@ -27,7 +27,7 @@ interface Props<T extends object> extends WithStyles<typeof styles>, Omit<DragDr
   itemId?: (T[keyof T] extends string | number ? keyof T : never) | ((item: T) => string);
   component?: BoxProps['component'];
   itemComponent?: BoxProps['component'];
-
+  'data-testid'?: string;
   onDragEnd: (items: T[], result: DropResult, provided: ResponderProvided) => void;
 }
 
@@ -42,7 +42,7 @@ export const DraggableList = <T extends object>(props: Props<T>) => {
 
   React.useEffect(() => {
     setId(props.id || 'id' + (Math.random() * 10 ** 10).toString().slice(0, 10));
-  }, []);
+  }, [props.id]);
 
   const reorder = (list: T[], startIndex: number, endIndex: number) => {
     const result = Array.from(list);
@@ -70,6 +70,7 @@ export const DraggableList = <T extends object>(props: Props<T>) => {
           <Box
             component={props.component}
             {...droppableProvided.droppableProps}
+            data-testid={props['data-testid']}
             // @ts-ignore
             ref={droppableProvided.innerRef}
             className={styles.wrapper}>

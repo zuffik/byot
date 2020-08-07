@@ -24,7 +24,7 @@ export class Media {
   @Column('varchar')
   public label: string;
 
-  @ManyToMany((type) => Training, (t) => t.medias)
+  @ManyToMany((type) => Training, (t) => t.medias, { onDelete: 'CASCADE' })
   public trainings: Promise<Training[]>;
 
   @CreateDateColumn({

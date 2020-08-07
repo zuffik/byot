@@ -19,14 +19,14 @@ export const TrainingSetDetailContent: React.FC<Props> = (props: Props) => {
   return (
     <>
       <EditConfirmDeleteControls
-        editUrl={Router.training.trainingSet.edit.URI({trainingSetId: props.trainingSet?.id})}
+        editUrl={Router.trainingSet.edit.URI({trainingSetId: props.trainingSet?.id})}
         onDeleteClick={props.onRemove}
         confirmationText={t('Do you really want to delete this training set?')}
         isRemoving={props.isRemoving}
       />
       <ControlPanelTitle>{props.trainingSet?.label}</ControlPanelTitle>
       <TrainingList items={props.trainingSet?.trainings.entries || []}>
-        <TrainingCreateListItem />
+        <TrainingCreateListItem trainingSetId={props.trainingSet?.id!} />
       </TrainingList>
     </>
   );

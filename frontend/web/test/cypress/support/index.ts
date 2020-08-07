@@ -15,15 +15,10 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands';
-import {login} from './commands';
+import {AddCommands} from './cmds/packs/AddCommands';
 
 declare global {
   namespace Cypress {
-    interface Chainable<Subject = any> {
-      login: typeof login;
-    }
+    interface Chainable<Subject = any> extends AddCommands {}
   }
 }
-
-// Alternatively you can use CommonJS syntax:
-// require('./commands')

@@ -38,23 +38,14 @@ describe('<TrainingForm/>', () => {
   });
   it('should edit the training', async () => {
     const onSave = jest.fn();
-    const onRemove = jest.fn();
     const tr = training();
     const {container, getByTestId} = render(
-      <TrainingForm
-        training={tr}
-        onRemove={onRemove}
-        onSave={onSave}
-        MediaProviderComponent={() => <div />}
-      />
+      <TrainingForm training={tr} onSave={onSave} MediaProviderComponent={() => <div />} />
     );
-    const removeBtn = getByTestId('training-form-button-remove');
     const form = getByTestId('training-form-form');
     const input = getByTestId('training-form-name').querySelector('input');
     expect(input).not.toBeNull();
     expect(input!.value).toEqual(tr.label);
-    fireEvent.click(removeBtn);
-    expect(onRemove).toBeCalled();
     const label = 'Training label';
     fireEvent.change(input!, {target: {value: label}});
     fireEvent.submit(form);

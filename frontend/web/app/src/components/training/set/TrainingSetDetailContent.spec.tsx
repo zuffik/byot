@@ -4,7 +4,7 @@ import {TrainingSetDetailContent} from './TrainingSetDetailContent';
 
 describe('<TrainingSetDetailContent/>', () => {
   it('should render', () => {
-    const {container} = render(<TrainingSetDetailContent />);
+    const {container} = render(<TrainingSetDetailContent onRemove={jest.fn()} />);
     expect(container).toMatchSnapshot();
   });
 });

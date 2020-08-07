@@ -10,6 +10,8 @@ import {LogoutPage} from '../pages/LogoutPage';
 import {TrainingSetCreatePage} from '../pages/TrainingSetCreatePage';
 import {TrainingSetDetailPage} from '../pages/TrainingSetDetailPage';
 import {TrainingSetEditPage} from '../pages/TrainingSetEditPage';
+import {TrainingCreatePage} from '../pages/TrainingCreatePage';
+import {TrainingDetailPage} from '../pages/TrainingDetailPage';
 
 interface Props {}
 
@@ -24,14 +26,23 @@ export const AuthorizedRouterLayout: React.FC<Props> = (props: Props) => {
         <AuthRoute exact path={Router.logout.URI()}>
           <LogoutPage />
         </AuthRoute>
-        <AuthRoute exact path={Router.training.trainingSet.create.URI()}>
+        <AuthRoute exact path={Router.trainingSet.create.URI()}>
           <TrainingSetCreatePage />
         </AuthRoute>
-        <AuthRoute exact path={Router.training.trainingSet.edit.URI()}>
+        <AuthRoute exact path={Router.trainingSet.edit.URI()}>
           <TrainingSetEditPage />
         </AuthRoute>
-        <AuthRoute exact path={Router.training.trainingSet.detail.URI()}>
+        <AuthRoute exact path={Router.trainingSet.detail.URI()}>
           <TrainingSetDetailPage />
+        </AuthRoute>
+        <AuthRoute exact path={Router.trainingSet.training.create.URI()}>
+          <TrainingCreatePage />
+        </AuthRoute>
+        <AuthRoute exact path={Router.training.edit.URI()}>
+          {/*<TrainingEditPage />*/}
+        </AuthRoute>
+        <AuthRoute exact path={Router.training.detail.URI()}>
+          <TrainingDetailPage />
         </AuthRoute>
         <Redirect to={Router.URI()} />
       </Switch>

@@ -4,7 +4,7 @@ import {TrainingCreateListItem} from './TrainingCreateListItem';
 
 describe('<TrainingCreateListItem/>', () => {
   it('should render', () => {
-    const {container} = render(<TrainingCreateListItem />);
+    const {container} = render(<TrainingCreateListItem trainingSetId="id" />);
     expect(container).toMatchSnapshot();
   });
 });

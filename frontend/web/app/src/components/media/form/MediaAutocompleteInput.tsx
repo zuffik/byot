@@ -35,6 +35,13 @@ export const MediaAutocompleteInput: React.FC<Props> = (props: Props) => {
     <Autocomplete
       options={props.media.data}
       getOptionLabel={m => m.label}
+      filterOptions={(options, state) =>
+        options.filter(
+          opt =>
+            state.getOptionLabel(opt).toLowerCase().includes(state.inputValue.toLowerCase()) ||
+            /^https?:\/\//.test(state.inputValue)
+        )
+      }
       loading={props.media.isProcessing}
       freeSolo
       id={props.id}

@@ -77,17 +77,4 @@ export class FetchTrainingSets implements AsynchronousAction<FrontendCommonState
       variables: {filter},
     })).data.allTrainingSets;
   }
-
-  handleResponse(
-    action: Action<AsynchronousActionResponse<Request, Response>>,
-    nextState: Readonly<FrontendCommonState>,
-    prevState: Readonly<FrontendCommonState>
-  ): Readonly<FrontendCommonState> {
-    return {
-      ...nextState,
-      ...(action.payload.request.filter?.reset && {
-        trainingSetListItems: new IterableResource<ITrainingSet>(),
-      }),
-    };
-  }
 }

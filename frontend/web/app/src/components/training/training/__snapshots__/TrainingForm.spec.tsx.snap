@@ -60,13 +60,13 @@ exports[`<TrainingForm/> should edit the training 1`] = `
         class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
       >
         <div
-          class="MuiGrid-root MuiBox-root MuiBox-root-40 makeStyles-wrapper-33 MuiGrid-container MuiGrid-spacing-xs-1"
+          class="MuiGrid-root MuiBox-root MuiBox-root-39 makeStyles-wrapper-33 MuiGrid-container MuiGrid-spacing-xs-1"
           data-rbd-droppable-context-id="2"
           data-rbd-droppable-id="media-list"
         >
           <div
             aria-describedby="rbd-hidden-text-2-hidden-text-4"
-            class="MuiGrid-root MuiBox-root MuiBox-root-347 MuiGrid-item MuiGrid-grid-xs-12"
+            class="MuiGrid-root MuiBox-root MuiBox-root-346 MuiGrid-item MuiGrid-grid-xs-12"
             data-rbd-drag-handle-context-id="2"
             data-rbd-drag-handle-draggable-id="d7a11f43-9157-5859-80f8-4c1fbdb8d78f"
             data-rbd-draggable-context-id="2"
@@ -79,17 +79,17 @@ exports[`<TrainingForm/> should edit the training 1`] = `
               class="MuiListItem-container"
             >
               <div
-                class="MuiBox-root MuiBox-root-351 MuiListItem-root makeStyles-root-42 makeStyles-editableItem-30 MuiListItem-gutters MuiListItem-alignItemsFlexStart MuiListItem-secondaryAction makeStyles-root-50"
+                class="MuiBox-root MuiBox-root-350 MuiListItem-root makeStyles-root-41 makeStyles-editableItem-30 MuiListItem-gutters MuiListItem-alignItemsFlexStart MuiListItem-secondaryAction makeStyles-root-49"
                 data-testid="media-list-item"
               >
                 <div
-                  class="makeStyles-image-44 makeStyles-image-348"
+                  class="makeStyles-image-43 makeStyles-image-347"
                 />
                 <div
-                  class="MuiListItemText-root makeStyles-textRoot-46 makeStyles-textRoot-350"
+                  class="MuiListItemText-root makeStyles-textRoot-45 makeStyles-textRoot-349"
                 >
                   <div
-                    class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-45 makeStyles-primaryText-349 MuiTypography-body1 MuiTypography-displayBlock"
+                    class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-44 makeStyles-primaryText-348 MuiTypography-body1 MuiTypography-displayBlock"
                     data-testid="triple-combo-item-text-primary"
                   >
                     Cuh wit janufizo usa hi mafob ebma giskoupe zol eg demjo cef mo erdeko cudpiv.
@@ -114,7 +114,7 @@ exports[`<TrainingForm/> should edit the training 1`] = `
           </div>
           <div
             aria-describedby="rbd-hidden-text-2-hidden-text-4"
-            class="MuiGrid-root MuiBox-root MuiBox-root-352 MuiGrid-item MuiGrid-grid-xs-12"
+            class="MuiGrid-root MuiBox-root MuiBox-root-351 MuiGrid-item MuiGrid-grid-xs-12"
             data-rbd-drag-handle-context-id="2"
             data-rbd-drag-handle-draggable-id="d4afac19-e8d3-562d-bde6-1d1cac90adf5"
             data-rbd-draggable-context-id="2"
@@ -127,17 +127,17 @@ exports[`<TrainingForm/> should edit the training 1`] = `
               class="MuiListItem-container"
             >
               <div
-                class="MuiBox-root MuiBox-root-356 MuiListItem-root makeStyles-root-42 makeStyles-editableItem-30 MuiListItem-gutters MuiListItem-alignItemsFlexStart MuiListItem-secondaryAction makeStyles-root-50"
+                class="MuiBox-root MuiBox-root-355 MuiListItem-root makeStyles-root-41 makeStyles-editableItem-30 MuiListItem-gutters MuiListItem-alignItemsFlexStart MuiListItem-secondaryAction makeStyles-root-49"
                 data-testid="media-list-item"
               >
                 <div
-                  class="makeStyles-image-44 makeStyles-image-353"
+                  class="makeStyles-image-43 makeStyles-image-352"
                 />
                 <div
-                  class="MuiListItemText-root makeStyles-textRoot-46 makeStyles-textRoot-355"
+                  class="MuiListItemText-root makeStyles-textRoot-45 makeStyles-textRoot-354"
                 >
                   <div
-                    class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-45 makeStyles-primaryText-354 MuiTypography-body1 MuiTypography-displayBlock"
+                    class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-44 makeStyles-primaryText-353 MuiTypography-body1 MuiTypography-displayBlock"
                     data-testid="triple-combo-item-text-primary"
                   >
                     Oke kad iku ez ime kuere cigom luze zakef ac aconki kekefjud voswulun kepdub optiowa.
@@ -162,7 +162,7 @@ exports[`<TrainingForm/> should edit the training 1`] = `
           </div>
           <div
             aria-describedby="rbd-hidden-text-2-hidden-text-4"
-            class="MuiGrid-root MuiBox-root MuiBox-root-357 MuiGrid-item MuiGrid-grid-xs-12"
+            class="MuiGrid-root MuiBox-root MuiBox-root-356 MuiGrid-item MuiGrid-grid-xs-12"
             data-rbd-drag-handle-context-id="2"
             data-rbd-drag-handle-draggable-id="bde96481-f7db-5f20-8b2c-86dcee377e54"
             data-rbd-draggable-context-id="2"
@@ -175,17 +175,17 @@ exports[`<TrainingForm/> should edit the training 1`] = `
               class="MuiListItem-container"
             >
               <div
-                class="MuiBox-root MuiBox-root-361 MuiListItem-root makeStyles-root-42 makeStyles-editableItem-30 MuiListItem-gutters MuiListItem-alignItemsFlexStart MuiListItem-secondaryAction makeStyles-root-50"
+                class="MuiBox-root MuiBox-root-360 MuiListItem-root makeStyles-root-41 makeStyles-editableItem-30 MuiListItem-gutters MuiListItem-alignItemsFlexStart MuiListItem-secondaryAction makeStyles-root-49"
                 data-testid="media-list-item"
               >
                 <div
-                  class="makeStyles-image-44 makeStyles-image-358"
+                  class="makeStyles-image-43 makeStyles-image-357"
                 />
                 <div
-                  class="MuiListItemText-root makeStyles-textRoot-46 makeStyles-textRoot-360"
+                  class="MuiListItemText-root makeStyles-textRoot-45 makeStyles-textRoot-359"
                 >
                   <div
-                    class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-45 makeStyles-primaryText-359 MuiTypography-body1 MuiTypography-displayBlock"
+                    class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-44 makeStyles-primaryText-358 MuiTypography-body1 MuiTypography-displayBlock"
                     data-testid="triple-combo-item-text-primary"
                   >
                     Vejelav ki rem reput fih buwolah jek locohgiz setoeta unitez tafuzemo ras roru ri kadav mezwap.
@@ -210,7 +210,7 @@ exports[`<TrainingForm/> should edit the training 1`] = `
           </div>
           <div
             aria-describedby="rbd-hidden-text-2-hidden-text-4"
-            class="MuiGrid-root MuiBox-root MuiBox-root-362 MuiGrid-item MuiGrid-grid-xs-12"
+            class="MuiGrid-root MuiBox-root MuiBox-root-361 MuiGrid-item MuiGrid-grid-xs-12"
             data-rbd-drag-handle-context-id="2"
             data-rbd-drag-handle-draggable-id="1e974d9a-41c9-50a0-a2b7-e56c24c5a433"
             data-rbd-draggable-context-id="2"
@@ -223,17 +223,17 @@ exports[`<TrainingForm/> should edit the training 1`] = `
               class="MuiListItem-container"
             >
               <div
-                class="MuiBox-root MuiBox-root-366 MuiListItem-root makeStyles-root-42 makeStyles-editableItem-30 MuiListItem-gutters MuiListItem-alignItemsFlexStart MuiListItem-secondaryAction makeStyles-root-50"
+                class="MuiBox-root MuiBox-root-365 MuiListItem-root makeStyles-root-41 makeStyles-editableItem-30 MuiListItem-gutters MuiListItem-alignItemsFlexStart MuiListItem-secondaryAction makeStyles-root-49"
                 data-testid="media-list-item"
               >
                 <div
-                  class="makeStyles-image-44 makeStyles-image-363"
+                  class="makeStyles-image-43 makeStyles-image-362"
                 />
                 <div
-                  class="MuiListItemText-root makeStyles-textRoot-46 makeStyles-textRoot-365"
+                  class="MuiListItemText-root makeStyles-textRoot-45 makeStyles-textRoot-364"
                 >
                   <div
-                    class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-45 makeStyles-primaryText-364 MuiTypography-body1 MuiTypography-displayBlock"
+                    class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-44 makeStyles-primaryText-363 MuiTypography-body1 MuiTypography-displayBlock"
                     data-testid="triple-combo-item-text-primary"
                   >
                     Kozbuno lipolam we ovopu mofasmev ruci modkurne he tifufig em jucjana ka ow bago rombadki hidoc.
@@ -258,7 +258,7 @@ exports[`<TrainingForm/> should edit the training 1`] = `
           </div>
           <div
             aria-describedby="rbd-hidden-text-2-hidden-text-4"
-            class="MuiGrid-root MuiBox-root MuiBox-root-367 MuiGrid-item MuiGrid-grid-xs-12"
+            class="MuiGrid-root MuiBox-root MuiBox-root-366 MuiGrid-item MuiGrid-grid-xs-12"
             data-rbd-drag-handle-context-id="2"
             data-rbd-drag-handle-draggable-id="2e56e1fd-02d3-5726-a5eb-5a761b2d80d0"
             data-rbd-draggable-context-id="2"
@@ -271,17 +271,17 @@ exports[`<TrainingForm/> should edit the training 1`] = `
               class="MuiListItem-container"
             >
               <div
-                class="MuiBox-root MuiBox-root-371 MuiListItem-root makeStyles-root-42 makeStyles-editableItem-30 MuiListItem-gutters MuiListItem-alignItemsFlexStart MuiListItem-secondaryAction makeStyles-root-50"
+                class="MuiBox-root MuiBox-root-370 MuiListItem-root makeStyles-root-41 makeStyles-editableItem-30 MuiListItem-gutters MuiListItem-alignItemsFlexStart MuiListItem-secondaryAction makeStyles-root-49"
                 data-testid="media-list-item"
               >
                 <div
-                  class="makeStyles-image-44 makeStyles-image-368"
+                  class="makeStyles-image-43 makeStyles-image-367"
                 />
                 <div
-                  class="MuiListItemText-root makeStyles-textRoot-46 makeStyles-textRoot-370"
+                  class="MuiListItemText-root makeStyles-textRoot-45 makeStyles-textRoot-369"
                 >
                   <div
-                    class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-45 makeStyles-primaryText-369 MuiTypography-body1 MuiTypography-displayBlock"
+                    class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-44 makeStyles-primaryText-368 MuiTypography-body1 MuiTypography-displayBlock"
                     data-testid="triple-combo-item-text-primary"
                   >
                     Hikpeuku wez vojsuf hatu mejci wujuvuz kados ufa rutaw nid madbik canida ritne kug jorwi hiwagna nomgitab jadu.
@@ -306,7 +306,7 @@ exports[`<TrainingForm/> should edit the training 1`] = `
           </div>
           <div
             aria-describedby="rbd-hidden-text-2-hidden-text-4"
-            class="MuiGrid-root MuiBox-root MuiBox-root-372 MuiGrid-item MuiGrid-grid-xs-12"
+            class="MuiGrid-root MuiBox-root MuiBox-root-371 MuiGrid-item MuiGrid-grid-xs-12"
             data-rbd-drag-handle-context-id="2"
             data-rbd-drag-handle-draggable-id="9205d8f1-b10d-5526-916d-613e53c8386e"
             data-rbd-draggable-context-id="2"
@@ -319,17 +319,17 @@ exports[`<TrainingForm/> should edit the training 1`] = `
               class="MuiListItem-container"
             >
               <div
-                class="MuiBox-root MuiBox-root-376 MuiListItem-root makeStyles-root-42 makeStyles-editableItem-30 MuiListItem-gutters MuiListItem-alignItemsFlexStart MuiListItem-secondaryAction makeStyles-root-50"
+                class="MuiBox-root MuiBox-root-375 MuiListItem-root makeStyles-root-41 makeStyles-editableItem-30 MuiListItem-gutters MuiListItem-alignItemsFlexStart MuiListItem-secondaryAction makeStyles-root-49"
                 data-testid="media-list-item"
               >
                 <div
-                  class="makeStyles-image-44 makeStyles-image-373"
+                  class="makeStyles-image-43 makeStyles-image-372"
                 />
                 <div
-                  class="MuiListItemText-root makeStyles-textRoot-46 makeStyles-textRoot-375"
+                  class="MuiListItemText-root makeStyles-textRoot-45 makeStyles-textRoot-374"
                 >
                   <div
-                    class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-45 makeStyles-primaryText-374 MuiTypography-body1 MuiTypography-displayBlock"
+                    class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-44 makeStyles-primaryText-373 MuiTypography-body1 MuiTypography-displayBlock"
                     data-testid="triple-combo-item-text-primary"
                   >
                     Biflo icbiil zapiw ugipo duwfo du bac canpanzav ico cuvaksos era be keopi.
@@ -354,7 +354,7 @@ exports[`<TrainingForm/> should edit the training 1`] = `
           </div>
           <div
             aria-describedby="rbd-hidden-text-2-hidden-text-4"
-            class="MuiGrid-root MuiBox-root MuiBox-root-377 MuiGrid-item MuiGrid-grid-xs-12"
+            class="MuiGrid-root MuiBox-root MuiBox-root-376 MuiGrid-item MuiGrid-grid-xs-12"
             data-rbd-drag-handle-context-id="2"
             data-rbd-drag-handle-draggable-id="91ac0cbd-b502-52bc-a03f-f0e22f240930"
             data-rbd-draggable-context-id="2"
@@ -367,17 +367,17 @@ exports[`<TrainingForm/> should edit the training 1`] = `
               class="MuiListItem-container"
             >
               <div
-                class="MuiBox-root MuiBox-root-381 MuiListItem-root makeStyles-root-42 makeStyles-editableItem-30 MuiListItem-gutters MuiListItem-alignItemsFlexStart MuiListItem-secondaryAction makeStyles-root-50"
+                class="MuiBox-root MuiBox-root-380 MuiListItem-root makeStyles-root-41 makeStyles-editableItem-30 MuiListItem-gutters MuiListItem-alignItemsFlexStart MuiListItem-secondaryAction makeStyles-root-49"
                 data-testid="media-list-item"
               >
                 <div
-                  class="makeStyles-image-44 makeStyles-image-378"
+                  class="makeStyles-image-43 makeStyles-image-377"
                 />
                 <div
-                  class="MuiListItemText-root makeStyles-textRoot-46 makeStyles-textRoot-380"
+                  class="MuiListItemText-root makeStyles-textRoot-45 makeStyles-textRoot-379"
                 >
                   <div
-                    class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-45 makeStyles-primaryText-379 MuiTypography-body1 MuiTypography-displayBlock"
+                    class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-44 makeStyles-primaryText-378 MuiTypography-body1 MuiTypography-displayBlock"
                     data-testid="triple-combo-item-text-primary"
                   >
                     Ev viglurupi sogdag pewo piec jel sihil im hisrok he joziha suikefu mewo fiw azecejiho sosoar.
@@ -402,7 +402,7 @@ exports[`<TrainingForm/> should edit the training 1`] = `
           </div>
           <div
             aria-describedby="rbd-hidden-text-2-hidden-text-4"
-            class="MuiGrid-root MuiBox-root MuiBox-root-382 MuiGrid-item MuiGrid-grid-xs-12"
+            class="MuiGrid-root MuiBox-root MuiBox-root-381 MuiGrid-item MuiGrid-grid-xs-12"
             data-rbd-drag-handle-context-id="2"
             data-rbd-drag-handle-draggable-id="af5ff21a-4ccd-5332-b1e8-86bc89dacd2c"
             data-rbd-draggable-context-id="2"
@@ -415,17 +415,17 @@ exports[`<TrainingForm/> should edit the training 1`] = `
               class="MuiListItem-container"
             >
               <div
-                class="MuiBox-root MuiBox-root-386 MuiListItem-root makeStyles-root-42 makeStyles-editableItem-30 MuiListItem-gutters MuiListItem-alignItemsFlexStart MuiListItem-secondaryAction makeStyles-root-50"
+                class="MuiBox-root MuiBox-root-385 MuiListItem-root makeStyles-root-41 makeStyles-editableItem-30 MuiListItem-gutters MuiListItem-alignItemsFlexStart MuiListItem-secondaryAction makeStyles-root-49"
                 data-testid="media-list-item"
               >
                 <div
-                  class="makeStyles-image-44 makeStyles-image-383"
+                  class="makeStyles-image-43 makeStyles-image-382"
                 />
                 <div
-                  class="MuiListItemText-root makeStyles-textRoot-46 makeStyles-textRoot-385"
+                  class="MuiListItemText-root makeStyles-textRoot-45 makeStyles-textRoot-384"
                 >
                   <div
-                    class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-45 makeStyles-primaryText-384 MuiTypography-body1 MuiTypography-displayBlock"
+                    class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-44 makeStyles-primaryText-383 MuiTypography-body1 MuiTypography-displayBlock"
                     data-testid="triple-combo-item-text-primary"
                   >
                     Zemore kitop ucvewa de lamhekab hag ila ilulifnu udowep fepusbuh jeef lonjupif ve ho.
@@ -450,7 +450,7 @@ exports[`<TrainingForm/> should edit the training 1`] = `
           </div>
           <div
             aria-describedby="rbd-hidden-text-2-hidden-text-4"
-            class="MuiGrid-root MuiBox-root MuiBox-root-387 MuiGrid-item MuiGrid-grid-xs-12"
+            class="MuiGrid-root MuiBox-root MuiBox-root-386 MuiGrid-item MuiGrid-grid-xs-12"
             data-rbd-drag-handle-context-id="2"
             data-rbd-drag-handle-draggable-id="18b39488-1855-53a4-b840-db4409b11e6c"
             data-rbd-draggable-context-id="2"
@@ -463,17 +463,17 @@ exports[`<TrainingForm/> should edit the training 1`] = `
               class="MuiListItem-container"
             >
               <div
-                class="MuiBox-root MuiBox-root-391 MuiListItem-root makeStyles-root-42 makeStyles-editableItem-30 MuiListItem-gutters MuiListItem-alignItemsFlexStart MuiListItem-secondaryAction makeStyles-root-50"
+                class="MuiBox-root MuiBox-root-390 MuiListItem-root makeStyles-root-41 makeStyles-editableItem-30 MuiListItem-gutters MuiListItem-alignItemsFlexStart MuiListItem-secondaryAction makeStyles-root-49"
                 data-testid="media-list-item"
               >
                 <div
-                  class="makeStyles-image-44 makeStyles-image-388"
+                  class="makeStyles-image-43 makeStyles-image-387"
                 />
                 <div
-                  class="MuiListItemText-root makeStyles-textRoot-46 makeStyles-textRoot-390"
+                  class="MuiListItemText-root makeStyles-textRoot-45 makeStyles-textRoot-389"
                 >
                   <div
-                    class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-45 makeStyles-primaryText-389 MuiTypography-body1 MuiTypography-displayBlock"
+                    class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-44 makeStyles-primaryText-388 MuiTypography-body1 MuiTypography-displayBlock"
                     data-testid="triple-combo-item-text-primary"
                   >
                     Ge so azebewo jocufci nise ci pi go mom poozgu anluduh tanfotumo dak lo ucu vamed.
@@ -498,7 +498,7 @@ exports[`<TrainingForm/> should edit the training 1`] = `
           </div>
           <div
             aria-describedby="rbd-hidden-text-2-hidden-text-4"
-            class="MuiGrid-root MuiBox-root MuiBox-root-392 MuiGrid-item MuiGrid-grid-xs-12"
+            class="MuiGrid-root MuiBox-root MuiBox-root-391 MuiGrid-item MuiGrid-grid-xs-12"
             data-rbd-drag-handle-context-id="2"
             data-rbd-drag-handle-draggable-id="e4609281-fb81-5a5b-9cb7-b62c86d76de5"
             data-rbd-draggable-context-id="2"
@@ -511,17 +511,17 @@ exports[`<TrainingForm/> should edit the training 1`] = `
               class="MuiListItem-container"
             >
               <div
-                class="MuiBox-root MuiBox-root-396 MuiListItem-root makeStyles-root-42 makeStyles-editableItem-30 MuiListItem-gutters MuiListItem-alignItemsFlexStart MuiListItem-secondaryAction makeStyles-root-50"
+                class="MuiBox-root MuiBox-root-395 MuiListItem-root makeStyles-root-41 makeStyles-editableItem-30 MuiListItem-gutters MuiListItem-alignItemsFlexStart MuiListItem-secondaryAction makeStyles-root-49"
                 data-testid="media-list-item"
               >
                 <div
-                  class="makeStyles-image-44 makeStyles-image-393"
+                  class="makeStyles-image-43 makeStyles-image-392"
                 />
                 <div
-                  class="MuiListItemText-root makeStyles-textRoot-46 makeStyles-textRoot-395"
+                  class="MuiListItemText-root makeStyles-textRoot-45 makeStyles-textRoot-394"
                 >
                   <div
-                    class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-45 makeStyles-primaryText-394 MuiTypography-body1 MuiTypography-displayBlock"
+                    class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-44 makeStyles-primaryText-393 MuiTypography-body1 MuiTypography-displayBlock"
                     data-testid="triple-combo-item-text-primary"
                   >
                     Ripiv pusdouk na zugi ji golve vignod fah ilo sufka ov osa cek zo.
@@ -546,7 +546,7 @@ exports[`<TrainingForm/> should edit the training 1`] = `
           </div>
           <div
             aria-describedby="rbd-hidden-text-2-hidden-text-4"
-            class="MuiGrid-root MuiBox-root MuiBox-root-397 MuiGrid-item MuiGrid-grid-xs-12"
+            class="MuiGrid-root MuiBox-root MuiBox-root-396 MuiGrid-item MuiGrid-grid-xs-12"
             data-rbd-drag-handle-context-id="2"
             data-rbd-drag-handle-draggable-id="006bbe9b-bfb0-594a-a833-9800997ae493"
             data-rbd-draggable-context-id="2"
@@ -559,17 +559,17 @@ exports[`<TrainingForm/> should edit the training 1`] = `
               class="MuiListItem-container"
             >
               <div
-                class="MuiBox-root MuiBox-root-401 MuiListItem-root makeStyles-root-42 makeStyles-editableItem-30 MuiListItem-gutters MuiListItem-alignItemsFlexStart MuiListItem-secondaryAction makeStyles-root-50"
+                class="MuiBox-root MuiBox-root-400 MuiListItem-root makeStyles-root-41 makeStyles-editableItem-30 MuiListItem-gutters MuiListItem-alignItemsFlexStart MuiListItem-secondaryAction makeStyles-root-49"
                 data-testid="media-list-item"
               >
                 <div
-                  class="makeStyles-image-44 makeStyles-image-398"
+                  class="makeStyles-image-43 makeStyles-image-397"
                 />
                 <div
-                  class="MuiListItemText-root makeStyles-textRoot-46 makeStyles-textRoot-400"
+                  class="MuiListItemText-root makeStyles-textRoot-45 makeStyles-textRoot-399"
                 >
                   <div
-                    class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-45 makeStyles-primaryText-399 MuiTypography-body1 MuiTypography-displayBlock"
+                    class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-44 makeStyles-primaryText-398 MuiTypography-body1 MuiTypography-displayBlock"
                     data-testid="triple-combo-item-text-primary"
                   >
                     Becakanij nepav tud fokrigso hatuzeesa jeliw ifkor da wicualo gerbu ike liginjup ikpabdec ci ijovuroz ka suculev.
@@ -594,7 +594,7 @@ exports[`<TrainingForm/> should edit the training 1`] = `
           </div>
           <div
             aria-describedby="rbd-hidden-text-2-hidden-text-4"
-            class="MuiGrid-root MuiBox-root MuiBox-root-402 MuiGrid-item MuiGrid-grid-xs-12"
+            class="MuiGrid-root MuiBox-root MuiBox-root-401 MuiGrid-item MuiGrid-grid-xs-12"
             data-rbd-drag-handle-context-id="2"
             data-rbd-drag-handle-draggable-id="0c518a68-ab4d-5e67-97dd-c7afb098c415"
             data-rbd-draggable-context-id="2"
@@ -607,17 +607,17 @@ exports[`<TrainingForm/> should edit the training 1`] = `
               class="MuiListItem-container"
             >
               <div
-                class="MuiBox-root MuiBox-root-406 MuiListItem-root makeStyles-root-42 makeStyles-editableItem-30 MuiListItem-gutters MuiListItem-alignItemsFlexStart MuiListItem-secondaryAction makeStyles-root-50"
+                class="MuiBox-root MuiBox-root-405 MuiListItem-root makeStyles-root-41 makeStyles-editableItem-30 MuiListItem-gutters MuiListItem-alignItemsFlexStart MuiListItem-secondaryAction makeStyles-root-49"
                 data-testid="media-list-item"
               >
                 <div
-                  class="makeStyles-image-44 makeStyles-image-403"
+                  class="makeStyles-image-43 makeStyles-image-402"
                 />
                 <div
-                  class="MuiListItemText-root makeStyles-textRoot-46 makeStyles-textRoot-405"
+                  class="MuiListItemText-root makeStyles-textRoot-45 makeStyles-textRoot-404"
                 >
                   <div
-                    class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-45 makeStyles-primaryText-404 MuiTypography-body1 MuiTypography-displayBlock"
+                    class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-44 makeStyles-primaryText-403 MuiTypography-body1 MuiTypography-displayBlock"
                     data-testid="triple-combo-item-text-primary"
                   >
                     Izuesetu munuviw onozon dafadcac gusugid izajolec fonil buunho tihdinho buksak hudfunler ub matvait sukucul ez atifi sig gi.
@@ -642,7 +642,7 @@ exports[`<TrainingForm/> should edit the training 1`] = `
           </div>
           <div
             aria-describedby="rbd-hidden-text-2-hidden-text-4"
-            class="MuiGrid-root MuiBox-root MuiBox-root-407 MuiGrid-item MuiGrid-grid-xs-12"
+            class="MuiGrid-root MuiBox-root MuiBox-root-406 MuiGrid-item MuiGrid-grid-xs-12"
             data-rbd-drag-handle-context-id="2"
             data-rbd-drag-handle-draggable-id="ae90b9f0-638d-58df-9199-41599fea4b4b"
             data-rbd-draggable-context-id="2"
@@ -655,17 +655,17 @@ exports[`<TrainingForm/> should edit the training 1`] = `
               class="MuiListItem-container"
             >
               <div
-                class="MuiBox-root MuiBox-root-411 MuiListItem-root makeStyles-root-42 makeStyles-editableItem-30 MuiListItem-gutters MuiListItem-alignItemsFlexStart MuiListItem-secondaryAction makeStyles-root-50"
+                class="MuiBox-root MuiBox-root-410 MuiListItem-root makeStyles-root-41 makeStyles-editableItem-30 MuiListItem-gutters MuiListItem-alignItemsFlexStart MuiListItem-secondaryAction makeStyles-root-49"
                 data-testid="media-list-item"
               >
                 <div
-                  class="makeStyles-image-44 makeStyles-image-408"
+                  class="makeStyles-image-43 makeStyles-image-407"
                 />
                 <div
-                  class="MuiListItemText-root makeStyles-textRoot-46 makeStyles-textRoot-410"
+                  class="MuiListItemText-root makeStyles-textRoot-45 makeStyles-textRoot-409"
                 >
                   <div
-                    class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-45 makeStyles-primaryText-409 MuiTypography-body1 MuiTypography-displayBlock"
+                    class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-44 makeStyles-primaryText-408 MuiTypography-body1 MuiTypography-displayBlock"
                     data-testid="triple-combo-item-text-primary"
                   >
                     Fo je ke nupri nidijpoj fesbokso bog mogolu as gabzas ohju tavruni fomdeeb.
@@ -690,7 +690,7 @@ exports[`<TrainingForm/> should edit the training 1`] = `
           </div>
           <div
             aria-describedby="rbd-hidden-text-2-hidden-text-4"
-            class="MuiGrid-root MuiBox-root MuiBox-root-412 MuiGrid-item MuiGrid-grid-xs-12"
+            class="MuiGrid-root MuiBox-root MuiBox-root-411 MuiGrid-item MuiGrid-grid-xs-12"
             data-rbd-drag-handle-context-id="2"
             data-rbd-drag-handle-draggable-id="d29fa95b-18c6-55b4-ab95-8b7d74a644b9"
             data-rbd-draggable-context-id="2"
@@ -703,17 +703,17 @@ exports[`<TrainingForm/> should edit the training 1`] = `
               class="MuiListItem-container"
             >
               <div
-                class="MuiBox-root MuiBox-root-416 MuiListItem-root makeStyles-root-42 makeStyles-editableItem-30 MuiListItem-gutters MuiListItem-alignItemsFlexStart MuiListItem-secondaryAction makeStyles-root-50"
+                class="MuiBox-root MuiBox-root-415 MuiListItem-root makeStyles-root-41 makeStyles-editableItem-30 MuiListItem-gutters MuiListItem-alignItemsFlexStart MuiListItem-secondaryAction makeStyles-root-49"
                 data-testid="media-list-item"
               >
                 <div
-                  class="makeStyles-image-44 makeStyles-image-413"
+                  class="makeStyles-image-43 makeStyles-image-412"
                 />
                 <div
-                  class="MuiListItemText-root makeStyles-textRoot-46 makeStyles-textRoot-415"
+                  class="MuiListItemText-root makeStyles-textRoot-45 makeStyles-textRoot-414"
                 >
                   <div
-                    class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-45 makeStyles-primaryText-414 MuiTypography-body1 MuiTypography-displayBlock"
+                    class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-44 makeStyles-primaryText-413 MuiTypography-body1 MuiTypography-displayBlock"
                     data-testid="triple-combo-item-text-primary"
                   >
                     Nemefu gi ta aci guewocuz cuz ba ah ilgufim irli vo kejzi idde visevatak ju su.
@@ -738,7 +738,7 @@ exports[`<TrainingForm/> should edit the training 1`] = `
           </div>
           <div
             aria-describedby="rbd-hidden-text-2-hidden-text-4"
-            class="MuiGrid-root MuiBox-root MuiBox-root-417 MuiGrid-item MuiGrid-grid-xs-12"
+            class="MuiGrid-root MuiBox-root MuiBox-root-416 MuiGrid-item MuiGrid-grid-xs-12"
             data-rbd-drag-handle-context-id="2"
             data-rbd-drag-handle-draggable-id="0c9fbb51-635b-54e2-b9ef-42717bddd33e"
             data-rbd-draggable-context-id="2"
@@ -751,17 +751,17 @@ exports[`<TrainingForm/> should edit the training 1`] = `
               class="MuiListItem-container"
             >
               <div
-                class="MuiBox-root MuiBox-root-421 MuiListItem-root makeStyles-root-42 makeStyles-editableItem-30 MuiListItem-gutters MuiListItem-alignItemsFlexStart MuiListItem-secondaryAction makeStyles-root-50"
+                class="MuiBox-root MuiBox-root-420 MuiListItem-root makeStyles-root-41 makeStyles-editableItem-30 MuiListItem-gutters MuiListItem-alignItemsFlexStart MuiListItem-secondaryAction makeStyles-root-49"
                 data-testid="media-list-item"
               >
                 <div
-                  class="makeStyles-image-44 makeStyles-image-418"
+                  class="makeStyles-image-43 makeStyles-image-417"
                 />
                 <div
-                  class="MuiListItemText-root makeStyles-textRoot-46 makeStyles-textRoot-420"
+                  class="MuiListItemText-root makeStyles-textRoot-45 makeStyles-textRoot-419"
                 >
                   <div
-                    class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-45 makeStyles-primaryText-419 MuiTypography-body1 MuiTypography-displayBlock"
+                    class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-44 makeStyles-primaryText-418 MuiTypography-body1 MuiTypography-displayBlock"
                     data-testid="triple-combo-item-text-primary"
                   >
                     Ho ubababe pefuw do ralanra nepcogoz dalviku gidasir ilhe ter valih mug jop sop sawucva sag oz lilzulbad.
@@ -786,7 +786,7 @@ exports[`<TrainingForm/> should edit the training 1`] = `
           </div>
           <div
             aria-describedby="rbd-hidden-text-2-hidden-text-4"
-            class="MuiGrid-root MuiBox-root MuiBox-root-422 MuiGrid-item MuiGrid-grid-xs-12"
+            class="MuiGrid-root MuiBox-root MuiBox-root-421 MuiGrid-item MuiGrid-grid-xs-12"
             data-rbd-drag-handle-context-id="2"
             data-rbd-drag-handle-draggable-id="3d308cf8-bc64-5a5a-8609-155c8bd73a0d"
             data-rbd-draggable-context-id="2"
@@ -799,17 +799,17 @@ exports[`<TrainingForm/> should edit the training 1`] = `
               class="MuiListItem-container"
             >
               <div
-                class="MuiBox-root MuiBox-root-426 MuiListItem-root makeStyles-root-42 makeStyles-editableItem-30 MuiListItem-gutters MuiListItem-alignItemsFlexStart MuiListItem-secondaryAction makeStyles-root-50"
+                class="MuiBox-root MuiBox-root-425 MuiListItem-root makeStyles-root-41 makeStyles-editableItem-30 MuiListItem-gutters MuiListItem-alignItemsFlexStart MuiListItem-secondaryAction makeStyles-root-49"
                 data-testid="media-list-item"
               >
                 <div
-                  class="makeStyles-image-44 makeStyles-image-423"
+                  class="makeStyles-image-43 makeStyles-image-422"
                 />
                 <div
-                  class="MuiListItemText-root makeStyles-textRoot-46 makeStyles-textRoot-425"
+                  class="MuiListItemText-root makeStyles-textRoot-45 makeStyles-textRoot-424"
                 >
                   <div
-                    class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-45 makeStyles-primaryText-424 MuiTypography-body1 MuiTypography-displayBlock"
+                    class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-44 makeStyles-primaryText-423 MuiTypography-body1 MuiTypography-displayBlock"
                     data-testid="triple-combo-item-text-primary"
                   >
                     Muverisar ala for hapkav duppido humhi mudzo fadjugku nuwsik mi cebma en jirlemih vaudman cunwaka baparpis sa nobal.
@@ -834,7 +834,7 @@ exports[`<TrainingForm/> should edit the training 1`] = `
           </div>
           <div
             aria-describedby="rbd-hidden-text-2-hidden-text-4"
-            class="MuiGrid-root MuiBox-root MuiBox-root-427 MuiGrid-item MuiGrid-grid-xs-12"
+            class="MuiGrid-root MuiBox-root MuiBox-root-426 MuiGrid-item MuiGrid-grid-xs-12"
             data-rbd-drag-handle-context-id="2"
             data-rbd-drag-handle-draggable-id="39bb6138-a6cb-50db-bf51-6429a68795f3"
             data-rbd-draggable-context-id="2"
@@ -847,17 +847,17 @@ exports[`<TrainingForm/> should edit the training 1`] = `
               class="MuiListItem-container"
             >
               <div
-                class="MuiBox-root MuiBox-root-431 MuiListItem-root makeStyles-root-42 makeStyles-editableItem-30 MuiListItem-gutters MuiListItem-alignItemsFlexStart MuiListItem-secondaryAction makeStyles-root-50"
+                class="MuiBox-root MuiBox-root-430 MuiListItem-root makeStyles-root-41 makeStyles-editableItem-30 MuiListItem-gutters MuiListItem-alignItemsFlexStart MuiListItem-secondaryAction makeStyles-root-49"
                 data-testid="media-list-item"
               >
                 <div
-                  class="makeStyles-image-44 makeStyles-image-428"
+                  class="makeStyles-image-43 makeStyles-image-427"
                 />
                 <div
-                  class="MuiListItemText-root makeStyles-textRoot-46 makeStyles-textRoot-430"
+                  class="MuiListItemText-root makeStyles-textRoot-45 makeStyles-textRoot-429"
                 >
                   <div
-                    class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-45 makeStyles-primaryText-429 MuiTypography-body1 MuiTypography-displayBlock"
+                    class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-44 makeStyles-primaryText-428 MuiTypography-body1 MuiTypography-displayBlock"
                     data-testid="triple-combo-item-text-primary"
                   >
                     Nowbok si ja gewguh zofep oha pohij diso sakoho lip jir benbes.
@@ -882,7 +882,7 @@ exports[`<TrainingForm/> should edit the training 1`] = `
           </div>
           <div
             aria-describedby="rbd-hidden-text-2-hidden-text-4"
-            class="MuiGrid-root MuiBox-root MuiBox-root-432 MuiGrid-item MuiGrid-grid-xs-12"
+            class="MuiGrid-root MuiBox-root MuiBox-root-431 MuiGrid-item MuiGrid-grid-xs-12"
             data-rbd-drag-handle-context-id="2"
             data-rbd-drag-handle-draggable-id="16c3b87d-7a8c-515b-9ece-4eab80b4c553"
             data-rbd-draggable-context-id="2"
@@ -895,17 +895,17 @@ exports[`<TrainingForm/> should edit the training 1`] = `
               class="MuiListItem-container"
             >
               <div
-                class="MuiBox-root MuiBox-root-436 MuiListItem-root makeStyles-root-42 makeStyles-editableItem-30 MuiListItem-gutters MuiListItem-alignItemsFlexStart MuiListItem-secondaryAction makeStyles-root-50"
+                class="MuiBox-root MuiBox-root-435 MuiListItem-root makeStyles-root-41 makeStyles-editableItem-30 MuiListItem-gutters MuiListItem-alignItemsFlexStart MuiListItem-secondaryAction makeStyles-root-49"
                 data-testid="media-list-item"
               >
                 <div
-                  class="makeStyles-image-44 makeStyles-image-433"
+                  class="makeStyles-image-43 makeStyles-image-432"
                 />
                 <div
-                  class="MuiListItemText-root makeStyles-textRoot-46 makeStyles-textRoot-435"
+                  class="MuiListItemText-root makeStyles-textRoot-45 makeStyles-textRoot-434"
                 >
                   <div
-                    class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-45 makeStyles-primaryText-434 MuiTypography-body1 MuiTypography-displayBlock"
+                    class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-44 makeStyles-primaryText-433 MuiTypography-body1 MuiTypography-displayBlock"
                     data-testid="triple-combo-item-text-primary"
                   >
                     Ogi miwouc lerepnu kuv zo mubah fanuzva da ojaepfej fe po tu tatco pavava cosobin mi ajletu.
@@ -930,7 +930,7 @@ exports[`<TrainingForm/> should edit the training 1`] = `
           </div>
           <div
             aria-describedby="rbd-hidden-text-2-hidden-text-4"
-            class="MuiGrid-root MuiBox-root MuiBox-root-437 MuiGrid-item MuiGrid-grid-xs-12"
+            class="MuiGrid-root MuiBox-root MuiBox-root-436 MuiGrid-item MuiGrid-grid-xs-12"
             data-rbd-drag-handle-context-id="2"
             data-rbd-drag-handle-draggable-id="3b260e7e-6aec-5d46-8dcb-0f73ad5b48e2"
             data-rbd-draggable-context-id="2"
@@ -943,17 +943,17 @@ exports[`<TrainingForm/> should edit the training 1`] = `
               class="MuiListItem-container"
             >
               <div
-                class="MuiBox-root MuiBox-root-441 MuiListItem-root makeStyles-root-42 makeStyles-editableItem-30 MuiListItem-gutters MuiListItem-alignItemsFlexStart MuiListItem-secondaryAction makeStyles-root-50"
+                class="MuiBox-root MuiBox-root-440 MuiListItem-root makeStyles-root-41 makeStyles-editableItem-30 MuiListItem-gutters MuiListItem-alignItemsFlexStart MuiListItem-secondaryAction makeStyles-root-49"
                 data-testid="media-list-item"
               >
                 <div
-                  class="makeStyles-image-44 makeStyles-image-438"
+                  class="makeStyles-image-43 makeStyles-image-437"
                 />
                 <div
-                  class="MuiListItemText-root makeStyles-textRoot-46 makeStyles-textRoot-440"
+                  class="MuiListItemText-root makeStyles-textRoot-45 makeStyles-textRoot-439"
                 >
                   <div
-                    class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-45 makeStyles-primaryText-439 MuiTypography-body1 MuiTypography-displayBlock"
+                    class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-44 makeStyles-primaryText-438 MuiTypography-body1 MuiTypography-displayBlock"
                     data-testid="triple-combo-item-text-primary"
                   >
                     Zahik lu fuajadin bo wo ehteke da samma he oruwe rervamte fafnujnez.
@@ -978,7 +978,7 @@ exports[`<TrainingForm/> should edit the training 1`] = `
           </div>
           <div
             aria-describedby="rbd-hidden-text-2-hidden-text-4"
-            class="MuiGrid-root MuiBox-root MuiBox-root-442 MuiGrid-item MuiGrid-grid-xs-12"
+            class="MuiGrid-root MuiBox-root MuiBox-root-441 MuiGrid-item MuiGrid-grid-xs-12"
             data-rbd-drag-handle-context-id="2"
             data-rbd-drag-handle-draggable-id="c2114bdf-8bdd-524b-afef-40e33c2a438d"
             data-rbd-draggable-context-id="2"
@@ -991,17 +991,17 @@ exports[`<TrainingForm/> should edit the training 1`] = `
               class="MuiListItem-container"
             >
               <div
-                class="MuiBox-root MuiBox-root-446 MuiListItem-root makeStyles-root-42 makeStyles-editableItem-30 MuiListItem-gutters MuiListItem-alignItemsFlexStart MuiListItem-secondaryAction makeStyles-root-50"
+                class="MuiBox-root MuiBox-root-445 MuiListItem-root makeStyles-root-41 makeStyles-editableItem-30 MuiListItem-gutters MuiListItem-alignItemsFlexStart MuiListItem-secondaryAction makeStyles-root-49"
                 data-testid="media-list-item"
               >
                 <div
-                  class="makeStyles-image-44 makeStyles-image-443"
+                  class="makeStyles-image-43 makeStyles-image-442"
                 />
                 <div
-                  class="MuiListItemText-root makeStyles-textRoot-46 makeStyles-textRoot-445"
+                  class="MuiListItemText-root makeStyles-textRoot-45 makeStyles-textRoot-444"
                 >
                   <div
-                    class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-45 makeStyles-primaryText-444 MuiTypography-body1 MuiTypography-displayBlock"
+                    class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-44 makeStyles-primaryText-443 MuiTypography-body1 MuiTypography-displayBlock"
                     data-testid="triple-combo-item-text-primary"
                   >
                     Tajomu ircimod taisu ovono jojovoju dejbej fa sut jiifla kuvje hi bi torogop jopa jejissaw calu.
@@ -1079,30 +1079,6 @@ exports[`<TrainingForm/> should edit the training 1`] = `
                 />
               </div>
             </div>
-          </span>
-          <span
-            class="MuiTouchRipple-root"
-          />
-        </button>
-        <button
-          class="MuiButtonBase-root MuiIconButton-root makeStyles-root-39"
-          data-testid="training-form-button-remove"
-          tabindex="0"
-          type="button"
-        >
-          <span
-            class="MuiIconButton-label"
-          >
-            <svg
-              aria-hidden="true"
-              class="MuiSvgIcon-root"
-              focusable="false"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v10zM18 4h-2.5l-.71-.71c-.18-.18-.44-.29-.7-.29H9.91c-.26 0-.52.11-.7.29L8.5 4H6c-.55 0-1 .45-1 1s.45 1 1 1h12c.55 0 1-.45 1-1s-.45-1-1-1z"
-              />
-            </svg>
           </span>
           <span
             class="MuiTouchRipple-root"

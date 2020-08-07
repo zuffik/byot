@@ -41,7 +41,6 @@ export const form = () => {
     <TrainingForm
       trainingSetId="id"
       onSave={action('onSave')}
-      onRemove={action('onRemove')}
       MediaProviderComponent={({handleMediaFound}) => (
         <MediaSearchForm onSelect={handleMediaFound} AutocompleteComponent={Autocomplete} />
       )}
@@ -50,7 +49,13 @@ export const form = () => {
 };
 
 export const detail = () => {
-  const m = new IterableResource<IMedia>(_.times(10, () => media()));
-  m.state = boolean('Is loading', false) ? ResourceState.LOADING : ResourceState.IDLE;
-  return <TrainingDetail media={m} onMediaClick={action('onMediaClick')} currentMedia={m.data[0]} />;
+  const m = _.times(10, () => media());
+  return (
+    <TrainingDetail
+      media={m}
+      onMediaClick={action('onMediaClick')}
+      currentMedia={m[0]}
+      isLoading={boolean('isLoading', false)}
+    />
+  );
 };

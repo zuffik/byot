@@ -21,7 +21,7 @@ export class TrainingSetCreate extends TrainingSetCreateBase {
       ...nextState,
       ...state,
       ...(action.payload.response.data && {
-        redirect: Router.training.trainingSet.detail.URI({trainingSetId: action.payload.response.data.id}),
+        redirect: Router.trainingSet.detail.URI({trainingSetId: action.payload.response.data.id}),
       }),
     };
   }

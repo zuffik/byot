@@ -1,36 +1,82 @@
-import {Given, And, When, Then} from 'cypress-cucumber-preprocessor/steps';
+import {After, And, Given, Then, When} from 'cypress-cucumber-preprocessor/steps';
 
+// todo i don't like {force: true} at all!
+const currentMedia: string[] = [];
 // fail create empty training with activity
-Given(/^created training set$/, () => {});
+Given(/^created training set$/, () => {
+  cy.fixture('media/FindMedia').then(findMedia => {
+    console.log(findMedia);
+    cy.graphQLRequest({
+      findMedia: () => findMedia[currentMedia.shift()],
+    });
+    cy.login();
+    cy.createTrainingSet();
+  });
+});
 
-And(/^user visits "create training" form$/, () => {});
+And(/^user visits "create training" form$/, () => {
+  cy.getByTestId('app-components-training-create').click();
+});
 
-When(/^user creates media in training$/, () => {});
+When(/^user enters name of training$/, () => {
+  cy.getByTestId('training-form-name').type('Training');
+});
 
-And(/^user deletes all media from training$/, () => {});
+And(/^user creates media in training$/, () => {
+  cy.wrap(['workout', 'train']).each(media => {
+    currentMedia.push(media.toString());
+    cy.getByTestId('media-form-autocomplete-input').clear().type(media.toString());
+    cy.get('[data-testid="media-form-autocomplete-suggestions"] [data-testid="media-list-item"]')
+      .first()
+      .click({force: true});
+    cy.getByTestId('media-form-search-button').click();
+  });
+});
 
-And(/^user submits the form$/, () => {});
+And(/^user deletes all media from training$/, () => {
+  cy.getByTestId('media-list-item-remove').first().click({force: true});
+  cy.getByTestId('media-list-item-remove').first().click({force: true});
+});
 
-Then(/^the training should not be created$/, () => {});
+And(/^user submits the form$/, () => {
+  cy.getByTestId('training-form-form').find('button[type="submit"]').click({force: true});
+});
 
-// fail create empty training without activity
-Given(/^created training set$/, () => {});
-
-And(/^user visits "create training" form$/, () => {});
-
-When(/^user submits the form$/, () => {});
-
-Then(/^the training should not be created$/, () => {});
+Then(/^the training should not be created$/, () => {
+  cy.getByTestId('common-elementary-form-input-helperText').should('exist');
+});
 
 // create training and test searching for media
-Given(/^created training set$/, () => {});
+And(/^user creates media with following sources (.*)$/, sources => {
+  const srcs = cy.wrap(sources.split(',').filter(Boolean));
+  srcs.each((src: string) => {
+    currentMedia.push(src);
+    cy.getByTestId('media-form-autocomplete-input').clear().type(`https://www.youtube.com/watch?v=${src}`);
+    cy.get('[data-testid="media-form-autocomplete-suggestions"] [data-testid="media-list-item"]')
+      .first()
+      .click({force: true});
+    cy.getByTestId('media-form-search-button').click();
+  });
+});
 
-And(/^user visits "create training" form$/, () => {});
+And(/^user creates media with following fulltext search (.*)$/, search => {
+  if (search) {
+    cy.getByTestId('media-form-autocomplete-input').clear().type(search);
+    currentMedia.push('fulltextSearch');
+    cy.get('[data-testid="media-form-autocomplete-suggestions"] [data-testid="media-list-item"]')
+      .first()
+      .click({force: true});
+    cy.getByTestId('media-form-search-button').click();
+  }
+});
 
-When(/^user creates media with following sources (.*)$/, sources => {});
+Then(/^the training should be created containing the (.*)$/, media => {
+  cy.url().should('not.contain', '/create-training');
+  cy.wrap(media.split(',')).each(resourceId => {
+    cy.get(`[data-testid="media-list-item"][data-resource="${resourceId}"]`).should('exist');
+  });
+});
 
-And(/^user creates media with following fulltext search (.*)$/, search => {});
-
-And(/^user submits the form$/, () => {});
-
-Then(/^the training should be created containing the (.*)$/, media => {});
+After(() => {
+  cy.request('DELETE', Cypress.env('PUBLIC_API_URL') + '/cleaner/test/training/create');
+});

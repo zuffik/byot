@@ -10,6 +10,22 @@ jest.mock('../pages/LogoutPage', () => ({
   __esModule: true,
   LogoutPage: () => <div />,
 }));
+jest.mock('../pages/TrainingSetCreatePage', () => ({
+  __esModule: true,
+  TrainingSetCreatePage: () => <div />,
+}));
+jest.mock('../pages/TrainingSetEditPage', () => ({
+  __esModule: true,
+  TrainingSetEditPage: () => <div />,
+}));
+jest.mock('../pages/TrainingSetDetailPage', () => ({
+  __esModule: true,
+  TrainingSetDetailPage: () => <div />,
+}));
+jest.mock('../pages/TrainingCreatePage', () => ({
+  __esModule: true,
+  TrainingCreatePage: () => <div />,
+}));
 
 jest.mock('react-redux', () => ({
   __esModule: true,

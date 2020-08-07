@@ -8,6 +8,10 @@ import {IterableResource} from '../redux-system/data-structures/resources/Iterab
 import {FetchTrainingSets} from './process/training-set/FetchTrainingSets';
 import {Filter} from '../types/app/filter/Filter';
 import {TrainingSetBaseFetch} from './process/training-set/TrainingSetBaseFetch';
+import {TrainingBaseFetch} from './process/training/TrainingBaseFetch';
+import {ITraining} from '../types/interfaces/ITraining';
+import {FetchTrainings} from './process/training/FetchTrainings';
+import {IMedia} from '../types/interfaces/IMedia';
 
 export class FrontendCommonState {
   auth: Resource<IAuth> = new EntityResource();
@@ -17,6 +21,7 @@ export class FrontendCommonState {
     resettingPassword: false,
 
     processingTrainingSet: false,
+    processingTraining: false,
   };
   /**
    * Training sets
@@ -26,4 +31,13 @@ export class FrontendCommonState {
   trainingSetDetail: EntityResource<ITrainingSet> = new EntityResource<ITrainingSet>();
   @BindProcessActionCreator(FetchTrainingSets)
   trainingSetListItems: IterableResource<ITrainingSet> = new IterableResource<ITrainingSet>();
+  /**
+   * Trainings
+   */
+  trainingListFilter: Filter = {};
+  @BindProcessActionCreator(TrainingBaseFetch)
+  trainingDetail: EntityResource<ITraining> = new EntityResource<ITraining>();
+  @BindProcessActionCreator(FetchTrainings)
+  trainingListItems: IterableResource<ITraining> = new IterableResource<ITraining>();
+  currentMedia?: IMedia;
 }

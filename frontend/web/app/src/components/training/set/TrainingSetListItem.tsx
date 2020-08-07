@@ -25,7 +25,7 @@ export const TrainingSetListItem: React.FC<Props> = (props: Props) => {
       primary={props.trainingSet.label}
       button
       component={Link}
-      to={Router.training.trainingSet.detail.URI({trainingSetId: props.trainingSet.id})}
+      to={Router.trainingSet.detail.URI({trainingSetId: props.trainingSet.id})}
       description={
         <>
           <Typography variant="body2">

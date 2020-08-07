@@ -76,7 +76,39 @@ describe('MediaResolver', () => {
     const spySearch = jest.spyOn(remoteService, 'search');
     await resolver.findMedia(filter);
     expect(spyParse).toBeCalledWith(filter.query);
-    expect(spySearch).toBeCalledWith(filter, [SourceType.YOUTUBE]);
+    expect(spySearch).toBeCalledWith(
+      {
+        ...filter,
+        pagination: {
+          limit: 5,
+        },
+      },
+      [SourceType.YOUTUBE],
+    );
+  });
+
+  it('should call parseUrl and search limited to 1', async () => {
+    const filter: MediaFilter = {
+      query: 'something',
+      pagination: {
+        limit: 1,
+        offset: 0,
+      },
+    };
+    const spyParse = jest.spyOn(remoteService, 'parseFromUrl');
+    const spySearch = jest.spyOn(remoteService, 'search');
+    await resolver.findMedia(filter);
+    expect(spyParse).toBeCalledWith(filter.query);
+    expect(spySearch).toBeCalledWith(
+      {
+        ...filter,
+        pagination: {
+          ...filter.pagination,
+          limit: 1,
+        },
+      },
+      [SourceType.YOUTUBE],
+    );
   });
 
   it('should find local media', async () => {

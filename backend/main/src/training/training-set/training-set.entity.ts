@@ -26,7 +26,7 @@ export class TrainingSet
   public owner: Promise<User>;
 
   @OneToMany((type) => Training, (training) => training.trainingSet, {
-    cascade: true,
+    onDelete: 'CASCADE',
   })
   public trainings: Promise<Training[]>;
 

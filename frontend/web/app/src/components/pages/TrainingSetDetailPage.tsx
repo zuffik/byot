@@ -14,7 +14,7 @@ interface Props {}
 
 export const TrainingSetDetailPage: React.FC<Props> = (props: Props) => {
   const dispatch = useDispatch();
-  const {trainingSetId} = useParams<typeof Router.training.trainingSet.detail.params>();
+  const {trainingSetId} = useParams<typeof Router.trainingSet.detail.params>();
   React.useEffect(() => {
     dispatch(ProcessActionExtractor.dispatch(TrainingSetFetch, {id: trainingSetId}));
   }, [trainingSetId, dispatch]);

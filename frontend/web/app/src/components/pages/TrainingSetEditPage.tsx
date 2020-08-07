@@ -18,7 +18,7 @@ interface Props {}
 export const TrainingSetEditPage: React.FC<Props> = (props: Props) => {
   const dispatch = useDispatch();
   const {t} = useTranslation();
-  const {trainingSetId} = useParams<typeof Router.training.trainingSet.detail.params>();
+  const {trainingSetId} = useParams<typeof Router.trainingSet.detail.params>();
   const onSave = (trainingSet: ITrainingSetInput) =>
     dispatch(ProcessActionExtractor.dispatch(TrainingSetUpdate, {trainingSet, id: trainingSetId}));
   React.useEffect(() => {

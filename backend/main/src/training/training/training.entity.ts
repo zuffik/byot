@@ -24,7 +24,9 @@ export class Training
   @Column('varchar')
   public label: string;
 
-  @ManyToMany((type) => Media, (media) => media.trainings, { cascade: true })
+  @ManyToMany((type) => Media, (media) => media.trainings, {
+    onDelete: 'CASCADE',
+  })
   @JoinTable()
   public medias: Promise<Media[]>;
 
@@ -38,7 +40,7 @@ export class Training
     );
   }
 
-  @ManyToOne((type) => TrainingSet)
+  @ManyToOne((type) => TrainingSet, { onDelete: 'CASCADE' })
   public trainingSet: Promise<TrainingSet>;
 
   @CreateDateColumn({

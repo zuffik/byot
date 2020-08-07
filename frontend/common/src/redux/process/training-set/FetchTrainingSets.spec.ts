@@ -4,9 +4,9 @@ import {ProcessActionExtractor} from '@byot-frontend/common/src/redux-system/pro
 import {GraphQLResponse} from '@byot-frontend/common/src/redux-system/data-structures/responses/GraphQLResponse';
 import {AsynchronousActionResponse} from '@byot-frontend/common/src/redux-system/process/ProcessActions';
 import {DataResponse} from '@byot-frontend/common/src/redux-system/data-structures/responses/DataResponse';
-import {WebAppState} from '@byot-frontend/web-app/src/redux/WebAppState';
 import {IterableResource} from '@byot-frontend/common/src/redux-system/data-structures/resources/IterableResource';
 import {ITrainingSet} from '@byot-frontend/common/src/types/interfaces/ITrainingSet';
+import {FrontendCommonState} from '../../FrontendCommonState';
 
 describe('FetchTrainingSets process', () => {
   let process: FetchTrainingSets;
@@ -19,27 +19,14 @@ describe('FetchTrainingSets process', () => {
     response = ProcessActionExtractor.response(request, new GraphQLResponse());
   });
 
-  it('should not reset data', () => {
-    const state = process.handleResponse(response, {} as WebAppState, {} as WebAppState);
-    expect(state).toEqual({});
-  });
-
-  it('should reset data', () => {
-    response.payload.request = {filter: {reset: true}};
-    const state = process.handleResponse(response, {} as WebAppState, {} as WebAppState);
-    expect(state).toEqual({
-      trainingSetListItems: expect.any(IterableResource),
-    });
-  });
-
   it('should save filter', () => {
     request.payload = {filter: {reset: true, pagination: {limit: 10, offset: 20}, query: 'Query'}};
     const state = process.handleRequest(
       request,
-      {
+      ({
         trainingSetListItems: new IterableResource<ITrainingSet>(),
-      } as WebAppState,
-      {} as WebAppState
+      } as unknown) as FrontendCommonState,
+      {} as FrontendCommonState
     );
     expect(state).toEqual(
       expect.objectContaining({
@@ -53,7 +40,7 @@ describe('FetchTrainingSets process', () => {
   });
 
   it('should run valid query', () => {
-    const generator = process.saga(request, {} as WebAppState);
+    const generator = process.saga(request, {} as FrontendCommonState);
     generator.next();
   });
 

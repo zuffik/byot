@@ -6,7 +6,9 @@ import {Link} from 'react-router-dom';
 import {Router} from '../../../router/Router';
 import {TrainingCreateListItemPlaceholder} from './TrainingCreateListItemPlaceholder';
 
-interface Props {}
+interface Props {
+  trainingSetId: string;
+}
 
 export const TrainingCreateListItem: React.FC<Props> = (props: Props) => {
   const {t} = useTranslation();
@@ -15,9 +17,10 @@ export const TrainingCreateListItem: React.FC<Props> = (props: Props) => {
       <TripleComboItem
         button
         component={Link}
-        to={Router.training.create.URI()}
+        to={Router.trainingSet.training.create.URI({trainingSetId: props.trainingSetId})}
         alignItems="center"
         image={<TrainingCreateListItemPlaceholder />}
+        data-testid="app-components-training-create"
         primary={
           <Typography color="primary" variant="h6">
             {t('Create training')}

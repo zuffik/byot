@@ -3,7 +3,7 @@
 exports[`<EditDeleteControls/> should render 1`] = `
 <div>
   <div
-    class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1"
+    class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-justify-xs-flex-end"
   >
     <div
       class="MuiGrid-root MuiGrid-item"

@@ -11,16 +11,16 @@ import {MediaList} from '../../media/list/MediaList';
 import {TrainingDraftInput} from '@byot-frontend/common/src/types/dto/TrainingDraftInput';
 import {ITrainingDraftInput} from '@byot-frontend/common/src/types/interfaces/ITrainingDraftInput';
 import {IMedia} from '@byot-frontend/common/src/types/interfaces/IMedia';
-import {ButtonRemove} from '../../elements/button/ButtonRemove';
+import {FormHelperText} from '@byot-frontend/web-common/src/components/elementary/form/FormHelperText';
 
 const trainingSchema = (t: TFunction) =>
   Yup.object().shape({
     label: Yup.string().required(t('Enter training name')),
+    media: Yup.array().min(1, t('Provide at least one media to training')),
   });
 
 type EditProps = {
   training: ITraining;
-  onRemove: () => void;
 };
 
 type CreateProps = {
@@ -30,6 +30,7 @@ type CreateProps = {
 type Props = {
   onSave: (training: ITrainingDraftInput) => void;
   MediaProviderComponent: React.ComponentType<{handleMediaFound: (media: IMedia) => void}>;
+  isLoading?: boolean;
 } & (CreateProps | EditProps);
 
 const isEditProps = (props: Props | any): props is EditProps => 'training' in props;
@@ -51,14 +52,34 @@ export const TrainingForm: React.FC<Props> = (props: Props) => {
     }));
     props.onSave(values);
   };
+  const schema = trainingSchema(t);
+  const validation = (values: ITrainingDraftInput) => {
+    try {
+      schema.validateSync(
+        {
+          ...values,
+          media: media.map(m => ({
+            id: m.source.resourceId!,
+            label: m.label,
+            sourceType: m.source.sourceType,
+          })),
+        },
+        {abortEarly: false}
+      );
+      return {};
+    } catch (e) {
+      const error: Yup.ValidationError = e;
+      return Object.assign({}, ...error.inner.map(i => ({[(i.params as any).path]: i.message})));
+    }
+  };
   return (
     <Formik
       initialValues={training}
       onSubmit={onSubmit}
-      validationSchema={trainingSchema(t)}
+      validate={validation}
       validateOnBlur
       validateOnChange>
-      {({errors, touched}) => (
+      {({errors, touched, handleBlur}) => (
         <Form data-testid="training-form-form">
           <Grid container spacing={2} justify="flex-end">
             <Grid item xs={12}>
@@ -82,14 +103,12 @@ export const TrainingForm: React.FC<Props> = (props: Props) => {
             <Grid item xs={12}>
               <Typography variant="h5">{t('Add video')}</Typography>
               <props.MediaProviderComponent handleMediaFound={addMedia} />
+              <FormHelperText error>{errors.media}</FormHelperText>
             </Grid>
             <Grid item>
-              <Button color="primary" type="submit">
+              <Button color="primary" type="submit" loading={props.isLoading}>
                 {t('Save training')}
               </Button>
-              {isEditProps(props) && (
-                <ButtonRemove onClick={props.onRemove} data-testid="training-form-button-remove" />
-              )}
             </Grid>
           </Grid>
         </Form>

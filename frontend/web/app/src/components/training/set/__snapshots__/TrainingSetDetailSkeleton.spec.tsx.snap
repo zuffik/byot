@@ -3,6 +3,26 @@
 exports[`<TrainingSetDetailSkeleton/> should render 1`] = `
 <div>
   <div
+    class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-justify-xs-flex-end"
+  >
+    <div
+      class="MuiGrid-root MuiGrid-item"
+    >
+      <span
+        class="MuiSkeleton-root MuiSkeleton-circle MuiSkeleton-pulse"
+        style="width: 40px; height: 40px;"
+      />
+    </div>
+    <div
+      class="MuiGrid-root MuiGrid-item"
+    >
+      <span
+        class="MuiSkeleton-root MuiSkeleton-circle MuiSkeleton-pulse"
+        style="width: 40px; height: 40px;"
+      />
+    </div>
+  </div>
+  <div
     class="MuiBox-root MuiBox-root-2"
   >
     <span

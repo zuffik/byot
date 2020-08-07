@@ -1,8 +1,7 @@
+import {IPagination} from '../../interfaces/IPagination';
+
 export type Filter<A = {}> = A & {
-  pagination?: {
-    limit: number;
-    offset: number;
-  };
+  pagination?: IPagination;
   query?: string;
   reset?: boolean;
 };

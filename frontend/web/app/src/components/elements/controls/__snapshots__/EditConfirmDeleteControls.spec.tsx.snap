@@ -5,7 +5,7 @@ exports[`<EditConfirmDeleteControls/> should delete the item 1`] = `
   aria-hidden="true"
 >
   <div
-    class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1"
+    class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-justify-xs-flex-end"
   >
     <div
       class="MuiGrid-root MuiGrid-item"
@@ -75,7 +75,7 @@ exports[`<EditConfirmDeleteControls/> should not delete the item 1`] = `
   aria-hidden="true"
 >
   <div
-    class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1"
+    class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-justify-xs-flex-end"
   >
     <div
       class="MuiGrid-root MuiGrid-item"

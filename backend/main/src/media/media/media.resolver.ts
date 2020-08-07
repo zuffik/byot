@@ -42,6 +42,10 @@ export class MediaResolver extends BaseResolver {
       if (_.isEmpty(filter)) {
         throw new BadRequestException('Filter must not be empty');
       }
+      filter.pagination = {
+        ...filter.pagination,
+        limit: Math.min(filter.pagination?.limit || 5, 5),
+      };
       const parsedMedia = await this.mediaRemoteService.parseFromUrl(
         filter.query,
       );

@@ -25,9 +25,6 @@ export const Router = new (class {
   })();
   training = new (class {
     URI = () => `${Router.URI()}training`;
-    create = new (class {
-      URI = () => `${Router.training.URI()}/create`;
-    })();
     detail = new (class {
       params = new (class {
         trainingId?: string;
@@ -35,24 +32,42 @@ export const Router = new (class {
       URI = ({trainingId = ':trainingId'}: typeof Router.training.detail.params = {}) =>
         `${Router.training.URI()}/${trainingId}`;
     })();
-    trainingSet = new (class {
-      URI = () => `${Router.training.URI()}/set`;
+    edit = new (class {
+      params = new (class {
+        trainingId?: string;
+      })();
+      URI = ({trainingId = ':trainingId'}: typeof Router.training.edit.params = {}) =>
+        `${Router.training.URI()}/${trainingId}/edit`;
+    })();
+  })();
+  trainingSet = new (class {
+    URI = () => `${Router.training.URI()}/set`;
+    create = new (class {
+      URI = () => `${Router.trainingSet.URI()}/create`;
+    })();
+    detail = new (class {
+      params = new (class {
+        trainingSetId?: string;
+      })();
+      URI = ({trainingSetId = ':trainingSetId'}: typeof Router.trainingSet.detail.params = {}) =>
+        `${Router.trainingSet.URI()}/${trainingSetId}`;
+    })();
+    edit = new (class {
+      params = new (class {
+        trainingSetId?: string;
+      })();
+      URI = ({trainingSetId = ':trainingSetId'}: typeof Router.trainingSet.edit.params = {}) =>
+        `${Router.trainingSet.URI()}/${trainingSetId}/edit`;
+    })();
+    training = new (class {
+      params = new (class {
+        trainingSetId?: string;
+      })();
+      URI = ({trainingSetId = ':trainingSetId'}: typeof Router.trainingSet.training.params = {}) =>
+        `${Router.trainingSet.URI()}/${trainingSetId}`;
       create = new (class {
-        URI = () => `${Router.training.trainingSet.URI()}/create`;
-      })();
-      detail = new (class {
-        params = new (class {
-          trainingSetId?: string;
-        })();
-        URI = ({trainingSetId = ':trainingSetId'}: typeof Router.training.trainingSet.detail.params = {}) =>
-          `${Router.training.trainingSet.URI()}/${trainingSetId}`;
-      })();
-      edit = new (class {
-        params = new (class {
-          trainingSetId?: string;
-        })();
-        URI = ({trainingSetId = ':trainingSetId'}: typeof Router.training.trainingSet.edit.params = {}) =>
-          `${Router.training.trainingSet.URI()}/${trainingSetId}/edit`;
+        URI = ({trainingSetId = ':trainingSetId'}: typeof Router.trainingSet.training.params = {}) =>
+          `${Router.trainingSet.training.URI({trainingSetId})}/create-training`;
       })();
     })();
   })();

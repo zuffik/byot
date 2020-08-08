@@ -11,9 +11,10 @@
     "@types/cypress-cucumber-preprocessor": "1.14.1",
     "@types/dotenv": "8.2.0",
     "@types/node": "14.0.5",
+    "@types/testing-library__react": "10.2.0",
     "babel-loader": "8.1.0",
     "cucumber-generator": "1.1.6",
-    "cypress": "4.7.0",
+    "cypress": "4.12.1",
     "cypress-cucumber-preprocessor": "2.3.1",
     "cypress-dotenv": "1.2.1",
     "dotenv": "8.2.0",
@@ -36,5 +37,8 @@
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true
+  },
+  "dependencies": {
+    "@testing-library/react": "10.4.8"
   }
 }

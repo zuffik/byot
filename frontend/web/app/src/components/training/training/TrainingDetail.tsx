@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Grid, makeStyles, Theme} from '@material-ui/core';
+import {Grid, makeStyles, Theme, Box} from '@material-ui/core';
 import {WithStyles} from '@byot-frontend/web-common/src/types/WithStyles';
 import {IMedia} from '@byot-frontend/common/src/types/interfaces/IMedia';
 import {MediaList} from '../../media/list/MediaList';
@@ -9,6 +9,9 @@ import {TripleComboItemSkeletonList} from '../../list/TripleComboItemSkeletonLis
 import {ControlPanelTitle} from '../../control-panel/base/ControlPanelTitle/ControlPanelTitle';
 import {ControlPanelTitleSkeleton} from '../../control-panel/base/ControlPanelTitle/ControlPanelTitleSkeleton';
 import {ITraining} from '@byot-frontend/common/src/types/interfaces/ITraining';
+import {EditDeleteControlsSkeleton} from '../../elements/controls/EditDeleteControlsSkeleton';
+import {EditConfirmDeleteControls} from '../../elements/controls/EditConfirmDeleteControls';
+import {Router} from '../../../router/Router';
 
 interface Props extends WithStyles<typeof styles> {
   media: IMedia[];
@@ -16,6 +19,8 @@ interface Props extends WithStyles<typeof styles> {
   isLoading?: boolean;
   onMediaClick: (media: IMedia) => void;
   currentMedia: IMedia;
+  onDelete: () => void;
+  isRemoving?: boolean;
 }
 
 const styles = (theme: Theme) => ({
@@ -53,11 +58,21 @@ export const TrainingDetail: React.FC<Props> = (props: Props) => {
         {props.isLoading ? (
           <>
             <MediaPlayerSkeleton />
+            <Box mt={1}>
+              <EditDeleteControlsSkeleton />
+            </Box>
             <ControlPanelTitleSkeleton />
           </>
         ) : (
           <>
             <MediaPlayer media={props.currentMedia} />
+            <Box mt={1}>
+              <EditConfirmDeleteControls
+                isRemoving={props.isRemoving}
+                editUrl={Router.training.edit.URI({trainingId: props.training.id})}
+                onDeleteClick={props.onDelete}
+              />
+            </Box>
             <ControlPanelTitle>{props.training.label}</ControlPanelTitle>
           </>
         )}

@@ -11,6 +11,6 @@ export const MediaProviderInput: React.FC<Props> = (props: Props) => {
   const dispatch = useDispatch();
   const media = useSelector((state: WebAppState) => state.mediaProvided);
   const onTextChange = (query: string) =>
-    query.trim() !== '' && dispatch(ProcessActionExtractor.dispatch(MediaSearch, {filter: {query}}));
+    dispatch(ProcessActionExtractor.dispatch(MediaSearch, {filter: {query}}));
   return <MediaAutocompleteInput media={media} onTextChange={onTextChange} {...props} />;
 };

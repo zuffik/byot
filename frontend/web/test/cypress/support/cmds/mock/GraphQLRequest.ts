@@ -1,4 +1,6 @@
-type Operations = Record<string, any | (() => any)>;
+import {GraphQLRequest} from 'apollo-boost';
+
+type Operations = Record<string, any | ((body: GraphQLRequest) => any)>;
 
 /**
  * https://github.com/cypress-io/cypress-documentation/issues/122#issuecomment-372760320
@@ -19,11 +21,11 @@ export const graphQLRequest = (operations: Operations) => {
     const originalFunction = win.fetch;
 
     function fetch(path, {body, method}) {
-      const b = typeof body == 'string' ? JSON.parse(body) : body;
+      const b: GraphQLRequest = typeof body == 'string' ? JSON.parse(body) : body;
       if (path.includes('/graphql') && method === 'POST' && b.operationName in operations) {
         const data =
           typeof operations[b.operationName] == 'function'
-            ? operations[b.operationName]()
+            ? operations[b.operationName](b)
             : operations[b.operationName];
         return responseStub(data);
       }

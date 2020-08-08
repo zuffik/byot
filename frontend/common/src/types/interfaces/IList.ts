@@ -1,15 +1,23 @@
-import {MediaList, TokenList, TrainingList, TrainingSetList, UserList} from '@byot/common/graphql/ts/types';
-import {Media, Token, Training, TrainingSet, User} from '@byot/common/graphql/ts/types';
+import {
+  Media,
+  MediaList,
+  Token,
+  TokenList,
+  Training,
+  TrainingList,
+  TrainingSet,
+  TrainingSetList,
+  User,
+  UserList,
+} from '@byot/common/graphql/ts/types';
 import {IListMeta} from './IListMeta';
 
 export type ListEntity = Media | Token | Training | TrainingSet | User;
 
-export interface IList<T extends ListEntity>
-  extends MediaList,
-    TokenList,
-    TrainingList,
-    TrainingSetList,
-    UserList {
+export type IList<T extends ListEntity> = Omit<
+  MediaList & TokenList & TrainingList & TrainingSetList & UserList,
+  'entries'
+> & {
   meta: IListMeta;
   entries: T[];
-}
+};

@@ -37,4 +37,12 @@ export class CleanerController {
       1,
     );
   }
+
+  @Delete('test/training/update')
+  public async purgeUpdateTrainingData() {
+    await this.cleaner.removeLatestTrainingSetByCreator(
+      this.cfg.get('app.test.email'),
+      1,
+    );
+  }
 }

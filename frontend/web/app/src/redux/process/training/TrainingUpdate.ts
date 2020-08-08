@@ -21,7 +21,10 @@ export class TrainingUpdate extends TrainingUpdateBase {
       ...nextState,
       ...state,
       ...(action.payload.response.data && {
-        redirect: Router.training.detail.URI({trainingId: action.payload.response.data.id}),
+        redirect:
+          action.payload.request.training.media.length > 0
+            ? Router.training.detail.URI({trainingId: action.payload.response.data.id})
+            : Router.URI(),
       }),
     };
   }

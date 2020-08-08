@@ -12,8 +12,9 @@ interface Props extends WithStyles<typeof styles> {
 
 const styles = (theme: Theme) => ({
   content: {
-    [theme.breakpoints.between('sm', 'md')]: {
+    [theme.breakpoints.up('sm')]: {
       paddingLeft: '33%',
+      paddingBottom: theme.spacing(10),
     },
     [theme.breakpoints.up('md')]: {
       paddingLeft: '25%',

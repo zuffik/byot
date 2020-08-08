@@ -9,9 +9,10 @@ import {ApolloContext} from '../../../graphql/context/ApolloContext';
 import {gql} from 'apollo-boost';
 import {SuccessSnackbar} from '../../../types/app/snackbar/SuccessSnackbar';
 import {ErrorSnackbar} from '../../../types/app/snackbar/ErrorSnackbar';
+import {ITraining} from '../../../types/interfaces/ITraining';
 
 export type Request = {id: string};
-export type Response = {};
+export type Response = Partial<ITraining>;
 
 export abstract class TrainingRemove implements AsynchronousAction<FrontendCommonState, Request, Response> {
   handleRequest(
@@ -31,14 +32,17 @@ export abstract class TrainingRemove implements AsynchronousAction<FrontendCommo
   *saga(action: Action<Request>, state: Readonly<FrontendCommonState>) {
     return (yield call(ApolloContext.apolloClient.mutate, {
       mutation: gql`
-        mutation removeTrainingSet($id: ID!) {
-          removeTrainingSet(id: $id) {
+        mutation removeTraining($id: ID!) {
+          removeTrainingFromTrainingSet(id: $id) {
             id
+            trainingSet {
+              id
+            }
           }
         }
       `,
       variables: {id: action.payload.id},
-    })).data.removeTrainingSet;
+    })).data.removeTrainingFromTrainingSet;
   }
 
   handleResponse(
@@ -50,7 +54,7 @@ export abstract class TrainingRemove implements AsynchronousAction<FrontendCommo
       ...nextState,
       snackbar: action.payload.response.success
         ? new SuccessSnackbar('Successfully removed training')
-        : new ErrorSnackbar('There was an error creating training'),
+        : new ErrorSnackbar('There was an error removing training'),
       is: {
         ...nextState.is,
         processingTrainingSet: false,

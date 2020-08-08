@@ -197,6 +197,24 @@ describe('TrainingService', () => {
     expect(spyMedia).toBeCalledTimes(trainingInput.media.length);
   });
 
+  it('should remove training by removing its media', async () => {
+    const id = 'id';
+    const trainingInput = gqlGenerator.trainingUpdateInput();
+    trainingInput.media = [];
+    const training = ormGenerator.training();
+    const spyFind = jest
+      .spyOn(service, 'findById')
+      .mockImplementation(async () => _.clone(training));
+    const spyMedia = jest.spyOn(mediaService, 'findLocalOrCreateFromRemote');
+    const spySave = jest.spyOn(repository, 'save');
+    const spyRemove = jest.spyOn(repository, 'remove');
+    await service.update(id, trainingInput);
+    expect(spyFind).toBeCalledWith(id);
+    expect(spySave).not.toBeCalled();
+    expect(spyMedia).not.toBeCalled();
+    expect(spyRemove).toBeCalledWith(training);
+  });
+
   it('should update training medias', async () => {
     const id = 'id';
     const trainingInput = gqlGenerator.trainingUpdateInput();
@@ -225,6 +243,21 @@ describe('TrainingService', () => {
     expect(spyFind).toBeCalledWith(id);
     expect(spySave).toBeCalledWith(training);
     expect(spyMedia).toBeCalledTimes(trainingInput.media.length);
+  });
+
+  it('should update training label', async () => {
+    const id = 'id';
+    const trainingInput = gqlGenerator.trainingUpdateInput();
+    trainingInput.media = undefined;
+    const training = ormGenerator.training();
+    const spyFind = jest
+      .spyOn(service, 'findById')
+      .mockImplementation(async () => _.clone(training));
+    const spySave = jest.spyOn(repository, 'save');
+    training.label = trainingInput.label;
+    await service.update(id, trainingInput);
+    expect(spyFind).toBeCalledWith(id);
+    expect(spySave).toBeCalledWith(training);
   });
 
   it('should update training label', async () => {

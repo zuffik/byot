@@ -6,6 +6,7 @@ import {call} from 'redux-saga/effects';
 import {ApolloContext} from '@byot-frontend/common/src/graphql/context/ApolloContext';
 import {gql} from 'apollo-boost';
 import {IMediaFilter} from '@byot-frontend/common/src/types/interfaces/IMediaFilter';
+import {GraphQLResponse} from '@byot-frontend/common/src/redux-system/data-structures/responses/GraphQLResponse';
 
 export type Request = {filter?: IMediaFilter};
 export type Response = {};
@@ -13,6 +14,9 @@ export type Response = {};
 @ProcessActionCreator()
 export class MediaSearch implements AsynchronousAction<WebAppState, Request, Response> {
   *saga(action: Action<Request>, state: Readonly<WebAppState>) {
+    if ((action.payload.filter?.query || '').trim() == '') {
+      return yield new GraphQLResponse([], []);
+    }
     return (yield call(ApolloContext.apolloClient.query, {
       query: gql`
         query findMedia($filter: MediaFilter) {

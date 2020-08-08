@@ -1,13 +1,15 @@
 import {After, And, Given, Then, When} from 'cypress-cucumber-preprocessor/steps';
+import {GraphQLRequest} from 'apollo-boost';
+import {List} from '@byot-frontend/common/src/types/dto/List';
 
 // todo i don't like {force: true} at all!
 const currentMedia: string[] = [];
 // fail create empty training with activity
 Given(/^created training set$/, () => {
   cy.fixture('media/FindMedia').then(findMedia => {
-    console.log(findMedia);
     cy.graphQLRequest({
-      findMedia: () => findMedia[currentMedia.shift()],
+      findMedia: (body: GraphQLRequest) =>
+        (body.variables?.filter?.query || '').trim() !== '' ? findMedia[currentMedia.shift()] : new List(),
     });
     cy.login();
     cy.createTrainingSet();
@@ -39,7 +41,7 @@ And(/^user deletes all media from training$/, () => {
 });
 
 And(/^user submits the form$/, () => {
-  cy.getByTestId('training-form-form').find('button[type="submit"]').click({force: true});
+  cy.get('[data-testid="training-form-form"] button[type="submit"]').click({force: true});
 });
 
 Then(/^the training should not be created$/, () => {
@@ -55,6 +57,7 @@ And(/^user creates media with following sources (.*)$/, sources => {
     cy.get('[data-testid="media-form-autocomplete-suggestions"] [data-testid="media-list-item"]')
       .first()
       .click({force: true});
+    cy.get('#root').scrollTo('bottom');
     cy.getByTestId('media-form-search-button').click();
   });
 });

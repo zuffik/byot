@@ -10,19 +10,19 @@ Feature: update training
       | Z5iWr6Srsj8,IiwGbcd8S7I,5MJcklKwYBQ |
       | 5MJcklKwYBQ                         |
   Scenario Outline: update training by removing an existing media
-    Given existing training
+    Given existing training with all media created
     And user visits training form
     And removes media <media>
     Then the training should not contain removed media
     Examples:
-      | media                               |
-      | Z5iWr6Srsj8,IiwGbcd8S7I             |
-      | Z5iWr6Srsj8,5MJcklKwYBQ             |
-      | 5MJcklKwYBQ                         |
+      | media                   |
+      | Z5iWr6Srsj8,IiwGbcd8S7I |
+      | Z5iWr6Srsj8,5MJcklKwYBQ |
+      | 5MJcklKwYBQ             |
   Scenario Outline: update training by removing an existing media and adding a new media
-    Given existing training
+    Given existing training with all media created
     And user visits training form
-    And removes media <toRemove>
+    And user removes media keeping form open <toRemove>
     And adds media <toAdd>
     Then the training should not contain removed media
     Examples:

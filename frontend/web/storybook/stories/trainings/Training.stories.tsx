@@ -52,6 +52,8 @@ export const detail = () => {
   const m = _.times(10, () => media());
   return (
     <TrainingDetail
+      training={training({withTrainingSet: false})}
+      onDelete={action('onDelete')}
       media={m}
       onMediaClick={action('onMediaClick')}
       currentMedia={m[0]}

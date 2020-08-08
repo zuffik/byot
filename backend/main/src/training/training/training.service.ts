@@ -78,6 +78,11 @@ export class TrainingService {
     if (!training) {
       return undefined;
     }
+    if (typeof input.media !== 'undefined' && input.media.length === 0) {
+      const result = _.clone(training);
+      await this.trainingRepository.remove(training);
+      return result;
+    }
     training.label = input.label || training.label;
     if (input.media) {
       const medias = await Promise.all(

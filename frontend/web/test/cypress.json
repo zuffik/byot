@@ -1,5 +1,6 @@
 {
   "testFiles": ["scenarios/**/*.feature", "other/**/*.spec.ts"],
   "video": true,
-  "supportFile": "cypress/support/index.ts"
+  "supportFile": "cypress/support/index.ts",
+  "defaultCommandTimeout": 10000
 }

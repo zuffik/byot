@@ -10,10 +10,10 @@ import {gql} from 'apollo-boost';
 import {SuccessSnackbar} from '../../../types/app/snackbar/SuccessSnackbar';
 import {ErrorSnackbar} from '../../../types/app/snackbar/ErrorSnackbar';
 import {ITraining} from '../../../types/interfaces/ITraining';
-import {ITrainingDraftInput} from '../../../types/interfaces/ITrainingDraftInput';
+import {ITrainingUpdateInput} from '../../../types/interfaces/ITrainingUpdateInput';
 
 export type Request = {
-  training: ITrainingDraftInput;
+  training: ITrainingUpdateInput;
   id: string;
 };
 export type Response = ITraining;
@@ -36,7 +36,7 @@ export abstract class TrainingUpdate implements AsynchronousAction<FrontendCommo
   *saga(action: Action<Request>, state: Readonly<FrontendCommonState>) {
     return (yield call(ApolloContext.apolloClient.mutate, {
       mutation: gql`
-        mutation updateTraining($training: TrainingDraftInput!, $id: ID!) {
+        mutation updateTraining($training: TrainingUpdateInput!, $id: ID!) {
           updateTraining(training: $training, id: $id) {
             id
           }

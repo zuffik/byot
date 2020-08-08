@@ -21,7 +21,9 @@ export class TrainingRemove extends TrainingRemoveBase {
       ...nextState,
       ...state,
       ...(action.payload.response.data && {
-        redirect: Router.URI(),
+        redirect: Router.trainingSet.detail.URI({
+          trainingSetId: action.payload.response.data.trainingSet?.id,
+        }),
       }),
     };
   }

@@ -8,6 +8,7 @@ import {Input} from '@byot-frontend/web-common/src/components/elementary/form/In
 import {useTranslation} from 'react-i18next';
 import {MediaListItem} from '../list/MediaListItem';
 import * as _ from 'lodash';
+import {InputHacker} from '@byot-frontend/web-common/src/dom/InputHacker';
 
 export interface MediaAutocompleteInputProps {
   onSelect: (media: IMedia) => void;
@@ -30,7 +31,16 @@ const useStyles = makeStyles(styles);
 export const MediaAutocompleteInput: React.FC<Props> = (props: Props) => {
   const styles = useStyles(props);
   const {t} = useTranslation();
-  // todo fix clear
+  const inputRef = React.useRef<HTMLInputElement | undefined>();
+  const onInputChange = _.debounce((v, text) => props.onTextChange?.(text), 300);
+  const onSelect = (media: IMedia, e: React.ChangeEvent<{}>) => {
+    const input: HTMLInputElement = inputRef.current?.querySelector('input') as HTMLInputElement;
+    if (input) {
+      onInputChange.cancel();
+      InputHacker.setValue(input, '');
+    }
+    props.onSelect(media);
+  };
   return (
     <Autocomplete
       options={props.media.data}
@@ -47,9 +57,10 @@ export const MediaAutocompleteInput: React.FC<Props> = (props: Props) => {
       id={props.id}
       clearOnEscape
       clearOnBlur
+      innerRef={inputRef}
       PaperComponent={p => <Paper {...p} elevation={0} data-testid="media-form-autocomplete-suggestions" />}
-      onInputChange={_.debounce((v, text) => props.onTextChange?.(text), 300)}
-      onChange={(e, v) => (v ? props.onSelect(v as IMedia) : props.onClear?.())}
+      onInputChange={onInputChange}
+      onChange={(e, v) => (v ? onSelect(v as IMedia, e) : props.onClear?.())}
       renderOption={media => <MediaListItem transparent media={media} />}
       renderInput={params => (
         <Input

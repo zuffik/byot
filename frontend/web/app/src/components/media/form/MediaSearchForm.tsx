@@ -41,10 +41,7 @@ export const MediaSearchForm: React.FC<Props> = (props: Props) => {
   return (
     <Grid container spacing={2} justify="flex-end" alignItems="center">
       <Grid item xs={12} sm={6}>
-        <props.AutocompleteComponent
-          onSelect={m => setMedia({...m, id: (++id).toString()})}
-          onClear={() => setMedia(undefined)}
-        />
+        <props.AutocompleteComponent onSelect={m => setMedia({...m, id: (++id).toString()})} />
       </Grid>
       <Grid item xs={12} sm={5}>
         <Input

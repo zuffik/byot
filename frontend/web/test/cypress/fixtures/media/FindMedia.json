@@ -74,6 +74,31 @@
       }
     }
   },
+  "UItWltVZZmE": {
+    "data": {
+      "findMedia": {
+        "meta": {
+          "totalCount": 1,
+          "__typename": "ListMeta"
+        },
+        "entries": [
+          {
+            "label": "20 MIN FULL BODY WORKOUT - Beginner Version // No Equipment I Pamela Reif",
+            "source": {
+              "mediaType": "VIDEO",
+              "resourceId": "UItWltVZZmE",
+              "sourceType": "YOUTUBE",
+              "thumbnail": "https://i.ytimg.com/vi/UItWltVZZmE/hqdefault.jpg",
+              "url": null,
+              "__typename": "Source"
+            },
+            "__typename": "Media"
+          }
+        ],
+        "__typename": "MediaList"
+      }
+    }
+  },
   "fulltextSearch": {
     "data": {
       "findMedia": {

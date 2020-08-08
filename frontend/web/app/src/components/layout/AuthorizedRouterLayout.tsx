@@ -12,6 +12,7 @@ import {TrainingSetDetailPage} from '../pages/TrainingSetDetailPage';
 import {TrainingSetEditPage} from '../pages/TrainingSetEditPage';
 import {TrainingCreatePage} from '../pages/TrainingCreatePage';
 import {TrainingDetailPage} from '../pages/TrainingDetailPage';
+import {TrainingEditPage} from '../pages/TrainingEditPage';
 
 interface Props {}
 
@@ -39,7 +40,7 @@ export const AuthorizedRouterLayout: React.FC<Props> = (props: Props) => {
           <TrainingCreatePage />
         </AuthRoute>
         <AuthRoute exact path={Router.training.edit.URI()}>
-          {/*<TrainingEditPage />*/}
+          <TrainingEditPage />
         </AuthRoute>
         <AuthRoute exact path={Router.training.detail.URI()}>
           <TrainingDetailPage />

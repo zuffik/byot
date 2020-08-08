@@ -66,7 +66,7 @@ export const TripleComboItem = <P extends object = object>(props: Props<P>) => {
               <Patch boxRef={ref} component={props.component} {...p} />
             ))
       }
-      classes={{root: styles.root, ...baseProps.classes}}>
+      classes={{...baseProps.classes, root: styles.root}}>
       {(props.image || props.imagePlaceholder) && (
         <div className={styles.image}>
           {typeof props.image !== 'string' && props.image}

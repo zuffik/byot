@@ -71,6 +71,7 @@ export const MediaList: React.FC<Props> = (props: Props) => {
                 media={item}
                 classes={{root: styles.readonlyItem}}
                 onClick={() => props.onItemClick?.(item)}
+                description={item.label}
               />
             </Item>
           ))}

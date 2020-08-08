@@ -27,6 +27,7 @@ export const TrainingDetailPage: React.FC<Props> = (props: Props) => {
   return (
     <ControlPanelMainContent>
       <TrainingDetail
+        training={training.data!}
         media={training.data?.media?.entries || []}
         isLoading={training.isProcessing || !training.hasData}
         onMediaClick={onMediaClick}

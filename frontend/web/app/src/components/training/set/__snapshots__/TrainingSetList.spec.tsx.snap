@@ -35,7 +35,7 @@ exports[`<TrainingSetList/> should render 1`] = `
             <p
               class="MuiTypography-root MuiTypography-body2"
             >
-              33
+              93
                
               training
             </p>

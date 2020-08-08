@@ -1,0 +1,233 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TrainingFormSkeleton/> should render 1`] = `
+<div>
+  <div
+    class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-justify-xs-flex-end"
+  >
+    <div
+      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+    >
+      <span
+        class="MuiSkeleton-root makeStyles-root-1 MuiSkeleton-rect MuiSkeleton-pulse"
+        style="height: 56px;"
+      />
+    </div>
+    <div
+      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+    >
+      <div
+        class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1"
+      >
+        <div
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+        >
+          <div
+            class="MuiBox-root MuiBox-root-13 MuiListItem-root makeStyles-root-5 MuiListItem-gutters MuiListItem-alignItemsFlexStart makeStyles-root-12"
+          >
+            <div
+              class="makeStyles-image-6 makeStyles-image-9"
+            >
+              <span
+                class="MuiSkeleton-root makeStyles-root-1 makeStyles-imagePlaceholder-3 MuiSkeleton-rect MuiSkeleton-pulse"
+              />
+            </div>
+            <div
+              class="MuiListItemText-root makeStyles-textRoot-8 makeStyles-textRoot-11 MuiListItemText-multiline"
+            >
+              <div
+                class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-7 makeStyles-primaryText-10 MuiTypography-body1 MuiTypography-displayBlock"
+                data-testid="triple-combo-item-text-primary"
+              >
+                <span
+                  class="MuiSkeleton-root makeStyles-root-1 makeStyles-title-2 MuiSkeleton-rect MuiSkeleton-pulse"
+                />
+              </div>
+              <div
+                class="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+                data-testid="triple-combo-item-text-secondary"
+              >
+                <span
+                  class="MuiSkeleton-root makeStyles-root-1 makeStyles-description-4 MuiSkeleton-rect MuiSkeleton-pulse"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+        >
+          <div
+            class="MuiBox-root MuiBox-root-17 MuiListItem-root makeStyles-root-5 MuiListItem-gutters MuiListItem-alignItemsFlexStart makeStyles-root-12"
+          >
+            <div
+              class="makeStyles-image-6 makeStyles-image-14"
+            >
+              <span
+                class="MuiSkeleton-root makeStyles-root-1 makeStyles-imagePlaceholder-3 MuiSkeleton-rect MuiSkeleton-pulse"
+              />
+            </div>
+            <div
+              class="MuiListItemText-root makeStyles-textRoot-8 makeStyles-textRoot-16 MuiListItemText-multiline"
+            >
+              <div
+                class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-7 makeStyles-primaryText-15 MuiTypography-body1 MuiTypography-displayBlock"
+                data-testid="triple-combo-item-text-primary"
+              >
+                <span
+                  class="MuiSkeleton-root makeStyles-root-1 makeStyles-title-2 MuiSkeleton-rect MuiSkeleton-pulse"
+                />
+              </div>
+              <div
+                class="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+                data-testid="triple-combo-item-text-secondary"
+              >
+                <span
+                  class="MuiSkeleton-root makeStyles-root-1 makeStyles-description-4 MuiSkeleton-rect MuiSkeleton-pulse"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+        >
+          <div
+            class="MuiBox-root MuiBox-root-21 MuiListItem-root makeStyles-root-5 MuiListItem-gutters MuiListItem-alignItemsFlexStart makeStyles-root-12"
+          >
+            <div
+              class="makeStyles-image-6 makeStyles-image-18"
+            >
+              <span
+                class="MuiSkeleton-root makeStyles-root-1 makeStyles-imagePlaceholder-3 MuiSkeleton-rect MuiSkeleton-pulse"
+              />
+            </div>
+            <div
+              class="MuiListItemText-root makeStyles-textRoot-8 makeStyles-textRoot-20 MuiListItemText-multiline"
+            >
+              <div
+                class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-7 makeStyles-primaryText-19 MuiTypography-body1 MuiTypography-displayBlock"
+                data-testid="triple-combo-item-text-primary"
+              >
+                <span
+                  class="MuiSkeleton-root makeStyles-root-1 makeStyles-title-2 MuiSkeleton-rect MuiSkeleton-pulse"
+                />
+              </div>
+              <div
+                class="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+                data-testid="triple-combo-item-text-secondary"
+              >
+                <span
+                  class="MuiSkeleton-root makeStyles-root-1 makeStyles-description-4 MuiSkeleton-rect MuiSkeleton-pulse"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+        >
+          <div
+            class="MuiBox-root MuiBox-root-25 MuiListItem-root makeStyles-root-5 MuiListItem-gutters MuiListItem-alignItemsFlexStart makeStyles-root-12"
+          >
+            <div
+              class="makeStyles-image-6 makeStyles-image-22"
+            >
+              <span
+                class="MuiSkeleton-root makeStyles-root-1 makeStyles-imagePlaceholder-3 MuiSkeleton-rect MuiSkeleton-pulse"
+              />
+            </div>
+            <div
+              class="MuiListItemText-root makeStyles-textRoot-8 makeStyles-textRoot-24 MuiListItemText-multiline"
+            >
+              <div
+                class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-7 makeStyles-primaryText-23 MuiTypography-body1 MuiTypography-displayBlock"
+                data-testid="triple-combo-item-text-primary"
+              >
+                <span
+                  class="MuiSkeleton-root makeStyles-root-1 makeStyles-title-2 MuiSkeleton-rect MuiSkeleton-pulse"
+                />
+              </div>
+              <div
+                class="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+                data-testid="triple-combo-item-text-secondary"
+              >
+                <span
+                  class="MuiSkeleton-root makeStyles-root-1 makeStyles-description-4 MuiSkeleton-rect MuiSkeleton-pulse"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+        >
+          <div
+            class="MuiBox-root MuiBox-root-29 MuiListItem-root makeStyles-root-5 MuiListItem-gutters MuiListItem-alignItemsFlexStart makeStyles-root-12"
+          >
+            <div
+              class="makeStyles-image-6 makeStyles-image-26"
+            >
+              <span
+                class="MuiSkeleton-root makeStyles-root-1 makeStyles-imagePlaceholder-3 MuiSkeleton-rect MuiSkeleton-pulse"
+              />
+            </div>
+            <div
+              class="MuiListItemText-root makeStyles-textRoot-8 makeStyles-textRoot-28 MuiListItemText-multiline"
+            >
+              <div
+                class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-7 makeStyles-primaryText-27 MuiTypography-body1 MuiTypography-displayBlock"
+                data-testid="triple-combo-item-text-primary"
+              >
+                <span
+                  class="MuiSkeleton-root makeStyles-root-1 makeStyles-title-2 MuiSkeleton-rect MuiSkeleton-pulse"
+                />
+              </div>
+              <div
+                class="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+                data-testid="triple-combo-item-text-secondary"
+              >
+                <span
+                  class="MuiSkeleton-root makeStyles-root-1 makeStyles-description-4 MuiSkeleton-rect MuiSkeleton-pulse"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+    >
+      <div
+        class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2"
+      >
+        <div
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-6"
+        >
+          <span
+            class="MuiSkeleton-root makeStyles-root-1 MuiSkeleton-rect MuiSkeleton-pulse"
+            style="height: 56px;"
+          />
+        </div>
+        <div
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-6"
+        >
+          <span
+            class="MuiSkeleton-root makeStyles-root-1 MuiSkeleton-rect MuiSkeleton-pulse"
+            style="height: 56px;"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="MuiGrid-root MuiGrid-item"
+    >
+      <span
+        class="MuiSkeleton-root makeStyles-root-1 MuiSkeleton-rect MuiSkeleton-pulse"
+        style="height: 120px;"
+      />
+    </div>
+  </div>
+</div>
+`;

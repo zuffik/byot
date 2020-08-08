@@ -26,6 +26,14 @@ jest.mock('../pages/TrainingCreatePage', () => ({
   __esModule: true,
   TrainingCreatePage: () => <div />,
 }));
+jest.mock('../pages/TrainingEditPage', () => ({
+  __esModule: true,
+  TrainingEditPage: () => <div />,
+}));
+jest.mock('../pages/TrainingDetailPage', () => ({
+  __esModule: true,
+  TrainingDetailPage: () => <div />,
+}));
 
 jest.mock('react-redux', () => ({
   __esModule: true,

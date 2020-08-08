@@ -5,6 +5,7 @@ import {media} from '@byot-frontend/common/test/fixtures/dto/Media';
 import {IMedia} from '@byot-frontend/common/src/types/interfaces/IMedia';
 import {IterableResource} from '@byot-frontend/common/src/redux-system/data-structures/resources/IterableResource';
 import {ResourceState} from '@byot-frontend/common/src/redux-system/data-structures/resources/Resource';
+import {training} from '@byot-frontend/common/test/fixtures/dto/Training';
 
 jest.mock('../../player/MediaPlayer', () => ({
   __esModule: true,
@@ -24,17 +25,25 @@ describe('<TrainingDetail/>', () => {
     const {container} = render(
       <TrainingDetail
         onMediaClick={jest.fn()}
+        onDelete={jest.fn()}
         currentMedia={media()}
-        media={new IterableResource<IMedia>([])}
+        media={[]}
+        training={training()}
       />
     );
     expect(container).toMatchSnapshot();
   });
   it('should display skeletons', () => {
-    const m = new IterableResource<IMedia>([media(), media()]);
-    m.state = ResourceState.LOADING;
+    const m = [media(), media()];
     const {container, queryByTestId, queryAllByTestId} = render(
-      <TrainingDetail onMediaClick={jest.fn()} currentMedia={m.data[0]} media={m} />
+      <TrainingDetail
+        isLoading
+        onMediaClick={jest.fn()}
+        currentMedia={m[0]}
+        media={m}
+        onDelete={jest.fn()}
+        training={training()}
+      />
     );
     expect(queryByTestId('training-detail-media-skeleton')).not.toBeNull();
     expect(queryByTestId('training-detail-tci-skeletons')).not.toBeNull();
@@ -43,10 +52,16 @@ describe('<TrainingDetail/>', () => {
     expect(container).toMatchSnapshot();
   });
   it('should select a media', () => {
-    const m = new IterableResource<IMedia>([media(), media()]);
+    const m = [media(), media()];
     const onMediaClick = jest.fn();
     const {container, queryByTestId, queryAllByTestId} = render(
-      <TrainingDetail onMediaClick={onMediaClick} currentMedia={m.data[0]} media={m} />
+      <TrainingDetail
+        onMediaClick={onMediaClick}
+        onDelete={jest.fn()}
+        currentMedia={m[0]}
+        media={m}
+        training={training()}
+      />
     );
     const listItems = queryAllByTestId('media-list-item');
     expect(queryByTestId('training-detail-media-skeleton')).toBeNull();
@@ -54,7 +69,24 @@ describe('<TrainingDetail/>', () => {
     expect(queryByTestId('training-detail-media-player')).not.toBeNull();
     expect(listItems).toHaveLength(2);
     fireEvent.click(listItems[1]);
-    expect(onMediaClick).toBeCalledWith(m.data[1]);
+    expect(onMediaClick).toBeCalledWith(m[1]);
+    expect(container).toMatchSnapshot();
+  });
+  it('should delete media', () => {
+    const m = [media(), media()];
+    const onDelete = jest.fn();
+    const {container, getByTestId} = render(
+      <TrainingDetail
+        onDelete={onDelete}
+        onMediaClick={jest.fn()}
+        currentMedia={m[0]}
+        media={m}
+        training={training()}
+      />
+    );
+    fireEvent.click(getByTestId('app-elements-controls-remove'));
+    fireEvent.click(getByTestId('app-elements-controls-confirm-yes'));
+    expect(onDelete).toBeCalled();
     expect(container).toMatchSnapshot();
   });
 });

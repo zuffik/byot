@@ -3,6 +3,7 @@ import {fireEvent, render, waitFor} from '@testing-library/react';
 import {TrainingForm} from './TrainingForm';
 import {TrainingDraftInput} from '@byot-frontend/common/src/types/dto/TrainingDraftInput';
 import {training} from '@byot-frontend/common/test/fixtures/dto/Training';
+import {TrainingUpdateInput} from '@byot-frontend/common/src/types/dto/TrainingUpdateInput';
 
 describe('<TrainingForm/>', () => {
   it('should render', () => {
@@ -11,7 +12,7 @@ describe('<TrainingForm/>', () => {
     );
     expect(container).toMatchSnapshot();
   });
-  it('should submit only with label provided', async () => {
+  it('should not submit only with label provided', async () => {
     const onSave = jest.fn();
     const {container, queryByTestId, getByTestId} = render(
       <TrainingForm onSave={onSave} trainingSetId="id" MediaProviderComponent={() => <div />} />
@@ -25,15 +26,7 @@ describe('<TrainingForm/>', () => {
     const label = 'Training label';
     fireEvent.change(input!, {target: {value: label}});
     fireEvent.submit(form);
-    await waitFor(() =>
-      expect(onSave).toBeCalledWith(
-        new TrainingDraftInput({
-          media: [],
-          idTrainingSet: 'id',
-          label,
-        })
-      )
-    );
+    await waitFor(() => expect(onSave).not.toBeCalled());
     expect(container).toMatchSnapshot();
   });
   it('should edit the training', async () => {
@@ -51,13 +44,12 @@ describe('<TrainingForm/>', () => {
     fireEvent.submit(form);
     await waitFor(() =>
       expect(onSave).toBeCalledWith(
-        new TrainingDraftInput({
+        new TrainingUpdateInput({
           media: tr.media.entries.map(m => ({
             id: m.source.resourceId!,
             sourceType: m.source.sourceType,
             label: m.label,
           })),
-          idTrainingSet: tr.trainingSet.id,
           label,
         })
       )

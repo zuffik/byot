@@ -1,23 +1,227 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<TrainingDetail/> should delete media 1`] = `
+<div
+  aria-hidden="true"
+>
+  <div
+    class="MuiGrid-root makeStyles-root-42 MuiGrid-container MuiGrid-spacing-xs-2"
+  >
+    <div
+      class="MuiGrid-root makeStyles-list-44 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-4 MuiGrid-grid-lg-3"
+    >
+      <div
+        class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1"
+      >
+        <div
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+        >
+          <div
+            aria-disabled="false"
+            class="MuiBox-root MuiBox-root-57 MuiButtonBase-root MuiListItem-root makeStyles-root-49 makeStyles-root-48 makeStyles-readonlyItem-46 MuiListItem-gutters MuiListItem-button MuiListItem-alignItemsFlexStart makeStyles-root-56"
+            data-resource="0mjb0u4kIXQ"
+            data-testid="media-list-item"
+            role="button"
+            tabindex="0"
+          >
+            <div
+              class="makeStyles-image-50 makeStyles-image-53"
+            />
+            <div
+              class="MuiListItemText-root makeStyles-textRoot-52 makeStyles-textRoot-55 MuiListItemText-multiline"
+            >
+              <div
+                class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-51 makeStyles-primaryText-54 MuiTypography-body1 MuiTypography-displayBlock"
+                data-testid="triple-combo-item-text-primary"
+              >
+                Weczorted tinoh wuvwob miha tod wuufi pipnawzon jez un jigovbu zezo zohu luklu etuka akafewe hesmo fuedo sured. http://eh.iq/dub
+              </div>
+              <div
+                class="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+                data-testid="triple-combo-item-text-secondary"
+              >
+                Weczorted tinoh wuvwob miha tod wuufi pipnawzon jez un jigovbu zezo zohu luklu etuka akafewe hesmo fuedo sured. http://eh.iq/dub
+              </div>
+            </div>
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </div>
+        </div>
+        <div
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+        >
+          <div
+            aria-disabled="false"
+            class="MuiBox-root MuiBox-root-61 MuiButtonBase-root MuiListItem-root makeStyles-root-49 makeStyles-root-48 makeStyles-readonlyItem-46 MuiListItem-gutters MuiListItem-button MuiListItem-alignItemsFlexStart makeStyles-root-56"
+            data-resource="0mjb0u4kIXQ"
+            data-testid="media-list-item"
+            role="button"
+            tabindex="0"
+          >
+            <div
+              class="makeStyles-image-50 makeStyles-image-58"
+            />
+            <div
+              class="MuiListItemText-root makeStyles-textRoot-52 makeStyles-textRoot-60 MuiListItemText-multiline"
+            >
+              <div
+                class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-51 makeStyles-primaryText-59 MuiTypography-body1 MuiTypography-displayBlock"
+                data-testid="triple-combo-item-text-primary"
+              >
+                Me vi mumu im osovo ulca taw pehikso ujesug hekolmis hemrutu hiaceve de darekuni tujod owa. http://bulgomi.ao/du
+              </div>
+              <div
+                class="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+                data-testid="triple-combo-item-text-secondary"
+              >
+                Me vi mumu im osovo ulca taw pehikso ujesug hekolmis hemrutu hiaceve de darekuni tujod owa. http://bulgomi.ao/du
+              </div>
+            </div>
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="MuiGrid-root makeStyles-player-43 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-8 MuiGrid-grid-lg-9"
+    >
+      <div
+        data-testid="training-detail-media-player"
+      />
+      <div
+        class="MuiBox-root MuiBox-root-62"
+      >
+        <div
+          class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-justify-xs-flex-end"
+        >
+          <div
+            class="MuiGrid-root MuiGrid-item"
+          >
+            <button
+              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary"
+              data-testid="app-elements-controls-edit"
+              tabindex="0"
+              title="Edit"
+              to="/training/ba67aa4a-91eb-5f1d-b488-345a1ab9a12d/edit"
+              type="button"
+            >
+              <span
+                class="MuiIconButton-label"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M3 17.46v3.04c0 .28.22.5.5.5h3.04c.13 0 .26-.05.35-.15L17.81 9.94l-3.75-3.75L3.15 17.1c-.1.1-.15.22-.15.36zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+                  />
+                </svg>
+              </span>
+              <span
+                class="MuiTouchRipple-root"
+              />
+            </button>
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-item"
+          >
+            <button
+              class="MuiButtonBase-root MuiIconButton-root makeStyles-remove-64"
+              data-testid="app-elements-controls-remove"
+              tabindex="0"
+              title="Delete"
+              type="button"
+            >
+              <span
+                class="MuiIconButton-label"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v10zM18 4h-2.5l-.71-.71c-.18-.18-.44-.29-.7-.29H9.91c-.26 0-.52.11-.7.29L8.5 4H6c-.55 0-1 .45-1 1s.45 1 1 1h12c.55 0 1-.45 1-1s-.45-1-1-1z"
+                  />
+                </svg>
+              </span>
+              <span
+                class="MuiTouchRipple-root"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-65"
+        data-testid="app-controlPanel-title"
+      >
+        <h3
+          class="MuiTypography-root MuiTypography-h3"
+        >
+          Hemwa worfisim fiwotseh pehkogsil ikasni weed asido olo ebowelre zimabe fat lof ebamo cible.
+        </h3>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`<TrainingDetail/> should display skeletons 1`] = `
 <div>
   <div
-    class="MuiGrid-root makeStyles-root-7 MuiGrid-container MuiGrid-spacing-xs-2"
+    class="MuiGrid-root makeStyles-root-11 MuiGrid-container MuiGrid-spacing-xs-2"
   >
     <div
-      class="MuiGrid-root makeStyles-list-9 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-4 MuiGrid-grid-md-3"
+      class="MuiGrid-root makeStyles-list-13 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-4 MuiGrid-grid-lg-3"
     >
       <div
         data-testid="training-detail-tci-skeletons"
       />
     </div>
     <div
-      class="MuiGrid-root makeStyles-player-8 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-8 MuiGrid-grid-md-9"
+      class="MuiGrid-root makeStyles-player-12 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-8 MuiGrid-grid-lg-9"
     >
       <div
         data-testid="training-detail-media-skeleton"
       />
+      <div
+        class="MuiBox-root MuiBox-root-14"
+      >
+        <div
+          class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-justify-xs-flex-end"
+        >
+          <div
+            class="MuiGrid-root MuiGrid-item"
+          >
+            <span
+              class="MuiSkeleton-root MuiSkeleton-circle MuiSkeleton-pulse"
+              style="width: 40px; height: 40px;"
+            />
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-item"
+          >
+            <span
+              class="MuiSkeleton-root MuiSkeleton-circle MuiSkeleton-pulse"
+              style="width: 40px; height: 40px;"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-16"
+      >
+        <span
+          class="MuiSkeleton-root makeStyles-root-17 makeStyles-skeleton-15 MuiSkeleton-rect MuiSkeleton-pulse"
+        />
+      </div>
     </div>
   </div>
 </div>
@@ -29,18 +233,95 @@ exports[`<TrainingDetail/> should render 1`] = `
     class="MuiGrid-root makeStyles-root-1 MuiGrid-container MuiGrid-spacing-xs-2"
   >
     <div
-      class="MuiGrid-root makeStyles-list-3 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-4 MuiGrid-grid-md-3"
+      class="MuiGrid-root makeStyles-list-3 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-4 MuiGrid-grid-lg-3"
     >
       <div
         class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1"
       />
     </div>
     <div
-      class="MuiGrid-root makeStyles-player-2 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-8 MuiGrid-grid-md-9"
+      class="MuiGrid-root makeStyles-player-2 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-8 MuiGrid-grid-lg-9"
     >
       <div
         data-testid="training-detail-media-player"
       />
+      <div
+        class="MuiBox-root MuiBox-root-7"
+      >
+        <div
+          class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-justify-xs-flex-end"
+        >
+          <div
+            class="MuiGrid-root MuiGrid-item"
+          >
+            <button
+              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary"
+              data-testid="app-elements-controls-edit"
+              tabindex="0"
+              title="Edit"
+              to="/training/e9991039-4a86-549c-9432-f316ed9c2b8e/edit"
+              type="button"
+            >
+              <span
+                class="MuiIconButton-label"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M3 17.46v3.04c0 .28.22.5.5.5h3.04c.13 0 .26-.05.35-.15L17.81 9.94l-3.75-3.75L3.15 17.1c-.1.1-.15.22-.15.36zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+                  />
+                </svg>
+              </span>
+              <span
+                class="MuiTouchRipple-root"
+              />
+            </button>
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-item"
+          >
+            <button
+              class="MuiButtonBase-root MuiIconButton-root makeStyles-remove-9"
+              data-testid="app-elements-controls-remove"
+              tabindex="0"
+              title="Delete"
+              type="button"
+            >
+              <span
+                class="MuiIconButton-label"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v10zM18 4h-2.5l-.71-.71c-.18-.18-.44-.29-.7-.29H9.91c-.26 0-.52.11-.7.29L8.5 4H6c-.55 0-1 .45-1 1s.45 1 1 1h12c.55 0 1-.45 1-1s-.45-1-1-1z"
+                  />
+                </svg>
+              </span>
+              <span
+                class="MuiTouchRipple-root"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-10"
+        data-testid="app-controlPanel-title"
+      >
+        <h3
+          class="MuiTypography-root MuiTypography-h3"
+        >
+          Japa afjelru udpeta iv zap jatro ba licucce vibu bo sooki ikno.
+        </h3>
+      </div>
     </div>
   </div>
 </div>
@@ -49,10 +330,10 @@ exports[`<TrainingDetail/> should render 1`] = `
 exports[`<TrainingDetail/> should select a media 1`] = `
 <div>
   <div
-    class="MuiGrid-root makeStyles-root-10 MuiGrid-container MuiGrid-spacing-xs-2"
+    class="MuiGrid-root makeStyles-root-18 MuiGrid-container MuiGrid-spacing-xs-2"
   >
     <div
-      class="MuiGrid-root makeStyles-list-12 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-4 MuiGrid-grid-md-3"
+      class="MuiGrid-root makeStyles-list-20 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-4 MuiGrid-grid-lg-3"
     >
       <div
         class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1"
@@ -62,22 +343,29 @@ exports[`<TrainingDetail/> should select a media 1`] = `
         >
           <div
             aria-disabled="false"
-            class="MuiBox-root MuiBox-root-25 MuiButtonBase-root MuiListItem-root makeStyles-root-16 makeStyles-readonlyItem-14 MuiListItem-gutters MuiListItem-button MuiListItem-alignItemsFlexStart makeStyles-root-24"
+            class="MuiBox-root MuiBox-root-33 MuiButtonBase-root MuiListItem-root makeStyles-root-25 makeStyles-root-24 makeStyles-readonlyItem-22 MuiListItem-gutters MuiListItem-button MuiListItem-alignItemsFlexStart makeStyles-root-32"
+            data-resource="f7wy5DWM0jg"
             data-testid="media-list-item"
             role="button"
             tabindex="0"
           >
             <div
-              class="makeStyles-image-18 makeStyles-image-21"
+              class="makeStyles-image-26 makeStyles-image-29"
             />
             <div
-              class="MuiListItemText-root makeStyles-textRoot-20 makeStyles-textRoot-23"
+              class="MuiListItemText-root makeStyles-textRoot-28 makeStyles-textRoot-31 MuiListItemText-multiline"
             >
               <div
-                class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-19 makeStyles-primaryText-22 MuiTypography-body1 MuiTypography-displayBlock"
+                class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-27 makeStyles-primaryText-30 MuiTypography-body1 MuiTypography-displayBlock"
                 data-testid="triple-combo-item-text-primary"
               >
-                Hu ibezvu liuz hirneom luze zakef ac aconki kekefjud voswulun kepdub optiowa ti velfo.
+                Mujgaem kaiv ukuba cadbib wip osezi ravul gifup ugutakag istej zufa wodas ukhos hepa sihis gaf ju. http://ketumsu.gr/igojo
+              </div>
+              <div
+                class="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+                data-testid="triple-combo-item-text-secondary"
+              >
+                Mujgaem kaiv ukuba cadbib wip osezi ravul gifup ugutakag istej zufa wodas ukhos hepa sihis gaf ju. http://ketumsu.gr/igojo
               </div>
             </div>
             <span
@@ -90,22 +378,29 @@ exports[`<TrainingDetail/> should select a media 1`] = `
         >
           <div
             aria-disabled="false"
-            class="MuiBox-root MuiBox-root-29 MuiButtonBase-root MuiListItem-root makeStyles-root-16 makeStyles-readonlyItem-14 MuiListItem-gutters MuiListItem-button MuiListItem-alignItemsFlexStart makeStyles-root-24"
+            class="MuiBox-root MuiBox-root-37 MuiButtonBase-root MuiListItem-root makeStyles-root-25 makeStyles-root-24 makeStyles-readonlyItem-22 MuiListItem-gutters MuiListItem-button MuiListItem-alignItemsFlexStart makeStyles-root-32"
+            data-resource="1qc5bAgZ0uY"
             data-testid="media-list-item"
             role="button"
             tabindex="0"
           >
             <div
-              class="makeStyles-image-18 makeStyles-image-26"
+              class="makeStyles-image-26 makeStyles-image-34"
             />
             <div
-              class="MuiListItemText-root makeStyles-textRoot-20 makeStyles-textRoot-28"
+              class="MuiListItemText-root makeStyles-textRoot-28 makeStyles-textRoot-36 MuiListItemText-multiline"
             >
               <div
-                class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-19 makeStyles-primaryText-27 MuiTypography-body1 MuiTypography-displayBlock"
+                class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-27 makeStyles-primaryText-35 MuiTypography-body1 MuiTypography-displayBlock"
                 data-testid="triple-combo-item-text-primary"
               >
-                Pe jilre itefihpaz zij di mu tu juf ugibo etauznop ofo fuz.
+                Cobniffo zephedhik le uj otvone bigu evpuk giw gos sig hit ku montoz ed elwizo. http://buba.pa/etaid
+              </div>
+              <div
+                class="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+                data-testid="triple-combo-item-text-secondary"
+              >
+                Cobniffo zephedhik le uj otvone bigu evpuk giw gos sig hit ku montoz ed elwizo. http://buba.pa/etaid
               </div>
             </div>
             <span
@@ -116,11 +411,88 @@ exports[`<TrainingDetail/> should select a media 1`] = `
       </div>
     </div>
     <div
-      class="MuiGrid-root makeStyles-player-11 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-8 MuiGrid-grid-md-9"
+      class="MuiGrid-root makeStyles-player-19 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-8 MuiGrid-grid-lg-9"
     >
       <div
         data-testid="training-detail-media-player"
       />
+      <div
+        class="MuiBox-root MuiBox-root-38"
+      >
+        <div
+          class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-justify-xs-flex-end"
+        >
+          <div
+            class="MuiGrid-root MuiGrid-item"
+          >
+            <button
+              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary"
+              data-testid="app-elements-controls-edit"
+              tabindex="0"
+              title="Edit"
+              to="/training/9a477b12-319a-552b-9d4a-e60304eb0415/edit"
+              type="button"
+            >
+              <span
+                class="MuiIconButton-label"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M3 17.46v3.04c0 .28.22.5.5.5h3.04c.13 0 .26-.05.35-.15L17.81 9.94l-3.75-3.75L3.15 17.1c-.1.1-.15.22-.15.36zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+                  />
+                </svg>
+              </span>
+              <span
+                class="MuiTouchRipple-root"
+              />
+            </button>
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-item"
+          >
+            <button
+              class="MuiButtonBase-root MuiIconButton-root makeStyles-remove-40"
+              data-testid="app-elements-controls-remove"
+              tabindex="0"
+              title="Delete"
+              type="button"
+            >
+              <span
+                class="MuiIconButton-label"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v10zM18 4h-2.5l-.71-.71c-.18-.18-.44-.29-.7-.29H9.91c-.26 0-.52.11-.7.29L8.5 4H6c-.55 0-1 .45-1 1s.45 1 1 1h12c.55 0 1-.45 1-1s-.45-1-1-1z"
+                  />
+                </svg>
+              </span>
+              <span
+                class="MuiTouchRipple-root"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-41"
+        data-testid="app-controlPanel-title"
+      >
+        <h3
+          class="MuiTypography-root MuiTypography-h3"
+        >
+          Cub du agu ojoicav zu iwere pungar mekbobbek ebaavi urhadsek ugra ep nubov jedbi hu.
+        </h3>
+      </div>
     </div>
   </div>
 </div>

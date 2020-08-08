@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TrainingFormWireframe/> should render 1`] = `
+<div>
+  <div
+    class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-justify-xs-flex-end"
+  >
+    <div
+      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+    />
+    <div
+      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+    />
+    <div
+      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+    />
+    <div
+      class="MuiGrid-root MuiGrid-item"
+    />
+  </div>
+</div>
+`;

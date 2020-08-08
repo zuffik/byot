@@ -130,7 +130,7 @@ exports[`<MediaAutocompleteInput/> should render focused state 1`] = `
           tabindex="-1"
         >
           <div
-            data-media-id="647b3fdd-9747-5f3e-9991-0394a8649c84"
+            data-media-id="e9991039-4a86-549c-9432-f316ed9c2b8e"
             data-testid="media-list-item"
           />
         </li>
@@ -144,7 +144,7 @@ exports[`<MediaAutocompleteInput/> should render focused state 1`] = `
           tabindex="-1"
         >
           <div
-            data-media-id="662aca80-3bf5-58ea-ab15-954792683130"
+            data-media-id="11f43915-7859-560f-94c1-fbdb8d78fe4c"
             data-testid="media-list-item"
           />
         </li>

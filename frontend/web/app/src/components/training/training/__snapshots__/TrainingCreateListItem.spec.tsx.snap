@@ -8,9 +8,10 @@ exports[`<TrainingCreateListItem/> should render 1`] = `
     <div
       aria-disabled="false"
       class="MuiBox-root MuiBox-root-9 MuiButtonBase-root MuiListItem-root makeStyles-root-1 MuiListItem-gutters MuiListItem-button makeStyles-root-8"
+      data-testid="app-components-training-create"
       role="button"
       tabindex="0"
-      to="/training/set/:trainingSetId/create-training"
+      to="/training/set/id/create-training"
     >
       <div
         class="makeStyles-image-2 makeStyles-image-5"

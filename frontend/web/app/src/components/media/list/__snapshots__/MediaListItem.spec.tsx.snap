@@ -3,7 +3,8 @@
 exports[`<MediaListItem/> should render 1`] = `
 <div>
   <div
-    class="MuiBox-root MuiBox-root-10 MuiListItem-root makeStyles-root-1 MuiListItem-gutters MuiListItem-alignItemsFlexStart makeStyles-root-9"
+    class="MuiBox-root MuiBox-root-10 MuiListItem-root makeStyles-root-2 makeStyles-root-1 MuiListItem-gutters MuiListItem-alignItemsFlexStart makeStyles-root-9"
+    data-resource="dSJ24tJri4c"
     data-testid="media-list-item"
   >
     <div
@@ -16,7 +17,7 @@ exports[`<MediaListItem/> should render 1`] = `
         class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-4 makeStyles-primaryText-7 MuiTypography-body1 MuiTypography-displayBlock"
         data-testid="triple-combo-item-text-primary"
       >
-        Mucu ceda pi hahij le vitvep sadwupif kenmulo jutacu emibo cu umusosfu re cuznim reletwaj lojeibe lolmuj.
+        Mucu ceda pi hahij le vitvep sadwupif kenmulo jutacu emibo cu umusosfu re cuznim reletwaj lojeibe lolmuj. http://tujle.vi/wup
       </div>
     </div>
   </div>
@@ -26,7 +27,8 @@ exports[`<MediaListItem/> should render 1`] = `
 exports[`<MediaListItem/> should render transparent 1`] = `
 <div>
   <li
-    class="MuiListItem-root makeStyles-root-21 MuiListItem-gutters MuiListItem-alignItemsFlexStart"
+    class="MuiListItem-root makeStyles-root-22 makeStyles-root-21 MuiListItem-gutters MuiListItem-alignItemsFlexStart"
+    data-resource="f7wy5DWM0jg"
     data-testid="media-list-item"
   >
     <div
@@ -39,7 +41,7 @@ exports[`<MediaListItem/> should render transparent 1`] = `
         class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-24 makeStyles-primaryText-27 MuiTypography-body1 MuiTypography-displayBlock"
         data-testid="triple-combo-item-text-primary"
       >
-        Me ikoeru kunmega avjiac gomusja ufizowu kesoma tabuli zal koupeas dahisli wacef mo erdeko cudpiv ro pu.
+        Gomusja ufizowu kesoma tabuli zal koupeas dahisli wacef mo erdeko cudpiv ro. http://pu.mr/len
       </div>
     </div>
   </li>
@@ -49,7 +51,8 @@ exports[`<MediaListItem/> should render transparent 1`] = `
 exports[`<MediaListItem/> should render with description 1`] = `
 <div>
   <div
-    class="MuiBox-root MuiBox-root-20 MuiListItem-root makeStyles-root-11 MuiListItem-gutters MuiListItem-alignItemsFlexStart makeStyles-root-19"
+    class="MuiBox-root MuiBox-root-20 MuiListItem-root makeStyles-root-12 makeStyles-root-11 MuiListItem-gutters MuiListItem-alignItemsFlexStart makeStyles-root-19"
+    data-resource="BCuwDhmiOFQ"
     data-testid="media-list-item"
   >
     <div
@@ -62,7 +65,7 @@ exports[`<MediaListItem/> should render with description 1`] = `
         class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-14 makeStyles-primaryText-17 MuiTypography-body1 MuiTypography-displayBlock"
         data-testid="triple-combo-item-text-primary"
       >
-        Mog gic gataga ihgih bi judpeta iv zap jatro ba licucce vibu bo sooki ikno.
+        Def duh renaive cikofe hosvojat wac oj ibuda boga mamenuzi gupi zihwana. http://zebivher.kh/ivaovno
       </div>
       <div
         class="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
@@ -79,7 +82,8 @@ exports[`<MediaListItem/> should render with link 1`] = `
 <div>
   <a
     aria-disabled="false"
-    class="MuiBox-root MuiBox-root-38 MuiButtonBase-root MuiListItem-root makeStyles-root-29 MuiListItem-gutters MuiListItem-button MuiListItem-alignItemsFlexStart makeStyles-root-37"
+    class="MuiBox-root MuiBox-root-38 MuiButtonBase-root MuiListItem-root makeStyles-root-30 makeStyles-root-29 MuiListItem-gutters MuiListItem-button MuiListItem-alignItemsFlexStart makeStyles-root-37"
+    data-resource="BCuwDhmiOFQ"
     data-testid="media-list-item"
     href="http://example.com/url"
     role="button"
@@ -96,7 +100,7 @@ exports[`<MediaListItem/> should render with link 1`] = `
         class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-32 makeStyles-primaryText-35 MuiTypography-body1 MuiTypography-displayBlock"
         data-testid="triple-combo-item-text-primary"
       >
-        Hu ibezvu liuz hirneom luze zakef ac aconki kekefjud voswulun kepdub optiowa ti velfo.
+        Juhowkel ovoro ha rejbogho kef ac aconki kekefjud voswulun kepdub optiowa ti velfo ot. http://opwawu.ph/logaku
       </div>
     </div>
     <span
@@ -110,7 +114,8 @@ exports[`<MediaListItem/> should render with onClick 1`] = `
 <div>
   <div
     aria-disabled="false"
-    class="MuiBox-root MuiBox-root-48 MuiButtonBase-root MuiListItem-root makeStyles-root-39 MuiListItem-gutters MuiListItem-button MuiListItem-alignItemsFlexStart makeStyles-root-47"
+    class="MuiBox-root MuiBox-root-48 MuiButtonBase-root MuiListItem-root makeStyles-root-40 makeStyles-root-39 MuiListItem-gutters MuiListItem-button MuiListItem-alignItemsFlexStart makeStyles-root-47"
+    data-resource="1W94gw1An_4"
     data-testid="media-list-item"
     role="button"
     tabindex="0"
@@ -125,7 +130,7 @@ exports[`<MediaListItem/> should render with onClick 1`] = `
         class="MuiTypography-root MuiListItemText-primary makeStyles-primaryText-42 makeStyles-primaryText-45 MuiTypography-body1 MuiTypography-displayBlock"
         data-testid="triple-combo-item-text-primary"
       >
-        Pe jilre itefihpaz zij di mu tu juf ugibo etauznop ofo fuz.
+        Zij di mu tu juf ugibo etauznop ofo fuz robras roru ri kadav mezwap filiwnov vukaw labtesa neane. http://seozub.ir/jor
       </div>
     </div>
     <span

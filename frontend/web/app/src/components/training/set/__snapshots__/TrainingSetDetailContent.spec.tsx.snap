@@ -82,6 +82,7 @@ exports[`<TrainingSetDetailContent/> should render 1`] = `
       <div
         aria-disabled="false"
         class="MuiBox-root MuiBox-root-12 MuiButtonBase-root MuiListItem-root makeStyles-root-4 MuiListItem-gutters MuiListItem-button makeStyles-root-11"
+        data-testid="app-components-training-create"
         role="button"
         tabindex="0"
         to="/training/set/:trainingSetId/create-training"

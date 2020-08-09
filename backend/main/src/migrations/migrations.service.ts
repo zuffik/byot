@@ -2,7 +2,7 @@ import { Inject, Injectable, OnModuleInit } from '@nestjs/common';
 import { UserService } from '../user/user.service';
 import { ConfigService } from '@nestjs/config';
 import * as _ from 'lodash';
-import { Role, SourceType } from '../graphql/ts/types';
+import { Role, SourceType, Media as IMedia } from '../graphql/ts/types';
 import { InjectRepository } from '@nestjs/typeorm';
 import { User } from '../user/user.entity';
 import { Repository } from 'typeorm';
@@ -15,6 +15,7 @@ import { TrainingSet } from '../training/training-set/training-set.entity';
 import { TrainingSetService } from '../training/training-set/training-set.service';
 import { Training } from '../training/training/training.entity';
 import { TrainingService } from '../training/training/training.service';
+import { staticMedia } from './media.static';
 
 @Injectable()
 export class MigrationsService implements OnModuleInit {
@@ -50,6 +51,8 @@ export class MigrationsService implements OnModuleInit {
     private readonly trainingSetService: TrainingSetService,
     @Inject(TrainingService) private readonly trainingService: TrainingService,
     @InjectRepository(User) private readonly userRepository: Repository<User>,
+    @InjectRepository(Media)
+    private readonly mediaRepository: Repository<Media>,
     @Inject(ConfigService) private readonly cfgService: ConfigService,
     @Inject(AuthService) private readonly authService: AuthService,
     @Inject(GeneratorGraphqlService)
@@ -63,7 +66,7 @@ export class MigrationsService implements OnModuleInit {
   }
 
   async onModuleInit() {
-    if (this.configService.get<string>('node.env') === 'test') return;
+    if (this.configService.get<string>('node.env') === 'production') return;
     // create leaves first
     const [superAdmin, demoUsers, medias] = await Promise.all([
       this.createOrFetchSuperAdmin(),
@@ -106,7 +109,7 @@ export class MigrationsService implements OnModuleInit {
     const demoUser = await this.userService.findByUsernameOrEmail(
       this.demoUser.prefix + '0',
     );
-    let users: User[];
+    let users: User[] = [];
     let exist: boolean = true;
     if (!demoUser) {
       users = await Promise.all(
@@ -173,14 +176,29 @@ export class MigrationsService implements OnModuleInit {
       },
       [SourceType.YOUTUBE],
     );
-    return await Promise.all(
-      remoteMedias.map((media) =>
+    return await Promise.all([
+      ...remoteMedias.map((media) =>
         this.mediaService.storeMedia({
           ...media,
           label: `${this.medias.prefix} ${media.label}`,
         }),
       ),
-    );
+      ...staticMedia.map(async (m) => {
+        const media = await this.mediaRepository.findOne({
+          relations: ['source'],
+          where: {
+            source: Promise.resolve({
+              resourceId: m.source.resourceId,
+              sourceType: m.source.sourceType,
+            }),
+          },
+        });
+        if (media) {
+          return media;
+        }
+        return await this.mediaService.storeMedia(m as IMedia);
+      }),
+    ]);
   }
 
   private async createOrFetchTrainingSets(

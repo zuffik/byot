@@ -33,7 +33,7 @@ Then(/^the training set (.*) be created$/, shouldOrShouldNot => {
       .first()
       .click();
     cy.url().should('contain', '/training/set/');
-    cy.get('[data-testid="common-elementary-complement-emptyListInfo"]').should('exist');
+    cy.get('[data-testid="app-components-training-create"]').should('exist');
     shouldPerformCleanup = true;
   } else {
     cy.url().should('contain', '/training/set/create');

@@ -99,10 +99,15 @@ e2e tests:
   stage: test
   dependencies:
     - Build project
+  artifacts:
+    paths:
+      - frontend/web/test/cypress/videos
+      - frontend/web/test/cypress/screenshots
   script:
     # todo remove when deployed somewhere
     - exit 0
     - cd frontend/web/test
+    # - yarn test -b chrome --headless
     # run tests
 
 Deploy:

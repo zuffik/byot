@@ -1,6 +1,5 @@
 import {After, And, Given, Then, When} from 'cypress-cucumber-preprocessor/steps';
 import {GraphQLRequest} from 'apollo-boost';
-import {List} from '@byot-frontend/common/src/types/dto/List';
 
 // todo i don't like {force: true} at all!
 const currentMedia: string[] = [];
@@ -9,7 +8,9 @@ Given(/^created training set$/, () => {
   cy.fixture('media/FindMedia').then(findMedia => {
     cy.graphQLRequest({
       findMedia: (body: GraphQLRequest) =>
-        (body.variables?.filter?.query || '').trim() !== '' ? findMedia[currentMedia.shift()] : new List(),
+        (body.variables?.filter?.query || '').trim() !== ''
+          ? findMedia[currentMedia.shift()]
+          : {entries: [], meta: {totalCount: 0}},
     });
     cy.login();
     cy.createTrainingSet();
@@ -57,7 +58,7 @@ And(/^user creates media with following sources (.*)$/, sources => {
     cy.get('[data-testid="media-form-autocomplete-suggestions"] [data-testid="media-list-item"]')
       .first()
       .click({force: true});
-    cy.get('#root').scrollTo('bottom');
+    cy.get('#root').scrollTo('bottom', {ensureScrollable: false});
     cy.getByTestId('media-form-search-button').click();
   });
 });

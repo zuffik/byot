@@ -8,6 +8,7 @@ import { User } from '../user/user.entity';
 import { TrainingModule } from '../training/training.module';
 import { AuthModule } from '../auth/auth.module';
 import { MediaModule } from '../media/media.module';
+import { Media } from '../media/media/media.entity';
 
 @Module({
   imports: [
@@ -17,7 +18,7 @@ import { MediaModule } from '../media/media.module';
     MediaModule,
     SeedModule,
     TrainingModule,
-    TypeOrmModule.forFeature([User]),
+    TypeOrmModule.forFeature([User, Media]),
   ],
   providers: [MigrationsService],
 })

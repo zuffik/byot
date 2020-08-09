@@ -23,7 +23,9 @@ export const container = () => (
   </MediaPlayerContainer>
 );
 
-export const player = () => <MediaPlayer media={media()} />;
+export const player = () => (
+  <MediaPlayer media={media()} autoplay={false} onMediaFinishedPlaying={action('onMediaFinishedPlaying')} />
+);
 
 /*export const controls = () => (
     <div style={{padding: '20px'}}>

@@ -1,9 +1,8 @@
 import * as React from 'react';
-import {Grid, makeStyles, Theme, Box} from '@material-ui/core';
+import {Box, Grid, makeStyles, Theme} from '@material-ui/core';
 import {WithStyles} from '@byot-frontend/web-common/src/types/WithStyles';
 import {IMedia} from '@byot-frontend/common/src/types/interfaces/IMedia';
 import {MediaList} from '../../media/list/MediaList';
-import {MediaPlayer} from '../../player/MediaPlayer';
 import {MediaPlayerSkeleton} from '../../player/MediaPlayerSkeleton';
 import {TripleComboItemSkeletonList} from '../../list/TripleComboItemSkeletonList';
 import {ControlPanelTitle} from '../../control-panel/base/ControlPanelTitle/ControlPanelTitle';
@@ -21,6 +20,7 @@ interface Props extends WithStyles<typeof styles> {
   currentMedia: IMedia;
   onDelete: () => void;
   isRemoving?: boolean;
+  mediaPlayer?: React.ReactNode;
 }
 
 const styles = (theme: Theme) => ({
@@ -65,7 +65,7 @@ export const TrainingDetail: React.FC<Props> = (props: Props) => {
           </>
         ) : (
           <>
-            <MediaPlayer media={props.currentMedia} />
+            {props.mediaPlayer}
             <Box mt={1}>
               <EditConfirmDeleteControls
                 isRemoving={props.isRemoving}

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {MediaPlayerSkeleton} from './MediaPlayerSkeleton';
 import {makeStyles, Theme} from '@material-ui/core';
+import {CSSProperties} from '@material-ui/styles';
 
 interface Props {
   children?: React.ReactNode;
@@ -10,15 +11,24 @@ interface Props {
 const styles = (theme: Theme) => ({
   root: {
     width: '100%',
-  },
+    position: 'relative',
+    minHeight: theme.spacing(10),
+  } as CSSProperties,
   skeleton: {
-    height: theme.spacing(20),
-  },
+    position: 'absolute',
+    left: 0,
+    top: 0,
+    width: '100%',
+    height: '100%',
+    zIndex: 10,
+  } as CSSProperties,
   container: {
     width: '100%',
     overflow: 'hidden',
+    position: 'relative',
+    zIndex: 20,
     borderRadius: theme.shape.borderRadius,
-  },
+  } as CSSProperties,
 });
 const useStyles = makeStyles(styles);
 
@@ -42,11 +52,10 @@ export const MediaPlayerContainer: React.FC<Props> = (props: Props) => {
   }, [node, ratio]);
   return (
     <div ref={ref} className={styles.root}>
-      {height === 0 ? (
-        <div className={styles.skeleton}>
-          <MediaPlayerSkeleton />
-        </div>
-      ) : (
+      <div className={styles.skeleton}>
+        <MediaPlayerSkeleton />
+      </div>
+      {height > 0 && (
         <div
           className={styles.container}
           style={{height: `${height}px`}}

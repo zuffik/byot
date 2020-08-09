@@ -3,7 +3,6 @@ import {makeStyles, Theme, ThemeProvider, Button, Grid} from '@material-ui/core'
 import {PlayArrowRounded, PauseRounded, FullscreenRounded} from '@material-ui/icons';
 import {WithStyles} from '@byot-frontend/web-common/src/types/WithStyles';
 import {theme} from '../../setup';
-import {CSSProperties} from '@material-ui/styles';
 import {Patch} from '@byot-frontend/web-common/src/components/elementary/patch/Patch';
 
 interface Props extends WithStyles<typeof styles> {

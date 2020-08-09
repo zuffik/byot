@@ -1,3 +1,4 @@
+# todo for this feature, play controls are needed (not part of MVP)
 Feature: play training
   Scenario: play simple training
     Given training with 2 short media

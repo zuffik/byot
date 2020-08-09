@@ -39,5 +39,9 @@ export class FrontendCommonState {
   trainingDetail: EntityResource<ITraining> = new EntityResource<ITraining>();
   @BindProcessActionCreator(FetchTrainings)
   trainingListItems: IterableResource<ITraining> = new IterableResource<ITraining>();
+  /**
+   * Player
+   */
   currentMedia?: IMedia;
+  autoplay: boolean = false;
 }

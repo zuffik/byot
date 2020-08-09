@@ -6,12 +6,20 @@ import {YoutubeMediaPlayer} from './providers/YoutubeMediaPlayer';
 
 interface Props {
   media: IMedia;
+  onMediaFinishedPlaying: () => void;
+  autoplay: boolean;
 }
 
 export const MediaPlayer: React.FC<Props> = (props: Props) => {
   return (
     <MediaPlayerContainer>
-      {props.media.source.sourceType === SourceType.YOUTUBE && <YoutubeMediaPlayer media={props.media} />}
+      {props.media.source.sourceType === SourceType.YOUTUBE && (
+        <YoutubeMediaPlayer
+          autoplay={props.autoplay}
+          onMediaFinishedPlaying={props.onMediaFinishedPlaying}
+          media={props.media}
+        />
+      )}
     </MediaPlayerContainer>
   );
 };

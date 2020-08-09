@@ -8,8 +8,10 @@ import {ProcessActionExtractor} from '@byot-frontend/common/src/redux-system/pro
 import {TrainingFetch} from '../../redux/process/training/TrainingFetch';
 import {TrainingDetail} from '../training/training/TrainingDetail';
 import {IMedia} from '@byot-frontend/common/src/types/interfaces/IMedia';
-import {TrainingSetPlayingMedia} from '@byot-frontend/common/src/redux/process/training/TrainingSetPlayingMedia';
 import {TrainingRemove} from '../../redux/process/training/TrainingRemove';
+import {TrainingPlayNext} from '@byot-frontend/common/src/redux/process/media/TrainingPlayNext';
+import {TrainingSetPlayingMedia} from '@byot-frontend/common/src/redux/process/media/TrainingSetPlayingMedia';
+import {MediaPlayer} from '../player/MediaPlayer';
 
 interface Props {}
 
@@ -23,11 +25,28 @@ export const TrainingDetailPage: React.FC<Props> = (props: Props) => {
   const currentPlayingMedia = useSelector((state: WebAppState) => state.currentMedia);
   const onDelete = () => dispatch(ProcessActionExtractor.dispatch(TrainingRemove, {id: trainingId}));
   const isRemoving = useSelector((state: WebAppState) => state.is.processingTraining);
+  const autoplay = useSelector((state: WebAppState) => state.autoplay);
   const onMediaClick = (media: IMedia) =>
     dispatch(ProcessActionExtractor.dispatch(TrainingSetPlayingMedia, {media}));
+  const onMediaFinishedPlaying = () =>
+    dispatch(
+      ProcessActionExtractor.dispatch(TrainingPlayNext, {
+        currentMedia: currentPlayingMedia!,
+        training: training.data!,
+      })
+    );
   return (
     <ControlPanelMainContent>
       <TrainingDetail
+        mediaPlayer={
+          currentPlayingMedia && (
+            <MediaPlayer
+              autoplay={autoplay}
+              media={currentPlayingMedia!}
+              onMediaFinishedPlaying={onMediaFinishedPlaying}
+            />
+          )
+        }
         isRemoving={isRemoving}
         onDelete={onDelete}
         training={training.data!}

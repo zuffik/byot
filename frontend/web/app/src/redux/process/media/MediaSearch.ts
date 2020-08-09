@@ -14,7 +14,7 @@ export type Response = {};
 @ProcessActionCreator()
 export class MediaSearch implements AsynchronousAction<WebAppState, Request, Response> {
   *saga(action: Action<Request>, state: Readonly<WebAppState>) {
-    if ((action.payload.filter?.query || '').trim() == '') {
+    if ((action.payload.filter?.query || '').trim() === '') {
       return yield new GraphQLResponse([], []);
     }
     return (yield call(ApolloContext.apolloClient.query, {

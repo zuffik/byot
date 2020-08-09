@@ -30,6 +30,7 @@ export const MediaListItem: React.FC<Props> = (props: Props) => {
   const p: any = isLinkProps(props)
     ? {
         button: true,
+        // eslint-disable-next-line
         component: isExternalURL(props) ? (p: any) => <a {...p} /> : Link,
         [isExternalURL(props) ? 'href' : 'to']: props.link,
         ...(isExternalURL(props) && {target: '_blank'}),

@@ -73,7 +73,7 @@ export const TrainingForm: React.FC<Props> = (props: Props) => {
                 editable
                 items={media}
                 onOrderChanged={setMedia}
-                onRemoveMedia={m => setMedia(media.filter(media => media.id != m.id))}
+                onRemoveMedia={m => setMedia(media.filter(media => media.id !== m.id))}
               />
             }
             mediaForm={

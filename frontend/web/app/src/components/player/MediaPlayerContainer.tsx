@@ -42,7 +42,7 @@ export const MediaPlayerContainer: React.FC<Props> = (props: Props) => {
   }, [node, ratio]);
   return (
     <div ref={ref} className={styles.root}>
-      {height == 0 ? (
+      {height === 0 ? (
         <div className={styles.skeleton}>
           <MediaPlayerSkeleton />
         </div>

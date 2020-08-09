@@ -95,11 +95,22 @@ Unit tests:
     - cd ../landing
     - yarn test --coverage
 
+e2e tests:
+  stage: test
+  dependencies:
+    - Build project
+  script:
+    # todo remove when deployed somewhere
+    - exit 0
+    - cd frontend/web/test
+    # run tests
+
 Deploy:
   stage: deploy
   dependencies:
     - Build project
     - Unit tests
+    - e2e tests
   script:
     - echo "Deploying"
 

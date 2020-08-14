@@ -29,6 +29,7 @@ describe('<TrainingDetail/>', () => {
         currentMedia={media()}
         media={[]}
         training={training()}
+        mediaPlayer={<div data-testid="training-detail-media-player" />}
       />
     );
     expect(container).toMatchSnapshot();
@@ -43,6 +44,7 @@ describe('<TrainingDetail/>', () => {
         media={m}
         onDelete={jest.fn()}
         training={training()}
+        mediaPlayer={<div data-testid="training-detail-media-player" />}
       />
     );
     expect(queryByTestId('training-detail-media-skeleton')).not.toBeNull();
@@ -61,6 +63,7 @@ describe('<TrainingDetail/>', () => {
         currentMedia={m[0]}
         media={m}
         training={training()}
+        mediaPlayer={<div data-testid="training-detail-media-player" />}
       />
     );
     const listItems = queryAllByTestId('media-list-item');
@@ -82,6 +85,7 @@ describe('<TrainingDetail/>', () => {
         currentMedia={m[0]}
         media={m}
         training={training()}
+        mediaPlayer={<div data-testid="training-detail-media-player" />}
       />
     );
     fireEvent.click(getByTestId('app-elements-controls-remove'));

@@ -3288,8 +3288,8 @@ Object {
                 </div>
               </div>
               <div
-                class="MuiCollapse-container MuiCollapse-entered"
-                style="min-height: 0px; height: auto; transition-duration: 300ms;"
+                class="MuiCollapse-container"
+                style="min-height: 0px; height: 0px; transition-duration: 300ms;"
               >
                 <div
                   class="MuiCollapse-wrapper"
@@ -3642,8 +3642,8 @@ Object {
               </div>
             </div>
             <div
-              class="MuiCollapse-container MuiCollapse-entered"
-              style="min-height: 0px; height: auto; transition-duration: 300ms;"
+              class="MuiCollapse-container"
+              style="min-height: 0px; height: 0px; transition-duration: 300ms;"
             >
               <div
                 class="MuiCollapse-wrapper"
@@ -4006,8 +4006,8 @@ Object {
                 </div>
               </div>
               <div
-                class="MuiCollapse-container MuiCollapse-entered"
-                style="min-height: 0px; height: auto; transition-duration: 300ms;"
+                class="MuiCollapse-container"
+                style="min-height: 0px; height: 0px; transition-duration: 300ms;"
               >
                 <div
                   class="MuiCollapse-wrapper"
@@ -4360,8 +4360,8 @@ Object {
               </div>
             </div>
             <div
-              class="MuiCollapse-container MuiCollapse-entered"
-              style="min-height: 0px; height: auto; transition-duration: 300ms;"
+              class="MuiCollapse-container"
+              style="min-height: 0px; height: 0px; transition-duration: 300ms;"
             >
               <div
                 class="MuiCollapse-wrapper"

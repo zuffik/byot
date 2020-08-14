@@ -3,10 +3,51 @@
 exports[`<MediaPlayerContainer/> should calculate width (4:3) 1`] = `
 <div>
   <div
-    class="makeStyles-root-23"
+    class="makeStyles-root-26"
   >
     <div
-      class="makeStyles-container-25"
+      class="makeStyles-skeleton-27"
+    >
+      <div
+        class="MuiBox-root MuiBox-root-38 makeStyles-root-29 makeStyles-root-37 makeStyles-root-29"
+        classes="[object Object]"
+      >
+        <div
+          class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1"
+        >
+          <div
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-1"
+          >
+            <span
+              class="MuiSkeleton-root makeStyles-root-39 MuiSkeleton-rect MuiSkeleton-pulse"
+            />
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-1"
+          >
+            <span
+              class="MuiSkeleton-root makeStyles-root-39 MuiSkeleton-rect MuiSkeleton-pulse"
+            />
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-true"
+          >
+            <span
+              class="MuiSkeleton-root makeStyles-root-39 MuiSkeleton-rect MuiSkeleton-pulse"
+            />
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-1"
+          >
+            <span
+              class="MuiSkeleton-root makeStyles-root-39 MuiSkeleton-rect MuiSkeleton-pulse"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="makeStyles-container-28"
       data-testid="media-player-container"
       style="height: 300px;"
     />
@@ -19,6 +60,47 @@ exports[`<MediaPlayerContainer/> should calculate width (16:9) 1`] = `
   <div
     class="makeStyles-root-12"
   >
+    <div
+      class="makeStyles-skeleton-13"
+    >
+      <div
+        class="MuiBox-root MuiBox-root-24 makeStyles-root-15 makeStyles-root-23 makeStyles-root-15"
+        classes="[object Object]"
+      >
+        <div
+          class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1"
+        >
+          <div
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-1"
+          >
+            <span
+              class="MuiSkeleton-root makeStyles-root-25 MuiSkeleton-rect MuiSkeleton-pulse"
+            />
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-1"
+          >
+            <span
+              class="MuiSkeleton-root makeStyles-root-25 MuiSkeleton-rect MuiSkeleton-pulse"
+            />
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-true"
+          >
+            <span
+              class="MuiSkeleton-root makeStyles-root-25 MuiSkeleton-rect MuiSkeleton-pulse"
+            />
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-1"
+          >
+            <span
+              class="MuiSkeleton-root makeStyles-root-25 MuiSkeleton-rect MuiSkeleton-pulse"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
     <div
       class="makeStyles-container-14"
       data-testid="media-player-container"

@@ -1,16 +1,11 @@
-/**
- * @format
- */
-
 import {AppRegistry} from 'react-native';
-import App from './src/App';
 import {name as appName} from './app.json';
 
-const useStorybook = false;
+const useStorybook = true;
 
 if (process.env.NODE_ENV === 'development' && useStorybook) {
   AppRegistry.registerComponent(appName, () => require('../storybook/storybook/index').default);
 } else {
-  AppRegistry.registerComponent(appName, () => App);
+  AppRegistry.registerComponent(appName, () => require('./src/App').default);
 }
 

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {StyleSheet, View} from 'react-native';
-import {Button} from '../../elements/button/Button';
+import {Button, Text} from 'react-native-ui-lib';
 import {useTranslation} from 'react-i18next';
 
 interface Props {}
@@ -12,6 +12,7 @@ const makeStyles = (props: Props, state: State) =>
     root: {
       flexDirection: 'row',
       justifyContent: 'space-between',
+      marginTop: 10,
     },
   });
 
@@ -20,12 +21,8 @@ export const LoginFormFooter: React.FC<Props> = (props: Props) => {
   const {t} = useTranslation();
   return (
     <View style={styles.root}>
-      <Button appearance="ghost" color="basic">
-        {t('Forgot password?')}
-      </Button>
-      <Button appearance="ghost" color="primary">
-        {t(`Don't have an account?`)}
-      </Button>
+      <Button variant="secondary" link label={t('Forgot password?')} />
+      <Button variant="primary" link label={t(`Don't have an account?`)} />
     </View>
   );
 };

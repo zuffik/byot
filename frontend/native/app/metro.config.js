@@ -8,6 +8,7 @@ module.exports = (async () => {
   return {
     watchFolders: [
       path.resolve(__dirname, '..', '..'),
+      path.resolve(__dirname, '..', '..', '..', 'common'),
     ],
     transformer: {
       babelTransformerPath: require.resolve("react-native-svg-transformer"),

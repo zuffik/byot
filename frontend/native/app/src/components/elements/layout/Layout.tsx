@@ -1,18 +1,12 @@
 import * as React from 'react';
-import {styled, Layout as BaseLayout, LayoutProps} from '@ui-kitten/components';
 import {StyleSheet} from 'react-native';
-import {baseTheme} from '../../../setup';
+import {View} from 'react-native-ui-lib';
 
-interface Props extends LayoutProps {}
+interface Props {}
 
-const makeStyles = (props: Props) =>
-  StyleSheet.create({
-    root: {
-      backgroundColor: baseTheme.colors.light,
-    },
-  });
+const makeStyles = (props: Props) => StyleSheet.create({});
 
-export const Layout: React.FC<Props> = styled('Layout')((props: Props) => {
+export const Layout: React.FC<Props> = (props: Props) => {
   const styles = makeStyles(props);
-  return <BaseLayout {...props} style={[props.style, styles.root]} />;
-});
+  return <View />;
+};

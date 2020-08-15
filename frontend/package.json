@@ -16,7 +16,12 @@
     ],
     "nohoist": [
       "**/@bam.tech/react-native-make",
-      "**/@bam.tech/react-native-make/**"
+      "**/@bam.tech/react-native-make/**",
+      "react-native",
+      "react-native/**",
+      "react-native-svg",
+      "@react-native-community/**",
+      "jetifier"
     ]
   }
 }

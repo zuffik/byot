@@ -1,10 +1,9 @@
 import * as React from 'react';
-import {StyleSheet, View} from 'react-native';
-import {Text} from '@ui-kitten/components';
+import {StyleSheet} from 'react-native';
 import {TextField} from '../../elements/text-field/TextField';
 import {Formik} from 'formik';
 import * as Yup from 'yup';
-import {Button} from '../../elements/button/Button';
+import {Button, Text, View} from 'react-native-ui-lib';
 import {useTranslation} from 'react-i18next';
 
 const LoginSchema = Yup.object().shape({
@@ -14,6 +13,7 @@ const LoginSchema = Yup.object().shape({
 
 interface Props {
   onSubmit: (credentials: {usernameOrEmail: string; password: string}) => void;
+  children?: React.ReactNode;
 }
 
 interface State {}
@@ -53,39 +53,46 @@ export const LoginForm: React.FC<Props> = (props: Props) => {
           onSubmit={c => props.onSubmit(c)}>
           {({handleChange, handleBlur, handleSubmit, values, touched, errors}) => (
             <>
-              <Text category="h1" style={styles.heading}>
+              <Text heading style={styles.heading}>
                 {t('Login')!}
               </Text>
-              <TextField
-                placeholder={t('Username or email')}
-                withHelperText="danger"
-                value={values.usernameOrEmail}
-                onBlur={handleBlur('usernameOrEmail')}
-                onChangeText={handleChange('usernameOrEmail')}
-                keyboardType="email-address"
-                helperText={
-                  touched.usernameOrEmail && errors.usernameOrEmail ? t('Enter username or email') : undefined
-                }
-                testID={testIDUsernameEmail}
-                accessibilityLabel={testIDUsernameEmail}
-                autoCapitalize="none"
-              />
-              <TextField
-                placeholder={t('Enter password')}
-                withHelperText="danger"
-                value={values.password}
-                secureTextEntry
-                onBlur={handleBlur('password')}
-                onChangeText={handleChange('password')}
-                style={styles.password}
-                helperText={touched.password && errors.password ? t('Enter password') : undefined}
-                testID={testIDPassword}
-                accessibilityLabel={testIDPassword}
-                autoCapitalize="none"
-              />
-              <Button onPress={handleSubmit} color="gradient">
-                {t('Login')!}
-              </Button>
+              <View marginB-4>
+                <TextField
+                  placeholder={t('Username or email')}
+                  withHelperText="danger"
+                  value={values.usernameOrEmail}
+                  onBlur={handleBlur('usernameOrEmail')}
+                  onChangeText={handleChange('usernameOrEmail')}
+                  keyboardType="email-address"
+                  infoText
+                  error={
+                    touched.usernameOrEmail && errors.usernameOrEmail
+                      ? t('Enter username or email')
+                      : undefined
+                  }
+                  testID={testIDUsernameEmail}
+                  accessibilityLabel={testIDUsernameEmail}
+                  autoCapitalize="none"
+                />
+              </View>
+              <View marginB-4>
+                <TextField
+                  placeholder={t('Enter password')}
+                  withHelperText="danger"
+                  value={values.password}
+                  secureTextEntry
+                  onBlur={handleBlur('password')}
+                  onChangeText={handleChange('password')}
+                  style={styles.password}
+                  infoText
+                  error={touched.password && errors.password ? t('Enter password') : undefined}
+                  testID={testIDPassword}
+                  accessibilityLabel={testIDPassword}
+                  autoCapitalize="none"
+                />
+              </View>
+              <Button onPress={handleSubmit} label={t('Login')} />
+              {props.children}
             </>
           )}
         </Formik>

@@ -1,11 +1,13 @@
 import * as React from 'react';
-import {Colors, TextField as TextFieldBase, TextFieldPropTypes, Text, View} from 'react-native-ui-lib';
+import {Colors, Text, TextField as TextFieldBase} from 'react-native-ui-lib';
 import {Patch, PatchProps} from '../patch/Patch';
-import {StyleSheet, TextInput} from 'react-native';
+import {StyleSheet, TextInput, TextInputProps} from 'react-native';
 
-type Props = TextFieldPropTypes & {
+type Props = TextInputProps & {
   color?: 'primary' | 'secondary';
   infoText?: boolean;
+  success?: string;
+  error?: string;
   PatchProps?: Partial<PatchProps>;
 };
 

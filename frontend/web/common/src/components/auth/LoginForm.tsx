@@ -2,20 +2,14 @@ import * as React from 'react';
 import {Input} from '../elementary/form/Input';
 import {Button} from '../elementary/form/Button';
 import {Form, Formik} from 'formik';
-import * as Yup from 'yup';
-import {TFunction} from 'i18next';
 import {UserLogin} from '@byot/common/graphql/ts/types';
 import {PlainLayoutNarrow} from '../plain-layout/PlainLayoutNarrow';
 import {PlainLayoutTitle} from '../plain-layout/PlainLayoutTitle';
 import {useTranslation} from 'react-i18next';
 import {Grid} from '@material-ui/core';
+import {loginSchema} from '@byot-frontend/common/src/types/schemas/validation/LoginSchema';
 
 type Values = UserLogin;
-const loginSchema = (t: TFunction) =>
-  Yup.object().shape({
-    userNameOrEmail: Yup.string().required(t('Enter username or email')),
-    password: Yup.string().required(t('Enter password')),
-  });
 
 interface Props {
   onLogin: (credentials: Values) => void;

@@ -1,4 +1,4 @@
-import {Colors, Typography, Spacings, ThemeManager} from 'react-native-ui-lib';
+import {Colors, Spacings, ThemeManager, Typography} from 'react-native-ui-lib';
 import {default as baseTheme} from '@byot/common/theme/theme';
 
 export const loadTheme = (dark: boolean) => {
@@ -9,6 +9,7 @@ export const loadTheme = (dark: boolean) => {
     success: '#569131',
     warn: '#FF963C',
 
+    mainBackground: dark ? baseTheme.colors.dark : '#fff',
     background: baseTheme.colors[dark ? 'dark' : 'light'],
     text: baseTheme.colors[dark ? 'light' : 'dark'],
 
@@ -18,7 +19,12 @@ export const loadTheme = (dark: boolean) => {
   const defaultTypography = {fontFamily: 'Nunito', color: Colors.text};
 
   Typography.loadTypographies({
-    heading: {...defaultTypography, fontSize: 36, fontWeight: '800'},
+    heading: {
+      ...defaultTypography,
+      fontSize: 36,
+      fontWeight: '800',
+      marginBottom: 30,
+    },
     subheading: {...defaultTypography, fontSize: 28, fontWeight: '500'},
     body: {...defaultTypography, fontSize: 18, fontWeight: '400'},
     defaultTypography,
@@ -34,7 +40,7 @@ export const loadTheme = (dark: boolean) => {
     borderRadius: 8,
   });
 
-  ThemeManager.setComponentTheme('Button', (props: {variant: string}) => ({
+  ThemeManager.setComponentTheme('Button', (props: {variant: string; link: boolean}) => ({
     borderRadius: 12,
     [props.link ? 'color' : 'backgroundColor']: Colors[props.variant || 'primary'],
     'paddingT-10': true,

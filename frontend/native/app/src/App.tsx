@@ -1,7 +1,6 @@
 import React from 'react';
 import {Provider} from 'react-redux';
 import * as setup from './setup';
-import {baseTheme} from './setup';
 import 'react-native-gesture-handler';
 import {BaseNavigation} from './components/navigation/BaseNavigation';
 import {NavigationContainer} from '@react-navigation/native';
@@ -24,7 +23,7 @@ const App = () => {
         <I18nextProvider i18n={setup.i18n}>
           <View
             style={{
-              backgroundColor: Colors.background,
+              backgroundColor: Colors.mainBackground,
               flex: 1,
             }}>
             <StatusBar

@@ -4,28 +4,13 @@ import {PlainLayoutNarrow} from '../plain-layout/PlainLayoutNarrow';
 import {PlainLayoutTitle} from '../plain-layout/PlainLayoutTitle';
 import {Form, Formik} from 'formik';
 import {TFunction} from 'i18next';
-import * as Yup from 'yup';
 import {UserRegister} from '@byot-frontend/common/src/types/dto/UserRegister';
 import {Input} from '../elementary/form/Input';
 import {Button} from '../elementary/form/Button';
 import {IUserRegister} from '@byot-frontend/common/src/types/interfaces/IUserRegister';
 import {Checkbox} from '../elementary/form/Checkbox';
 import {useTranslation} from 'react-i18next';
-
-const registrationSchema = (t: TFunction, password: string) =>
-  Yup.object().shape({
-    email: Yup.string().email(t('Enter valid email')).required(t('Enter email')),
-    password: Yup.string()
-      .required(t('Enter password'))
-      .min(8, t('Password must be longer than 8 characters'))
-      .matches(/[^A-Za-z0-9]+/, t('Password must contain at least one special character')),
-    passwordRepeat: Yup.string()
-      .required(t('Confirm password'))
-      .oneOf([password], t('Passwords are not the same')),
-    consent: Yup.boolean()
-      .required(t('You have to agree with our terms and conditions'))
-      .test('consent', t('You have to agree with our terms and conditions'), value => value === true),
-  });
+import {registrationSchema} from '@byot-frontend/common/src/types/schemas/validation/RegistrationSchema';
 
 interface Props extends Partial<WithStyles<typeof styles>> {
   onRegister: (values: IUserRegister) => void;

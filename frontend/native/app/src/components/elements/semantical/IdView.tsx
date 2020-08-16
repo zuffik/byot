@@ -8,7 +8,7 @@ interface Props {
 
 export const IdView: React.FC<Props> = (props: Props) => {
   return (
-    <View testID={props.testID} accessibilityLabel={props.testID} style={{flex: 1}}>
+    <View testID={props.testID} accessibilityLabel={props.testID}>
       {props.children}
     </View>
   );

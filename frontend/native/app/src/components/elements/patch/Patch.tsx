@@ -1,8 +1,8 @@
 import * as React from 'react';
-import {StyleSheet} from 'react-native';
-import {Card, CardPropTypes, Colors} from 'react-native-ui-lib';
+import {StyleSheet, TouchableOpacityProps} from 'react-native';
+import {Colors, TouchableOpacity} from 'react-native-ui-lib';
 
-export type PatchProps = CardPropTypes & {
+export type PatchProps = TouchableOpacityProps & {
   children?: React.ReactNode;
 };
 
@@ -14,14 +14,15 @@ const makeStyles = (props: Props, state: State) =>
   StyleSheet.create({
     root: {
       backgroundColor: Colors.g10,
+      borderRadius: 8,
     },
   });
 
 export const Patch: React.FC<Props> = (props: Props) => {
   const styles = makeStyles(props, {});
   return (
-    <Card {...props} style={[props.style, styles.root]}>
+    <TouchableOpacity {...props} style={[props.style, styles.root]}>
       {props.children}
-    </Card>
+    </TouchableOpacity>
   );
 };

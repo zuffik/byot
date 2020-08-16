@@ -2,7 +2,7 @@ import React from 'react';
 import {Provider} from 'react-redux';
 import * as setup from './setup';
 import 'react-native-gesture-handler';
-import {BaseNavigation} from './components/navigation/BaseNavigation';
+import {UnauthorizedNavigation} from './components/navigation/UnauthorizedNavigation';
 import {NavigationContainer} from '@react-navigation/native';
 import {SafeAreaView, StatusBar, View} from 'react-native';
 import {useDarkMode} from 'react-native-dark-mode';
@@ -32,7 +32,7 @@ const App = () => {
             />
             <SafeAreaView style={{flex: 1, position: 'relative'}}>
               <NavigationContainer>
-                <BaseNavigation />
+                <UnauthorizedNavigation />
               </NavigationContainer>
             </SafeAreaView>
           </View>

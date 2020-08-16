@@ -1,5 +1,6 @@
 import {Colors, Spacings, ThemeManager, Typography} from 'react-native-ui-lib';
 import {default as baseTheme} from '@byot/common/theme/theme';
+import {Platform} from 'react-native';
 
 export const loadTheme = (dark: boolean) => {
   Colors.loadColors({
@@ -16,18 +17,21 @@ export const loadTheme = (dark: boolean) => {
     g10: 'rgba(0, 0, 0, 0.05)',
   });
 
-  const defaultTypography = {fontFamily: 'Nunito', color: Colors.text};
+  const defaultTypography = (androidFontSuffix: string = 'Regular') => ({
+    fontFamily: Platform.OS == 'ios' ? 'Nunito' : `Nunito-${androidFontSuffix}`,
+    color: Colors.text,
+  });
 
   Typography.loadTypographies({
     heading: {
-      ...defaultTypography,
+      ...defaultTypography('Black'),
       fontSize: 36,
       fontWeight: '800',
       marginBottom: 30,
     },
-    subheading: {...defaultTypography, fontSize: 28, fontWeight: '500'},
-    body: {...defaultTypography, fontSize: 18, fontWeight: '400'},
-    defaultTypography,
+    subheading: {...defaultTypography(), fontSize: 28, fontWeight: '500'},
+    body: {...defaultTypography(), fontSize: 18, fontWeight: '400'},
+    defaultTypography: defaultTypography(),
   });
 
   Spacings.loadSpacings({
@@ -47,11 +51,17 @@ export const loadTheme = (dark: boolean) => {
     'paddingB-10': true,
     labelStyle: {
       fontWeight: '500',
-      fontFamily: 'Nunito',
+      fontFamily: Platform.OS == 'ios' ? 'Nunito' : 'Nunito-SemiBold',
     },
   }));
 
   ThemeManager.setComponentTheme('Text', {
     defaultTypography: true,
+  });
+
+  ThemeManager.setComponentTheme('TextField', {
+    floatingPlaceholderStyle: {
+      fontFamily: Platform.OS == 'ios' ? 'Nunito' : 'Nunito-Regular',
+    },
   });
 };

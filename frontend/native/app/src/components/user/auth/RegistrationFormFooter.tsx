@@ -2,10 +2,10 @@ import * as React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {useTranslation} from 'react-i18next';
 import {Button} from '../../elements/lib/Button';
+import {Colors, Text} from 'react-native-ui-lib';
 
 interface Props {
-  onPasswordRequestPress: () => void;
-  onRegisterPress: () => void;
+  onLogInPress: () => void;
 }
 
 interface State {}
@@ -17,15 +17,19 @@ const makeStyles = (props: Props, state: State) =>
       justifyContent: 'space-between',
       marginTop: 10,
     },
+    haveAccount: {
+      color: Colors.grey50,
+      marginTop: 12,
+    },
   });
 
-export const LoginFormFooter: React.FC<Props> = (props: Props) => {
+export const RegistrationFormFooter: React.FC<Props> = (props: Props) => {
   const styles = makeStyles(props, {});
   const {t} = useTranslation();
   return (
     <View style={styles.root}>
-      <Button onPress={props.onPasswordRequestPress} variant="secondary" link label={t('Forgot password?')} />
-      <Button onPress={props.onRegisterPress} variant="primary" link label={t(`Don't have an account?`)} />
+      <Text style={styles.haveAccount}>{t('Already have an account?')}</Text>
+      <Button onPress={props.onLogInPress} variant="primary" link label={t(`Log in`)} />
     </View>
   );
 };

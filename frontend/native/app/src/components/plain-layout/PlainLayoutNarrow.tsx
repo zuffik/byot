@@ -20,6 +20,10 @@ const makeStyles = (props: Props, state: State) =>
     inner: {
       maxWidth: 400,
       width: '100%',
+      flexDirection: 'column',
+      alignItems: 'stretch',
+      justifyContent: 'flex-end',
+      flex: 1,
     },
   });
 

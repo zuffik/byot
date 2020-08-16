@@ -14,7 +14,7 @@ interface State {}
 const makeStyles = (props: Props, state: State) =>
   StyleSheet.create({
     root: {
-      padding: 20,
+      paddingTop: 20,
       flex: 1,
       flexDirection: 'column',
       justifyContent: 'space-between',

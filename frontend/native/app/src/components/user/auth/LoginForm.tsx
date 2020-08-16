@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {StyleSheet} from 'react-native';
+import {ScrollView, StyleSheet} from 'react-native';
 import {TextField} from '../../elements/text-field/TextField';
 import {Formik} from 'formik';
 import {Button, Text, View} from 'react-native-ui-lib';
@@ -36,7 +36,7 @@ export const LoginForm: React.FC<Props> = (props: Props) => {
   const testIDUsernameEmail = 'loginForm-usernameEmail-input';
   const testIDPassword = 'loginForm-password-input';
   return (
-    <IdView testID={testIDRoot}>
+    <View accessibilityLabel={testIDRoot} testID={testIDRoot} padding-20>
       <Formik
         validationSchema={loginSchema(t)}
         validateOnBlur
@@ -46,40 +46,42 @@ export const LoginForm: React.FC<Props> = (props: Props) => {
         {({handleChange, handleBlur, handleSubmit, values, touched, errors}) => (
           <>
             <Text heading>{t('Login')!}</Text>
-            <View marginB-4>
-              <TextField
-                placeholder={t('Username or email')}
-                value={values.usernameOrEmail}
-                onBlur={handleBlur('usernameOrEmail')}
-                onChangeText={handleChange('usernameOrEmail')}
-                keyboardType="email-address"
-                infoText
-                error={(touched.usernameOrEmail && errors.usernameOrEmail) as string}
-                testID={testIDUsernameEmail}
-                accessibilityLabel={testIDUsernameEmail}
-                autoCapitalize="none"
-              />
-            </View>
-            <View marginB-4>
-              <TextField
-                placeholder={t('Enter password')}
-                value={values.password}
-                secureTextEntry
-                onBlur={handleBlur('password')}
-                onChangeText={handleChange('password')}
-                style={styles.password}
-                infoText
-                error={(touched.password && errors.password) as string}
-                testID={testIDPassword}
-                accessibilityLabel={testIDPassword}
-                autoCapitalize="none"
-              />
-            </View>
-            <Button onPress={handleSubmit} label={t('Login')} />
-            {props.children}
+            <ScrollView>
+              <View marginB-4>
+                <TextField
+                  placeholder={t('Username or email')}
+                  value={values.usernameOrEmail}
+                  onBlur={handleBlur('usernameOrEmail')}
+                  onChangeText={handleChange('usernameOrEmail')}
+                  keyboardType="email-address"
+                  infoText
+                  error={(touched.usernameOrEmail && errors.usernameOrEmail) as string}
+                  testID={testIDUsernameEmail}
+                  accessibilityLabel={testIDUsernameEmail}
+                  autoCapitalize="none"
+                />
+              </View>
+              <View marginB-4>
+                <TextField
+                  placeholder={t('Enter password')}
+                  value={values.password}
+                  secureTextEntry
+                  onBlur={handleBlur('password')}
+                  onChangeText={handleChange('password')}
+                  style={styles.password}
+                  infoText
+                  error={(touched.password && errors.password) as string}
+                  testID={testIDPassword}
+                  accessibilityLabel={testIDPassword}
+                  autoCapitalize="none"
+                />
+              </View>
+              <Button onPress={handleSubmit} label={t('Login')} />
+              {props.children}
+            </ScrollView>
           </>
         )}
       </Formik>
-    </IdView>
+    </View>
   );
 };

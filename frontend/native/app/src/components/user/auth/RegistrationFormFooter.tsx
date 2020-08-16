@@ -26,10 +26,11 @@ const makeStyles = (props: Props, state: State) =>
 export const RegistrationFormFooter: React.FC<Props> = (props: Props) => {
   const styles = makeStyles(props, {});
   const {t} = useTranslation();
+  const testIdLogin = 'auth-registrationFormFooter-login';
   return (
     <View style={styles.root}>
       <Text style={styles.haveAccount}>{t('Already have an account?')}</Text>
-      <Button onPress={props.onLogInPress} variant="primary" link label={t(`Log in`)} />
+      <Button onPress={props.onLogInPress} variant="primary" testID={testIdLogin} link label={t(`Log in`)} />
     </View>
   );
 };

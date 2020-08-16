@@ -15,7 +15,8 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "preserveSymlinks": true
   },
   "include": ["src"]
 }

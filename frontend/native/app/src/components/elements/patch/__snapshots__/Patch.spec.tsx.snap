@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Patch/> should render 1`] = `
+<View
+  collapsable={true}
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <TouchableOpacity
+    style={
+      Array [
+        undefined,
+        Object {
+          "backgroundColor": "#FAFAF1",
+          "borderRadius": 8,
+        },
+      ]
+    }
+  />
+</View>
+`;

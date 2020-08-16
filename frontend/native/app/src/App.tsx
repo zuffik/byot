@@ -7,7 +7,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {SafeAreaView, StatusBar, View} from 'react-native';
 import {useDarkMode} from 'react-native-dark-mode';
 import {I18nextProvider} from 'react-i18next';
-import {SplashScreenHide} from './components/navigation/SplashScreenHide';
+import {SplashScreenHide} from './components/functional/SplashScreenHide';
 import {loadTheme} from './theme/Theme';
 import {Colors} from 'react-native-ui-lib';
 
@@ -18,8 +18,8 @@ const App = () => {
   loadTheme(isDark);
   return (
     <>
-      <SplashScreenHide />
       <Provider store={setup.reduxStore}>
+        <SplashScreenHide />
         <I18nextProvider i18n={setup.i18n}>
           <View
             style={{

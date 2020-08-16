@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Logo/> should render 1`] = `
+<View
+  collapsable={true}
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <Image
+    source={
+      Object {
+        "testUri": "../../../native/app/src/assets/byoT-full.png",
+      }
+    }
+    style={
+      Array [
+        undefined,
+        Object {
+          "height": 100,
+          "resizeMode": "contain",
+          "width": 140.41666666666666,
+        },
+      ]
+    }
+  />
+</View>
+`;

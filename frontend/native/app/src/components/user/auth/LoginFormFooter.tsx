@@ -22,10 +22,24 @@ const makeStyles = (props: Props, state: State) =>
 export const LoginFormFooter: React.FC<Props> = (props: Props) => {
   const styles = makeStyles(props, {});
   const {t} = useTranslation();
+  const testIdForgotPassword = 'auth-loginFormFooter-forgotPassword';
+  const testIdRegister = 'auth-loginFormFooter-register';
   return (
     <View style={styles.root}>
-      <Button onPress={props.onPasswordRequestPress} variant="secondary" link label={t('Forgot password?')} />
-      <Button onPress={props.onRegisterPress} variant="primary" link label={t(`Don't have an account?`)} />
+      <Button
+        onPress={props.onPasswordRequestPress}
+        variant="secondary"
+        testID={testIdForgotPassword}
+        link
+        label={t('Forgot password?')}
+      />
+      <Button
+        onPress={props.onRegisterPress}
+        variant="primary"
+        testID={testIdRegister}
+        link
+        label={t(`Don't have an account?`)}
+      />
     </View>
   );
 };

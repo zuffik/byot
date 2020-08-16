@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LoginFormFooter/> should render and call events 1`] = `
+<View
+  collapsable={true}
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "marginTop": 10,
+      }
+    }
+  >
+    <TouchableOpacity
+      accessibilityLabel="auth-loginFormFooter-forgotPassword"
+      label="Forgot password?"
+      link={true}
+      testID="auth-loginFormFooter-forgotPassword"
+      variant="secondary"
+    />
+    <TouchableOpacity
+      accessibilityLabel="auth-loginFormFooter-register"
+      label="Don't have an account?"
+      link={true}
+      testID="auth-loginFormFooter-register"
+      variant="primary"
+    />
+  </View>
+</View>
+`;

@@ -1,0 +1,2497 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RegistrationForm/> should enter invalid email and not submit 1`] = `
+<View
+  collapsable={true}
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    padding-20={true}
+  >
+    <Text
+      heading={true}
+    >
+      Sign up
+    </Text>
+  </View>
+  <ScrollView>
+    <View
+      accessibilityLabel="registrationForm-root"
+      testID="registrationForm-root"
+    >
+      <View
+        padding-20={true}
+        paddingT-0={true}
+      >
+        <View
+          style={
+            Object {
+              "flexDirection": "row",
+            }
+          }
+        >
+          <View
+            paddingR-8={true}
+            style={
+              Object {
+                "width": "50%",
+              }
+            }
+          >
+            <TouchableOpacity
+              activeOpacity={1}
+              paddingB-8={true}
+              paddingL-12={true}
+              paddingR-12={true}
+              paddingT-8={true}
+              style={
+                Array [
+                  undefined,
+                  Object {
+                    "backgroundColor": "#FAFAF1",
+                    "borderRadius": 8,
+                  },
+                ]
+              }
+            >
+              <TextInput
+                accessibilityLabel="registrationForm-firstName"
+                allowFontScaling={true}
+                color="#FAFAF1"
+                enableErrors={false}
+                floatOnFocus={true}
+                floatingPlaceholder={true}
+                floatingPlaceholderColor={
+                  Object {
+                    "default": "#FAFAF1",
+                    "error": "#FAFAF1",
+                    "focus": "#FAFAF1",
+                  }
+                }
+                floatingPlaceholderStyle={Object {}}
+                hideUnderline={true}
+                placeholder="First name"
+                rejectResponderTermination={true}
+                style={
+                  Array [
+                    undefined,
+                    Object {
+                      "marginBottom": 4,
+                      "marginTop": -4,
+                    },
+                  ]
+                }
+                testID="registrationForm-firstName"
+                underlineColorAndroid="transparent"
+                value="John"
+              />
+            </TouchableOpacity>
+            <Text
+              error={false}
+              style={
+                Object {
+                  "fontSize": 12,
+                  "marginTop": 2,
+                  "paddingLeft": 12,
+                }
+              }
+              success={false}
+            >
+               
+            </Text>
+          </View>
+          <View
+            paddingL-8={true}
+            style={
+              Object {
+                "width": "50%",
+              }
+            }
+          >
+            <TouchableOpacity
+              activeOpacity={1}
+              paddingB-8={true}
+              paddingL-12={true}
+              paddingR-12={true}
+              paddingT-8={true}
+              style={
+                Array [
+                  undefined,
+                  Object {
+                    "backgroundColor": "#FAFAF1",
+                    "borderRadius": 8,
+                  },
+                ]
+              }
+            >
+              <TextInput
+                accessibilityLabel="registrationForm-lastName"
+                allowFontScaling={true}
+                color="#FAFAF1"
+                enableErrors={false}
+                floatOnFocus={true}
+                floatingPlaceholder={true}
+                floatingPlaceholderColor={
+                  Object {
+                    "default": "#FAFAF1",
+                    "error": "#FAFAF1",
+                    "focus": "#FAFAF1",
+                  }
+                }
+                floatingPlaceholderStyle={Object {}}
+                hideUnderline={true}
+                placeholder="Last name"
+                rejectResponderTermination={true}
+                style={
+                  Array [
+                    undefined,
+                    Object {
+                      "marginBottom": 4,
+                      "marginTop": -4,
+                    },
+                  ]
+                }
+                testID="registrationForm-lastName"
+                underlineColorAndroid="transparent"
+                value="Doe"
+              />
+            </TouchableOpacity>
+            <Text
+              error={false}
+              style={
+                Object {
+                  "fontSize": 12,
+                  "marginTop": 2,
+                  "paddingLeft": 12,
+                }
+              }
+              success={false}
+            >
+               
+            </Text>
+          </View>
+        </View>
+        <View
+          marginB-10={true}
+        >
+          <TouchableOpacity
+            activeOpacity={1}
+            paddingB-8={true}
+            paddingL-12={true}
+            paddingR-12={true}
+            paddingT-8={true}
+            style={
+              Array [
+                undefined,
+                Object {
+                  "backgroundColor": "#FAFAF1",
+                  "borderRadius": 8,
+                },
+              ]
+            }
+          >
+            <TextInput
+              accessibilityLabel="registrationForm-email"
+              allowFontScaling={true}
+              autoCapitalize="none"
+              color="#FAFAF1"
+              enableErrors={false}
+              floatOnFocus={true}
+              floatingPlaceholder={true}
+              floatingPlaceholderColor={
+                Object {
+                  "default": "#FAFAF1",
+                  "error": "#FAFAF1",
+                  "focus": "#FAFAF1",
+                }
+              }
+              floatingPlaceholderStyle={Object {}}
+              hideUnderline={true}
+              keyboardType="email-address"
+              placeholder="Email"
+              rejectResponderTermination={true}
+              style={
+                Array [
+                  undefined,
+                  Object {
+                    "marginBottom": 4,
+                    "marginTop": -4,
+                  },
+                ]
+              }
+              testID="registrationForm-email"
+              underlineColorAndroid="transparent"
+              value="sad.sk"
+            />
+          </TouchableOpacity>
+          <Text
+            error={false}
+            style={
+              Object {
+                "fontSize": 12,
+                "marginTop": 2,
+                "paddingLeft": 12,
+              }
+            }
+            success={false}
+          >
+             
+          </Text>
+        </View>
+        <View
+          marginB-10={true}
+        >
+          <TouchableOpacity
+            activeOpacity={1}
+            paddingB-8={true}
+            paddingL-12={true}
+            paddingR-12={true}
+            paddingT-8={true}
+            style={
+              Array [
+                undefined,
+                Object {
+                  "backgroundColor": "#FAFAF1",
+                  "borderRadius": 8,
+                },
+              ]
+            }
+          >
+            <TextInput
+              allowFontScaling={true}
+              autoCapitalize="none"
+              color="#FAFAF1"
+              enableErrors={false}
+              floatOnFocus={true}
+              floatingPlaceholder={true}
+              floatingPlaceholderColor={
+                Object {
+                  "default": "#FAFAF1",
+                  "error": "#FAFAF1",
+                  "focus": "#FAFAF1",
+                }
+              }
+              floatingPlaceholderStyle={Object {}}
+              hideUnderline={true}
+              placeholder="Password"
+              rejectResponderTermination={true}
+              secureTextEntry={true}
+              style={
+                Array [
+                  undefined,
+                  Object {
+                    "marginBottom": 4,
+                    "marginTop": -4,
+                  },
+                ]
+              }
+              testID="registrationForm-password"
+              underlineColorAndroid="transparent"
+              value="123-Abc"
+            />
+          </TouchableOpacity>
+          <Text
+            error={false}
+            style={
+              Object {
+                "fontSize": 12,
+                "marginTop": 2,
+                "paddingLeft": 12,
+              }
+            }
+            success={false}
+          >
+             
+          </Text>
+        </View>
+        <View
+          marginB-10={true}
+        >
+          <TouchableOpacity
+            activeOpacity={1}
+            paddingB-8={true}
+            paddingL-12={true}
+            paddingR-12={true}
+            paddingT-8={true}
+            style={
+              Array [
+                undefined,
+                Object {
+                  "backgroundColor": "#FAFAF1",
+                  "borderRadius": 8,
+                },
+              ]
+            }
+          >
+            <TextInput
+              accessibilityLabel="registrationForm-passwordRepeat"
+              allowFontScaling={true}
+              autoCapitalize="none"
+              color="#FAFAF1"
+              enableErrors={false}
+              floatOnFocus={true}
+              floatingPlaceholder={true}
+              floatingPlaceholderColor={
+                Object {
+                  "default": "#FAFAF1",
+                  "error": "#FAFAF1",
+                  "focus": "#FAFAF1",
+                }
+              }
+              floatingPlaceholderStyle={Object {}}
+              hideUnderline={true}
+              placeholder="Confirm password"
+              rejectResponderTermination={true}
+              secureTextEntry={true}
+              style={
+                Array [
+                  undefined,
+                  Object {
+                    "marginBottom": 4,
+                    "marginTop": -4,
+                  },
+                ]
+              }
+              testID="registrationForm-passwordRepeat"
+              underlineColorAndroid="transparent"
+              value="123-Abc"
+            />
+          </TouchableOpacity>
+          <Text
+            error={false}
+            style={
+              Object {
+                "fontSize": 12,
+                "marginTop": 2,
+                "paddingLeft": 12,
+              }
+            }
+            success={false}
+          >
+             
+          </Text>
+        </View>
+        <View
+          marginB-10={true}
+        >
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+              }
+            }
+          >
+            <View
+              marginR-8={true}
+            >
+              <TouchableOpacity
+                accessibilityLabel="registrationForm-consent"
+                color="#FAFAF1"
+                testID="registrationForm-consent"
+                value={true}
+              />
+            </View>
+            <Text>
+              I allow this website to collect and store submitted data.
+            </Text>
+          </View>
+        </View>
+        <View
+          marginT-10={true}
+        >
+          <TouchableOpacity
+            accessibilityLabel="registrationForm-submit"
+            label="Sign up"
+            testID="registrationForm-submit"
+          />
+        </View>
+      </View>
+    </View>
+  </ScrollView>
+</View>
+`;
+
+exports[`<RegistrationForm/> should enter invalid password and not submit 1`] = `
+<View
+  collapsable={true}
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    padding-20={true}
+  >
+    <Text
+      heading={true}
+    >
+      Sign up
+    </Text>
+  </View>
+  <ScrollView>
+    <View
+      accessibilityLabel="registrationForm-root"
+      testID="registrationForm-root"
+    >
+      <View
+        padding-20={true}
+        paddingT-0={true}
+      >
+        <View
+          style={
+            Object {
+              "flexDirection": "row",
+            }
+          }
+        >
+          <View
+            paddingR-8={true}
+            style={
+              Object {
+                "width": "50%",
+              }
+            }
+          >
+            <TouchableOpacity
+              activeOpacity={1}
+              paddingB-8={true}
+              paddingL-12={true}
+              paddingR-12={true}
+              paddingT-8={true}
+              style={
+                Array [
+                  undefined,
+                  Object {
+                    "backgroundColor": "#FAFAF1",
+                    "borderRadius": 8,
+                  },
+                ]
+              }
+            >
+              <TextInput
+                accessibilityLabel="registrationForm-firstName"
+                allowFontScaling={true}
+                color="#FAFAF1"
+                enableErrors={false}
+                floatOnFocus={true}
+                floatingPlaceholder={true}
+                floatingPlaceholderColor={
+                  Object {
+                    "default": "#FAFAF1",
+                    "error": "#FAFAF1",
+                    "focus": "#FAFAF1",
+                  }
+                }
+                floatingPlaceholderStyle={Object {}}
+                hideUnderline={true}
+                placeholder="First name"
+                rejectResponderTermination={true}
+                style={
+                  Array [
+                    undefined,
+                    Object {
+                      "marginBottom": 4,
+                      "marginTop": -4,
+                    },
+                  ]
+                }
+                testID="registrationForm-firstName"
+                underlineColorAndroid="transparent"
+                value="John"
+              />
+            </TouchableOpacity>
+            <Text
+              error={false}
+              style={
+                Object {
+                  "fontSize": 12,
+                  "marginTop": 2,
+                  "paddingLeft": 12,
+                }
+              }
+              success={false}
+            >
+               
+            </Text>
+          </View>
+          <View
+            paddingL-8={true}
+            style={
+              Object {
+                "width": "50%",
+              }
+            }
+          >
+            <TouchableOpacity
+              activeOpacity={1}
+              paddingB-8={true}
+              paddingL-12={true}
+              paddingR-12={true}
+              paddingT-8={true}
+              style={
+                Array [
+                  undefined,
+                  Object {
+                    "backgroundColor": "#FAFAF1",
+                    "borderRadius": 8,
+                  },
+                ]
+              }
+            >
+              <TextInput
+                accessibilityLabel="registrationForm-lastName"
+                allowFontScaling={true}
+                color="#FAFAF1"
+                enableErrors={false}
+                floatOnFocus={true}
+                floatingPlaceholder={true}
+                floatingPlaceholderColor={
+                  Object {
+                    "default": "#FAFAF1",
+                    "error": "#FAFAF1",
+                    "focus": "#FAFAF1",
+                  }
+                }
+                floatingPlaceholderStyle={Object {}}
+                hideUnderline={true}
+                placeholder="Last name"
+                rejectResponderTermination={true}
+                style={
+                  Array [
+                    undefined,
+                    Object {
+                      "marginBottom": 4,
+                      "marginTop": -4,
+                    },
+                  ]
+                }
+                testID="registrationForm-lastName"
+                underlineColorAndroid="transparent"
+                value="Doe"
+              />
+            </TouchableOpacity>
+            <Text
+              error={false}
+              style={
+                Object {
+                  "fontSize": 12,
+                  "marginTop": 2,
+                  "paddingLeft": 12,
+                }
+              }
+              success={false}
+            >
+               
+            </Text>
+          </View>
+        </View>
+        <View
+          marginB-10={true}
+        >
+          <TouchableOpacity
+            activeOpacity={1}
+            paddingB-8={true}
+            paddingL-12={true}
+            paddingR-12={true}
+            paddingT-8={true}
+            style={
+              Array [
+                undefined,
+                Object {
+                  "backgroundColor": "#FAFAF1",
+                  "borderRadius": 8,
+                },
+              ]
+            }
+          >
+            <TextInput
+              accessibilityLabel="registrationForm-email"
+              allowFontScaling={true}
+              autoCapitalize="none"
+              color="#FAFAF1"
+              enableErrors={false}
+              floatOnFocus={true}
+              floatingPlaceholder={true}
+              floatingPlaceholderColor={
+                Object {
+                  "default": "#FAFAF1",
+                  "error": "#FAFAF1",
+                  "focus": "#FAFAF1",
+                }
+              }
+              floatingPlaceholderStyle={Object {}}
+              hideUnderline={true}
+              keyboardType="email-address"
+              placeholder="Email"
+              rejectResponderTermination={true}
+              style={
+                Array [
+                  undefined,
+                  Object {
+                    "marginBottom": 4,
+                    "marginTop": -4,
+                  },
+                ]
+              }
+              testID="registrationForm-email"
+              underlineColorAndroid="transparent"
+              value="sad@path.sk"
+            />
+          </TouchableOpacity>
+          <Text
+            error={false}
+            style={
+              Object {
+                "fontSize": 12,
+                "marginTop": 2,
+                "paddingLeft": 12,
+              }
+            }
+            success={false}
+          >
+             
+          </Text>
+        </View>
+        <View
+          marginB-10={true}
+        >
+          <TouchableOpacity
+            activeOpacity={1}
+            paddingB-8={true}
+            paddingL-12={true}
+            paddingR-12={true}
+            paddingT-8={true}
+            style={
+              Array [
+                undefined,
+                Object {
+                  "backgroundColor": "#FAFAF1",
+                  "borderRadius": 8,
+                },
+              ]
+            }
+          >
+            <TextInput
+              allowFontScaling={true}
+              autoCapitalize="none"
+              color="#FAFAF1"
+              enableErrors={false}
+              floatOnFocus={true}
+              floatingPlaceholder={true}
+              floatingPlaceholderColor={
+                Object {
+                  "default": "#FAFAF1",
+                  "error": "#FAFAF1",
+                  "focus": "#FAFAF1",
+                }
+              }
+              floatingPlaceholderStyle={Object {}}
+              hideUnderline={true}
+              placeholder="Password"
+              rejectResponderTermination={true}
+              secureTextEntry={true}
+              style={
+                Array [
+                  undefined,
+                  Object {
+                    "marginBottom": 4,
+                    "marginTop": -4,
+                  },
+                ]
+              }
+              testID="registrationForm-password"
+              underlineColorAndroid="transparent"
+              value="123"
+            />
+          </TouchableOpacity>
+          <Text
+            error={false}
+            style={
+              Object {
+                "fontSize": 12,
+                "marginTop": 2,
+                "paddingLeft": 12,
+              }
+            }
+            success={false}
+          >
+             
+          </Text>
+        </View>
+        <View
+          marginB-10={true}
+        >
+          <TouchableOpacity
+            activeOpacity={1}
+            paddingB-8={true}
+            paddingL-12={true}
+            paddingR-12={true}
+            paddingT-8={true}
+            style={
+              Array [
+                undefined,
+                Object {
+                  "backgroundColor": "#FAFAF1",
+                  "borderRadius": 8,
+                },
+              ]
+            }
+          >
+            <TextInput
+              accessibilityLabel="registrationForm-passwordRepeat"
+              allowFontScaling={true}
+              autoCapitalize="none"
+              color="#FAFAF1"
+              enableErrors={false}
+              floatOnFocus={true}
+              floatingPlaceholder={true}
+              floatingPlaceholderColor={
+                Object {
+                  "default": "#FAFAF1",
+                  "error": "#FAFAF1",
+                  "focus": "#FAFAF1",
+                }
+              }
+              floatingPlaceholderStyle={Object {}}
+              hideUnderline={true}
+              placeholder="Confirm password"
+              rejectResponderTermination={true}
+              secureTextEntry={true}
+              style={
+                Array [
+                  undefined,
+                  Object {
+                    "marginBottom": 4,
+                    "marginTop": -4,
+                  },
+                ]
+              }
+              testID="registrationForm-passwordRepeat"
+              underlineColorAndroid="transparent"
+              value="123"
+            />
+          </TouchableOpacity>
+          <Text
+            error={false}
+            style={
+              Object {
+                "fontSize": 12,
+                "marginTop": 2,
+                "paddingLeft": 12,
+              }
+            }
+            success={false}
+          >
+             
+          </Text>
+        </View>
+        <View
+          marginB-10={true}
+        >
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+              }
+            }
+          >
+            <View
+              marginR-8={true}
+            >
+              <TouchableOpacity
+                accessibilityLabel="registrationForm-consent"
+                color="#FAFAF1"
+                testID="registrationForm-consent"
+                value={true}
+              />
+            </View>
+            <Text>
+              I allow this website to collect and store submitted data.
+            </Text>
+          </View>
+        </View>
+        <View
+          marginT-10={true}
+        >
+          <TouchableOpacity
+            accessibilityLabel="registrationForm-submit"
+            label="Sign up"
+            testID="registrationForm-submit"
+          />
+        </View>
+      </View>
+    </View>
+  </ScrollView>
+</View>
+`;
+
+exports[`<RegistrationForm/> should enter not matching passwords and not submit 1`] = `
+<View
+  collapsable={true}
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    padding-20={true}
+  >
+    <Text
+      heading={true}
+    >
+      Sign up
+    </Text>
+  </View>
+  <ScrollView>
+    <View
+      accessibilityLabel="registrationForm-root"
+      testID="registrationForm-root"
+    >
+      <View
+        padding-20={true}
+        paddingT-0={true}
+      >
+        <View
+          style={
+            Object {
+              "flexDirection": "row",
+            }
+          }
+        >
+          <View
+            paddingR-8={true}
+            style={
+              Object {
+                "width": "50%",
+              }
+            }
+          >
+            <TouchableOpacity
+              activeOpacity={1}
+              paddingB-8={true}
+              paddingL-12={true}
+              paddingR-12={true}
+              paddingT-8={true}
+              style={
+                Array [
+                  undefined,
+                  Object {
+                    "backgroundColor": "#FAFAF1",
+                    "borderRadius": 8,
+                  },
+                ]
+              }
+            >
+              <TextInput
+                accessibilityLabel="registrationForm-firstName"
+                allowFontScaling={true}
+                color="#FAFAF1"
+                enableErrors={false}
+                floatOnFocus={true}
+                floatingPlaceholder={true}
+                floatingPlaceholderColor={
+                  Object {
+                    "default": "#FAFAF1",
+                    "error": "#FAFAF1",
+                    "focus": "#FAFAF1",
+                  }
+                }
+                floatingPlaceholderStyle={Object {}}
+                hideUnderline={true}
+                placeholder="First name"
+                rejectResponderTermination={true}
+                style={
+                  Array [
+                    undefined,
+                    Object {
+                      "marginBottom": 4,
+                      "marginTop": -4,
+                    },
+                  ]
+                }
+                testID="registrationForm-firstName"
+                underlineColorAndroid="transparent"
+                value="John"
+              />
+            </TouchableOpacity>
+            <Text
+              error={false}
+              style={
+                Object {
+                  "fontSize": 12,
+                  "marginTop": 2,
+                  "paddingLeft": 12,
+                }
+              }
+              success={false}
+            >
+               
+            </Text>
+          </View>
+          <View
+            paddingL-8={true}
+            style={
+              Object {
+                "width": "50%",
+              }
+            }
+          >
+            <TouchableOpacity
+              activeOpacity={1}
+              paddingB-8={true}
+              paddingL-12={true}
+              paddingR-12={true}
+              paddingT-8={true}
+              style={
+                Array [
+                  undefined,
+                  Object {
+                    "backgroundColor": "#FAFAF1",
+                    "borderRadius": 8,
+                  },
+                ]
+              }
+            >
+              <TextInput
+                accessibilityLabel="registrationForm-lastName"
+                allowFontScaling={true}
+                color="#FAFAF1"
+                enableErrors={false}
+                floatOnFocus={true}
+                floatingPlaceholder={true}
+                floatingPlaceholderColor={
+                  Object {
+                    "default": "#FAFAF1",
+                    "error": "#FAFAF1",
+                    "focus": "#FAFAF1",
+                  }
+                }
+                floatingPlaceholderStyle={Object {}}
+                hideUnderline={true}
+                placeholder="Last name"
+                rejectResponderTermination={true}
+                style={
+                  Array [
+                    undefined,
+                    Object {
+                      "marginBottom": 4,
+                      "marginTop": -4,
+                    },
+                  ]
+                }
+                testID="registrationForm-lastName"
+                underlineColorAndroid="transparent"
+                value="Doe"
+              />
+            </TouchableOpacity>
+            <Text
+              error={false}
+              style={
+                Object {
+                  "fontSize": 12,
+                  "marginTop": 2,
+                  "paddingLeft": 12,
+                }
+              }
+              success={false}
+            >
+               
+            </Text>
+          </View>
+        </View>
+        <View
+          marginB-10={true}
+        >
+          <TouchableOpacity
+            activeOpacity={1}
+            paddingB-8={true}
+            paddingL-12={true}
+            paddingR-12={true}
+            paddingT-8={true}
+            style={
+              Array [
+                undefined,
+                Object {
+                  "backgroundColor": "#FAFAF1",
+                  "borderRadius": 8,
+                },
+              ]
+            }
+          >
+            <TextInput
+              accessibilityLabel="registrationForm-email"
+              allowFontScaling={true}
+              autoCapitalize="none"
+              color="#FAFAF1"
+              enableErrors={false}
+              floatOnFocus={true}
+              floatingPlaceholder={true}
+              floatingPlaceholderColor={
+                Object {
+                  "default": "#FAFAF1",
+                  "error": "#FAFAF1",
+                  "focus": "#FAFAF1",
+                }
+              }
+              floatingPlaceholderStyle={Object {}}
+              hideUnderline={true}
+              keyboardType="email-address"
+              placeholder="Email"
+              rejectResponderTermination={true}
+              style={
+                Array [
+                  undefined,
+                  Object {
+                    "marginBottom": 4,
+                    "marginTop": -4,
+                  },
+                ]
+              }
+              testID="registrationForm-email"
+              underlineColorAndroid="transparent"
+              value="sad@path.sk"
+            />
+          </TouchableOpacity>
+          <Text
+            error={false}
+            style={
+              Object {
+                "fontSize": 12,
+                "marginTop": 2,
+                "paddingLeft": 12,
+              }
+            }
+            success={false}
+          >
+             
+          </Text>
+        </View>
+        <View
+          marginB-10={true}
+        >
+          <TouchableOpacity
+            activeOpacity={1}
+            paddingB-8={true}
+            paddingL-12={true}
+            paddingR-12={true}
+            paddingT-8={true}
+            style={
+              Array [
+                undefined,
+                Object {
+                  "backgroundColor": "#FAFAF1",
+                  "borderRadius": 8,
+                },
+              ]
+            }
+          >
+            <TextInput
+              allowFontScaling={true}
+              autoCapitalize="none"
+              color="#FAFAF1"
+              enableErrors={false}
+              floatOnFocus={true}
+              floatingPlaceholder={true}
+              floatingPlaceholderColor={
+                Object {
+                  "default": "#FAFAF1",
+                  "error": "#FAFAF1",
+                  "focus": "#FAFAF1",
+                }
+              }
+              floatingPlaceholderStyle={Object {}}
+              hideUnderline={true}
+              placeholder="Password"
+              rejectResponderTermination={true}
+              secureTextEntry={true}
+              style={
+                Array [
+                  undefined,
+                  Object {
+                    "marginBottom": 4,
+                    "marginTop": -4,
+                  },
+                ]
+              }
+              testID="registrationForm-password"
+              underlineColorAndroid="transparent"
+              value="123-Abc"
+            />
+          </TouchableOpacity>
+          <Text
+            error={false}
+            style={
+              Object {
+                "fontSize": 12,
+                "marginTop": 2,
+                "paddingLeft": 12,
+              }
+            }
+            success={false}
+          >
+             
+          </Text>
+        </View>
+        <View
+          marginB-10={true}
+        >
+          <TouchableOpacity
+            activeOpacity={1}
+            paddingB-8={true}
+            paddingL-12={true}
+            paddingR-12={true}
+            paddingT-8={true}
+            style={
+              Array [
+                undefined,
+                Object {
+                  "backgroundColor": "#FAFAF1",
+                  "borderRadius": 8,
+                },
+              ]
+            }
+          >
+            <TextInput
+              accessibilityLabel="registrationForm-passwordRepeat"
+              allowFontScaling={true}
+              autoCapitalize="none"
+              color="#FAFAF1"
+              enableErrors={false}
+              floatOnFocus={true}
+              floatingPlaceholder={true}
+              floatingPlaceholderColor={
+                Object {
+                  "default": "#FAFAF1",
+                  "error": "#FAFAF1",
+                  "focus": "#FAFAF1",
+                }
+              }
+              floatingPlaceholderStyle={Object {}}
+              hideUnderline={true}
+              placeholder="Confirm password"
+              rejectResponderTermination={true}
+              secureTextEntry={true}
+              style={
+                Array [
+                  undefined,
+                  Object {
+                    "marginBottom": 4,
+                    "marginTop": -4,
+                  },
+                ]
+              }
+              testID="registrationForm-passwordRepeat"
+              underlineColorAndroid="transparent"
+              value="123-ABc"
+            />
+          </TouchableOpacity>
+          <Text
+            error={false}
+            style={
+              Object {
+                "fontSize": 12,
+                "marginTop": 2,
+                "paddingLeft": 12,
+              }
+            }
+            success={false}
+          >
+             
+          </Text>
+        </View>
+        <View
+          marginB-10={true}
+        >
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+              }
+            }
+          >
+            <View
+              marginR-8={true}
+            >
+              <TouchableOpacity
+                accessibilityLabel="registrationForm-consent"
+                color="#FAFAF1"
+                testID="registrationForm-consent"
+                value={true}
+              />
+            </View>
+            <Text>
+              I allow this website to collect and store submitted data.
+            </Text>
+          </View>
+        </View>
+        <View
+          marginT-10={true}
+        >
+          <TouchableOpacity
+            accessibilityLabel="registrationForm-submit"
+            label="Sign up"
+            testID="registrationForm-submit"
+          />
+        </View>
+      </View>
+    </View>
+  </ScrollView>
+</View>
+`;
+
+exports[`<RegistrationForm/> should fill all fields and submit 1`] = `
+<View
+  collapsable={true}
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    padding-20={true}
+  >
+    <Text
+      heading={true}
+    >
+      Sign up
+    </Text>
+  </View>
+  <ScrollView>
+    <View
+      accessibilityLabel="registrationForm-root"
+      testID="registrationForm-root"
+    >
+      <View
+        padding-20={true}
+        paddingT-0={true}
+      >
+        <View
+          style={
+            Object {
+              "flexDirection": "row",
+            }
+          }
+        >
+          <View
+            paddingR-8={true}
+            style={
+              Object {
+                "width": "50%",
+              }
+            }
+          >
+            <TouchableOpacity
+              activeOpacity={1}
+              paddingB-8={true}
+              paddingL-12={true}
+              paddingR-12={true}
+              paddingT-8={true}
+              style={
+                Array [
+                  undefined,
+                  Object {
+                    "backgroundColor": "#FAFAF1",
+                    "borderRadius": 8,
+                  },
+                ]
+              }
+            >
+              <TextInput
+                accessibilityLabel="registrationForm-firstName"
+                allowFontScaling={true}
+                color="#FAFAF1"
+                enableErrors={false}
+                floatOnFocus={true}
+                floatingPlaceholder={true}
+                floatingPlaceholderColor={
+                  Object {
+                    "default": "#FAFAF1",
+                    "error": "#FAFAF1",
+                    "focus": "#FAFAF1",
+                  }
+                }
+                floatingPlaceholderStyle={Object {}}
+                hideUnderline={true}
+                placeholder="First name"
+                rejectResponderTermination={true}
+                style={
+                  Array [
+                    undefined,
+                    Object {
+                      "marginBottom": 4,
+                      "marginTop": -4,
+                    },
+                  ]
+                }
+                testID="registrationForm-firstName"
+                underlineColorAndroid="transparent"
+                value="John"
+              />
+            </TouchableOpacity>
+            <Text
+              error={false}
+              style={
+                Object {
+                  "fontSize": 12,
+                  "marginTop": 2,
+                  "paddingLeft": 12,
+                }
+              }
+              success={false}
+            >
+               
+            </Text>
+          </View>
+          <View
+            paddingL-8={true}
+            style={
+              Object {
+                "width": "50%",
+              }
+            }
+          >
+            <TouchableOpacity
+              activeOpacity={1}
+              paddingB-8={true}
+              paddingL-12={true}
+              paddingR-12={true}
+              paddingT-8={true}
+              style={
+                Array [
+                  undefined,
+                  Object {
+                    "backgroundColor": "#FAFAF1",
+                    "borderRadius": 8,
+                  },
+                ]
+              }
+            >
+              <TextInput
+                accessibilityLabel="registrationForm-lastName"
+                allowFontScaling={true}
+                color="#FAFAF1"
+                enableErrors={false}
+                floatOnFocus={true}
+                floatingPlaceholder={true}
+                floatingPlaceholderColor={
+                  Object {
+                    "default": "#FAFAF1",
+                    "error": "#FAFAF1",
+                    "focus": "#FAFAF1",
+                  }
+                }
+                floatingPlaceholderStyle={Object {}}
+                hideUnderline={true}
+                placeholder="Last name"
+                rejectResponderTermination={true}
+                style={
+                  Array [
+                    undefined,
+                    Object {
+                      "marginBottom": 4,
+                      "marginTop": -4,
+                    },
+                  ]
+                }
+                testID="registrationForm-lastName"
+                underlineColorAndroid="transparent"
+                value="Doe"
+              />
+            </TouchableOpacity>
+            <Text
+              error={false}
+              style={
+                Object {
+                  "fontSize": 12,
+                  "marginTop": 2,
+                  "paddingLeft": 12,
+                }
+              }
+              success={false}
+            >
+               
+            </Text>
+          </View>
+        </View>
+        <View
+          marginB-10={true}
+        >
+          <TouchableOpacity
+            activeOpacity={1}
+            paddingB-8={true}
+            paddingL-12={true}
+            paddingR-12={true}
+            paddingT-8={true}
+            style={
+              Array [
+                undefined,
+                Object {
+                  "backgroundColor": "#FAFAF1",
+                  "borderRadius": 8,
+                },
+              ]
+            }
+          >
+            <TextInput
+              accessibilityLabel="registrationForm-email"
+              allowFontScaling={true}
+              autoCapitalize="none"
+              color="#FAFAF1"
+              enableErrors={false}
+              floatOnFocus={true}
+              floatingPlaceholder={true}
+              floatingPlaceholderColor={
+                Object {
+                  "default": "#FAFAF1",
+                  "error": "#FAFAF1",
+                  "focus": "#FAFAF1",
+                }
+              }
+              floatingPlaceholderStyle={Object {}}
+              hideUnderline={true}
+              keyboardType="email-address"
+              placeholder="Email"
+              rejectResponderTermination={true}
+              style={
+                Array [
+                  undefined,
+                  Object {
+                    "marginBottom": 4,
+                    "marginTop": -4,
+                  },
+                ]
+              }
+              testID="registrationForm-email"
+              underlineColorAndroid="transparent"
+              value="happy@path.sk"
+            />
+          </TouchableOpacity>
+          <Text
+            error={false}
+            style={
+              Object {
+                "fontSize": 12,
+                "marginTop": 2,
+                "paddingLeft": 12,
+              }
+            }
+            success={false}
+          >
+             
+          </Text>
+        </View>
+        <View
+          marginB-10={true}
+        >
+          <TouchableOpacity
+            activeOpacity={1}
+            paddingB-8={true}
+            paddingL-12={true}
+            paddingR-12={true}
+            paddingT-8={true}
+            style={
+              Array [
+                undefined,
+                Object {
+                  "backgroundColor": "#FAFAF1",
+                  "borderRadius": 8,
+                },
+              ]
+            }
+          >
+            <TextInput
+              allowFontScaling={true}
+              autoCapitalize="none"
+              color="#FAFAF1"
+              enableErrors={false}
+              floatOnFocus={true}
+              floatingPlaceholder={true}
+              floatingPlaceholderColor={
+                Object {
+                  "default": "#FAFAF1",
+                  "error": "#FAFAF1",
+                  "focus": "#FAFAF1",
+                }
+              }
+              floatingPlaceholderStyle={Object {}}
+              hideUnderline={true}
+              placeholder="Password"
+              rejectResponderTermination={true}
+              secureTextEntry={true}
+              style={
+                Array [
+                  undefined,
+                  Object {
+                    "marginBottom": 4,
+                    "marginTop": -4,
+                  },
+                ]
+              }
+              testID="registrationForm-password"
+              underlineColorAndroid="transparent"
+              value="123-Abc"
+            />
+          </TouchableOpacity>
+          <Text
+            error={false}
+            style={
+              Object {
+                "fontSize": 12,
+                "marginTop": 2,
+                "paddingLeft": 12,
+              }
+            }
+            success={false}
+          >
+             
+          </Text>
+        </View>
+        <View
+          marginB-10={true}
+        >
+          <TouchableOpacity
+            activeOpacity={1}
+            paddingB-8={true}
+            paddingL-12={true}
+            paddingR-12={true}
+            paddingT-8={true}
+            style={
+              Array [
+                undefined,
+                Object {
+                  "backgroundColor": "#FAFAF1",
+                  "borderRadius": 8,
+                },
+              ]
+            }
+          >
+            <TextInput
+              accessibilityLabel="registrationForm-passwordRepeat"
+              allowFontScaling={true}
+              autoCapitalize="none"
+              color="#FAFAF1"
+              enableErrors={false}
+              floatOnFocus={true}
+              floatingPlaceholder={true}
+              floatingPlaceholderColor={
+                Object {
+                  "default": "#FAFAF1",
+                  "error": "#FAFAF1",
+                  "focus": "#FAFAF1",
+                }
+              }
+              floatingPlaceholderStyle={Object {}}
+              hideUnderline={true}
+              placeholder="Confirm password"
+              rejectResponderTermination={true}
+              secureTextEntry={true}
+              style={
+                Array [
+                  undefined,
+                  Object {
+                    "marginBottom": 4,
+                    "marginTop": -4,
+                  },
+                ]
+              }
+              testID="registrationForm-passwordRepeat"
+              underlineColorAndroid="transparent"
+              value="123-Abc"
+            />
+          </TouchableOpacity>
+          <Text
+            error={false}
+            style={
+              Object {
+                "fontSize": 12,
+                "marginTop": 2,
+                "paddingLeft": 12,
+              }
+            }
+            success={false}
+          >
+             
+          </Text>
+        </View>
+        <View
+          marginB-10={true}
+        >
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+              }
+            }
+          >
+            <View
+              marginR-8={true}
+            >
+              <TouchableOpacity
+                accessibilityLabel="registrationForm-consent"
+                color="#FAFAF1"
+                testID="registrationForm-consent"
+                value={true}
+              />
+            </View>
+            <Text>
+              I allow this website to collect and store submitted data.
+            </Text>
+          </View>
+        </View>
+        <View
+          marginT-10={true}
+        >
+          <TouchableOpacity
+            accessibilityLabel="registrationForm-submit"
+            label="Sign up"
+            testID="registrationForm-submit"
+          />
+        </View>
+      </View>
+    </View>
+  </ScrollView>
+</View>
+`;
+
+exports[`<RegistrationForm/> should fill all mandatory fields and submit 1`] = `
+<View
+  collapsable={true}
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    padding-20={true}
+  >
+    <Text
+      heading={true}
+    >
+      Sign up
+    </Text>
+  </View>
+  <ScrollView>
+    <View
+      accessibilityLabel="registrationForm-root"
+      testID="registrationForm-root"
+    >
+      <View
+        padding-20={true}
+        paddingT-0={true}
+      >
+        <View
+          style={
+            Object {
+              "flexDirection": "row",
+            }
+          }
+        >
+          <View
+            paddingR-8={true}
+            style={
+              Object {
+                "width": "50%",
+              }
+            }
+          >
+            <TouchableOpacity
+              activeOpacity={1}
+              paddingB-8={true}
+              paddingL-12={true}
+              paddingR-12={true}
+              paddingT-8={true}
+              style={
+                Array [
+                  undefined,
+                  Object {
+                    "backgroundColor": "#FAFAF1",
+                    "borderRadius": 8,
+                  },
+                ]
+              }
+            >
+              <TextInput
+                accessibilityLabel="registrationForm-firstName"
+                allowFontScaling={true}
+                color="#FAFAF1"
+                enableErrors={false}
+                floatOnFocus={true}
+                floatingPlaceholder={true}
+                floatingPlaceholderColor={
+                  Object {
+                    "default": "#FAFAF1",
+                    "error": "#FAFAF1",
+                    "focus": "#FAFAF1",
+                  }
+                }
+                floatingPlaceholderStyle={Object {}}
+                hideUnderline={true}
+                placeholder="First name"
+                rejectResponderTermination={true}
+                style={
+                  Array [
+                    undefined,
+                    Object {
+                      "marginBottom": 4,
+                      "marginTop": -4,
+                    },
+                  ]
+                }
+                testID="registrationForm-firstName"
+                underlineColorAndroid="transparent"
+                value=""
+              />
+            </TouchableOpacity>
+            <Text
+              error={false}
+              style={
+                Object {
+                  "fontSize": 12,
+                  "marginTop": 2,
+                  "paddingLeft": 12,
+                }
+              }
+              success={false}
+            >
+               
+            </Text>
+          </View>
+          <View
+            paddingL-8={true}
+            style={
+              Object {
+                "width": "50%",
+              }
+            }
+          >
+            <TouchableOpacity
+              activeOpacity={1}
+              paddingB-8={true}
+              paddingL-12={true}
+              paddingR-12={true}
+              paddingT-8={true}
+              style={
+                Array [
+                  undefined,
+                  Object {
+                    "backgroundColor": "#FAFAF1",
+                    "borderRadius": 8,
+                  },
+                ]
+              }
+            >
+              <TextInput
+                accessibilityLabel="registrationForm-lastName"
+                allowFontScaling={true}
+                color="#FAFAF1"
+                enableErrors={false}
+                floatOnFocus={true}
+                floatingPlaceholder={true}
+                floatingPlaceholderColor={
+                  Object {
+                    "default": "#FAFAF1",
+                    "error": "#FAFAF1",
+                    "focus": "#FAFAF1",
+                  }
+                }
+                floatingPlaceholderStyle={Object {}}
+                hideUnderline={true}
+                placeholder="Last name"
+                rejectResponderTermination={true}
+                style={
+                  Array [
+                    undefined,
+                    Object {
+                      "marginBottom": 4,
+                      "marginTop": -4,
+                    },
+                  ]
+                }
+                testID="registrationForm-lastName"
+                underlineColorAndroid="transparent"
+                value=""
+              />
+            </TouchableOpacity>
+            <Text
+              error={false}
+              style={
+                Object {
+                  "fontSize": 12,
+                  "marginTop": 2,
+                  "paddingLeft": 12,
+                }
+              }
+              success={false}
+            >
+               
+            </Text>
+          </View>
+        </View>
+        <View
+          marginB-10={true}
+        >
+          <TouchableOpacity
+            activeOpacity={1}
+            paddingB-8={true}
+            paddingL-12={true}
+            paddingR-12={true}
+            paddingT-8={true}
+            style={
+              Array [
+                undefined,
+                Object {
+                  "backgroundColor": "#FAFAF1",
+                  "borderRadius": 8,
+                },
+              ]
+            }
+          >
+            <TextInput
+              accessibilityLabel="registrationForm-email"
+              allowFontScaling={true}
+              autoCapitalize="none"
+              color="#FAFAF1"
+              enableErrors={false}
+              floatOnFocus={true}
+              floatingPlaceholder={true}
+              floatingPlaceholderColor={
+                Object {
+                  "default": "#FAFAF1",
+                  "error": "#FAFAF1",
+                  "focus": "#FAFAF1",
+                }
+              }
+              floatingPlaceholderStyle={Object {}}
+              hideUnderline={true}
+              keyboardType="email-address"
+              placeholder="Email"
+              rejectResponderTermination={true}
+              style={
+                Array [
+                  undefined,
+                  Object {
+                    "marginBottom": 4,
+                    "marginTop": -4,
+                  },
+                ]
+              }
+              testID="registrationForm-email"
+              underlineColorAndroid="transparent"
+              value="happy@path.sk"
+            />
+          </TouchableOpacity>
+          <Text
+            error={false}
+            style={
+              Object {
+                "fontSize": 12,
+                "marginTop": 2,
+                "paddingLeft": 12,
+              }
+            }
+            success={false}
+          >
+             
+          </Text>
+        </View>
+        <View
+          marginB-10={true}
+        >
+          <TouchableOpacity
+            activeOpacity={1}
+            paddingB-8={true}
+            paddingL-12={true}
+            paddingR-12={true}
+            paddingT-8={true}
+            style={
+              Array [
+                undefined,
+                Object {
+                  "backgroundColor": "#FAFAF1",
+                  "borderRadius": 8,
+                },
+              ]
+            }
+          >
+            <TextInput
+              allowFontScaling={true}
+              autoCapitalize="none"
+              color="#FAFAF1"
+              enableErrors={false}
+              floatOnFocus={true}
+              floatingPlaceholder={true}
+              floatingPlaceholderColor={
+                Object {
+                  "default": "#FAFAF1",
+                  "error": "#FAFAF1",
+                  "focus": "#FAFAF1",
+                }
+              }
+              floatingPlaceholderStyle={Object {}}
+              hideUnderline={true}
+              placeholder="Password"
+              rejectResponderTermination={true}
+              secureTextEntry={true}
+              style={
+                Array [
+                  undefined,
+                  Object {
+                    "marginBottom": 4,
+                    "marginTop": -4,
+                  },
+                ]
+              }
+              testID="registrationForm-password"
+              underlineColorAndroid="transparent"
+              value="123-Abc"
+            />
+          </TouchableOpacity>
+          <Text
+            error={false}
+            style={
+              Object {
+                "fontSize": 12,
+                "marginTop": 2,
+                "paddingLeft": 12,
+              }
+            }
+            success={false}
+          >
+             
+          </Text>
+        </View>
+        <View
+          marginB-10={true}
+        >
+          <TouchableOpacity
+            activeOpacity={1}
+            paddingB-8={true}
+            paddingL-12={true}
+            paddingR-12={true}
+            paddingT-8={true}
+            style={
+              Array [
+                undefined,
+                Object {
+                  "backgroundColor": "#FAFAF1",
+                  "borderRadius": 8,
+                },
+              ]
+            }
+          >
+            <TextInput
+              accessibilityLabel="registrationForm-passwordRepeat"
+              allowFontScaling={true}
+              autoCapitalize="none"
+              color="#FAFAF1"
+              enableErrors={false}
+              floatOnFocus={true}
+              floatingPlaceholder={true}
+              floatingPlaceholderColor={
+                Object {
+                  "default": "#FAFAF1",
+                  "error": "#FAFAF1",
+                  "focus": "#FAFAF1",
+                }
+              }
+              floatingPlaceholderStyle={Object {}}
+              hideUnderline={true}
+              placeholder="Confirm password"
+              rejectResponderTermination={true}
+              secureTextEntry={true}
+              style={
+                Array [
+                  undefined,
+                  Object {
+                    "marginBottom": 4,
+                    "marginTop": -4,
+                  },
+                ]
+              }
+              testID="registrationForm-passwordRepeat"
+              underlineColorAndroid="transparent"
+              value="123-Abc"
+            />
+          </TouchableOpacity>
+          <Text
+            error={false}
+            style={
+              Object {
+                "fontSize": 12,
+                "marginTop": 2,
+                "paddingLeft": 12,
+              }
+            }
+            success={false}
+          >
+             
+          </Text>
+        </View>
+        <View
+          marginB-10={true}
+        >
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+              }
+            }
+          >
+            <View
+              marginR-8={true}
+            >
+              <TouchableOpacity
+                accessibilityLabel="registrationForm-consent"
+                color="#FAFAF1"
+                testID="registrationForm-consent"
+                value={true}
+              />
+            </View>
+            <Text>
+              I allow this website to collect and store submitted data.
+            </Text>
+          </View>
+        </View>
+        <View
+          marginT-10={true}
+        >
+          <TouchableOpacity
+            accessibilityLabel="registrationForm-submit"
+            label="Sign up"
+            testID="registrationForm-submit"
+          />
+        </View>
+      </View>
+    </View>
+  </ScrollView>
+</View>
+`;
+
+exports[`<RegistrationForm/> should omit consent and not submit 1`] = `
+<View
+  collapsable={true}
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    padding-20={true}
+  >
+    <Text
+      heading={true}
+    >
+      Sign up
+    </Text>
+  </View>
+  <ScrollView>
+    <View
+      accessibilityLabel="registrationForm-root"
+      testID="registrationForm-root"
+    >
+      <View
+        padding-20={true}
+        paddingT-0={true}
+      >
+        <View
+          style={
+            Object {
+              "flexDirection": "row",
+            }
+          }
+        >
+          <View
+            paddingR-8={true}
+            style={
+              Object {
+                "width": "50%",
+              }
+            }
+          >
+            <TouchableOpacity
+              activeOpacity={1}
+              paddingB-8={true}
+              paddingL-12={true}
+              paddingR-12={true}
+              paddingT-8={true}
+              style={
+                Array [
+                  undefined,
+                  Object {
+                    "backgroundColor": "#FAFAF1",
+                    "borderRadius": 8,
+                  },
+                ]
+              }
+            >
+              <TextInput
+                accessibilityLabel="registrationForm-firstName"
+                allowFontScaling={true}
+                color="#FAFAF1"
+                enableErrors={false}
+                floatOnFocus={true}
+                floatingPlaceholder={true}
+                floatingPlaceholderColor={
+                  Object {
+                    "default": "#FAFAF1",
+                    "error": "#FAFAF1",
+                    "focus": "#FAFAF1",
+                  }
+                }
+                floatingPlaceholderStyle={Object {}}
+                hideUnderline={true}
+                placeholder="First name"
+                rejectResponderTermination={true}
+                style={
+                  Array [
+                    undefined,
+                    Object {
+                      "marginBottom": 4,
+                      "marginTop": -4,
+                    },
+                  ]
+                }
+                testID="registrationForm-firstName"
+                underlineColorAndroid="transparent"
+                value="John"
+              />
+            </TouchableOpacity>
+            <Text
+              error={false}
+              style={
+                Object {
+                  "fontSize": 12,
+                  "marginTop": 2,
+                  "paddingLeft": 12,
+                }
+              }
+              success={false}
+            >
+               
+            </Text>
+          </View>
+          <View
+            paddingL-8={true}
+            style={
+              Object {
+                "width": "50%",
+              }
+            }
+          >
+            <TouchableOpacity
+              activeOpacity={1}
+              paddingB-8={true}
+              paddingL-12={true}
+              paddingR-12={true}
+              paddingT-8={true}
+              style={
+                Array [
+                  undefined,
+                  Object {
+                    "backgroundColor": "#FAFAF1",
+                    "borderRadius": 8,
+                  },
+                ]
+              }
+            >
+              <TextInput
+                accessibilityLabel="registrationForm-lastName"
+                allowFontScaling={true}
+                color="#FAFAF1"
+                enableErrors={false}
+                floatOnFocus={true}
+                floatingPlaceholder={true}
+                floatingPlaceholderColor={
+                  Object {
+                    "default": "#FAFAF1",
+                    "error": "#FAFAF1",
+                    "focus": "#FAFAF1",
+                  }
+                }
+                floatingPlaceholderStyle={Object {}}
+                hideUnderline={true}
+                placeholder="Last name"
+                rejectResponderTermination={true}
+                style={
+                  Array [
+                    undefined,
+                    Object {
+                      "marginBottom": 4,
+                      "marginTop": -4,
+                    },
+                  ]
+                }
+                testID="registrationForm-lastName"
+                underlineColorAndroid="transparent"
+                value="Doe"
+              />
+            </TouchableOpacity>
+            <Text
+              error={false}
+              style={
+                Object {
+                  "fontSize": 12,
+                  "marginTop": 2,
+                  "paddingLeft": 12,
+                }
+              }
+              success={false}
+            >
+               
+            </Text>
+          </View>
+        </View>
+        <View
+          marginB-10={true}
+        >
+          <TouchableOpacity
+            activeOpacity={1}
+            paddingB-8={true}
+            paddingL-12={true}
+            paddingR-12={true}
+            paddingT-8={true}
+            style={
+              Array [
+                undefined,
+                Object {
+                  "backgroundColor": "#FAFAF1",
+                  "borderRadius": 8,
+                },
+              ]
+            }
+          >
+            <TextInput
+              accessibilityLabel="registrationForm-email"
+              allowFontScaling={true}
+              autoCapitalize="none"
+              color="#FAFAF1"
+              enableErrors={false}
+              floatOnFocus={true}
+              floatingPlaceholder={true}
+              floatingPlaceholderColor={
+                Object {
+                  "default": "#FAFAF1",
+                  "error": "#FAFAF1",
+                  "focus": "#FAFAF1",
+                }
+              }
+              floatingPlaceholderStyle={Object {}}
+              hideUnderline={true}
+              keyboardType="email-address"
+              placeholder="Email"
+              rejectResponderTermination={true}
+              style={
+                Array [
+                  undefined,
+                  Object {
+                    "marginBottom": 4,
+                    "marginTop": -4,
+                  },
+                ]
+              }
+              testID="registrationForm-email"
+              underlineColorAndroid="transparent"
+              value="sad@path.sk"
+            />
+          </TouchableOpacity>
+          <Text
+            error={false}
+            style={
+              Object {
+                "fontSize": 12,
+                "marginTop": 2,
+                "paddingLeft": 12,
+              }
+            }
+            success={false}
+          >
+             
+          </Text>
+        </View>
+        <View
+          marginB-10={true}
+        >
+          <TouchableOpacity
+            activeOpacity={1}
+            paddingB-8={true}
+            paddingL-12={true}
+            paddingR-12={true}
+            paddingT-8={true}
+            style={
+              Array [
+                undefined,
+                Object {
+                  "backgroundColor": "#FAFAF1",
+                  "borderRadius": 8,
+                },
+              ]
+            }
+          >
+            <TextInput
+              allowFontScaling={true}
+              autoCapitalize="none"
+              color="#FAFAF1"
+              enableErrors={false}
+              floatOnFocus={true}
+              floatingPlaceholder={true}
+              floatingPlaceholderColor={
+                Object {
+                  "default": "#FAFAF1",
+                  "error": "#FAFAF1",
+                  "focus": "#FAFAF1",
+                }
+              }
+              floatingPlaceholderStyle={Object {}}
+              hideUnderline={true}
+              placeholder="Password"
+              rejectResponderTermination={true}
+              secureTextEntry={true}
+              style={
+                Array [
+                  undefined,
+                  Object {
+                    "marginBottom": 4,
+                    "marginTop": -4,
+                  },
+                ]
+              }
+              testID="registrationForm-password"
+              underlineColorAndroid="transparent"
+              value="123-Abc"
+            />
+          </TouchableOpacity>
+          <Text
+            error={false}
+            style={
+              Object {
+                "fontSize": 12,
+                "marginTop": 2,
+                "paddingLeft": 12,
+              }
+            }
+            success={false}
+          >
+             
+          </Text>
+        </View>
+        <View
+          marginB-10={true}
+        >
+          <TouchableOpacity
+            activeOpacity={1}
+            paddingB-8={true}
+            paddingL-12={true}
+            paddingR-12={true}
+            paddingT-8={true}
+            style={
+              Array [
+                undefined,
+                Object {
+                  "backgroundColor": "#FAFAF1",
+                  "borderRadius": 8,
+                },
+              ]
+            }
+          >
+            <TextInput
+              accessibilityLabel="registrationForm-passwordRepeat"
+              allowFontScaling={true}
+              autoCapitalize="none"
+              color="#FAFAF1"
+              enableErrors={false}
+              floatOnFocus={true}
+              floatingPlaceholder={true}
+              floatingPlaceholderColor={
+                Object {
+                  "default": "#FAFAF1",
+                  "error": "#FAFAF1",
+                  "focus": "#FAFAF1",
+                }
+              }
+              floatingPlaceholderStyle={Object {}}
+              hideUnderline={true}
+              placeholder="Confirm password"
+              rejectResponderTermination={true}
+              secureTextEntry={true}
+              style={
+                Array [
+                  undefined,
+                  Object {
+                    "marginBottom": 4,
+                    "marginTop": -4,
+                  },
+                ]
+              }
+              testID="registrationForm-passwordRepeat"
+              underlineColorAndroid="transparent"
+              value="123-Abc"
+            />
+          </TouchableOpacity>
+          <Text
+            error={false}
+            style={
+              Object {
+                "fontSize": 12,
+                "marginTop": 2,
+                "paddingLeft": 12,
+              }
+            }
+            success={false}
+          >
+             
+          </Text>
+        </View>
+        <View
+          marginB-10={true}
+        >
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+              }
+            }
+          >
+            <View
+              marginR-8={true}
+            >
+              <TouchableOpacity
+                accessibilityLabel="registrationForm-consent"
+                color="#FAFAF1"
+                testID="registrationForm-consent"
+                value={false}
+              />
+            </View>
+            <Text>
+              I allow this website to collect and store submitted data.
+            </Text>
+          </View>
+        </View>
+        <View
+          marginT-10={true}
+        >
+          <TouchableOpacity
+            accessibilityLabel="registrationForm-submit"
+            label="Sign up"
+            testID="registrationForm-submit"
+          />
+        </View>
+      </View>
+    </View>
+  </ScrollView>
+</View>
+`;

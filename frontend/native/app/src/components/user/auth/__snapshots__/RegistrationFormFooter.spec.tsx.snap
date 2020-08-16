@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RegistrationFormFooter/> should render 1`] = `
+<View
+  collapsable={true}
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "marginTop": 10,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#FAFAF1",
+          "marginTop": 12,
+        }
+      }
+    >
+      Already have an account?
+    </Text>
+    <TouchableOpacity
+      accessibilityLabel="auth-registrationFormFooter-login"
+      label="Log in"
+      link={true}
+      testID="auth-registrationFormFooter-login"
+      variant="primary"
+    />
+  </View>
+</View>
+`;

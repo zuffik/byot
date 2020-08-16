@@ -2,10 +2,10 @@ import * as React from 'react';
 import {ScrollView, StyleSheet} from 'react-native';
 import {TextField} from '../../elements/text-field/TextField';
 import {Formik} from 'formik';
-import {Button, Text, View} from 'react-native-ui-lib';
+import {Text, View} from 'react-native-ui-lib';
 import {useTranslation} from 'react-i18next';
 import {loginSchema} from '@byot-frontend/common/src/types/schemas/validation/LoginSchema';
-import {IdView} from '../../elements/semantical/IdView';
+import {Button} from '../../elements/lib/Button';
 
 interface Props {
   onSubmit: (credentials: {usernameOrEmail: string; password: string}) => void;

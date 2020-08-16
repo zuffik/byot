@@ -12,239 +12,159 @@ exports[`<LoginForm/> should not submit form with one credential missing 1`] = `
 >
   <View
     accessibilityLabel="loginForm-root"
-    style={
-      Object {
-        "alignItems": "center",
-        "flexDirection": "column",
-      }
-    }
+    padding-20={true}
     testID="loginForm-root"
   >
-    <View
-      style={
-        Object {
-          "maxWidth": 400,
-          "width": "100%",
-        }
-      }
+    <Text
+      heading={true}
     >
-      <Text
-        category="h1"
-        style={
-          Object {
-            "marginBottom": 30,
-          }
-        }
-      >
-        Login
-      </Text>
+      Login
+    </Text>
+    <ScrollView>
       <View
-        style={
-          Array [
-            Object {
-              "marginBottom": 5,
-            },
-            undefined,
-          ]
-        }
+        marginB-4={true}
       >
-        <View
+        <TouchableOpacity
+          activeOpacity={1}
+          paddingB-8={true}
+          paddingL-12={true}
+          paddingR-12={true}
+          paddingT-8={true}
           style={
-            Object {
-              "paddingTop": 0,
-              "transform": Array [
-                Object {
-                  "translateY": 16,
-                },
-              ],
-            }
-          }
-        >
-          <Text>
-            <Text
-              style={
-                Object {
-                  "color": "rgba(255, 255, 255, 1)",
-                  "fontSize": 16,
-                }
-              }
-            >
-              Username or email
-            </Text>
-          </Text>
-        </View>
-        <View
-          style={
-            Object {
-              "borderBottomColor": "rgba(255, 255, 255, 1)",
-              "borderBottomWidth": 1,
-              "borderStyle": "solid",
-            }
+            Array [
+              undefined,
+              Object {
+                "backgroundColor": "#FAFAF1",
+                "borderRadius": 8,
+              },
+            ]
           }
         >
           <TextInput
             accessibilityLabel="loginForm-usernameEmail-input"
             allowFontScaling={true}
+            autoCapitalize="none"
+            color="#FAFAF1"
+            enableErrors={false}
+            floatOnFocus={true}
+            floatingPlaceholder={true}
+            floatingPlaceholderColor={
+              Object {
+                "default": "#FAFAF1",
+                "error": "#FAFAF1",
+                "focus": "#FAFAF1",
+              }
+            }
+            floatingPlaceholderStyle={Object {}}
+            hideUnderline={true}
+            infoText={true}
             keyboardType="email-address"
+            placeholder="Username or email"
             rejectResponderTermination={true}
             style={
-              Object {
-                "height": 20,
-                "padding": 0,
-              }
+              Array [
+                undefined,
+                Object {
+                  "marginBottom": 4,
+                  "marginTop": -4,
+                },
+              ]
             }
             testID="loginForm-usernameEmail-input"
             underlineColorAndroid="transparent"
             value="username"
-            withHelperText="danger"
           />
-        </View>
+        </TouchableOpacity>
         <Text
+          error={false}
           style={
             Object {
-              "color": undefined,
               "fontSize": 12,
+              "marginTop": 2,
+              "paddingLeft": 12,
             }
           }
+          success={false}
         >
            
         </Text>
       </View>
       <View
-        style={
-          Array [
-            Object {
-              "marginBottom": 5,
-            },
-            Object {
-              "marginBottom": 48,
-            },
-          ]
-        }
+        marginB-4={true}
       >
-        <View
+        <TouchableOpacity
+          activeOpacity={1}
+          paddingB-8={true}
+          paddingL-12={true}
+          paddingR-12={true}
+          paddingT-8={true}
           style={
-            Object {
-              "paddingTop": 0,
-              "transform": Array [
-                Object {
-                  "translateY": 16,
-                },
-              ],
-            }
-          }
-        >
-          <Text>
-            <Text
-              style={
-                Object {
-                  "color": "rgba(255, 255, 255, 1)",
-                  "fontSize": 16,
-                }
-              }
-            >
-              Enter password
-            </Text>
-          </Text>
-        </View>
-        <View
-          style={
-            Object {
-              "borderBottomColor": "rgba(255, 255, 255, 1)",
-              "borderBottomWidth": 1,
-              "borderStyle": "solid",
-            }
+            Array [
+              undefined,
+              Object {
+                "backgroundColor": "#FAFAF1",
+                "borderRadius": 8,
+              },
+            ]
           }
         >
           <TextInput
             accessibilityLabel="loginForm-password-input"
             allowFontScaling={true}
+            autoCapitalize="none"
+            color="#FAFAF1"
+            enableErrors={false}
+            floatOnFocus={true}
+            floatingPlaceholder={true}
+            floatingPlaceholderColor={
+              Object {
+                "default": "#FAFAF1",
+                "error": "#FAFAF1",
+                "focus": "#FAFAF1",
+              }
+            }
+            floatingPlaceholderStyle={Object {}}
+            hideUnderline={true}
+            infoText={true}
+            placeholder="Enter password"
             rejectResponderTermination={true}
             secureTextEntry={true}
             style={
-              Object {
-                "height": 20,
-                "padding": 0,
-              }
+              Array [
+                Object {
+                  "marginBottom": 48,
+                },
+                Object {
+                  "marginBottom": 4,
+                  "marginTop": -4,
+                },
+              ]
             }
             testID="loginForm-password-input"
             underlineColorAndroid="transparent"
             value=""
-            withHelperText="danger"
           />
-        </View>
+        </TouchableOpacity>
         <Text
+          error={false}
           style={
             Object {
-              "color": undefined,
               "fontSize": 12,
+              "marginTop": 2,
+              "paddingLeft": 12,
             }
           }
+          success={false}
         >
            
         </Text>
       </View>
-      <View
-        style={
-          Object {
-            "borderRadius": 32,
-            "elevation": 9,
-            "opacity": 1,
-            "shadowColor": "#000",
-            "shadowOffset": Object {
-              "height": 4,
-              "width": 0,
-            },
-            "shadowOpacity": 0.32,
-            "shadowRadius": 5.46,
-          }
-        }
-      >
-        <BVLinearGradient
-          colors={
-            Array [
-              4278241023,
-              4278219519,
-            ]
-          }
-          endPoint={
-            Object {
-              "x": 1,
-              "y": 1,
-            }
-          }
-          locations={null}
-          startPoint={
-            Object {
-              "x": 0,
-              "y": 0,
-            }
-          }
-          style={
-            Object {
-              "borderRadius": 32,
-            }
-          }
-        >
-          <TouchableOpacity
-            accessibilityLabel="element-button"
-            color="gradient"
-            style={
-              Array [
-                undefined,
-                Object {
-                  "backgroundColor": "#00000000",
-                  "borderWidth": 0,
-                },
-              ]
-            }
-            testID="element-button"
-          >
-            Login
-          </TouchableOpacity>
-        </BVLinearGradient>
-      </View>
-    </View>
+      <TouchableOpacity
+        accessibilityLabel="element-button"
+        label="Login"
+        testID="element-button"
+      />
+    </ScrollView>
   </View>
 </View>
 `;
@@ -261,239 +181,159 @@ exports[`<LoginForm/> should submit form with credentials 1`] = `
 >
   <View
     accessibilityLabel="loginForm-root"
-    style={
-      Object {
-        "alignItems": "center",
-        "flexDirection": "column",
-      }
-    }
+    padding-20={true}
     testID="loginForm-root"
   >
-    <View
-      style={
-        Object {
-          "maxWidth": 400,
-          "width": "100%",
-        }
-      }
+    <Text
+      heading={true}
     >
-      <Text
-        category="h1"
-        style={
-          Object {
-            "marginBottom": 30,
-          }
-        }
-      >
-        Login
-      </Text>
+      Login
+    </Text>
+    <ScrollView>
       <View
-        style={
-          Array [
-            Object {
-              "marginBottom": 5,
-            },
-            undefined,
-          ]
-        }
+        marginB-4={true}
       >
-        <View
+        <TouchableOpacity
+          activeOpacity={1}
+          paddingB-8={true}
+          paddingL-12={true}
+          paddingR-12={true}
+          paddingT-8={true}
           style={
-            Object {
-              "paddingTop": 0,
-              "transform": Array [
-                Object {
-                  "translateY": 16,
-                },
-              ],
-            }
-          }
-        >
-          <Text>
-            <Text
-              style={
-                Object {
-                  "color": "rgba(255, 255, 255, 1)",
-                  "fontSize": 16,
-                }
-              }
-            >
-              Username or email
-            </Text>
-          </Text>
-        </View>
-        <View
-          style={
-            Object {
-              "borderBottomColor": "rgba(255, 255, 255, 1)",
-              "borderBottomWidth": 1,
-              "borderStyle": "solid",
-            }
+            Array [
+              undefined,
+              Object {
+                "backgroundColor": "#FAFAF1",
+                "borderRadius": 8,
+              },
+            ]
           }
         >
           <TextInput
             accessibilityLabel="loginForm-usernameEmail-input"
             allowFontScaling={true}
+            autoCapitalize="none"
+            color="#FAFAF1"
+            enableErrors={false}
+            floatOnFocus={true}
+            floatingPlaceholder={true}
+            floatingPlaceholderColor={
+              Object {
+                "default": "#FAFAF1",
+                "error": "#FAFAF1",
+                "focus": "#FAFAF1",
+              }
+            }
+            floatingPlaceholderStyle={Object {}}
+            hideUnderline={true}
+            infoText={true}
             keyboardType="email-address"
+            placeholder="Username or email"
             rejectResponderTermination={true}
             style={
-              Object {
-                "height": 20,
-                "padding": 0,
-              }
+              Array [
+                undefined,
+                Object {
+                  "marginBottom": 4,
+                  "marginTop": -4,
+                },
+              ]
             }
             testID="loginForm-usernameEmail-input"
             underlineColorAndroid="transparent"
             value="username"
-            withHelperText="danger"
           />
-        </View>
+        </TouchableOpacity>
         <Text
+          error={false}
           style={
             Object {
-              "color": undefined,
               "fontSize": 12,
+              "marginTop": 2,
+              "paddingLeft": 12,
             }
           }
+          success={false}
         >
            
         </Text>
       </View>
       <View
-        style={
-          Array [
-            Object {
-              "marginBottom": 5,
-            },
-            Object {
-              "marginBottom": 48,
-            },
-          ]
-        }
+        marginB-4={true}
       >
-        <View
+        <TouchableOpacity
+          activeOpacity={1}
+          paddingB-8={true}
+          paddingL-12={true}
+          paddingR-12={true}
+          paddingT-8={true}
           style={
-            Object {
-              "paddingTop": 0,
-              "transform": Array [
-                Object {
-                  "translateY": 16,
-                },
-              ],
-            }
-          }
-        >
-          <Text>
-            <Text
-              style={
-                Object {
-                  "color": "rgba(255, 255, 255, 1)",
-                  "fontSize": 16,
-                }
-              }
-            >
-              Enter password
-            </Text>
-          </Text>
-        </View>
-        <View
-          style={
-            Object {
-              "borderBottomColor": "rgba(255, 255, 255, 1)",
-              "borderBottomWidth": 1,
-              "borderStyle": "solid",
-            }
+            Array [
+              undefined,
+              Object {
+                "backgroundColor": "#FAFAF1",
+                "borderRadius": 8,
+              },
+            ]
           }
         >
           <TextInput
             accessibilityLabel="loginForm-password-input"
             allowFontScaling={true}
+            autoCapitalize="none"
+            color="#FAFAF1"
+            enableErrors={false}
+            floatOnFocus={true}
+            floatingPlaceholder={true}
+            floatingPlaceholderColor={
+              Object {
+                "default": "#FAFAF1",
+                "error": "#FAFAF1",
+                "focus": "#FAFAF1",
+              }
+            }
+            floatingPlaceholderStyle={Object {}}
+            hideUnderline={true}
+            infoText={true}
+            placeholder="Enter password"
             rejectResponderTermination={true}
             secureTextEntry={true}
             style={
-              Object {
-                "height": 20,
-                "padding": 0,
-              }
+              Array [
+                Object {
+                  "marginBottom": 48,
+                },
+                Object {
+                  "marginBottom": 4,
+                  "marginTop": -4,
+                },
+              ]
             }
             testID="loginForm-password-input"
             underlineColorAndroid="transparent"
             value="password"
-            withHelperText="danger"
           />
-        </View>
+        </TouchableOpacity>
         <Text
+          error={false}
           style={
             Object {
-              "color": undefined,
               "fontSize": 12,
+              "marginTop": 2,
+              "paddingLeft": 12,
             }
           }
+          success={false}
         >
            
         </Text>
       </View>
-      <View
-        style={
-          Object {
-            "borderRadius": 32,
-            "elevation": 9,
-            "opacity": 1,
-            "shadowColor": "#000",
-            "shadowOffset": Object {
-              "height": 4,
-              "width": 0,
-            },
-            "shadowOpacity": 0.32,
-            "shadowRadius": 5.46,
-          }
-        }
-      >
-        <BVLinearGradient
-          colors={
-            Array [
-              4278241023,
-              4278219519,
-            ]
-          }
-          endPoint={
-            Object {
-              "x": 1,
-              "y": 1,
-            }
-          }
-          locations={null}
-          startPoint={
-            Object {
-              "x": 0,
-              "y": 0,
-            }
-          }
-          style={
-            Object {
-              "borderRadius": 32,
-            }
-          }
-        >
-          <TouchableOpacity
-            accessibilityLabel="element-button"
-            color="gradient"
-            style={
-              Array [
-                undefined,
-                Object {
-                  "backgroundColor": "#00000000",
-                  "borderWidth": 0,
-                },
-              ]
-            }
-            testID="element-button"
-          >
-            Login
-          </TouchableOpacity>
-        </BVLinearGradient>
-      </View>
-    </View>
+      <TouchableOpacity
+        accessibilityLabel="element-button"
+        label="Login"
+        testID="element-button"
+      />
+    </ScrollView>
   </View>
 </View>
 `;

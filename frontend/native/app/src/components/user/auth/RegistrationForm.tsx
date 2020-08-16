@@ -4,10 +4,11 @@ import {UserRegister} from '@byot-frontend/common/src/types/dto/UserRegister';
 import {IUserRegister} from '@byot-frontend/common/src/types/interfaces/IUserRegister';
 import {useTranslation} from 'react-i18next';
 import {ScrollView, StyleSheet} from 'react-native';
-import {Button, Checkbox, CheckboxPropTypes, Colors, Text, View} from 'react-native-ui-lib';
+import {Checkbox, CheckboxPropTypes, Colors, Text, View} from 'react-native-ui-lib';
 import {registrationSchema} from '@byot-frontend/common/src/types/schemas/validation/RegistrationSchema';
 import {IdView} from '../../elements/semantical/IdView';
 import {TextField} from '../../elements/text-field/TextField';
+import {Button} from '../../elements/lib/Button';
 
 interface Props {
   onRegister: (values: IUserRegister) => void;
@@ -29,6 +30,17 @@ const useStyles = (props: Props) =>
     },
   });
 
+export const testIDs = {
+  root: 'registrationForm-root',
+  firstName: 'registrationForm-firstName',
+  lastName: 'registrationForm-lastName',
+  email: 'registrationForm-email',
+  password: 'registrationForm-password',
+  passwordRepeat: 'registrationForm-passwordRepeat',
+  consent: 'registrationForm-consent',
+  submit: 'registrationForm-submit',
+};
+
 export const RegistrationForm: React.FC<Props> = (props: Props) => {
   const initialValues: IUserRegister & {consent: boolean; passwordRepeat: string} = {
     ...new UserRegister(),
@@ -40,35 +52,28 @@ export const RegistrationForm: React.FC<Props> = (props: Props) => {
   const {t} = useTranslation();
   const [password, setPassword] = React.useState(initialValues.password);
 
-  const testIDRoot = 'registrationForm-root';
-  const testIDFirstName = 'registrationForm-firstName';
-  const testIDLastName = 'registrationForm-lastName';
-  const testIDEmail = 'registrationForm-email';
-  const testIDPassword = 'registrationForm-password';
-  const testIDPasswordRepeat = 'registrationForm-passwordRepeat';
-  const testIDConsent = 'registrationForm-consent';
   return (
     <>
       <View padding-20>
         <Text heading>{t('Sign up')}</Text>
       </View>
       <ScrollView>
-        <IdView testID={testIDRoot}>
+        <IdView testID={testIDs.root}>
           <Formik
             onSubmit={values => props.onRegister(new UserRegister(values))}
             validateOnChange
             validateOnBlur
             validationSchema={registrationSchema(t, password)}
             initialValues={initialValues}>
-            {({values, touched, errors, handleChange, handleBlur, setFieldValue}) => (
+            {({values, touched, errors, handleChange, handleBlur, setFieldValue, handleSubmit}) => (
               <View padding-20 paddingT-0>
                 <View style={styles.rowGrid}>
                   <View style={styles.rowGridItem} paddingR-8>
                     <TextField
                       value={values.firstName}
                       onChangeText={handleChange('firstName')}
-                      testID={testIDFirstName}
-                      accessibilityLabel={testIDFirstName}
+                      testID={testIDs.firstName}
+                      accessibilityLabel={testIDs.firstName}
                       onBlur={handleBlur('firstName')}
                       placeholder={t('First name')}
                     />
@@ -77,8 +82,8 @@ export const RegistrationForm: React.FC<Props> = (props: Props) => {
                     <TextField
                       value={values.lastName}
                       onChangeText={handleChange('lastName')}
-                      testID={testIDLastName}
-                      accessibilityLabel={testIDLastName}
+                      testID={testIDs.lastName}
+                      accessibilityLabel={testIDs.lastName}
                       onBlur={handleBlur('lastName')}
                       placeholder={t('Last name')}
                     />
@@ -91,8 +96,8 @@ export const RegistrationForm: React.FC<Props> = (props: Props) => {
                     value={values.email}
                     error={(touched.email && errors.email) as string}
                     onChangeText={handleChange('email')}
-                    testID={testIDEmail}
-                    accessibilityLabel={testIDEmail}
+                    testID={testIDs.email}
+                    accessibilityLabel={testIDs.email}
                     onBlur={handleBlur('email')}
                     placeholder={t('Email')}
                   />
@@ -108,7 +113,7 @@ export const RegistrationForm: React.FC<Props> = (props: Props) => {
                       setPassword(value);
                     }}
                     onBlur={handleBlur('password')}
-                    testID={testIDPassword}
+                    testID={testIDs.password}
                     placeholder={t('Password')}
                   />
                 </View>
@@ -120,8 +125,8 @@ export const RegistrationForm: React.FC<Props> = (props: Props) => {
                     error={(touched.passwordRepeat && errors.passwordRepeat) as string}
                     onChangeText={handleChange('passwordRepeat')}
                     onBlur={handleBlur('passwordRepeat')}
-                    testID={testIDPasswordRepeat}
-                    accessibilityLabel={testIDPasswordRepeat}
+                    testID={testIDs.passwordRepeat}
+                    accessibilityLabel={testIDs.passwordRepeat}
                     placeholder={t('Confirm password')}
                   />
                 </View>
@@ -133,8 +138,8 @@ export const RegistrationForm: React.FC<Props> = (props: Props) => {
                         color={Colors.primary}
                         onValueChange={value => setFieldValue('consent', value)}
                         value={values.consent}
-                        testID={testIDConsent}
-                        accessibilityLabel={testIDConsent}
+                        testID={testIDs.consent}
+                        accessibilityLabel={testIDs.consent}
                       />
                     </View>
                     <Text onPress={() => checkbox.current?.onPress()}>
@@ -148,7 +153,7 @@ export const RegistrationForm: React.FC<Props> = (props: Props) => {
                   )}
                 </View>
                 <View marginT-10>
-                  <Button label={t('Sign up')} />
+                  <Button testID={testIDs.submit} onPress={handleSubmit} label={t('Sign up')} />
                 </View>
                 {props.children}
               </View>

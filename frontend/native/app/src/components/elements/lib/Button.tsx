@@ -9,5 +9,6 @@ type Props = Omit<ButtonProps, 'title'> &
   };
 
 export const Button: React.FC<Props> = (props: Props) => {
-  return <Btn {...props} />;
+  const testID = props.testID || 'element-button';
+  return <Btn testID={testID} accessibilityLabel={testID} {...props} />;
 };

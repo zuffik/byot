@@ -1,24 +1,24 @@
 import * as React from 'react';
 import {storiesOf} from '@storybook/react-native';
-import {number, select, text} from '@storybook/addon-knobs';
-import {TextField} from '@byot-frontend/native-app/src/components/elements/text-field/TextField';
+import {boolean, number, select, text} from '@storybook/addon-knobs';
+import {TextField} from '@byot-frontend/native-app/src/components/elements/lib/TextField';
 import {Logo} from '@byot-frontend/native-app/src/components/elements/logo/Logo';
-import {Button, Text, View} from 'react-native-ui-lib';
+import {Text, View} from 'react-native-ui-lib';
+import {Button} from '@byot-frontend/native-app/src/components/elements/lib/Button';
+import {action} from '@storybook/addon-actions';
 
 storiesOf('Elements', module)
   .add('Text', () => <Text>{text('Text', 'Lorem ipsum dolor sit amet')}</Text>)
   .add('Button', () => (
     <Button
       label={text('Text', 'Button')}
+      onPress={action('onPress')}
+      loading={boolean('Loading', false)}
       variant={select(
         'Variant',
         {
           'Primary': 'primary',
           'Secondary': 'secondary',
-          'Text': 'text',
-          'Error': 'error',
-          'Success': 'success',
-          'Warn': 'warn',
         },
         'primary'
       )}

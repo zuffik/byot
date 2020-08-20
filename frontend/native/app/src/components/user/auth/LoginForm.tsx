@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {ScrollView, StyleSheet} from 'react-native';
-import {TextField} from '../../elements/text-field/TextField';
+import {TextField} from '../../elements/lib/TextField';
 import {Formik} from 'formik';
 import {Text, View} from 'react-native-ui-lib';
 import {useTranslation} from 'react-i18next';

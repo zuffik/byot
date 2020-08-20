@@ -14018,6 +14018,11 @@ react-native-animatable@1.3.3, react-native-animatable@^1.1.0:
   dependencies:
     prop-types "^15.7.2"
 
+react-native-animated-spinkit@1.4.1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/react-native-animated-spinkit/-/react-native-animated-spinkit-1.4.1.tgz#dfad4de395be4b92bbb5b2f636177aa9e3454a78"
+  integrity sha512-Cb0r2jPQsOR278mrXCJz1sT3jIy06gNr1nPhwQCVHzw+f0XtypWgH1aa83fNtiSk6747jRQprf8/2J6PD7W4bg==
+
 react-native-color-picker@^0.4.0:
   version "0.4.6"
   resolved "https://registry.yarnpkg.com/react-native-color-picker/-/react-native-color-picker-0.4.6.tgz#ae773ada067e80407cdcb931b606f3d6fdaa61f5"

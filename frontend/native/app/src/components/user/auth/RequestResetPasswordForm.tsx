@@ -3,7 +3,7 @@ import {Formik} from 'formik';
 import {useTranslation} from 'react-i18next';
 import {requestResetPasswordSchema} from '@byot-frontend/common/src/types/schemas/validation/RequestResetPasswordSchema';
 import {Text, View} from 'react-native-ui-lib';
-import {TextField} from '@byot-frontend/native-app/src/components/elements/text-field/TextField';
+import {TextField} from '@byot-frontend/native-app/src/components/elements/lib/TextField';
 import {Button} from '../../elements/lib/Button';
 
 export const testIDs = {

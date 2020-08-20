@@ -7,7 +7,7 @@ import {ScrollView, StyleSheet} from 'react-native';
 import {Checkbox, CheckboxPropTypes, Colors, Text, View} from 'react-native-ui-lib';
 import {registrationSchema} from '@byot-frontend/common/src/types/schemas/validation/RegistrationSchema';
 import {IdView} from '../../elements/semantical/IdView';
-import {TextField} from '../../elements/text-field/TextField';
+import {TextField} from '../../elements/lib/TextField';
 import {Button} from '../../elements/lib/Button';
 
 interface Props {

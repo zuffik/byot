@@ -10,6 +10,7 @@ import {Button} from '../../elements/lib/Button';
 interface Props {
   onSubmit: (credentials: {usernameOrEmail: string; password: string}) => void;
   children?: React.ReactNode;
+  loading?: boolean;
 }
 
 interface State {}
@@ -76,7 +77,7 @@ export const LoginForm: React.FC<Props> = (props: Props) => {
                   autoCapitalize="none"
                 />
               </View>
-              <Button onPress={handleSubmit} label={t('Login')} />
+              <Button loading={props.loading} onPress={handleSubmit} label={t('Login')} />
               {props.children}
             </ScrollView>
           </>

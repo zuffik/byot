@@ -11,6 +11,7 @@ export const testIDs = {
 };
 
 interface Props {
+  loading?: boolean;
   onSubmit: (email: string) => void;
 }
 
@@ -42,7 +43,7 @@ export const RequestResetPasswordForm: React.FC<Props> = (props: Props) => {
                 autoCapitalize="none"
               />
             </View>
-            <Button onPress={handleSubmit} label={t('Request reset password')} />
+            <Button loading={props.loading} onPress={handleSubmit} label={t('Request reset password')} />
           </>
         )}
       </Formik>

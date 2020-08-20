@@ -7,7 +7,7 @@ type Props = Omit<ButtonProps, 'title'> &
   ButtonPropTypes & {
     variant?: 'primary' | 'secondary';
     rootStyle?: StyleProp<ViewStyle>;
-    loading: boolean;
+    loading?: boolean;
   };
 
 interface State {}

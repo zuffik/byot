@@ -1,15 +1,18 @@
 import * as React from 'react';
-import {RegistrationForm} from '../user/auth/RegistrationForm';
-import {RegistrationFormFooter} from '../user/auth/RegistrationFormFooter';
+import {useSelector, useDispatch} from 'react-router-dom';
 import {useNavigation} from '@react-navigation/native';
 import {RequestResetPasswordForm} from '../user/auth/RequestResetPasswordForm';
 import {PlainLayoutInner} from '../plain-layout/PlainLayoutInner';
+import {ProcessActionExtractor} from '@byot-frontend/common/src/redux-system/process/ProcessActionExtractor';
+import {RequestResetPassword} from '@byot-frontend/common/src/redux/process/auth/RequestResetPassword';
 
 interface Props {}
 
 export const RequestResetPasswordScreen: React.FC<Props> = (props: Props) => {
+  const dispatch = useDispatch();
   const nav = useNavigation();
-  const onSubmit = email => {};
+  const onSubmit = (email: string) =>
+    dispatch(ProcessActionExtractor.dispatch(RequestResetPassword, {email}));
   return (
     <PlainLayoutInner>
       <RequestResetPasswordForm onSubmit={onSubmit} />

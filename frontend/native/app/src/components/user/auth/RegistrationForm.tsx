@@ -153,7 +153,12 @@ export const RegistrationForm: React.FC<Props> = (props: Props) => {
                   )}
                 </View>
                 <View marginT-10>
-                  <Button testID={testIDs.submit} onPress={handleSubmit} label={t('Sign up')} />
+                  <Button
+                    loading={props.loading}
+                    testID={testIDs.submit}
+                    onPress={handleSubmit}
+                    label={t('Sign up')}
+                  />
                 </View>
                 {props.children}
               </View>

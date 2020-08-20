@@ -5,11 +5,15 @@ import {EntityResource} from '@byot-frontend/common/src/redux-system/data-struct
 import {BindProcessActionCreator} from '@byot-frontend/common/src/redux-system/process/BindProcessActionCreator';
 import {NativeAuth} from './process/auth/NativeAuth';
 import {LocalAuth} from './process/auth/LocalAuth';
+import {AlertOptions} from '../types/alert/AlertOptions';
 
 export class NativeAppState extends FrontendCommonState {
   @BindProcessActionCreator(NativeAuth)
   @BindProcessActionCreator(LocalAuth)
   auth: Resource<IAuth> = new EntityResource();
+
+  alert?: AlertOptions;
+
   constructor() {
     super();
   }

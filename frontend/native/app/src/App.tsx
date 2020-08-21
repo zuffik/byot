@@ -23,7 +23,6 @@ const App = () => {
       <SplashScreenHide />
       <I18nextProvider i18n={setup.i18n}>
         <AlertReduxController />
-        <NavigationReduxController />
         <View
           style={{
             backgroundColor: Colors.mainBackground,

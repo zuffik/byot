@@ -9,12 +9,14 @@ import {NativeAppState} from '../../NativeAppState';
 import {AsynchronousActionResponse} from '@byot-frontend/common/src/redux-system/process/ProcessActions';
 import {AlertOK} from '../../../types/alert/AlertOK';
 import {NavigateNoParams} from '../../../types/nav/NavigateNoParams';
+import {RuntimeStorage} from '../../../services/storage/RuntimeStorage';
 
 @ProcessActionCreator()
 export class NativeAuth extends Login {
   *saga(action: Action<Request>, state: Readonly<NativeAppState>) {
     const result: GraphQLResponse<IAuth> = yield super.saga(action, state);
     if (result.success) {
+      RuntimeStorage.auth = result.data;
       yield call(nativeStorage.setItem, 'auth', result.data);
     }
     return result;

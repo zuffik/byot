@@ -7,6 +7,7 @@ import {GraphQLResponse} from '@byot-frontend/common/src/redux-system/data-struc
 import {User} from '@byot-frontend/common/src/types/dto/User';
 import {GraphQLError} from 'graphql';
 import {ApolloContext} from '@byot-frontend/common/src/graphql/context/ApolloContext';
+import {ErrorSnackbar} from '../../../types/app/snackbar/ErrorSnackbar';
 
 describe('WebAuth process', () => {
   let process: WebAuth;
@@ -26,6 +27,9 @@ describe('WebAuth process', () => {
     expect(iterator.next().done).toBeFalsy();
     expect(iterator.next(response).done).toBeTruthy();
     expect(setItemSpy).toBeCalledWith(expect.any(String), response.data);
+    expect(process.handleResponse(ProcessActionExtractor.response(request, response), state, state)).toEqual(
+      {}
+    );
   });
 
   it('should fail login', () => {
@@ -42,6 +46,11 @@ describe('WebAuth process', () => {
     expect(iterator.next().done).toBeFalsy();
     expect(iterator.next(response).done).toBeTruthy();
     expect(setItemSpy).not.toBeCalled();
+    expect(process.handleResponse(ProcessActionExtractor.response(request, response), state, state)).toEqual(
+      expect.objectContaining({
+        snackbar: expect.any(ErrorSnackbar),
+      })
+    );
   });
 
   afterEach(() => jest.clearAllMocks());

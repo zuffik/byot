@@ -4,7 +4,7 @@ import {FrontendCommonState} from '../../FrontendCommonState';
 import {gql} from 'apollo-boost';
 import {call, Effect} from 'redux-saga/effects';
 import {fullAuthFragment} from '../../../graphql/fragments/FullAuthFragment';
-import {ErrorSnackbar} from '../../../types/app/snackbar/ErrorSnackbar';
+import {ErrorSnackbar} from '../../../../../web/common/src/types/app/snackbar/ErrorSnackbar';
 import {ApolloContext} from '../../../graphql/context/ApolloContext';
 import {IUserLogin} from '../../../types/interfaces/IUserLogin';
 import {IAuth} from '../../../types/interfaces/IAuth';
@@ -25,19 +25,5 @@ export abstract class Login implements AsynchronousAction<FrontendCommonState, R
       `,
       variables: {userLogin: action.payload},
     })).data.userLogin;
-  }
-
-  handleResponse(
-    action: Action<AsynchronousActionResponse<Request, Response>>,
-    nextState: Readonly<FrontendCommonState>,
-    prevState: Readonly<FrontendCommonState>
-  ): Readonly<FrontendCommonState> {
-    if (!action.payload.response.success) {
-      return {
-        ...nextState,
-        snackbar: new ErrorSnackbar('Error while trying to login, please, check username or password'),
-      };
-    }
-    return nextState;
   }
 }

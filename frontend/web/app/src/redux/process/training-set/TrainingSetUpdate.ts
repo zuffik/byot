@@ -8,6 +8,8 @@ import {AsynchronousActionResponse} from '@byot-frontend/common/src/redux-system
 import {WebAppState} from '../../WebAppState';
 import {Action} from 'typescript-fsa';
 import {Router} from '../../../router/Router';
+import {ErrorSnackbar} from '@byot-frontend/web-common/src/types/app/snackbar/ErrorSnackbar';
+import {SuccessSnackbar} from '@byot-frontend/web-common/src/types/app/snackbar/SuccessSnackbar';
 
 @ProcessActionCreator()
 export class TrainingSetUpdate extends TrainingSetUpdateBase {
@@ -20,6 +22,9 @@ export class TrainingSetUpdate extends TrainingSetUpdateBase {
     return {
       ...nextState,
       ...state,
+      snackbar: action.payload.response.success
+        ? new SuccessSnackbar('Successfully updated training set')
+        : new ErrorSnackbar('There was an error updating training set'),
       ...(action.payload.response.data && {
         redirect: Router.trainingSet.detail.URI({trainingSetId: action.payload.response.data.id}),
       }),

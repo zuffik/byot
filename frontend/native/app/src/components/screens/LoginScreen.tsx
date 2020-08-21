@@ -10,7 +10,7 @@ interface Props {}
 export const LoginScreen: React.FC<Props> = (props: Props) => {
   const nav = useNavigation();
   const onSubmit = () => {};
-  const onPasswordRequestPress = () => {};
+  const onPasswordRequestPress = () => nav.navigate(Screens.RequestPasswordReset.Name);
   const onRegisterPress = () => nav.navigate(Screens.Register.Name);
   return (
     <PlainLayoutInner>

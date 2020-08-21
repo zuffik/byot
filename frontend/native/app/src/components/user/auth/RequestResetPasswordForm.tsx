@@ -20,7 +20,7 @@ export const RequestResetPasswordForm: React.FC<Props> = (props: Props) => {
   const {t} = useTranslation();
   return (
     <>
-      <Text heading>{t('Login')!}</Text>
+      <Text heading>{t('Request password reset')!}</Text>
       <Formik
         initialValues={initialValues}
         validateOnBlur

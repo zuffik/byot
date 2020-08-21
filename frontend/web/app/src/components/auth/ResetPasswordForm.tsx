@@ -10,17 +10,7 @@ import {Input} from '@byot-frontend/web-common/src/components/elementary/form/In
 import {Button} from '@byot-frontend/web-common/src/components/elementary/form/Button';
 import {IResetPassword} from '@byot-frontend/common/src/types/interfaces/IResetPassword';
 import {ResetPassword} from '@byot-frontend/common/src/types/dto/ResetPassword';
-
-const resetPassSchema = (t: TFunction, password: string) =>
-  Yup.object().shape({
-    newPassword: Yup.string()
-      .required(t('Enter password'))
-      .min(8, t('Password must be longer than 8 characters'))
-      .matches(/[^A-Za-z0-9]+/, t('Password must contain at least one special character')),
-    passwordRepeat: Yup.string()
-      .required(t('Confirm password'))
-      .oneOf([password], t('Passwords are not the same')),
-  });
+import {resetPasswordSchema} from '@byot-frontend/common/src/types/schemas/validation/ResetPasswordSchema';
 
 interface Props {
   loading: boolean;
@@ -39,7 +29,7 @@ export const ResetPasswordForm: React.FC<Props> = (props: Props) => {
         initialValues={initialValues}
         validateOnBlur
         validateOnChange
-        validationSchema={resetPassSchema(t, password)}
+        validationSchema={resetPasswordSchema(t, password)}
         onSubmit={values => props.onSubmit(values)}>
         {({values, handleChange, handleBlur, errors, touched}) => (
           <Form data-testid="common-auth-resetPassword-form-form">

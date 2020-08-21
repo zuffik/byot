@@ -7,8 +7,6 @@ import {FrontendCommonState} from '../../FrontendCommonState';
 import {call} from 'redux-saga/effects';
 import {ApolloContext} from '../../../graphql/context/ApolloContext';
 import {gql} from 'apollo-boost';
-import {SuccessSnackbar} from '../../../types/app/snackbar/SuccessSnackbar';
-import {ErrorSnackbar} from '../../../types/app/snackbar/ErrorSnackbar';
 
 export type Request = {id: string};
 export type Response = {};
@@ -49,9 +47,6 @@ export abstract class TrainingSetRemove
   ): Readonly<FrontendCommonState> {
     return {
       ...nextState,
-      snackbar: action.payload.response.success
-        ? new SuccessSnackbar('Successfully removed training set')
-        : new ErrorSnackbar('There was an error creating training set'),
       is: {
         ...nextState.is,
         processingTrainingSet: false,

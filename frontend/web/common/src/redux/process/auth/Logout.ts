@@ -1,7 +1,4 @@
-import {
-  AsynchronousAction,
-  SynchronousAction,
-} from '@byot-frontend/common/src/redux-system/process/ProcessActions';
+import {AsynchronousAction} from '@byot-frontend/common/src/redux-system/process/ProcessActions';
 import {FrontendCommonState} from '@byot-frontend/common/src/redux/FrontendCommonState';
 import {Action} from 'typescript-fsa';
 import {frontendCommonWebStorage} from '../../../dom/FrontendCommonWebStorage';

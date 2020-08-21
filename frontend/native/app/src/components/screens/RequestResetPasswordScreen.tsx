@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {useSelector, useDispatch} from 'react-router-dom';
+import {useDispatch} from 'react-redux';
 import {useNavigation} from '@react-navigation/native';
 import {RequestResetPasswordForm} from '../user/auth/RequestResetPasswordForm';
 import {PlainLayoutInner} from '../plain-layout/PlainLayoutInner';

@@ -1,6 +1,6 @@
 import {Resource} from '../redux-system/data-structures/resources/Resource';
 import {EntityResource} from '../redux-system/data-structures/resources/EntityResource';
-import {SnackbarContent} from '../types/app/snackbar/SnackbarContent';
+import {SnackbarContent} from '../../../web/common/src/types/app/snackbar/SnackbarContent';
 import {IAuth} from '../types/interfaces/IAuth';
 import {ITrainingSet} from '../types/interfaces/ITrainingSet';
 import {BindProcessActionCreator} from '../redux-system/process/BindProcessActionCreator';
@@ -15,7 +15,6 @@ import {IMedia} from '../types/interfaces/IMedia';
 
 export class FrontendCommonState {
   auth: Resource<IAuth> = new EntityResource();
-  snackbar?: SnackbarContent;
   is = {
     requestingPasswordReset: false,
     resettingPassword: false,

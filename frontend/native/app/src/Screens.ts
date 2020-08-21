@@ -5,4 +5,7 @@ export const Screens = {
   Register: {
     Name: 'Register',
   },
+  RequestPasswordReset: {
+    Name: 'RequestPasswordReset',
+  },
 };

@@ -6,6 +6,8 @@ import {Action} from 'typescript-fsa';
 import {call} from 'redux-saga/effects';
 import {nativeStorage} from '../../../services/storage/NativeStorage';
 import {NativeAppState} from '../../NativeAppState';
+import {AsynchronousActionResponse} from '@byot-frontend/common/src/redux-system/process/ProcessActions';
+import {FrontendCommonState} from '@byot-frontend/common/src/redux/FrontendCommonState';
 
 @ProcessActionCreator()
 export class NativeAuth extends Login {
@@ -15,5 +17,13 @@ export class NativeAuth extends Login {
       yield call(nativeStorage.setItem, 'auth', result.data);
     }
     return result;
+  }
+
+  handleResponse(
+    action: Action<AsynchronousActionResponse<Request, Response>>,
+    nextState: Readonly<NativeAppState>,
+    prevState: Readonly<NativeAppState>
+  ): Readonly<NativeAppState> {
+    return super.handleResponse(action, nextState, prevState);
   }
 }

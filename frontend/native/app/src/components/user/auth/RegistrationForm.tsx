@@ -54,10 +54,10 @@ export const RegistrationForm: React.FC<Props> = (props: Props) => {
 
   return (
     <>
-      <View padding-20>
+      <View paddingB-20>
         <Text heading>{t('Sign up')}</Text>
       </View>
-      <ScrollView>
+      <ScrollView horizontal={false}>
         <IdView testID={testIDs.root}>
           <Formik
             onSubmit={values => props.onRegister(new UserRegister(values))}
@@ -66,7 +66,7 @@ export const RegistrationForm: React.FC<Props> = (props: Props) => {
             validationSchema={registrationSchema(t, password)}
             initialValues={initialValues}>
             {({values, touched, errors, handleChange, handleBlur, setFieldValue, handleSubmit}) => (
-              <View padding-20 paddingT-0>
+              <>
                 <View style={styles.rowGrid}>
                   <View style={styles.rowGridItem} paddingR-8>
                     <TextField
@@ -161,7 +161,7 @@ export const RegistrationForm: React.FC<Props> = (props: Props) => {
                   />
                 </View>
                 {props.children}
-              </View>
+              </>
             )}
           </Formik>
         </IdView>

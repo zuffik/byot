@@ -6,6 +6,7 @@ import {BindProcessActionCreator} from '@byot-frontend/common/src/redux-system/p
 import {WebAuth} from './process/auth/WebAuth';
 import {frontendCommonWebStorage} from '../dom/FrontendCommonWebStorage';
 import {WebRegister} from './process/auth/WebRegister';
+import {SnackbarContent} from '@byot-frontend/common/src/types/app/snackbar/SnackbarContent';
 
 export class WebState extends FrontendCommonState {
   @BindProcessActionCreator(WebAuth)
@@ -13,6 +14,7 @@ export class WebState extends FrontendCommonState {
   auth: Resource<Auth> = new EntityResource<Auth>();
 
   redirect?: string;
+  snackbar?: SnackbarContent;
 
   constructor() {
     super();

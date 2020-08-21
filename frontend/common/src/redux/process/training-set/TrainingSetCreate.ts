@@ -8,8 +8,6 @@ import {call} from 'redux-saga/effects';
 import {ApolloContext} from '../../../graphql/context/ApolloContext';
 import {gql} from 'apollo-boost';
 import {ITrainingSetInput} from '../../../types/interfaces/ITrainingSetInput';
-import {SuccessSnackbar} from '../../../types/app/snackbar/SuccessSnackbar';
-import {ErrorSnackbar} from '../../../types/app/snackbar/ErrorSnackbar';
 import {ITrainingSet} from '../../../types/interfaces/ITrainingSet';
 
 export type Request = ITrainingSetInput;
@@ -51,9 +49,6 @@ export abstract class TrainingSetCreate
   ): Readonly<FrontendCommonState> {
     return {
       ...nextState,
-      snackbar: action.payload.response.success
-        ? new SuccessSnackbar('Successfully created training set')
-        : new ErrorSnackbar('There was an error creating training set'),
       is: {
         ...nextState.is,
         processingTrainingSet: false,

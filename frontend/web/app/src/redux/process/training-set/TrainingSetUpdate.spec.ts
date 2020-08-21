@@ -3,14 +3,13 @@ import {Action} from 'typescript-fsa';
 import {ProcessActionExtractor} from '@byot-frontend/common/src/redux-system/process/ProcessActionExtractor';
 import {GraphQLResponse} from '@byot-frontend/common/src/redux-system/data-structures/responses/GraphQLResponse';
 import {AsynchronousActionResponse} from '@byot-frontend/common/src/redux-system/process/ProcessActions';
-import {DataResponse} from '@byot-frontend/common/src/redux-system/data-structures/responses/DataResponse';
 import {Request, Response} from '@byot-frontend/common/src/redux/process/training-set/TrainingSetUpdate';
 import {WebAppState} from '../../WebAppState';
-import {ErrorSnackbar} from '@byot-frontend/common/src/types/app/snackbar/ErrorSnackbar';
-import {SuccessSnackbar} from '@byot-frontend/common/src/types/app/snackbar/SuccessSnackbar';
 import {trainingSet} from '@byot-frontend/common/test/fixtures/dto/TrainingSet';
 import {GraphQLError} from 'graphql';
 import {ITrainingSet} from '@byot-frontend/common/src/types/interfaces/ITrainingSet';
+import {ErrorSnackbar} from '@byot-frontend/web-common/src/types/app/snackbar/ErrorSnackbar';
+import {SuccessSnackbar} from '@byot-frontend/web-common/src/types/app/snackbar/SuccessSnackbar';
 
 describe('TrainingSetUpdate process', () => {
   let process: TrainingSetUpdate;

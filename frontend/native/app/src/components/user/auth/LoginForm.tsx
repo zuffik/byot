@@ -37,7 +37,7 @@ export const LoginForm: React.FC<Props> = (props: Props) => {
   const testIDUsernameEmail = 'loginForm-usernameEmail-input';
   const testIDPassword = 'loginForm-password-input';
   return (
-    <View accessibilityLabel={testIDRoot} testID={testIDRoot} padding-20>
+    <View accessibilityLabel={testIDRoot} testID={testIDRoot}>
       <Formik
         validationSchema={loginSchema(t)}
         validateOnBlur

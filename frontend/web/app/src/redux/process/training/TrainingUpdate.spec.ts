@@ -5,12 +5,12 @@ import {GraphQLResponse} from '@byot-frontend/common/src/redux-system/data-struc
 import {AsynchronousActionResponse} from '@byot-frontend/common/src/redux-system/process/ProcessActions';
 import {Request, Response} from '@byot-frontend/common/src/redux/process/training/TrainingUpdate';
 import {WebAppState} from '../../WebAppState';
-import {ErrorSnackbar} from '@byot-frontend/common/src/types/app/snackbar/ErrorSnackbar';
-import {SuccessSnackbar} from '@byot-frontend/common/src/types/app/snackbar/SuccessSnackbar';
 import {training} from '@byot-frontend/common/test/fixtures/dto/Training';
 import {GraphQLError} from 'graphql';
 import {ITraining} from '@byot-frontend/common/src/types/interfaces/ITraining';
-import {trainingDraftInput} from '@byot-frontend/common/test/fixtures/dto/TrainingDraftInput';
+import {ErrorSnackbar} from '@byot-frontend/web-common/src/types/app/snackbar/ErrorSnackbar';
+import {SuccessSnackbar} from '@byot-frontend/web-common/src/types/app/snackbar/SuccessSnackbar';
+import {trainingUpdateInput} from '@byot-frontend/common/test/fixtures/dto/TrainingUpdateInput';
 
 describe('TrainingUpdate process', () => {
   let process: TrainingUpdate;
@@ -19,7 +19,7 @@ describe('TrainingUpdate process', () => {
 
   beforeEach(() => {
     process = new TrainingUpdate();
-    request = ProcessActionExtractor.dispatch(TrainingUpdate, {id: 'id', training: trainingDraftInput()});
+    request = ProcessActionExtractor.dispatch(TrainingUpdate, {id: 'id', training: trainingUpdateInput()});
     response = ProcessActionExtractor.response(request, new GraphQLResponse());
   });
 

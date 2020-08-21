@@ -32,6 +32,5 @@ describe('SubmitResetPassword', () => {
       {} as FrontendCommonState
     );
     expect(state.is.resettingPassword).toBeFalsy();
-    expect(state.snackbar).toEqual(expect.any(Object));
   });
 });

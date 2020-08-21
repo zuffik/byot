@@ -7,8 +7,6 @@ import {FrontendCommonState} from '../../FrontendCommonState';
 import {call} from 'redux-saga/effects';
 import {ApolloContext} from '../../../graphql/context/ApolloContext';
 import {gql} from 'apollo-boost';
-import {SuccessSnackbar} from '../../../types/app/snackbar/SuccessSnackbar';
-import {ErrorSnackbar} from '../../../types/app/snackbar/ErrorSnackbar';
 import {ITraining} from '../../../types/interfaces/ITraining';
 import {ITrainingUpdateInput} from '../../../types/interfaces/ITrainingUpdateInput';
 
@@ -53,9 +51,6 @@ export abstract class TrainingUpdate implements AsynchronousAction<FrontendCommo
   ): Readonly<FrontendCommonState> {
     return {
       ...nextState,
-      snackbar: action.payload.response.success
-        ? new SuccessSnackbar('Successfully updated training')
-        : new ErrorSnackbar('There was an error updating training'),
       is: {
         ...nextState.is,
         processingTraining: false,

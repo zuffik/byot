@@ -13,6 +13,7 @@ const makeStyles = (props: Props, state: State) =>
       flex: 1,
       justifyContent: 'flex-end',
       flexDirection: 'column',
+      padding: 20,
     },
   });
 

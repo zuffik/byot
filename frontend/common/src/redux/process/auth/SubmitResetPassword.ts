@@ -5,8 +5,8 @@ import {gql} from 'apollo-boost';
 import {call} from 'redux-saga/effects';
 import {ProcessActionCreator} from '../../../redux-system/process/ProcessActionCreator';
 import {ApolloContext} from '../../../graphql/context/ApolloContext';
-import {SuccessSnackbar} from '../../../types/app/snackbar/SuccessSnackbar';
-import {ErrorSnackbar} from '../../../types/app/snackbar/ErrorSnackbar';
+import {SuccessSnackbar} from '../../../../../web/common/src/types/app/snackbar/SuccessSnackbar';
+import {ErrorSnackbar} from '../../../../../web/common/src/types/app/snackbar/ErrorSnackbar';
 import {IResetPassword} from '../../../types/interfaces/IResetPassword';
 
 export type Request = IResetPassword;

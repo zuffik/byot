@@ -10,7 +10,8 @@ import {I18nextProvider} from 'react-i18next';
 import {SplashScreenHide} from './components/functional/SplashScreenHide';
 import {loadTheme} from './theme/Theme';
 import {Colors} from 'react-native-ui-lib';
-import {AlertController} from './components/functional/AlertController';
+import {AlertReduxController} from './components/functional/AlertReduxController';
+import {NavigationReduxController} from './components/functional/NavigationReduxController';
 
 declare const global: {HermesInternal: null | {}};
 
@@ -20,8 +21,9 @@ const App = () => {
   return (
     <Provider store={setup.reduxStore}>
       <SplashScreenHide />
-      <AlertController />
       <I18nextProvider i18n={setup.i18n}>
+        <AlertReduxController />
+        <NavigationReduxController />
         <View
           style={{
             backgroundColor: Colors.mainBackground,

@@ -1,10 +1,9 @@
 import {Action} from 'typescript-fsa';
-import {AsynchronousAction, AsynchronousActionResponse} from '../../../redux-system/process/ProcessActions';
+import {AsynchronousAction} from '../../../redux-system/process/ProcessActions';
 import {FrontendCommonState} from '../../FrontendCommonState';
 import {gql} from 'apollo-boost';
 import {call, Effect} from 'redux-saga/effects';
 import {fullAuthFragment} from '../../../graphql/fragments/FullAuthFragment';
-import {ErrorSnackbar} from '../../../../../web/common/src/types/app/snackbar/ErrorSnackbar';
 import {ApolloContext} from '../../../graphql/context/ApolloContext';
 import {IUserLogin} from '../../../types/interfaces/IUserLogin';
 import {IAuth} from '../../../types/interfaces/IAuth';

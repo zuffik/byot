@@ -7,7 +7,8 @@ import {call} from 'redux-saga/effects';
 import {nativeStorage} from '../../../services/storage/NativeStorage';
 import {NativeAppState} from '../../NativeAppState';
 import {AsynchronousActionResponse} from '@byot-frontend/common/src/redux-system/process/ProcessActions';
-import {FrontendCommonState} from '@byot-frontend/common/src/redux/FrontendCommonState';
+import {AlertOK} from '../../../types/alert/AlertOK';
+import {NavigateNoParams} from '../../../types/nav/NavigateNoParams';
 
 @ProcessActionCreator()
 export class NativeAuth extends Login {
@@ -24,6 +25,11 @@ export class NativeAuth extends Login {
     nextState: Readonly<NativeAppState>,
     prevState: Readonly<NativeAppState>
   ): Readonly<NativeAppState> {
-    return super.handleResponse(action, nextState, prevState);
+    return {
+      ...nextState,
+      ...(action.payload.response.success
+        ? {navigation: new NavigateNoParams('HomePage')}
+        : {alert: new AlertOK('Error while trying to login, please, check username or password')}),
+    };
   }
 }

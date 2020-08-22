@@ -6,6 +6,7 @@ import {View} from 'react-native-ui-lib';
 interface Props {
   children?: React.ReactNode;
   testID?: string;
+  outside?: React.ReactNode;
 }
 
 interface State {}
@@ -31,6 +32,7 @@ export const PlainLayoutNarrow: React.FC<Props> = (props: Props) => {
   const styles = makeStyles(props, {});
   return (
     <PlainLayout testID={props.testID} style={styles.root}>
+      {props.outside}
       <View style={styles.inner}>{props.children}</View>
     </PlainLayout>
   );

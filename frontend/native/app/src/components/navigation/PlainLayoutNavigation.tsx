@@ -4,8 +4,12 @@ import {DefaultNavigatorOptions} from '@react-navigation/native';
 import {FullScreenKeyboardAvoiding} from '../screens/FullScreenKeyboardAvoiding';
 import {PlainLayoutNarrow} from '../plain-layout/PlainLayoutNarrow';
 import {Colors} from 'react-native-ui-lib';
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet} from 'react-native';
 import {StackNavigationOptions} from '@react-navigation/stack/lib/typescript/src/types';
+import {
+  PlainLayoutBackButtonPortalIn,
+  PlainLayoutBackButtonPortalProvider,
+} from './PlainLayoutBackButtonPortal';
 
 interface Props {
   children: React.ReactNode;
@@ -27,18 +31,20 @@ export const PlainLayoutNavigation: React.FC<Props> = (props: Props) => {
   const Navigator = props.navigatorComponent;
   return (
     <FullScreenKeyboardAvoiding>
-      <PlainLayoutNarrow>
-        <Navigator
-          initialRouteName={Screens.Login.Name}
-          screenOptions={{
-            headerShown: false,
-            cardOverlayEnabled: false,
-            cardShadowEnabled: false,
-            cardStyle: styles.card,
-          }}>
-          {props.children}
-        </Navigator>
-      </PlainLayoutNarrow>
+      <PlainLayoutBackButtonPortalProvider>
+        <PlainLayoutNarrow outside={<PlainLayoutBackButtonPortalIn />}>
+          <Navigator
+            initialRouteName={Screens.Login.Name}
+            screenOptions={{
+              headerShown: false,
+              cardOverlayEnabled: false,
+              cardShadowEnabled: false,
+              cardStyle: styles.card,
+            }}>
+            {props.children}
+          </Navigator>
+        </PlainLayoutNarrow>
+      </PlainLayoutBackButtonPortalProvider>
     </FullScreenKeyboardAvoiding>
   );
 };

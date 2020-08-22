@@ -2,6 +2,8 @@ import * as React from 'react';
 import {StyleProp, StyleSheet, ViewStyle} from 'react-native';
 import {Colors, View} from 'react-native-ui-lib';
 import {Logo} from '../elements/logo/Logo';
+import {PlainLayoutBackButton} from '../navigation/PlainLayoutBackButton';
+import {PlainLayoutInner} from './PlainLayoutInner';
 
 interface Props {
   children?: React.ReactNode;

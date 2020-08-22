@@ -38,6 +38,7 @@ export const loadTheme = (dark: boolean) => {
     page: 20,
     card: 12,
     gridGutter: 16,
+    grid: 8,
   });
 
   ThemeManager.setComponentTheme('Card', {

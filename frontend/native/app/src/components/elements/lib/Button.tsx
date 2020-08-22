@@ -22,6 +22,9 @@ const makeStyles = (props: Props, state: State) =>
       justifyContent: 'center',
       alignItems: 'center',
     },
+    loaderBar: {
+      borderRadius: 6,
+    },
   });
 
 export const Button: React.FC<Props> = (props: Props) => {
@@ -30,7 +33,7 @@ export const Button: React.FC<Props> = (props: Props) => {
 
   return props.loading ? (
     <View style={styles.root}>
-      <Wave color={Colors.white} size={20} />
+      <Wave color={Colors.white} size={20} innerStyle={styles.loaderBar} />
     </View>
   ) : (
     <Btn testID={testID} accessibilityLabel={testID} {...props} />

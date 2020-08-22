@@ -52,9 +52,6 @@ export class SubmitResetPassword implements AsynchronousAction<FrontendCommonSta
         ...nextState.is,
         resettingPassword: false,
       },
-      snackbar: action.payload.response.success
-        ? new SuccessSnackbar('You have successfully reset your password')
-        : new ErrorSnackbar('Something went wrong'),
     };
   }
 }

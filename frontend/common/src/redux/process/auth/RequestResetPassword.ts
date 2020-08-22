@@ -49,9 +49,6 @@ export class RequestResetPassword implements AsynchronousAction<FrontendCommonSt
         ...nextState.is,
         requestingPasswordReset: false,
       },
-      snackbar: action.payload.response.success
-        ? new SuccessSnackbar('You have successfully requested new password')
-        : new ErrorSnackbar('Something went wrong'),
     };
   }
 }

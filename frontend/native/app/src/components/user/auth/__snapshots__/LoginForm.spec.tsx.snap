@@ -12,7 +12,6 @@ exports[`<LoginForm/> should not submit form with one credential missing 1`] = `
 >
   <View
     accessibilityLabel="loginForm-root"
-    padding-20={true}
     testID="loginForm-root"
   >
     <Text
@@ -181,7 +180,6 @@ exports[`<LoginForm/> should submit form with credentials 1`] = `
 >
   <View
     accessibilityLabel="loginForm-root"
-    padding-20={true}
     testID="loginForm-root"
   >
     <Text

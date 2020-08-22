@@ -16,6 +16,7 @@ exports[`<PlainLayoutInner/> should render 1`] = `
         "flex": 1,
         "flexDirection": "column",
         "justifyContent": "flex-end",
+        "padding": 20,
       }
     }
   />

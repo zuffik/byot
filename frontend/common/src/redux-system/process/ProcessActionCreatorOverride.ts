@@ -16,7 +16,7 @@ export const ProcessActionCreatorOverride = <
   if (Actions.reduxPack[group]) {
     Actions.reduxPack[group][id].reducer = reducer;
   }
-  if (Actions.reduxBinds[group]) {
+  if (Actions.reduxBinds[group]?.[id]) {
     Actions.reduxBinds[group][id] = Actions.reduxBinds[group][id].map(b => ({...b, reducer}));
   }
 };

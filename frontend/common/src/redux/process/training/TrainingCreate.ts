@@ -13,6 +13,7 @@ import {ITrainingDraftInput} from '../../../types/interfaces/ITrainingDraftInput
 export type Request = ITrainingDraftInput;
 export type Response = ITraining;
 
+// todo transform to override
 export abstract class TrainingCreate implements AsynchronousAction<FrontendCommonState, Request, Response> {
   handleRequest(
     action: Action<Request>,

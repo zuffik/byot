@@ -11,6 +11,7 @@ import {gql} from 'apollo-boost';
 export type Request = {id: string};
 export type Response = {};
 
+// todo transform to override
 export abstract class TrainingSetRemove
   implements AsynchronousAction<FrontendCommonState, Request, Response> {
   handleRequest(

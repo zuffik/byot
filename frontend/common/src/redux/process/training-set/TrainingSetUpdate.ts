@@ -16,6 +16,7 @@ export type Request = {
 };
 export type Response = ITrainingSet;
 
+// todo transform to override
 export abstract class TrainingSetUpdate
   implements AsynchronousAction<FrontendCommonState, Request, Response> {
   handleRequest(

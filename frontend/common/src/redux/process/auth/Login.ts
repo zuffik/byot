@@ -11,6 +11,7 @@ import {IAuth} from '../../../types/interfaces/IAuth';
 export type Request = IUserLogin;
 export type Response = IAuth;
 
+// todo transform to override
 export abstract class Login implements AsynchronousAction<FrontendCommonState, Request, Response> {
   *saga(action: Action<Request>, state: Readonly<FrontendCommonState>): Effect | Generator<any, any, any> {
     return (yield call(ApolloContext.apolloClient.mutate, {

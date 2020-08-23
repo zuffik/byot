@@ -11,6 +11,7 @@ import {ApolloContext} from '../../../graphql/context/ApolloContext';
 export type Request = IUserRegister;
 export type Response = Auth;
 
+// todo transform to override
 export abstract class Register implements AsynchronousAction<FrontendCommonState, Request, Response> {
   *saga(action: Action<Request>, state: Readonly<FrontendCommonState>): Generator<any, any, any> {
     return (yield call(ApolloContext.apolloClient.mutate, {

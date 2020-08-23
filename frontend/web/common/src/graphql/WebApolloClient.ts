@@ -1,5 +1,5 @@
-import {createEnvApolloClient} from '@byot-frontend/common/src/graphql/client/EnvApolloClient';
+import {createProcessEnvApolloClient} from '@byot-frontend/common/src/graphql/client/ProcessEnvApolloClient';
 import {frontendCommonWebStorage} from '../dom/FrontendCommonWebStorage';
 
 export const createWebApolloClient = () =>
-  createEnvApolloClient(() => frontendCommonWebStorage.getItem('auth')?.token);
+  createProcessEnvApolloClient(() => frontendCommonWebStorage.getItem('auth')?.token);

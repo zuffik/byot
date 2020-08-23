@@ -8,6 +8,7 @@ import {AsynchronousActionResponse} from '@byot-frontend/common/src/redux-system
 import {Action} from 'typescript-fsa';
 import {NativeAppState} from '../../NativeAppState';
 import {AlertOK} from '../../../types/alert/AlertOK';
+import {NavigateBack} from '../../../types/nav/NavigateBack';
 
 @ProcessActionCreatorOverride(RequestResetPasswordBase)
 export class RequestResetPassword extends RequestResetPasswordBase {
@@ -23,6 +24,7 @@ export class RequestResetPassword extends RequestResetPasswordBase {
           ? 'You have successfully requested new password'
           : 'Something went wrong'
       ),
+      navigation: new NavigateBack(),
     };
   }
 }

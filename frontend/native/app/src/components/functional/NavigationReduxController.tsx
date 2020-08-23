@@ -13,7 +13,15 @@ export const NavigationReduxController: React.FC<Props> = (props: Props) => {
   const navigate = useSelector((state: NativeAppState) => state.navigation);
   React.useEffect(() => {
     if (navigate) {
-      nav.navigate(navigate);
+      if ('special' in navigate) {
+        switch (navigate.special) {
+          case 'back':
+            nav.goBack();
+            break;
+        }
+      } else {
+        nav.navigate(navigate);
+      }
       dispatch(ProcessActionExtractor.dispatch(NavigationClear, {}));
     }
   }, [navigate]);

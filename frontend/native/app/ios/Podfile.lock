@@ -237,8 +237,6 @@ PODS:
   - React-jsinspector (0.62.2)
   - react-native-blur (0.8.0):
     - React
-  - react-native-config (1.2.1):
-    - React
   - react-native-netinfo (5.9.6):
     - React
   - react-native-safe-area-context (3.0.6):
@@ -370,7 +368,6 @@ DEPENDENCIES:
   - React-jsiexecutor (from `../../../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../../../node_modules/react-native/ReactCommon/jsinspector`)
   - "react-native-blur (from `../../../node_modules/@react-native-community/blur`)"
-  - react-native-config (from `../../../node_modules/react-native-config`)
   - "react-native-netinfo (from `../../../node_modules/@react-native-community/netinfo`)"
   - react-native-safe-area-context (from `../../../node_modules/react-native-safe-area-context`)
   - react-native-splash-screen (from `../../../node_modules/react-native-splash-screen`)
@@ -447,8 +444,6 @@ EXTERNAL SOURCES:
     :path: "../../../node_modules/react-native/ReactCommon/jsinspector"
   react-native-blur:
     :path: "../../../node_modules/@react-native-community/blur"
-  react-native-config:
-    :path: "../../../node_modules/react-native-config"
   react-native-netinfo:
     :path: "../../../node_modules/@react-native-community/netinfo"
   react-native-safe-area-context:
@@ -530,7 +525,6 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 1540d1c01bb493ae3124ed83351b1b6a155db7da
   React-jsinspector: 512e560d0e985d0e8c479a54a4e5c147a9c83493
   react-native-blur: cad4d93b364f91e7b7931b3fa935455487e5c33c
-  react-native-config: ae9ef3bdbf539f2d14ebaf4ebeba508f766e066a
   react-native-netinfo: 38a1e0b3e89b48e4b5833ed475d8df5f049f6f90
   react-native-safe-area-context: e22a8ca00f758273d2408953965cb8db67da7925
   react-native-splash-screen: 200d11d188e2e78cea3ad319964f6142b6384865

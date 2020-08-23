@@ -6,7 +6,6 @@ import {Logo} from '@byot-frontend/native-app/src/components/elements/logo/Logo'
 import {Text, View} from 'react-native-ui-lib';
 import {Button} from '@byot-frontend/native-app/src/components/elements/lib/Button';
 import {action} from '@storybook/addon-actions';
-import {KeyboardArrowLeft} from '@byot-frontend/native-app/src/components/icons/material/KeyboardArrowLeft';
 
 storiesOf('Elements', module)
   .add('Text', () => <Text>{text('Text', 'Lorem ipsum dolor sit amet')}</Text>)
@@ -49,5 +48,3 @@ storiesOf('Elements', module)
     </>
   ))
   .add('Logo', () => <Logo size={number('Size', 100, {min: 1, max: 400, range: true})} />);
-
-storiesOf('Icons', module).add('KeyboardArrowLeft', () => <KeyboardArrowLeft size={48} />);

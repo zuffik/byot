@@ -11,7 +11,6 @@ import {SplashScreenHide} from './components/functional/SplashScreenHide';
 import {loadTheme} from './theme/Theme';
 import {Colors} from 'react-native-ui-lib';
 import {AlertReduxController} from './components/functional/AlertReduxController';
-import {NavigationReduxController} from './components/functional/NavigationReduxController';
 
 declare const global: {HermesInternal: null | {}};
 

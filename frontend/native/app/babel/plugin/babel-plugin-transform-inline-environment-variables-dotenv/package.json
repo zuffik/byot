@@ -1,0 +1,6 @@
+{
+  "name": "babel-plugin-transform-inline-environment-variables-dotenv",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT"
+}

@@ -57,7 +57,7 @@ export const RegistrationForm: React.FC<Props> = (props: Props) => {
       <View paddingB-20>
         <Text heading>{t('Sign up')}</Text>
       </View>
-      <ScrollView horizontal={false}>
+      <ScrollView horizontal={false} keyboardShouldPersistTaps="handled">
         <IdView testID={testIDs.root}>
           <Formik
             onSubmit={values => props.onRegister(new UserRegister(values))}

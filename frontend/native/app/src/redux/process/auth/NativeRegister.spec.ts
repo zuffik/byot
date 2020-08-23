@@ -47,8 +47,8 @@ describe('NativeRegister process', () => {
     ).toEqual(
       expect.objectContaining({
         navigation: expect.objectContaining({
-          name: 'HomePage',
-          key: 'HomePage',
+          name: 'AuthLayout',
+          key: 'AuthLayout',
         }),
       })
     );

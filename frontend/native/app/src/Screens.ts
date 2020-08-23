@@ -8,7 +8,10 @@ export const Screens = {
   RequestPasswordReset: {
     Name: 'RequestPasswordReset',
   },
-  HomePage: {
-    Name: 'HomePage',
+  AuthLayout: {
+    Name: 'AuthLayout',
+    TrainingSetList: {
+      Name: 'TrainingSetList',
+    },
   },
 };

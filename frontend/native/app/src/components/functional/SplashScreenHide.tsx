@@ -6,7 +6,11 @@ import {ProcessActionExtractor} from '@byot-frontend/common/src/redux-system/pro
 import {LocalAuth} from '../../redux/process/auth/LocalAuth';
 import {NativeAppState} from '../../redux/NativeAppState';
 
-interface Props {}
+interface Props {
+  children?: React.ReactNode;
+}
+
+const completeCycle = 4;
 
 export const SplashScreenHide: React.FC<Props> = (props: Props) => {
   const dispatch = useDispatch();
@@ -22,9 +26,12 @@ export const SplashScreenHide: React.FC<Props> = (props: Props) => {
     setup.init().then(increment).catch(console.error);
   }, []);
   React.useEffect(() => {
-    if (init == 4) {
+    if (init == completeCycle) {
       SplashScreen.hide();
     }
   }, [init]);
+  if (init >= completeCycle) {
+    return props.children as React.ReactElement;
+  }
   return null;
 };

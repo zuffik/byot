@@ -47,7 +47,7 @@ export const LoginForm: React.FC<Props> = (props: Props) => {
         {({handleChange, handleBlur, handleSubmit, values, touched, errors}) => (
           <>
             <Text heading>{t('Login')!}</Text>
-            <ScrollView>
+            <ScrollView horizontal={false} keyboardShouldPersistTaps="handled">
               <View marginB-4>
                 <TextField
                   placeholder={t('Username or email')}

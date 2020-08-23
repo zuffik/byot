@@ -37,7 +37,7 @@ export class NativeRegister extends Register {
     return {
       ...nextState,
       ...(action.payload.response.success
-        ? {navigation: new NavigateNoParams('HomePage')}
+        ? {navigation: new NavigateNoParams('AuthLayout')}
         : {alert: new AlertOK('Something went wrong')}),
     };
   }

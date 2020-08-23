@@ -23,6 +23,10 @@ const DevApp: React.FC<Props> = (props: Props) => {
         setComponent(() => require('./App').default);
       }
     }
+    DevSettings.addMenuItem('Clear async storage', async () => {
+      await Storage.clear();
+      DevSettings.reload();
+    });
 
     loadComponent().catch(console.error);
   }, []);

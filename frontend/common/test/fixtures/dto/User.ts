@@ -16,7 +16,7 @@ export const user = (): IUser => {
     firstName,
     lastName,
     fullName: `${firstName} ${lastName}`,
-    lastLogin: mocker.bool({likelihood: 90}) && dateTime(),
+    lastLogin: mocker.bool({likelihood: 90}) ? dateTime() : undefined,
     role: mocker.bool({likelihood: 90}) ? Role.USER : Role.ADMIN,
     userName: mocker.twitter().slice(1),
   });

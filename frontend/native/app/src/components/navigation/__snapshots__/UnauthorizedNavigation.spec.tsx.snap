@@ -90,6 +90,9 @@ exports[`<UnauthorizedNavigation/> should render 1`] = `
           <View
             name="Register"
           />
+          <View
+            name="RequestPasswordReset"
+          />
         </View>
       </View>
     </View>

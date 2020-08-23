@@ -7,7 +7,6 @@ import * as _ from 'lodash';
 import {FrontendCommonState} from '../../FrontendCommonState';
 
 export type Payload = {
-  currentMedia: IMedia;
   training: ITraining;
 };
 
@@ -20,7 +19,7 @@ export class TrainingPlayNext implements SynchronousAction<FrontendCommonState, 
   ): FrontendCommonState {
     const index = _.findIndex(
       action.payload.training.media.entries,
-      m => m.id === action.payload.currentMedia.id
+      m => m.id === nextState.currentMedia!.id
     );
     if (index === action.payload.training.media.entries.length - 1) {
       // do nothing bc the media is the last one in the list

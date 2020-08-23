@@ -1,4 +1,8 @@
-import {Register, Request, Response} from '@byot-frontend/common/src/redux/process/auth/Register';
+import {
+  Register,
+  Request as RequestBase,
+  Response as ResponseBase,
+} from '@byot-frontend/common/src/redux/process/auth/Register';
 import {ProcessActionCreator} from '@byot-frontend/common/src/redux-system/process/ProcessActionCreator';
 import {NativeAppState} from '../../NativeAppState';
 import {Action} from 'typescript-fsa';
@@ -10,6 +14,9 @@ import {nativeStorage} from '../../../services/storage/NativeStorage';
 import {AsynchronousActionResponse} from '@byot-frontend/common/src/redux-system/process/ProcessActions';
 import {AlertOK} from '../../../types/alert/AlertOK';
 import {NavigateNoParams} from '../../../types/nav/NavigateNoParams';
+
+export type Request = RequestBase;
+export type Response = ResponseBase;
 
 @ProcessActionCreator()
 export class NativeRegister extends Register {

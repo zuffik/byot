@@ -31,7 +31,6 @@ export const TrainingDetailPage: React.FC<Props> = (props: Props) => {
   const onMediaFinishedPlaying = () =>
     dispatch(
       ProcessActionExtractor.dispatch(TrainingPlayNext, {
-        currentMedia: currentPlayingMedia!,
         training: training.data!,
       })
     );

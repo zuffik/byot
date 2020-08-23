@@ -18,5 +18,5 @@
     "resolveJsonModule": true,
     "preserveSymlinks": true
   },
-  "include": ["src"]
+  "include": ["src", "declarations.d.ts"]
 }

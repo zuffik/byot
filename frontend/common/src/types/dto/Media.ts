@@ -11,9 +11,10 @@ export class Media implements IMedia {
   public updatedAt: IDateTime;
   public createdAt?: IDateTime;
 
-  constructor({id, label, source, updatedAt, createdAt}: IMedia) {
-    this.createdAt = createdAt instanceof DateTime ? createdAt : new DateTime(createdAt);
-    this.updatedAt = updatedAt && updatedAt instanceof DateTime ? updatedAt : new DateTime(updatedAt);
+  constructor({id = '', label, source, updatedAt, createdAt}: IMedia) {
+    this.createdAt = createdAt instanceof DateTime ? createdAt : new DateTime(createdAt as DateTime);
+    this.updatedAt =
+      updatedAt && updatedAt instanceof DateTime ? updatedAt : new DateTime(updatedAt as DateTime);
     this.id = id;
     this.label = label;
     this.source = source instanceof Source ? source : new Source(source);

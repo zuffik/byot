@@ -9,7 +9,7 @@ export class Source implements ISource {
   public sourceType: SourceType;
   public thumbnail: string;
   public url: string;
-  constructor({id, mediaType, resourceId, sourceType, thumbnail, url}: ISource) {
+  constructor({id = '', mediaType, resourceId = '', sourceType, thumbnail = '', url = ''}: ISource) {
     this.id = id;
     this.mediaType = mediaType;
     this.resourceId = resourceId;

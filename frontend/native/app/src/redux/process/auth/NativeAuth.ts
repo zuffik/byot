@@ -1,4 +1,8 @@
-import {Login, Request} from '@byot-frontend/common/src/redux/process/auth/Login';
+import {
+  Login,
+  Request as RequestBase,
+  Response as ResponseBase,
+} from '@byot-frontend/common/src/redux/process/auth/Login';
 import {ProcessActionCreator} from '@byot-frontend/common/src/redux-system/process/ProcessActionCreator';
 import {GraphQLResponse} from '@byot-frontend/common/src/redux-system/data-structures/responses/GraphQLResponse';
 import {IAuth} from '@byot-frontend/common/src/types/interfaces/IAuth';
@@ -10,6 +14,9 @@ import {AsynchronousActionResponse} from '@byot-frontend/common/src/redux-system
 import {AlertOK} from '../../../types/alert/AlertOK';
 import {NavigateNoParams} from '../../../types/nav/NavigateNoParams';
 import {RuntimeStorage} from '../../../services/storage/RuntimeStorage';
+
+export type Request = RequestBase;
+export type Response = ResponseBase;
 
 @ProcessActionCreator()
 export class NativeAuth extends Login {

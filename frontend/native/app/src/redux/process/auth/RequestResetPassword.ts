@@ -1,7 +1,7 @@
 import {
-  Request,
+  Request as RequestBase,
   RequestResetPassword as RequestResetPasswordBase,
-  Response,
+  Response as ResponseBase,
 } from '@byot-frontend/common/src/redux/process/auth/RequestResetPassword';
 import {ProcessActionCreatorOverride} from '@byot-frontend/common/src/redux-system/process/ProcessActionCreatorOverride';
 import {AsynchronousActionResponse} from '@byot-frontend/common/src/redux-system/process/ProcessActions';
@@ -9,6 +9,9 @@ import {Action} from 'typescript-fsa';
 import {NativeAppState} from '../../NativeAppState';
 import {AlertOK} from '../../../types/alert/AlertOK';
 import {NavigateBack} from '../../../types/nav/NavigateBack';
+
+export type Request = RequestBase;
+export type Response = ResponseBase;
 
 @ProcessActionCreatorOverride(RequestResetPasswordBase)
 export class RequestResetPassword extends RequestResetPasswordBase {
@@ -24,7 +27,7 @@ export class RequestResetPassword extends RequestResetPasswordBase {
           ? 'You have successfully requested new password'
           : 'Something went wrong'
       ),
-      navigation: new NavigateBack(),
+      ...(action.payload.response.success && {navigation: new NavigateBack()}),
     };
   }
 }

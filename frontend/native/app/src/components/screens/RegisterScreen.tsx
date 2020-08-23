@@ -5,7 +5,6 @@ import {useNavigation} from '@react-navigation/native';
 import {PlainLayoutInner} from '../plain-layout/PlainLayoutInner';
 import {useDispatch, useSelector} from 'react-redux';
 import {ProcessActionExtractor} from '@byot-frontend/common/src/redux-system/process/ProcessActionExtractor';
-import {NativeAuth} from '../../redux/process/auth/NativeAuth';
 import {IUserRegister} from '@byot-frontend/common/src/types/interfaces/IUserRegister';
 import {NativeRegister} from '../../redux/process/auth/NativeRegister';
 import {NativeAppState} from '../../redux/NativeAppState';

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {LoginForm} from './LoginForm';
+import {LoginForm, testIDs} from './LoginForm';
 import {fireEvent, render, wait} from '@testing-library/react-native';
 
 describe('<LoginForm/>', () => {
@@ -10,11 +10,11 @@ describe('<LoginForm/>', () => {
     };
     const onLogin = jest.fn();
     const wrapper = render(<LoginForm onSubmit={onLogin} />);
-    const username = wrapper!.queryByTestId('loginForm-usernameEmail-input')!;
+    const username = wrapper!.queryByTestId(testIDs.usernameEmail)!;
     expect(username).not.toBeNull();
-    const password = wrapper!.queryByTestId('loginForm-password-input')!;
+    const password = wrapper!.queryByTestId(testIDs.password)!;
     expect(password).not.toBeNull();
-    const button = wrapper!.queryByTestId('element-button')!;
+    const button = wrapper!.queryByTestId(testIDs.submitButton)!;
     expect(button).not.toBeNull();
     fireEvent.changeText(username, credentials.userNameOrEmail);
     fireEvent.changeText(password, credentials.password);
@@ -30,11 +30,11 @@ describe('<LoginForm/>', () => {
     };
     const onLogin = jest.fn();
     const wrapper = render(<LoginForm onSubmit={onLogin} />);
-    const username = wrapper!.queryByTestId('loginForm-usernameEmail-input')!;
+    const username = wrapper!.queryByTestId(testIDs.usernameEmail)!;
     expect(username).not.toBeNull();
-    const password = wrapper!.queryByTestId('loginForm-password-input')!;
+    const password = wrapper!.queryByTestId(testIDs.password)!;
     expect(password).not.toBeNull();
-    const button = wrapper!.queryByTestId('element-button')!;
+    const button = wrapper!.queryByTestId(testIDs.submitButton)!;
     expect(button).not.toBeNull();
     fireEvent.changeText(username, credentials.userNameOrEmail);
     fireEvent.press(button);

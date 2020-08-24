@@ -8,6 +8,5 @@ interface Props {}
 
 export const NavigationRoot: React.FC<Props> = (props: Props) => {
   const auth = useSelector((state: NativeAppState) => state.auth);
-  console.log(!!auth.data);
   return <>{!!auth.data ? <AuthorizedNavigationRoot /> : <UnauthorizedNavigation />}</>;
 };

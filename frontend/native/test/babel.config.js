@@ -1,16 +1,16 @@
-{
-  "presets": [
+module.exports = {
+  presets: [
     "@babel/preset-typescript",
     [
       "@babel/preset-env",
       {
-        "targets": {
-          "node": 13
+        targets: {
+          node: "current"
         }
       }
     ]
   ],
-  "plugins": [
+  plugins: [
     "@babel/plugin-proposal-optional-chaining",
     "transform-require-context"
   ]

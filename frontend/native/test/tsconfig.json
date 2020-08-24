@@ -1,11 +1,24 @@
 {
   "compilerOptions": {
+    "lib": [
+      "dom",
+      "es7"
+    ],
     "target": "es5",
     "module": "commonjs",
-    "strict": true,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "removeComments": true,
+    "noImplicitAny": false,
+    "types": [
+      "node",
+      "@wdio/sync",
+      "jest"
+    ]
   },
-  "include": ["steps"]
+  "include": [
+    "steps"
+  ]
 }

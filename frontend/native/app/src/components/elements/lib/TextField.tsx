@@ -37,14 +37,7 @@ export const TextField: React.FC<Props> = (props: Props) => {
   const onPress = () => input.current?.focus();
   return (
     <>
-      <Patch
-        paddingB-8
-        paddingT-8
-        paddingL-12
-        paddingR-12
-        activeOpacity={1}
-        {...props.PatchProps}
-        onPress={onPress}>
+      <Patch paddingB-8 paddingT-8 paddingL-12 paddingR-12 {...props.PatchProps} onPress={onPress}>
         <TextFieldBase
           enableErrors={false}
           ref={input}

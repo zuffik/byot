@@ -12,4 +12,5 @@ export interface Resource<T> {
   isLoaded: boolean;
   hasData: boolean;
   state: ResourceState;
+  reset<R extends Resource<T>>(): R;
 }

@@ -16,4 +16,6 @@ export class AsyncStorage<T extends object> {
   removeItem = async <K extends keyof T>(key: K): Promise<void> => {
     await Storage.removeItem(key.toString());
   };
+
+  clear = Storage.clear;
 }

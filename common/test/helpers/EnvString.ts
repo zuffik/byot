@@ -1,7 +1,7 @@
 export const envString = (
   value: string,
   fetchEnvValue: (value: string) => string | number = (value) =>
-    process.env[value],
+    process.env[value]!,
   defaultValue?: string | number
 ): string => {
   let val = value;

@@ -831,7 +831,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = eu.byot;
+				PRODUCT_BUNDLE_IDENTIFIER = com.byot;
 				PRODUCT_NAME = byot;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -858,7 +858,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = eu.byot;
+				PRODUCT_BUNDLE_IDENTIFIER = com.byot;
 				PRODUCT_NAME = byot;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

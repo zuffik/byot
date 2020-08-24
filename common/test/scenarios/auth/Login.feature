@@ -6,7 +6,7 @@ Feature: Login user
     And user enters username <username>
     And user enters password <password>
     And user tries to login
-    Then it should be <state>
+    Then login should be <state>
     Examples:
       | username | password                              | state        |
       | demo-1   | {env.APP_DEMO_USER_PASSWORD}          | successful   |

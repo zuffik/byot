@@ -37,7 +37,7 @@ export class NativeAuth extends Login {
     return {
       ...nextState,
       ...(action.payload.response.success
-        ? {navigation: new NavigateNoParams('AuthLayout')}
+        ? {}
         : {alert: new AlertOK('Error while trying to login, please, check username or password')}),
     };
   }

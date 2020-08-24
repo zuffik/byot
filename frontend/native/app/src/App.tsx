@@ -11,6 +11,7 @@ import {loadTheme} from './theme/Theme';
 import {Colors} from 'react-native-ui-lib';
 import {AlertReduxController} from './components/functional/AlertReduxController';
 import {NavigationRoot} from './components/navigation/NavigationRoot';
+import {TestUtils} from './components/functional/TestUtils';
 
 declare const global: {HermesInternal: null | {}};
 
@@ -32,6 +33,7 @@ const App = () => {
               backgroundColor={Colors.background}
             />
             <SafeAreaView style={{flex: 1, position: 'relative'}}>
+              <TestUtils />
               <NavigationContainer>
                 <NavigationRoot />
               </NavigationContainer>

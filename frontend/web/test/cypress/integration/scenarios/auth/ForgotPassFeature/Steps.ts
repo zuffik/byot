@@ -57,7 +57,7 @@ When(/^user visits link from email$/, () => {
   cy.visit(link).then(() => cy.url().should('contain', 'reset-password'));
 });
 
-And(/^user enters password (.*)$/, password => {
+And(/^user enters password to reset (.*)$/, password => {
   cy.get('[data-testid="common-auth-resetPassword-form-newPassword"] input').type(
     envString(password, key => Cypress.env(key))
   );
@@ -91,7 +91,7 @@ When(/^user with email (.*) tries to login with new password (.*)$/, (email, pas
   cy.get('[data-testid="common-auth-login-form-form"] button[type="submit"]').click();
 });
 
-Then(/^it should be (.*)$/, loginState => {
+Then(/^password reset request should be (.*)$/, loginState => {
   if (loginState == 'successful') {
     cy.url().should('not.contain', '/login');
   } else {

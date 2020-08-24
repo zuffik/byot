@@ -19,11 +19,15 @@ exports[`<LoginForm/> should not submit form with one credential missing 1`] = `
     >
       Login
     </Text>
-    <ScrollView>
+    <ScrollView
+      horizontal={false}
+      keyboardShouldPersistTaps="handled"
+    >
       <View
         marginB-4={true}
       >
         <TouchableOpacity
+          accessibilityLabel="loginForm-usernameEmail-root"
           activeOpacity={1}
           paddingB-8={true}
           paddingL-12={true}
@@ -38,8 +42,15 @@ exports[`<LoginForm/> should not submit form with one credential missing 1`] = `
               },
             ]
           }
+          testID="loginForm-usernameEmail-root"
         >
           <TextInput
+            PatchProps={
+              Object {
+                "accessibilityLabel": "loginForm-usernameEmail-root",
+                "testID": "loginForm-usernameEmail-root",
+              }
+            }
             accessibilityLabel="loginForm-usernameEmail-input"
             allowFontScaling={true}
             autoCapitalize="none"
@@ -92,6 +103,7 @@ exports[`<LoginForm/> should not submit form with one credential missing 1`] = `
         marginB-4={true}
       >
         <TouchableOpacity
+          accessibilityLabel="loginForm-password-root"
           activeOpacity={1}
           paddingB-8={true}
           paddingL-12={true}
@@ -106,8 +118,15 @@ exports[`<LoginForm/> should not submit form with one credential missing 1`] = `
               },
             ]
           }
+          testID="loginForm-password-root"
         >
           <TextInput
+            PatchProps={
+              Object {
+                "accessibilityLabel": "loginForm-password-root",
+                "testID": "loginForm-password-root",
+              }
+            }
             accessibilityLabel="loginForm-password-input"
             allowFontScaling={true}
             autoCapitalize="none"
@@ -159,9 +178,9 @@ exports[`<LoginForm/> should not submit form with one credential missing 1`] = `
         </Text>
       </View>
       <TouchableOpacity
-        accessibilityLabel="element-button"
+        accessibilityLabel="loginForm-submitButton"
         label="Login"
-        testID="element-button"
+        testID="loginForm-submitButton"
       />
     </ScrollView>
   </View>
@@ -187,11 +206,15 @@ exports[`<LoginForm/> should submit form with credentials 1`] = `
     >
       Login
     </Text>
-    <ScrollView>
+    <ScrollView
+      horizontal={false}
+      keyboardShouldPersistTaps="handled"
+    >
       <View
         marginB-4={true}
       >
         <TouchableOpacity
+          accessibilityLabel="loginForm-usernameEmail-root"
           activeOpacity={1}
           paddingB-8={true}
           paddingL-12={true}
@@ -206,8 +229,15 @@ exports[`<LoginForm/> should submit form with credentials 1`] = `
               },
             ]
           }
+          testID="loginForm-usernameEmail-root"
         >
           <TextInput
+            PatchProps={
+              Object {
+                "accessibilityLabel": "loginForm-usernameEmail-root",
+                "testID": "loginForm-usernameEmail-root",
+              }
+            }
             accessibilityLabel="loginForm-usernameEmail-input"
             allowFontScaling={true}
             autoCapitalize="none"
@@ -260,6 +290,7 @@ exports[`<LoginForm/> should submit form with credentials 1`] = `
         marginB-4={true}
       >
         <TouchableOpacity
+          accessibilityLabel="loginForm-password-root"
           activeOpacity={1}
           paddingB-8={true}
           paddingL-12={true}
@@ -274,8 +305,15 @@ exports[`<LoginForm/> should submit form with credentials 1`] = `
               },
             ]
           }
+          testID="loginForm-password-root"
         >
           <TextInput
+            PatchProps={
+              Object {
+                "accessibilityLabel": "loginForm-password-root",
+                "testID": "loginForm-password-root",
+              }
+            }
             accessibilityLabel="loginForm-password-input"
             allowFontScaling={true}
             autoCapitalize="none"
@@ -327,9 +365,9 @@ exports[`<LoginForm/> should submit form with credentials 1`] = `
         </Text>
       </View>
       <TouchableOpacity
-        accessibilityLabel="element-button"
+        accessibilityLabel="loginForm-submitButton"
         label="Login"
-        testID="element-button"
+        testID="loginForm-submitButton"
       />
     </ScrollView>
   </View>

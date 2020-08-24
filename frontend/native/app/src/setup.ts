@@ -15,11 +15,11 @@ export const [i18n, loader] = createI18n(
   },
   languageProvider,
   {
-    debug: process.env.NODE_ENV === 'development',
+    debug: __DEV__,
   }
 );
 export const reduxStore = storeFactory(() => new NativeAppState(), 'default', {
-  useLogger: process.env.NODE_ENV === 'development',
+  useLogger: __DEV__,
 });
 
 export const init = () => Promise.all([loader]);

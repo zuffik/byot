@@ -1,9 +1,9 @@
-import {When, Then, BeforeAll} from 'cucumber';
-import {envString} from '../../../shared/EnvString';
+import {Then, When, After} from 'cucumber';
+import {envString} from '@byot/common/test/helpers/EnvString';
 
 // logging in
 When(/^user visits login form$/, () => {
-  $('~loginForm-root').waitForDisplayed(11000, false);
+  $('~loginForm-root').waitForDisplayed();
 });
 
 When(/^user enters username (.*)$/, username => {
@@ -15,9 +15,15 @@ When(/^user enters password (.*)$/, password => {
 });
 
 When(/^user tries to login$/, () => {
-  $('~element-button').click();
+  $('~loginForm-submitButton').click();
 });
 
-Then(/^it should be (.*)$/, state => {
-  // todo check state
+Then(/^login should be (.*)$/, state => {
+  if (state == 'successful') {
+    $('~homepage-main-titleLabel').waitForDisplayed();
+  } else {
+    browser.acceptAlert();
+  }
 });
+
+After(() => $('~testUtils-clearStorage').click());

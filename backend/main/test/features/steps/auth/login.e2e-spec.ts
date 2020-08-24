@@ -42,7 +42,7 @@ defineFeature(feature, (test) => {
         interaction(credentials.username, credentials.password),
       );
     });
-    then(/it should be (.*)/, (state: 'successful' | 'unsuccessful') => {
+    then(/login should be (.*)/, (state: 'successful' | 'unsuccessful') => {
       if (state === 'successful') {
         expect(result.body.errors).toBeUndefined();
         expect(result.body.data.userLogin.token).toEqual(expect.any(String));

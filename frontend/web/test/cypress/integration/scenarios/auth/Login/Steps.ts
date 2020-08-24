@@ -21,7 +21,7 @@ And(/^user tries to login$/, () => {
   cy.get('[data-testid="common-auth-login-form-form"] [data-testid="common-auth-login-form-button"]').click();
 });
 
-Then(/^it should be (.*)$/, (state: 'successful' | 'unsuccessful') => {
+Then(/^login should be (.*)$/, (state: 'successful' | 'unsuccessful') => {
   cy.get(
     '[data-testid="common-auth-login-form-form"] [data-testid="common-elementary-button-loader"]'
   ).should('be.visible');

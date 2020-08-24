@@ -18,10 +18,11 @@ exports.config = {
   specs: [
     './features/**/*.feature',
   ],
+  sync: true,
   exclude: [],
   maxInstances: 10,
   capabilities: [
-    process.env.ANDROID_TEST !== 'false' && {
+    process.env.ANDROID_TEST === 'true' && {
       automationName: 'UiAutomator2',
       deviceName: process.env.ANDROID_DEVICE,
       platformName: 'Android',
@@ -33,13 +34,13 @@ exports.config = {
       maxInstances: 1,
       browserName: '',
     },
-    process.env.IOS_TEST !== 'false' && {
+    process.env.IOS_TEST === 'true' && {
       automationName: 'XCUITest',
       deviceName: process.env.IOS_DEVICE,
       platformName: 'iOS',
       platformVersion: process.env.IOS_VERSION,
       orientation: 'PORTRAIT',
-      app: 'eu.byot',
+      app: 'com.byot',
       noReset: true,
       newCommandTimeout: 240,
       maxInstances: 1,
@@ -55,13 +56,13 @@ exports.config = {
 
   framework: 'cucumber',
 
-
   cucumberOpts: {
     require: ['./steps'],
     backtrace: false,
     requireModule: [
       () => {require('@babel/register')({
         extensions: [".es6", ".es", ".jsx", ".js", ".mjs", '.ts'],
+        ignore: [/node_modules\/(?!@byot)/]
       })}
     ],
     dryRun: false,
@@ -70,7 +71,7 @@ exports.config = {
     snippets: true,
     source: true,
     profile: [],
-    strict: false,
+    strict: true,
     tagExpression: '',
     timeout: 60000,
     ignoreUndefinedDefinitions: false,

@@ -21,6 +21,7 @@ exports[`<RegistrationForm/> should enter invalid email and not submit 1`] = `
   </View>
   <ScrollView
     horizontal={false}
+    keyboardShouldPersistTaps="handled"
   >
     <View
       accessibilityLabel="registrationForm-root"
@@ -434,6 +435,7 @@ exports[`<RegistrationForm/> should enter invalid password and not submit 1`] = 
   </View>
   <ScrollView
     horizontal={false}
+    keyboardShouldPersistTaps="handled"
   >
     <View
       accessibilityLabel="registrationForm-root"
@@ -847,6 +849,7 @@ exports[`<RegistrationForm/> should enter not matching passwords and not submit 
   </View>
   <ScrollView
     horizontal={false}
+    keyboardShouldPersistTaps="handled"
   >
     <View
       accessibilityLabel="registrationForm-root"
@@ -1260,6 +1263,7 @@ exports[`<RegistrationForm/> should fill all fields and submit 1`] = `
   </View>
   <ScrollView
     horizontal={false}
+    keyboardShouldPersistTaps="handled"
   >
     <View
       accessibilityLabel="registrationForm-root"
@@ -1673,6 +1677,7 @@ exports[`<RegistrationForm/> should fill all mandatory fields and submit 1`] = `
   </View>
   <ScrollView
     horizontal={false}
+    keyboardShouldPersistTaps="handled"
   >
     <View
       accessibilityLabel="registrationForm-root"
@@ -2086,6 +2091,7 @@ exports[`<RegistrationForm/> should omit consent and not submit 1`] = `
   </View>
   <ScrollView
     horizontal={false}
+    keyboardShouldPersistTaps="handled"
   >
     <View
       accessibilityLabel="registrationForm-root"

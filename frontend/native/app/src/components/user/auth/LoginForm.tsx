@@ -7,6 +7,13 @@ import {useTranslation} from 'react-i18next';
 import {loginSchema} from '@byot-frontend/common/src/types/schemas/validation/LoginSchema';
 import {Button} from '../../elements/lib/Button';
 
+export const testIDs = {
+  root: 'loginForm-root',
+  usernameEmail: 'loginForm-usernameEmail-input',
+  password: 'loginForm-password-input',
+  submitButton: 'loginForm-submitButton',
+};
+
 interface Props {
   onSubmit: (credentials: {usernameOrEmail: string; password: string}) => void;
   children?: React.ReactNode;
@@ -33,11 +40,8 @@ const makeStyles = (props: Props, state: State) =>
 export const LoginForm: React.FC<Props> = (props: Props) => {
   const styles = makeStyles(props, {});
   const {t} = useTranslation();
-  const testIDRoot = 'loginForm-root';
-  const testIDUsernameEmail = 'loginForm-usernameEmail-input';
-  const testIDPassword = 'loginForm-password-input';
   return (
-    <View accessibilityLabel={testIDRoot} testID={testIDRoot}>
+    <View accessibilityLabel={testIDs.root} testID={testIDs.root}>
       <Formik
         validationSchema={loginSchema(t)}
         validateOnBlur
@@ -57,8 +61,8 @@ export const LoginForm: React.FC<Props> = (props: Props) => {
                   keyboardType="email-address"
                   infoText
                   error={(touched.usernameOrEmail && errors.usernameOrEmail) as string}
-                  testID={testIDUsernameEmail}
-                  accessibilityLabel={testIDUsernameEmail}
+                  testID={testIDs.usernameEmail}
+                  accessibilityLabel={testIDs.usernameEmail}
                   autoCapitalize="none"
                 />
               </View>
@@ -72,12 +76,17 @@ export const LoginForm: React.FC<Props> = (props: Props) => {
                   style={styles.password}
                   infoText
                   error={(touched.password && errors.password) as string}
-                  testID={testIDPassword}
-                  accessibilityLabel={testIDPassword}
+                  testID={testIDs.password}
+                  accessibilityLabel={testIDs.password}
                   autoCapitalize="none"
                 />
               </View>
-              <Button loading={props.loading} onPress={handleSubmit} label={t('Login')} />
+              <Button
+                testID={testIDs.submitButton}
+                loading={props.loading}
+                onPress={handleSubmit}
+                label={t('Login')}
+              />
               {props.children}
             </ScrollView>
           </>

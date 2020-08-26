@@ -41,10 +41,10 @@ export class UserService {
   }
 
   public async findByUsernameOrEmail(
-    usernameOrEmail: string,
+    userNameOrEmail: string,
   ): Promise<User | undefined> {
     return await this.userRepository.findOne({
-      where: [{ userName: usernameOrEmail }, { email: usernameOrEmail }],
+      where: [{ userName: userNameOrEmail }, { email: userNameOrEmail }],
     });
   }
 

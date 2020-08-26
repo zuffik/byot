@@ -42,54 +42,55 @@ exports[`<RegistrationForm/> should enter invalid email and not submit 1`] = `
             }
           }
         >
-          <TouchableOpacity
-            activeOpacity={1}
+          <View
             paddingB-8={true}
             paddingL-12={true}
             paddingR-12={true}
             paddingT-8={true}
             style={
               Array [
-                undefined,
                 Object {
                   "backgroundColor": "#FAFAF1",
                   "borderRadius": 8,
                 },
+                undefined,
               ]
             }
           >
-            <TextInput
-              accessibilityLabel="registrationForm-firstName"
-              allowFontScaling={true}
-              color="#FAFAF1"
-              enableErrors={false}
-              floatOnFocus={true}
-              floatingPlaceholder={true}
-              floatingPlaceholderColor={
-                Object {
-                  "default": "#FAFAF1",
-                  "error": "#FAFAF1",
-                  "focus": "#FAFAF1",
-                }
-              }
-              floatingPlaceholderStyle={Object {}}
-              hideUnderline={true}
-              placeholder="First name"
-              rejectResponderTermination={true}
-              style={
-                Array [
-                  undefined,
+            <TouchableWithoutFeedback>
+              <TextInput
+                accessibilityLabel="registrationForm-firstName"
+                allowFontScaling={true}
+                color="#FAFAF1"
+                enableErrors={false}
+                floatOnFocus={true}
+                floatingPlaceholder={true}
+                floatingPlaceholderColor={
                   Object {
-                    "marginBottom": 4,
-                    "marginTop": -4,
-                  },
-                ]
-              }
-              testID="registrationForm-firstName"
-              underlineColorAndroid="transparent"
-              value="John"
-            />
-          </TouchableOpacity>
+                    "default": "#FAFAF1",
+                    "error": "#FAFAF1",
+                    "focus": "#FAFAF1",
+                  }
+                }
+                floatingPlaceholderStyle={Object {}}
+                hideUnderline={true}
+                placeholder="First name"
+                rejectResponderTermination={true}
+                style={
+                  Array [
+                    undefined,
+                    Object {
+                      "marginBottom": 4,
+                      "marginTop": -4,
+                    },
+                  ]
+                }
+                testID="registrationForm-firstName"
+                underlineColorAndroid="transparent"
+                value="John"
+              />
+            </TouchableWithoutFeedback>
+          </View>
           <Text
             error={false}
             style={
@@ -112,54 +113,55 @@ exports[`<RegistrationForm/> should enter invalid email and not submit 1`] = `
             }
           }
         >
-          <TouchableOpacity
-            activeOpacity={1}
+          <View
             paddingB-8={true}
             paddingL-12={true}
             paddingR-12={true}
             paddingT-8={true}
             style={
               Array [
-                undefined,
                 Object {
                   "backgroundColor": "#FAFAF1",
                   "borderRadius": 8,
                 },
+                undefined,
               ]
             }
           >
-            <TextInput
-              accessibilityLabel="registrationForm-lastName"
-              allowFontScaling={true}
-              color="#FAFAF1"
-              enableErrors={false}
-              floatOnFocus={true}
-              floatingPlaceholder={true}
-              floatingPlaceholderColor={
-                Object {
-                  "default": "#FAFAF1",
-                  "error": "#FAFAF1",
-                  "focus": "#FAFAF1",
-                }
-              }
-              floatingPlaceholderStyle={Object {}}
-              hideUnderline={true}
-              placeholder="Last name"
-              rejectResponderTermination={true}
-              style={
-                Array [
-                  undefined,
+            <TouchableWithoutFeedback>
+              <TextInput
+                accessibilityLabel="registrationForm-lastName"
+                allowFontScaling={true}
+                color="#FAFAF1"
+                enableErrors={false}
+                floatOnFocus={true}
+                floatingPlaceholder={true}
+                floatingPlaceholderColor={
                   Object {
-                    "marginBottom": 4,
-                    "marginTop": -4,
-                  },
-                ]
-              }
-              testID="registrationForm-lastName"
-              underlineColorAndroid="transparent"
-              value="Doe"
-            />
-          </TouchableOpacity>
+                    "default": "#FAFAF1",
+                    "error": "#FAFAF1",
+                    "focus": "#FAFAF1",
+                  }
+                }
+                floatingPlaceholderStyle={Object {}}
+                hideUnderline={true}
+                placeholder="Last name"
+                rejectResponderTermination={true}
+                style={
+                  Array [
+                    undefined,
+                    Object {
+                      "marginBottom": 4,
+                      "marginTop": -4,
+                    },
+                  ]
+                }
+                testID="registrationForm-lastName"
+                underlineColorAndroid="transparent"
+                value="Doe"
+              />
+            </TouchableWithoutFeedback>
+          </View>
           <Text
             error={false}
             style={
@@ -178,56 +180,57 @@ exports[`<RegistrationForm/> should enter invalid email and not submit 1`] = `
       <View
         marginB-10={true}
       >
-        <TouchableOpacity
-          activeOpacity={1}
+        <View
           paddingB-8={true}
           paddingL-12={true}
           paddingR-12={true}
           paddingT-8={true}
           style={
             Array [
-              undefined,
               Object {
                 "backgroundColor": "#FAFAF1",
                 "borderRadius": 8,
               },
+              undefined,
             ]
           }
         >
-          <TextInput
-            accessibilityLabel="registrationForm-email"
-            allowFontScaling={true}
-            autoCapitalize="none"
-            color="#FAFAF1"
-            enableErrors={false}
-            floatOnFocus={true}
-            floatingPlaceholder={true}
-            floatingPlaceholderColor={
-              Object {
-                "default": "#FAFAF1",
-                "error": "#FAFAF1",
-                "focus": "#FAFAF1",
-              }
-            }
-            floatingPlaceholderStyle={Object {}}
-            hideUnderline={true}
-            keyboardType="email-address"
-            placeholder="Email"
-            rejectResponderTermination={true}
-            style={
-              Array [
-                undefined,
+          <TouchableWithoutFeedback>
+            <TextInput
+              accessibilityLabel="registrationForm-email"
+              allowFontScaling={true}
+              autoCapitalize="none"
+              color="#FAFAF1"
+              enableErrors={false}
+              floatOnFocus={true}
+              floatingPlaceholder={true}
+              floatingPlaceholderColor={
                 Object {
-                  "marginBottom": 4,
-                  "marginTop": -4,
-                },
-              ]
-            }
-            testID="registrationForm-email"
-            underlineColorAndroid="transparent"
-            value="sad.sk"
-          />
-        </TouchableOpacity>
+                  "default": "#FAFAF1",
+                  "error": "#FAFAF1",
+                  "focus": "#FAFAF1",
+                }
+              }
+              floatingPlaceholderStyle={Object {}}
+              hideUnderline={true}
+              keyboardType="email-address"
+              placeholder="Email"
+              rejectResponderTermination={true}
+              style={
+                Array [
+                  undefined,
+                  Object {
+                    "marginBottom": 4,
+                    "marginTop": -4,
+                  },
+                ]
+              }
+              testID="registrationForm-email"
+              underlineColorAndroid="transparent"
+              value="sad.sk"
+            />
+          </TouchableWithoutFeedback>
+        </View>
         <Text
           error={false}
           style={
@@ -245,55 +248,56 @@ exports[`<RegistrationForm/> should enter invalid email and not submit 1`] = `
       <View
         marginB-10={true}
       >
-        <TouchableOpacity
-          activeOpacity={1}
+        <View
           paddingB-8={true}
           paddingL-12={true}
           paddingR-12={true}
           paddingT-8={true}
           style={
             Array [
-              undefined,
               Object {
                 "backgroundColor": "#FAFAF1",
                 "borderRadius": 8,
               },
+              undefined,
             ]
           }
         >
-          <TextInput
-            allowFontScaling={true}
-            autoCapitalize="none"
-            color="#FAFAF1"
-            enableErrors={false}
-            floatOnFocus={true}
-            floatingPlaceholder={true}
-            floatingPlaceholderColor={
-              Object {
-                "default": "#FAFAF1",
-                "error": "#FAFAF1",
-                "focus": "#FAFAF1",
-              }
-            }
-            floatingPlaceholderStyle={Object {}}
-            hideUnderline={true}
-            placeholder="Password"
-            rejectResponderTermination={true}
-            secureTextEntry={true}
-            style={
-              Array [
-                undefined,
+          <TouchableWithoutFeedback>
+            <TextInput
+              allowFontScaling={true}
+              autoCapitalize="none"
+              color="#FAFAF1"
+              enableErrors={false}
+              floatOnFocus={true}
+              floatingPlaceholder={true}
+              floatingPlaceholderColor={
                 Object {
-                  "marginBottom": 4,
-                  "marginTop": -4,
-                },
-              ]
-            }
-            testID="registrationForm-password"
-            underlineColorAndroid="transparent"
-            value="123-Abc"
-          />
-        </TouchableOpacity>
+                  "default": "#FAFAF1",
+                  "error": "#FAFAF1",
+                  "focus": "#FAFAF1",
+                }
+              }
+              floatingPlaceholderStyle={Object {}}
+              hideUnderline={true}
+              placeholder="Password"
+              rejectResponderTermination={true}
+              secureTextEntry={true}
+              style={
+                Array [
+                  undefined,
+                  Object {
+                    "marginBottom": 4,
+                    "marginTop": -4,
+                  },
+                ]
+              }
+              testID="registrationForm-password"
+              underlineColorAndroid="transparent"
+              value="123-Abc"
+            />
+          </TouchableWithoutFeedback>
+        </View>
         <Text
           error={false}
           style={
@@ -311,56 +315,57 @@ exports[`<RegistrationForm/> should enter invalid email and not submit 1`] = `
       <View
         marginB-10={true}
       >
-        <TouchableOpacity
-          activeOpacity={1}
+        <View
           paddingB-8={true}
           paddingL-12={true}
           paddingR-12={true}
           paddingT-8={true}
           style={
             Array [
-              undefined,
               Object {
                 "backgroundColor": "#FAFAF1",
                 "borderRadius": 8,
               },
+              undefined,
             ]
           }
         >
-          <TextInput
-            accessibilityLabel="registrationForm-passwordRepeat"
-            allowFontScaling={true}
-            autoCapitalize="none"
-            color="#FAFAF1"
-            enableErrors={false}
-            floatOnFocus={true}
-            floatingPlaceholder={true}
-            floatingPlaceholderColor={
-              Object {
-                "default": "#FAFAF1",
-                "error": "#FAFAF1",
-                "focus": "#FAFAF1",
-              }
-            }
-            floatingPlaceholderStyle={Object {}}
-            hideUnderline={true}
-            placeholder="Confirm password"
-            rejectResponderTermination={true}
-            secureTextEntry={true}
-            style={
-              Array [
-                undefined,
+          <TouchableWithoutFeedback>
+            <TextInput
+              accessibilityLabel="registrationForm-passwordRepeat"
+              allowFontScaling={true}
+              autoCapitalize="none"
+              color="#FAFAF1"
+              enableErrors={false}
+              floatOnFocus={true}
+              floatingPlaceholder={true}
+              floatingPlaceholderColor={
                 Object {
-                  "marginBottom": 4,
-                  "marginTop": -4,
-                },
-              ]
-            }
-            testID="registrationForm-passwordRepeat"
-            underlineColorAndroid="transparent"
-            value="123-Abc"
-          />
-        </TouchableOpacity>
+                  "default": "#FAFAF1",
+                  "error": "#FAFAF1",
+                  "focus": "#FAFAF1",
+                }
+              }
+              floatingPlaceholderStyle={Object {}}
+              hideUnderline={true}
+              placeholder="Confirm password"
+              rejectResponderTermination={true}
+              secureTextEntry={true}
+              style={
+                Array [
+                  undefined,
+                  Object {
+                    "marginBottom": 4,
+                    "marginTop": -4,
+                  },
+                ]
+              }
+              testID="registrationForm-passwordRepeat"
+              underlineColorAndroid="transparent"
+              value="123-Abc"
+            />
+          </TouchableWithoutFeedback>
+        </View>
         <Text
           error={false}
           style={
@@ -456,54 +461,55 @@ exports[`<RegistrationForm/> should enter invalid password and not submit 1`] = 
             }
           }
         >
-          <TouchableOpacity
-            activeOpacity={1}
+          <View
             paddingB-8={true}
             paddingL-12={true}
             paddingR-12={true}
             paddingT-8={true}
             style={
               Array [
-                undefined,
                 Object {
                   "backgroundColor": "#FAFAF1",
                   "borderRadius": 8,
                 },
+                undefined,
               ]
             }
           >
-            <TextInput
-              accessibilityLabel="registrationForm-firstName"
-              allowFontScaling={true}
-              color="#FAFAF1"
-              enableErrors={false}
-              floatOnFocus={true}
-              floatingPlaceholder={true}
-              floatingPlaceholderColor={
-                Object {
-                  "default": "#FAFAF1",
-                  "error": "#FAFAF1",
-                  "focus": "#FAFAF1",
-                }
-              }
-              floatingPlaceholderStyle={Object {}}
-              hideUnderline={true}
-              placeholder="First name"
-              rejectResponderTermination={true}
-              style={
-                Array [
-                  undefined,
+            <TouchableWithoutFeedback>
+              <TextInput
+                accessibilityLabel="registrationForm-firstName"
+                allowFontScaling={true}
+                color="#FAFAF1"
+                enableErrors={false}
+                floatOnFocus={true}
+                floatingPlaceholder={true}
+                floatingPlaceholderColor={
                   Object {
-                    "marginBottom": 4,
-                    "marginTop": -4,
-                  },
-                ]
-              }
-              testID="registrationForm-firstName"
-              underlineColorAndroid="transparent"
-              value="John"
-            />
-          </TouchableOpacity>
+                    "default": "#FAFAF1",
+                    "error": "#FAFAF1",
+                    "focus": "#FAFAF1",
+                  }
+                }
+                floatingPlaceholderStyle={Object {}}
+                hideUnderline={true}
+                placeholder="First name"
+                rejectResponderTermination={true}
+                style={
+                  Array [
+                    undefined,
+                    Object {
+                      "marginBottom": 4,
+                      "marginTop": -4,
+                    },
+                  ]
+                }
+                testID="registrationForm-firstName"
+                underlineColorAndroid="transparent"
+                value="John"
+              />
+            </TouchableWithoutFeedback>
+          </View>
           <Text
             error={false}
             style={
@@ -526,54 +532,55 @@ exports[`<RegistrationForm/> should enter invalid password and not submit 1`] = 
             }
           }
         >
-          <TouchableOpacity
-            activeOpacity={1}
+          <View
             paddingB-8={true}
             paddingL-12={true}
             paddingR-12={true}
             paddingT-8={true}
             style={
               Array [
-                undefined,
                 Object {
                   "backgroundColor": "#FAFAF1",
                   "borderRadius": 8,
                 },
+                undefined,
               ]
             }
           >
-            <TextInput
-              accessibilityLabel="registrationForm-lastName"
-              allowFontScaling={true}
-              color="#FAFAF1"
-              enableErrors={false}
-              floatOnFocus={true}
-              floatingPlaceholder={true}
-              floatingPlaceholderColor={
-                Object {
-                  "default": "#FAFAF1",
-                  "error": "#FAFAF1",
-                  "focus": "#FAFAF1",
-                }
-              }
-              floatingPlaceholderStyle={Object {}}
-              hideUnderline={true}
-              placeholder="Last name"
-              rejectResponderTermination={true}
-              style={
-                Array [
-                  undefined,
+            <TouchableWithoutFeedback>
+              <TextInput
+                accessibilityLabel="registrationForm-lastName"
+                allowFontScaling={true}
+                color="#FAFAF1"
+                enableErrors={false}
+                floatOnFocus={true}
+                floatingPlaceholder={true}
+                floatingPlaceholderColor={
                   Object {
-                    "marginBottom": 4,
-                    "marginTop": -4,
-                  },
-                ]
-              }
-              testID="registrationForm-lastName"
-              underlineColorAndroid="transparent"
-              value="Doe"
-            />
-          </TouchableOpacity>
+                    "default": "#FAFAF1",
+                    "error": "#FAFAF1",
+                    "focus": "#FAFAF1",
+                  }
+                }
+                floatingPlaceholderStyle={Object {}}
+                hideUnderline={true}
+                placeholder="Last name"
+                rejectResponderTermination={true}
+                style={
+                  Array [
+                    undefined,
+                    Object {
+                      "marginBottom": 4,
+                      "marginTop": -4,
+                    },
+                  ]
+                }
+                testID="registrationForm-lastName"
+                underlineColorAndroid="transparent"
+                value="Doe"
+              />
+            </TouchableWithoutFeedback>
+          </View>
           <Text
             error={false}
             style={
@@ -592,56 +599,57 @@ exports[`<RegistrationForm/> should enter invalid password and not submit 1`] = 
       <View
         marginB-10={true}
       >
-        <TouchableOpacity
-          activeOpacity={1}
+        <View
           paddingB-8={true}
           paddingL-12={true}
           paddingR-12={true}
           paddingT-8={true}
           style={
             Array [
-              undefined,
               Object {
                 "backgroundColor": "#FAFAF1",
                 "borderRadius": 8,
               },
+              undefined,
             ]
           }
         >
-          <TextInput
-            accessibilityLabel="registrationForm-email"
-            allowFontScaling={true}
-            autoCapitalize="none"
-            color="#FAFAF1"
-            enableErrors={false}
-            floatOnFocus={true}
-            floatingPlaceholder={true}
-            floatingPlaceholderColor={
-              Object {
-                "default": "#FAFAF1",
-                "error": "#FAFAF1",
-                "focus": "#FAFAF1",
-              }
-            }
-            floatingPlaceholderStyle={Object {}}
-            hideUnderline={true}
-            keyboardType="email-address"
-            placeholder="Email"
-            rejectResponderTermination={true}
-            style={
-              Array [
-                undefined,
+          <TouchableWithoutFeedback>
+            <TextInput
+              accessibilityLabel="registrationForm-email"
+              allowFontScaling={true}
+              autoCapitalize="none"
+              color="#FAFAF1"
+              enableErrors={false}
+              floatOnFocus={true}
+              floatingPlaceholder={true}
+              floatingPlaceholderColor={
                 Object {
-                  "marginBottom": 4,
-                  "marginTop": -4,
-                },
-              ]
-            }
-            testID="registrationForm-email"
-            underlineColorAndroid="transparent"
-            value="sad@path.sk"
-          />
-        </TouchableOpacity>
+                  "default": "#FAFAF1",
+                  "error": "#FAFAF1",
+                  "focus": "#FAFAF1",
+                }
+              }
+              floatingPlaceholderStyle={Object {}}
+              hideUnderline={true}
+              keyboardType="email-address"
+              placeholder="Email"
+              rejectResponderTermination={true}
+              style={
+                Array [
+                  undefined,
+                  Object {
+                    "marginBottom": 4,
+                    "marginTop": -4,
+                  },
+                ]
+              }
+              testID="registrationForm-email"
+              underlineColorAndroid="transparent"
+              value="sad@path.sk"
+            />
+          </TouchableWithoutFeedback>
+        </View>
         <Text
           error={false}
           style={
@@ -659,55 +667,56 @@ exports[`<RegistrationForm/> should enter invalid password and not submit 1`] = 
       <View
         marginB-10={true}
       >
-        <TouchableOpacity
-          activeOpacity={1}
+        <View
           paddingB-8={true}
           paddingL-12={true}
           paddingR-12={true}
           paddingT-8={true}
           style={
             Array [
-              undefined,
               Object {
                 "backgroundColor": "#FAFAF1",
                 "borderRadius": 8,
               },
+              undefined,
             ]
           }
         >
-          <TextInput
-            allowFontScaling={true}
-            autoCapitalize="none"
-            color="#FAFAF1"
-            enableErrors={false}
-            floatOnFocus={true}
-            floatingPlaceholder={true}
-            floatingPlaceholderColor={
-              Object {
-                "default": "#FAFAF1",
-                "error": "#FAFAF1",
-                "focus": "#FAFAF1",
-              }
-            }
-            floatingPlaceholderStyle={Object {}}
-            hideUnderline={true}
-            placeholder="Password"
-            rejectResponderTermination={true}
-            secureTextEntry={true}
-            style={
-              Array [
-                undefined,
+          <TouchableWithoutFeedback>
+            <TextInput
+              allowFontScaling={true}
+              autoCapitalize="none"
+              color="#FAFAF1"
+              enableErrors={false}
+              floatOnFocus={true}
+              floatingPlaceholder={true}
+              floatingPlaceholderColor={
                 Object {
-                  "marginBottom": 4,
-                  "marginTop": -4,
-                },
-              ]
-            }
-            testID="registrationForm-password"
-            underlineColorAndroid="transparent"
-            value="123"
-          />
-        </TouchableOpacity>
+                  "default": "#FAFAF1",
+                  "error": "#FAFAF1",
+                  "focus": "#FAFAF1",
+                }
+              }
+              floatingPlaceholderStyle={Object {}}
+              hideUnderline={true}
+              placeholder="Password"
+              rejectResponderTermination={true}
+              secureTextEntry={true}
+              style={
+                Array [
+                  undefined,
+                  Object {
+                    "marginBottom": 4,
+                    "marginTop": -4,
+                  },
+                ]
+              }
+              testID="registrationForm-password"
+              underlineColorAndroid="transparent"
+              value="123"
+            />
+          </TouchableWithoutFeedback>
+        </View>
         <Text
           error={false}
           style={
@@ -725,56 +734,57 @@ exports[`<RegistrationForm/> should enter invalid password and not submit 1`] = 
       <View
         marginB-10={true}
       >
-        <TouchableOpacity
-          activeOpacity={1}
+        <View
           paddingB-8={true}
           paddingL-12={true}
           paddingR-12={true}
           paddingT-8={true}
           style={
             Array [
-              undefined,
               Object {
                 "backgroundColor": "#FAFAF1",
                 "borderRadius": 8,
               },
+              undefined,
             ]
           }
         >
-          <TextInput
-            accessibilityLabel="registrationForm-passwordRepeat"
-            allowFontScaling={true}
-            autoCapitalize="none"
-            color="#FAFAF1"
-            enableErrors={false}
-            floatOnFocus={true}
-            floatingPlaceholder={true}
-            floatingPlaceholderColor={
-              Object {
-                "default": "#FAFAF1",
-                "error": "#FAFAF1",
-                "focus": "#FAFAF1",
-              }
-            }
-            floatingPlaceholderStyle={Object {}}
-            hideUnderline={true}
-            placeholder="Confirm password"
-            rejectResponderTermination={true}
-            secureTextEntry={true}
-            style={
-              Array [
-                undefined,
+          <TouchableWithoutFeedback>
+            <TextInput
+              accessibilityLabel="registrationForm-passwordRepeat"
+              allowFontScaling={true}
+              autoCapitalize="none"
+              color="#FAFAF1"
+              enableErrors={false}
+              floatOnFocus={true}
+              floatingPlaceholder={true}
+              floatingPlaceholderColor={
                 Object {
-                  "marginBottom": 4,
-                  "marginTop": -4,
-                },
-              ]
-            }
-            testID="registrationForm-passwordRepeat"
-            underlineColorAndroid="transparent"
-            value="123"
-          />
-        </TouchableOpacity>
+                  "default": "#FAFAF1",
+                  "error": "#FAFAF1",
+                  "focus": "#FAFAF1",
+                }
+              }
+              floatingPlaceholderStyle={Object {}}
+              hideUnderline={true}
+              placeholder="Confirm password"
+              rejectResponderTermination={true}
+              secureTextEntry={true}
+              style={
+                Array [
+                  undefined,
+                  Object {
+                    "marginBottom": 4,
+                    "marginTop": -4,
+                  },
+                ]
+              }
+              testID="registrationForm-passwordRepeat"
+              underlineColorAndroid="transparent"
+              value="123"
+            />
+          </TouchableWithoutFeedback>
+        </View>
         <Text
           error={false}
           style={
@@ -870,54 +880,55 @@ exports[`<RegistrationForm/> should enter not matching passwords and not submit 
             }
           }
         >
-          <TouchableOpacity
-            activeOpacity={1}
+          <View
             paddingB-8={true}
             paddingL-12={true}
             paddingR-12={true}
             paddingT-8={true}
             style={
               Array [
-                undefined,
                 Object {
                   "backgroundColor": "#FAFAF1",
                   "borderRadius": 8,
                 },
+                undefined,
               ]
             }
           >
-            <TextInput
-              accessibilityLabel="registrationForm-firstName"
-              allowFontScaling={true}
-              color="#FAFAF1"
-              enableErrors={false}
-              floatOnFocus={true}
-              floatingPlaceholder={true}
-              floatingPlaceholderColor={
-                Object {
-                  "default": "#FAFAF1",
-                  "error": "#FAFAF1",
-                  "focus": "#FAFAF1",
-                }
-              }
-              floatingPlaceholderStyle={Object {}}
-              hideUnderline={true}
-              placeholder="First name"
-              rejectResponderTermination={true}
-              style={
-                Array [
-                  undefined,
+            <TouchableWithoutFeedback>
+              <TextInput
+                accessibilityLabel="registrationForm-firstName"
+                allowFontScaling={true}
+                color="#FAFAF1"
+                enableErrors={false}
+                floatOnFocus={true}
+                floatingPlaceholder={true}
+                floatingPlaceholderColor={
                   Object {
-                    "marginBottom": 4,
-                    "marginTop": -4,
-                  },
-                ]
-              }
-              testID="registrationForm-firstName"
-              underlineColorAndroid="transparent"
-              value="John"
-            />
-          </TouchableOpacity>
+                    "default": "#FAFAF1",
+                    "error": "#FAFAF1",
+                    "focus": "#FAFAF1",
+                  }
+                }
+                floatingPlaceholderStyle={Object {}}
+                hideUnderline={true}
+                placeholder="First name"
+                rejectResponderTermination={true}
+                style={
+                  Array [
+                    undefined,
+                    Object {
+                      "marginBottom": 4,
+                      "marginTop": -4,
+                    },
+                  ]
+                }
+                testID="registrationForm-firstName"
+                underlineColorAndroid="transparent"
+                value="John"
+              />
+            </TouchableWithoutFeedback>
+          </View>
           <Text
             error={false}
             style={
@@ -940,54 +951,55 @@ exports[`<RegistrationForm/> should enter not matching passwords and not submit 
             }
           }
         >
-          <TouchableOpacity
-            activeOpacity={1}
+          <View
             paddingB-8={true}
             paddingL-12={true}
             paddingR-12={true}
             paddingT-8={true}
             style={
               Array [
-                undefined,
                 Object {
                   "backgroundColor": "#FAFAF1",
                   "borderRadius": 8,
                 },
+                undefined,
               ]
             }
           >
-            <TextInput
-              accessibilityLabel="registrationForm-lastName"
-              allowFontScaling={true}
-              color="#FAFAF1"
-              enableErrors={false}
-              floatOnFocus={true}
-              floatingPlaceholder={true}
-              floatingPlaceholderColor={
-                Object {
-                  "default": "#FAFAF1",
-                  "error": "#FAFAF1",
-                  "focus": "#FAFAF1",
-                }
-              }
-              floatingPlaceholderStyle={Object {}}
-              hideUnderline={true}
-              placeholder="Last name"
-              rejectResponderTermination={true}
-              style={
-                Array [
-                  undefined,
+            <TouchableWithoutFeedback>
+              <TextInput
+                accessibilityLabel="registrationForm-lastName"
+                allowFontScaling={true}
+                color="#FAFAF1"
+                enableErrors={false}
+                floatOnFocus={true}
+                floatingPlaceholder={true}
+                floatingPlaceholderColor={
                   Object {
-                    "marginBottom": 4,
-                    "marginTop": -4,
-                  },
-                ]
-              }
-              testID="registrationForm-lastName"
-              underlineColorAndroid="transparent"
-              value="Doe"
-            />
-          </TouchableOpacity>
+                    "default": "#FAFAF1",
+                    "error": "#FAFAF1",
+                    "focus": "#FAFAF1",
+                  }
+                }
+                floatingPlaceholderStyle={Object {}}
+                hideUnderline={true}
+                placeholder="Last name"
+                rejectResponderTermination={true}
+                style={
+                  Array [
+                    undefined,
+                    Object {
+                      "marginBottom": 4,
+                      "marginTop": -4,
+                    },
+                  ]
+                }
+                testID="registrationForm-lastName"
+                underlineColorAndroid="transparent"
+                value="Doe"
+              />
+            </TouchableWithoutFeedback>
+          </View>
           <Text
             error={false}
             style={
@@ -1006,56 +1018,57 @@ exports[`<RegistrationForm/> should enter not matching passwords and not submit 
       <View
         marginB-10={true}
       >
-        <TouchableOpacity
-          activeOpacity={1}
+        <View
           paddingB-8={true}
           paddingL-12={true}
           paddingR-12={true}
           paddingT-8={true}
           style={
             Array [
-              undefined,
               Object {
                 "backgroundColor": "#FAFAF1",
                 "borderRadius": 8,
               },
+              undefined,
             ]
           }
         >
-          <TextInput
-            accessibilityLabel="registrationForm-email"
-            allowFontScaling={true}
-            autoCapitalize="none"
-            color="#FAFAF1"
-            enableErrors={false}
-            floatOnFocus={true}
-            floatingPlaceholder={true}
-            floatingPlaceholderColor={
-              Object {
-                "default": "#FAFAF1",
-                "error": "#FAFAF1",
-                "focus": "#FAFAF1",
-              }
-            }
-            floatingPlaceholderStyle={Object {}}
-            hideUnderline={true}
-            keyboardType="email-address"
-            placeholder="Email"
-            rejectResponderTermination={true}
-            style={
-              Array [
-                undefined,
+          <TouchableWithoutFeedback>
+            <TextInput
+              accessibilityLabel="registrationForm-email"
+              allowFontScaling={true}
+              autoCapitalize="none"
+              color="#FAFAF1"
+              enableErrors={false}
+              floatOnFocus={true}
+              floatingPlaceholder={true}
+              floatingPlaceholderColor={
                 Object {
-                  "marginBottom": 4,
-                  "marginTop": -4,
-                },
-              ]
-            }
-            testID="registrationForm-email"
-            underlineColorAndroid="transparent"
-            value="sad@path.sk"
-          />
-        </TouchableOpacity>
+                  "default": "#FAFAF1",
+                  "error": "#FAFAF1",
+                  "focus": "#FAFAF1",
+                }
+              }
+              floatingPlaceholderStyle={Object {}}
+              hideUnderline={true}
+              keyboardType="email-address"
+              placeholder="Email"
+              rejectResponderTermination={true}
+              style={
+                Array [
+                  undefined,
+                  Object {
+                    "marginBottom": 4,
+                    "marginTop": -4,
+                  },
+                ]
+              }
+              testID="registrationForm-email"
+              underlineColorAndroid="transparent"
+              value="sad@path.sk"
+            />
+          </TouchableWithoutFeedback>
+        </View>
         <Text
           error={false}
           style={
@@ -1073,55 +1086,56 @@ exports[`<RegistrationForm/> should enter not matching passwords and not submit 
       <View
         marginB-10={true}
       >
-        <TouchableOpacity
-          activeOpacity={1}
+        <View
           paddingB-8={true}
           paddingL-12={true}
           paddingR-12={true}
           paddingT-8={true}
           style={
             Array [
-              undefined,
               Object {
                 "backgroundColor": "#FAFAF1",
                 "borderRadius": 8,
               },
+              undefined,
             ]
           }
         >
-          <TextInput
-            allowFontScaling={true}
-            autoCapitalize="none"
-            color="#FAFAF1"
-            enableErrors={false}
-            floatOnFocus={true}
-            floatingPlaceholder={true}
-            floatingPlaceholderColor={
-              Object {
-                "default": "#FAFAF1",
-                "error": "#FAFAF1",
-                "focus": "#FAFAF1",
-              }
-            }
-            floatingPlaceholderStyle={Object {}}
-            hideUnderline={true}
-            placeholder="Password"
-            rejectResponderTermination={true}
-            secureTextEntry={true}
-            style={
-              Array [
-                undefined,
+          <TouchableWithoutFeedback>
+            <TextInput
+              allowFontScaling={true}
+              autoCapitalize="none"
+              color="#FAFAF1"
+              enableErrors={false}
+              floatOnFocus={true}
+              floatingPlaceholder={true}
+              floatingPlaceholderColor={
                 Object {
-                  "marginBottom": 4,
-                  "marginTop": -4,
-                },
-              ]
-            }
-            testID="registrationForm-password"
-            underlineColorAndroid="transparent"
-            value="123-Abc"
-          />
-        </TouchableOpacity>
+                  "default": "#FAFAF1",
+                  "error": "#FAFAF1",
+                  "focus": "#FAFAF1",
+                }
+              }
+              floatingPlaceholderStyle={Object {}}
+              hideUnderline={true}
+              placeholder="Password"
+              rejectResponderTermination={true}
+              secureTextEntry={true}
+              style={
+                Array [
+                  undefined,
+                  Object {
+                    "marginBottom": 4,
+                    "marginTop": -4,
+                  },
+                ]
+              }
+              testID="registrationForm-password"
+              underlineColorAndroid="transparent"
+              value="123-Abc"
+            />
+          </TouchableWithoutFeedback>
+        </View>
         <Text
           error={false}
           style={
@@ -1139,56 +1153,57 @@ exports[`<RegistrationForm/> should enter not matching passwords and not submit 
       <View
         marginB-10={true}
       >
-        <TouchableOpacity
-          activeOpacity={1}
+        <View
           paddingB-8={true}
           paddingL-12={true}
           paddingR-12={true}
           paddingT-8={true}
           style={
             Array [
-              undefined,
               Object {
                 "backgroundColor": "#FAFAF1",
                 "borderRadius": 8,
               },
+              undefined,
             ]
           }
         >
-          <TextInput
-            accessibilityLabel="registrationForm-passwordRepeat"
-            allowFontScaling={true}
-            autoCapitalize="none"
-            color="#FAFAF1"
-            enableErrors={false}
-            floatOnFocus={true}
-            floatingPlaceholder={true}
-            floatingPlaceholderColor={
-              Object {
-                "default": "#FAFAF1",
-                "error": "#FAFAF1",
-                "focus": "#FAFAF1",
-              }
-            }
-            floatingPlaceholderStyle={Object {}}
-            hideUnderline={true}
-            placeholder="Confirm password"
-            rejectResponderTermination={true}
-            secureTextEntry={true}
-            style={
-              Array [
-                undefined,
+          <TouchableWithoutFeedback>
+            <TextInput
+              accessibilityLabel="registrationForm-passwordRepeat"
+              allowFontScaling={true}
+              autoCapitalize="none"
+              color="#FAFAF1"
+              enableErrors={false}
+              floatOnFocus={true}
+              floatingPlaceholder={true}
+              floatingPlaceholderColor={
                 Object {
-                  "marginBottom": 4,
-                  "marginTop": -4,
-                },
-              ]
-            }
-            testID="registrationForm-passwordRepeat"
-            underlineColorAndroid="transparent"
-            value="123-ABc"
-          />
-        </TouchableOpacity>
+                  "default": "#FAFAF1",
+                  "error": "#FAFAF1",
+                  "focus": "#FAFAF1",
+                }
+              }
+              floatingPlaceholderStyle={Object {}}
+              hideUnderline={true}
+              placeholder="Confirm password"
+              rejectResponderTermination={true}
+              secureTextEntry={true}
+              style={
+                Array [
+                  undefined,
+                  Object {
+                    "marginBottom": 4,
+                    "marginTop": -4,
+                  },
+                ]
+              }
+              testID="registrationForm-passwordRepeat"
+              underlineColorAndroid="transparent"
+              value="123-ABc"
+            />
+          </TouchableWithoutFeedback>
+        </View>
         <Text
           error={false}
           style={
@@ -1284,54 +1299,55 @@ exports[`<RegistrationForm/> should fill all fields and submit 1`] = `
             }
           }
         >
-          <TouchableOpacity
-            activeOpacity={1}
+          <View
             paddingB-8={true}
             paddingL-12={true}
             paddingR-12={true}
             paddingT-8={true}
             style={
               Array [
-                undefined,
                 Object {
                   "backgroundColor": "#FAFAF1",
                   "borderRadius": 8,
                 },
+                undefined,
               ]
             }
           >
-            <TextInput
-              accessibilityLabel="registrationForm-firstName"
-              allowFontScaling={true}
-              color="#FAFAF1"
-              enableErrors={false}
-              floatOnFocus={true}
-              floatingPlaceholder={true}
-              floatingPlaceholderColor={
-                Object {
-                  "default": "#FAFAF1",
-                  "error": "#FAFAF1",
-                  "focus": "#FAFAF1",
-                }
-              }
-              floatingPlaceholderStyle={Object {}}
-              hideUnderline={true}
-              placeholder="First name"
-              rejectResponderTermination={true}
-              style={
-                Array [
-                  undefined,
+            <TouchableWithoutFeedback>
+              <TextInput
+                accessibilityLabel="registrationForm-firstName"
+                allowFontScaling={true}
+                color="#FAFAF1"
+                enableErrors={false}
+                floatOnFocus={true}
+                floatingPlaceholder={true}
+                floatingPlaceholderColor={
                   Object {
-                    "marginBottom": 4,
-                    "marginTop": -4,
-                  },
-                ]
-              }
-              testID="registrationForm-firstName"
-              underlineColorAndroid="transparent"
-              value="John"
-            />
-          </TouchableOpacity>
+                    "default": "#FAFAF1",
+                    "error": "#FAFAF1",
+                    "focus": "#FAFAF1",
+                  }
+                }
+                floatingPlaceholderStyle={Object {}}
+                hideUnderline={true}
+                placeholder="First name"
+                rejectResponderTermination={true}
+                style={
+                  Array [
+                    undefined,
+                    Object {
+                      "marginBottom": 4,
+                      "marginTop": -4,
+                    },
+                  ]
+                }
+                testID="registrationForm-firstName"
+                underlineColorAndroid="transparent"
+                value="John"
+              />
+            </TouchableWithoutFeedback>
+          </View>
           <Text
             error={false}
             style={
@@ -1354,54 +1370,55 @@ exports[`<RegistrationForm/> should fill all fields and submit 1`] = `
             }
           }
         >
-          <TouchableOpacity
-            activeOpacity={1}
+          <View
             paddingB-8={true}
             paddingL-12={true}
             paddingR-12={true}
             paddingT-8={true}
             style={
               Array [
-                undefined,
                 Object {
                   "backgroundColor": "#FAFAF1",
                   "borderRadius": 8,
                 },
+                undefined,
               ]
             }
           >
-            <TextInput
-              accessibilityLabel="registrationForm-lastName"
-              allowFontScaling={true}
-              color="#FAFAF1"
-              enableErrors={false}
-              floatOnFocus={true}
-              floatingPlaceholder={true}
-              floatingPlaceholderColor={
-                Object {
-                  "default": "#FAFAF1",
-                  "error": "#FAFAF1",
-                  "focus": "#FAFAF1",
-                }
-              }
-              floatingPlaceholderStyle={Object {}}
-              hideUnderline={true}
-              placeholder="Last name"
-              rejectResponderTermination={true}
-              style={
-                Array [
-                  undefined,
+            <TouchableWithoutFeedback>
+              <TextInput
+                accessibilityLabel="registrationForm-lastName"
+                allowFontScaling={true}
+                color="#FAFAF1"
+                enableErrors={false}
+                floatOnFocus={true}
+                floatingPlaceholder={true}
+                floatingPlaceholderColor={
                   Object {
-                    "marginBottom": 4,
-                    "marginTop": -4,
-                  },
-                ]
-              }
-              testID="registrationForm-lastName"
-              underlineColorAndroid="transparent"
-              value="Doe"
-            />
-          </TouchableOpacity>
+                    "default": "#FAFAF1",
+                    "error": "#FAFAF1",
+                    "focus": "#FAFAF1",
+                  }
+                }
+                floatingPlaceholderStyle={Object {}}
+                hideUnderline={true}
+                placeholder="Last name"
+                rejectResponderTermination={true}
+                style={
+                  Array [
+                    undefined,
+                    Object {
+                      "marginBottom": 4,
+                      "marginTop": -4,
+                    },
+                  ]
+                }
+                testID="registrationForm-lastName"
+                underlineColorAndroid="transparent"
+                value="Doe"
+              />
+            </TouchableWithoutFeedback>
+          </View>
           <Text
             error={false}
             style={
@@ -1420,56 +1437,57 @@ exports[`<RegistrationForm/> should fill all fields and submit 1`] = `
       <View
         marginB-10={true}
       >
-        <TouchableOpacity
-          activeOpacity={1}
+        <View
           paddingB-8={true}
           paddingL-12={true}
           paddingR-12={true}
           paddingT-8={true}
           style={
             Array [
-              undefined,
               Object {
                 "backgroundColor": "#FAFAF1",
                 "borderRadius": 8,
               },
+              undefined,
             ]
           }
         >
-          <TextInput
-            accessibilityLabel="registrationForm-email"
-            allowFontScaling={true}
-            autoCapitalize="none"
-            color="#FAFAF1"
-            enableErrors={false}
-            floatOnFocus={true}
-            floatingPlaceholder={true}
-            floatingPlaceholderColor={
-              Object {
-                "default": "#FAFAF1",
-                "error": "#FAFAF1",
-                "focus": "#FAFAF1",
-              }
-            }
-            floatingPlaceholderStyle={Object {}}
-            hideUnderline={true}
-            keyboardType="email-address"
-            placeholder="Email"
-            rejectResponderTermination={true}
-            style={
-              Array [
-                undefined,
+          <TouchableWithoutFeedback>
+            <TextInput
+              accessibilityLabel="registrationForm-email"
+              allowFontScaling={true}
+              autoCapitalize="none"
+              color="#FAFAF1"
+              enableErrors={false}
+              floatOnFocus={true}
+              floatingPlaceholder={true}
+              floatingPlaceholderColor={
                 Object {
-                  "marginBottom": 4,
-                  "marginTop": -4,
-                },
-              ]
-            }
-            testID="registrationForm-email"
-            underlineColorAndroid="transparent"
-            value="happy@path.sk"
-          />
-        </TouchableOpacity>
+                  "default": "#FAFAF1",
+                  "error": "#FAFAF1",
+                  "focus": "#FAFAF1",
+                }
+              }
+              floatingPlaceholderStyle={Object {}}
+              hideUnderline={true}
+              keyboardType="email-address"
+              placeholder="Email"
+              rejectResponderTermination={true}
+              style={
+                Array [
+                  undefined,
+                  Object {
+                    "marginBottom": 4,
+                    "marginTop": -4,
+                  },
+                ]
+              }
+              testID="registrationForm-email"
+              underlineColorAndroid="transparent"
+              value="happy@path.sk"
+            />
+          </TouchableWithoutFeedback>
+        </View>
         <Text
           error={false}
           style={
@@ -1487,55 +1505,56 @@ exports[`<RegistrationForm/> should fill all fields and submit 1`] = `
       <View
         marginB-10={true}
       >
-        <TouchableOpacity
-          activeOpacity={1}
+        <View
           paddingB-8={true}
           paddingL-12={true}
           paddingR-12={true}
           paddingT-8={true}
           style={
             Array [
-              undefined,
               Object {
                 "backgroundColor": "#FAFAF1",
                 "borderRadius": 8,
               },
+              undefined,
             ]
           }
         >
-          <TextInput
-            allowFontScaling={true}
-            autoCapitalize="none"
-            color="#FAFAF1"
-            enableErrors={false}
-            floatOnFocus={true}
-            floatingPlaceholder={true}
-            floatingPlaceholderColor={
-              Object {
-                "default": "#FAFAF1",
-                "error": "#FAFAF1",
-                "focus": "#FAFAF1",
-              }
-            }
-            floatingPlaceholderStyle={Object {}}
-            hideUnderline={true}
-            placeholder="Password"
-            rejectResponderTermination={true}
-            secureTextEntry={true}
-            style={
-              Array [
-                undefined,
+          <TouchableWithoutFeedback>
+            <TextInput
+              allowFontScaling={true}
+              autoCapitalize="none"
+              color="#FAFAF1"
+              enableErrors={false}
+              floatOnFocus={true}
+              floatingPlaceholder={true}
+              floatingPlaceholderColor={
                 Object {
-                  "marginBottom": 4,
-                  "marginTop": -4,
-                },
-              ]
-            }
-            testID="registrationForm-password"
-            underlineColorAndroid="transparent"
-            value="123-Abc"
-          />
-        </TouchableOpacity>
+                  "default": "#FAFAF1",
+                  "error": "#FAFAF1",
+                  "focus": "#FAFAF1",
+                }
+              }
+              floatingPlaceholderStyle={Object {}}
+              hideUnderline={true}
+              placeholder="Password"
+              rejectResponderTermination={true}
+              secureTextEntry={true}
+              style={
+                Array [
+                  undefined,
+                  Object {
+                    "marginBottom": 4,
+                    "marginTop": -4,
+                  },
+                ]
+              }
+              testID="registrationForm-password"
+              underlineColorAndroid="transparent"
+              value="123-Abc"
+            />
+          </TouchableWithoutFeedback>
+        </View>
         <Text
           error={false}
           style={
@@ -1553,56 +1572,57 @@ exports[`<RegistrationForm/> should fill all fields and submit 1`] = `
       <View
         marginB-10={true}
       >
-        <TouchableOpacity
-          activeOpacity={1}
+        <View
           paddingB-8={true}
           paddingL-12={true}
           paddingR-12={true}
           paddingT-8={true}
           style={
             Array [
-              undefined,
               Object {
                 "backgroundColor": "#FAFAF1",
                 "borderRadius": 8,
               },
+              undefined,
             ]
           }
         >
-          <TextInput
-            accessibilityLabel="registrationForm-passwordRepeat"
-            allowFontScaling={true}
-            autoCapitalize="none"
-            color="#FAFAF1"
-            enableErrors={false}
-            floatOnFocus={true}
-            floatingPlaceholder={true}
-            floatingPlaceholderColor={
-              Object {
-                "default": "#FAFAF1",
-                "error": "#FAFAF1",
-                "focus": "#FAFAF1",
-              }
-            }
-            floatingPlaceholderStyle={Object {}}
-            hideUnderline={true}
-            placeholder="Confirm password"
-            rejectResponderTermination={true}
-            secureTextEntry={true}
-            style={
-              Array [
-                undefined,
+          <TouchableWithoutFeedback>
+            <TextInput
+              accessibilityLabel="registrationForm-passwordRepeat"
+              allowFontScaling={true}
+              autoCapitalize="none"
+              color="#FAFAF1"
+              enableErrors={false}
+              floatOnFocus={true}
+              floatingPlaceholder={true}
+              floatingPlaceholderColor={
                 Object {
-                  "marginBottom": 4,
-                  "marginTop": -4,
-                },
-              ]
-            }
-            testID="registrationForm-passwordRepeat"
-            underlineColorAndroid="transparent"
-            value="123-Abc"
-          />
-        </TouchableOpacity>
+                  "default": "#FAFAF1",
+                  "error": "#FAFAF1",
+                  "focus": "#FAFAF1",
+                }
+              }
+              floatingPlaceholderStyle={Object {}}
+              hideUnderline={true}
+              placeholder="Confirm password"
+              rejectResponderTermination={true}
+              secureTextEntry={true}
+              style={
+                Array [
+                  undefined,
+                  Object {
+                    "marginBottom": 4,
+                    "marginTop": -4,
+                  },
+                ]
+              }
+              testID="registrationForm-passwordRepeat"
+              underlineColorAndroid="transparent"
+              value="123-Abc"
+            />
+          </TouchableWithoutFeedback>
+        </View>
         <Text
           error={false}
           style={
@@ -1698,54 +1718,55 @@ exports[`<RegistrationForm/> should fill all mandatory fields and submit 1`] = `
             }
           }
         >
-          <TouchableOpacity
-            activeOpacity={1}
+          <View
             paddingB-8={true}
             paddingL-12={true}
             paddingR-12={true}
             paddingT-8={true}
             style={
               Array [
-                undefined,
                 Object {
                   "backgroundColor": "#FAFAF1",
                   "borderRadius": 8,
                 },
+                undefined,
               ]
             }
           >
-            <TextInput
-              accessibilityLabel="registrationForm-firstName"
-              allowFontScaling={true}
-              color="#FAFAF1"
-              enableErrors={false}
-              floatOnFocus={true}
-              floatingPlaceholder={true}
-              floatingPlaceholderColor={
-                Object {
-                  "default": "#FAFAF1",
-                  "error": "#FAFAF1",
-                  "focus": "#FAFAF1",
-                }
-              }
-              floatingPlaceholderStyle={Object {}}
-              hideUnderline={true}
-              placeholder="First name"
-              rejectResponderTermination={true}
-              style={
-                Array [
-                  undefined,
+            <TouchableWithoutFeedback>
+              <TextInput
+                accessibilityLabel="registrationForm-firstName"
+                allowFontScaling={true}
+                color="#FAFAF1"
+                enableErrors={false}
+                floatOnFocus={true}
+                floatingPlaceholder={true}
+                floatingPlaceholderColor={
                   Object {
-                    "marginBottom": 4,
-                    "marginTop": -4,
-                  },
-                ]
-              }
-              testID="registrationForm-firstName"
-              underlineColorAndroid="transparent"
-              value=""
-            />
-          </TouchableOpacity>
+                    "default": "#FAFAF1",
+                    "error": "#FAFAF1",
+                    "focus": "#FAFAF1",
+                  }
+                }
+                floatingPlaceholderStyle={Object {}}
+                hideUnderline={true}
+                placeholder="First name"
+                rejectResponderTermination={true}
+                style={
+                  Array [
+                    undefined,
+                    Object {
+                      "marginBottom": 4,
+                      "marginTop": -4,
+                    },
+                  ]
+                }
+                testID="registrationForm-firstName"
+                underlineColorAndroid="transparent"
+                value=""
+              />
+            </TouchableWithoutFeedback>
+          </View>
           <Text
             error={false}
             style={
@@ -1768,54 +1789,55 @@ exports[`<RegistrationForm/> should fill all mandatory fields and submit 1`] = `
             }
           }
         >
-          <TouchableOpacity
-            activeOpacity={1}
+          <View
             paddingB-8={true}
             paddingL-12={true}
             paddingR-12={true}
             paddingT-8={true}
             style={
               Array [
-                undefined,
                 Object {
                   "backgroundColor": "#FAFAF1",
                   "borderRadius": 8,
                 },
+                undefined,
               ]
             }
           >
-            <TextInput
-              accessibilityLabel="registrationForm-lastName"
-              allowFontScaling={true}
-              color="#FAFAF1"
-              enableErrors={false}
-              floatOnFocus={true}
-              floatingPlaceholder={true}
-              floatingPlaceholderColor={
-                Object {
-                  "default": "#FAFAF1",
-                  "error": "#FAFAF1",
-                  "focus": "#FAFAF1",
-                }
-              }
-              floatingPlaceholderStyle={Object {}}
-              hideUnderline={true}
-              placeholder="Last name"
-              rejectResponderTermination={true}
-              style={
-                Array [
-                  undefined,
+            <TouchableWithoutFeedback>
+              <TextInput
+                accessibilityLabel="registrationForm-lastName"
+                allowFontScaling={true}
+                color="#FAFAF1"
+                enableErrors={false}
+                floatOnFocus={true}
+                floatingPlaceholder={true}
+                floatingPlaceholderColor={
                   Object {
-                    "marginBottom": 4,
-                    "marginTop": -4,
-                  },
-                ]
-              }
-              testID="registrationForm-lastName"
-              underlineColorAndroid="transparent"
-              value=""
-            />
-          </TouchableOpacity>
+                    "default": "#FAFAF1",
+                    "error": "#FAFAF1",
+                    "focus": "#FAFAF1",
+                  }
+                }
+                floatingPlaceholderStyle={Object {}}
+                hideUnderline={true}
+                placeholder="Last name"
+                rejectResponderTermination={true}
+                style={
+                  Array [
+                    undefined,
+                    Object {
+                      "marginBottom": 4,
+                      "marginTop": -4,
+                    },
+                  ]
+                }
+                testID="registrationForm-lastName"
+                underlineColorAndroid="transparent"
+                value=""
+              />
+            </TouchableWithoutFeedback>
+          </View>
           <Text
             error={false}
             style={
@@ -1834,56 +1856,57 @@ exports[`<RegistrationForm/> should fill all mandatory fields and submit 1`] = `
       <View
         marginB-10={true}
       >
-        <TouchableOpacity
-          activeOpacity={1}
+        <View
           paddingB-8={true}
           paddingL-12={true}
           paddingR-12={true}
           paddingT-8={true}
           style={
             Array [
-              undefined,
               Object {
                 "backgroundColor": "#FAFAF1",
                 "borderRadius": 8,
               },
+              undefined,
             ]
           }
         >
-          <TextInput
-            accessibilityLabel="registrationForm-email"
-            allowFontScaling={true}
-            autoCapitalize="none"
-            color="#FAFAF1"
-            enableErrors={false}
-            floatOnFocus={true}
-            floatingPlaceholder={true}
-            floatingPlaceholderColor={
-              Object {
-                "default": "#FAFAF1",
-                "error": "#FAFAF1",
-                "focus": "#FAFAF1",
-              }
-            }
-            floatingPlaceholderStyle={Object {}}
-            hideUnderline={true}
-            keyboardType="email-address"
-            placeholder="Email"
-            rejectResponderTermination={true}
-            style={
-              Array [
-                undefined,
+          <TouchableWithoutFeedback>
+            <TextInput
+              accessibilityLabel="registrationForm-email"
+              allowFontScaling={true}
+              autoCapitalize="none"
+              color="#FAFAF1"
+              enableErrors={false}
+              floatOnFocus={true}
+              floatingPlaceholder={true}
+              floatingPlaceholderColor={
                 Object {
-                  "marginBottom": 4,
-                  "marginTop": -4,
-                },
-              ]
-            }
-            testID="registrationForm-email"
-            underlineColorAndroid="transparent"
-            value="happy@path.sk"
-          />
-        </TouchableOpacity>
+                  "default": "#FAFAF1",
+                  "error": "#FAFAF1",
+                  "focus": "#FAFAF1",
+                }
+              }
+              floatingPlaceholderStyle={Object {}}
+              hideUnderline={true}
+              keyboardType="email-address"
+              placeholder="Email"
+              rejectResponderTermination={true}
+              style={
+                Array [
+                  undefined,
+                  Object {
+                    "marginBottom": 4,
+                    "marginTop": -4,
+                  },
+                ]
+              }
+              testID="registrationForm-email"
+              underlineColorAndroid="transparent"
+              value="happy@path.sk"
+            />
+          </TouchableWithoutFeedback>
+        </View>
         <Text
           error={false}
           style={
@@ -1901,55 +1924,56 @@ exports[`<RegistrationForm/> should fill all mandatory fields and submit 1`] = `
       <View
         marginB-10={true}
       >
-        <TouchableOpacity
-          activeOpacity={1}
+        <View
           paddingB-8={true}
           paddingL-12={true}
           paddingR-12={true}
           paddingT-8={true}
           style={
             Array [
-              undefined,
               Object {
                 "backgroundColor": "#FAFAF1",
                 "borderRadius": 8,
               },
+              undefined,
             ]
           }
         >
-          <TextInput
-            allowFontScaling={true}
-            autoCapitalize="none"
-            color="#FAFAF1"
-            enableErrors={false}
-            floatOnFocus={true}
-            floatingPlaceholder={true}
-            floatingPlaceholderColor={
-              Object {
-                "default": "#FAFAF1",
-                "error": "#FAFAF1",
-                "focus": "#FAFAF1",
-              }
-            }
-            floatingPlaceholderStyle={Object {}}
-            hideUnderline={true}
-            placeholder="Password"
-            rejectResponderTermination={true}
-            secureTextEntry={true}
-            style={
-              Array [
-                undefined,
+          <TouchableWithoutFeedback>
+            <TextInput
+              allowFontScaling={true}
+              autoCapitalize="none"
+              color="#FAFAF1"
+              enableErrors={false}
+              floatOnFocus={true}
+              floatingPlaceholder={true}
+              floatingPlaceholderColor={
                 Object {
-                  "marginBottom": 4,
-                  "marginTop": -4,
-                },
-              ]
-            }
-            testID="registrationForm-password"
-            underlineColorAndroid="transparent"
-            value="123-Abc"
-          />
-        </TouchableOpacity>
+                  "default": "#FAFAF1",
+                  "error": "#FAFAF1",
+                  "focus": "#FAFAF1",
+                }
+              }
+              floatingPlaceholderStyle={Object {}}
+              hideUnderline={true}
+              placeholder="Password"
+              rejectResponderTermination={true}
+              secureTextEntry={true}
+              style={
+                Array [
+                  undefined,
+                  Object {
+                    "marginBottom": 4,
+                    "marginTop": -4,
+                  },
+                ]
+              }
+              testID="registrationForm-password"
+              underlineColorAndroid="transparent"
+              value="123-Abc"
+            />
+          </TouchableWithoutFeedback>
+        </View>
         <Text
           error={false}
           style={
@@ -1967,56 +1991,57 @@ exports[`<RegistrationForm/> should fill all mandatory fields and submit 1`] = `
       <View
         marginB-10={true}
       >
-        <TouchableOpacity
-          activeOpacity={1}
+        <View
           paddingB-8={true}
           paddingL-12={true}
           paddingR-12={true}
           paddingT-8={true}
           style={
             Array [
-              undefined,
               Object {
                 "backgroundColor": "#FAFAF1",
                 "borderRadius": 8,
               },
+              undefined,
             ]
           }
         >
-          <TextInput
-            accessibilityLabel="registrationForm-passwordRepeat"
-            allowFontScaling={true}
-            autoCapitalize="none"
-            color="#FAFAF1"
-            enableErrors={false}
-            floatOnFocus={true}
-            floatingPlaceholder={true}
-            floatingPlaceholderColor={
-              Object {
-                "default": "#FAFAF1",
-                "error": "#FAFAF1",
-                "focus": "#FAFAF1",
-              }
-            }
-            floatingPlaceholderStyle={Object {}}
-            hideUnderline={true}
-            placeholder="Confirm password"
-            rejectResponderTermination={true}
-            secureTextEntry={true}
-            style={
-              Array [
-                undefined,
+          <TouchableWithoutFeedback>
+            <TextInput
+              accessibilityLabel="registrationForm-passwordRepeat"
+              allowFontScaling={true}
+              autoCapitalize="none"
+              color="#FAFAF1"
+              enableErrors={false}
+              floatOnFocus={true}
+              floatingPlaceholder={true}
+              floatingPlaceholderColor={
                 Object {
-                  "marginBottom": 4,
-                  "marginTop": -4,
-                },
-              ]
-            }
-            testID="registrationForm-passwordRepeat"
-            underlineColorAndroid="transparent"
-            value="123-Abc"
-          />
-        </TouchableOpacity>
+                  "default": "#FAFAF1",
+                  "error": "#FAFAF1",
+                  "focus": "#FAFAF1",
+                }
+              }
+              floatingPlaceholderStyle={Object {}}
+              hideUnderline={true}
+              placeholder="Confirm password"
+              rejectResponderTermination={true}
+              secureTextEntry={true}
+              style={
+                Array [
+                  undefined,
+                  Object {
+                    "marginBottom": 4,
+                    "marginTop": -4,
+                  },
+                ]
+              }
+              testID="registrationForm-passwordRepeat"
+              underlineColorAndroid="transparent"
+              value="123-Abc"
+            />
+          </TouchableWithoutFeedback>
+        </View>
         <Text
           error={false}
           style={
@@ -2112,54 +2137,55 @@ exports[`<RegistrationForm/> should omit consent and not submit 1`] = `
             }
           }
         >
-          <TouchableOpacity
-            activeOpacity={1}
+          <View
             paddingB-8={true}
             paddingL-12={true}
             paddingR-12={true}
             paddingT-8={true}
             style={
               Array [
-                undefined,
                 Object {
                   "backgroundColor": "#FAFAF1",
                   "borderRadius": 8,
                 },
+                undefined,
               ]
             }
           >
-            <TextInput
-              accessibilityLabel="registrationForm-firstName"
-              allowFontScaling={true}
-              color="#FAFAF1"
-              enableErrors={false}
-              floatOnFocus={true}
-              floatingPlaceholder={true}
-              floatingPlaceholderColor={
-                Object {
-                  "default": "#FAFAF1",
-                  "error": "#FAFAF1",
-                  "focus": "#FAFAF1",
-                }
-              }
-              floatingPlaceholderStyle={Object {}}
-              hideUnderline={true}
-              placeholder="First name"
-              rejectResponderTermination={true}
-              style={
-                Array [
-                  undefined,
+            <TouchableWithoutFeedback>
+              <TextInput
+                accessibilityLabel="registrationForm-firstName"
+                allowFontScaling={true}
+                color="#FAFAF1"
+                enableErrors={false}
+                floatOnFocus={true}
+                floatingPlaceholder={true}
+                floatingPlaceholderColor={
                   Object {
-                    "marginBottom": 4,
-                    "marginTop": -4,
-                  },
-                ]
-              }
-              testID="registrationForm-firstName"
-              underlineColorAndroid="transparent"
-              value="John"
-            />
-          </TouchableOpacity>
+                    "default": "#FAFAF1",
+                    "error": "#FAFAF1",
+                    "focus": "#FAFAF1",
+                  }
+                }
+                floatingPlaceholderStyle={Object {}}
+                hideUnderline={true}
+                placeholder="First name"
+                rejectResponderTermination={true}
+                style={
+                  Array [
+                    undefined,
+                    Object {
+                      "marginBottom": 4,
+                      "marginTop": -4,
+                    },
+                  ]
+                }
+                testID="registrationForm-firstName"
+                underlineColorAndroid="transparent"
+                value="John"
+              />
+            </TouchableWithoutFeedback>
+          </View>
           <Text
             error={false}
             style={
@@ -2182,54 +2208,55 @@ exports[`<RegistrationForm/> should omit consent and not submit 1`] = `
             }
           }
         >
-          <TouchableOpacity
-            activeOpacity={1}
+          <View
             paddingB-8={true}
             paddingL-12={true}
             paddingR-12={true}
             paddingT-8={true}
             style={
               Array [
-                undefined,
                 Object {
                   "backgroundColor": "#FAFAF1",
                   "borderRadius": 8,
                 },
+                undefined,
               ]
             }
           >
-            <TextInput
-              accessibilityLabel="registrationForm-lastName"
-              allowFontScaling={true}
-              color="#FAFAF1"
-              enableErrors={false}
-              floatOnFocus={true}
-              floatingPlaceholder={true}
-              floatingPlaceholderColor={
-                Object {
-                  "default": "#FAFAF1",
-                  "error": "#FAFAF1",
-                  "focus": "#FAFAF1",
-                }
-              }
-              floatingPlaceholderStyle={Object {}}
-              hideUnderline={true}
-              placeholder="Last name"
-              rejectResponderTermination={true}
-              style={
-                Array [
-                  undefined,
+            <TouchableWithoutFeedback>
+              <TextInput
+                accessibilityLabel="registrationForm-lastName"
+                allowFontScaling={true}
+                color="#FAFAF1"
+                enableErrors={false}
+                floatOnFocus={true}
+                floatingPlaceholder={true}
+                floatingPlaceholderColor={
                   Object {
-                    "marginBottom": 4,
-                    "marginTop": -4,
-                  },
-                ]
-              }
-              testID="registrationForm-lastName"
-              underlineColorAndroid="transparent"
-              value="Doe"
-            />
-          </TouchableOpacity>
+                    "default": "#FAFAF1",
+                    "error": "#FAFAF1",
+                    "focus": "#FAFAF1",
+                  }
+                }
+                floatingPlaceholderStyle={Object {}}
+                hideUnderline={true}
+                placeholder="Last name"
+                rejectResponderTermination={true}
+                style={
+                  Array [
+                    undefined,
+                    Object {
+                      "marginBottom": 4,
+                      "marginTop": -4,
+                    },
+                  ]
+                }
+                testID="registrationForm-lastName"
+                underlineColorAndroid="transparent"
+                value="Doe"
+              />
+            </TouchableWithoutFeedback>
+          </View>
           <Text
             error={false}
             style={
@@ -2248,56 +2275,57 @@ exports[`<RegistrationForm/> should omit consent and not submit 1`] = `
       <View
         marginB-10={true}
       >
-        <TouchableOpacity
-          activeOpacity={1}
+        <View
           paddingB-8={true}
           paddingL-12={true}
           paddingR-12={true}
           paddingT-8={true}
           style={
             Array [
-              undefined,
               Object {
                 "backgroundColor": "#FAFAF1",
                 "borderRadius": 8,
               },
+              undefined,
             ]
           }
         >
-          <TextInput
-            accessibilityLabel="registrationForm-email"
-            allowFontScaling={true}
-            autoCapitalize="none"
-            color="#FAFAF1"
-            enableErrors={false}
-            floatOnFocus={true}
-            floatingPlaceholder={true}
-            floatingPlaceholderColor={
-              Object {
-                "default": "#FAFAF1",
-                "error": "#FAFAF1",
-                "focus": "#FAFAF1",
-              }
-            }
-            floatingPlaceholderStyle={Object {}}
-            hideUnderline={true}
-            keyboardType="email-address"
-            placeholder="Email"
-            rejectResponderTermination={true}
-            style={
-              Array [
-                undefined,
+          <TouchableWithoutFeedback>
+            <TextInput
+              accessibilityLabel="registrationForm-email"
+              allowFontScaling={true}
+              autoCapitalize="none"
+              color="#FAFAF1"
+              enableErrors={false}
+              floatOnFocus={true}
+              floatingPlaceholder={true}
+              floatingPlaceholderColor={
                 Object {
-                  "marginBottom": 4,
-                  "marginTop": -4,
-                },
-              ]
-            }
-            testID="registrationForm-email"
-            underlineColorAndroid="transparent"
-            value="sad@path.sk"
-          />
-        </TouchableOpacity>
+                  "default": "#FAFAF1",
+                  "error": "#FAFAF1",
+                  "focus": "#FAFAF1",
+                }
+              }
+              floatingPlaceholderStyle={Object {}}
+              hideUnderline={true}
+              keyboardType="email-address"
+              placeholder="Email"
+              rejectResponderTermination={true}
+              style={
+                Array [
+                  undefined,
+                  Object {
+                    "marginBottom": 4,
+                    "marginTop": -4,
+                  },
+                ]
+              }
+              testID="registrationForm-email"
+              underlineColorAndroid="transparent"
+              value="sad@path.sk"
+            />
+          </TouchableWithoutFeedback>
+        </View>
         <Text
           error={false}
           style={
@@ -2315,55 +2343,56 @@ exports[`<RegistrationForm/> should omit consent and not submit 1`] = `
       <View
         marginB-10={true}
       >
-        <TouchableOpacity
-          activeOpacity={1}
+        <View
           paddingB-8={true}
           paddingL-12={true}
           paddingR-12={true}
           paddingT-8={true}
           style={
             Array [
-              undefined,
               Object {
                 "backgroundColor": "#FAFAF1",
                 "borderRadius": 8,
               },
+              undefined,
             ]
           }
         >
-          <TextInput
-            allowFontScaling={true}
-            autoCapitalize="none"
-            color="#FAFAF1"
-            enableErrors={false}
-            floatOnFocus={true}
-            floatingPlaceholder={true}
-            floatingPlaceholderColor={
-              Object {
-                "default": "#FAFAF1",
-                "error": "#FAFAF1",
-                "focus": "#FAFAF1",
-              }
-            }
-            floatingPlaceholderStyle={Object {}}
-            hideUnderline={true}
-            placeholder="Password"
-            rejectResponderTermination={true}
-            secureTextEntry={true}
-            style={
-              Array [
-                undefined,
+          <TouchableWithoutFeedback>
+            <TextInput
+              allowFontScaling={true}
+              autoCapitalize="none"
+              color="#FAFAF1"
+              enableErrors={false}
+              floatOnFocus={true}
+              floatingPlaceholder={true}
+              floatingPlaceholderColor={
                 Object {
-                  "marginBottom": 4,
-                  "marginTop": -4,
-                },
-              ]
-            }
-            testID="registrationForm-password"
-            underlineColorAndroid="transparent"
-            value="123-Abc"
-          />
-        </TouchableOpacity>
+                  "default": "#FAFAF1",
+                  "error": "#FAFAF1",
+                  "focus": "#FAFAF1",
+                }
+              }
+              floatingPlaceholderStyle={Object {}}
+              hideUnderline={true}
+              placeholder="Password"
+              rejectResponderTermination={true}
+              secureTextEntry={true}
+              style={
+                Array [
+                  undefined,
+                  Object {
+                    "marginBottom": 4,
+                    "marginTop": -4,
+                  },
+                ]
+              }
+              testID="registrationForm-password"
+              underlineColorAndroid="transparent"
+              value="123-Abc"
+            />
+          </TouchableWithoutFeedback>
+        </View>
         <Text
           error={false}
           style={
@@ -2381,56 +2410,57 @@ exports[`<RegistrationForm/> should omit consent and not submit 1`] = `
       <View
         marginB-10={true}
       >
-        <TouchableOpacity
-          activeOpacity={1}
+        <View
           paddingB-8={true}
           paddingL-12={true}
           paddingR-12={true}
           paddingT-8={true}
           style={
             Array [
-              undefined,
               Object {
                 "backgroundColor": "#FAFAF1",
                 "borderRadius": 8,
               },
+              undefined,
             ]
           }
         >
-          <TextInput
-            accessibilityLabel="registrationForm-passwordRepeat"
-            allowFontScaling={true}
-            autoCapitalize="none"
-            color="#FAFAF1"
-            enableErrors={false}
-            floatOnFocus={true}
-            floatingPlaceholder={true}
-            floatingPlaceholderColor={
-              Object {
-                "default": "#FAFAF1",
-                "error": "#FAFAF1",
-                "focus": "#FAFAF1",
-              }
-            }
-            floatingPlaceholderStyle={Object {}}
-            hideUnderline={true}
-            placeholder="Confirm password"
-            rejectResponderTermination={true}
-            secureTextEntry={true}
-            style={
-              Array [
-                undefined,
+          <TouchableWithoutFeedback>
+            <TextInput
+              accessibilityLabel="registrationForm-passwordRepeat"
+              allowFontScaling={true}
+              autoCapitalize="none"
+              color="#FAFAF1"
+              enableErrors={false}
+              floatOnFocus={true}
+              floatingPlaceholder={true}
+              floatingPlaceholderColor={
                 Object {
-                  "marginBottom": 4,
-                  "marginTop": -4,
-                },
-              ]
-            }
-            testID="registrationForm-passwordRepeat"
-            underlineColorAndroid="transparent"
-            value="123-Abc"
-          />
-        </TouchableOpacity>
+                  "default": "#FAFAF1",
+                  "error": "#FAFAF1",
+                  "focus": "#FAFAF1",
+                }
+              }
+              floatingPlaceholderStyle={Object {}}
+              hideUnderline={true}
+              placeholder="Confirm password"
+              rejectResponderTermination={true}
+              secureTextEntry={true}
+              style={
+                Array [
+                  undefined,
+                  Object {
+                    "marginBottom": 4,
+                    "marginTop": -4,
+                  },
+                ]
+              }
+              testID="registrationForm-passwordRepeat"
+              underlineColorAndroid="transparent"
+              value="123-Abc"
+            />
+          </TouchableWithoutFeedback>
+        </View>
         <Text
           error={false}
           style={

@@ -10,50 +10,51 @@ exports[`<TextField/> should render 1`] = `
     }
   }
 >
-  <TouchableOpacity
-    activeOpacity={1}
+  <View
     paddingB-8={true}
     paddingL-12={true}
     paddingR-12={true}
     paddingT-8={true}
     style={
       Array [
-        undefined,
         Object {
           "backgroundColor": "#FAFAF1",
           "borderRadius": 8,
         },
+        undefined,
       ]
     }
   >
-    <TextInput
-      allowFontScaling={true}
-      color="#FAFAF1"
-      enableErrors={false}
-      floatOnFocus={true}
-      floatingPlaceholder={true}
-      floatingPlaceholderColor={
-        Object {
-          "default": "#FAFAF1",
-          "error": "#FAFAF1",
-          "focus": "#FAFAF1",
-        }
-      }
-      floatingPlaceholderStyle={Object {}}
-      hideUnderline={true}
-      rejectResponderTermination={true}
-      style={
-        Array [
-          undefined,
+    <TouchableWithoutFeedback>
+      <TextInput
+        allowFontScaling={true}
+        color="#FAFAF1"
+        enableErrors={false}
+        floatOnFocus={true}
+        floatingPlaceholder={true}
+        floatingPlaceholderColor={
           Object {
-            "marginBottom": 4,
-            "marginTop": -4,
-          },
-        ]
-      }
-      underlineColorAndroid="transparent"
-    />
-  </TouchableOpacity>
+            "default": "#FAFAF1",
+            "error": "#FAFAF1",
+            "focus": "#FAFAF1",
+          }
+        }
+        floatingPlaceholderStyle={Object {}}
+        hideUnderline={true}
+        rejectResponderTermination={true}
+        style={
+          Array [
+            undefined,
+            Object {
+              "marginBottom": 4,
+              "marginTop": -4,
+            },
+          ]
+        }
+        underlineColorAndroid="transparent"
+      />
+    </TouchableWithoutFeedback>
+  </View>
   <Text
     error={false}
     style={

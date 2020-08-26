@@ -10,16 +10,18 @@ exports[`<Patch/> should render 1`] = `
     }
   }
 >
-  <TouchableOpacity
+  <View
     style={
       Array [
-        undefined,
         Object {
           "backgroundColor": "#FAFAF1",
           "borderRadius": 8,
         },
+        undefined,
       ]
     }
-  />
+  >
+    <TouchableWithoutFeedback />
+  </View>
 </View>
 `;

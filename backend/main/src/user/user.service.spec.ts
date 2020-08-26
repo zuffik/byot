@@ -97,14 +97,14 @@ describe('UserService', () => {
   });
 
   it('should find user by username or email', async () => {
-    const usernameOrEmail = 'user';
+    const userNameOrEmail = 'user';
     const spy = jest.spyOn(repository, 'findOne');
-    await service.findByUsernameOrEmail(usernameOrEmail);
+    await service.findByUsernameOrEmail(userNameOrEmail);
     expect(spy).toBeCalledWith(
       expect.objectContaining({
         where: expect.arrayContaining([
-          expect.objectContaining({ email: usernameOrEmail }),
-          expect.objectContaining({ userName: usernameOrEmail }),
+          expect.objectContaining({ email: userNameOrEmail }),
+          expect.objectContaining({ userName: userNameOrEmail }),
         ]),
       }),
     );

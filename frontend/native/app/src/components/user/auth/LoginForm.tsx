@@ -15,7 +15,7 @@ export const testIDs = {
 };
 
 interface Props {
-  onSubmit: (credentials: {usernameOrEmail: string; password: string}) => void;
+  onSubmit: (credentials: {userNameOrEmail: string; password: string}) => void;
   children?: React.ReactNode;
   loading?: boolean;
 }
@@ -46,7 +46,7 @@ export const LoginForm: React.FC<Props> = (props: Props) => {
         validationSchema={loginSchema(t)}
         validateOnBlur
         validateOnChange
-        initialValues={{usernameOrEmail: '', password: ''}}
+        initialValues={{userNameOrEmail: '', password: ''}}
         onSubmit={c => props.onSubmit(c)}>
         {({handleChange, handleBlur, handleSubmit, values, touched, errors}) => (
           <>
@@ -55,12 +55,12 @@ export const LoginForm: React.FC<Props> = (props: Props) => {
               <View marginB-4>
                 <TextField
                   placeholder={t('Username or email')}
-                  value={values.usernameOrEmail}
-                  onBlur={handleBlur('usernameOrEmail')}
-                  onChangeText={handleChange('usernameOrEmail')}
+                  value={values.userNameOrEmail}
+                  onBlur={handleBlur('userNameOrEmail')}
+                  onChangeText={handleChange('userNameOrEmail')}
                   keyboardType="email-address"
                   infoText
-                  error={(touched.usernameOrEmail && errors.usernameOrEmail) as string}
+                  error={(touched.userNameOrEmail && errors.userNameOrEmail) as string}
                   testID={testIDs.usernameEmail}
                   accessibilityLabel={testIDs.usernameEmail}
                   autoCapitalize="none"

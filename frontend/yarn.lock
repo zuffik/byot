@@ -14091,7 +14091,7 @@ react-native-animatable@1.3.3, react-native-animatable@^1.1.0:
   dependencies:
     prop-types "^15.7.2"
 
-react-native-animated-spinkit@zuffik/react-native-animated-spinkit#master:
+react-native-animated-spinkit@zuffik/react-native-animated-spinkit:
   version "1.4.1"
   resolved "https://codeload.github.com/zuffik/react-native-animated-spinkit/tar.gz/0e8581f93481160b49a064c0af89e69f4a11e405"
 

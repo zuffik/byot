@@ -15,11 +15,11 @@ export const LoginScreen: React.FC<Props> = (props: Props) => {
   const dispatch = useDispatch();
   const nav = useNavigation();
   const loading = useSelector((state: NativeAppState) => state.auth.isProcessing);
-  const onSubmit = (credentials: {usernameOrEmail: string; password: string}) =>
+  const onSubmit = (credentials: {userNameOrEmail: string; password: string}) =>
     dispatch(
       ProcessActionExtractor.dispatch(NativeAuth, {
         password: credentials.password,
-        userNameOrEmail: credentials.usernameOrEmail,
+        userNameOrEmail: credentials.userNameOrEmail,
       })
     );
   const onPasswordRequestPress = () => nav.navigate(Screens.RequestPasswordReset.Name);

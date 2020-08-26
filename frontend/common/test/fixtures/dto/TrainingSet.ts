@@ -14,15 +14,15 @@ export const trainingSet = ({withTrainings = true}: {withTrainings?: boolean} = 
     createdAt: dateTime(),
     updatedAt: dateTime(),
     label: mocker.sentence(),
-    trainings:
-      withTrainings &&
-      list(
-        _.times(mocker.integer({min: 2, max: 20}), () => training({withTrainingSet: false, owner})),
-        mocker.integer({
-          min: 10,
-          max: 200,
-        })
-      ),
+    trainings: withTrainings
+      ? list(
+          _.times(mocker.integer({min: 2, max: 20}), () => training({withTrainingSet: false, owner})),
+          mocker.integer({
+            min: 10,
+            max: 200,
+          })
+        )
+      : undefined,
     owner,
   });
 };

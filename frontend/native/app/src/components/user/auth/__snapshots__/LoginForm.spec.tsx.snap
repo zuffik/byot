@@ -26,65 +26,58 @@ exports[`<LoginForm/> should not submit form with one credential missing 1`] = `
       <View
         marginB-4={true}
       >
-        <TouchableOpacity
-          accessibilityLabel="loginForm-usernameEmail-root"
-          activeOpacity={1}
+        <View
           paddingB-8={true}
           paddingL-12={true}
           paddingR-12={true}
           paddingT-8={true}
           style={
             Array [
-              undefined,
               Object {
                 "backgroundColor": "#FAFAF1",
                 "borderRadius": 8,
               },
+              undefined,
             ]
           }
-          testID="loginForm-usernameEmail-root"
         >
-          <TextInput
-            PatchProps={
-              Object {
-                "accessibilityLabel": "loginForm-usernameEmail-root",
-                "testID": "loginForm-usernameEmail-root",
-              }
-            }
-            accessibilityLabel="loginForm-usernameEmail-input"
-            allowFontScaling={true}
-            autoCapitalize="none"
-            color="#FAFAF1"
-            enableErrors={false}
-            floatOnFocus={true}
-            floatingPlaceholder={true}
-            floatingPlaceholderColor={
-              Object {
-                "default": "#FAFAF1",
-                "error": "#FAFAF1",
-                "focus": "#FAFAF1",
-              }
-            }
-            floatingPlaceholderStyle={Object {}}
-            hideUnderline={true}
-            infoText={true}
-            keyboardType="email-address"
-            placeholder="Username or email"
-            rejectResponderTermination={true}
-            style={
-              Array [
-                undefined,
+          <TouchableWithoutFeedback>
+            <TextInput
+              accessibilityLabel="loginForm-usernameEmail-input"
+              allowFontScaling={true}
+              autoCapitalize="none"
+              color="#FAFAF1"
+              enableErrors={false}
+              floatOnFocus={true}
+              floatingPlaceholder={true}
+              floatingPlaceholderColor={
                 Object {
-                  "marginBottom": 4,
-                  "marginTop": -4,
-                },
-              ]
-            }
-            testID="loginForm-usernameEmail-input"
-            underlineColorAndroid="transparent"
-            value="username"
-          />
-        </TouchableOpacity>
+                  "default": "#FAFAF1",
+                  "error": "#FAFAF1",
+                  "focus": "#FAFAF1",
+                }
+              }
+              floatingPlaceholderStyle={Object {}}
+              hideUnderline={true}
+              infoText={true}
+              keyboardType="email-address"
+              placeholder="Username or email"
+              rejectResponderTermination={true}
+              style={
+                Array [
+                  undefined,
+                  Object {
+                    "marginBottom": 4,
+                    "marginTop": -4,
+                  },
+                ]
+              }
+              testID="loginForm-usernameEmail-input"
+              underlineColorAndroid="transparent"
+              value="username"
+            />
+          </TouchableWithoutFeedback>
+        </View>
         <Text
           error={false}
           style={
@@ -102,67 +95,60 @@ exports[`<LoginForm/> should not submit form with one credential missing 1`] = `
       <View
         marginB-4={true}
       >
-        <TouchableOpacity
-          accessibilityLabel="loginForm-password-root"
-          activeOpacity={1}
+        <View
           paddingB-8={true}
           paddingL-12={true}
           paddingR-12={true}
           paddingT-8={true}
           style={
             Array [
-              undefined,
               Object {
                 "backgroundColor": "#FAFAF1",
                 "borderRadius": 8,
               },
+              undefined,
             ]
           }
-          testID="loginForm-password-root"
         >
-          <TextInput
-            PatchProps={
-              Object {
-                "accessibilityLabel": "loginForm-password-root",
-                "testID": "loginForm-password-root",
-              }
-            }
-            accessibilityLabel="loginForm-password-input"
-            allowFontScaling={true}
-            autoCapitalize="none"
-            color="#FAFAF1"
-            enableErrors={false}
-            floatOnFocus={true}
-            floatingPlaceholder={true}
-            floatingPlaceholderColor={
-              Object {
-                "default": "#FAFAF1",
-                "error": "#FAFAF1",
-                "focus": "#FAFAF1",
-              }
-            }
-            floatingPlaceholderStyle={Object {}}
-            hideUnderline={true}
-            infoText={true}
-            placeholder="Enter password"
-            rejectResponderTermination={true}
-            secureTextEntry={true}
-            style={
-              Array [
+          <TouchableWithoutFeedback>
+            <TextInput
+              accessibilityLabel="loginForm-password-input"
+              allowFontScaling={true}
+              autoCapitalize="none"
+              color="#FAFAF1"
+              enableErrors={false}
+              floatOnFocus={true}
+              floatingPlaceholder={true}
+              floatingPlaceholderColor={
                 Object {
-                  "marginBottom": 48,
-                },
-                Object {
-                  "marginBottom": 4,
-                  "marginTop": -4,
-                },
-              ]
-            }
-            testID="loginForm-password-input"
-            underlineColorAndroid="transparent"
-            value=""
-          />
-        </TouchableOpacity>
+                  "default": "#FAFAF1",
+                  "error": "#FAFAF1",
+                  "focus": "#FAFAF1",
+                }
+              }
+              floatingPlaceholderStyle={Object {}}
+              hideUnderline={true}
+              infoText={true}
+              placeholder="Enter password"
+              rejectResponderTermination={true}
+              secureTextEntry={true}
+              style={
+                Array [
+                  Object {
+                    "marginBottom": 48,
+                  },
+                  Object {
+                    "marginBottom": 4,
+                    "marginTop": -4,
+                  },
+                ]
+              }
+              testID="loginForm-password-input"
+              underlineColorAndroid="transparent"
+              value=""
+            />
+          </TouchableWithoutFeedback>
+        </View>
         <Text
           error={false}
           style={
@@ -213,65 +199,58 @@ exports[`<LoginForm/> should submit form with credentials 1`] = `
       <View
         marginB-4={true}
       >
-        <TouchableOpacity
-          accessibilityLabel="loginForm-usernameEmail-root"
-          activeOpacity={1}
+        <View
           paddingB-8={true}
           paddingL-12={true}
           paddingR-12={true}
           paddingT-8={true}
           style={
             Array [
-              undefined,
               Object {
                 "backgroundColor": "#FAFAF1",
                 "borderRadius": 8,
               },
+              undefined,
             ]
           }
-          testID="loginForm-usernameEmail-root"
         >
-          <TextInput
-            PatchProps={
-              Object {
-                "accessibilityLabel": "loginForm-usernameEmail-root",
-                "testID": "loginForm-usernameEmail-root",
-              }
-            }
-            accessibilityLabel="loginForm-usernameEmail-input"
-            allowFontScaling={true}
-            autoCapitalize="none"
-            color="#FAFAF1"
-            enableErrors={false}
-            floatOnFocus={true}
-            floatingPlaceholder={true}
-            floatingPlaceholderColor={
-              Object {
-                "default": "#FAFAF1",
-                "error": "#FAFAF1",
-                "focus": "#FAFAF1",
-              }
-            }
-            floatingPlaceholderStyle={Object {}}
-            hideUnderline={true}
-            infoText={true}
-            keyboardType="email-address"
-            placeholder="Username or email"
-            rejectResponderTermination={true}
-            style={
-              Array [
-                undefined,
+          <TouchableWithoutFeedback>
+            <TextInput
+              accessibilityLabel="loginForm-usernameEmail-input"
+              allowFontScaling={true}
+              autoCapitalize="none"
+              color="#FAFAF1"
+              enableErrors={false}
+              floatOnFocus={true}
+              floatingPlaceholder={true}
+              floatingPlaceholderColor={
                 Object {
-                  "marginBottom": 4,
-                  "marginTop": -4,
-                },
-              ]
-            }
-            testID="loginForm-usernameEmail-input"
-            underlineColorAndroid="transparent"
-            value="username"
-          />
-        </TouchableOpacity>
+                  "default": "#FAFAF1",
+                  "error": "#FAFAF1",
+                  "focus": "#FAFAF1",
+                }
+              }
+              floatingPlaceholderStyle={Object {}}
+              hideUnderline={true}
+              infoText={true}
+              keyboardType="email-address"
+              placeholder="Username or email"
+              rejectResponderTermination={true}
+              style={
+                Array [
+                  undefined,
+                  Object {
+                    "marginBottom": 4,
+                    "marginTop": -4,
+                  },
+                ]
+              }
+              testID="loginForm-usernameEmail-input"
+              underlineColorAndroid="transparent"
+              value="username"
+            />
+          </TouchableWithoutFeedback>
+        </View>
         <Text
           error={false}
           style={
@@ -289,67 +268,60 @@ exports[`<LoginForm/> should submit form with credentials 1`] = `
       <View
         marginB-4={true}
       >
-        <TouchableOpacity
-          accessibilityLabel="loginForm-password-root"
-          activeOpacity={1}
+        <View
           paddingB-8={true}
           paddingL-12={true}
           paddingR-12={true}
           paddingT-8={true}
           style={
             Array [
-              undefined,
               Object {
                 "backgroundColor": "#FAFAF1",
                 "borderRadius": 8,
               },
+              undefined,
             ]
           }
-          testID="loginForm-password-root"
         >
-          <TextInput
-            PatchProps={
-              Object {
-                "accessibilityLabel": "loginForm-password-root",
-                "testID": "loginForm-password-root",
-              }
-            }
-            accessibilityLabel="loginForm-password-input"
-            allowFontScaling={true}
-            autoCapitalize="none"
-            color="#FAFAF1"
-            enableErrors={false}
-            floatOnFocus={true}
-            floatingPlaceholder={true}
-            floatingPlaceholderColor={
-              Object {
-                "default": "#FAFAF1",
-                "error": "#FAFAF1",
-                "focus": "#FAFAF1",
-              }
-            }
-            floatingPlaceholderStyle={Object {}}
-            hideUnderline={true}
-            infoText={true}
-            placeholder="Enter password"
-            rejectResponderTermination={true}
-            secureTextEntry={true}
-            style={
-              Array [
+          <TouchableWithoutFeedback>
+            <TextInput
+              accessibilityLabel="loginForm-password-input"
+              allowFontScaling={true}
+              autoCapitalize="none"
+              color="#FAFAF1"
+              enableErrors={false}
+              floatOnFocus={true}
+              floatingPlaceholder={true}
+              floatingPlaceholderColor={
                 Object {
-                  "marginBottom": 48,
-                },
-                Object {
-                  "marginBottom": 4,
-                  "marginTop": -4,
-                },
-              ]
-            }
-            testID="loginForm-password-input"
-            underlineColorAndroid="transparent"
-            value="password"
-          />
-        </TouchableOpacity>
+                  "default": "#FAFAF1",
+                  "error": "#FAFAF1",
+                  "focus": "#FAFAF1",
+                }
+              }
+              floatingPlaceholderStyle={Object {}}
+              hideUnderline={true}
+              infoText={true}
+              placeholder="Enter password"
+              rejectResponderTermination={true}
+              secureTextEntry={true}
+              style={
+                Array [
+                  Object {
+                    "marginBottom": 48,
+                  },
+                  Object {
+                    "marginBottom": 4,
+                    "marginTop": -4,
+                  },
+                ]
+              }
+              testID="loginForm-password-input"
+              underlineColorAndroid="transparent"
+              value="password"
+            />
+          </TouchableWithoutFeedback>
+        </View>
         <Text
           error={false}
           style={

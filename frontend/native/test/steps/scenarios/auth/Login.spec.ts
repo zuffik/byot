@@ -1,29 +1,30 @@
 import {Then, When, After} from 'cucumber';
 import {envString} from '@byot/common/test/helpers/EnvString';
+import {fw} from '../../../app/Fw';
 
 // logging in
 When(/^user visits login form$/, () => {
-  $('~loginForm-root').waitForDisplayed();
+  fw.$('~loginForm-root').waitForDisplayed();
 });
 
 When(/^user enters username (.*)$/, username => {
-  $('~loginForm-usernameEmail-input').setValue(username);
+  fw.$('~loginForm-usernameEmail-input').type(username);
 });
 
 When(/^user enters password (.*)$/, password => {
-  $('~loginForm-password-input').setValue(envString(password));
+  fw.$('~loginForm-password-input').type(envString(password));
 });
 
 When(/^user tries to login$/, () => {
-  $('~loginForm-submitButton').click();
+  fw.press('~loginForm-submitButton');
 });
 
 Then(/^login should be (.*)$/, state => {
   if (state == 'successful') {
-    $('~homepage-main-titleLabel').waitForDisplayed();
+    fw.$('~homepage-main-titleLabel').waitForDisplayed();
   } else {
-    browser.acceptAlert();
+    fw.acceptAlert();
   }
 });
 
-After(() => $('~testUtils-clearStorage').click());
+After(() => fw.clearStorage());

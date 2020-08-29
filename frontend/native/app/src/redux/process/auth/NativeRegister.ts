@@ -36,9 +36,7 @@ export class NativeRegister extends Register {
   ): Readonly<NativeAppState> {
     return {
       ...nextState,
-      ...(action.payload.response.success
-        ? {navigation: new NavigateNoParams('AuthLayout')}
-        : {alert: new AlertOK('Something went wrong')}),
+      ...(action.payload.response.success ? {} : {alert: new AlertOK('Something went wrong')}),
     };
   }
 }

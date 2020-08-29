@@ -7,10 +7,12 @@ import {NativeAuth} from './process/auth/NativeAuth';
 import {LocalAuth} from './process/auth/LocalAuth';
 import {AlertOptions} from '../types/alert/AlertOptions';
 import {NavigateOptions} from '../types/nav/NavigateOptions';
+import {NativeRegister} from './process/auth/NativeRegister';
 
 export class NativeAppState extends FrontendCommonState {
   @BindProcessActionCreator(NativeAuth)
   @BindProcessActionCreator(LocalAuth)
+  @BindProcessActionCreator(NativeRegister)
   auth: Resource<IAuth> = new EntityResource();
 
   alert?: AlertOptions;

@@ -19,7 +19,6 @@ const makeStyles = (props: Props, state: State) =>
       flex: 1,
     },
     inner: {
-      maxWidth: 400,
       width: '100%',
       flexDirection: 'column',
       alignItems: 'stretch',

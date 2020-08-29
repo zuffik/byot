@@ -48,7 +48,7 @@ And(/^clicks register$/, () => {
   cy.get('[data-testid="common-auth-registration-form-form"] button[type="submit"]').click();
 });
 
-Then(/^the result should be (.*)$/, result => {
+Then(/^user register should be (.*)$/, result => {
   if (result == 'successful') {
     cy.url().should('not.contain', '/sign-up');
     cy.get('[data-testid="common-auth-registration-form-form"]').should('not.exist');

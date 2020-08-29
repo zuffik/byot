@@ -3,7 +3,7 @@ import * as path from 'path';
 import * as fs from 'fs';
 
 const root = path.join(__dirname, '..');
-['.common', '', '.local'].reduce((env, suffix) => {
+['.local', '', '.common'].reduce((env, suffix) => {
   const file = path.join(root, `.env${suffix}`);
   if (!fs.existsSync(file)) return env;
   const result = config({path: file});

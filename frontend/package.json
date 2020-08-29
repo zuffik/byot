@@ -11,6 +11,7 @@
       "web/storybook",
       "native/app",
       "native/storybook",
+      "native/test",
       "common",
       "../common"
     ],

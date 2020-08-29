@@ -7,6 +7,8 @@ import { JwtService } from '@nestjs/jwt';
 import { Auth } from './auth.entity';
 import { TokenService } from '../user/token/token.service';
 import { Token } from '../user/token/token.entity';
+import slugify from 'slugify';
+import { v4 as uuid } from 'uuid';
 
 @Injectable()
 export class AuthService {
@@ -19,8 +21,20 @@ export class AuthService {
   public async createUser(
     userRegister: UserRegister,
   ): Promise<Auth & { confirmToken: Token }> {
-    const user = {
+    const usernameParts = [
+      userRegister.firstName,
+      userRegister.lastName,
+    ].filter(Boolean);
+    if (usernameParts.length === 0) {
+      usernameParts.push('user');
+    }
+    const user: UserRegister = {
       ...userRegister,
+      userName:
+        userRegister.userName ||
+        slugify(usernameParts.join(' ') + ' ' + uuid().slice(0, 8), {
+          lower: true,
+        }),
       password: this.createPasswordHash(userRegister.password),
     };
     const entity = await this.userService.create(user);

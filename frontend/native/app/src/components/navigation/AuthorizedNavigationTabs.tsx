@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {Screens} from '../../Screens';
+import {Screens} from '../../navigation/Screens';
 import {Text} from 'react-native-ui-lib';
 import {View} from 'react-native';
 import {Colors} from 'react-native-ui-lib';
@@ -19,8 +19,8 @@ const Comp = (props: any) => (
 
 export const AuthorizedNavigationTabs: React.FC<Props> = (props: Props) => {
   return (
-    <Navigator initialRouteName={Screens.AuthLayout.TrainingSetList.Name}>
-      <Screen name={Screens.AuthLayout.TrainingSetList.Name} component={Comp} />
+    <Navigator initialRouteName={Screens.TrainingSetList.Name}>
+      <Screen name={Screens.TrainingSetList.Name} component={Comp} />
     </Navigator>
   );
 };

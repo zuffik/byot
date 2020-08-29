@@ -12,6 +12,8 @@ import {Colors} from 'react-native-ui-lib';
 import {AlertReduxController} from './components/functional/AlertReduxController';
 import {NavigationRoot} from './components/navigation/NavigationRoot';
 import {TestUtils} from './components/functional/TestUtils';
+import {linkPrefixes, mapToConfig} from './navigation/Configuration';
+import {Screens} from './navigation/Screens';
 
 declare const global: {HermesInternal: null | {}};
 
@@ -34,7 +36,8 @@ const App = () => {
             />
             <SafeAreaView style={{flex: 1, position: 'relative'}}>
               <TestUtils />
-              <NavigationContainer>
+              <NavigationContainer
+                linking={{prefixes: linkPrefixes, config: {screens: mapToConfig(Screens)}}}>
                 <NavigationRoot />
               </NavigationContainer>
             </SafeAreaView>

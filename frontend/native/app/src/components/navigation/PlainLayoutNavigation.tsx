@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Screens} from '../../Screens';
+import {Screens} from '../../navigation/Screens';
 import {DefaultNavigatorOptions} from '@react-navigation/native';
 import {FullScreenKeyboardAvoiding} from '../screens/FullScreenKeyboardAvoiding';
 import {PlainLayoutNarrow} from '../plain-layout/PlainLayoutNarrow';

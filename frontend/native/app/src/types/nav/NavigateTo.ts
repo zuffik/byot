@@ -1,5 +1,5 @@
 import {NavigateToOptions} from './NavigateOptions';
-import {Screens} from '../../Screens';
+import {Screens} from '../../navigation/Screens';
 import {NavigationScreenIdentifier} from './NavigationScreenIdentifier';
 
 export class NavigateTo implements NavigateToOptions {

@@ -9,6 +9,7 @@ type Props = TextInputProps & {
   success?: string;
   error?: string;
   PatchProps?: Partial<PatchProps>;
+  helperTextTestID?: string;
 };
 
 const makeStyles = (props: Props) =>
@@ -35,6 +36,7 @@ export const TextField: React.FC<Props> = (props: Props) => {
   const color = props.color || 'primary';
   const infoText = typeof props.infoText == 'undefined' ? true : props.infoText;
   const onPress = () => input.current?.focus();
+  const helperTestID = props.helperTextTestID || 'textField-helperText';
   return (
     <>
       <Patch paddingB-8 paddingT-8 paddingL-12 paddingR-12 {...props.PatchProps} onPress={onPress}>
@@ -55,7 +57,12 @@ export const TextField: React.FC<Props> = (props: Props) => {
           floatingPlaceholderStyle={styles.placeholder}
         />
       </Patch>
-      <Text error={!!props.error} success={!!props.success} style={styles.infoText}>
+      <Text
+        error={!!props.error}
+        success={!!props.success}
+        style={styles.infoText}
+        testID={helperTestID}
+        accessibilityLabel={helperTestID}>
         {infoText && (props.error || props.success || ' ')}
       </Text>
     </>

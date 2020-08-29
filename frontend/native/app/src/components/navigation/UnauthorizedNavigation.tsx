@@ -2,7 +2,7 @@ import * as React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import {LoginScreen} from '../screens/LoginScreen';
 import {RegisterScreen} from '../screens/RegisterScreen';
-import {Screens} from '../../Screens';
+import {Screens} from '../../navigation/Screens';
 import {PlainLayoutNavigation} from './PlainLayoutNavigation';
 import {RequestResetPasswordScreen} from '../screens/RequestResetPasswordScreen';
 import {createNavigationReduxScreen} from '../../services/navigation/CreateNavigationReduxScreen';

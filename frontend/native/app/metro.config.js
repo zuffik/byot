@@ -9,6 +9,7 @@ module.exports = (async () => {
     watchFolders: [
       path.resolve(__dirname, '..', '..'),
       path.resolve(__dirname, '..', '..', '..', 'common'),
+      path.resolve(__dirname, '..', '..', 'web', 'app'),
     ],
     transformer: {
       babelTransformerPath: require.resolve("react-native-svg-transformer"),
@@ -21,7 +22,10 @@ module.exports = (async () => {
     },
     resolver: {
       assetExts: assetExts.filter(ext => ext !== "svg"),
-      sourceExts: [...sourceExts, "svg"]
+      sourceExts: [...sourceExts, "svg"],
+      extraNodeModules: {
+        '@byot-frontend/web-app': path.resolve(__dirname, '..', '..', 'web', 'app')
+      }
     }
   };
 })();

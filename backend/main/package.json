@@ -52,6 +52,7 @@
     "rimraf": "3.0.2",
     "rxjs": "6.5.5",
     "showdown": "1.9.1",
+    "slugify": "1.4.5",
     "typeorm": "0.2.24"
   },
   "devDependencies": {

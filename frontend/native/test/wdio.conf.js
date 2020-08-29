@@ -76,4 +76,7 @@ exports.config = {
     timeout: 60000,
     ignoreUndefinedDefinitions: false,
   },
+  before(capabilities, specs) {
+    global.expect = require('jest-matchers');
+  }
 };

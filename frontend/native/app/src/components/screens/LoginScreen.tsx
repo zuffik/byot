@@ -3,7 +3,7 @@ import {LoginForm} from '../user/auth/LoginForm';
 import {LoginFormFooter} from '../user/auth/LoginFormFooter';
 import {useNavigation} from '@react-navigation/native';
 import {useDispatch, useSelector} from 'react-redux';
-import {Screens} from '../../Screens';
+import {Screens} from '../../navigation/Screens';
 import {PlainLayoutInner} from '../plain-layout/PlainLayoutInner';
 import {ProcessActionExtractor} from '@byot-frontend/common/src/redux-system/process/ProcessActionExtractor';
 import {NativeAuth} from '../../redux/process/auth/NativeAuth';

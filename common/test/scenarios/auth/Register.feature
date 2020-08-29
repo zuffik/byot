@@ -10,7 +10,7 @@ Feature: Register user
     And enters passwordRepeat <passwordRepeat>
     And <does> consent to data storage
     And clicks register
-    Then the result should be <result>
+    Then user register should be <result>
 
     Examples:
     | firstName | lastName | email                     | password                     | passwordRepeat               | does     | result       |

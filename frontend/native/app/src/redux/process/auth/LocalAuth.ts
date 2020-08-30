@@ -8,13 +8,15 @@ import {IAuth} from '@byot-frontend/common/src/types/interfaces/IAuth';
 import {DataResponse} from '@byot-frontend/common/src/redux-system/data-structures/responses/DataResponse';
 import {RuntimeStorage} from '../../../services/storage/RuntimeStorage';
 
-export type Request = {};
+export type Request = {
+  auth?: IAuth;
+};
 export type Response = {};
 
 @ProcessActionCreator()
 export class LocalAuth implements AsynchronousAction<NativeAppState, Request, Response> {
   *saga(action: Action<Request>, state: Readonly<NativeAppState>) {
-    const auth: IAuth | undefined = yield call(nativeStorage.getItem, 'auth');
+    const auth: IAuth | undefined = yield call(nativeStorage.getItem, 'auth', action.payload.auth);
     RuntimeStorage.auth = auth;
     return {
       data: auth,

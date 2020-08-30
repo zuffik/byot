@@ -78,5 +78,6 @@ exports.config = {
   },
   before(capabilities, specs) {
     global.expect = require('jest-matchers');
+    global.fetch = require('node-fetch');
   }
 };

@@ -5,7 +5,8 @@ export interface NavigateToOptions {
 }
 
 export interface NavigateSpecialOptions {
-  special: 'back';
+  special: 'back' | 'reset';
+  name?: string;
 }
 
 export type NavigateOptions = NavigateToOptions | NavigateSpecialOptions;

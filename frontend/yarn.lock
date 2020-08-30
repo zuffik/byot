@@ -13984,6 +13984,13 @@ lru-cache@^6.0.0:
   dependencies:
     yallist "^4.0.0"
 
+mailtrap-client@1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/mailtrap-client/-/mailtrap-client-1.1.0.tgz#1d3045f7d2b774bbe4f4a9b32498fd6111c0e687"
+  integrity sha512-3VSg5616DKL7AsJgCeqBRtaPZ6RcbxPDs9TVAzIfsRmwDMjGnpzkkNXQGHIrGB4uL3k6q5OZuJ5oEspqvDFCCg==
+  dependencies:
+    rxjs "^6.6.0"
+
 make-dir@^2.0.0, make-dir@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/make-dir/-/make-dir-2.1.0.tgz#5f0310e18b8be898cc07009295a30ae41e91e6f5"

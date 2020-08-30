@@ -33,7 +33,7 @@ When(/^user enters email (.*)$/, email => {
   );
 });
 
-And(/^form is submitted$/, () => {
+And(/^user requests new password$/, () => {
   cy.get('[data-testid="common-auth-forgotPassword-form-form"] button[type="submit"]').click();
 });
 
@@ -91,7 +91,7 @@ When(/^user with email (.*) tries to login with new password (.*)$/, (email, pas
   cy.get('[data-testid="common-auth-login-form-form"] button[type="submit"]').click();
 });
 
-Then(/^password reset request should be (.*)$/, loginState => {
+Then(/^login after password change should be (.*)$/, loginState => {
   if (loginState == 'successful') {
     cy.url().should('not.contain', '/login');
   } else {

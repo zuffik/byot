@@ -6,8 +6,13 @@ export type CreateVisitOptions = {
  * Source: http://appium.io/docs/en/commands/web/navigation/go-to-url/
  */
 export const visit = (prefix: string, url: string) => {
-  const u = url.startsWith('/') ? url.slice(1) : url;
-  const full = prefix + u;
+  let full: string;
+  if (!url.includes('://')) {
+    const u = url.startsWith('/') ? url.slice(1) : url;
+    full = prefix + u;
+  } else {
+    full = url;
+  }
   driver.url(full);
 };
 

@@ -7,6 +7,7 @@ import {RegistrationForm} from '@byot-frontend/native-app/src/components/user/au
 import {RegistrationFormFooter} from '@byot-frontend/native-app/src/components/user/auth/RegistrationFormFooter';
 import {RequestResetPasswordForm} from '@byot-frontend/native-app/src/components/user/auth/RequestResetPasswordForm';
 import {boolean} from '@storybook/addon-knobs';
+import {ResetPasswordForm} from '@byot-frontend/native-app/src/components/user/auth/ResetPasswordForm';
 
 storiesOf('User', module)
   .add('LoginForm', () => (
@@ -24,4 +25,7 @@ storiesOf('User', module)
   ))
   .add('RequestResetPasswordForm', () => (
     <RequestResetPasswordForm onSubmit={action('onSubmit')} loading={boolean('loading', false)} />
+  ))
+  .add('ResetPasswordForm', () => (
+    <ResetPasswordForm onSubmit={action('onSubmit')} loading={boolean('loading', false)} token="token" />
   ));

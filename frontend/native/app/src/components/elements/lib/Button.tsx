@@ -32,7 +32,7 @@ export const Button: React.FC<Props> = (props: Props) => {
   const testID = props.testID || 'element-button';
 
   return props.loading ? (
-    <View style={styles.root}>
+    <View style={styles.root} testID="element-button-loader" accessibilityLabel="element-button-loader">
       <Wave color={Colors.white} size={20} innerStyle={styles.loaderBar} />
     </View>
   ) : (

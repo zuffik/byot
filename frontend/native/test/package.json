@@ -35,6 +35,7 @@
     "glob": "7.1.6",
     "jest": "24.9.0",
     "jest-matchers": "20.0.3",
+    "mailtrap-client": "1.1.1",
     "node-fetch": "2.6.0",
     "node-require-context": "1.0.0",
     "typescript": "3.9.5"

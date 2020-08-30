@@ -11,7 +11,7 @@ And(/^user enters username (.*)$/, username => {
   cy.get('[data-testid="common-auth-login-form-username"] input').type(username);
 });
 
-And(/^user enters password (.*)$/, password => {
+And(/^user enters password for login(.*)$/, password => {
   cy.get('[data-testid="common-auth-login-form-password"] input').type(
     envString(password, key => Cypress.env(key))
   );

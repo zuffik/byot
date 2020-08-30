@@ -13,6 +13,11 @@ export const Screens = {
     Name: 'RequestPasswordReset',
     Uri: Router.resetPassword.URI,
   },
+  PasswordReset: {
+    Name: 'PasswordReset',
+    Uri: Router.resetPassword.confirmPasswords.URI,
+    Params: Router.resetPassword.confirmPasswords.params,
+  },
   TrainingSetList: {
     Name: 'TrainingSetList',
     Uri: Router.URI,

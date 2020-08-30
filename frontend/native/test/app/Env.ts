@@ -10,6 +10,6 @@ export type Env = typeof process.env & {
   APP_TEST_USER_EMAIL: string;
   APP_TEST_USER_PASSWORD: string;
   PUBLIC_API_URL: string;
-  MAILTRAP_INBOX_ID: string;
+  MAILTRAP_INBOX_ID: number;
   MAILTRAP_API_KEY: string;
 };

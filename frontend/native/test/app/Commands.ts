@@ -1,10 +1,13 @@
 import {Framework} from '../framework/Types';
 import {Env} from './Env';
-import fetch, {RequestInit} from 'node-fetch';
+import {fw} from './Fw';
+import {Screens} from '@byot-frontend/native-app/src/navigation/Screens';
+import {envString} from '../../../../common/test/helpers/EnvString';
 
-export type Commands = 'clearStorage' | 'request' | 'tearDown';
+export type Commands = 'clearStorage' | 'request' | 'wait' | 'tearDown';
 
 export const createCommands = (fw: Framework<Commands, Env>) => {
+  // global
   fw.Commands.createCommand('request', ({url, init}: {url: string; init?: RequestInit}) => {
     fw.browser.call(async () => {
       try {
@@ -21,6 +24,11 @@ export const createCommands = (fw: Framework<Commands, Env>) => {
     });
   });
 
+  fw.Commands.createCommand('wait', (time: number) => {
+    fw.browser.call(() => new Promise(res => setTimeout(() => res(), time)));
+  });
+
+  // local
   fw.Commands.createCommand('tearDown', (url: string) => {
     return fw.request({url, init: {method: 'DELETE'} as RequestInit});
   });

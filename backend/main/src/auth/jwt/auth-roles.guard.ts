@@ -1,12 +1,20 @@
 import { AuthGuard } from './auth.guard';
-import { ExecutionContext, Injectable } from '@nestjs/common';
+import { ExecutionContext, Inject, Injectable } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
 import { AuthRolesMetaDataKey } from '../decorators/auth-roles.decorator';
+import { ConfigService } from '@nestjs/config';
+import { UserService } from '../../user/user.service';
 
 @Injectable()
 export class AuthRolesGuard extends AuthGuard {
-  constructor(private reflector: Reflector) {
-    super();
+  constructor(
+    @Inject(ConfigService)
+    cfg: ConfigService,
+    @Inject(UserService)
+    users: UserService,
+    private reflector: Reflector,
+  ) {
+    super(cfg, users);
   }
 
   async canActivate(context: ExecutionContext): Promise<boolean> {

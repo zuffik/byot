@@ -6,6 +6,7 @@ import {Screens} from '../../navigation/Screens';
 import {PlainLayoutNavigation} from './PlainLayoutNavigation';
 import {RequestResetPasswordScreen} from '../screens/RequestResetPasswordScreen';
 import {createNavigationReduxScreen} from '../../services/navigation/CreateNavigationReduxScreen';
+import {ResetPasswordScreen} from '../screens/ResetPasswordScreen';
 
 interface Props {}
 
@@ -16,6 +17,10 @@ export const UnauthorizedNavigation: React.FC<Props> = (props: Props) => {
     <PlainLayoutNavigation navigatorComponent={Navigator}>
       <Screen name={Screens.Login.Name} component={createNavigationReduxScreen(LoginScreen)} />
       <Screen name={Screens.Register.Name} component={createNavigationReduxScreen(RegisterScreen)} />
+      <Screen
+        name={Screens.PasswordReset.Name}
+        component={createNavigationReduxScreen(ResetPasswordScreen)}
+      />
       <Screen
         name={Screens.RequestPasswordReset.Name}
         component={createNavigationReduxScreen(RequestResetPasswordScreen)}

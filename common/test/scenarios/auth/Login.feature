@@ -4,7 +4,7 @@ Feature: Login user
   Scenario Outline: logging in
     When user visits login form
     And user enters username <username>
-    And user enters password <password>
+    And user enters password for login<password>
     And user tries to login
     Then login should be <state>
     Examples:

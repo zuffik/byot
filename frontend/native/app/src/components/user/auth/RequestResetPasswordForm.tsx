@@ -8,6 +8,7 @@ import {Button} from '../../elements/lib/Button';
 
 export const testIDs = {
   email: 'requestResetPasswordForm-email-input',
+  submit: 'requestResetPasswordForm-submit',
 };
 
 interface Props {
@@ -43,7 +44,13 @@ export const RequestResetPasswordForm: React.FC<Props> = (props: Props) => {
                 autoCapitalize="none"
               />
             </View>
-            <Button loading={props.loading} onPress={handleSubmit} label={t('Request reset password')} />
+            <Button
+              testID={testIDs.submit}
+              accessibilityLabel={testIDs.submit}
+              loading={props.loading}
+              onPress={handleSubmit}
+              label={t('Request reset password')}
+            />
           </>
         )}
       </Formik>

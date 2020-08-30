@@ -7,9 +7,14 @@ import { Media } from './media/media.entity';
 import { Source } from './source/source.entity';
 import { MediaResolver } from './media/media.resolver';
 import { MediaRemoteService } from './media-remote/media-remote.service';
+import { UserModule } from '../user/user.module';
 
 @Module({
-  imports: [ConfigModule, TypeOrmModule.forFeature([Media, Source])],
+  imports: [
+    ConfigModule,
+    UserModule,
+    TypeOrmModule.forFeature([Media, Source]),
+  ],
   providers: [MediaRemoteService, YoutubeProvider, MediaService, MediaResolver],
   exports: [MediaService, MediaRemoteService],
 })

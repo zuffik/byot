@@ -18,6 +18,16 @@ export const NavigationReduxController: React.FC<Props> = (props: Props) => {
           case 'back':
             nav.goBack();
             break;
+          case 'reset':
+            nav.reset({
+              index: 0,
+              routes: [
+                {
+                  name: navigate.name,
+                },
+              ],
+            });
+            break;
         }
       } else {
         nav.navigate(navigate);

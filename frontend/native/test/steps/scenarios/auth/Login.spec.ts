@@ -11,7 +11,7 @@ When(/^user enters username (.*)$/, username => {
   fw.$('~loginForm-usernameEmail-input').type(username);
 });
 
-When(/^user enters password (.*)$/, password => {
+When(/^user enters password for login(.*)$/, password => {
   fw.$('~loginForm-password-input').type(envString(password));
 });
 

@@ -36,7 +36,7 @@ export const createFramework = <C extends string = string, E extends object = ty
       if (target[p]) {
         return target[p];
       }
-      return target.command.bind(this, p as C);
+      return (...args: any[]) => target.command(p as C, ...args);
     },
   }) as Framework<C, E>;
 };

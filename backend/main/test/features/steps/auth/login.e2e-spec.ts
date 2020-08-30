@@ -33,7 +33,7 @@ defineFeature(feature, (test) => {
     and(/user enters username (.*)/, (username) => {
       credentials.username = username;
     });
-    and(/user enters password (.*)/, (password) => {
+    and(/user enters password for login(.*)/, (password) => {
       credentials.password = envString(password);
     });
     and(`user tries to login`, async () => {

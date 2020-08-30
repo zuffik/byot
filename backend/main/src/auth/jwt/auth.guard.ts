@@ -29,6 +29,7 @@ export class AuthGuard extends BaseAuthGuard('jwt') {
       const req = this.getRequest(context);
       const auth = req.header('Authorization');
       if (
+        auth &&
         auth.toLowerCase().startsWith('bearer') &&
         auth.replace(/^Bearers\s/i, '') === md5(this.cfg.get('app.secret'))
       ) {

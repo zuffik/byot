@@ -194,6 +194,7 @@ export const graphQLInteraction = {
               iso
             }
             id
+            label
             source {
               thumbnail
               mediaType

@@ -8,17 +8,21 @@ import {
 } from 'typeorm';
 import { INestApplication } from '@nestjs/common';
 import { AlreadyHasActiveConnectionError } from 'typeorm/error/AlreadyHasActiveConnectionError';
+import { ModuleMetadata } from '@nestjs/common/interfaces/modules/module-metadata.interface';
 
 export interface Dependencies {
   app: INestApplication;
   queryRunner: QueryRunner;
 }
 
-export const createApp = async (): Promise<Dependencies> => {
+export const createApp = async (
+  meta?: ModuleMetadata,
+): Promise<Dependencies> => {
   let app: INestApplication;
   let queryRunner: QueryRunner;
   const moduleFixture: TestingModule = await Test.createTestingModule({
-    imports: [AppModule],
+    ...meta,
+    imports: [AppModule, ...(meta?.imports || [])],
   }).compile();
 
   app = moduleFixture.createNestApplication();

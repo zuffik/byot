@@ -161,6 +161,7 @@ describe('Training integration', () => {
       training.media = medias.entries.map((media) => ({
         sourceType: media.source.sourceType,
         id: media.source.resourceId,
+        label: media.label,
       }));
       training.idTrainingSet = trainingSet.id;
       const result = await makeGraphQLRequest(
@@ -207,6 +208,7 @@ describe('Training integration', () => {
       training.media = medias.entries.map((media) => ({
         sourceType: media.source.sourceType,
         id: media.source.resourceId,
+        label: media.label,
       }));
       training.idTrainingSet = trainingSet.id;
       const result = await makeGraphQLRequest(
@@ -253,6 +255,7 @@ describe('Training integration', () => {
       training.media = medias.entries.map((media) => ({
         sourceType: media.source.sourceType,
         id: media.source.resourceId,
+        label: media.label,
       }));
       training.idTrainingSet = trainingSet.id;
       const result = await makeGraphQLRequest(
@@ -300,6 +303,7 @@ describe('Training integration', () => {
       training.media = medias.entries.map((media) => ({
         sourceType: media.source.sourceType,
         id: media.source.resourceId,
+        label: media.label,
       }));
       training.idTrainingSet = 'non-existing-id';
       const result = await makeGraphQLRequest(
@@ -342,6 +346,7 @@ describe('Training integration', () => {
       training.media = medias.entries.map((media) => ({
         sourceType: media.source.sourceType,
         id: media.source.resourceId,
+        label: media.label,
       }));
       training.idTrainingSet = trainingSet.id;
       const result = await makeGraphQLRequest(
@@ -375,7 +380,7 @@ describe('Training integration', () => {
         )
       ).body.data.findMedia;
       const [[localMedia]] = await localMediaService.findAndCount({
-        pagination: { limit: 1 },
+        pagination: { limit: 1, offset: 10 },
       });
       const lms = await localMedia.source;
       medias.entries.push({
@@ -386,6 +391,7 @@ describe('Training integration', () => {
       input.media = medias.entries.map((media) => ({
         sourceType: media.source.sourceType,
         id: media.source.resourceId,
+        label: media.label,
       }));
       const result = await makeGraphQLRequest(
         app,
@@ -396,6 +402,7 @@ describe('Training integration', () => {
         result.body.data.updateTraining.media.entries.map((e) => ({
           id: e.source.resourceId,
           sourceType: e.source.sourceType,
+          label: e.label,
         })),
       ).toEqual(input.media);
       expect(result.body.errors).toBeUndefined();
@@ -443,7 +450,7 @@ describe('Training integration', () => {
         )
       ).body.data.findMedia;
       const [[localMedia]] = await localMediaService.findAndCount({
-        pagination: { limit: 1 },
+        pagination: { limit: 1, offset: 10 },
       });
       const lms = await localMedia.source;
       medias.entries.push({
@@ -454,6 +461,7 @@ describe('Training integration', () => {
       input.media = medias.entries.map((media) => ({
         sourceType: media.source.sourceType,
         id: media.source.resourceId,
+        label: media.label,
       }));
       const result = await makeGraphQLRequest(
         app,
@@ -464,6 +472,7 @@ describe('Training integration', () => {
         result.body.data.updateTraining.media.entries.map((e) => ({
           id: e.source.resourceId,
           sourceType: e.source.sourceType,
+          label: e.label,
         })),
       ).toEqual(input.media);
       expect(result.body.errors).toBeUndefined();
@@ -522,6 +531,7 @@ describe('Training integration', () => {
       input.media = medias.entries.map((media) => ({
         sourceType: media.source.sourceType,
         id: media.source.resourceId,
+        label: media.label,
       }));
       const result = await makeGraphQLRequest(
         app,
@@ -555,6 +565,7 @@ describe('Training integration', () => {
       input.media = medias.entries.map((media) => ({
         sourceType: media.source.sourceType,
         id: media.source.resourceId,
+        label: media.label,
       }));
       const result = await makeGraphQLRequest(
         app,

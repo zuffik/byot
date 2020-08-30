@@ -7,17 +7,36 @@ import { makeGraphQLRequest } from './helpers/http.helper';
 import { testMedia } from '../src/test/media.tester';
 import { Role } from '../src/graphql/ts/types';
 import { MediaService } from '../src/media/media/media.service';
+import { MediaRemoteService } from '../src/media/media-remote/media-remote.service';
+import { GeneratorOrmService } from '../src/seed/generator-orm/generator-orm.service';
 
 describe('Remote media integration', () => {
   let app: INestApplication;
   let queryRunner: QueryRunner;
   let mediaService: MediaService;
+  let ormGenerator: GeneratorOrmService;
 
   beforeEach(async () => {
-    const deps = await createApp();
+    const deps = await createApp({
+      providers: [
+        {
+          provide: MediaRemoteService,
+          useValue: {
+            search: async () => [
+              ormGenerator.media(),
+              ormGenerator.media(),
+              ormGenerator.media(),
+            ],
+            parseFromUrl: async () => ormGenerator.media(),
+            findById: async () => ormGenerator.media(),
+          },
+        },
+      ],
+    });
     app = deps.app;
     queryRunner = deps.queryRunner;
     mediaService = app.get<MediaService>(MediaService);
+    ormGenerator = app.get<GeneratorOrmService>(GeneratorOrmService);
   });
 
   it('should contain valid structure', async () => {

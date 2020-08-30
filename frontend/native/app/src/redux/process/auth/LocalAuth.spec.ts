@@ -6,6 +6,7 @@ import {AsynchronousActionResponse} from '@byot-frontend/common/src/redux-system
 import {NativeAppState} from '../../NativeAppState';
 import {nativeStorage} from '../../../services/storage/NativeStorage';
 import {call} from 'redux-saga/effects';
+import {user} from '@byot-frontend/common/test/fixtures/dto/User';
 
 describe('LocalAuth process', () => {
   let process: LocalAuth;
@@ -18,9 +19,17 @@ describe('LocalAuth process', () => {
     response = ProcessActionExtractor.response(request, new GraphQLResponse());
   });
 
-  it('should fetch auth from storage', () => {
+  it('should fetch auth from storage without fallback', () => {
     const generator = process.saga(request, {} as NativeAppState);
-    expect(generator.next().value).toEqual(call(nativeStorage.getItem, 'auth'));
+    expect(generator.next().value).toEqual(call(nativeStorage.getItem, 'auth', undefined));
+    expect(generator.next().done).toBeTruthy();
+  });
+
+  it('should fetch auth from storage with fallback to payload', () => {
+    const auth = {token: 'string', user: user()};
+    request = ProcessActionExtractor.dispatch(LocalAuth, {auth});
+    const generator = process.saga(request, {} as NativeAppState);
+    expect(generator.next().value).toEqual(call(nativeStorage.getItem, 'auth', auth));
     expect(generator.next().done).toBeTruthy();
   });
 

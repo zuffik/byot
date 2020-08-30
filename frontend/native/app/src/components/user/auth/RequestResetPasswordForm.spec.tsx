@@ -9,7 +9,7 @@ describe('<RequestResetPasswordForm/>', () => {
     const onSubmit = jest.fn();
     const {asJSON, getByTestId} = render(<RequestResetPasswordForm onSubmit={onSubmit} />);
     const emailInput = getByTestId(testIDs.email)!;
-    const button = getByTestId('element-button')!;
+    const button = getByTestId(testIDs.submit)!;
     fireEvent.changeText(emailInput, email);
     fireEvent.press(button);
     wait(() => expect(onSubmit).toBeCalledWith(email));
@@ -20,7 +20,7 @@ describe('<RequestResetPasswordForm/>', () => {
     const onSubmit = jest.fn();
     const {asJSON, getByTestId} = render(<RequestResetPasswordForm onSubmit={onSubmit} />);
     const emailInput = getByTestId(testIDs.email)!;
-    const button = getByTestId('element-button')!;
+    const button = getByTestId(testIDs.submit)!;
     fireEvent.changeText(emailInput, email);
     fireEvent.press(button);
     wait(() => expect(onSubmit).not.toBeCalled());

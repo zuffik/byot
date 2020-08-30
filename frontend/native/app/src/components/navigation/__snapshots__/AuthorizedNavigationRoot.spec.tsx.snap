@@ -11,21 +11,10 @@ exports[`<AuthorizedNavigationRoot/> should render 1`] = `
   }
 >
   <View
-    initialRouteName="AuthLayout"
-    screenOptions={
-      Object {
-        "cardOverlayEnabled": false,
-        "cardShadowEnabled": false,
-        "cardStyle": Object {
-          "backgroundColor": "#FAFAF1",
-          "flex": 1,
-        },
-        "headerShown": false,
-      }
-    }
+    initialRouteName="TrainingSetList"
   >
     <View
-      name="AuthLayout"
+      name="TrainingSetList"
     />
   </View>
 </View>

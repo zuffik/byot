@@ -92,6 +92,7 @@ exports[`<RegistrationForm/> should enter invalid email and not submit 1`] = `
             </TouchableWithoutFeedback>
           </View>
           <Text
+            accessibilityLabel="textField-helperText"
             error={false}
             style={
               Object {
@@ -101,6 +102,7 @@ exports[`<RegistrationForm/> should enter invalid email and not submit 1`] = `
               }
             }
             success={false}
+            testID="textField-helperText"
           >
              
           </Text>
@@ -163,6 +165,7 @@ exports[`<RegistrationForm/> should enter invalid email and not submit 1`] = `
             </TouchableWithoutFeedback>
           </View>
           <Text
+            accessibilityLabel="textField-helperText"
             error={false}
             style={
               Object {
@@ -172,6 +175,7 @@ exports[`<RegistrationForm/> should enter invalid email and not submit 1`] = `
               }
             }
             success={false}
+            testID="textField-helperText"
           >
              
           </Text>
@@ -232,6 +236,7 @@ exports[`<RegistrationForm/> should enter invalid email and not submit 1`] = `
           </TouchableWithoutFeedback>
         </View>
         <Text
+          accessibilityLabel="textField-helperText"
           error={false}
           style={
             Object {
@@ -241,6 +246,7 @@ exports[`<RegistrationForm/> should enter invalid email and not submit 1`] = `
             }
           }
           success={false}
+          testID="textField-helperText"
         >
            
         </Text>
@@ -299,6 +305,7 @@ exports[`<RegistrationForm/> should enter invalid email and not submit 1`] = `
           </TouchableWithoutFeedback>
         </View>
         <Text
+          accessibilityLabel="textField-helperText"
           error={false}
           style={
             Object {
@@ -308,6 +315,7 @@ exports[`<RegistrationForm/> should enter invalid email and not submit 1`] = `
             }
           }
           success={false}
+          testID="textField-helperText"
         >
            
         </Text>
@@ -367,6 +375,7 @@ exports[`<RegistrationForm/> should enter invalid email and not submit 1`] = `
           </TouchableWithoutFeedback>
         </View>
         <Text
+          accessibilityLabel="textField-helperText"
           error={false}
           style={
             Object {
@@ -376,6 +385,7 @@ exports[`<RegistrationForm/> should enter invalid email and not submit 1`] = `
             }
           }
           success={false}
+          testID="textField-helperText"
         >
            
         </Text>
@@ -511,6 +521,7 @@ exports[`<RegistrationForm/> should enter invalid password and not submit 1`] = 
             </TouchableWithoutFeedback>
           </View>
           <Text
+            accessibilityLabel="textField-helperText"
             error={false}
             style={
               Object {
@@ -520,6 +531,7 @@ exports[`<RegistrationForm/> should enter invalid password and not submit 1`] = 
               }
             }
             success={false}
+            testID="textField-helperText"
           >
              
           </Text>
@@ -582,6 +594,7 @@ exports[`<RegistrationForm/> should enter invalid password and not submit 1`] = 
             </TouchableWithoutFeedback>
           </View>
           <Text
+            accessibilityLabel="textField-helperText"
             error={false}
             style={
               Object {
@@ -591,6 +604,7 @@ exports[`<RegistrationForm/> should enter invalid password and not submit 1`] = 
               }
             }
             success={false}
+            testID="textField-helperText"
           >
              
           </Text>
@@ -651,6 +665,7 @@ exports[`<RegistrationForm/> should enter invalid password and not submit 1`] = 
           </TouchableWithoutFeedback>
         </View>
         <Text
+          accessibilityLabel="textField-helperText"
           error={false}
           style={
             Object {
@@ -660,6 +675,7 @@ exports[`<RegistrationForm/> should enter invalid password and not submit 1`] = 
             }
           }
           success={false}
+          testID="textField-helperText"
         >
            
         </Text>
@@ -718,6 +734,7 @@ exports[`<RegistrationForm/> should enter invalid password and not submit 1`] = 
           </TouchableWithoutFeedback>
         </View>
         <Text
+          accessibilityLabel="textField-helperText"
           error={false}
           style={
             Object {
@@ -727,6 +744,7 @@ exports[`<RegistrationForm/> should enter invalid password and not submit 1`] = 
             }
           }
           success={false}
+          testID="textField-helperText"
         >
            
         </Text>
@@ -786,6 +804,7 @@ exports[`<RegistrationForm/> should enter invalid password and not submit 1`] = 
           </TouchableWithoutFeedback>
         </View>
         <Text
+          accessibilityLabel="textField-helperText"
           error={false}
           style={
             Object {
@@ -795,6 +814,7 @@ exports[`<RegistrationForm/> should enter invalid password and not submit 1`] = 
             }
           }
           success={false}
+          testID="textField-helperText"
         >
            
         </Text>
@@ -930,6 +950,7 @@ exports[`<RegistrationForm/> should enter not matching passwords and not submit 
             </TouchableWithoutFeedback>
           </View>
           <Text
+            accessibilityLabel="textField-helperText"
             error={false}
             style={
               Object {
@@ -939,6 +960,7 @@ exports[`<RegistrationForm/> should enter not matching passwords and not submit 
               }
             }
             success={false}
+            testID="textField-helperText"
           >
              
           </Text>
@@ -1001,6 +1023,7 @@ exports[`<RegistrationForm/> should enter not matching passwords and not submit 
             </TouchableWithoutFeedback>
           </View>
           <Text
+            accessibilityLabel="textField-helperText"
             error={false}
             style={
               Object {
@@ -1010,6 +1033,7 @@ exports[`<RegistrationForm/> should enter not matching passwords and not submit 
               }
             }
             success={false}
+            testID="textField-helperText"
           >
              
           </Text>
@@ -1070,6 +1094,7 @@ exports[`<RegistrationForm/> should enter not matching passwords and not submit 
           </TouchableWithoutFeedback>
         </View>
         <Text
+          accessibilityLabel="textField-helperText"
           error={false}
           style={
             Object {
@@ -1079,6 +1104,7 @@ exports[`<RegistrationForm/> should enter not matching passwords and not submit 
             }
           }
           success={false}
+          testID="textField-helperText"
         >
            
         </Text>
@@ -1137,6 +1163,7 @@ exports[`<RegistrationForm/> should enter not matching passwords and not submit 
           </TouchableWithoutFeedback>
         </View>
         <Text
+          accessibilityLabel="textField-helperText"
           error={false}
           style={
             Object {
@@ -1146,6 +1173,7 @@ exports[`<RegistrationForm/> should enter not matching passwords and not submit 
             }
           }
           success={false}
+          testID="textField-helperText"
         >
            
         </Text>
@@ -1205,6 +1233,7 @@ exports[`<RegistrationForm/> should enter not matching passwords and not submit 
           </TouchableWithoutFeedback>
         </View>
         <Text
+          accessibilityLabel="textField-helperText"
           error={false}
           style={
             Object {
@@ -1214,6 +1243,7 @@ exports[`<RegistrationForm/> should enter not matching passwords and not submit 
             }
           }
           success={false}
+          testID="textField-helperText"
         >
            
         </Text>
@@ -1349,6 +1379,7 @@ exports[`<RegistrationForm/> should fill all fields and submit 1`] = `
             </TouchableWithoutFeedback>
           </View>
           <Text
+            accessibilityLabel="textField-helperText"
             error={false}
             style={
               Object {
@@ -1358,6 +1389,7 @@ exports[`<RegistrationForm/> should fill all fields and submit 1`] = `
               }
             }
             success={false}
+            testID="textField-helperText"
           >
              
           </Text>
@@ -1420,6 +1452,7 @@ exports[`<RegistrationForm/> should fill all fields and submit 1`] = `
             </TouchableWithoutFeedback>
           </View>
           <Text
+            accessibilityLabel="textField-helperText"
             error={false}
             style={
               Object {
@@ -1429,6 +1462,7 @@ exports[`<RegistrationForm/> should fill all fields and submit 1`] = `
               }
             }
             success={false}
+            testID="textField-helperText"
           >
              
           </Text>
@@ -1489,6 +1523,7 @@ exports[`<RegistrationForm/> should fill all fields and submit 1`] = `
           </TouchableWithoutFeedback>
         </View>
         <Text
+          accessibilityLabel="textField-helperText"
           error={false}
           style={
             Object {
@@ -1498,6 +1533,7 @@ exports[`<RegistrationForm/> should fill all fields and submit 1`] = `
             }
           }
           success={false}
+          testID="textField-helperText"
         >
            
         </Text>
@@ -1556,6 +1592,7 @@ exports[`<RegistrationForm/> should fill all fields and submit 1`] = `
           </TouchableWithoutFeedback>
         </View>
         <Text
+          accessibilityLabel="textField-helperText"
           error={false}
           style={
             Object {
@@ -1565,6 +1602,7 @@ exports[`<RegistrationForm/> should fill all fields and submit 1`] = `
             }
           }
           success={false}
+          testID="textField-helperText"
         >
            
         </Text>
@@ -1624,6 +1662,7 @@ exports[`<RegistrationForm/> should fill all fields and submit 1`] = `
           </TouchableWithoutFeedback>
         </View>
         <Text
+          accessibilityLabel="textField-helperText"
           error={false}
           style={
             Object {
@@ -1633,6 +1672,7 @@ exports[`<RegistrationForm/> should fill all fields and submit 1`] = `
             }
           }
           success={false}
+          testID="textField-helperText"
         >
            
         </Text>
@@ -1768,6 +1808,7 @@ exports[`<RegistrationForm/> should fill all mandatory fields and submit 1`] = `
             </TouchableWithoutFeedback>
           </View>
           <Text
+            accessibilityLabel="textField-helperText"
             error={false}
             style={
               Object {
@@ -1777,6 +1818,7 @@ exports[`<RegistrationForm/> should fill all mandatory fields and submit 1`] = `
               }
             }
             success={false}
+            testID="textField-helperText"
           >
              
           </Text>
@@ -1839,6 +1881,7 @@ exports[`<RegistrationForm/> should fill all mandatory fields and submit 1`] = `
             </TouchableWithoutFeedback>
           </View>
           <Text
+            accessibilityLabel="textField-helperText"
             error={false}
             style={
               Object {
@@ -1848,6 +1891,7 @@ exports[`<RegistrationForm/> should fill all mandatory fields and submit 1`] = `
               }
             }
             success={false}
+            testID="textField-helperText"
           >
              
           </Text>
@@ -1908,6 +1952,7 @@ exports[`<RegistrationForm/> should fill all mandatory fields and submit 1`] = `
           </TouchableWithoutFeedback>
         </View>
         <Text
+          accessibilityLabel="textField-helperText"
           error={false}
           style={
             Object {
@@ -1917,6 +1962,7 @@ exports[`<RegistrationForm/> should fill all mandatory fields and submit 1`] = `
             }
           }
           success={false}
+          testID="textField-helperText"
         >
            
         </Text>
@@ -1975,6 +2021,7 @@ exports[`<RegistrationForm/> should fill all mandatory fields and submit 1`] = `
           </TouchableWithoutFeedback>
         </View>
         <Text
+          accessibilityLabel="textField-helperText"
           error={false}
           style={
             Object {
@@ -1984,6 +2031,7 @@ exports[`<RegistrationForm/> should fill all mandatory fields and submit 1`] = `
             }
           }
           success={false}
+          testID="textField-helperText"
         >
            
         </Text>
@@ -2043,6 +2091,7 @@ exports[`<RegistrationForm/> should fill all mandatory fields and submit 1`] = `
           </TouchableWithoutFeedback>
         </View>
         <Text
+          accessibilityLabel="textField-helperText"
           error={false}
           style={
             Object {
@@ -2052,6 +2101,7 @@ exports[`<RegistrationForm/> should fill all mandatory fields and submit 1`] = `
             }
           }
           success={false}
+          testID="textField-helperText"
         >
            
         </Text>
@@ -2187,6 +2237,7 @@ exports[`<RegistrationForm/> should omit consent and not submit 1`] = `
             </TouchableWithoutFeedback>
           </View>
           <Text
+            accessibilityLabel="textField-helperText"
             error={false}
             style={
               Object {
@@ -2196,6 +2247,7 @@ exports[`<RegistrationForm/> should omit consent and not submit 1`] = `
               }
             }
             success={false}
+            testID="textField-helperText"
           >
              
           </Text>
@@ -2258,6 +2310,7 @@ exports[`<RegistrationForm/> should omit consent and not submit 1`] = `
             </TouchableWithoutFeedback>
           </View>
           <Text
+            accessibilityLabel="textField-helperText"
             error={false}
             style={
               Object {
@@ -2267,6 +2320,7 @@ exports[`<RegistrationForm/> should omit consent and not submit 1`] = `
               }
             }
             success={false}
+            testID="textField-helperText"
           >
              
           </Text>
@@ -2327,6 +2381,7 @@ exports[`<RegistrationForm/> should omit consent and not submit 1`] = `
           </TouchableWithoutFeedback>
         </View>
         <Text
+          accessibilityLabel="textField-helperText"
           error={false}
           style={
             Object {
@@ -2336,6 +2391,7 @@ exports[`<RegistrationForm/> should omit consent and not submit 1`] = `
             }
           }
           success={false}
+          testID="textField-helperText"
         >
            
         </Text>
@@ -2394,6 +2450,7 @@ exports[`<RegistrationForm/> should omit consent and not submit 1`] = `
           </TouchableWithoutFeedback>
         </View>
         <Text
+          accessibilityLabel="textField-helperText"
           error={false}
           style={
             Object {
@@ -2403,6 +2460,7 @@ exports[`<RegistrationForm/> should omit consent and not submit 1`] = `
             }
           }
           success={false}
+          testID="textField-helperText"
         >
            
         </Text>
@@ -2462,6 +2520,7 @@ exports[`<RegistrationForm/> should omit consent and not submit 1`] = `
           </TouchableWithoutFeedback>
         </View>
         <Text
+          accessibilityLabel="textField-helperText"
           error={false}
           style={
             Object {
@@ -2471,6 +2530,7 @@ exports[`<RegistrationForm/> should omit consent and not submit 1`] = `
             }
           }
           success={false}
+          testID="textField-helperText"
         >
            
         </Text>

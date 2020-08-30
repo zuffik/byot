@@ -79,6 +79,7 @@ exports[`<LoginForm/> should not submit form with one credential missing 1`] = `
           </TouchableWithoutFeedback>
         </View>
         <Text
+          accessibilityLabel="textField-helperText"
           error={false}
           style={
             Object {
@@ -88,6 +89,7 @@ exports[`<LoginForm/> should not submit form with one credential missing 1`] = `
             }
           }
           success={false}
+          testID="textField-helperText"
         >
            
         </Text>
@@ -150,6 +152,7 @@ exports[`<LoginForm/> should not submit form with one credential missing 1`] = `
           </TouchableWithoutFeedback>
         </View>
         <Text
+          accessibilityLabel="textField-helperText"
           error={false}
           style={
             Object {
@@ -159,6 +162,7 @@ exports[`<LoginForm/> should not submit form with one credential missing 1`] = `
             }
           }
           success={false}
+          testID="textField-helperText"
         >
            
         </Text>
@@ -252,6 +256,7 @@ exports[`<LoginForm/> should submit form with credentials 1`] = `
           </TouchableWithoutFeedback>
         </View>
         <Text
+          accessibilityLabel="textField-helperText"
           error={false}
           style={
             Object {
@@ -261,6 +266,7 @@ exports[`<LoginForm/> should submit form with credentials 1`] = `
             }
           }
           success={false}
+          testID="textField-helperText"
         >
            
         </Text>
@@ -323,6 +329,7 @@ exports[`<LoginForm/> should submit form with credentials 1`] = `
           </TouchableWithoutFeedback>
         </View>
         <Text
+          accessibilityLabel="textField-helperText"
           error={false}
           style={
             Object {
@@ -332,6 +339,7 @@ exports[`<LoginForm/> should submit form with credentials 1`] = `
             }
           }
           success={false}
+          testID="textField-helperText"
         >
            
         </Text>

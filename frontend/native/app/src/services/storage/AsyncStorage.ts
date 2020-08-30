@@ -17,5 +17,7 @@ export class AsyncStorage<T extends object> {
     await Storage.removeItem(key.toString());
   };
 
-  clear = Storage.clear;
+  clear = async (callback?: (error?: Error) => void): Promise<void> => {
+    await Storage.clear(callback);
+  };
 }

@@ -23,12 +23,12 @@ export class RequestResetPassword extends RequestResetPasswordBase {
   ): Readonly<NativeAppState> {
     return {
       ...super.handleResponse(action, nextState, prevState),
+      ...(action.payload.response.success && {navigation: new NavigateReset('Login')}),
       alert: new AlertOK(
         action.payload.response.success
           ? 'You have successfully requested new password'
           : 'Something went wrong'
       ),
-      ...(action.payload.response.success && {navigation: new NavigateReset('Login')}),
     };
   }
 }

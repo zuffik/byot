@@ -23,7 +23,7 @@ export const NavigationReduxController: React.FC<Props> = (props: Props) => {
               index: 0,
               routes: [
                 {
-                  name: navigate.name,
+                  name: navigate.name!,
                 },
               ],
             });

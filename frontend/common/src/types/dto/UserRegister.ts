@@ -8,7 +8,13 @@ export class UserRegister implements IUserRegister {
   public userName: string;
 
   constructor(
-    {email, firstName = '', lastName = '', password, userName = undefined}: IUserRegister = {
+    {
+      email,
+      firstName = '',
+      lastName = '',
+      password,
+      userName = (undefined as unknown) as string,
+    }: IUserRegister = {
       email: '',
       password: '',
     }

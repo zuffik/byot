@@ -44,14 +44,7 @@ describe('NativeRegister process', () => {
         {} as NativeAppState,
         {} as NativeAppState
       )
-    ).toEqual(
-      expect.objectContaining({
-        navigation: expect.objectContaining({
-          name: 'AuthLayout',
-          key: 'AuthLayout',
-        }),
-      })
-    );
+    ).toEqual(expect.objectContaining({}));
   });
 
   it('should fail register', () => {

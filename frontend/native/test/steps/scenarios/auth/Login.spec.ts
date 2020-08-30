@@ -23,7 +23,8 @@ Then(/^login should be (.*)$/, state => {
   if (state == 'successful') {
     fw.$('~homepage-main-titleLabel').waitForDisplayed();
   } else {
-    fw.acceptAlert();
+    browser.waitUntil(() => !!browser.getAlertText());
+    browser.acceptAlert();
   }
 });
 

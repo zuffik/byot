@@ -5,8 +5,6 @@ import {gql} from 'apollo-boost';
 import {call} from 'redux-saga/effects';
 import {ProcessActionCreator} from '../../../redux-system/process/ProcessActionCreator';
 import {ApolloContext} from '../../../graphql/context/ApolloContext';
-import {SuccessSnackbar} from '../../../../../web/common/src/types/app/snackbar/SuccessSnackbar';
-import {ErrorSnackbar} from '../../../../../web/common/src/types/app/snackbar/ErrorSnackbar';
 
 export type Request = {email: string};
 export type Response = {};

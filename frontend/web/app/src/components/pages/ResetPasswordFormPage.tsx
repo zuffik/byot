@@ -6,7 +6,7 @@ import {WebAppState} from '../../redux/WebAppState';
 import {Router} from '../../router/Router';
 import {ResetPasswordForm} from '../auth/ResetPasswordForm';
 import {IResetPassword} from '@byot-frontend/common/src/types/interfaces/IResetPassword';
-import {SubmitResetPassword} from '@byot-frontend/common/src/redux/process/auth/SubmitResetPassword';
+import {SubmitResetPassword} from '@byot-frontend/web-common/src/redux/process/auth/SubmitResetPassword';
 
 interface Props {}
 

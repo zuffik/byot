@@ -3,8 +3,8 @@ import {useDispatch, useSelector} from 'react-redux';
 import {ForgotPasswordForm} from '../auth/ForgotPasswordForm';
 import {RouterBackButton} from '@byot-frontend/web-common/src/components/elementary/navigation/BackButton';
 import {ProcessActionExtractor} from '@byot-frontend/common/src/redux-system/process/ProcessActionExtractor';
-import {RequestResetPassword} from '@byot-frontend/common/src/redux/process/auth/RequestResetPassword';
 import {WebAppState} from '../../redux/WebAppState';
+import {RequestResetPassword} from '@byot-frontend/web-common/src/redux/process/auth/RequestResetPassword';
 
 interface Props {}
 

@@ -47,7 +47,7 @@ describe('<RegistrationForm/>', () => {
       firstName: 'John',
       lastName: 'Doe',
       password: '123-Abc-',
-      userName: '',
+      userName: undefined,
     };
     const data = {
       ...registrationData,
@@ -71,7 +71,7 @@ describe('<RegistrationForm/>', () => {
       firstName: '',
       lastName: '',
       password: '123-Abc-',
-      userName: '',
+      userName: undefined,
     };
     const data = {
       ...registrationData,
@@ -95,7 +95,7 @@ describe('<RegistrationForm/>', () => {
       firstName: 'John',
       lastName: 'Doe',
       password: '123-Abc-',
-      userName: '',
+      userName: undefined,
     };
     const data = {
       ...registrationData,
@@ -119,7 +119,7 @@ describe('<RegistrationForm/>', () => {
       firstName: '',
       lastName: '',
       password: '',
-      userName: '',
+      userName: undefined,
     };
     const data = {
       ...registrationData,
@@ -143,7 +143,7 @@ describe('<RegistrationForm/>', () => {
       firstName: '',
       lastName: '',
       password: 'weak',
-      userName: '',
+      userName: undefined,
     };
     const data = {
       ...registrationData,
@@ -167,7 +167,7 @@ describe('<RegistrationForm/>', () => {
       firstName: '',
       lastName: '',
       password: '123-ABc-',
-      userName: '',
+      userName: undefined,
     };
     const data = {
       ...registrationData,

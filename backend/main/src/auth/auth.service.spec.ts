@@ -82,6 +82,31 @@ describe('AuthService', () => {
     );
   });
 
+  it('should create user and create username', async () => {
+    const userRegister = gqlGenerator.userRegister();
+    userRegister.firstName = 'First';
+    userRegister.lastName = 'Last';
+    delete userRegister.userName;
+    const spyCreateUser = jest.spyOn(userService, 'create');
+    const token = ormGenerator.token();
+    const spyCreateToken = jest
+      .spyOn(tokenService, 'create')
+      .mockImplementation(async () => token);
+    const user = await authService.createUser(userRegister);
+    expect(spyCreateUser).toBeCalledWith(
+      expect.objectContaining({
+        ..._.omit(userRegister, 'password'),
+        userName: expect.stringMatching(/^first-last-/),
+      }),
+    );
+    expect(user.user.password).not.toEqual(userRegister.password);
+    expect(user.confirmToken).toEqual(token);
+    expect(spyCreateToken).toBeCalledWith(
+      user.user,
+      TokenType.EMAIL_CONFIRMATION,
+    );
+  });
+
   it('should create token for user', async () => {
     const user = ormGenerator.user();
     const spy = jest.spyOn(jwtService, 'sign');

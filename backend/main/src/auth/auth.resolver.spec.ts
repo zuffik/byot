@@ -11,6 +11,7 @@ import { Role } from '../graphql/ts/types';
 import { MailerService } from '@nestjs-modules/mailer';
 import { testToken } from '../test/user.tester';
 import { TokenService } from '../user/token/token.service';
+import { UserService } from '../user/user.service';
 
 describe('AuthResolver', () => {
   let resolver: AuthResolver;
@@ -36,6 +37,12 @@ describe('AuthResolver', () => {
         {
           provide: MailerService,
           useValue: mockMail(),
+        },
+        {
+          provide: UserService,
+          useValue: proxyMock({
+            findByUsernameOrEmail: jest.fn(async () => ormGenerator.user()),
+          }),
         },
       ],
     }).compile();

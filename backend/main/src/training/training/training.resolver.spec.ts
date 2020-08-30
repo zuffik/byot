@@ -19,6 +19,7 @@ import {
 import { GeneratorOrmService } from '../../seed/generator-orm/generator-orm.service';
 import { TrainingSetService } from '../training-set/training-set.service';
 import * as _ from 'lodash';
+import { UserService } from '../../user/user.service';
 
 describe('TrainingResolver', () => {
   let resolver: TrainingResolver;
@@ -37,6 +38,12 @@ describe('TrainingResolver', () => {
           provide: TrainingService,
           useValue: proxyMock({
             findAndCount: jest.fn(async () => [[], 0]),
+          }),
+        },
+        {
+          provide: UserService,
+          useValue: proxyMock({
+            findByUsernameOrEmail: jest.fn(async () => ormGenerator.user()),
           }),
         },
         {

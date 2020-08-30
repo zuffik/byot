@@ -11,12 +11,15 @@ import { GeneratorGraphqlService } from '../../seed/generator-graphql/generator-
 import { proxyMock } from '../../test/proxy.mock';
 import { SeedModule } from '../../seed/seed.module';
 import { MediaService } from './media.service';
+import { UserService } from '../../user/user.service';
+import { GeneratorOrmService } from '../../seed/generator-orm/generator-orm.service';
 
 describe('MediaResolver', () => {
   let resolver: MediaResolver;
   let remoteService: MediaRemoteService;
   let localService: MediaService;
   let gqlGenerator: GeneratorGraphqlService;
+  let ormGenerator: GeneratorOrmService;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -31,6 +34,12 @@ describe('MediaResolver', () => {
           }),
         },
         {
+          provide: UserService,
+          useValue: proxyMock({
+            findByUsernameOrEmail: jest.fn(async () => ormGenerator.user()),
+          }),
+        },
+        {
           provide: MediaService,
           useValue: proxyMock(),
         },
@@ -41,12 +50,14 @@ describe('MediaResolver', () => {
     remoteService = module.get<MediaRemoteService>(MediaRemoteService);
     localService = module.get<MediaService>(MediaService);
     gqlGenerator = module.get<GeneratorGraphqlService>(GeneratorGraphqlService);
+    ormGenerator = module.get<GeneratorOrmService>(GeneratorOrmService);
   });
 
   it('should be defined', () => {
     expect(resolver).toBeDefined();
     expect(remoteService).toBeDefined();
     expect(gqlGenerator).toBeDefined();
+    expect(ormGenerator).toBeDefined();
   });
 
   it('should make exception about empty filter', async () => {

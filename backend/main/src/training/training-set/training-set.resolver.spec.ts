@@ -13,6 +13,7 @@ import {
   NotFoundException,
 } from '@nestjs/common';
 import { GeneratorGraphqlService } from '../../seed/generator-graphql/generator-graphql.service';
+import { UserService } from '../../user/user.service';
 
 describe('TrainingSetResolver', () => {
   let resolver: TrainingSetResolver;
@@ -30,6 +31,12 @@ describe('TrainingSetResolver', () => {
           provide: TrainingSetService,
           useValue: proxyMock({
             findAndCount: jest.fn(async () => [[], 0]),
+          }),
+        },
+        {
+          provide: UserService,
+          useValue: proxyMock({
+            findByUsernameOrEmail: jest.fn(async () => ormGenerator.user()),
           }),
         },
       ],

@@ -22,9 +22,9 @@ stages:
     - chmod +x /usr/local/bin/docker-compose
     - ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
     - export DOCKER_TAG="$CI_COMMIT_SHA"
-    - echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin "$DOCKER_REGISTRY"
   script:
     - docker-compose build
+    - echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin "$DOCKER_REGISTRY"
     - docker-compose push
 
 .ssh-deploy: &ssh-deploy

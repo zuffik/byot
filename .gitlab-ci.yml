@@ -5,8 +5,9 @@ stages:
   - production
 
 .build-docker: &build-docker
-  image: docker
+  image: docker/compose
   script:
+    - export DOCKER_TAG="$CI_COMMIT_SHA"
     - docker-compose build
     - docker-compose push
 

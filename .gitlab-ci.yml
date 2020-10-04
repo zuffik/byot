@@ -85,12 +85,25 @@ Deploy to production:
 
 Unit tests:
   stage: test
+  cache:
+    paths:
+      - .yarn
+      - node_modules
+      - backend/main/node_modules
+      - frontend/node_modules
+      - frontend/web/node_modules
+      - frontend/web/common/node_modules
+      - frontend/web/app/node_modules
+      - frontend/web/admin/node_modules
+      - frontend/web/landing/node_modules
+      - frontend/web/test/node_modules
+      - frontend/web/storybook/node_modules
   before_script:
     - cd frontend
     - yarn --frozen-lockfile
-    - cd ../backend
+    - cd ../backend/main
     - yarn --frozen-lockfile
-    - cd ..
+    - cd ../..
   script:
     # add coverage to tests?
     - cd backend/main
@@ -108,6 +121,19 @@ Unit tests:
 
 E2E tests:
   stage: test_e2e
+  cache:
+    paths:
+      - .yarn
+      - node_modules
+      - backend/main/node_modules
+      - frontend/node_modules
+      - frontend/web/node_modules
+      - frontend/web/common/node_modules
+      - frontend/web/app/node_modules
+      - frontend/web/admin/node_modules
+      - frontend/web/landing/node_modules
+      - frontend/web/test/node_modules
+      - frontend/web/storybook/node_modules
   before_script:
     - cd frontend/web/test
     - yarn --frozen-lockfile

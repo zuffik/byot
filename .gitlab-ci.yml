@@ -7,6 +7,7 @@ stages:
 .build-docker: &build-docker
   image: docker/compose
   script:
+    - echo $CI_ENVIRONMENT_NAME
     - echo $SQL_HOST
     - export DOCKER_TAG="$CI_COMMIT_SHA"
     - docker-compose build
@@ -32,6 +33,7 @@ Build staging docker:
   stage: build
   environment:
     name: staging
+    url: http://app.byot.home.zuffik.eu
   only:
     - merge_requests
   except:

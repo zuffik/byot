@@ -114,7 +114,7 @@ Unit tests:
     - yarn test
     - cd ../../web/common
     - yarn test
-    - cd ../web/app
+    - cd ../app
     - yarn test
   only:
     - merge_requests

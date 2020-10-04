@@ -7,6 +7,7 @@ stages:
 .build-docker: &build-docker
   image: docker/compose
   script:
+    - echo $SQL_HOST
     - export DOCKER_TAG="$CI_COMMIT_SHA"
     - docker-compose build
     - docker-compose push
@@ -22,8 +23,9 @@ stages:
     - echo "$SSH_KNOWN_HOSTS" >> ~/.ssh/known_hosts
     - chmod 644 ~/.ssh/known_hosts
   script:
-    - ssh -p "$SSH_PORT" "$SSH_USER:$SSH_HOST" "docker pull $DOCKER_REGISTRY:byot/frontend-web-app && docker stop byot-frontend-web-app || true && docker rm byot-frontend-web-app || true && docker run -p $PORT_FRONTEND_WEB_APP:5000 -dit --name byot-frontend-web-app $DOCKER_REGISTRY:byot/frontend-web-app"
-    - ssh -p "$SSH_PORT" "$SSH_USER:$SSH_HOST" "docker pull $DOCKER_REGISTRY:byot/backend-main && docker stop byot-backend-main || true && docker rm byot-backend-main || true && docker run -p $PORT_FRONTEND_WEB_APP:5000 -dit --name byot-backend-main $DOCKER_REGISTRY:byot/backend-main"
+    - export DOCKER_TAG="$CI_COMMIT_SHA"
+    - ssh -p "$SSH_PORT" "$SSH_USER:$SSH_HOST" "docker pull $DOCKER_REGISTRY:byot/frontend-web-app:$DOCKER_TAG && docker stop byot-frontend-web-app || true && docker rm byot-frontend-web-app || true && docker run -p $PORT_FRONTEND_WEB_APP:5000 -dit --name byot-frontend-web-app $DOCKER_REGISTRY:byot/frontend-web-app:$DOCKER_TAG"
+    - ssh -p "$SSH_PORT" "$SSH_USER:$SSH_HOST" "docker pull $DOCKER_REGISTRY:byot/backend-main:$DOCKER_TAG && docker stop byot-backend-main || true && docker rm byot-backend-main || true && docker run -p $PORT_FRONTEND_WEB_APP:5000 -dit --name byot-backend-main $DOCKER_REGISTRY:byot/backend-main:$DOCKER_TAG"
 
 Build staging docker:
   <<: *build-docker

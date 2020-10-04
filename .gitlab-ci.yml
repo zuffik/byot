@@ -1,6 +1,6 @@
 stages:
-  - build
   - test
+  - build
   - staging
   - test_e2e
   - production
@@ -46,9 +46,9 @@ Build staging docker:
   environment:
     name: staging
   only:
-    - merge_requests
+    - develop
   except:
-    - master
+    - merge_requests
 
 Build production docker:
   <<: *build-docker
@@ -57,6 +57,8 @@ Build production docker:
     name: production
   only:
     - master
+  except:
+    - merge_requests
 
 Deploy to staging:
   <<: *ssh-deploy

@@ -1,25 +1,23 @@
 # React apps only
 
-FROM node:14
+FROM node:14-alpine AS BUILD_IMAGE
 
 WORKDIR /usr/src/app
 
 ARG BUILD_PROJECT
 
-COPY frontend/common source/frontend/common
-COPY frontend/web/common source/frontend/web/common
-COPY frontend/web/tsconfig.json source/frontend/web/tsconfig.json
-COPY "frontend/$BUILD_PROJECT" source/"frontend/$BUILD_PROJECT"
-COPY common source/common
-COPY frontend/package.json source/frontend/package.json
-COPY frontend/yarn.lock source/frontend/yarn.lock
+COPY . .
 
+RUN apk update && apk add python make g++ && rm -rf /var/cache/apk/*
 RUN yarn global add serve
-RUN cd source/frontend && yarn --frozen-lockfile
-RUN cd "source/frontend/$BUILD_PROJECT" && yarn build
-RUN mkdir build
-RUN mv "source/frontend/$BUILD_PROJECT/build" .
-RUN rm -rf source
+RUN cd frontend && yarn --frozen-lockfile && cd "$BUILD_PROJECT" && yarn build && cd ../.. && rm -rf **/node_modules/**
+
+FROM node:14-alpine
+
+WORKDIR /usr/src/app
+
+COPY --from=BUILD_IMAGE "/usr/src/app/frontend/$BUILD_PROJECT" ./build
+RUN yarn global add serve
 
 EXPOSE 5000
 

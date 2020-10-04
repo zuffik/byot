@@ -1,27 +1,99 @@
 stages:
-  - spawn
+  - build
+  - staging
+  - test
+  - production
 
-Main backend:
-  stage: spawn
-  trigger:
-    include: backend/main/.gitlab-ci.yml
-  only:
-    changes:
-      - backend/main/**/*
-      - common/**/*
-      - scripts/**/*
+.build-docker: &build-docker
+  image: docker
+  script:
+    - docker-compose build
+    - docker-compose push
 
-Web frontend:
-  stage: spawn
-  trigger:
-    include: frontend/web/.gitlab-ci.yml
+.ssh-deploy: &ssh-deploy
+  image: ubuntu
+  before_script:
+    - 'command -v ssh-agent >/dev/null || ( apt-get update -y && apt-get install openssh-client -y )'
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - echo "$SSH_KNOWN_HOSTS" >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+  script:
+    - ssh -p "$SSH_PORT" "$SSH_USER:$SSH_HOST" "docker pull $DOCKER_REGISTRY:byot/frontend-web-app && docker stop byot-frontend-web-app || true && docker rm byot-frontend-web-app || true && docker run -p $PORT_FRONTEND_WEB_APP:5000 -dit --name byot-frontend-web-app $DOCKER_REGISTRY:byot/frontend-web-app"
+    - ssh -p "$SSH_PORT" "$SSH_USER:$SSH_HOST" "docker pull $DOCKER_REGISTRY:byot/backend-main && docker stop byot-backend-main || true && docker rm byot-backend-main || true && docker run -p $PORT_FRONTEND_WEB_APP:5000 -dit --name byot-backend-main $DOCKER_REGISTRY:byot/backend-main"
+
+Build staging docker:
+  <<: *build-docker
+  stage: build
+  environment:
+    name: staging
+  except:
+    - master
+
+Build production docker:
+  <<: *build-docker
+  stage: build
+  environment:
+    name: production
   only:
-    changes:
-      - frontend/web/**/*
-      - frontend/web/.gitlab-ci.yml
-      - frontend/common/**/*
-      - common/**/*
-      - scripts/**/*
+    - master
+
+Deploy to staging:
+  <<: *ssh-deploy
+  stage: staging
+  environment:
+    name: staging
+  only:
+    - develop
+
+Deploy to production:
+  <<: *ssh-deploy
+  stage: production
+  environment:
+    name: production
+  only:
+    - master
+  when: manual
+
+Unit tests:
+  stage: test
+  before_script:
+    - cd frontend
+    - yarn --frozen-lockfile
+    - cd ../backend
+    - yarn --frozen-lockfile
+    - cd ..
+  script:
+    # add coverage to tests?
+    - cd backend
+    - yarn test
+    - cd ../frontend/common
+    - yarn test
+    - cd ../native
+    - yarn test
+    - cd ../web/common
+    - yarn test
+    - cd ../web/app
+    - yarn test
+
+E2E tests:
+  stage: test
+  before_script:
+    - cd frontend/web/test
+    - yarn --frozen-lockfile
+    - cd ../../../backend
+    - yarn --frozen-lockfile
+    - cd ..
+  script:
+    - cd backend
+    - yarn test:e2e
+    - cd ../frontend/web/test
+    - yarn test
+  only:
+    - merge_requests
+    - develop
 
 # This will probably go through AppCenter
 # Native mobile frontend:

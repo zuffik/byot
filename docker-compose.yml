@@ -1,0 +1,35 @@
+version: "3.8"
+
+services:
+  mysql:
+    image: mysql:8
+    ports:
+      - "${SQL_PORT}:3306"
+    restart: "no"
+    volumes:
+      - ./volumes/mysql:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: $SQL_NAME
+      MYSQL_USER: $SQL_USER
+      MYSQL_PASSWORD: $SQL_PASS
+
+
+  backend:
+    image: "${DOCKER_REGISTRY}/byot/backend-main"
+    build:
+      context: .
+      dockerfile: backend.dockerfile
+    ports:
+      - "${PORT_BACKEND_MAIN}:5000"
+    depends_on:
+      - mysql
+
+  frontend_web_app:
+    image: "${DOCKER_REGISTRY}/byot/frontend-web-app"
+    build:
+      context: .
+      dockerfile: frontend-web.dockerfile
+      args:
+        BUILD_PROJECT: "web/app"
+    ports:
+      - "${PORT_FRONTEND_WEB_APP}:5000"

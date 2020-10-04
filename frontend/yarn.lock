@@ -13984,10 +13984,10 @@ lru-cache@^6.0.0:
   dependencies:
     yallist "^4.0.0"
 
-mailtrap-client@1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/mailtrap-client/-/mailtrap-client-1.1.0.tgz#1d3045f7d2b774bbe4f4a9b32498fd6111c0e687"
-  integrity sha512-3VSg5616DKL7AsJgCeqBRtaPZ6RcbxPDs9TVAzIfsRmwDMjGnpzkkNXQGHIrGB4uL3k6q5OZuJ5oEspqvDFCCg==
+mailtrap-client@1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/mailtrap-client/-/mailtrap-client-1.1.1.tgz#01e723e7c10bf3fd3e18732ff29363e9a77c1a44"
+  integrity sha512-Eu+DMxUHa+y65PRCfSU2hSt8i+MrbevOsjE1/RD+wICMSJ2AFO+DWqr75w4n13Uit3mIvjvJ7MY29x2amjy8Rw==
   dependencies:
     rxjs "^6.6.0"
 

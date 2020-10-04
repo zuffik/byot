@@ -36,7 +36,7 @@ exports[`<TrainingSetListItem/> should render 1`] = `
         <span
           class="MuiTypography-root makeStyles-root-10 MuiTypography-caption"
         >
-          4 months ago
+          5 months ago
         </span>
       </div>
     </div>

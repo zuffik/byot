@@ -93,9 +93,9 @@ Unit tests:
     - cd ..
   script:
     # add coverage to tests?
-    - cd backend
+    - cd backend/main
     - yarn test
-    - cd ../frontend/common
+    - cd ../../frontend/common
     - yarn test
     - cd ../native
     - yarn test

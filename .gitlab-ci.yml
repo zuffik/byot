@@ -8,7 +8,7 @@ stages:
 .build-docker: &build-docker
   image: docker
   before_script:
-    - apt install -y docker-compose
+    - apt-get install -y docker-compose
     - export DOCKER_TAG="$CI_COMMIT_SHA"
     - echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin
   script:

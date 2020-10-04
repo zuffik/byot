@@ -6,10 +6,9 @@ stages:
   - production
 
 .build-docker: &build-docker
-  image: ubuntu
+  image: ubuntu:18.04
   before_script:
     - apt-get update -y
-    - apt-get install -y gnupg2
     - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
     - apt-get update -y
     - apt-get install -y docker-ce docker-ce-cli containerd.io docker-compose
@@ -111,7 +110,7 @@ E2E tests:
     - yarn test
   only:
     - merge_requests
-    - develop
+    - master
 
 # This will probably go through AppCenter
 # Native mobile frontend:

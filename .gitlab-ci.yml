@@ -83,6 +83,8 @@ Unit tests:
     - yarn test
     - cd ../web/app
     - yarn test
+  only:
+    - merge_requests
 
 E2E tests:
   stage: test

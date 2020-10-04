@@ -115,9 +115,9 @@ E2E tests:
     - yarn --frozen-lockfile
     - cd ..
   script:
-    - cd backend
+    - cd backend/main
     - yarn test:e2e
-    - cd ../frontend/web/test
+    - cd ../../frontend/web/test
     - yarn test
   only:
     - merge_requests && master

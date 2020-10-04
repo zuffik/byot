@@ -1,11 +1,28 @@
+image: node:14
+
 stages:
+  - test
   - build
   - staging
-  - test
+  - test_e2e
   - production
 
 .build-docker: &build-docker
-  image: docker
+  image: ubuntu:20.10
+  before_script:
+    - apt-get update
+    - apt install -y apt-transport-https ca-certificates curl software-properties-common
+    - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
+    - add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+    - apt-get update
+    - apt-cache policy docker-ce
+    - apt-get install -y docker-ce docker-ce-cli pass
+    - service docker start
+    - curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+    - chmod +x /usr/local/bin/docker-compose
+    - ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+    - export DOCKER_TAG="$CI_COMMIT_SHA"
+    - echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin "$DOCKER_REGISTRY"
   script:
     - docker-compose build
     - docker-compose push
@@ -21,16 +38,19 @@ stages:
     - echo "$SSH_KNOWN_HOSTS" >> ~/.ssh/known_hosts
     - chmod 644 ~/.ssh/known_hosts
   script:
-    - ssh -p "$SSH_PORT" "$SSH_USER:$SSH_HOST" "docker pull $DOCKER_REGISTRY:byot/frontend-web-app && docker stop byot-frontend-web-app || true && docker rm byot-frontend-web-app || true && docker run -p $PORT_FRONTEND_WEB_APP:5000 -dit --name byot-frontend-web-app $DOCKER_REGISTRY:byot/frontend-web-app"
-    - ssh -p "$SSH_PORT" "$SSH_USER:$SSH_HOST" "docker pull $DOCKER_REGISTRY:byot/backend-main && docker stop byot-backend-main || true && docker rm byot-backend-main || true && docker run -p $PORT_FRONTEND_WEB_APP:5000 -dit --name byot-backend-main $DOCKER_REGISTRY:byot/backend-main"
+    - export DOCKER_TAG="$CI_COMMIT_SHA"
+    - ssh -p "$SSH_PORT" "$SSH_USER:$SSH_HOST" "docker pull $DOCKER_REGISTRY:byot/frontend-web-app:$DOCKER_TAG && docker stop byot-frontend-web-app || true && docker rm byot-frontend-web-app || true && docker run -p $PORT_FRONTEND_WEB_APP:5000 -dit --name byot-frontend-web-app $DOCKER_REGISTRY:byot/frontend-web-app:$DOCKER_TAG"
+    - ssh -p "$SSH_PORT" "$SSH_USER:$SSH_HOST" "docker pull $DOCKER_REGISTRY:byot/backend-main:$DOCKER_TAG && docker stop byot-backend-main || true && docker rm byot-backend-main || true && docker run -p $PORT_FRONTEND_WEB_APP:5000 -dit --name byot-backend-main $DOCKER_REGISTRY:byot/backend-main:$DOCKER_TAG"
 
 Build staging docker:
   <<: *build-docker
   stage: build
   environment:
     name: staging
+  only:
+    - develop
   except:
-    - master
+    - merge_requests
 
 Build production docker:
   <<: *build-docker
@@ -39,6 +59,8 @@ Build production docker:
     name: production
   only:
     - master
+  except:
+    - merge_requests
 
 Deploy to staging:
   <<: *ssh-deploy
@@ -47,6 +69,8 @@ Deploy to staging:
     name: staging
   only:
     - develop
+  except:
+    - merge_requests
 
 Deploy to production:
   <<: *ssh-deploy
@@ -55,31 +79,61 @@ Deploy to production:
     name: production
   only:
     - master
+  except:
+    - merge_requests
   when: manual
 
 Unit tests:
   stage: test
+  cache:
+    paths:
+      - .yarn
+      - node_modules
+      - backend/main/node_modules
+      - frontend/node_modules
+      - frontend/web/node_modules
+      - frontend/web/common/node_modules
+      - frontend/web/app/node_modules
+      - frontend/web/admin/node_modules
+      - frontend/web/landing/node_modules
+      - frontend/web/test/node_modules
+      - frontend/web/storybook/node_modules
   before_script:
     - cd frontend
     - yarn --frozen-lockfile
-    - cd ../backend
+    - cd ../backend/main
     - yarn --frozen-lockfile
-    - cd ..
+    - cd ../..
   script:
     # add coverage to tests?
-    - cd backend
+    - cd backend/main
     - yarn test
-    - cd ../frontend/common
+    - cd ../../frontend/common
     - yarn test
-    - cd ../native
+    - cd ../native/app
     - yarn test
-    - cd ../web/common
+    - cd ../../web/common
     - yarn test
-    - cd ../web/app
+    - cd ../app
     - yarn test
+  only:
+    - merge_requests
 
 E2E tests:
-  stage: test
+  stage: test_e2e
+  cache:
+    paths:
+      - .yarn
+      - node_modules
+      - backend/main/node_modules
+      - frontend/node_modules
+      - frontend/web/node_modules
+      - frontend/web/common/node_modules
+      - frontend/web/app/node_modules
+      - frontend/web/admin/node_modules
+      - frontend/web/landing/node_modules
+      - frontend/web/test/node_modules
+      - frontend/web/storybook/node_modules
   before_script:
     - cd frontend/web/test
     - yarn --frozen-lockfile
@@ -87,13 +141,12 @@ E2E tests:
     - yarn --frozen-lockfile
     - cd ..
   script:
-    - cd backend
+    - cd backend/main
     - yarn test:e2e
-    - cd ../frontend/web/test
+    - cd ../../frontend/web/test
     - yarn test
   only:
-    - merge_requests
-    - develop
+    - merge_requests && master
 
 # This will probably go through AppCenter
 # Native mobile frontend:

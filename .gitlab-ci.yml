@@ -6,7 +6,7 @@ stages:
   - production
 
 .build-docker: &build-docker
-  image: ubuntu
+  image: ubuntu:18
   before_script:
     - apt-get update -y
     - apt-get install -y \

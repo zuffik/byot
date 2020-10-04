@@ -29,6 +29,8 @@ Build staging docker:
   stage: build
   environment:
     name: staging
+  only:
+    - merge_requests
   except:
     - master
 
@@ -47,6 +49,8 @@ Deploy to staging:
     name: staging
   only:
     - develop
+  except:
+    - merge_requests
 
 Deploy to production:
   <<: *ssh-deploy
@@ -55,6 +59,8 @@ Deploy to production:
     name: production
   only:
     - master
+  except:
+    - merge_requests
   when: manual
 
 Unit tests:

@@ -52,6 +52,7 @@ Build staging docker:
   except:
     - merge_requests
   when: manual
+  allow_failure: false
 
 Build production docker:
   <<: *build-docker

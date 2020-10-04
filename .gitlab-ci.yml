@@ -15,7 +15,7 @@ stages:
     - add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
     - apt-get install -y docker-ce docker-ce-cli containerd.io docker-compose
     - export DOCKER_TAG="$CI_COMMIT_SHA"
-    - echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin
+    - echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin "$$DOCKER_REGISTRY"
   script:
     - docker-compose build
     - docker-compose push
@@ -110,7 +110,10 @@ E2E tests:
     - yarn test:e2e
     - cd ../frontend/web/test
     - yarn test
-  only: [merge_requests, master]
+  only:
+    - merge_requests
+  except:
+    - /^(?!master)$/
 
 # This will probably go through AppCenter
 # Native mobile frontend:

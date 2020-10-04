@@ -51,6 +51,7 @@ Build staging docker:
     - develop
   except:
     - merge_requests
+  when: manual
 
 Build production docker:
   <<: *build-docker
@@ -64,6 +65,8 @@ Build production docker:
 
 Deploy to staging:
   <<: *ssh-deploy
+  dependencies:
+    - Build staging docker
   stage: staging
   environment:
     name: staging
@@ -74,6 +77,8 @@ Deploy to staging:
 
 Deploy to production:
   <<: *ssh-deploy
+  dependencies:
+    - Build production docker
   stage: production
   environment:
     name: production

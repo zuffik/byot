@@ -110,9 +110,9 @@ Unit tests:
     - yarn test
     - cd ../../frontend/common
     - yarn test
-    - cd ../native
+    - cd ../native/app
     - yarn test
-    - cd ../web/common
+    - cd ../../web/common
     - yarn test
     - cd ../web/app
     - yarn test

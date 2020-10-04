@@ -1,14 +1,14 @@
 stages:
+  - test
   - build
   - staging
-  - test
+  - test_e2e
   - production
 
 .build-docker: &build-docker
   image: docker/compose
   script:
-    - echo $CI_ENVIRONMENT_NAME
-    - echo $SQL_HOST
+    - printenv
     - export DOCKER_TAG="$CI_COMMIT_SHA"
     - docker-compose build
     - docker-compose push
@@ -33,7 +33,6 @@ Build staging docker:
   stage: build
   environment:
     name: staging
-    url: http://app.byot.home.zuffik.eu
   only:
     - merge_requests
   except:
@@ -92,7 +91,7 @@ Unit tests:
     - merge_requests
 
 E2E tests:
-  stage: test
+  stage: test_e2e
   before_script:
     - cd frontend/web/test
     - yarn --frozen-lockfile

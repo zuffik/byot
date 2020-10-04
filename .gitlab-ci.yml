@@ -87,7 +87,7 @@ Unit tests:
   stage: test
   cache:
     paths:
-      - .yarn
+      - ~/.yarn
       - node_modules
       - backend/main/node_modules
       - frontend/node_modules
@@ -123,7 +123,7 @@ E2E tests:
   stage: test_e2e
   cache:
     paths:
-      - .yarn
+      - ~/.yarn
       - node_modules
       - backend/main/node_modules
       - frontend/node_modules

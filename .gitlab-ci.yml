@@ -6,10 +6,12 @@ stages:
   - production
 
 .build-docker: &build-docker
-  image: docker/compose
-  script:
-    - printenv
+  image: docker
+  before_script:
+    - apt install -y docker-compose
     - export DOCKER_TAG="$CI_COMMIT_SHA"
+    - echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin
+  script:
     - docker-compose build
     - docker-compose push
 

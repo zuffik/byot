@@ -13,6 +13,8 @@ RUN cd frontend && yarn --frozen-lockfile && cd "$BUILD_PROJECT" && yarn build &
 
 FROM node:14-alpine
 
+ARG BUILD_PROJECT
+
 WORKDIR /usr/src/app
 
 COPY --from=BUILD_IMAGE "/usr/src/app/frontend/$BUILD_PROJECT/build" ./build

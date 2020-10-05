@@ -9,6 +9,8 @@ stages:
 
 .build-docker: &build-docker
   image: ubuntu:20.10
+  variables:
+    CRED_STORE_JSON: '{ "credsStore": "pass" }'
   before_script:
     - apt-get update
     - apt install -y apt-transport-https ca-certificates curl software-properties-common
@@ -22,7 +24,7 @@ stages:
     - chmod +x /usr/local/bin/docker-compose
     - ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
     - export DOCKER_TAG="$CI_COMMIT_SHA"
-    - echo "{ \"credsStore\": \"pass\" }" > ~/.docker/config.json
+    - echo $CRED_STORE_JSON > ~/.docker/config.json
     - echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin "$DOCKER_REGISTRY"
   script:
     - docker-compose build

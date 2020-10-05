@@ -10,7 +10,7 @@ stages:
 .build-docker: &build-docker
   image: ubuntu:20.10
   variables:
-    CRED_STORE_JSON: '{"auths":{"dockr.home.zuffik.eu":{},"https://index.docker.io/v1/":{}},"experimental":"disabled"}'
+    CRED_STORE_JSON: "{\"auths\":{\"${DOCKER_REGISTRY}\":{},\"https://index.docker.io/v1/\":{}},\"experimental\":\"disabled\"}"
   script:
     - apt-get update
     - apt install -y apt-transport-https ca-certificates curl software-properties-common

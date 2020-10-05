@@ -11,7 +11,7 @@ stages:
   image: ubuntu:20.10
   variables:
     CRED_STORE_JSON: '{"auths":{"dockr.home.zuffik.eu":{},"https://index.docker.io/v1/":{}},"experimental":"disabled"}'
-  before_script:
+  script:
     - apt-get update
     - apt install -y apt-transport-https ca-certificates curl software-properties-common
     - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
@@ -24,11 +24,10 @@ stages:
     - chmod +x /usr/local/bin/docker-compose
     - ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
     - export DOCKER_TAG="$CI_COMMIT_SHA"
+    - docker-compose build
     - mkdir -p ~/.docker
     - echo $CRED_STORE_JSON > ~/.docker/config.json
     - echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin "$DOCKER_REGISTRY"
-  script:
-    - docker-compose build
     - docker-compose push
 
 .ssh-deploy: &ssh-deploy

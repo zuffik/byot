@@ -10,7 +10,6 @@ FROM node:14-alpine
 
 WORKDIR /usr/src/app
 
-RUN apk update && apk add python make g++ && rm -rf /var/cache/apk/*
 COPY --from=BUILD_IMAGE /usr/src/app/backend/main/.env* ./
 COPY --from=BUILD_IMAGE /usr/src/app/backend/main/dist ./dist
 COPY --from=BUILD_IMAGE /usr/src/app/backend/main/package.json ./package.json

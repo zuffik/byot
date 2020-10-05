@@ -24,6 +24,7 @@ stages:
     - chmod +x /usr/local/bin/docker-compose
     - ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
     - export DOCKER_TAG="$CI_COMMIT_SHA"
+    - mkdir -p ~/.docker
     - echo $CRED_STORE_JSON > ~/.docker/config.json
     - echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin "$DOCKER_REGISTRY"
   script:

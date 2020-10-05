@@ -10,9 +10,7 @@ stages:
 .build-docker: &build-docker
   image: docker
   before_script:
-    - curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-    - chmod +x /usr/local/bin/docker-compose
-    - ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+    - apk add --no-cache py3-pip python3-dev libffi-dev openssl-dev curl gcc libc-dev make && pip3 install docker-compose
     - export DOCKER_TAG="$CI_COMMIT_SHA"
     - echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin "$DOCKER_REGISTRY"
   script:

@@ -15,7 +15,7 @@ FROM node:14-alpine
 
 WORKDIR /usr/src/app
 
-COPY --from=BUILD_IMAGE "/usr/src/app/frontend/$BUILD_PROJECT" ./build
+COPY --from=BUILD_IMAGE "/usr/src/app/frontend/$BUILD_PROJECT/build" ./build
 RUN yarn global add serve
 
 EXPOSE 5000

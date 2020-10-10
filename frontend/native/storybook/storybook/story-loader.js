@@ -5,11 +5,13 @@
 
 function loadStories() {
 	require('./stories/Elements.stories');
+	require('./stories/Parts.stories');
 	require('./stories/User.stories');
 }
 
 const stories = [
 	'./stories/Elements.stories',
+	'./stories/Parts.stories',
 	'./stories/User.stories'
 ];
 

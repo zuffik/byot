@@ -1,1 +1,1 @@
-/Users/zuffik/work/zuffik/byot/common/test/scenarios/user/Profile.feature
+../../../../../../../common/test/scenarios/user/Profile.feature

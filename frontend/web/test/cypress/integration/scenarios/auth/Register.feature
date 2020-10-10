@@ -1,1 +1,1 @@
-/Users/zuffik/work/zuffik/byot/common/test/scenarios/auth/Register.feature
+../../../../../../../common/test/scenarios/auth/Register.feature

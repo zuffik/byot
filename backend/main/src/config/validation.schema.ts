@@ -32,7 +32,7 @@ export const validationSchema = Joi.object({
   SQL_HOST: Joi.string().default('localhost'),
   SQL_PORT: Joi.number().default(3306),
   SQL_USER: Joi.string().default('root'),
-  SQL_PASS: Joi.string().default(''),
+  SQL_PASS: Joi.string().optional().allow('').default(''),
   SQL_NAME: Joi.string().required(),
 
   MAIL_SMTP_HOST: Joi.string().required(),

@@ -1,1 +1,1 @@
-/Users/zuffik/work/zuffik/byot/frontend/common/test/scenarios/training/PlayTraining.feature
+../../../../../../common/test/scenarios/training/PlayTraining.feature

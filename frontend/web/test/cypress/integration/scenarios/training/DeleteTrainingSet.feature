@@ -1,1 +1,1 @@
-/Users/zuffik/work/zuffik/byot/common/test/scenarios/training/DeleteTrainingSet.feature
+../../../../../../../common/test/scenarios/training/DeleteTrainingSet.feature

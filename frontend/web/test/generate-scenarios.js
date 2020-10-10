@@ -14,6 +14,7 @@ const OUTPUT_DIRECTORY = path.join(__dirname, 'cypress', 'integration', 'scenari
 SCENARIOS_PATHS.map(p => {
   glob(p + '/**/*.feature', (err, f) => {
     const files = f.map(file => file.replace(p, '').slice(1));
+    const cwd = process.cwd();
     for (let file of files) {
       const source = path.join(p, file);
       const destination = path.join(OUTPUT_DIRECTORY, file);
@@ -22,9 +23,11 @@ SCENARIOS_PATHS.map(p => {
         fs.mkdirSync(destinationDirectory, { recursive: true });
       }
       if (!fs.existsSync(destination)) {
-        fs.symlinkSync(source, destination);
+        process.chdir(path.dirname(destination));
+        fs.symlinkSync(path.relative(process.cwd(), source), destination);
       }
     }
+    process.chdir(cwd);
     spawnSync('npx', [
       'cucumber-generator',
       '--includeDirectory',

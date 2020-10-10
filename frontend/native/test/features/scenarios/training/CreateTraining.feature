@@ -1,1 +1,1 @@
-/Users/zuffik/work/zuffik/byot/common/test/scenarios/training/CreateTraining.feature
+../../../../../../common/test/scenarios/training/CreateTraining.feature

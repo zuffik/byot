@@ -13,6 +13,7 @@ const OUTPUT_DIRECTORY = path.join(__dirname, 'steps', 'scenarios');
 
 glob(SCENARIOS_PATH + '/**/*.feature', (err, f) => {
   const files = f.map(file => file.replace(SCENARIOS_PATH, '').slice(1));
+  const cwd = process.cwd();
   for (let file of files) {
     const source = path.join(SCENARIOS_PATH, file);
     const destination = path.join(FEATURES_DIRECTORY, file);
@@ -21,9 +22,11 @@ glob(SCENARIOS_PATH + '/**/*.feature', (err, f) => {
       fs.mkdirSync(destinationDirectory, { recursive: true });
     }
     if (!fs.existsSync(destination)) {
-      fs.symlinkSync(source, destination);
+      process.chdir(path.dirname(destination));
+      fs.symlinkSync(path.relative(process.cwd(), source), destination);
     }
   }
+  process.chdir(cwd);
   spawnSync('npx', [
     'cucumber-generator',
     '-f',

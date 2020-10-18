@@ -42,17 +42,17 @@ stages:
 Build staging backend:
   <<: *docker-build-staging
   variables:
-    DOCKER_SERVICE: "$DOCKER_REGISTRY/byot/backend-main:$CI_COMMIT_SHA"
+    DOCKER_SERVICE: "$DOCKER_REGISTRY/byot/backend-main"
 
 Build staging frontend web app:
   <<: *docker-build-staging
   variables:
-    DOCKER_SERVICE: "$DOCKER_REGISTRY/byot/frontend-web-app:$CI_COMMIT_SHA"
+    DOCKER_SERVICE: "$DOCKER_REGISTRY/byot/frontend-web-app"
 
 Build production backend:
   <<: *docker-build
   variables:
-    DOCKER_SERVICE: "$DOCKER_REGISTRY/byot/backend-main:$CI_COMMIT_SHA"
+    DOCKER_SERVICE: "$DOCKER_REGISTRY/byot/backend-main"
   stage: build
   environment:
     name: production
@@ -64,7 +64,7 @@ Build production backend:
 Build production frontend web app:
   <<: *docker-build
   variables:
-    DOCKER_SERVICE: "$DOCKER_REGISTRY/byot/frontend-web-app:$CI_COMMIT_SHA"
+    DOCKER_SERVICE: "$DOCKER_REGISTRY/byot/frontend-web-app"
   stage: build
   environment:
     name: production

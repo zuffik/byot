@@ -3,7 +3,7 @@ FROM node:14-alpine AS BUILD_IMAGE
 WORKDIR /usr/src/app
 
 COPY . .
-RUN apk update && apk add python make g++ && rm -rf /var/cache/apk/*
+RUN apk update && apk --no-cache add --virtual native-deps g++ gcc libgcc libstdc++ linux-headers make python && npm install --quiet node-gyp -g && npm install --quiet && apk del native-deps && rm -rf /var/cache/apk/*
 RUN cd backend/main && yarn --frozen-lockfile && yarn build && rm -rf node_modules
 
 FROM node:14-alpine

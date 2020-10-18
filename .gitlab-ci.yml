@@ -6,6 +6,9 @@ stages:
   - production
 
 .build-docker: &build-docker
+  before_script:
+    - mkdir -p ~/.docker
+    - echo "$DOCKER_CREDENTIALS" > ~/.docker/config.json
   script:
     - export DOCKER_TAG="$CI_COMMIT_SHA"
     - docker-compose build

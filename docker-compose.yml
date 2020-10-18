@@ -3,9 +3,6 @@ version: "3.3"
 services:
   mysql:
     image: mysql:8
-    ports:
-      - "${SQL_PORT}:3306"
-    restart: "no"
     volumes:
       - ./volumes/mysql:/var/lib/mysql
     environment:

@@ -535,3 +535,4 @@ frontend/web/storybook/storybook-static
 frontend/native/app/ios/Pods
 
 .local/*
+./volumes

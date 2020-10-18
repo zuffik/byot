@@ -7,7 +7,6 @@ stages:
 
 .build-docker: &build-docker
   before_script:
-    - printenv
     - mkdir -p ~/.docker
     - echo "$DOCKER_CREDENTIALS" > ~/.docker/config.json
   script:

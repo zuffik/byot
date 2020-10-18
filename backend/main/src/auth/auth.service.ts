@@ -1,7 +1,7 @@
 import { Inject, Injectable, UnauthorizedException } from '@nestjs/common';
 import { UserService } from '../user/user.service';
 import { TokenType, UserRegister, UserUpdateInput } from '../graphql/ts/types';
-import * as bcrypt from 'bcrypt';
+import * as bcryptjs from 'bcryptjs';
 import { User } from '../user/user.entity';
 import { JwtService } from '@nestjs/jwt';
 import { Auth } from './auth.entity';
@@ -50,7 +50,7 @@ export class AuthService {
   }
 
   public createPasswordHash(password: string) {
-    return bcrypt.hashSync(password, 10);
+    return bcryptjs.hashSync(password, 10);
   }
 
   public createTokenForUser(user: User): string {
@@ -63,7 +63,7 @@ export class AuthService {
 
   public async login(userNameOrEmail: string, password: string): Promise<Auth> {
     const user = await this.userService.findByUsernameOrEmail(userNameOrEmail);
-    if (!user || !bcrypt.compareSync(password, user.password)) {
+    if (!user || !bcryptjs.compareSync(password, user.password)) {
       throw new UnauthorizedException();
     }
     return {

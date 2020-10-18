@@ -7,7 +7,7 @@ import { GeneratorGraphqlService } from '../seed/generator-graphql/generator-gra
 import * as _ from 'lodash';
 import { JwtService } from '@nestjs/jwt';
 import { GeneratorOrmService } from '../seed/generator-orm/generator-orm.service';
-import * as bcrypt from 'bcrypt';
+import * as bcryptjs from 'bcryptjs';
 import { UnauthorizedException } from '@nestjs/common';
 import { TokenService } from '../user/token/token.service';
 import { TokenType } from '../graphql/ts/types';
@@ -128,7 +128,7 @@ describe('AuthService', () => {
         const user = ormGenerator.user();
         user.userName = userNameOrEmail;
         user.email = userNameOrEmail;
-        user.password = bcrypt.hashSync(password, 10);
+        user.password = bcryptjs.hashSync(password, 10);
         return user;
       });
     const spySign = jest.spyOn(jwtService, 'sign');

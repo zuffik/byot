@@ -8,7 +8,7 @@ ARG BUILD_PROJECT
 
 COPY . .
 
-RUN apk update && apk --no-cache add --virtual native-deps g++ gcc libgcc libstdc++ linux-headers make python && npm install --quiet node-gyp -g && npm install --quiet && apk del native-deps && rm -rf /var/cache/apk/*
+RUN apk update && apk add python make g++ && rm -rf /var/cache/apk/*
 RUN cd frontend && yarn --frozen-lockfile && cd "$BUILD_PROJECT" && yarn build && cd ../.. && rm -rf **/node_modules/**
 
 FROM node:14-alpine

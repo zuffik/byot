@@ -2,7 +2,7 @@ version: "3.3"
 
 services:
   mysql:
-    image: mysql:8
+    image: "$SQL_IMAGE"
     volumes:
       - ./volumes/mysql:/var/lib/mysql
     environment:

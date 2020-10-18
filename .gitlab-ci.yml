@@ -5,7 +5,7 @@ stages:
   - test_e2e
   - production
 
-.build-docker: &build-docker
+.docker-build: &docker-build
   tags:
     - build
   before_script:
@@ -13,18 +13,11 @@ stages:
     - echo "$DOCKER_CREDENTIALS" > ~/.docker/config.json
   script:
     - export DOCKER_TAG="$CI_COMMIT_SHA"
-    - docker-compose build
-    - docker-compose push
+    - docker-compose build "$DOCKER_SERVICE"
+    - docker-compose push "$DOCKER_SERVICE"
 
-.ssh-deploy: &runner-deploy
-  tags:
-    - deploy
-  script:
-    - export DOCKER_TAG="$CI_COMMIT_SHA"
-    - docker-compose up -d --quiet-pull
-
-Build staging docker:
-  <<: *build-docker
+.docker-build-staging: &docker-build-staging
+  <<: *docker-build
   stage: build
   environment:
     name: staging
@@ -35,8 +28,43 @@ Build staging docker:
   when: manual
   allow_failure: false
 
-Build production docker:
-  <<: *build-docker
+
+.docker-deploy: &docker-deploy
+  tags:
+    - deploy
+  before_script:
+    - mkdir -p ~/.docker
+    - echo "$DOCKER_CREDENTIALS" > ~/.docker/config.json
+  script:
+    - export DOCKER_TAG="$CI_COMMIT_SHA"
+    - docker-compose up -d --quiet-pull
+
+Build staging backend:
+  <<: *docker-build-staging
+  variables:
+    DOCKER_SERVICE: "$DOCKER_REGISTRY/byot/backend-main:$CI_COMMIT_SHA"
+
+Build staging frontend web app:
+  <<: *docker-build-staging
+  variables:
+    DOCKER_SERVICE: "$DOCKER_REGISTRY/byot/frontend-web-app:$CI_COMMIT_SHA"
+
+Build production backend:
+  <<: *docker-build
+  variables:
+    DOCKER_SERVICE: "$DOCKER_REGISTRY/byot/backend-main:$CI_COMMIT_SHA"
+  stage: build
+  environment:
+    name: production
+  only:
+    - master
+  except:
+    - merge_requests
+
+Build production frontend web app:
+  <<: *docker-build
+  variables:
+    DOCKER_SERVICE: "$DOCKER_REGISTRY/byot/frontend-web-app:$CI_COMMIT_SHA"
   stage: build
   environment:
     name: production
@@ -46,9 +74,10 @@ Build production docker:
     - merge_requests
 
 Deploy to staging:
-  <<: *runner-deploy
+  <<: *docker-deploy
   dependencies:
-    - Build staging docker
+    - Build staging backend
+    - Build staging frontend web app
   stage: staging
   environment:
     name: staging
@@ -58,9 +87,10 @@ Deploy to staging:
     - merge_requests
 
 Deploy to production:
-  <<: *runner-deploy
+  <<: *docker-deploy
   dependencies:
-    - Build production docker
+    - Build production backend
+    - Build production frontend web app
   stage: production
   environment:
     name: production

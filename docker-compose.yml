@@ -23,10 +23,10 @@ services:
 
   frontend_web_app:
     image: "${DOCKER_REGISTRY}/byot/frontend-web-app:${DOCKER_TAG}"
+    shm_size: '4g'
     build:
       context: .
       dockerfile: frontend-web.dockerfile
-      shm_size: '4g'
       args:
         BUILD_PROJECT: "web/app"
     ports:

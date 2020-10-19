@@ -13,7 +13,7 @@ stages:
     - echo "$DOCKER_CREDENTIALS" > ~/.docker/config.json
   script:
     - export DOCKER_TAG="$CI_COMMIT_SHA"
-    - docker-compose build "$DOCKER_SERVICE"
+    - docker-compose build "$DOCKER_SERVICE" --memory "1g"
     - docker-compose push "$DOCKER_SERVICE"
 
 .docker-build-staging: &docker-build-staging

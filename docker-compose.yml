@@ -30,4 +30,3 @@ services:
         BUILD_PROJECT: "web/app"
     ports:
       - "${PORT_FRONTEND_WEB_APP}:5000"
-    mem_limit: '1g'
